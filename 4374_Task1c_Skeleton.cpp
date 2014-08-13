@@ -75,17 +75,17 @@ int main()
 {
 	//function declarations (prototypes)
 	void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, vector<Item>& holes, vector<pill>& pills);
-	bool isArrowKey(int k);
-	bool isCheatKey(int k);
+	bool isArrowKey(const int k);
+	bool isCheatKey(const int k);
 	int  getKeyPress();
-	bool endconditions(int zombies, int pills, player spot, int key, string& message);
-	void ApplyCheat(char grid[][SIZEX], player& spot, int key, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
-	void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
-	void renderGame(const char g[][SIZEX], string mess, player spot, const int zomlives, const int remaingpills);
-	void endProgram(string message);
+	bool endconditions(const int zombies,const int pills,const player &spot,const int key, string& message);
+	void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills);
+	void updateGame(char grid[][SIZEX], player& spot,const int key, string& message, vector<zombie>& zombies, vector<pill>& pills,const vector<Item>& holes);
+	void renderGame(const char g[][SIZEX],const string &mess,const player &spot, const int zomlives, const int remaingpills, const string &name);
+	void endProgram(const string &message);
 	string mainloop();
-	void savescore(string name, int score);
-	bool readsavedcore(string name, int score);
+	void savescore(const string &name,const int score);
+	bool readsavedcore(const string &name,const int score);
 	//local variable declarations 
 	char grid[SIZEY][SIZEX];                //grid for display
 	player spot = { SPOT };                 //Spot's symbol and position (0, 0) 
@@ -95,17 +95,17 @@ int main()
 	spot.lives = 5;
 	string message("LET'S START...      "); //current message to player
 	
-	string name = mainloop();
+	const string name = mainloop();
 	initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
 	int key(' ');                         //create key to store keyboard events 
 	do {
-		renderGame(grid, message, spot,zombies.size(), pills.size());        //render game state on screen
+		renderGame(grid, message, spot,zombies.size(), pills.size(), name);        //render game state on screen
 		message = "                    "; //reset message
 		key = getKeyPress();              //read in next keyboard event
 		if (isArrowKey(key))
 			updateGame(grid, spot, key, message,zombies, pills, holes);
 		else if (isCheatKey(key))
-			ApplyCheat(grid, spot, key, zombies, pills, holes);
+			ApplyCheat(key, zombies, pills);
 		else
 			message = "INVALID KEY!        ";
 	} while (endconditions(zombies.size(), pills.size(), spot, key, message));      //while user does not want to quit
@@ -124,7 +124,7 @@ string mainloop()
 	void showmenu();
 	void showtime();
 	void showgametitle();
-	int getscore(string);
+	int getscore(const string&);
 	int  getKeyPress();
 	void clearMessage();
 	void showscore(const int score);
@@ -151,7 +151,7 @@ string mainloop()
 	return name;
 }
 
-void savescore(string name, int score)
+void savescore(const string &name,const int score)
 {
 	ofstream out(name + ".scr");
 	if (out.fail())
@@ -163,7 +163,7 @@ void savescore(string name, int score)
 	out.close();
 }
 
-bool readsavedcore(string name, int score)
+bool readsavedcore(const string &name,const int score)
 {
 	ifstream in(name + ".scr");
 	if (in.fail())// the file may not be found
@@ -181,7 +181,7 @@ bool readsavedcore(string name, int score)
 	return false;
 }
 
-int getscore(string name)
+int getscore(const string &name)
 {
 	ifstream in(name + ".scr");
 	if (in.fail())// the file may not be found
@@ -196,11 +196,11 @@ int getscore(string name)
 	return -1;
 }
 
-void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes)
+void updateGame(char grid[][SIZEX], player& spot,const int key, string& message, vector<zombie>& zombies, vector<pill>& pills,const vector<Item>& holes)
 {
-	void updateSpotCoordinates(const char g[][SIZEX], player& spot, int key, string& mess, vector<zombie>& zombies, vector<pill>& pills); // player move 
+	void updateSpotCoordinates(const char g[][SIZEX], player& spot,const int key, string& mess, vector<zombie>& zombies, vector<pill>& pills); // player move 
 	void updatezombieCoordinates(const char g[][SIZEX],player& spot, vector<zombie>& zombies); // zombies move
-	void updateGrid(char grid[][SIZEX], Item spot, vector<zombie> zombies, vector<pill> pills, vector<Item> holes);
+	void updateGrid(char grid[][SIZEX],const Item &spot,const vector<zombie> &zombies,const vector<pill> &pills,const vector<Item> &holes);
 
 	updateSpotCoordinates(grid, spot, key, message, zombies, pills);    //update spot coordinates
                                                         //according to key
@@ -211,7 +211,7 @@ void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vect
 
 void updatezombieCoordinates(const char g[][SIZEX],player& spot, vector<zombie>& zombies) // zombies move
 {
-	void getrandommove(Item spot, int& x, int& y);
+	void getrandommove(const Item &spot, int& x, int& y);
 	int amount = 0;
 	for (int i = 0; i < ((int)(zombies.size() - amount)); i++)
 	{
@@ -264,21 +264,21 @@ void updatezombieCoordinates(const char g[][SIZEX],player& spot, vector<zombie>&
 	}
 }
 
-void ApplyCheat(char grid[][SIZEX], player& spot, int key, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes)
+void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills)
 {
 	if (key == EAT)//remove all pils from the grid
 		pills.clear();
 	else if (key == EXTERMINATE)//remove all zombies from board
 		zombies.clear();
 	else if (key == FREEZ)// do nothing when it is the zombies turn to move
-		for (int i = 0; i != 4; i++)
+		for (int i = 0; i != zombies.size(); i++)
 		{
 			zombie& a = zombies[i];
 			a.imobalized = true;
 		}
 }
  
-void getrandommove(Item spot, int& x, int& y)
+void getrandommove(const Item &spot, int& x, int& y)
 {
 	if (spot.x > x)
 		x = 1;
@@ -298,7 +298,7 @@ void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, v
 { //initialise grid and place spot in middle
 	void setGrid(char[][SIZEX]);
 	void setSpotInitialCoordinates(Item& spot);
-	void placeSpot(char gr[][SIZEX], Item spot);
+	void placeSpot(char gr[][SIZEX],const Item &spot);
 	void placepillonmap(char grid[][SIZEX], vector<pill>& pills);
 	void placeholeonmap(char grid[][SIZEX], vector<Item>& holes);
 	void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies);
@@ -314,7 +314,7 @@ void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, v
 
 void placepillonmap(char grid[][SIZEX], vector<pill>& pills)
 {
-	bool ocupiedpeace(const char gd[][SIZEX], int x, int y);
+	bool ocupiedpeace(const char gd[][SIZEX],const int x,const int y);
 	for (int i = 0; i != 8; i++) // place 8 pills on the map
 	{
 		int x = Random(SIZEX - 2); //
@@ -333,7 +333,7 @@ void placepillonmap(char grid[][SIZEX], vector<pill>& pills)
 
 void placeholeonmap(char grid[][SIZEX], vector<Item>& holes)
 {
-	bool ocupiedpeace(const char gd[][SIZEX], int x, int y);
+	bool ocupiedpeace(const char gd[][SIZEX],const int x,const int y);
 	for (int i = 0; i != 12; i++) // place 12 holes on the map
 	{
 		int x = Random(SIZEX - 2); //
@@ -389,18 +389,18 @@ void setGrid(char grid[][SIZEX])
 	} //end of col-loop
 }
 
-void placeSpot(char gr[][SIZEX], Item spot)
+void placeSpot(char gr[][SIZEX],const Item &spot)
 { //place spot at its new position in grid
 	gr[spot.y][spot.x] = spot.symbol;
 }
 
-void updateGrid(char grid[][SIZEX], Item spot, vector<zombie> zombies, vector<pill> pills, vector<Item> holes)
+void updateGrid(char grid[][SIZEX],const Item &spot,const vector<zombie> &zombies,const vector<pill> &pills,const vector<Item> &holes)
 {
 	void setGrid(char[][SIZEX]);
-	void placeSpot(char g[][SIZEX], Item spot);
-	void placezombies(char g[][SIZEX], vector<zombie> zombies);
-	void placepill(char g[][SIZEX], vector<pill> pills);
-	void placeitem(char g[][SIZEX], vector<Item> holes);
+	void placeSpot(char g[][SIZEX],const Item &spot);
+	void placezombies(char g[][SIZEX],const vector<zombie> &zombies);
+	void placepill(char g[][SIZEX],const vector<pill> &pills);
+	void placeitem(char g[][SIZEX],const vector<Item> &holes);
 
 	setGrid(grid);	         //reset empty grid
 	placezombies(grid, zombies); //set zombies on map
@@ -409,7 +409,7 @@ void updateGrid(char grid[][SIZEX], Item spot, vector<zombie> zombies, vector<pi
 	placeSpot(grid, spot);	 //set spot in grid
 }
 
-void placepill(char g[][SIZEX], vector<pill> pills)
+void placepill(char g[][SIZEX],const vector<pill> &pills)
 {
 	for (pill item : pills)
 	{
@@ -418,7 +418,7 @@ void placepill(char g[][SIZEX], vector<pill> pills)
 	}
 }
 
-void placeitem(char g[][SIZEX], vector<Item> holes)
+void placeitem(char g[][SIZEX],const vector<Item> &holes)
 {
 	for (Item it : holes)
 	{
@@ -426,7 +426,7 @@ void placeitem(char g[][SIZEX], vector<Item> holes)
 	}
 }
 
-void placezombies(char g[][SIZEX], vector<zombie> zombies)
+void placezombies(char g[][SIZEX],const vector<zombie> &zombies)
 {
 	for (zombie item : zombies)
 	{
@@ -434,9 +434,9 @@ void placezombies(char g[][SIZEX], vector<zombie> zombies)
 	}
 }
 
-void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& mess, vector<zombie>& zombies, vector<pill>& pills)
+void updateSpotCoordinates(const char g[][SIZEX], player& sp,const int key, string& mess, vector<zombie>& zombies, vector<pill>& pills)
 {
-	void setKeyDirection(int k, int& dx, int& dy);
+	void setKeyDirection(const int k, int& dx, int& dy);
 
 	//calculate direction of movement required by key - if any
 	int dx(0), dy(0);
@@ -505,7 +505,7 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& m
 	}
 }
 
-void setKeyDirection(int key, int& dx, int& dy)
+void setKeyDirection(const int key, int& dx, int& dy)
 {
 	switch (key)    //...depending on the selected key...
 	{
@@ -537,17 +537,17 @@ int getKeyPress()
 	return(keyPressed);   
 }
 
-bool isArrowKey(int key)
+bool isArrowKey(const int key)
 {
 	return ((key == LEFT) || (key == RIGHT) || (key == UP) || (key == DOWN));
 }
 
-bool isCheatKey(int key)
+bool isCheatKey(const int key)
 {
 	return ((toupper(key) == EAT) || (toupper(key) == EXTERMINATE) || (toupper(key) == FREEZ));
 }
 
-bool wantToQuit(int key, string& message)
+bool wantToQuit(const int key, string& message)
 {
 	bool exit = (toupper(key) == QUIT);
 	if (exit)
@@ -555,7 +555,7 @@ bool wantToQuit(int key, string& message)
 	return exit;
 }
 
-bool haswon(int zombies, int pills, string& message)
+bool haswon(const int zombies,const int pills, string& message)
 {
 	stringstream ss;
 	if (zombies > 0)
@@ -565,15 +565,15 @@ bool haswon(int zombies, int pills, string& message)
 	return true;
 }
 
-bool endconditions(int zombies, int pills, player spot, int key, string& message)
+bool endconditions(const int zombies,const int pills,const player &spot,const int key, string& message)
 {
-	bool haswon(int zombies,int pills, string& message);
-	bool haslost(player spot, string& message);
-	bool wantToQuit(int k, string& message);
+	bool haswon(const int zombies,const int pills, string& message);
+	bool haslost(const player &spot, string& message);
+	bool wantToQuit(const int k, string& message);
 	return (!wantToQuit(key, message) && (!haswon(zombies, pills, message) && !haslost(spot, message)));
 }
 
-bool haslost(player spot, string& message)
+bool haslost(const player &spot, string& message)
 {
 	if (spot.lives == 0)
 	{
@@ -586,7 +586,7 @@ bool haslost(player spot, string& message)
 	}
 }
 
-bool ocupiedpeace(const char gd[][SIZEX], int x, int y)
+bool ocupiedpeace(const char gd[][SIZEX],const int x, const int y)
 {
 	if (gd[y][x] == PILL || gd[y][x] == HOLE || gd[y][x] == ZOMBIE || gd[y][x] == SPOT || gd[y][x] == WALL)
 		return true;
@@ -603,18 +603,19 @@ void clearMessage()
 	cout << str;  //display blank message
 }
 
-void renderGame(const char gd[][SIZEX], string mess, player spot, int zombielives, int remainingpill)
+void renderGame(const char gd[][SIZEX],const string &mess,const player &spot,const int zombielives,const int remainingpill, const string &name)
 { //display game title, messages, maze, spot and apples on screen
 	void paintGrid(const char g[][SIZEX]);
-	void showLives(const player spot);
+	void showLives(const player &spot);
 	void showDescription();
 	void showzomLives(const int lives);
 	void showrempill(const int pils);
 	void showTitle();
 	void showOptions();
 	void showtime();
-	void showMessage(string);
-	void showname(const string name);
+	void showMessage(const string&);
+	void showname(const string&);
+	void showname(const string &name);
 
 	Gotoxy(0, 0);
 	//display grid contents
@@ -624,6 +625,7 @@ void renderGame(const char gd[][SIZEX], string mess, player spot, int zombielive
 	showDescription();
 	showtime();
 	showLives(spot);
+	showname(name);
 	//show number of zombie lives
 	showzomLives(zombielives);
 	//show number of remaing pills
@@ -709,11 +711,11 @@ void showTitle()
 	cout << "1RR - COMPUTER SCIENCE";
 }
 
-void showname(const string name)
+void showname(const string &name)
 {
 	SelectBackColour(clRed);
 	SelectTextColour(clYellow);
-	Gotoxy(40, 11);
+	Gotoxy(40, 13);
 	cout << "your name: " << name;
 }
 
@@ -727,7 +729,7 @@ void showOptions()
 	cout << "TO QUIT ENTER 'Q'   ";
 }
 
-void showLives(player spot)
+void showLives(const player &spot)
 { //show game options
 	SelectBackColour(clRed);
 	SelectTextColour(clYellow);
@@ -735,7 +737,7 @@ void showLives(player spot)
 	cout << spot.lives << " lives left";
 }
 
-void showMessage(string m)
+void showMessage(const string &m)
 { //print auxiliary messages if any
 	SelectBackColour(clBlack);
 	SelectTextColour(clWhite);
@@ -743,7 +745,7 @@ void showMessage(string m)
 	cout << m;	//display current message
 }
 
-void endProgram(string message)
+void endProgram(const string &message)
 { //end program with appropriate message
 	SelectBackColour(clBlack);
 	SelectTextColour(clYellow);
