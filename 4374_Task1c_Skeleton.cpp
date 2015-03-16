@@ -69,12 +69,12 @@ int main()
 	//local variable declarations 
 	char grid[SIZEY][SIZEX];                //grid for display
 	player spot = { SPOT };                 //Spot's symbol and position (0, 0) 
-	vector<zombie> zombies;	// initalize the 4 zombies
-	vector<pill> pills; // initalize avalible pills to 8
-	vector<Item> holes; // 12 holes
+	vector<zombie> zombies;					// initalize the 4 zombies
+	vector<pill> pills; 					// initalize avalible pills to 8
+	vector<Item> holes; 					// 12 holes
 	string message("LET'S START...      "); //current message to player
-
-	//action...
+	
+	
 	initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
 	int key(' ');                         //create key to store keyboard events 
 	do {
@@ -86,11 +86,11 @@ int main()
 		else if (isCheatKey(key))
 			ApplyCheat(grid, spot, key);
 		else
-			message = "INVALID KEY!        "; //set 'Invalid key' message
+			message = "INVALID KEY!        ";
 	} while (!wantToQuit(key) || !haswon(grid) || haslost(spot));               //while user does not want to quit
 	endProgram();                             //display final message
 	return 0;
-} //end main
+}
 
 void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie> zombies, vector<pill> pills, vector<Item> holes)
 {
@@ -377,18 +377,14 @@ bool ocupiedpeace(const char gd[][SIZEX], int x, int y)
 		return false;
 }
 
-//---------------------------------------------------------------------------
-//----- display info on screen
-//---------------------------------------------------------------------------
 void clearMessage()
-{ //clear message area on screen
+{
 	SelectBackColour(clBlack);
 	SelectTextColour(clWhite);
 	Gotoxy(40, 8);
 	string str(20, ' ');
 	cout << str;  //display blank message
-
-} //end of setMessage
+}
 
 void renderGame(const char gd[][SIZEX], string mess)
 { //display game title, messages, maze, spot and apples on screen
@@ -409,7 +405,7 @@ void renderGame(const char gd[][SIZEX], string mess)
 }
 
 void paintGrid(const char g[][SIZEX])
-{ //display grid content on screen
+{
 	SelectBackColour(clBlack);
 	SelectTextColour(clWhite);
 	Gotoxy(0, 2);
