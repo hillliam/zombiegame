@@ -49,6 +49,7 @@ struct zombie {
 struct pill {
 	Item baseobject;         // the base class of all objects on the map
 	bool eaten;				 // set true if the will not be displayed
+	int numberOfPills;		 // number of pills on map
 };
 
 int main()
@@ -63,22 +64,29 @@ int main()
 	int  getKeyPress();
 	void ApplyCheat(char grid[][SIZEX], player& spot, int key);
 	void updateGame(char g[][SIZEX], player& sp, int k, string& mess, vector<zombie> zombies, vector<pill> pills, vector<Item> holes);
-	void renderGame(const char g[][SIZEX], string mess);
+	void renderGame(const char g[][SIZEX], string mess, player spot);
 	void endProgram();
 
 	//local variable declarations 
 	char grid[SIZEY][SIZEX];                //grid for display
 	player spot = { SPOT };                 //Spot's symbol and position (0, 0) 
+<<<<<<< HEAD
 	vector<zombie> zombies;					// initalize the 4 zombies
 	vector<pill> pills; 					// initalize avalible pills to 8
 	vector<Item> holes; 					// 12 holes
+=======
+	spot.lives = 5;
+	vector<zombie> zombies;	// initalize the 4 zombies
+	vector<pill> pills; // initalize avalible pills to 8
+	vector<Item> holes; // 12 holes
+>>>>>>> 4e8f0410c9d84af41809693ae78b23e73103c39a
 	string message("LET'S START...      "); //current message to player
 	
 	
 	initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
 	int key(' ');                         //create key to store keyboard events 
 	do {
-		renderGame(grid, message);        //render game state on screen
+		renderGame(grid, message, spot);        //render game state on screen
 		message = "                    "; //reset message
 		key = getKeyPress();              //read in next keyboard event
 		if (isArrowKey(key))
@@ -146,8 +154,8 @@ void placepillonmap(char grid[][SIZEX], vector<pill> pills)
 		while (ocupiedpeace(grid, x, y))
 		{
 			Seed();
-			int x = Random(SIZEX - 2); // get new chordinates
-			int y = Random(SIZEY - 2); // 
+			x = Random(SIZEX - 2); // get new chordinates
+			y = Random(SIZEY - 2); // 
 		}
 		pill pilla = { PILL, x, y };
 		pills.push_back(pilla);
@@ -160,13 +168,13 @@ void placeholeonmap(char grid[][SIZEX], vector<Item> holes)
 	bool ocupiedpeace(const char gd[][SIZEX], int x, int y);
 	for (int i = 0; i != 12; i++) // place 12 holes on the map
 	{
-		int x = Random(SIZEX - 2); // 
+		int x = Random(SIZEX - 2); //
 		int y = Random(SIZEY - 2); // 
 		while (ocupiedpeace(grid, x, y))
 		{
 			Seed();
-			int x = Random(SIZEX-2); // get new chordinates
-			int y = Random(SIZEY-2); // 
+			x = Random(SIZEX - 2); // get new chordinates
+			y = Random(SIZEY - 2); // 
 		}
 		Item hole = { HOLE, x, y };
 		grid[x][y] = HOLE;
@@ -184,8 +192,8 @@ void placezombiesonmap(char grid[][SIZEX], vector<zombie> zombies)
 		while (ocupiedpeace(grid, x, y))
 		{
 			Seed();
-			int x = Random(SIZEX - 2); // get new chordinates
-			int y = Random(SIZEY - 2); // 
+			 x = Random(SIZEX - 2); // get new chordinates
+			 y = Random(SIZEY - 2); // 
 		}
 		zombie zom = { ZOMBIE, x, y };
 		zombies.push_back(zom);
@@ -386,9 +394,10 @@ void clearMessage()
 	cout << str;  //display blank message
 }
 
-void renderGame(const char gd[][SIZEX], string mess)
+void renderGame(const char gd[][SIZEX], string mess, player spot)
 { //display game title, messages, maze, spot and apples on screen
 	void paintGrid(const char g[][SIZEX]);
+	void showLives(const player spot);
 	void showTitle();
 	void showOptions();
 	void showMessage(string);
@@ -398,6 +407,7 @@ void renderGame(const char gd[][SIZEX], string mess)
 	paintGrid(gd);
 	//display game title
 	showTitle();
+	showLives(spot);
 	//display menu options available
 	showOptions();
 	//display message if any
@@ -438,6 +448,13 @@ void showOptions()
 	cout << "TO MOVE USE KEYBOARD ARROWS  ";
 	Gotoxy(40, 6);
 	cout << "TO QUIT ENTER 'Q'   ";
+}
+void showLives(player spot)
+{ //show game options
+	SelectBackColour(clRed);
+	SelectTextColour(clYellow);
+	Gotoxy(40, 7);
+	cout << spot.lives << " lives left";
 }
 
 void showMessage(string m)
