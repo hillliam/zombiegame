@@ -1,43 +1,35 @@
-//SKELETON PROGRAM
-//---------------------------------
 #include <iostream >         
 #include <iomanip>           
 #include <conio.h>           
 #include <string>        
 #include <vector>
+
 using namespace std;
 
-//include our own libraries
 #include "RandomUtils.h"
 #include "ConsoleUtils.h"
 
-//---------------------------------
-//define constants
-//---------------------------------
-//define global constants
-//defining the size of the grid
 const int SIZEY(12);         //vertical dimension
 const int SIZEX(20);         //horizontal dimension
-//defining symbols used for display of the grid and content
+
 const char SPOT('@');        //spot
 const char TUNNEL(' ');      //open space
 const char WALL('#');        //border
 const char HOLE('O');        //hole
 const char ZOMBIE('Z');      //zombie
 const char PILL('.');        //pill (used in basic version insted of structure)
-//defining the command letters to move the blob on the maze
+
 const int  UP(72);           //up arrow
 const int  DOWN(80);         //down arrow
 const int  RIGHT(77);        //right arrow
 const int  LEFT(75);         //left arrow
-//defining the cheat command letters
+
 const char FREEZ('F');        //stop the zombies moving
 const char EXTERMINATE('X');  //remove all zombies
 const char EAT('E');         //remove all pills
-//defining the other command letters
+
 const char QUIT('Q');        //end the game
 
-//base data structure to store data for a grid item
 struct Item {
 	const char symbol;	     //symbol on grid
 	int x, y;			     //coordinates
@@ -58,10 +50,6 @@ struct pill {
 	Item baseobject;         // the base class of all objects on the map
 	bool eaten;				 // set true if the will not be displayed
 };
-
-//---------------------------------------------------------------------------
-//----- run game
-//---------------------------------------------------------------------------
 
 int main()
 {
@@ -105,7 +93,7 @@ int main()
 } //end main
 
 void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie> zombies, vector<pill> pills, vector<Item> holes)
-{ //updateGame state
+{
 	void updateSpotCoordinates(const char g[][SIZEX], player& spot, int key, string& mess); // player move 
 	void updatezombieCoordinates(const char g[][SIZEX], vector<zombie> zombies); // zombies move
 	void updateGrid(char grid[][SIZEX], Item spot, vector<zombie> zombies, vector<pill> pills, vector<Item> holes);
@@ -206,7 +194,7 @@ void placezombiesonmap(char grid[][SIZEX], vector<zombie> zombies)
 }
 
 void setSpotInitialCoordinates(Item& spot)
-{ //set spot coordinates inside the grid at random at beginning of game
+{
 	spot.y = Random(SIZEY - 2);      //vertical coordinate in range [1..(SIZEY - 2)]
 	spot.x = Random(SIZEX - 2);    //horizontal coordinate in range [1..(SIZEX - 2)]
 }
@@ -233,12 +221,8 @@ void placeSpot(char gr[][SIZEX], Item spot)
 	gr[spot.y][spot.x] = spot.symbol;
 }
 
-//---------------------------------------------------------------------------
-//----- update grid state
-//---------------------------------------------------------------------------
-
 void updateGrid(char grid[][SIZEX], Item spot, vector<zombie> zombies, vector<pill> pills, vector<Item> holes)
-{ //update grid configuration after each move
+{
 	void setGrid(char[][SIZEX]);
 	void placeSpot(char g[][SIZEX], Item spot);
 	void placezombies(char g[][SIZEX], vector<zombie> zombies);
@@ -274,11 +258,8 @@ void placezombies(char g[][SIZEX], vector<zombie> zombies)
 	}
 }
 
-//---------------------------------------------------------------------------
-//----- move the spot
-//---------------------------------------------------------------------------
 void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& mess)
-{ //move spot in required direction
+{
 	void setKeyDirection(int k, int& dx, int& dy);
 
 	//calculate direction of movement required by key - if any
@@ -314,13 +295,10 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& m
 		mess = "CANNOT GO THERE!    ";
 		break;
 	}
-} //end of updateSpotCoordinates
+}
 
-//---------------------------------------------------------------------------
-//----- process key
-//---------------------------------------------------------------------------
 void setKeyDirection(int key, int& dx, int& dy)
-{ //
+{
 	switch (key)    //...depending on the selected key...
 	{
 	case UP:		//when UP arrow pressed...
@@ -343,34 +321,34 @@ void setKeyDirection(int key, int& dx, int& dy)
 }
 
 int getKeyPress()
-{ //get key or command selected by user
+{
 	int keyPressed;
 	keyPressed = getch();      //read in the selected arrow key or command letter
 	while (keyPressed == 224)     //ignore symbol following cursor key
 		keyPressed = getch();
 	return(keyPressed);   
-} //end of getKeyPress
+}
 
 bool isArrowKey(int key)
-{ //check if the key pressed is an arrow key (also accept 'K', 'M', 'H' and 'P')
+{
 	return ((key == LEFT) || (key == RIGHT) || (key == UP) || (key == DOWN));
-} //end of isArrowKey
+}
 
 bool isCheatKey(int key)
-{ //check if the key pressed is an arrow key (also accept 'K', 'M', 'H' and 'P')
+{
 	return ((key == EAT) || (key == EXTERMINATE) || (key == FREEZ));
-} //end of isCheatKey
+}
 
 bool wantToQuit(int key)
-{ //check if the key pressed is 'Q'
+{
 	return (key == QUIT || toupper(key) == QUIT);
-} //end of wantToQuit
+}
 
 bool haswon(const char gd[][SIZEX])
-{// check for any zombies on the map and pills
-	for (int row(0); row < SIZEY; ++row)      //for each row (vertically)
+{
+	for (int row(0); row < SIZEY; ++row)
 	{
-		for (int col(0); col < SIZEX; ++col)  //for each column (horizontally)
+		for (int col(0); col < SIZEX; ++col) 
 		{
 			if (gd[row][col] == ZOMBIE || gd[row][col] == PILL)
 				return false;				  // some may not like this
