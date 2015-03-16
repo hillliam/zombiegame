@@ -74,7 +74,7 @@ int main()
 	bool haslost(player spot);
 	int  getKeyPress();
 	void ApplyCheat(char grid[][SIZEX], player& spot, int key);
-	void updateGame(char g[][SIZEX], player& sp, int k, string& mess);
+	void updateGame(char g[][SIZEX], player& sp, int k, string& mess, vector<zombie> zombies, vector<pill> pills, vector<Item> holes);
 	void renderGame(const char g[][SIZEX], string mess);
 	void endProgram();
 
@@ -94,7 +94,7 @@ int main()
 		message = "                    "; //reset message
 		key = getKeyPress();              //read in next keyboard event
 		if (isArrowKey(key))
-			updateGame(grid, spot, key, message);
+			updateGame(grid, spot, key, message,zombies, pills, holes);
 		else if (isCheatKey(key))
 			ApplyCheat(grid, spot, key);
 		else
@@ -104,16 +104,16 @@ int main()
 	return 0;
 } //end main
 
-void updateGame(char grid[][SIZEX], player& spot, int key, string& message)
+void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie> zombies, vector<pill> pills, vector<Item> holes)
 { //updateGame state
-	void updateSpotCoordinates(const char g[][SIZEX], player& spot, int key, string& mess);
-	void updatezombieCoordinates(const char g[][SIZEX], vector<zombie> zombies); // zombie move
-	void updateGrid(char g[][SIZEX], Item spot);
+	void updateSpotCoordinates(const char g[][SIZEX], player& spot, int key, string& mess); // player move 
+	void updatezombieCoordinates(const char g[][SIZEX], vector<zombie> zombies); // zombies move
+	void updateGrid(char grid[][SIZEX], Item spot, vector<zombie> zombies, vector<pill> pills, vector<Item> holes);
 
 	updateSpotCoordinates(grid, spot, key, message);    //update spot coordinates
                                                         //according to key
 	
-	updateGrid(grid, spot.baseobject);                  //update grid information
+	updateGrid(grid, spot.baseobject, zombies, pills, holes);    //update grid information
 }
 
 void ApplyCheat(char grid[][SIZEX], player& spot, int key)
@@ -150,15 +150,16 @@ void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie> zombies, ve
 
 void placepillonmap(char grid[][SIZEX], vector<pill> pills)
 {
+	bool ocupiedpeace(const char gd[][SIZEX], int x, int y);
 	for (int i = 0; i != 8; i++) // place 8 pills on the map
 	{
-		int x = Random(SIZEX - 1); //
-		int y = Random(SIZEY - 1); // 
-		while (grid[x][y] != TUNNEL)
+		int x = Random(SIZEX - 2); //
+		int y = Random(SIZEY - 2); // 
+		while (ocupiedpeace(grid, x, y))
 		{
 			Seed();
-			int x = Random(SIZEX - 1); // get new chordinates
-			int y = Random(SIZEY - 1); // 
+			int x = Random(SIZEX - 2); // get new chordinates
+			int y = Random(SIZEY - 2); // 
 		}
 		pill pilla = { PILL, x, y };
 		pills.push_back(pilla);
@@ -168,15 +169,16 @@ void placepillonmap(char grid[][SIZEX], vector<pill> pills)
 
 void placeholeonmap(char grid[][SIZEX], vector<Item> holes)
 {
+	bool ocupiedpeace(const char gd[][SIZEX], int x, int y);
 	for (int i = 0; i != 12; i++) // place 12 holes on the map
 	{
-		int x = Random(SIZEX - 1); // 
-		int y = Random(SIZEY - 1); // 
-		while (grid[x][y] != TUNNEL)
+		int x = Random(SIZEX - 2); // 
+		int y = Random(SIZEY - 2); // 
+		while (ocupiedpeace(grid, x, y))
 		{
 			Seed();
-			int x = Random(SIZEX-1); // get new chordinates
-			int y = Random(SIZEY-1); // 
+			int x = Random(SIZEX-2); // get new chordinates
+			int y = Random(SIZEY-2); // 
 		}
 		Item hole = { HOLE, x, y };
 		grid[x][y] = HOLE;
@@ -186,15 +188,16 @@ void placeholeonmap(char grid[][SIZEX], vector<Item> holes)
 
 void placezombiesonmap(char grid[][SIZEX], vector<zombie> zombies)
 {
+	bool ocupiedpeace(const char gd[][SIZEX], int x, int y);
 	for (int i = 0; i != 4; i++) // place 8 pills on the map
 	{
-		int x = Random(SIZEX - 1); //
-		int y = Random(SIZEY - 1); // 
-		while (grid[x][y] != TUNNEL)
+		int x = Random(SIZEX - 2); //
+		int y = Random(SIZEY - 2); // 
+		while (ocupiedpeace(grid, x, y))
 		{
 			Seed();
-			int x = Random(SIZEX - 1); // get new chordinates
-			int y = Random(SIZEY - 1); // 
+			int x = Random(SIZEX - 2); // get new chordinates
+			int y = Random(SIZEY - 2); // 
 		}
 		zombie zom = { ZOMBIE, x, y };
 		zombies.push_back(zom);
@@ -244,6 +247,9 @@ void updateGrid(char grid[][SIZEX], Item spot, vector<zombie> zombies, vector<pi
 
 	setGrid(grid);	         //reset empty grid
 	placeSpot(grid, spot);	 //set spot in grid
+	placezombies(grid, zombies); //set zombies on map
+	placepill(grid, pills);      //set pills on map
+	placeitem(grid, holes); // set the holes on the grid
 }
 
 void placepill(char g[][SIZEX], vector<pill> pills)
@@ -383,6 +389,14 @@ bool haslost(player spot)
 	{
 		return false;
 	}
+}
+
+bool ocupiedpeace(const char gd[][SIZEX], int x, int y)
+{
+	if (gd[x][y] == PILL || gd[x][y] == HOLE || gd[x][y] == ZOMBIE || gd[x][y] == SPOT || gd[x][y] == WALL)
+		return true;
+	else
+		return false;
 }
 
 //---------------------------------------------------------------------------
