@@ -1,0 +1,236 @@
+﻿Build started 16/03/2015 14:45:13.
+     1>Project "C:\Users\liam\Google Drive\programing\4374_Task1c_Skeleton\Project_VS13.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D _MBCS /D _MBCS /D NODEBUG /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt 4374_Task1c_Skeleton.cpp
+         4374_Task1c_Skeleton.cpp
+     1>c:\users\liam\google drive\programing\4374_task1c_skeleton\4374_task1c_skeleton.cpp(300): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\conio.h(131) : see declaration of 'getch'
+     1>c:\users\liam\google drive\programing\4374_task1c_skeleton\4374_task1c_skeleton.cpp(302): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\conio.h(131) : see declaration of 'getch'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\utility(53): error C2582: 'operator =' function is unavailable in 'zombie'
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\utility(28) : see reference to function template instantiation 'void std::swap<zombie>(_Ty &,_Ty &)' being compiled
+                 with
+                 [
+                     _Ty=zombie
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\xutility(3221) : see reference to function template instantiation 'void std::iter_swap<_RanIt,_RanIt>(_FwdIt1,_FwdIt2)' being compiled
+                 with
+                 [
+                     _RanIt=zombie *
+         ,            _FwdIt1=zombie *
+         ,            _FwdIt2=zombie *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\xutility(3235) : see reference to function template instantiation 'void std::_Rotate<_RanIt,std::iterator_traits<_FwdIt>::difference_type,zombie>(_RanIt,_RanIt,_RanIt,_Diff *,_Ty *)' being compiled
+                 with
+                 [
+                     _RanIt=zombie *
+         ,            _FwdIt=zombie *
+         ,            _Diff=std::iterator_traits<zombie *>::difference_type
+         ,            _Ty=zombie
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\xutility(3245) : see reference to function template instantiation 'void std::_Rotate<_Iter>(_RanIt,_RanIt,_RanIt,std::random_access_iterator_tag)' being compiled
+                 with
+                 [
+                     _Iter=zombie *
+         ,            _RanIt=zombie *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\vector(1430) : see reference to function template instantiation '_FwdIt std::rotate<zombie*>(_FwdIt,_FwdIt,_FwdIt)' being compiled
+                 with
+                 [
+                     _FwdIt=zombie *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\vector(1343) : see reference to function template instantiation 'void std::vector<zombie,std::allocator<_Ty>>::_Insert<_Iter>(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<zombie>>>,_Iter,_Iter,std::forward_iterator_tag)' being compiled
+                 with
+                 [
+                     _Ty=zombie
+         ,            _Iter=const zombie *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\vector(1343) : see reference to function template instantiation 'void std::vector<zombie,std::allocator<_Ty>>::_Insert<_Iter>(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<zombie>>>,_Iter,_Iter,std::forward_iterator_tag)' being compiled
+                 with
+                 [
+                     _Ty=zombie
+         ,            _Iter=const zombie *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\vector(923) : see reference to function template instantiation 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<zombie>>> std::vector<zombie,std::allocator<_Ty>>::insert<const _Elem*>(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<zombie>>>,_Iter,_Iter)' being compiled
+                 with
+                 [
+                     _Ty=zombie
+         ,            _Elem=zombie
+         ,            _Iter=const zombie *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\vector(923) : see reference to function template instantiation 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<zombie>>> std::vector<zombie,std::allocator<_Ty>>::insert<const _Elem*>(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<zombie>>>,_Iter,_Iter)' being compiled
+                 with
+                 [
+                     _Ty=zombie
+         ,            _Elem=zombie
+         ,            _Iter=const zombie *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\vector(919) : while compiling class template member function 'std::vector<zombie,std::allocator<_Ty>>::vector(std::initializer_list<zombie>,const std::allocator<_Ty> &)'
+                 with
+                 [
+                     _Ty=zombie
+                 ]
+                 c:\users\liam\google drive\programing\4374_task1c_skeleton\4374_task1c_skeleton.cpp(86) : see reference to function template instantiation 'std::vector<zombie,std::allocator<_Ty>>::vector(std::initializer_list<zombie>,const std::allocator<_Ty> &)' being compiled
+                 with
+                 [
+                     _Ty=zombie
+                 ]
+                 c:\users\liam\google drive\programing\4374_task1c_skeleton\4374_task1c_skeleton.cpp(86) : see reference to class template instantiation 'std::vector<zombie,std::allocator<_Ty>>' being compiled
+                 with
+                 [
+                     _Ty=zombie
+                 ]
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\utility(54): error C2582: 'operator =' function is unavailable in 'zombie'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\utility(53): error C2582: 'operator =' function is unavailable in 'pill'
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\utility(28) : see reference to function template instantiation 'void std::swap<pill>(_Ty &,_Ty &)' being compiled
+                 with
+                 [
+                     _Ty=pill
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\xutility(3221) : see reference to function template instantiation 'void std::iter_swap<_RanIt,_RanIt>(_FwdIt1,_FwdIt2)' being compiled
+                 with
+                 [
+                     _RanIt=pill *
+         ,            _FwdIt1=pill *
+         ,            _FwdIt2=pill *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\xutility(3235) : see reference to function template instantiation 'void std::_Rotate<_RanIt,std::iterator_traits<_FwdIt>::difference_type,pill>(_RanIt,_RanIt,_RanIt,_Diff *,_Ty *)' being compiled
+                 with
+                 [
+                     _RanIt=pill *
+         ,            _FwdIt=pill *
+         ,            _Diff=std::iterator_traits<pill *>::difference_type
+         ,            _Ty=pill
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\xutility(3245) : see reference to function template instantiation 'void std::_Rotate<_Iter>(_RanIt,_RanIt,_RanIt,std::random_access_iterator_tag)' being compiled
+                 with
+                 [
+                     _Iter=pill *
+         ,            _RanIt=pill *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\vector(1430) : see reference to function template instantiation '_FwdIt std::rotate<pill*>(_FwdIt,_FwdIt,_FwdIt)' being compiled
+                 with
+                 [
+                     _FwdIt=pill *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\vector(1343) : see reference to function template instantiation 'void std::vector<pill,std::allocator<_Ty>>::_Insert<_Iter>(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<pill>>>,_Iter,_Iter,std::forward_iterator_tag)' being compiled
+                 with
+                 [
+                     _Ty=pill
+         ,            _Iter=const pill *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\vector(1343) : see reference to function template instantiation 'void std::vector<pill,std::allocator<_Ty>>::_Insert<_Iter>(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<pill>>>,_Iter,_Iter,std::forward_iterator_tag)' being compiled
+                 with
+                 [
+                     _Ty=pill
+         ,            _Iter=const pill *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\vector(923) : see reference to function template instantiation 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<pill>>> std::vector<pill,std::allocator<_Ty>>::insert<const _Elem*>(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<pill>>>,_Iter,_Iter)' being compiled
+                 with
+                 [
+                     _Ty=pill
+         ,            _Elem=pill
+         ,            _Iter=const pill *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\vector(923) : see reference to function template instantiation 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<pill>>> std::vector<pill,std::allocator<_Ty>>::insert<const _Elem*>(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<pill>>>,_Iter,_Iter)' being compiled
+                 with
+                 [
+                     _Ty=pill
+         ,            _Elem=pill
+         ,            _Iter=const pill *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\vector(919) : while compiling class template member function 'std::vector<pill,std::allocator<_Ty>>::vector(std::initializer_list<pill>,const std::allocator<_Ty> &)'
+                 with
+                 [
+                     _Ty=pill
+                 ]
+                 c:\users\liam\google drive\programing\4374_task1c_skeleton\4374_task1c_skeleton.cpp(87) : see reference to function template instantiation 'std::vector<pill,std::allocator<_Ty>>::vector(std::initializer_list<pill>,const std::allocator<_Ty> &)' being compiled
+                 with
+                 [
+                     _Ty=pill
+                 ]
+                 c:\users\liam\google drive\programing\4374_task1c_skeleton\4374_task1c_skeleton.cpp(87) : see reference to class template instantiation 'std::vector<pill,std::allocator<_Ty>>' being compiled
+                 with
+                 [
+                     _Ty=pill
+                 ]
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\utility(54): error C2582: 'operator =' function is unavailable in 'pill'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\utility(53): error C2582: 'operator =' function is unavailable in 'Item'
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\utility(28) : see reference to function template instantiation 'void std::swap<Item>(_Ty &,_Ty &)' being compiled
+                 with
+                 [
+                     _Ty=Item
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\xutility(3221) : see reference to function template instantiation 'void std::iter_swap<_RanIt,_RanIt>(_FwdIt1,_FwdIt2)' being compiled
+                 with
+                 [
+                     _RanIt=Item *
+         ,            _FwdIt1=Item *
+         ,            _FwdIt2=Item *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\xutility(3235) : see reference to function template instantiation 'void std::_Rotate<_RanIt,std::iterator_traits<_FwdIt>::difference_type,Item>(_RanIt,_RanIt,_RanIt,_Diff *,_Ty *)' being compiled
+                 with
+                 [
+                     _RanIt=Item *
+         ,            _FwdIt=Item *
+         ,            _Diff=std::iterator_traits<Item *>::difference_type
+         ,            _Ty=Item
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\xutility(3245) : see reference to function template instantiation 'void std::_Rotate<_Iter>(_RanIt,_RanIt,_RanIt,std::random_access_iterator_tag)' being compiled
+                 with
+                 [
+                     _Iter=Item *
+         ,            _RanIt=Item *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\vector(1430) : see reference to function template instantiation '_FwdIt std::rotate<Item*>(_FwdIt,_FwdIt,_FwdIt)' being compiled
+                 with
+                 [
+                     _FwdIt=Item *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\vector(1343) : see reference to function template instantiation 'void std::vector<Item,std::allocator<_Ty>>::_Insert<_Iter>(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<Item>>>,_Iter,_Iter,std::forward_iterator_tag)' being compiled
+                 with
+                 [
+                     _Ty=Item
+         ,            _Iter=const Item *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\vector(1343) : see reference to function template instantiation 'void std::vector<Item,std::allocator<_Ty>>::_Insert<_Iter>(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<Item>>>,_Iter,_Iter,std::forward_iterator_tag)' being compiled
+                 with
+                 [
+                     _Ty=Item
+         ,            _Iter=const Item *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\vector(923) : see reference to function template instantiation 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<Item>>> std::vector<Item,std::allocator<_Ty>>::insert<const _Elem*>(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<Item>>>,_Iter,_Iter)' being compiled
+                 with
+                 [
+                     _Ty=Item
+         ,            _Elem=Item
+         ,            _Iter=const Item *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\vector(923) : see reference to function template instantiation 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<Item>>> std::vector<Item,std::allocator<_Ty>>::insert<const _Elem*>(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<Item>>>,_Iter,_Iter)' being compiled
+                 with
+                 [
+                     _Ty=Item
+         ,            _Elem=Item
+         ,            _Iter=const Item *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\vector(919) : while compiling class template member function 'std::vector<Item,std::allocator<_Ty>>::vector(std::initializer_list<Item>,const std::allocator<_Ty> &)'
+                 with
+                 [
+                     _Ty=Item
+                 ]
+                 c:\users\liam\google drive\programing\4374_task1c_skeleton\4374_task1c_skeleton.cpp(88) : see reference to function template instantiation 'std::vector<Item,std::allocator<_Ty>>::vector(std::initializer_list<Item>,const std::allocator<_Ty> &)' being compiled
+                 with
+                 [
+                     _Ty=Item
+                 ]
+                 c:\users\liam\google drive\programing\4374_task1c_skeleton\4374_task1c_skeleton.cpp(88) : see reference to class template instantiation 'std::vector<Item,std::allocator<_Ty>>' being compiled
+                 with
+                 [
+                     _Ty=Item
+                 ]
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\utility(54): error C2582: 'operator =' function is unavailable in 'Item'
+     1>Done Building Project "C:\Users\liam\Google Drive\programing\4374_Task1c_Skeleton\Project_VS13.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.98
