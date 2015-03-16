@@ -299,7 +299,7 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& m
 			sp.baseobject.y = 1;
 			break;
 		case LEFT:
-			sp.baseobject.x = 10;
+			sp.baseobject.x = 18;
 			break;
 		case RIGHT:
 			sp.baseobject.x = 1;
