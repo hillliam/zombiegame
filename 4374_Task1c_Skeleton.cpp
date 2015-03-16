@@ -1,17 +1,15 @@
 //SKELETON PROGRAM
 //---------------------------------
-//include libraries
-//include standard libraries
-#include <iostream >         //for output and input: cin >> and cout <<
-#include <iomanip>           //for formatted output in 'cout'
-#include <conio.h>           //for getch()
-#include <string>            //for string
-#include <vector>            //for vector
+#include <iostream >         
+#include <iomanip>           
+#include <conio.h>           
+#include <string>        
+#include <vector>
 using namespace std;
 
 //include our own libraries
-#include "RandomUtils.h"     //for Seed, Random
-#include "ConsoleUtils.h"    //for Clrscr, Gotoxy, etc.
+#include "RandomUtils.h"
+#include "ConsoleUtils.h"
 
 //---------------------------------
 //define constants
@@ -117,6 +115,7 @@ void updateGame(char grid[][SIZEX], player& spot, int key, string& message)
 	
 	updateGrid(grid, spot.baseobject);                  //update grid information
 }
+
 void ApplyCheat(char grid[][SIZEX], player& spot, int key)
 {
 	if (key == EAT)//remove all pils from the grid
@@ -147,7 +146,8 @@ void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie> zombies, ve
 	placepillonmap(grid, pills);	   // place pills on the map
 	placeholeonmap(grid, holes);       // place holes on the map
 	placezombiesonmap(grid, zombies);  // place the zombies on the map
-} //end of initialiseGame
+}
+
 void placepillonmap(char grid[][SIZEX], vector<pill> pills)
 {
 	for (int i = 0; i != 8; i++) // place 8 pills on the map
@@ -163,6 +163,7 @@ void placepillonmap(char grid[][SIZEX], vector<pill> pills)
 		grid[x][y] = PILL; // place it on the map
 	}
 }
+
 void placeholeonmap(char grid[][SIZEX], vector<Item> holes)
 {
 	for (int i = 0; i != 12; i++) // place 12 holes on the map
@@ -178,15 +179,17 @@ void placeholeonmap(char grid[][SIZEX], vector<Item> holes)
 		grid[x][y] = HOLE;
 	}
 }
+
 void placezombiesonmap(char grid[][SIZEX], vector<zombie> zombies)
 {
 
 }
+
 void setSpotInitialCoordinates(Item& spot)
 { //set spot coordinates inside the grid at random at beginning of game
 	spot.y = Random(SIZEY - 2);      //vertical coordinate in range [1..(SIZEY - 2)]
 	spot.x = Random(SIZEX - 2);    //horizontal coordinate in range [1..(SIZEX - 2)]
-} //end of setSpotInitialoordinates
+}
 
 void setGrid(char grid[][SIZEX])
 { //reset the empty grid configuration
@@ -203,12 +206,12 @@ void setGrid(char grid[][SIZEX])
 					grid[row][col] = TUNNEL;          //draw a space
 		} //end of row-loop
 	} //end of col-loop
-} //end of setGrid
+}
 
 void placeSpot(char gr[][SIZEX], Item spot)
 { //place spot at its new position in grid
 	gr[spot.y][spot.x] = spot.symbol;
-} //end of placeSpot
+}
 
 //---------------------------------------------------------------------------
 //----- update grid state
@@ -224,7 +227,7 @@ void updateGrid(char grid[][SIZEX], Item spot)
 
 	setGrid(grid);	         //reset empty grid
 	placeSpot(grid, spot);	 //set spot in grid
-} //end of updateGrid
+}
 
 //---------------------------------------------------------------------------
 //----- move the spot
@@ -292,7 +295,7 @@ void setKeyDirection(int key, int& dx, int& dy)
 		dy = 0;
 		break;
 	}
-} //end of setKeyDirection
+}
 
 int getKeyPress()
 { //get key or command selected by user
@@ -330,6 +333,7 @@ bool haswon(const char gd[][SIZEX])
 	}
 	return true;
 }
+
 bool haslost(player spot)
 {
 	if (spot.lives == 0)
@@ -371,7 +375,7 @@ void renderGame(const char gd[][SIZEX], string mess)
 	showOptions();
 	//display message if any
 	showMessage(mess);
-} //end of paintGame
+}
 
 void paintGrid(const char g[][SIZEX])
 { //display grid content on screen
@@ -386,7 +390,7 @@ void paintGrid(const char g[][SIZEX])
 		} //end of col-loop
 		cout << endl;
 	} //end of row-loop
-} //end of paintGrid
+}
  
 void showTitle()
 { //display game title
@@ -397,8 +401,7 @@ void showTitle()
 	SelectTextColour(clRed);
 	Gotoxy(40, 0);
 	cout << "Pascale Vacher: March 15";
-} //end of showTitle
-
+}
 
 void showOptions()
 { //show game options
@@ -408,7 +411,7 @@ void showOptions()
 	cout << "TO MOVE USE KEYBOARD ARROWS  ";
 	Gotoxy(40, 6);
 	cout << "TO QUIT ENTER 'Q'   ";
-} //end of showOptions
+}
 
 void showMessage(string m)
 { //print auxiliary messages if any
@@ -416,7 +419,7 @@ void showMessage(string m)
 	SelectTextColour(clWhite);
 	Gotoxy(40, 8);
 	cout << m;	//display current message
-} //end of showMessage
+}
 
 void endProgram()
 { //end program with appropriate message
@@ -427,4 +430,4 @@ void endProgram()
 	//hold output screen until a keyboard key is hit
 	Gotoxy(40, 9);
 	system("pause");
-} //end of endProgram
+}
