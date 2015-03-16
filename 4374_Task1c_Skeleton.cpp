@@ -160,7 +160,9 @@ void placepillonmap(char grid[][SIZEX], vector<pill> pills)
 			int x = Random(SIZEX - 1); // get new chordinates
 			int y = Random(SIZEY - 1); // 
 		}
-		grid[x][y] = PILL; // place it on the map
+		pill pilla = { PILL, x, y };
+		pills.push_back(pilla);
+		grid[x][y] = PILL; // place it on the map	
 	}
 }
 
@@ -176,13 +178,28 @@ void placeholeonmap(char grid[][SIZEX], vector<Item> holes)
 			int x = Random(SIZEX-1); // get new chordinates
 			int y = Random(SIZEY-1); // 
 		}
+		Item hole = { HOLE, x, y };
 		grid[x][y] = HOLE;
+		holes.push_back(hole);
 	}
 }
 
 void placezombiesonmap(char grid[][SIZEX], vector<zombie> zombies)
 {
-
+	for (int i = 0; i != 4; i++) // place 8 pills on the map
+	{
+		int x = Random(SIZEX - 1); //
+		int y = Random(SIZEY - 1); // 
+		while (grid[x][y] != TUNNEL)
+		{
+			Seed();
+			int x = Random(SIZEX - 1); // get new chordinates
+			int y = Random(SIZEY - 1); // 
+		}
+		zombie zom = { ZOMBIE, x, y };
+		zombies.push_back(zom);
+		grid[x][y] = PILL; // place it on the map	
+	}
 }
 
 void setSpotInitialCoordinates(Item& spot)
@@ -217,7 +234,7 @@ void placeSpot(char gr[][SIZEX], Item spot)
 //----- update grid state
 //---------------------------------------------------------------------------
 
-void updateGrid(char grid[][SIZEX], Item spot)
+void updateGrid(char grid[][SIZEX], Item spot, vector<zombie> zombies, vector<pill> pills, vector<Item> holes)
 { //update grid configuration after each move
 	void setGrid(char[][SIZEX]);
 	void placeSpot(char g[][SIZEX], Item spot);
@@ -227,6 +244,28 @@ void updateGrid(char grid[][SIZEX], Item spot)
 
 	setGrid(grid);	         //reset empty grid
 	placeSpot(grid, spot);	 //set spot in grid
+}
+
+void placepill(char g[][SIZEX], vector<pill> pills)
+{
+	for (int i = 0; i != pills.size(); i++)
+	{
+		g[pills[i].baseobject.x][pills[i].baseobject.y] = pills[i].baseobject.symbol;
+	}
+}
+void placeitem(char g[][SIZEX], vector<Item> holes)
+{
+	for (int i = 0; i != holes.size(); i++)
+	{
+		g[holes[i].x][holes[i].y] = holes[i].symbol;
+	}
+}
+void placezombies(char g[][SIZEX], vector<zombie> zombies)
+{
+	for (int i = 0; i != zombies.size(); i++)
+	{
+		g[zombies[i].baseobject.x][zombies[i].baseobject.y] = zombies[i].baseobject.symbol;
+	}
 }
 
 //---------------------------------------------------------------------------
