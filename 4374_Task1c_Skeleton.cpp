@@ -302,6 +302,12 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& m
 		}
 		mess = "CANNOT GO THERE!    ";
 		break;
+	case ZOMBIE:
+		sp.lives = sp.lives - 1;
+		break;
+	case PILL:
+		sp.lives++;
+		break;
 	}
 }
 
