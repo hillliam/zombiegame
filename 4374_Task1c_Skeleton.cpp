@@ -104,14 +104,18 @@ void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vect
 	updateGrid(grid, spot.baseobject, zombies, pills, holes);    //update grid information
 }
 
-void ApplyCheat(char grid[][SIZEX], player& spot, int key)
+void ApplyCheat(char grid[][SIZEX], player& spot, int key, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes)
 {
 	if (key == EAT)//remove all pils from the grid
-		cout << "replace me";
+		pills.clear();
 	else if (key == EXTERMINATE)//remove all zombies from board
-		cout << "replace me";
+		zombies.clear();
 	else if (key == FREEZ)// do nothing when it is the zombies turn to move
-		cout << "replace me";
+		for (int i = 0; i != 4; i++)
+		{
+			zombie& a = zombies[i];
+			a.imobalized = true;
+		}
 }
  
 //---------------------------------------------------------------------------
