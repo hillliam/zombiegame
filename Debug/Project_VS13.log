@@ -1,12 +1,42 @@
-﻿Build started 17/03/2015 14:29:40.
+﻿Build started 17/03/2015 21:24:40.
      1>Project "C:\Users\liam\Documents\GitHub\zombiegame\Project_VS13.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D CODE_ANALYSIS /D _MBCS /D _MBCS /D NODEBUG /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze /analyze:plugin"C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\\bin\localespc.dll" /errorReport:prompt   /analyze:quiet 4374_Task1c_Skeleton.cpp
          4374_Task1c_Skeleton.cpp
-     1>c:\users\liam\documents\github\zombiegame\4374_task1c_skeleton.cpp(352): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+     1>c:\users\liam\documents\github\zombiegame\4374_task1c_skeleton.cpp(262): warning C4305: 'initializing' : truncation from 'int' to 'bool'
+     1>c:\users\liam\documents\github\zombiegame\4374_task1c_skeleton.cpp(263): warning C4305: 'initializing' : truncation from 'int' to 'bool'
+     1>c:\users\liam\documents\github\zombiegame\4374_task1c_skeleton.cpp(415): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\conio.h(131) : see declaration of 'getch'
-     1>c:\users\liam\documents\github\zombiegame\4374_task1c_skeleton.cpp(354): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+     1>c:\users\liam\documents\github\zombiegame\4374_task1c_skeleton.cpp(417): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\conio.h(131) : see declaration of 'getch'
+     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\xutility(2420): error C2582: 'operator =' function is unavailable in 'zombie'
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\xutility(2441) : see reference to function template instantiation '_OutIt std::_Move<_InIt,_OutIt>(_InIt,_InIt,_OutIt,std::_Nonscalar_ptr_iterator_tag)' being compiled
+                 with
+                 [
+                     _OutIt=zombie *
+         ,            _InIt=zombie *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\vector(1443) : see reference to function template instantiation '_OutIt std::_Move<zombie*,zombie*>(_InIt,_InIt,_OutIt)' being compiled
+                 with
+                 [
+                     _OutIt=zombie *
+         ,            _InIt=zombie *
+                 ]
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\vector(1438) : while compiling class template member function 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<zombie>>> std::vector<zombie,std::allocator<_Ty>>::erase(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<zombie>>>)'
+                 with
+                 [
+                     _Ty=zombie
+                 ]
+                 c:\users\liam\documents\github\zombiegame\4374_task1c_skeleton.cpp(130) : see reference to function template instantiation 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<zombie>>> std::vector<zombie,std::allocator<_Ty>>::erase(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<zombie>>>)' being compiled
+                 with
+                 [
+                     _Ty=zombie
+                 ]
+                 c:\users\liam\documents\github\zombiegame\4374_task1c_skeleton.cpp(73) : see reference to class template instantiation 'std::vector<zombie,std::allocator<_Ty>>' being compiled
+                 with
+                 [
+                     _Ty=zombie
+                 ]
      1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\xutility(2420): error C2582: 'operator =' function is unavailable in 'pill'
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\xutility(2441) : see reference to function template instantiation '_OutIt std::_Move<_InIt,_OutIt>(_InIt,_InIt,_OutIt,std::_Nonscalar_ptr_iterator_tag)' being compiled
                  with
@@ -25,12 +55,12 @@
                  [
                      _Ty=pill
                  ]
-                 c:\users\liam\documents\github\zombiegame\4374_task1c_skeleton.cpp(114) : see reference to function template instantiation 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<pill>>> std::vector<pill,std::allocator<_Ty>>::erase(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<pill>>>)' being compiled
+                 c:\users\liam\documents\github\zombiegame\4374_task1c_skeleton.cpp(120) : see reference to function template instantiation 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<pill>>> std::vector<pill,std::allocator<_Ty>>::erase(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<pill>>>)' being compiled
                  with
                  [
                      _Ty=pill
                  ]
-                 c:\users\liam\documents\github\zombiegame\4374_task1c_skeleton.cpp(72) : see reference to class template instantiation 'std::vector<pill,std::allocator<_Ty>>' being compiled
+                 c:\users\liam\documents\github\zombiegame\4374_task1c_skeleton.cpp(74) : see reference to class template instantiation 'std::vector<pill,std::allocator<_Ty>>' being compiled
                  with
                  [
                      _Ty=pill
@@ -39,4 +69,4 @@
 
 Build FAILED.
 
-Time Elapsed 00:00:01.18
+Time Elapsed 00:00:01.86

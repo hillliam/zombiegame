@@ -44,6 +44,8 @@ struct player {
 
 struct zombie {
 	Item baseobject;         // the base class of all objects on the map
+	int startx;              // the start location of the zombie
+	int starty;             
 	bool imobalized;		 // set true if the zombie cant move
 };
 struct pill {
@@ -62,9 +64,9 @@ int main()
 	bool endconditions(char grid[][SIZEX], player spot, int key);
 	void ApplyCheat(char grid[][SIZEX], player& spot, int key, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
 	void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
-	void renderGame(const char g[][SIZEX], string mess, player spot);
+	void renderGame(const char g[][SIZEX], string mess, player spot, const int zomlives, const int remaingpills);
 	void endProgram();
-
+    int zombielives = 3;
 	//local variable declarations 
 	char grid[SIZEY][SIZEX];                //grid for display
 	player spot = { SPOT };                 //Spot's symbol and position (0, 0) 
@@ -78,7 +80,7 @@ int main()
 	initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
 	int key(' ');                         //create key to store keyboard events 
 	do {
-		renderGame(grid, message, spot);        //render game state on screen
+		renderGame(grid, message, spot,zombielives, pills.size());        //render game state on screen
 		message = "                    "; //reset message
 		key = getKeyPress();              //read in next keyboard event
 		if (isArrowKey(key))
@@ -131,10 +133,44 @@ void checkzombiecolition(Item spot, vector<zombie> zombies)
 }
 void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies) // zombies move
 {
+	void getrandommove(int& x, int& y);
 	for (int i = 0; i != zombies.size(); i++)
 	{
 		if (zombies[i].imobalized == false)
-			//pick random direction to move 
+		{
+			//calculate direction of movement required by key - if any
+			int dx(0), dy(0);
+			getrandommove(dx, dy); // if we pass the grid to this we can check to make it rare that the rombie falls down a hole 
+			//check new target position in grid 
+			//and update spot coordinates if move is possible
+			const int targetY(zombies[i].baseobject.y + dy);
+			const int targetX(zombies[i].baseobject.x + dx);
+			switch (g[targetY][targetX])
+			{		//...depending on what's on the target position in grid...
+			case TUNNEL:      //can move
+				zombies[i].baseobject.y += dy;   //go in that Y direction
+				zombies[i].baseobject.x += dx;   //go in that X direction
+				break;
+			case SPOT:// dont know if needex 
+				break;
+			case ZOMBIE:
+				zombies[i].baseobject.x = zombies[i].startx;
+				zombies[i].baseobject.y = zombies[i].starty;
+				for (zombie& item : zombies)
+				{
+					if (item.baseobject.x == targetX && item.baseobject.y == targetY)
+					{
+						item.baseobject.x = item.startx;
+						item.baseobject.y = item.starty;
+					}
+				}
+				break;
+			case HOLE: // may need to store the starting chord of eatch zombie to make it spawn in its corner
+				zombies[i].baseobject.x = zombies[i].startx;
+				zombies[i].baseobject.y = zombies[i].starty;
+				break;
+			}
+		}
 	}
 }
 void ApplyCheat(char grid[][SIZEX], player& spot, int key, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes)
@@ -151,6 +187,12 @@ void ApplyCheat(char grid[][SIZEX], player& spot, int key, vector<zombie>& zombi
 		}
 }
  
+void getrandommove(int& x, int& y)
+{
+	x = Random(4) - 2;// number between -1 and 1
+	y = Random(4) - 2;// number between -1 and 1
+}
+
 //---------------------------------------------------------------------------
 //----- initialise game state
 //---------------------------------------------------------------------------
@@ -215,10 +257,10 @@ void placeholeonmap(char grid[][SIZEX], vector<Item>& holes)
 
 void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies)
 {
-	zombie zom1 = { ZOMBIE, 1, 1 };
-	zombie zom2 = { ZOMBIE, SIZEX - 2, 1 };
-	zombie zom3 = { ZOMBIE, 1, SIZEY - 2 };
-	zombie zom4 = { ZOMBIE, SIZEX - 2, SIZEY - 2 };
+	zombie zom1 = { ZOMBIE, 1, 1, false, 1, 1 };
+	zombie zom2 = { ZOMBIE, SIZEX - 2, 1, false, SIZEX - 2, 1 };
+	zombie zom3 = { ZOMBIE, 1, SIZEY - 2, false, 1, SIZEY - 2 };
+	zombie zom4 = { ZOMBIE, SIZEX - 2, SIZEY - 2, false, SIZEX - 2, SIZEY - 2 };
 	zombies.push_back(zom1);
 	zombies.push_back(zom2);
 	zombies.push_back(zom3);
@@ -440,10 +482,12 @@ void clearMessage()
 	cout << str;  //display blank message
 }
 
-void renderGame(const char gd[][SIZEX], string mess, player spot)
+void renderGame(const char gd[][SIZEX], string mess, player spot, int zombielives, int remainingpill)
 { //display game title, messages, maze, spot and apples on screen
 	void paintGrid(const char g[][SIZEX]);
 	void showLives(const player spot);
+	void showzomLives(const int lives);
+	void showrempill(const int pils);
 	void showTitle();
 	void showOptions();
 	void showMessage(string);
@@ -454,6 +498,10 @@ void renderGame(const char gd[][SIZEX], string mess, player spot)
 	//display game title
 	showTitle();
 	showLives(spot);
+	//show number of zombie lives
+	showzomLives(zombielives);
+	//show number of remaing pills
+	showrempill(remainingpill);
 	//display menu options available
 	showOptions();
 	//display message if any
@@ -474,7 +522,14 @@ void paintGrid(const char g[][SIZEX])
 		cout << endl;
 	} //end of row-loop
 }
- 
+void showzomLives(const int lives)
+{
+
+}
+void showrempill(const int pils)
+{
+
+}
 void showTitle()
 { //display game title
 	SelectTextColour(clYellow);
