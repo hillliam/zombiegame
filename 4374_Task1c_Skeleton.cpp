@@ -1,7 +1,7 @@
-#include <iostream >         
-#include <iomanip>           
-#include <conio.h>           
-#include <string>        
+#include <iostream>
+#include <iomanip>
+#include <conio.h>
+#include <string>
 #include <vector>
 
 using namespace std;
@@ -246,6 +246,7 @@ void placepill(char g[][SIZEX], vector<pill> pills)
 		g[pills[i].baseobject.y][pills[i].baseobject.x] = pills[i].baseobject.symbol;
 	}
 }
+
 void placeitem(char g[][SIZEX], vector<Item> holes)
 {
 	for (int i = 0; i != holes.size(); i++)
@@ -253,6 +254,7 @@ void placeitem(char g[][SIZEX], vector<Item> holes)
 		g[holes[i].y][holes[i].x] = holes[i].symbol;
 	}
 }
+
 void placezombies(char g[][SIZEX], vector<zombie> zombies)
 {
 	for (int i = 0; i != zombies.size(); i++)
@@ -298,7 +300,7 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& m
 		mess = "CANNOT GO THERE!    ";
 		break;
 	case ZOMBIE:
-		sp.lives = sp.lives - 1;
+		sp.lives--;
 		break;
 	case PILL:
 		sp.lives++;
@@ -311,11 +313,11 @@ void setKeyDirection(int key, int& dx, int& dy)
 	switch (key)    //...depending on the selected key...
 	{
 	case UP:		//when UP arrow pressed...
-		dx = 0;    
+		dx = 0;
 		dy = -1;	//decrease the Y coordinate
 		break;
 	case DOWN:		//when DOWN arrow pressed...
-		dx = 0;    
+		dx = 0;
 		dy = 1;		//increase the Y coordinate
 		break;
 	case LEFT:      //when LEFT arrow pressed...
