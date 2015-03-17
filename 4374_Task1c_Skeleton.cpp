@@ -175,7 +175,7 @@ void placeholeonmap(char grid[][SIZEX], vector<Item>& holes)
 		}
 		Item hole = { HOLE, x, y };
 		cout << "placed hole at " << x << " " << y << endl;
-		grid[x][y] = HOLE;
+		grid[y][x] = HOLE;
 		holes.push_back(hole);
 	}
 }
@@ -183,17 +183,17 @@ void placeholeonmap(char grid[][SIZEX], vector<Item>& holes)
 void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies)
 {
 	zombie zom1 = { ZOMBIE, 1, 1 };
-	zombie zom2 = { ZOMBIE, 10, 1 };
-	zombie zom3 = { ZOMBIE, 1, 10 };
-	zombie zom4 = { ZOMBIE, 10, 10 };
+	zombie zom2 = { ZOMBIE, SIZEX - 2, 1 };
+	zombie zom3 = { ZOMBIE, 1, SIZEY - 2 };
+	zombie zom4 = { ZOMBIE, SIZEX - 2, SIZEY - 2 };
 	zombies.push_back(zom1);
 	zombies.push_back(zom2);
 	zombies.push_back(zom3);
 	zombies.push_back(zom4);
 	grid[1][1] = ZOMBIE; // place it on the map	
-	grid[10][1] = ZOMBIE;
-	grid[1][10] = ZOMBIE;
-	grid[10][10] = ZOMBIE;
+	grid[SIZEY - 2][1] = ZOMBIE;
+	grid[1][SIZEX - 2] = ZOMBIE;
+	grid[SIZEY - 2][SIZEX - 2] = ZOMBIE;
 }
 
 void setSpotInitialCoordinates(Item& spot)
@@ -243,21 +243,21 @@ void placepill(char g[][SIZEX], vector<pill> pills)
 {
 	for (int i = 0; i != pills.size(); i++)
 	{
-		g[pills[i].baseobject.x][pills[i].baseobject.y] = pills[i].baseobject.symbol;
+		g[pills[i].baseobject.y][pills[i].baseobject.x] = pills[i].baseobject.symbol;
 	}
 }
 void placeitem(char g[][SIZEX], vector<Item> holes)
 {
 	for (int i = 0; i != holes.size(); i++)
 	{
-		g[holes[i].x][holes[i].y] = holes[i].symbol;
+		g[holes[i].y][holes[i].x] = holes[i].symbol;
 	}
 }
 void placezombies(char g[][SIZEX], vector<zombie> zombies)
 {
 	for (int i = 0; i != zombies.size(); i++)
 	{
-		g[zombies[i].baseobject.x][zombies[i].baseobject.y] = zombies[i].baseobject.symbol;
+		g[zombies[i].baseobject.y][zombies[i].baseobject.x] = zombies[i].baseobject.symbol;
 	}
 }
 
@@ -283,13 +283,13 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& m
 		switch (key)
 		{
 		case UP:
-			sp.baseobject.y = 10;
+			sp.baseobject.y = SIZEY-2;
 			break;
 		case DOWN:
 			sp.baseobject.y = 1;
 			break;
 		case LEFT:
-			sp.baseobject.x = 18;
+			sp.baseobject.x = SIZEX-2;
 			break;
 		case RIGHT:
 			sp.baseobject.x = 1;
