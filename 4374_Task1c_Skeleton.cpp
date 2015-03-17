@@ -97,13 +97,46 @@ void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vect
 	void updateSpotCoordinates(const char g[][SIZEX], player& spot, int key, string& mess); // player move 
 	void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies); // zombies move
 	void updateGrid(char grid[][SIZEX], Item spot, vector<zombie> zombies, vector<pill> pills, vector<Item> holes);
+	void checkpillcolition(Item spot, vector<pill>& pills);
+	void checkzombiecolition(Item spot, vector<zombie> zombies);
 
 	updateSpotCoordinates(grid, spot, key, message);    //update spot coordinates
                                                         //according to key
+	updatezombieCoordinates(grid, zombies);				// zombies move
+	// check colition 
+	checkpillcolition(spot.baseobject, pills);
+	checkzombiecolition(spot.baseobject, zombies);
 	// this can be just passed a vector<item> made from the .baseobject of all objects needing to be renderd
 	updateGrid(grid, spot.baseobject, zombies, pills, holes);    //update grid information
 }
-
+void checkpillcolition(Item spot, vector<pill>& pills)
+{
+	for (int i = 0; i != pills.size(); i++)
+	{
+		if (pills[i].baseobject.x == spot.x && pills[i].baseobject.y == spot.y)
+		{
+			pills.erase(pills.begin() + i);
+		}
+	}
+}
+void checkzombiecolition(Item spot, vector<zombie> zombies)
+{
+	for (int i = 0; i != zombies.size(); i++)
+	{
+		if (zombies[i].baseobject.x == spot.x && zombies[i].baseobject.y == spot.y)
+		{
+			zombies.erase(zombies.begin() + i);
+		}
+	}
+}
+void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies) // zombies move
+{
+	for (int i = 0; i != zombies.size(); i++)
+	{
+		if (zombies[i].imobalized == false)
+			//pick random direction to move 
+	}
+}
 void ApplyCheat(char grid[][SIZEX], player& spot, int key, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes)
 {
 	if (key == EAT)//remove all pils from the grid
@@ -241,25 +274,25 @@ void updateGrid(char grid[][SIZEX], Item spot, vector<zombie> zombies, vector<pi
 
 void placepill(char g[][SIZEX], vector<pill> pills)
 {
-	for (int i = 0; i != pills.size(); i++)
+	for (pill item : pills)
 	{
-		g[pills[i].baseobject.y][pills[i].baseobject.x] = pills[i].baseobject.symbol;
+		g[item.baseobject.y][item.baseobject.x] = item.baseobject.symbol;
 	}
 }
 
 void placeitem(char g[][SIZEX], vector<Item> holes)
 {
-	for (int i = 0; i != holes.size(); i++)
+	for (Item it : holes)
 	{
-		g[holes[i].y][holes[i].x] = holes[i].symbol;
+		g[it.y][it.x] = it.symbol;
 	}
 }
 
 void placezombies(char g[][SIZEX], vector<zombie> zombies)
 {
-	for (int i = 0; i != zombies.size(); i++)
+	for (zombie item : zombies)
 	{
-		g[zombies[i].baseobject.y][zombies[i].baseobject.x] = zombies[i].baseobject.symbol;
+		g[item.baseobject.y][item.baseobject.x] = item.baseobject.symbol;
 	}
 }
 
@@ -300,6 +333,9 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& m
 		mess = "CANNOT GO THERE!    ";
 		break;
 	case ZOMBIE:
+		sp.lives--;
+		break;
+	case HOLE:
 		sp.lives--;
 		break;
 	case PILL:
