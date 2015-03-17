@@ -367,11 +367,7 @@ bool endconditions(char grid[][SIZEX], player spot, int key)
 	bool haswon(const char grid[][SIZEX]);
 	bool haslost(player spot);
 	bool wantToQuit(int k);
-	if (wantToQuit(key))
-	{
-		return ;
-	}
-	return (!wantToQuit(key) && (!haswon(grid) || !haslost(spot)));
+	return (!wantToQuit(key) && (!haswon(grid) && !haslost(spot)));
 }
 
 bool haslost(player spot)
