@@ -1,4 +1,4 @@
-﻿Build started 17/03/2015 21:24:40.
+﻿Build started 17/03/2015 21:46:14.
      1>Project "C:\Users\liam\Documents\GitHub\zombiegame\Project_VS13.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D CODE_ANALYSIS /D _MBCS /D _MBCS /D NODEBUG /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze /analyze:plugin"C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\\bin\localespc.dll" /errorReport:prompt   /analyze:quiet 4374_Task1c_Skeleton.cpp
@@ -69,4 +69,4 @@
 
 Build FAILED.
 
-Time Elapsed 00:00:01.86
+Time Elapsed 00:00:02.24

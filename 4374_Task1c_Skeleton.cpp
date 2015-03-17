@@ -61,7 +61,7 @@ int main()
 	bool isArrowKey(int k);
 	bool isCheatKey(int k);
 	int  getKeyPress();
-	bool endconditions(char grid[][SIZEX], player spot, int key);
+	bool endconditions(char grid[][SIZEX], player spot, int key, string& message);
 	void ApplyCheat(char grid[][SIZEX], player& spot, int key, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
 	void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
 	void renderGame(const char g[][SIZEX], string mess, player spot, const int zomlives, const int remaingpills);
@@ -89,7 +89,7 @@ int main()
 			ApplyCheat(grid, spot, key, zombies, pills, holes);
 		else
 			message = "INVALID KEY!        ";
-	} while (endconditions(grid, spot, key));      //while user does not want to quit
+	} while (endconditions(grid, spot, key, message));      //while user does not want to quit
 	endProgram();                             //display final message
 	return 0;
 }
@@ -428,12 +428,15 @@ bool isCheatKey(int key)
 	return ((key == EAT) || (key == EXTERMINATE) || (key == FREEZ));
 }
 
-bool wantToQuit(int key)
+bool wantToQuit(int key, string& message)
 {
-	return (key == QUIT || toupper(key) == QUIT);
+	bool exit = (key == QUIT || toupper(key) == QUIT);
+	if (exit)
+	    message = "you have quit";
+	return exit;
 }
 
-bool haswon(const char gd[][SIZEX])
+bool haswon(const char gd[][SIZEX], string& message)
 {
 	for (int row(0); row < SIZEY; ++row)
 	{
@@ -443,20 +446,22 @@ bool haswon(const char gd[][SIZEX])
 				return false;				  // some may not like this
 		}
 	}
+	message = "there are no zombies or pils on the map";
 	return true;
 }
-bool endconditions(char grid[][SIZEX], player spot, int key)
+bool endconditions(char grid[][SIZEX], player spot, int key, string& message)
 {
-	bool haswon(const char grid[][SIZEX]);
-	bool haslost(player spot);
-	bool wantToQuit(int k);
-	return (!wantToQuit(key) && (!haswon(grid) && !haslost(spot)));
+	bool haswon(const char grid[][SIZEX], string& message);
+	bool haslost(player spot, string& message);
+	bool wantToQuit(int k, string& message);
+	return (!wantToQuit(key, message) && (!haswon(grid, message) && !haslost(spot, message)));
 }
 
-bool haslost(player spot)
+bool haslost(player spot, string& message)
 {
 	if (spot.lives == 0)
 	{
+		message = "you have no lives";
 		return true;
 	}
 	else
