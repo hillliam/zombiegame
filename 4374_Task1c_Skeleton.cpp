@@ -60,7 +60,7 @@ int main()
 	bool isCheatKey(int k);
 	int  getKeyPress();
 	bool endconditions(char grid[][SIZEX], player spot, int key);
-	void ApplyCheat(char grid[][SIZEX], player& spot, int key);
+	void ApplyCheat(char grid[][SIZEX], player& spot, int key, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
 	void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
 	void renderGame(const char g[][SIZEX], string mess, player spot);
 	void endProgram();
@@ -84,7 +84,7 @@ int main()
 		if (isArrowKey(key))
 			updateGame(grid, spot, key, message,zombies, pills, holes);
 		else if (isCheatKey(key))
-			ApplyCheat(grid, spot, key);
+			ApplyCheat(grid, spot, key, zombies, pills, holes);
 		else
 			message = "INVALID KEY!        ";
 	} while (endconditions(grid, spot, key));      //while user does not want to quit
