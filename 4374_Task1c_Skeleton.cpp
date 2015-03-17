@@ -47,13 +47,22 @@ struct zombie {
 	int startx;              // the start location of the zombie
 	int starty;             
 	bool imobalized;		 // set true if the zombie cant move
+	zombie operator= (const zombie& it)
+	{
+		zombie a = it;
+		return a;
+	}
 };
 struct pill {
 	Item baseobject;         // the base class of all objects on the map
 	bool eaten;				 // set true if the will not be displayed
 	int numberOfPills;		 // number of pills on map
+	pill operator= (const pill& it)
+	{
+		pill a = it;
+		return a;
+	}
 };
-
 int main()
 {
 	//function declarations (prototypes)
@@ -257,10 +266,10 @@ void placeholeonmap(char grid[][SIZEX], vector<Item>& holes)
 
 void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies)
 {
-	zombie zom1 = { ZOMBIE, 1, 1, false, 1, 1 };
-	zombie zom2 = { ZOMBIE, SIZEX - 2, 1, false, SIZEX - 2, 1 };
-	zombie zom3 = { ZOMBIE, 1, SIZEY - 2, false, 1, SIZEY - 2 };
-	zombie zom4 = { ZOMBIE, SIZEX - 2, SIZEY - 2, false, SIZEX - 2, SIZEY - 2 };
+	zombie zom1 = { ZOMBIE, 1, 1, 1, 1 };
+	zombie zom2 = { ZOMBIE, SIZEX - 2, 1, SIZEX - 2, 1 };
+	zombie zom3 = { ZOMBIE, 1, SIZEY - 2, 1, SIZEY - 2 };
+	zombie zom4 = { ZOMBIE, SIZEX - 2, SIZEY - 2, SIZEX - 2, SIZEY - 2 };
 	zombies.push_back(zom1);
 	zombies.push_back(zom2);
 	zombies.push_back(zom3);
