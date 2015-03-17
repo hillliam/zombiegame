@@ -154,6 +154,7 @@ void placepillonmap(char grid[][SIZEX], vector<pill>& pills)
 			y = Random(SIZEY - 2); // 
 		}
 		pill pilla = { PILL, x, y };
+		cout << "placed pill at " << x << " " << y << endl;
 		pills.push_back(pilla);
 		grid[x][y] = PILL; // place it on the map	
 	}
@@ -173,6 +174,7 @@ void placeholeonmap(char grid[][SIZEX], vector<Item>& holes)
 			y = Random(SIZEY - 2); // 
 		}
 		Item hole = { HOLE, x, y };
+		cout << "placed hole at " << x << " " << y << endl;
 		grid[x][y] = HOLE;
 		holes.push_back(hole);
 	}
