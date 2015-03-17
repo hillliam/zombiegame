@@ -180,21 +180,18 @@ void placeholeonmap(char grid[][SIZEX], vector<Item>& holes)
 
 void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies)
 {
-	bool ocupiedpeace(const char gd[][SIZEX], int x, int y);
-	for (int i = 0; i != 4; i++) // place 8 pills on the map
-	{
-		int x = Random(SIZEX - 2); //
-		int y = Random(SIZEY - 2); // 
-		while (ocupiedpeace(grid, x, y))
-		{
-			Seed();
-			 x = Random(SIZEX - 2); // get new chordinates
-			 y = Random(SIZEY - 2); // 
-		}
-		zombie zom = { ZOMBIE, x, y };
-		zombies.push_back(zom);
-		grid[x][y] = PILL; // place it on the map	
-	}
+	zombie zom1 = { ZOMBIE, 1, 1 };
+	zombie zom2 = { ZOMBIE, 10, 1 };
+	zombie zom3 = { ZOMBIE, 1, 10 };
+	zombie zom4 = { ZOMBIE, 10, 10 };
+	zombies.push_back(zom1);
+	zombies.push_back(zom2);
+	zombies.push_back(zom3);
+	zombies.push_back(zom4);
+	grid[1][1] = ZOMBIE; // place it on the map	
+	grid[10][1] = ZOMBIE;
+	grid[1][10] = ZOMBIE;
+	grid[10][10] = ZOMBIE;
 }
 
 void setSpotInitialCoordinates(Item& spot)
