@@ -156,7 +156,7 @@ void placepillonmap(char grid[][SIZEX], vector<pill>& pills)
 		pill pilla = { PILL, x, y };
 		cout << "placed pill at " << x << " " << y << endl;
 		pills.push_back(pilla);
-		grid[x][y] = PILL; // place it on the map	
+		grid[y][x] = PILL; // place it on the map	
 	}
 }
 
