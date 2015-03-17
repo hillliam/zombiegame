@@ -387,7 +387,7 @@ bool haslost(player spot)
 
 bool ocupiedpeace(const char gd[][SIZEX], int x, int y)
 {
-	if (gd[x][y] == PILL || gd[x][y] == HOLE || gd[x][y] == ZOMBIE || gd[x][y] == SPOT || gd[x][y] == WALL)
+	if (gd[y][x] == PILL || gd[y][x] == HOLE || gd[y][x] == ZOMBIE || gd[y][x] == SPOT || gd[y][x] == WALL)
 		return true;
 	else
 		return false;
