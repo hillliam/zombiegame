@@ -15,12 +15,13 @@ current progress
     - [x] add spot movment
     - [x] prevent sop from leaving map
     - [x] remove life when faling in hole
-    - [ ] display number of lives
+    - [ ] player enters hole when in contact
+    - [x] display number of lives
     - [x] allow player to exit with 'q' and 'Q'
     - [x] allow player to exit when lost all lives
   - [ ] Power pills #2
     - [x] position 8 pills on the map
-    - [x] remove the pill and reward the player when they land on it
+    - [ ] remove the pill and reward the player when they land on it
     - [ ] display number of remaing pills
     - [x] exit when all pills have been eaten and all zombies have died
   - [ ] Zombies
@@ -32,10 +33,10 @@ current progress
     - [x] x removes all zombies from map
     - [x] e removes all pills from map
   - [ ] Game entry
-    - [ ] displaying the title of the game
-    - [ ] displaying the information about the group members
+    - [x] displaying the title of the game
+    - [x] displaying the information about the group members
     - [ ] displaying the current date (as DD/MM/YYYY) and time (as HH:MM::SS), in the same place, on the entry screen and while the game is being played
-    - [ ] showing a brief, friendly description of the game, including a description of how the score is calculated and the various commands available when the ’I’ key (for ‘Information'), with the <Enter> key allowing the user to return to the entry screen.
+    - [x] showing a brief, friendly description of the game, including a description of how the score is calculated and the various commands available when the ’I’ key (for ‘Information'), with the <Enter> key allowing the user to return to the entry screen.
     - [ ] starting the game when the user presses the 'P' key
     - [x] quitting the application when the user presses the 'Q' key
 	  - [ ] ignoring any other key.
