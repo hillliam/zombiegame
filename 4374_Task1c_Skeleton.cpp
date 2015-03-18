@@ -589,7 +589,7 @@ void showLives(player spot)
 { //show game options
 	SelectBackColour(clRed);
 	SelectTextColour(clYellow);
-	Gotoxy(40, 7);
+	Gotoxy(40, 9);
 	cout << spot.lives << " lives left";
 }
 
