@@ -258,7 +258,7 @@ void placeholeonmap(char grid[][SIZEX], vector<Item>& holes)
 			y = Random(SIZEY - 2); // 
 		}
 		Item hole = { HOLE, x, y };
-		cout << "placed hole at " << x << " " << y << endl;
+	//	cout << "placed hole at " << x << " " << y << endl;
 		grid[y][x] = HOLE;
 		holes.push_back(hole);
 	}
@@ -500,6 +500,7 @@ void renderGame(const char gd[][SIZEX], string mess, player spot, int zombielive
 { //display game title, messages, maze, spot and apples on screen
 	void paintGrid(const char g[][SIZEX]);
 	void showLives(const player spot);
+	void showDescription();
 	void showzomLives(const int lives);
 	void showrempill(const int pils);
 	void showTitle();
@@ -511,6 +512,7 @@ void renderGame(const char gd[][SIZEX], string mess, player spot, int zombielive
 	paintGrid(gd);
 	//display game title
 	showTitle();
+	showDescription();
 	showLives(spot);
 	//show number of zombie lives
 	showzomLives(zombielives);
@@ -544,6 +546,23 @@ void showrempill(const int pils)
 {
 
 }
+
+void showDescription()
+{
+	SelectBackColour(clRed);
+	SelectTextColour(clYellow);
+	Gotoxy(40, 2);
+	cout << "This is a game where you must escape";
+	Gotoxy(40, 3);
+	cout << "the zombies and survive. Pills mean";
+	Gotoxy(40, 4);
+	cout << "a life is gained.";
+	Gotoxy(40, 5);
+	cout << "Contact with a hole(0) or zombie(Z)";
+	Gotoxy(40, 6);
+	cout << "means a life is lost ";
+}
+
 void showTitle()
 { //display game title
 	SelectTextColour(clYellow);
@@ -552,16 +571,18 @@ void showTitle()
 	SelectBackColour(clWhite);
 	SelectTextColour(clRed);
 	Gotoxy(40, 0);
-	cout << "Pascale Vacher: March 15";
+	cout << "Oliver Parker, Liam Hill, Alex Odgen";
+	Gotoxy(40, 1);
+	cout << "1RR - COMPUTER SCIENCE";
 }
 
 void showOptions()
 { //show game options
 	SelectBackColour(clRed);
 	SelectTextColour(clYellow);
-	Gotoxy(40, 5);
+	Gotoxy(40, 7);
 	cout << "TO MOVE USE KEYBOARD ARROWS  ";
-	Gotoxy(40, 6);
+	Gotoxy(40, 8);
 	cout << "TO QUIT ENTER 'Q'   ";
 }
 void showLives(player spot)
