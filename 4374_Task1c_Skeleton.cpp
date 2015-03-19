@@ -3,6 +3,7 @@
 #include <conio.h>
 #include <string>
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
@@ -47,21 +48,11 @@ struct zombie {
 	int startx;              // the start location of the zombie
 	int starty;             
 	bool imobalized;		 // set true if the zombie cant move
-	zombie operator= (const zombie& it)
-	{
-		zombie a = it;
-		return a;
-	}
 };
 struct pill {
 	Item baseobject;         // the base class of all objects on the map
 	bool eaten;				 // set true if the will not be displayed
 	int numberOfPills;		 // number of pills on map
-	pill operator= (const pill& it)
-	{
-		pill a = it;
-		return a;
-	}
 };
 int main()
 {
@@ -72,10 +63,13 @@ int main()
 	int  getKeyPress();
 	bool endconditions(char grid[][SIZEX], player spot, int key, string& message);
 	void ApplyCheat(char grid[][SIZEX], player& spot, int key, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
-	void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
+	void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes, int zomlives);
 	void renderGame(const char g[][SIZEX], string mess, player spot, const int zomlives, const int remaingpills);
 	void endProgram();
-    int zombielives = 3;
+	string mainloop();
+	void savescore(string name, int score);
+	bool readsavedcore(string name, int score);
+    int zombielives = 3;// returns the players name
 	//local variable declarations 
 	char grid[SIZEY][SIZEX];                //grid for display
 	player spot = { SPOT };                 //Spot's symbol and position (0, 0) 
@@ -85,7 +79,7 @@ int main()
 	spot.lives = 5;
 	string message("LET'S START...      "); //current message to player
 	
-	
+	string name = mainloop();
 	initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
 	int key(' ');                         //create key to store keyboard events 
 	do {
@@ -93,52 +87,96 @@ int main()
 		message = "                    "; //reset message
 		key = getKeyPress();              //read in next keyboard event
 		if (isArrowKey(key))
-			updateGame(grid, spot, key, message,zombies, pills, holes);
+			updateGame(grid, spot, key, message,zombies, pills, holes, zombielives);
 		else if (isCheatKey(key))
 			ApplyCheat(grid, spot, key, zombies, pills, holes);
 		else
 			message = "INVALID KEY!        ";
 	} while (endconditions(grid, spot, key, message));      //while user does not want to quit
+	if (!readsavedcore(name, spot.score))
+		savescore(name, spot.score);
 	endProgram();                             //display final message
 	return 0;
 }
-
-void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes)
+string mainloop()
+{
+	return "bob";
+}
+void savescore(string name, int score)
+{
+	ofstream out(name + ".scr");
+	if (out.fail())
+		cout << "error";
+	else
+	{
+		out << score;
+	}
+	out.close();
+}
+bool readsavedcore(string name, int score)
+{
+	ifstream in(name + ".scr");
+	if (in.fail())// the file may not be found
+		cout << "error";
+	else
+	{
+		int storedscore;
+		in >> storedscore;
+		if (storedscore > score)
+			return true;
+		else
+			return false;
+	}
+	in.close();
+	return false;
+}
+void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes, int zomlives)
 {
 	void updateSpotCoordinates(const char g[][SIZEX], player& spot, int key, string& mess); // player move 
 	void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies); // zombies move
 	void updateGrid(char grid[][SIZEX], Item spot, vector<zombie> zombies, vector<pill> pills, vector<Item> holes);
 	void checkpillcolition(Item spot, vector<pill>& pills);
-	void checkzombiecolition(Item spot, vector<zombie> zombies);
+	void checkzombiecolition(Item spot, vector<zombie> zombies, int zombielives);
 
 	updateSpotCoordinates(grid, spot, key, message);    //update spot coordinates
                                                         //according to key
 	updatezombieCoordinates(grid, zombies);				// zombies move
 	// check colition 
 	checkpillcolition(spot.baseobject, pills);
-	checkzombiecolition(spot.baseobject, zombies);
+	checkzombiecolition(spot.baseobject, zombies, zomlives);
 	// this can be just passed a vector<item> made from the .baseobject of all objects needing to be renderd
 	updateGrid(grid, spot.baseobject, zombies, pills, holes);    //update grid information
 }
 void checkpillcolition(Item spot, vector<pill>& pills)
 {
+	vector<pill> newpills;
 	for (int i = 0; i != pills.size(); i++)
 	{
-		if (pills[i].baseobject.x == spot.x && pills[i].baseobject.y == spot.y)
+		if (pills[i].baseobject.x == spot.x && pills[i].baseobject.y == spot.y) // fix me removing the wrong pill
 		{
-			pills.erase(pills.begin() + i);
+			
+		}
+ 		else
+		{
+			newpills.push_back(pills[i]); 
 		}
 	}
+	pills = newpills; 
 }
-void checkzombiecolition(Item spot, vector<zombie> zombies)
+void checkzombiecolition(Item spot, vector<zombie> zombies, int zombielives)
 {
+	vector<zombie> newzombie;
 	for (int i = 0; i != zombies.size(); i++)
 	{
-		if (zombies[i].baseobject.x == spot.x && zombies[i].baseobject.y == spot.y)
+		if (zombies[i].baseobject.x == spot.x && zombies[i].baseobject.y == spot.y && zombielives == 0)
 		{
-			zombies.erase(zombies.begin() + i);
+		}
+		else
+		{
+			newzombie.push_back(zombies[i]);
 		}
 	}
+	zombies = newzombie;
 }
 void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies) // zombies move
 {
@@ -317,10 +355,10 @@ void updateGrid(char grid[][SIZEX], Item spot, vector<zombie> zombies, vector<pi
 	void placeitem(char g[][SIZEX], vector<Item> holes);
 
 	setGrid(grid);	         //reset empty grid
-	placeSpot(grid, spot);	 //set spot in grid
 	placezombies(grid, zombies); //set zombies on map
 	placepill(grid, pills);      //set pills on map
 	placeitem(grid, holes); // set the holes on the grid
+	placeSpot(grid, spot);	 //set spot in grid
 }
 
 void placepill(char g[][SIZEX], vector<pill> pills)
@@ -387,9 +425,13 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& m
 		sp.lives--;
 		break;
 	case HOLE:
+		sp.baseobject.y += dy;   //go in that Y direction
+		sp.baseobject.x += dx;   //go in that X direction
 		sp.lives--;
 		break;
 	case PILL:
+		sp.baseobject.y += dy;   //go in that Y direction
+		sp.baseobject.x += dx;   //go in that X direction
 		sp.lives++;
 		break;
 	}
