@@ -48,11 +48,20 @@ struct zombie {
 	int startx;              // the start location of the zombie
 	int starty;             
 	bool imobalized;		 // set true if the zombie cant move
+	zombie operator= (const zombie& it)
+	{
+		zombie a = it;
+		return a;
+	}
 };
 struct pill {
 	Item baseobject;         // the base class of all objects on the map
 	bool eaten;				 // set true if the will not be displayed
-	int numberOfPills;		 // number of pills on map
+	pill operator= (const pill& it)
+	{
+		pill a = it;
+		return a;
+	}
 };
 int main()
 {
