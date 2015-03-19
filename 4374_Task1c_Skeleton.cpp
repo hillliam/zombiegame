@@ -97,7 +97,7 @@ int main()
 	initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
 	int key(' ');                         //create key to store keyboard events 
 	do {
-		renderGame(grid, message, spot,zombielives, pills.size());        //render game state on screen
+		renderGame(grid, message, spot,zombies.size(), pills.size());        //render game state on screen
 		message = "                    "; //reset message
 		key = getKeyPress();              //read in next keyboard event
 		if (isArrowKey(key))
@@ -119,20 +119,24 @@ string mainloop()
 	void showTitle();
 	void showOptions();
 	void showmenu();
-	int getscore();
+	int getscore(string);
+	int  getKeyPress();
+	void clearMessage();
 	void showscore(const int score);
 	string name = "";
-	char key;
-	while (key != PLAY)
+	char key = ' ';
+	while (toupper(key) != PLAY)
 	{
 		showMessage("please enter your name");
 		showTitle();
 		showOptions();
 		cin >> name;
-		int previousscore = getscore();
+		clearMessage();
+		int previousscore = getscore(name);
 		showscore(previousscore);
 		showmenu();
-		cin >> key;
+		key = getKeyPress();
+		key = toupper(key);
 		if (key == INFO)
 			showDescription();
 	}
@@ -168,19 +172,16 @@ bool readsavedcore(string name, int score)
 }
 int getscore(string name)
 {
-	if (fileExist(name + ".scr"))
+	ifstream in(name + ".scr");
+	if (in.fail())// the file may not be found
+		cout << "error";
+	else
 	{
-		ifstream in(name + ".scr");
-		if (in.fail())// the file may not be found
-			cout << "error";
-		else
-		{
-			int storedscore;
-			in >> storedscore;
-			return storedscore;
-		}
-		in.close();
+		int storedscore;
+		in >> storedscore;
+		return storedscore;
 	}
+	in.close();
 	return -1;
 }
 void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes, int& zomlives)
@@ -618,6 +619,7 @@ void renderGame(const char gd[][SIZEX], string mess, player spot, int zombielive
 	void showrempill(const int pils);
 	void showTitle();
 	void showOptions();
+	void showtime();
 	void showMessage(string);
 	void showname(const string name);
 
@@ -627,6 +629,7 @@ void renderGame(const char gd[][SIZEX], string mess, player spot, int zombielive
 	//display game title
 	showTitle();
 	showDescription();
+	showtime();
 	showLives(spot);
 	//show number of zombie lives
 	showzomLives(zombielives);
