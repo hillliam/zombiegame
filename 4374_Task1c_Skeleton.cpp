@@ -4,11 +4,13 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <Windows.h>
 
 using namespace std;
 
 #include "RandomUtils.h"
 #include "ConsoleUtils.h"
+#include "TimeUtils.h"
 
 const int SIZEY(12);         //vertical dimension
 const int SIZEX(20);         //horizontal dimension
@@ -28,6 +30,9 @@ const int  LEFT(75);         //left arrow
 const char FREEZ('F');        //stop the zombies moving
 const char EXTERMINATE('X');  //remove all zombies
 const char EAT('E');         //remove all pills
+
+const char PLAY('P');		//play buttion
+const char INFO('I');
 
 const char QUIT('Q');        //end the game
 
@@ -113,13 +118,24 @@ string mainloop()
 	void showDescription();
 	void showTitle();
 	void showOptions();
+	void showmenu();
+	int getscore();
+	void showscore(const int score);
 	string name = "";
-	showMessage("welcome to this game please enter your name");
-	showDescription();
-	showTitle();
-	showOptions();
-	cin >> name;
-
+	char key;
+	while (key != PLAY)
+	{
+		showMessage("please enter your name");
+		showTitle();
+		showOptions();
+		cin >> name;
+		int previousscore = getscore();
+		showscore(previousscore);
+		showmenu();
+		cin >> key;
+		if (key == INFO)
+			showDescription();
+	}
 	return name;
 }
 void savescore(string name, int score)
@@ -149,6 +165,23 @@ bool readsavedcore(string name, int score)
 	}
 	in.close();
 	return false;
+}
+int getscore(string name)
+{
+	if (fileExist(name + ".scr"))
+	{
+		ifstream in(name + ".scr");
+		if (in.fail())// the file may not be found
+			cout << "error";
+		else
+		{
+			int storedscore;
+			in >> storedscore;
+			return storedscore;
+		}
+		in.close();
+	}
+	return -1;
 }
 void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes, int& zomlives)
 {
@@ -706,4 +739,34 @@ void endProgram()
 	//hold output screen until a keyboard key is hit
 	Gotoxy(40, 9);
 	system("pause");
+}
+
+void showmenu()
+{
+	SelectBackColour(clRed);
+	SelectTextColour(clYellow);
+	Gotoxy(40, 10);
+	cout << "press p to play";
+	Gotoxy(40, 11);
+	cout << "press i to get infomaion";
+
+}
+
+void showscore(const int score)
+{
+	SelectBackColour(clRed);
+	SelectTextColour(clYellow);
+	Gotoxy(40, 15);
+	cout << "player score: " << score;
+
+}
+
+void showtime()
+{
+	SelectBackColour(clRed);
+	SelectTextColour(clYellow);
+	Gotoxy(40, 11);
+	cout << GetDate();
+	Gotoxy(40, 12);
+	cout << GetTime();
 }
