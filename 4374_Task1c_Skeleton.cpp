@@ -6,11 +6,12 @@
 #include <fstream>
 #include <Windows.h>
 
-using namespace std;
-
 #include "RandomUtils.h"
 #include "ConsoleUtils.h"
 #include "TimeUtils.h"
+
+using namespace std;
+
 
 const int SIZEY(12);         //vertical dimension
 const int SIZEX(20);         //horizontal dimension
@@ -293,13 +294,8 @@ void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, int
 					vector<zombie> newzombie;
 					for (int j = 0; j != zombies.size(); j++)
 					{
-						if (i == j)
-						{
-						}
-						else
-						{
+						if (i != j)		
 							newzombie.push_back(zombies[j]);
-						}
 					}
 					zombies = newzombie;
 				}
