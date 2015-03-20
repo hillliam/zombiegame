@@ -47,6 +47,7 @@ struct player {
 	int lives;               // the number of lives the player has
 	int score;               // the score the player has acheaved
 	bool hascheated;		 // set true if the user has cheated
+	bool isProtected = false;// will be used for magic pill
 };
 
 struct zombie {
