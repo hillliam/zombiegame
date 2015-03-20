@@ -119,6 +119,7 @@ string mainloop()
 	void showTitle();
 	void showOptions();
 	void showmenu();
+	void showgametitle();
 	int getscore(string);
 	int  getKeyPress();
 	void clearMessage();
@@ -129,6 +130,7 @@ string mainloop()
 	{
 		showMessage("please enter your name");
 		showTitle();
+		showgametitle();
 		showOptions();
 		cin >> name;
 		clearMessage();
@@ -784,4 +786,16 @@ void showtime()
 	cout << GetDate();
 	Gotoxy(40, 12);
 	cout << GetTime();
+}
+
+void showgametitle()
+{
+	SelectBackColour(clBlue);
+	SelectTextColour(clYellow);
+	Gotoxy(2, 4);
+	cout << "-----------------------";
+	Gotoxy(2, 5);
+	cout << "| SPOT AND ZOMBIE GAME |";
+	Gotoxy(2, 6);
+	cout << "-----------------------";
 }
