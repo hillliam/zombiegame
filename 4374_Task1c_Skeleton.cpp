@@ -114,7 +114,7 @@ int main()
 }
 string mainloop()
 {
-	void showMessage(string);
+	void requestname();
 	void showDescription();
 	void showTitle();
 	void showOptions();
@@ -128,10 +128,10 @@ string mainloop()
 	char key = ' ';
 	while (toupper(key) != PLAY)
 	{
-		showMessage("please enter your name");
 		showTitle();
 		showgametitle();
 		showOptions();
+		requestname();
 		cin >> name;
 		clearMessage();
 		int previousscore = getscore(name);
@@ -793,9 +793,16 @@ void showgametitle()
 	SelectBackColour(clBlue);
 	SelectTextColour(clYellow);
 	Gotoxy(2, 4);
-	cout << "-----------------------";
+	cout << "------------------------";
 	Gotoxy(2, 5);
 	cout << "| SPOT AND ZOMBIE GAME |";
 	Gotoxy(2, 6);
-	cout << "-----------------------";
+	cout << "------------------------";
+}
+void requestname()
+{
+	SelectBackColour(clBlue);
+	SelectTextColour(clYellow);
+	Gotoxy(2, 11);
+	cout << "please enter your name: ";
 }
