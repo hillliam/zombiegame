@@ -1,4 +1,4 @@
-[![Build Status](https://magnum.travis-ci.com/hillliam/zombiegame.svg?token=Y1339iZFApz4EjDASsTe&branch=master)](https://magnum.travis-ci.com/hillliam/zombiegame)
+﻿[![Build Status](https://magnum.travis-ci.com/hillliam/zombiegame.svg?token=Y1339iZFApz4EjDASsTe&branch=master)](https://magnum.travis-ci.com/hillliam/zombiegame)
 
 
 # ZombieGame
@@ -37,7 +37,7 @@ current progress
     - [x] displaying the information about the group members
     - [x] displaying the current date (as DD/MM/YYYY) and time (as HH:MM::SS), in the same place, on the entry screen and while the game is being played
     - [x] showing a brief, friendly description of the game, including a description of how the score is calculated and the various commands available when the ’I’ key (for ‘Information'), with the <Enter> key allowing the user to return to the entry screen.
-    - [ ] starting the game when the user presses the 'P' key
+    - [x] starting the game when the user presses the 'P' key
     - [x] quitting the application when the user presses the 'Q' key
 	  - [x] ignoring any other key.
   - [x] Player name and score  #4 @done
