@@ -59,6 +59,7 @@ struct zombie {
 		return a;
 	}
 };
+
 struct pill {
 	Item baseobject;         // the base class of all objects on the map
 	bool eaten;				 // set true if the will not be displayed
@@ -68,6 +69,7 @@ struct pill {
 		return a;
 	}
 };
+
 int main()
 {
 	//function declarations (prototypes)
@@ -112,6 +114,7 @@ int main()
 	endProgram();                             //display final message
 	return 0;
 }
+
 string mainloop()
 {
 	void requestname();
@@ -119,6 +122,7 @@ string mainloop()
 	void showTitle();
 	void showOptions();
 	void showmenu();
+	void showtime();
 	void showgametitle();
 	int getscore(string);
 	int  getKeyPress();
@@ -131,6 +135,7 @@ string mainloop()
 		showTitle();
 		showgametitle();
 		showOptions();
+		showtime();
 		requestname();
 		cin >> name;
 		clearMessage();
@@ -144,6 +149,7 @@ string mainloop()
 	}
 	return name;
 }
+
 void savescore(string name, int score)
 {
 	ofstream out(name + ".scr");
@@ -155,6 +161,7 @@ void savescore(string name, int score)
 	}
 	out.close();
 }
+
 bool readsavedcore(string name, int score)
 {
 	ifstream in(name + ".scr");
@@ -172,6 +179,7 @@ bool readsavedcore(string name, int score)
 	in.close();
 	return false;
 }
+
 int getscore(string name)
 {
 	ifstream in(name + ".scr");
@@ -186,6 +194,7 @@ int getscore(string name)
 	in.close();
 	return -1;
 }
+
 void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes, int& zomlives)
 {
 	void updateSpotCoordinates(const char g[][SIZEX], player& spot, int key, string& mess); // player move 
@@ -203,6 +212,7 @@ void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vect
 	// this can be just passed a vector<item> made from the .baseobject of all objects needing to be renderd
 	updateGrid(grid, spot.baseobject, zombies, pills, holes);    //update grid information
 }
+
 void checkpillcolition(Item spot, vector<pill>& pills)
 {
 	vector<pill> newpills;
@@ -219,6 +229,7 @@ void checkpillcolition(Item spot, vector<pill>& pills)
 	}
 	pills = newpills; 
 }
+
 void checkzombiecolition(vector<zombie> zombies, int& zombielives)
 {
 	vector<zombie> newzombie;
@@ -235,6 +246,7 @@ void checkzombiecolition(vector<zombie> zombies, int& zombielives)
 	}
 	zombies = newzombie;
 }
+
 void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, int& zombielives) // zombies move
 {
 	void getrandommove(int& x, int& y);
@@ -296,6 +308,7 @@ void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, int
 		}
 	}
 }
+
 void ApplyCheat(char grid[][SIZEX], player& spot, int key, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes)
 {
 	if (key == EAT)//remove all pils from the grid
@@ -574,6 +587,7 @@ bool haswon(const char gd[][SIZEX], string& message)
 	message = "there are no zombies or pils on the map";
 	return true;
 }
+
 bool endconditions(char grid[][SIZEX], player spot, int key, string& message)
 {
 	bool haswon(const char grid[][SIZEX], string& message);
@@ -671,6 +685,7 @@ void paintGrid(const char g[][SIZEX])
 		cout << endl;
 	} //end of row-loop
 }
+
 void showzomLives(const int lives)
 {
 	SelectBackColour(clRed);
@@ -678,6 +693,7 @@ void showzomLives(const int lives)
 	Gotoxy(40, 11);
 	cout << "zombie lives: " << lives;
 }
+
 void showrempill(const int pils)
 {
 	SelectBackColour(clRed);
@@ -715,6 +731,7 @@ void showTitle()
 	Gotoxy(40, 1);
 	cout << "1RR - COMPUTER SCIENCE";
 }
+
 void showname(const string name)
 {
 	SelectBackColour(clRed);
@@ -722,6 +739,7 @@ void showname(const string name)
 	Gotoxy(40, 11);
 	cout << "your name: " << name;
 }
+
 void showOptions()
 { //show game options
 	SelectBackColour(clRed);
@@ -731,6 +749,7 @@ void showOptions()
 	Gotoxy(40, 8);
 	cout << "TO QUIT ENTER 'Q'   ";
 }
+
 void showLives(player spot)
 { //show game options
 	SelectBackColour(clRed);
@@ -799,6 +818,7 @@ void showgametitle()
 	Gotoxy(2, 6);
 	cout << "------------------------";
 }
+
 void requestname()
 {
 	SelectBackColour(clBlue);
