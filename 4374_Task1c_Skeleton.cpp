@@ -644,12 +644,26 @@ void renderGame(const char gd[][SIZEX], string mess, player spot, int zombielive
 void paintGrid(const char g[][SIZEX])
 {
 	SelectBackColour(clBlack);
-	SelectTextColour(clWhite);
 	Gotoxy(0, 2);
 	for (int row(0); row < SIZEY; ++row)      //for each row (vertically)
 	{
 		for (int col(0); col < SIZEX; ++col)  //for each column (horizontally)
 		{
+			switch (g[row][col])
+			{
+			case SPOT:
+			case WALL:
+				SelectTextColour(clWhite);
+				break;
+			case ZOMBIE:
+				SelectTextColour(clGreen);
+				break;
+			case HOLE:
+				SelectTextColour(clRed);
+				break;
+			case PILL:
+				SelectTextColour(clYellow);
+			}
 			cout << g[row][col];              //output cell content
 		} //end of col-loop
 		cout << endl;
