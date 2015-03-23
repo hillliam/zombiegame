@@ -374,7 +374,7 @@ void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, v
 	void placeSpot(char gr[][SIZEX], Item spot);
 	void placepillonmap(char grid[][SIZEX], vector<pill>& pills, int levelChoice);
 	void placemagicpills(char grid[][SIZEX], vector<pill>&pills);
-	void placeholeonmap(char grid[][SIZEX], vector<Item>& holes);
+	void placeholeonmap(char grid[][SIZEX], vector<Item>& holes, int levelChoice);
 	void placewallsonmap(char grid[][SIZEX], vector<Item>& holes);
 	void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies);
 
@@ -385,7 +385,7 @@ void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, v
 	placewallsonmap(grid, holes);	   // place walls on the map
 	placepillonmap(grid, pills, levelChoice);	   // place pills on the map
 	placemagicpills(grid, pills);
-	placeholeonmap(grid, holes);       // place holes on the map
+	placeholeonmap(grid, holes, levelChoice);       // place holes on the map
 	placezombiesonmap(grid, zombies);  // place the zombies on the map
 }
 
@@ -423,7 +423,7 @@ void placepillonmap(char grid[][SIZEX], vector<pill>& pills, int levelChoice)
 		occupyPills(numberOfPills, grid, pills);
 		break;
 	case 3:
-		numberOfPills = 3;
+		numberOfPills = 2;
 		occupyPills(numberOfPills, grid, pills);
 		break;
 	}
@@ -471,10 +471,31 @@ void placemagicpills(char grid[][SIZEX], vector<pill>& pills)
 }
 
 
-void placeholeonmap(char grid[][SIZEX], vector<Item>& holes)
+void placeholeonmap(char grid[][SIZEX], vector<Item>& holes, int levelChoice)
+{
+	int numberOfHoles;
+	void occupyHoles(char grid[][SIZEX], vector<Item>& holes, int numberOfHoles);
+	switch (levelChoice)
+	{
+	case 1:
+		numberOfHoles = 12;
+		occupyHoles(grid, holes, numberOfHoles);
+		break;
+	case 2:
+		numberOfHoles = 5;
+		occupyHoles(grid, holes, numberOfHoles);
+		break;
+	case 3:
+		numberOfHoles = 2;
+		occupyHoles(grid, holes, numberOfHoles);
+		break;
+	}
+}
+
+void occupyHoles(char grid[][SIZEX], vector<Item>& holes, int numberOfHoles)
 {
 	bool ocupiedpeace(const char gd[][SIZEX], int x, int y);
-	for (int i = 0; i != 12; i++) // place 12 holes on the map
+	for (int i = 0; i != numberOfHoles; i++) // place 12 holes on the map
 	{
 		int x = Random(SIZEX - 2); //
 		int y = Random(SIZEY - 2); // 
