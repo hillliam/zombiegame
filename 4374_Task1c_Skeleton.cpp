@@ -85,7 +85,7 @@ int main()
 	int  getKeyPress();
 	bool endconditions(char grid[][SIZEX], player spot, int key, string& message);
 	void ApplyCheat(char grid[][SIZEX], player& spot, int key, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
-	void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes, int& zomlives);
+	void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes, int& zomlives, int levelChoice);
 	void renderGame(const char g[][SIZEX], string mess, player spot, const int zomlives, const int remaingpills);
 	void endProgram();
 	string mainloop();
@@ -125,7 +125,7 @@ int main()
 		message = "                    "; //reset message
 		key = getKeyPress();              //read in next keyboard event
 		if (isArrowKey(key))
-			updateGame(grid, spot, key, message,zombies, pills, holes, zombielives);
+			updateGame(grid, spot, key, message,zombies, pills, holes, zombielives, levelChoice);
 		else if (isCheatKey(key))
 			ApplyCheat(grid, spot, key, zombies, pills, holes);
 		else
@@ -228,15 +228,15 @@ int getscore(string name)
 	return -1;
 }
 
-void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes, int& zomlives)
+void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes, int& zomlives, int levelChoice)
 {
-	void updateSpotCoordinates(const char g[][SIZEX], player& spot, int key, string& mess); // player move 
+	void updateSpotCoordinates(const char g[][SIZEX], player& spot, int key, string& mess, int levelChoice); // player move 
 	void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, int& zomlives); // zombies move
 	void updateGrid(char grid[][SIZEX], Item spot, vector<zombie> zombies, vector<pill> pills, vector<Item> holes);
 	void checkpillcolition(Item spot, vector<pill>& pills);
 	void checkzombiecolition(player spot, vector<zombie> zombies, int& zombielives);
 
-	updateSpotCoordinates(grid, spot, key, message);    //update spot coordinates
+	updateSpotCoordinates(grid, spot, key, message, levelChoice);    //update spot coordinates
                                                         //according to key
 	updatezombieCoordinates(grid, zombies, zomlives);				// zombies move
 	// check colition 
@@ -541,7 +541,7 @@ void placezombies(char g[][SIZEX], vector<zombie> zombies)
 	}
 }
 
-void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& mess)
+void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& mess, int levelChoice)
 {
 	void setKeyDirection(int k, int& dx, int& dy);
 
@@ -601,7 +601,19 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& m
 		sp.baseobject.y += dy;   //go in that Y direction
 		sp.baseobject.x += dx;   //go in that X direction
 		sp.isProtected = true;	 // protect the player
-		sp.protectedcount = 10;  // set number of levels to protect
+		switch (levelChoice)
+		{
+		case 1:
+			sp.protectedcount = 10;// set number of levels to protect
+			break;
+		case 2:
+			sp.protectedcount = 8;// set number of levels to protect
+			break;
+		case 3:
+			sp.protectedcount = 5;// set number of levels to protect
+			break;
+		}
+		  
 		break;
 	}
 }
