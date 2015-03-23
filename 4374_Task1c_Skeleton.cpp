@@ -82,7 +82,7 @@ int main()
 	void ApplyCheat(char grid[][SIZEX], player& spot, int key, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
 	void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes, int& zomlives);
 	void renderGame(const char g[][SIZEX], string mess, player spot, const int zomlives, const int remaingpills);
-	void endProgram();
+	void endProgram(string message);
 	string mainloop();
 	void savescore(string name, int score);
 	bool readsavedcore(string name, int score);
@@ -112,7 +112,7 @@ int main()
 	} while (endconditions(grid, spot, key, message));      //while user does not want to quit
 	if (!readsavedcore(name, spot.score))
 		savescore(name, spot.score);
-	endProgram();                             //display final message
+	endProgram(message);                             //display final message
 	return 0;
 }
 
@@ -762,12 +762,12 @@ void showMessage(string m)
 	cout << m;	//display current message
 }
 
-void endProgram()
+void endProgram(string message)
 { //end program with appropriate message
 	SelectBackColour(clBlack);
 	SelectTextColour(clYellow);
 	Gotoxy(40, 8);
-	cout << "PLAYER QUITS!          ";
+	cout << message;
 	//hold output screen until a keyboard key is hit
 	Gotoxy(40, 9);
 	system("pause");
