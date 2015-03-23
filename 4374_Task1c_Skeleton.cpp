@@ -79,7 +79,7 @@ struct pill {
 int main()
 {
 	//function declarations (prototypes)
-	void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, vector<Item>& holes, vector<pill>& pills);
+	void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, vector<Item>& holes, vector<pill>& pills, int levelChoice);
 	bool isArrowKey(int k);
 	bool isCheatKey(int k);
 	int  getKeyPress();
@@ -118,7 +118,7 @@ int main()
 		break;
 	}
 	
-	initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
+	initialiseGame(grid, spot, zombies, holes, pills, levelChoice);  //initialise grid (incl. walls and spot)
 	int key(' ');                         //create key to store keyboard events 
 	do {
 		renderGame(grid, message, spot,zombies.size(), pills.size());        //render game state on screen
@@ -367,12 +367,12 @@ void getrandommove(int& x, int& y)
 //----- initialise game state
 //---------------------------------------------------------------------------
 
-void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, vector<Item>& holes, vector<pill>& pills)
+void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, vector<Item>& holes, vector<pill>& pills, int levelChoice)
 { //initialise grid and place spot in middle
 	void setGrid(char[][SIZEX]);
 	void setSpotInitialCoordinates(Item& spot);
 	void placeSpot(char gr[][SIZEX], Item spot);
-	void placepillonmap(char grid[][SIZEX], vector<pill>& pills);
+	void placepillonmap(char grid[][SIZEX], vector<pill>& pills, int levelChoice);
 	void placemagicpills(char grid[][SIZEX], vector<pill>&pills);
 	void placeholeonmap(char grid[][SIZEX], vector<Item>& holes);
 	void placewallsonmap(char grid[][SIZEX], vector<Item>& holes);
@@ -383,7 +383,7 @@ void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, v
 	setGrid(grid);                     //reset empty grid
 	placeSpot(grid, spot.baseobject);  //set spot in grid
 	placewallsonmap(grid, holes);	   // place walls on the map
-	placepillonmap(grid, pills);	   // place pills on the map
+	placepillonmap(grid, pills, levelChoice);	   // place pills on the map
 	placemagicpills(grid, pills);
 	placeholeonmap(grid, holes);       // place holes on the map
 	placezombiesonmap(grid, zombies);  // place the zombies on the map
@@ -408,10 +408,32 @@ void placewallsonmap(char grid[][SIZEX], vector<Item>& holes)
 	}
 }
 
-void placepillonmap(char grid[][SIZEX], vector<pill>& pills)
+void placepillonmap(char grid[][SIZEX], vector<pill>& pills, int levelChoice)
+{
+	void occupyPills(int numberOfPills, char grid[][SIZEX], vector<pill>& pills);
+	int numberOfPills;
+	switch (levelChoice)
+	{
+	case 1:
+		numberOfPills = 8;
+		occupyPills(numberOfPills, grid, pills);
+		break;
+	case 2:
+		numberOfPills = 5;
+		occupyPills(numberOfPills, grid, pills);
+		break;
+	case 3:
+		numberOfPills = 3;
+		occupyPills(numberOfPills, grid, pills);
+		break;
+	}
+	
+}
+
+void occupyPills(int numberOfPills, char grid[][SIZEX], vector<pill>& pills)
 {
 	bool ocupiedpeace(const char gd[][SIZEX], int x, int y);
-	for (int i = 0; i != 8; i++) // place 8 pills on the map
+	for (int i = 0; i != numberOfPills; i++) // place 8 pills on the map
 	{
 		int x = Random(SIZEX - 2); //
 		int y = Random(SIZEY - 2); // 
@@ -422,14 +444,16 @@ void placepillonmap(char grid[][SIZEX], vector<pill>& pills)
 			y = Random(SIZEY - 2); // 
 		}
 		pill pilla = { PILL, x, y };
+		cout << "placed pill at " << x << " " << y << endl;
 		pills.push_back(pilla);
 		grid[y][x] = PILL; // place it on the map	
 	}
-	
 }
+
 
 void placemagicpills(char grid[][SIZEX], vector<pill>& pills)
 {
+	bool ocupiedpeace(const char gd[][SIZEX], int x, int y);
 	for (int i = 0; i != 4; i++) // place 4 pills on the map
 	{
 		int x = Random(SIZEX - 2); //
