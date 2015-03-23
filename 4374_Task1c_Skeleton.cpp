@@ -37,6 +37,9 @@ const char EAT('E');         //remove all pills
 const char PLAY('P');		//play buttion
 const char INFO('I');
 
+const char SAVE('s');		// save key
+const char LOAD('l');		// load key
+
 const char QUIT('Q');        //end the game
 
 struct Item {
@@ -82,12 +85,16 @@ int main()
 	void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, vector<Item>& holes, vector<pill>& pills, int levelChoice);
 	bool isArrowKey(int k);
 	bool isCheatKey(int k);
+	bool issaveKey(int k);
+	bool isloadKey(int k);
 	int  getKeyPress();
 	bool endconditions(char grid[][SIZEX], player spot, int key, string& message);
 	void ApplyCheat(char grid[][SIZEX], player& spot, int key, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
 	void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes, int& zomlives, int levelChoice);
 	void renderGame(const char g[][SIZEX], string mess, player spot, const int zomlives, const int remaingpills);
 	void endProgram();
+	void savegame(string name, player spot, vector<zombie> zombies, vector<pill> pills, vector<Item> holes, int zomlives);
+	void loadgame(string name, player& spot, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes, int& zomlives);
 	string mainloop();
 	void savescore(string name, int score);
 	bool readsavedcore(string name, int score);
@@ -128,6 +135,10 @@ int main()
 			updateGame(grid, spot, key, message,zombies, pills, holes, zombielives, levelChoice);
 		else if (isCheatKey(key))
 			ApplyCheat(grid, spot, key, zombies, pills, holes);
+		else if (issaveKey(key))
+			savegame(name, spot, zombies, pills, holes, zombielives);
+		else if (isloadKey(key))
+			loadgame(name, spot, zombies, pills, holes, zombielives);
 		else
 			message = "INVALID KEY!        ";
 	} while (endconditions(grid, spot, key, message));      //while user does not want to quit
@@ -703,6 +714,88 @@ int getKeyPress()
 	return(keyPressed);   
 }
 
+void savegame(string name, player spot, vector<zombie> zombies, vector<pill> pills, vector<Item> holes, int zomlives)
+{
+	ofstream writer(name + ".save");
+	writer << spot.baseobject.x << endl;
+	writer << spot.baseobject.y << endl;
+	writer << spot.hascheated << endl;
+	writer << spot.isProtected << endl;
+	writer << spot.lives << endl;
+	writer << spot.protectedcount << endl;
+	writer << spot.score << endl;
+	writer << zombies.size() << endl;
+	for (zombie a : zombies)
+	{
+		writer << a.baseobject.x << endl;
+		writer << a.baseobject.y << endl;
+		writer << a.imobalized << endl;
+		writer << a.startx << endl;
+		writer << a.starty << endl;
+	}
+	writer << pills.size() << endl;
+	for (pill a : pills)
+	{
+		writer << a.baseobject.x << endl;
+		writer << a.baseobject.y << endl;
+		writer << a.eaten << endl;
+		writer << a.magic << endl;
+	}
+	writer << holes.size() << endl;
+	for (Item a : holes)
+	{
+		writer << a.x << endl;
+		writer << a.y << endl;
+	}
+	writer << zomlives << endl;
+}
+
+void loadgame(string name, player& spot, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes, int& zomlives)
+{
+	zombies.clear();
+	pills.clear();
+	holes.clear();
+	ifstream reader(name + ".save");
+	reader >> spot.baseobject.x;
+	reader >> spot.baseobject.y;
+	reader >> spot.hascheated;
+	reader >> spot.isProtected;
+	reader >> spot.lives;
+	reader >> spot.protectedcount;
+	reader >> spot.score;
+	int numofzom;
+	reader >> numofzom;
+	for (int i = 0; i != numofzom; i++)
+	{
+		zombie a = { ZOMBIE };
+		reader >> a.baseobject.x;
+		reader >> a.baseobject.y;
+		reader >> a.imobalized;
+		reader >> a.startx;
+		reader >> a.starty;
+		zombies.push_back(a);
+	}
+	reader >> numofzom;
+	for (int i = 0; i != numofzom; i++)
+	{
+		pill a = { PILL };
+		reader >> a.baseobject.x;
+		reader >> a.baseobject.y;
+		reader >> a.eaten;
+		reader >> a.magic;
+		pills.push_back(a);
+	}
+	reader >> numofzom;
+	for (int i = 0; i != numofzom; i++)
+	{
+		Item a = { HOLE };
+		reader >> a.x;
+		reader >> a.y;
+		holes.push_back(a);
+	}
+	reader >> zomlives;
+}
+
 bool isArrowKey(int key)
 {
 	return ((key == LEFT) || (key == RIGHT) || (key == UP) || (key == DOWN));
@@ -759,6 +852,22 @@ bool haslost(player spot, string& message)
 bool ocupiedpeace(const char gd[][SIZEX], int x, int y)
 {
 	if (gd[y][x] == PILL || gd[y][x] == HOLE || gd[y][x] == ZOMBIE || gd[y][x] == SPOT || gd[y][x] == WALL)
+		return true;
+	else
+		return false;
+}
+
+bool issaveKey(int k)
+{
+	if (k == SAVE)
+		return true;
+	else
+		return false;
+}
+
+bool isloadKey(int k)
+{
+	if (k == LOAD)
 		return true;
 	else
 		return false;
