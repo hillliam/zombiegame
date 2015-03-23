@@ -346,15 +346,36 @@ void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, v
 	void placeSpot(char gr[][SIZEX], Item spot);
 	void placepillonmap(char grid[][SIZEX], vector<pill>& pills);
 	void placeholeonmap(char grid[][SIZEX], vector<Item>& holes);
+	void placewallsonmap(char grid[][SIZEX], vector<Item>& holes);
 	void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies);
 
 	Seed();                            //seed reandom number generator
 	setSpotInitialCoordinates(spot.baseobject);//initialise spot position
 	setGrid(grid);                     //reset empty grid
 	placeSpot(grid, spot.baseobject);  //set spot in grid
+	placewallsonmap(grid, holes);	   // place walls on the map
 	placepillonmap(grid, pills);	   // place pills on the map
 	placeholeonmap(grid, holes);       // place holes on the map
 	placezombiesonmap(grid, zombies);  // place the zombies on the map
+}
+
+void placewallsonmap(char grid[][SIZEX], vector<Item>& holes)
+{
+	bool ocupiedpeace(const char gd[][SIZEX], int x, int y);
+	for (int i = 0; i != 12; i++) // place 12 holes on the map
+	{
+		int x = Random(SIZEX - 2); //
+		int y = Random(SIZEY - 2); // 
+		while (ocupiedpeace(grid, x, y))
+		{
+			Seed();
+			x = Random(SIZEX - 2); // get new chordinates
+			y = Random(SIZEY - 2); // 
+		}
+		Item wall = { WALL, x, y };
+		grid[y][x] = WALL;
+		holes.push_back(wall);
+	}
 }
 
 void placepillonmap(char grid[][SIZEX], vector<pill>& pills)
