@@ -251,7 +251,8 @@ void checkzombiecolition(vector<zombie> zombies, int& zombielives)
 void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, int& zombielives) // zombies move
 {
 	void getrandommove(int& x, int& y);
-	for (int i = 0; i != zombies.size(); i++)
+	int amount = 0;
+	for (int i = 0; i < (zombies.size() - amount); i++)
 	{
 		if (zombies[i].imobalized == false)
 		{
@@ -294,8 +295,10 @@ void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, int
 					vector<zombie> newzombie;
 					for (int j = 0; j != zombies.size(); j++)
 					{
-						if (i != j)		
+						if (i != j)
 							newzombie.push_back(zombies[j]);
+						else
+							amount++;
 					}
 					zombies = newzombie;
 				}
