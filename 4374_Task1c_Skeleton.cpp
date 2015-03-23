@@ -22,6 +22,7 @@ const char WALL('#');        //border
 const char HOLE('O');        //hole
 const char ZOMBIE('Z');      //zombie
 const char PILL('.');        //pill (used in basic version insted of structure)
+const char MPILL('-');		 // magic pills  
 
 const int  UP(72);           //up arrow
 const int  DOWN(80);         //down arrow
@@ -47,7 +48,8 @@ struct player {
 	int lives;               // the number of lives the player has
 	int score;               // the score the player has acheaved
 	bool hascheated;		 // set true if the user has cheated
-	bool isProtected = false;// will be used for magic pill
+	bool isProtected;		 // will be used for magic pill
+	int protectedcount;		 // protection only lasts 10 turns
 };
 
 struct zombie {
@@ -63,8 +65,9 @@ struct zombie {
 };
 
 struct pill {
-	Item baseobject;         // the base class of all objects on the map
+	Item baseobject;         // the base class of all ob jects on the map
 	bool eaten;				 // set true if the will not be displayed
+	bool magic;				 // set if the pill is magical
 	pill operator= (const pill& it)
 	{
 		pill a = it;
@@ -127,7 +130,7 @@ string mainloop()
 	void showtime();
 	void showgametitle();
 	int getscore(string);
-	int  getKeyPress();
+	int getKeyPress();
 	void clearMessage();
 	void showscore(const int score);
 	string name = "";
@@ -203,14 +206,14 @@ void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vect
 	void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, int& zomlives); // zombies move
 	void updateGrid(char grid[][SIZEX], Item spot, vector<zombie> zombies, vector<pill> pills, vector<Item> holes);
 	void checkpillcolition(Item spot, vector<pill>& pills);
-	void checkzombiecolition(vector<zombie> zombies, int& zombielives);
+	void checkzombiecolition(player spot, vector<zombie> zombies, int& zombielives);
 
 	updateSpotCoordinates(grid, spot, key, message);    //update spot coordinates
                                                         //according to key
 	updatezombieCoordinates(grid, zombies, zomlives);				// zombies move
 	// check colition 
 	checkpillcolition(spot.baseobject, pills);
-	checkzombiecolition(zombies, zomlives);
+	checkzombiecolition(spot, zombies, zomlives);
 	// this can be just passed a vector<item> made from the .baseobject of all objects needing to be renderd
 	updateGrid(grid, spot.baseobject, zombies, pills, holes);    //update grid information
 }
@@ -232,7 +235,7 @@ void checkpillcolition(Item spot, vector<pill>& pills)
 	pills = newpills; 
 }
 
-void checkzombiecolition(vector<zombie> zombies, int& zombielives)
+void checkzombiecolition(player spot, vector<zombie> zombies, int& zombielives)
 {
 	vector<zombie> newzombie;
 	for (int i = 1; i != zombies.size(); i++)
@@ -240,6 +243,12 @@ void checkzombiecolition(vector<zombie> zombies, int& zombielives)
 		if (zombies[i - 1].baseobject.x == zombies[i].baseobject.x && zombies[i - 1].baseobject.y == zombies[i].baseobject.y && zombielives <= 0)
 		{
 
+		}
+		else if (zombies[i].baseobject.x == spot.baseobject.x && zombies[i].baseobject.y == spot.baseobject.y && spot.isProtected && zombielives <= 0)
+		{
+			zombies[i].baseobject.x = zombies[i].startx;
+			zombies[i].baseobject.y = zombies[i].starty;
+			newzombie.push_back(zombies[i]);
 		}
 		else
 		{
@@ -271,7 +280,7 @@ void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, int
 				break;
 			case SPOT:// dont know if needex 
 				break;
-			case ZOMBIE:
+			case  ZOMBIE:
 				zombies[i].baseobject.x = zombies[i].startx;
 				zombies[i].baseobject.y = zombies[i].starty;
 				for (zombie& item : zombies)
@@ -364,6 +373,20 @@ void placepillonmap(char grid[][SIZEX], vector<pill>& pills)
 		pill pilla = { PILL, x, y };
 		pills.push_back(pilla);
 		grid[y][x] = PILL; // place it on the map	
+	}
+	for (int i = 0; i != 4; i++) // place 4 pills on the map
+	{
+		int x = Random(SIZEX - 2); //
+		int y = Random(SIZEY - 2); // 
+		while (ocupiedpeace(grid, x, y))
+		{
+			Seed();
+			x = Random(SIZEX - 2); // get new chordinates
+			y = Random(SIZEY - 2); // 
+		}
+		pill pilla = { MPILL, x, y, false, true };
+		pills.push_back(pilla);
+		grid[y][x] = MPILL; // place it on the map	
 	}
 }
 
@@ -485,6 +508,7 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& m
 	case TUNNEL:      //can move
 		sp.baseobject.y += dy;   //go in that Y direction
 		sp.baseobject.x += dx;   //go in that X direction
+		sp.protectedcount--;
 		break;
 	case WALL:        //hit a wall and stay there
 		cout << '\a'; //beep the alarm
@@ -504,19 +528,31 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& m
 			break;
 		}
 		mess = "CANNOT GO THERE!    ";
+		sp.protectedcount--;
 		break;
 	case ZOMBIE:
-		sp.lives--;
+		if (sp.isProtected)
+			sp.protectedcount--;
+		else
+			sp.lives--;
 		break;
 	case HOLE:
 		sp.baseobject.y += dy;   //go in that Y direction
 		sp.baseobject.x += dx;   //go in that X direction
 		sp.lives--;
+		sp.protectedcount--;
 		break;
 	case PILL:
 		sp.baseobject.y += dy;   //go in that Y direction
 		sp.baseobject.x += dx;   //go in that X direction
 		sp.lives++;
+		sp.protectedcount--;
+		break;
+	case MPILL:
+		sp.baseobject.y += dy;   //go in that Y direction
+		sp.baseobject.x += dx;   //go in that X direction
+		sp.isProtected = true;	 // protect the player
+		sp.protectedcount = 10;  // set number of levels to protect
 		break;
 	}
 }
@@ -676,6 +712,9 @@ void paintGrid(const char g[][SIZEX])
 				break;
 			case PILL:
 				SelectTextColour(clYellow);
+				break;
+			case MPILL:
+				SelectTextColour(clGrey);
 			}
 			cout << g[row][col];              //output cell content
 		} //end of col-loop
