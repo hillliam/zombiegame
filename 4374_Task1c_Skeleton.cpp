@@ -216,19 +216,19 @@ void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vect
 
 void checkpillcolition(Item spot, vector<pill>& pills)
 {
-	vector<pill> newpills;
+	//vector<pill> newpills;
 	for (int i = 0; i != pills.size(); i++)
 	{
 		if (pills[i].baseobject.x == spot.x && pills[i].baseobject.y == spot.y) // fix me removing the wrong pill
 		{
-			
+			pills[i].eaten = true;
 		}
  		else
 		{
-			newpills.push_back(pills[i]); 
+			//newpills.push_back(pills[i]); 
 		}
 	}
-	pills = newpills; 
+	//pills = newpills; 
 }
 
 void checkzombiecolition(vector<zombie> zombies, int& zombielives)
@@ -451,7 +451,8 @@ void placepill(char g[][SIZEX], vector<pill> pills)
 {
 	for (pill item : pills)
 	{
-		g[item.baseobject.y][item.baseobject.x] = item.baseobject.symbol;
+		if (!item.eaten)
+			g[item.baseobject.y][item.baseobject.x] = item.baseobject.symbol;
 	}
 }
 
