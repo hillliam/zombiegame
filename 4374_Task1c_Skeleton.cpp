@@ -19,6 +19,7 @@ const int SIZEX(20);         //horizontal dimension
 const char SPOT('@');        //spot
 const char TUNNEL(' ');      //open space
 const char WALL('#');        //border
+const char INSIDEWALL('#');	 //inside wall
 const char HOLE('O');        //hole
 const char ZOMBIE('Z');      //zombie
 const char PILL('.');        //pill (used in basic version insted of structure)
@@ -99,8 +100,24 @@ int main()
 	vector<Item> holes; 					// 12 holes
 	spot.lives = 5;
 	string message("LET'S START...      "); //current message to player
-	
 	string name = mainloop();
+	
+	int level();
+	int levelChoice;
+	levelChoice = level();
+	switch (levelChoice)
+	{
+	case 1:
+		spot.lives = 8;
+		break;
+	case 2:
+		spot.lives = 5;
+		break;
+	case 3:
+		spot.lives = 3;
+		break;
+	}
+	
 	initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
 	int key(' ');                         //create key to store keyboard events 
 	do {
@@ -119,6 +136,17 @@ int main()
 	endProgram();                             //display final message
 	return 0;
 }
+
+int level()
+{
+	void showMessage(string);
+	int level = 0;
+	Gotoxy(40, 20);
+	showMessage("Select level");
+	cin >> level;
+	return level;
+}
+
 
 string mainloop()
 {

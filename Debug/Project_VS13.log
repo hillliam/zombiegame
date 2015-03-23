@@ -1,23 +1,32 @@
-﻿Build started 23/03/2015 12:50:35.
-     1>Project "C:\Users\liam\Documents\GitHub\zombiegame\Project_VS13.vcxproj" on node 2 (Build target(s)).
+﻿Build started 23/03/2015 13:27:41.
+     1>Project "F:\MyWork\Visual Studio 2013\Projects\zombiegame.git\Project_VS13.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D CODE_ANALYSIS /D _MBCS /D _MBCS /D NODEBUG /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze /analyze:plugin"C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\\bin\localespc.dll" /errorReport:prompt   /analyze:quiet 4374_Task1c_Skeleton.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D CODE_ANALYSIS /D _MBCS /D _MBCS /D NODEBUG /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze /analyze:plugin"C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\\bin\localespc.dll" /errorReport:prompt   /analyze:quiet 4374_Task1c_Skeleton.cpp ConsoleUtils.cpp RandomUtils.cpp TimeUtils.cpp
+         TimeUtils.cpp
+     1>f:\mywork\visual studio 2013\projects\zombiegame.git\timeutils.cpp(9): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\time.inl(112) : see declaration of 'localtime'
+     1>f:\mywork\visual studio 2013\projects\zombiegame.git\timeutils.cpp(43): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\time.inl(112) : see declaration of 'localtime'
+         RandomUtils.cpp
+         ConsoleUtils.cpp
          4374_Task1c_Skeleton.cpp
-     1>c:\users\liam\documents\github\zombiegame\4374_task1c_skeleton.cpp(606): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+     1>f:\mywork\visual studio 2013\projects\zombiegame.git\4374_task1c_skeleton.cpp(607): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\conio.h(131) : see declaration of 'getch'
-     1>c:\users\liam\documents\github\zombiegame\4374_task1c_skeleton.cpp(608): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+     1>f:\mywork\visual studio 2013\projects\zombiegame.git\4374_task1c_skeleton.cpp(609): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\conio.h(131) : see declaration of 'getch'
+         Running Code Analysis for C/C++...
+         Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\liam\Documents\GitHub\zombiegame\Debug\Project_VS13.exe" /INCREMENTAL /NOLOGO /LTCG:STATUS kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\liam\Documents\GitHub\zombiegame\Debug\Project_VS13.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\liam\Documents\GitHub\zombiegame\Debug\Project_VS13.lib" /MACHINE:X86 Debug\4374_Task1c_Skeleton.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\MyWork\Visual Studio 2013\Projects\zombiegame.git\Debug\Project_VS13.exe" /INCREMENTAL /NOLOGO /LTCG:STATUS kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\MyWork\Visual Studio 2013\Projects\zombiegame.git\Debug\Project_VS13.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\MyWork\Visual Studio 2013\Projects\zombiegame.git\Debug\Project_VS13.lib" /MACHINE:X86 Debug\4374_Task1c_Skeleton.obj
          Debug\ConsoleUtils.obj
          Debug\RandomUtils.obj
          Debug\TimeUtils.obj
      1>LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
      1>4374_Task1c_Skeleton.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
          LINK : /LTCG specified but no code generation required; remove /LTCG from the link command line to improve linker performance
-         Project_VS13.vcxproj -> C:\Users\liam\Documents\GitHub\zombiegame\Debug\Project_VS13.exe
-     1>Done Building Project "C:\Users\liam\Documents\GitHub\zombiegame\Project_VS13.vcxproj" (Build target(s)).
+         Project_VS13.vcxproj -> F:\MyWork\Visual Studio 2013\Projects\zombiegame.git\Debug\Project_VS13.exe
+     1>Done Building Project "F:\MyWork\Visual Studio 2013\Projects\zombiegame.git\Project_VS13.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:10.44
+Time Elapsed 00:00:20.01
