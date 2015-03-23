@@ -373,6 +373,7 @@ void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, v
 	void setSpotInitialCoordinates(Item& spot);
 	void placeSpot(char gr[][SIZEX], Item spot);
 	void placepillonmap(char grid[][SIZEX], vector<pill>& pills);
+	void placemagicpills(char grid[][SIZEX], vector<pill>&pills);
 	void placeholeonmap(char grid[][SIZEX], vector<Item>& holes);
 	void placewallsonmap(char grid[][SIZEX], vector<Item>& holes);
 	void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies);
@@ -383,6 +384,7 @@ void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, v
 	placeSpot(grid, spot.baseobject);  //set spot in grid
 	placewallsonmap(grid, holes);	   // place walls on the map
 	placepillonmap(grid, pills);	   // place pills on the map
+	placemagicpills(grid, pills);
 	placeholeonmap(grid, holes);       // place holes on the map
 	placezombiesonmap(grid, zombies);  // place the zombies on the map
 }
@@ -423,6 +425,11 @@ void placepillonmap(char grid[][SIZEX], vector<pill>& pills)
 		pills.push_back(pilla);
 		grid[y][x] = PILL; // place it on the map	
 	}
+	
+}
+
+void placemagicpills(char grid[][SIZEX], vector<pill>& pills)
+{
 	for (int i = 0; i != 4; i++) // place 4 pills on the map
 	{
 		int x = Random(SIZEX - 2); //
@@ -438,6 +445,7 @@ void placepillonmap(char grid[][SIZEX], vector<pill>& pills)
 		grid[y][x] = MPILL; // place it on the map	
 	}
 }
+
 
 void placeholeonmap(char grid[][SIZEX], vector<Item>& holes)
 {
