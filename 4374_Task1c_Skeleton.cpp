@@ -78,7 +78,7 @@ int main()
 	bool isArrowKey(int k);
 	bool isCheatKey(int k);
 	int  getKeyPress();
-	bool endconditions(char grid[][SIZEX], player spot, int key, string& message);
+	bool endconditions(int zombies, int pills, player spot, int key, string& message);
 	void ApplyCheat(char grid[][SIZEX], player& spot, int key, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
 	void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
 	void renderGame(const char g[][SIZEX], string mess, player spot, const int zomlives, const int remaingpills);
@@ -108,7 +108,7 @@ int main()
 			ApplyCheat(grid, spot, key, zombies, pills, holes);
 		else
 			message = "INVALID KEY!        ";
-	} while (endconditions(grid, spot, key, message));      //while user does not want to quit
+	} while (endconditions(zombies.size(), pills.size(), spot, key, message));      //while user does not want to quit
 	if (!readsavedcore(name, spot.score))
 		savescore(name, spot.score);
 	endProgram(message);                             //display final message
@@ -567,26 +567,22 @@ bool wantToQuit(int key, string& message)
 	return exit;
 }
 
-bool haswon(const char gd[][SIZEX], string& message)
+bool haswon(int zombies, int pills, string& message)
 {
-	for (int row(0); row < SIZEY; ++row)
-	{
-		for (int col(0); col < SIZEX; ++col) 
-		{
-			if (gd[row][col] == ZOMBIE)
-				return false;				  // some may not like this
-		}
-	}
-	message = "there are no zombies or pils on the map";
+	if (zombies > 0)
+		return false;
+	message = "there are no zombies on the map and you have ";
+	message.append(pills);
+	message.append(" pills left");
 	return true;
 }
 
-bool endconditions(char grid[][SIZEX], player spot, int key, string& message)
+bool endconditions(int zombies, int pills, player spot, int key, string& message)
 {
-	bool haswon(const char grid[][SIZEX], string& message);
+	bool haswon(int zombies,int pills, string& message);
 	bool haslost(player spot, string& message);
 	bool wantToQuit(int k, string& message);
-	return (!wantToQuit(key, message) && (!haswon(grid, message) && !haslost(spot, message)));
+	return (!wantToQuit(key, message) && (!haswon(zombies, pills, message) && !haslost(spot, message)));
 }
 
 bool haslost(player spot, string& message)
