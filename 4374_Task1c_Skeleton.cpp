@@ -569,11 +569,11 @@ bool wantToQuit(int key, string& message)
 
 bool haswon(int zombies, int pills, string& message)
 {
+	stringstream ss;
 	if (zombies > 0)
 		return false;
-	message = "there are no zombies on the map and you have ";
-	message.append(pills);
-	message.append(" pills left");
+	ss << "there are no zombies on the map and you have " << pills << " pills left";
+	message = ss.str();
 	return true;
 }
 
