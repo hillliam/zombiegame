@@ -147,6 +147,7 @@ string mainloop()
 		if (key == INFO)
 			showDescription();
 	}
+	Clrscr();
 	return name;
 }
 
@@ -197,14 +198,14 @@ int getscore(string name)
 
 void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes)
 {
-	void updateSpotCoordinates(const char g[][SIZEX], player& spot, int key, string& mess); // player move 
-	void updatezombieCoordinates(const char g[][SIZEX],Item spot, vector<zombie>& zombies); // zombies move
+	void updateSpotCoordinates(const char g[][SIZEX], player& spot, int key, string& mess,vector<zombie>& zombies); // player move 
+	void updatezombieCoordinates(const char g[][SIZEX],player& spot, vector<zombie>& zombies); // zombies move
 	void updateGrid(char grid[][SIZEX], Item spot, vector<zombie> zombies, vector<pill> pills, vector<Item> holes);
 	void checkpillcolition(Item spot, vector<pill>& pills);
 
-	updateSpotCoordinates(grid, spot, key, message);    //update spot coordinates
+	updateSpotCoordinates(grid, spot, key, message, zombies);    //update spot coordinates
                                                         //according to key
-	updatezombieCoordinates(grid, spot.baseobject, zombies);				// zombies move
+	updatezombieCoordinates(grid, spot, zombies);				// zombies move
 	// check colition 
 	checkpillcolition(spot.baseobject, pills);
 	// this can be just passed a vector<item> made from the .baseobject of all objects needing to be renderd
@@ -229,7 +230,7 @@ void checkpillcolition(Item spot, vector<pill>& pills)
 	pills = newpills; 
 }
 
-void updatezombieCoordinates(const char g[][SIZEX],Item spot, vector<zombie>& zombies) // zombies move
+void updatezombieCoordinates(const char g[][SIZEX],player& spot, vector<zombie>& zombies) // zombies move
 {
 	void getrandommove(Item spot, int& x, int& y);
 	int amount = 0;
@@ -239,7 +240,7 @@ void updatezombieCoordinates(const char g[][SIZEX],Item spot, vector<zombie>& zo
 		{
 			//calculate direction of movement required by key - if any
 			int dx(zombies[i].baseobject.x), dy(zombies[i].baseobject.y);
-			getrandommove(spot, dx, dy); // if we pass the grid to this we can check to make it rare that the rombie falls down a hole 
+			getrandommove(spot.baseobject, dx, dy); // if we pass the grid to this we can check to make it rare that the rombie falls down a hole 
 			//check new target position in grid 
 			//and update spot coordinates if move is possible
 			const int targetY(zombies[i].baseobject.y + dy);
@@ -251,7 +252,10 @@ void updatezombieCoordinates(const char g[][SIZEX],Item spot, vector<zombie>& zo
 				zombies[i].baseobject.y += dy;   //go in that Y direction
 				zombies[i].baseobject.x += dx;   //go in that X direction
 				break;
-			case SPOT:// dont know if needex 
+			case SPOT:// dont know if neede
+				spot.lives--;
+				zombies[i].baseobject.x = zombies[i].startx;
+				zombies[i].baseobject.y = zombies[i].starty;
 				break;
 			case ZOMBIE:
 				zombies[i].baseobject.x = zombies[i].startx;
@@ -451,7 +455,7 @@ void placezombies(char g[][SIZEX], vector<zombie> zombies)
 	}
 }
 
-void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& mess)
+void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& mess, vector<zombie>& zombies)
 {
 	void setKeyDirection(int k, int& dx, int& dy);
 
@@ -488,7 +492,17 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& m
 		mess = "CANNOT GO THERE!    ";
 		break;
 	case ZOMBIE:
+		sp.baseobject.y += dy;   //go in that Y direction
+		sp.baseobject.x += dx;   //go in that X direction
 		sp.lives--;
+		for (zombie& it : zombies)
+		{
+			if (sp.baseobject.x == it.baseobject.x && sp.baseobject.y == it.baseobject.y)
+			{
+				it.baseobject.x = it.startx;
+				it.baseobject.y = it.starty;
+			}
+		}
 		break;
 	case HOLE:
 		sp.baseobject.y += dy;   //go in that Y direction
