@@ -199,14 +199,14 @@ int getscore(string name)
 void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes, int& zomlives)
 {
 	void updateSpotCoordinates(const char g[][SIZEX], player& spot, int key, string& mess); // player move 
-	void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, int& zomlives); // zombies move
+	void updatezombieCoordinates(const char g[][SIZEX],Item spot, vector<zombie>& zombies, int& zomlives); // zombies move
 	void updateGrid(char grid[][SIZEX], Item spot, vector<zombie> zombies, vector<pill> pills, vector<Item> holes);
 	void checkpillcolition(Item spot, vector<pill>& pills);
 	void checkzombiecolition(vector<zombie> zombies, int& zombielives);
 
 	updateSpotCoordinates(grid, spot, key, message);    //update spot coordinates
                                                         //according to key
-	updatezombieCoordinates(grid, zombies, zomlives);				// zombies move
+	updatezombieCoordinates(grid, spot.baseobject, zombies, zomlives);				// zombies move
 	// check colition 
 	checkpillcolition(spot.baseobject, pills);
 	checkzombiecolition(zombies, zomlives);
@@ -248,17 +248,17 @@ void checkzombiecolition(vector<zombie> zombies, int& zombielives)
 	zombies = newzombie;
 }
 
-void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, int& zombielives) // zombies move
+void updatezombieCoordinates(const char g[][SIZEX],Item spot, vector<zombie>& zombies, int& zombielives) // zombies move
 {
-	void getrandommove(int& x, int& y);
+	void getrandommove(Item spot, int& x, int& y);
 	int amount = 0;
 	for (int i = 0; i < (zombies.size() - amount); i++)
 	{
 		if (zombies[i].imobalized == false)
 		{
 			//calculate direction of movement required by key - if any
-			int dx(0), dy(0);
-			getrandommove(dx, dy); // if we pass the grid to this we can check to make it rare that the rombie falls down a hole 
+			int dx(zombies[i].baseobject.x), dy(zombies[i].baseobject.y);
+			getrandommove(spot, dx, dy); // if we pass the grid to this we can check to make it rare that the rombie falls down a hole 
 			//check new target position in grid 
 			//and update spot coordinates if move is possible
 			const int targetY(zombies[i].baseobject.y + dy);
@@ -322,10 +322,16 @@ void ApplyCheat(char grid[][SIZEX], player& spot, int key, vector<zombie>& zombi
 		}
 }
  
-void getrandommove(int& x, int& y)
+void getrandommove(Item spot, int& x, int& y)
 {
-	x = Random(4) - 2;// number between -1 and 1
-	y = Random(4) - 2;// number between -1 and 1
+	if (spot.x > x)
+		x = 1;
+	else
+		x = -1;
+	if (spot.y > y)
+		y = 1;
+	else
+		y = -1;
 }
 
 //---------------------------------------------------------------------------
