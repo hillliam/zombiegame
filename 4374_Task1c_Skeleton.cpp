@@ -198,36 +198,15 @@ int getscore(string name)
 
 void updateGame(char grid[][SIZEX], player& spot, int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes)
 {
-	void updateSpotCoordinates(const char g[][SIZEX], player& spot, int key, string& mess,vector<zombie>& zombies); // player move 
+	void updateSpotCoordinates(const char g[][SIZEX], player& spot, int key, string& mess, vector<zombie>& zombies, vector<pill>& pills); // player move 
 	void updatezombieCoordinates(const char g[][SIZEX],player& spot, vector<zombie>& zombies); // zombies move
 	void updateGrid(char grid[][SIZEX], Item spot, vector<zombie> zombies, vector<pill> pills, vector<Item> holes);
-	void checkpillcolition(Item spot, vector<pill>& pills);
 
-	updateSpotCoordinates(grid, spot, key, message, zombies);    //update spot coordinates
+	updateSpotCoordinates(grid, spot, key, message, zombies, pills);    //update spot coordinates
                                                         //according to key
 	updatezombieCoordinates(grid, spot, zombies);				// zombies move
-	// check colition 
-	checkpillcolition(spot.baseobject, pills);
 	// this can be just passed a vector<item> made from the .baseobject of all objects needing to be renderd
 	updateGrid(grid, spot.baseobject, zombies, pills, holes);    //update grid information
-}
-
-void checkpillcolition(Item spot, vector<pill>& pills)
-{
-	vector<pill> newpills;
-	int amount = 0;
-	for (int i = 0; i < ((int)pills.size() - amount); i++)
-	{
-		if (pills[i].baseobject.x == spot.x && pills[i].baseobject.y == spot.y) // fix me removing the wrong pill
-		{
-			amount++;
-		}
- 		else
-		{
-			newpills.push_back(pills[i]); 
-		}
-	}
-	pills = newpills; 
 }
 
 void updatezombieCoordinates(const char g[][SIZEX],player& spot, vector<zombie>& zombies) // zombies move
@@ -455,7 +434,7 @@ void placezombies(char g[][SIZEX], vector<zombie> zombies)
 	}
 }
 
-void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& mess, vector<zombie>& zombies)
+void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& mess, vector<zombie>& zombies, vector<pill>& pills)
 {
 	void setKeyDirection(int k, int& dx, int& dy);
 
@@ -513,6 +492,15 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, int key, string& m
 		sp.baseobject.y += dy;   //go in that Y direction
 		sp.baseobject.x += dx;   //go in that X direction
 		sp.lives++;
+		vector<pill> newpills;
+		for (int i = 0; i < ((int)pills.size()); i++)
+		{
+			if (pills[i].baseobject.x != sp.baseobject.x && pills[i].baseobject.y != sp.baseobject.y) // fix me removing the wrong pill
+			{
+				newpills.push_back(pills[i]);
+			}
+		}
+		pills = newpills;
 		break;
 	}
 }
