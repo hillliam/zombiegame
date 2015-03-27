@@ -544,12 +544,12 @@ bool isArrowKey(int key)
 
 bool isCheatKey(int key)
 {
-	return ((key == EAT) || (key == EXTERMINATE) || (key == FREEZ));
+	return ((toupper(key) == EAT) || (toupper(key) == EXTERMINATE) || (toupper(key) == FREEZ));
 }
 
 bool wantToQuit(int key, string& message)
 {
-	bool exit = (key == QUIT || toupper(key) == QUIT);
+	bool exit = (toupper(key) == QUIT);
 	if (exit)
 	    message = "you have quit";
 	return exit;
