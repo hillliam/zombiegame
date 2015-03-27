@@ -235,10 +235,27 @@ void displayallmoves(vector<replay> replayer)
 {
 	void paintGrid(const char g[][SIZEX]);
 	int getKeyPress();
+	void showDescription();
+	void showTitle();
+	void showOptions();
+	void showmenu();
+	void showtime();
+	void showgametitle();
+	void showMessage(string);
 	int index = 0;
 	char key = ' ';
+	Clrscr();
 	while (index != replayer.size())
 	{
+		showDescription();
+		showTitle();
+		showOptions();
+		showmenu();
+		showtime();
+		showgametitle();
+		stringstream a;
+		a << "displaying move " << index << " of " << replayer.size():
+		showMessage(a.str());
 		paintGrid(replayer[index].grid);
 		if (_kbhit() != 0)
 		{
