@@ -36,11 +36,17 @@ const char EAT('E');         //remove all pills
 
 const char PLAY('P');		//play buttion
 const char INFO('I');
+const char REPLAY('R');		//replay buttion
 
 const char SAVE('s');		// save key
 const char LOAD('l');		// load key
 
 const char QUIT('Q');        //end the game
+
+struct replay
+{
+	char grid[SIZEY][SIZEX]; // store the grid 
+};
 
 struct Item {
 	const char symbol;	     //symbol on grid
@@ -87,6 +93,7 @@ int main()
 	bool isCheatKey(int k);
 	bool issaveKey(int k);
 	bool isloadKey(int k);
+	bool isreplayKey(int k);
 	int  getKeyPress();
 	bool endconditions(char grid[][SIZEX], player spot, int key, string& message);
 	void ApplyCheat(char grid[][SIZEX], player& spot, int key, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
@@ -98,6 +105,8 @@ int main()
 	string mainloop();
 	void savescore(string name, int score);
 	bool readsavedcore(string name, int score);
+	void saveboard(vector<replay>& replayer, const char grid[][SIZEX]);
+	void displayallmoves(vector<replay> replayer);
     int zombielives = 3;// returns the players name
 	//local variable declarations 
 	char grid[SIZEY][SIZEX];                //grid for display
@@ -105,6 +114,7 @@ int main()
 	vector<zombie> zombies;					// initalize the 4 zombies
 	vector<pill> pills; 					// initalize avalible pills to 8
 	vector<Item> holes; 					// 12 holes
+	vector<replay> replayer;
 	spot.lives = 5;
 	string message("LET'S START...      "); //current message to player
 	string name = mainloop();
@@ -129,23 +139,42 @@ int main()
 	int key(' ');                         //create key to store keyboard events 
 	do {
 		renderGame(grid, message, spot,zombies.size(), pills.size());        //render game state on screen
-		message = "                    "; //reset message
-		key = getKeyPress();              //read in next keyboard event
-		if (isArrowKey(key))
-			updateGame(grid, spot, key, message,zombies, pills, holes, zombielives, levelChoice);
-		else if (isCheatKey(key))
-			ApplyCheat(grid, spot, key, zombies, pills, holes);
-		else if (issaveKey(key))
-			savegame(name, spot, zombies, pills, holes, zombielives);
-		else if (isloadKey(key))
-			loadgame(name, spot, zombies, pills, holes, zombielives);
-		else
-			message = "INVALID KEY!        ";
+		if (_kbhit() != 0)
+		{
+			saveboard(replayer, grid);
+			message = "                    "; //reset message
+			key = getKeyPress();              //read in next keyboard event
+			if (isArrowKey(key))
+				updateGame(grid, spot, key, message, zombies, pills, holes, zombielives, levelChoice);
+			else if (isCheatKey(key))
+				ApplyCheat(grid, spot, key, zombies, pills, holes);
+			else if (issaveKey(key))
+				savegame(name, spot, zombies, pills, holes, zombielives);
+			else if (isloadKey(key))
+				loadgame(name, spot, zombies, pills, holes, zombielives);
+			else if (isreplayKey(key))
+				displayallmoves(replayer);
+			else
+				message = "INVALID KEY!        ";
+		}
 	} while (endconditions(grid, spot, key, message));      //while user does not want to quit
 	if (!readsavedcore(name, spot.score))
 		savescore(name, spot.score);
 	endProgram();                             //display final message
 	return 0;
+}
+
+void saveboard(vector<replay>& replayer, const char grid[][SIZEX])
+{
+	replay newstep;
+	for (int row(0); row < SIZEY; ++row) //for each column
+	{
+		for (int col(0); col < SIZEX; ++col) //for each col
+		{
+			newstep.grid[row][col] = grid[row][col]; // save the board
+		}
+	}
+	replayer.push_back(newstep);
 }
 
 int level()
@@ -174,24 +203,52 @@ string mainloop()
 	void showscore(const int score);
 	string name = "";
 	char key = ' ';
+	showTitle();
+	showgametitle();
+	showOptions();
+	showtime();
+	requestname();
+	cin >> name;
+	clearMessage();
 	while (toupper(key) != PLAY)
 	{
 		showTitle();
 		showgametitle();
 		showOptions();
 		showtime();
-		requestname();
-		cin >> name;
 		clearMessage();
 		int previousscore = getscore(name);
 		showscore(previousscore);
 		showmenu();
-		key = getKeyPress();
-		key = toupper(key);
-		if (key == INFO)
-			showDescription();
+		if (_kbhit() != 0)
+		{
+			key = getKeyPress();
+			key = toupper(key);
+			if (key == INFO)
+				showDescription();
+		}
 	}
 	return name;
+}
+
+void displayallmoves(vector<replay> replayer)
+{
+	void paintGrid(const char g[][SIZEX]);
+	int getKeyPress();
+	int index = 0;
+	char key = ' ';
+	while (index != replayer.size())
+	{
+		paintGrid(replayer[index].grid);
+		if (_kbhit() != 0)
+		{
+			key = getKeyPress();
+			if (key == RIGHT)
+				index++;
+			else if (key == LEFT)
+				index--;
+		}
+	}
 }
 
 void savescore(string name, int score)
@@ -804,6 +861,11 @@ bool isArrowKey(int key)
 bool isCheatKey(int key)
 {
 	return ((key == EAT) || (key == EXTERMINATE) || (key == FREEZ));
+}
+
+bool isreplayKey(int key)
+{
+	return (toupper(key) == REPLAY);
 }
 
 bool wantToQuit(int key, string& message)
