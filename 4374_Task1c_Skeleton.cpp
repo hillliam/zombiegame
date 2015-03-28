@@ -180,13 +180,27 @@ void saveboard(vector<replay>& replayer, const char grid[][SIZEX])
 int level()
 {
 	void showMessage(string);
+	int getKeyPress();
+	void showtime();
+	bool isvalidlevel(int level);
 	int level = 0;
 	Gotoxy(40, 20);
 	showMessage("Select level");
-	cin >> level;
+	while (!isvalidlevel(level))
+	{
+		if (_kbhit() != 0)
+			level = getKeyPress() - '0';   
+		showtime();
+	}
 	return level;
 }
 
+bool isvalidlevel(int level)
+{
+	if (level >=1 && level <= 3)
+		return true;
+	return false;
+}
 
 string mainloop()
 {
@@ -201,14 +215,24 @@ string mainloop()
 	int getKeyPress();
 	void clearMessage();
 	void showscore(const int score);
-	string name = "";
+	void displayname(string name);
+	stringstream name;
 	char key = ' ';
-	showTitle();
-	showgametitle();
-	showOptions();
-	showtime();
-	requestname();
-	cin >> name;
+	while (key != 13)//may work 
+	{
+		displayname(name.str());
+		showTitle();
+		showgametitle();
+		showOptions();
+		showtime();
+		requestname();
+		if (_kbhit() != 0)
+		{
+			key = getKeyPress();
+			if (key != 13)
+				name << key;
+		}
+	}
 	clearMessage();
 	while (toupper(key) != PLAY)
 	{
@@ -217,7 +241,7 @@ string mainloop()
 		showOptions();
 		showtime();
 		clearMessage();
-		int previousscore = getscore(name);
+		int previousscore = getscore(name.str());
 		showscore(previousscore);
 		showmenu();
 		if (_kbhit() != 0)
@@ -228,7 +252,7 @@ string mainloop()
 				showDescription();
 		}
 	}
-	return name;
+	return name.str();
 }
 
 void displayallmoves(vector<replay> replayer)
@@ -240,7 +264,6 @@ void displayallmoves(vector<replay> replayer)
 	void showOptions();
 	void showmenu();
 	void showtime();
-	void showgametitle();
 	void showMessage(string);
 	int index = 0;
 	char key = ' ';
@@ -252,9 +275,8 @@ void displayallmoves(vector<replay> replayer)
 		showOptions();
 		showmenu();
 		showtime();
-		showgametitle();
 		stringstream a;
-		a << "displaying move " << index << " of " << replayer.size():
+		a << "displaying move " << index << " of " << replayer.size();
 		showMessage(a.str());
 		paintGrid(replayer[index].grid);
 		if (_kbhit() != 0)
@@ -266,6 +288,11 @@ void displayallmoves(vector<replay> replayer)
 				index--;
 		}
 	}
+}
+
+void displayname(string name)
+{
+	cout << name;
 }
 
 void savescore(string name, int score)
