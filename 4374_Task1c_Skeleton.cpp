@@ -227,7 +227,7 @@ string mainloop()
 				name << key;
 		}
 	}
-		clearMessage();
+	clearMessage();
 	while (toupper(key) != PLAY)
 	{
 		showTitle();
@@ -240,13 +240,12 @@ string mainloop()
 		showmenu();
 		if (_kbhit() != 0)
 		{
-		key = getKeyPress();
-		key = toupper(key);
-		if (key == INFO)
-			showDescription();
-	}
-		Clrscr();
-}
+		    key = getKeyPress();
+		    key = toupper(key);
+		    if (key == INFO)
+			    showDescription();
+	    }
+    }
 	return name.str();
 }
 
@@ -500,7 +499,6 @@ void occupyPills(const int numberOfPills, char grid[][SIZEX], vector<pill>& pill
 			y = Random(SIZEY - 2); // 
 		}
 		pill pilla = { PILL, x, y };
-		cout << "placed pill at " << x << " " << y << endl;
 		pills.push_back(pilla);
 		grid[y][x] = PILL; // place it on the map	
 	}
@@ -897,7 +895,7 @@ bool haslost(const player &spot, string& message)
 	}
 	else
 		return false;
-	}
+}
 
 bool ocupiedpeace(const char gd[][SIZEX],const int x, const int y)
 {
@@ -909,7 +907,7 @@ bool ocupiedpeace(const char gd[][SIZEX],const int x, const int y)
 
 bool issaveKey(const int k)
 {
-	if (k == SAVE)
+	if (toupper(k) == SAVE)
 		return true;
 	else
 		return false;
@@ -917,7 +915,7 @@ bool issaveKey(const int k)
 
 bool isloadKey(const int k)
 {
-	if (k == LOAD)
+	if (toupper(k) == LOAD)
 		return true;
 	else
 		return false;
