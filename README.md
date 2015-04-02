@@ -45,7 +45,7 @@ current progress
     - [x] displaying the player's name (20 letters max)
     - [x] displaying the player's best score so far (or -1 if no previous score has been recorded) on the screen while the game is being played
     - [x] storing the player's best score (-1 if the player plays for the first time) into a file named after the player's name with extension .scr at the end of a game.
-- [ ] precedure dependency diagram of basic version  #5
+- [x] precedure dependency diagram of basic version  #5
 - [ ] Extended version   #6
   - [ ] make a copy of the game (have to demo both versions)   #7
   - [ ] Magic protection   #8

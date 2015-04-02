@@ -212,8 +212,7 @@ void updateGame(char grid[][SIZEX], player& spot,const int key, string& message,
 void updatezombieCoordinates(const char g[][SIZEX],player& spot, vector<zombie>& zombies) // zombies move
 {
 	void getrandommove(const Item &spot, int& x, int& y);
-	int amount = 0;
-	for (int i = 0; i < ((int)(zombies.size() - amount)); i++)
+	for (int i = 0; i < zombies.size(); i++)
 	{
 		if (zombies[i].imobalized == false)
 		{
@@ -249,16 +248,7 @@ void updatezombieCoordinates(const char g[][SIZEX],player& spot, vector<zombie>&
 				}
 				break;
 			case HOLE://remove the zombie from map
-					vector<zombie> newzombie;
-					for (int j = 0; j != zombies.size(); j++)
-					{
-						if (i != j)
-							newzombie.push_back(zombies[j]);
-						else
-							amount++;
-					}
-					zombies = newzombie;
-				break;
+				zombies.erase(zombies.begin() + i);
 			}
 		}
 	}
@@ -266,11 +256,11 @@ void updatezombieCoordinates(const char g[][SIZEX],player& spot, vector<zombie>&
 
 void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills)
 {
-	if (key == EAT)//remove all pils from the grid
+	if (toupper(key) == EAT)//remove all pils from the grid
 		pills.clear();
-	else if (key == EXTERMINATE)//remove all zombies from board
+	else if (toupper(key) == EXTERMINATE)//remove all zombies from board
 		zombies.clear();
-	else if (key == FREEZ)// do nothing when it is the zombies turn to move
+	else if (toupper(key) == FREEZ)// do nothing when it is the zombies turn to move
 		for (int i = 0; i != zombies.size(); i++)
 		{
 			zombie& a = zombies[i];
@@ -492,15 +482,13 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp,const int key, stri
 		sp.baseobject.y += dy;   //go in that Y direction
 		sp.baseobject.x += dx;   //go in that X direction
 		sp.lives++;
-		vector<pill> newpills;
-		for (int i = 0; i < ((int)pills.size()); i++)
+		for (int i = 0; i < pills.size(); i++)
 		{
-			if (pills[i].baseobject.x != sp.baseobject.x && pills[i].baseobject.y != sp.baseobject.y) // fix me removing the wrong pill
+			if (pills[i].baseobject.x == sp.baseobject.x && pills[i].baseobject.y == sp.baseobject.y) // fix me removing the wrong pill
 			{
-				newpills.push_back(pills[i]);
+				pills[i].eaten = true;// there is no point in using a vector if we have to do this
 			}
 		}
-		pills = newpills;
 		break;
 	}
 }
@@ -524,7 +512,6 @@ void setKeyDirection(const int key, int& dx, int& dy)
 	case RIGHT:     //when RIGHT arrow pressed...
 		dx = +1;    //increase the X coordinate
 		dy = 0;
-		break;
 	}
 }
 
@@ -581,9 +568,7 @@ bool haslost(const player &spot, string& message)
 		return true;
 	}
 	else
-	{
 		return false;
-	}
 }
 
 bool ocupiedpeace(const char gd[][SIZEX],const int x, const int y)
