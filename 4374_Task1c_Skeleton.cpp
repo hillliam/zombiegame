@@ -42,6 +42,11 @@ const char LOAD('l');		// load key
 
 const char QUIT('Q');        //end the game
 
+struct replay
+{
+	char grid[SIZEY][SIZEX]; // store the grid 
+};
+
 struct Item {
 	const char symbol;	     //symbol on grid
 	int x, y;			     //coordinates
@@ -91,18 +96,18 @@ int main()
 	bool isloadKey(const int k);
 	bool isreplayKey(const int k);
 	int  getKeyPress();
-	bool endconditions(char grid[][SIZEX], player spot,const int key, string& message);
-	void ApplyCheat(char grid[][SIZEX], player& spot,const int key, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
+	bool endconditions(const int zombies, const int pills, const player &spot, const int key, string& message);
+	void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills);
 	void updateGame(char grid[][SIZEX], player& spot,const int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
 	void renderGame(const char g[][SIZEX],const string &mess,const player &spot, const int zomlives, const int remaingpills);
-	void endProgram();
+	void endProgram(const string&);
 	void savegame(const string &name,const player &spot,const vector<zombie> &zombies,const vector<pill> &pills,const vector<Item> &holes);
 	void loadgame(const string &name, player& spot, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
 	string mainloop();
 	void savescore(const string &name,const int score);
 	bool readsavedcore(const string &name, int score);
 	void saveboard(vector<replay>& replayer, const char grid[][SIZEX]);
-	void displayallmoves(vector<replay> replayer);
+	void displayallmoves(const vector<replay> &replayer);
 	//local variable declarations 
 	char grid[SIZEY][SIZEX];                //grid for display
 	vector<zombie> zombies;					// initalize the 4 zombies
@@ -136,7 +141,7 @@ int main()
 		if (isArrowKey(key))
 				updateGame(grid, spot, key, message, zombies, pills, holes);
 		else if (isCheatKey(key))
-				ApplyCheat(grid, spot, key, zombies, pills, holes);
+				ApplyCheat(key, zombies, pills);
 			else if (issaveKey(key))
 				savegame(spot.name, spot, zombies, pills, holes);
 			else if (isloadKey(key))
@@ -146,10 +151,10 @@ int main()
 		else
 			message = "INVALID KEY!        ";
 		}
-	} while (endconditions(grid, spot, key, message));      //while user does not want to quit
+	} while (endconditions(zombies.size(), pills.size(), spot, key, message));      //while user does not want to quit
 	if (!readsavedcore(spot.name, spot.score))
 		savescore(spot.name, spot.score);
-	endProgram();                             //display final message
+	endProgram(message);                             //display final message
 	return 0;
 }
 
@@ -254,7 +259,7 @@ void displayallmoves(const vector<replay> &replayer)
 	void showOptions();
 	void showmenu();
 	void showtime();
-	void showMessage(string);
+	void showMessage(const string&);
 	int index = 0;
 	char key = ' ';
 	Clrscr();
@@ -332,20 +337,20 @@ int getscore(const string &name)
 
 void updateGame(char grid[][SIZEX], player& spot,const int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes)
 {
-	void updateSpotCoordinates(const char g[][SIZEX], player& spot, int key, string& mess); // player move 
-	void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies); // zombies move
-	void updateGrid(char grid[][SIZEX], Item spot, vector<zombie> zombies, vector<pill> pills, vector<Item> holes);
+	void updateSpotCoordinates(const char g[][SIZEX], player& sp, const int key, string& mess, vector<zombie> &zombies); // player move 
+	void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, player& spot); // zombies move
+	void updateGrid(char grid[][SIZEX], const Item &spot, const vector<zombie>& zombies, const vector<pill> &pills, const vector<Item> &holes);
 
-	updateSpotCoordinates(grid, spot, key, message, zombies, pills);    //update spot coordinates
+	updateSpotCoordinates(grid, spot, key, message, zombies);    //update spot coordinates
                                                         //according to key
-	updatezombieCoordinates(grid, zombies);				// zombies move
+	updatezombieCoordinates(grid, zombies,spot);				// zombies move
 	// this can be just passed a vector<item> made from the .baseobject of all objects needing to be renderd
 	updateGrid(grid, spot.baseobject, zombies, pills, holes);    //update grid information
 }
 
-void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies) // zombies move
+void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, player& spot) // zombies move
 {
-	void getrandommove(int& x, int& y);
+	void getrandommove(const Item&, int& x, int& y);
 	for (int i = 0; i != zombies.size(); i++)
 	{
 		if (zombies[i].imobalized == false)
@@ -388,7 +393,7 @@ void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies) // 
 				}
 			}
 
-void ApplyCheat(const char grid[][SIZEX], player& spot,const int key, vector<zombie>& zombies, vector<pill>& pills)
+void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills)
 {
 	if (toupper(key) == EAT)//remove all pils from the grid
 		pills.clear();
@@ -644,7 +649,7 @@ void placezombies(char g[][SIZEX],const vector<zombie> &zombies)
 	}
 }
 
-void updateSpotCoordinates(const char g[][SIZEX], player& sp,const int key, string& mess,const int levelChoice)
+void updateSpotCoordinates(const char g[][SIZEX], player& sp,const int key, string& mess, vector<zombie> &zombies)
 {
 	void setKeyDirection(const int k, int& dx, int& dy);
 
@@ -714,7 +719,7 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp,const int key, stri
 		sp.baseobject.y += dy;   //go in that Y direction
 		sp.baseobject.x += dx;   //go in that X direction
 		sp.isProtected = true;	 // protect the player
-		switch (levelChoice)
+		switch (sp.levelchoice)
 		{
 		case 1:
 			sp.protectedcount = 10;// set number of levels to protect
@@ -866,7 +871,7 @@ bool wantToQuit(const int key, string& message)
 }
 
 bool haswon(const int zombies,const int pills, string& message)
-		{
+{
 	stringstream ss;
 	if (zombies > 0)
 		return false;
