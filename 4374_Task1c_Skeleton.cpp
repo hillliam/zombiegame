@@ -12,7 +12,6 @@
 
 using namespace std;
 
-
 const int SIZEY(12);         //vertical dimension
 const int SIZEX(20);         //horizontal dimension
 
@@ -44,6 +43,7 @@ struct Item {
 
 struct player {
 	Item baseobject;         // the base class of all objects on the map
+	const string name;		 // the name of the player
 	int lives;               // the number of lives the player has
 	int score;               // the score the player has acheaved
 	bool hascheated;		 // set true if the user has cheated
@@ -81,25 +81,22 @@ int main()
 	bool endconditions(const int zombies,const int pills,const player &spot,const int key, string& message);
 	void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills);
 	void updateGame(char grid[][SIZEX], player& spot,const int key, string& message, vector<zombie>& zombies, vector<pill>& pills,const vector<Item>& holes);
-	void renderGame(const char g[][SIZEX],const string &mess,const player &spot, const int zomlives, const int remaingpills, const string &name);
+	void renderGame(const char g[][SIZEX],const string &mess,const player &spot, const int zomlives, const int remaingpills);
 	void endProgram(const string &message);
 	string mainloop();
 	void savescore(const string &name,const int score);
 	bool readsavedcore(const string &name,const int score);
 	//local variable declarations 
 	char grid[SIZEY][SIZEX];                //grid for display
-	player spot = { SPOT };                 //Spot's symbol and position (0, 0) 
 	vector<zombie> zombies;					// initalize the 4 zombies
 	vector<pill> pills; 					// initalize avalible pills to 8
 	vector<Item> holes; 					// 12 holes
-	spot.lives = 5;
 	string message("LET'S START...      "); //current message to player
-	
-	const string name = mainloop();
+	player spot = { SPOT, 0, 0, mainloop(), 5 };                 //Spot's symbol and position (0, 0) 
 	initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
 	int key(' ');                         //create key to store keyboard events 
 	do {
-		renderGame(grid, message, spot,zombies.size(), pills.size(), name);        //render game state on screen
+		renderGame(grid, message, spot,zombies.size(), pills.size());        //render game state on screen
 		message = "                    "; //reset message
 		key = getKeyPress();              //read in next keyboard event
 		if (isArrowKey(key))
@@ -109,8 +106,8 @@ int main()
 		else
 			message = "INVALID KEY!        ";
 	} while (endconditions(zombies.size(), pills.size(), spot, key, message));      //while user does not want to quit
-	if (!readsavedcore(name, spot.score))
-		savescore(name, spot.score);
+	if (!readsavedcore(spot.name, spot.score))
+		savescore(spot.name, spot.score);
 	endProgram(message);                             //display final message
 	return 0;
 }
@@ -588,7 +585,7 @@ void clearMessage()
 	cout << str;  //display blank message
 }
 
-void renderGame(const char gd[][SIZEX],const string &mess,const player &spot,const int zombielives,const int remainingpill, const string &name)
+void renderGame(const char gd[][SIZEX],const string &mess,const player &spot,const int zombielives,const int remainingpill)
 { //display game title, messages, maze, spot and apples on screen
 	void paintGrid(const char g[][SIZEX]);
 	void showLives(const player &spot);
@@ -610,7 +607,7 @@ void renderGame(const char gd[][SIZEX],const string &mess,const player &spot,con
 	showDescription();
 	showtime();
 	showLives(spot);
-	showname(name);
+	showname(spot.name);
 	//show number of zombie lives
 	showzomLives(zombielives);
 	//show number of remaing pills
