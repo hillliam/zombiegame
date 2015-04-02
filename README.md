@@ -46,31 +46,32 @@ current progress
     - [x] displaying the player's best score so far (or -1 if no previous score has been recorded) on the screen while the game is being played
     - [x] storing the player's best score (-1 if the player plays for the first time) into a file named after the player's name with extension .scr at the end of a game.
 - [x] precedure dependency diagram of basic version  #5
-- [ ] Extended version   #6
-  - [ ] make a copy of the game (have to demo both versions)   #7
-  - [ ] Magic protection   #8
-    - [ ] add new varible to player structure
-    - [ ] set a random number of the 12 to be magic pills
-    - [ ] dont allow zombie attacks if protected turns > 0
-    - [ ] remove lives from zombie when it hits protected player
+- [x] Extended version   #6
+  - [x] make a copy of the game (have to demo both versions)   #7
+  - [x] Magic protection   #8
+    - [x] add new varible to player structure
+    - [x] set a random number of the 12 to be magic pills
+    - [x] dont allow zombie attacks if protected turns > 0
+    - [x] remove lives from zombie when it hits protected player
     - [ ] zombies run awway from player when protected
   - [ ] Inner walls   #9
     - [ ] create a vector<item> for walls
-    - [ ] read the location of the walls from file or c++
-    - [ ] place walls before pills and holes
-  - [ ] Save/Load Game option   #10
-    - [ ] allow user to press s to save the game
-    - [ ] allow user to press l to load the game
-    - [ ] write the entire map and the number of zombie lives to the file
-    - [ ] read the file and set the map to what is stored in the file
+    - [x] read the location of the walls from file or c++
+    - [x] place walls before pills and holes
+  - [x] Save/Load Game option   #10
+    - [x] allow user to press s to save the game
+    - [x] allow user to press l to load the game
+    - [x] write the entire map and the number of zombie lives to the file
+    - [x] read the file and set the map to what is stored in the file
     - [ ] allow user to load save in main menu if avalible
   - [ ] Game levels   #11
     - [ ] read new level from files (new wall positions) e.g 1.lvl
-    - [ ] when the play has won the game load the next level in main
-  - [ ] Best scores record   #12
-    - [ ] write the best score to file
-  - [ ] Replay option   #13
-    - [ ] allow the user to press r to show all moves that have being made during the game
-    - [ ] save the state of the board eatch move allowing it to be replayed
+    - [x] when the play has won the game load the next level in main
+  - [x] Best scores record   #12
+    - [x] write the best score to file
+  - [x] Replay option   #13
+    - [x] allow the user to press r to show all moves that have being made during the game
+    - [x] save the state of the board eatch move allowing it to be replayed
   - [ ] A ‘Timed’ Game Option #14
-    - [ ] only check for input and updategame when _kbhit() is true
+    - [x] only check for input and updategame when _kbhit() is true
+    - [ ] show the time in seconds since the game started and stoping the timer when it is done e.g GetSystemTime( int& hrs, int& mins, int& secs) to get the start time then displaying the diffrence between them in seconds

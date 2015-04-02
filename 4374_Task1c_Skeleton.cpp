@@ -55,7 +55,7 @@ struct Item {
 struct player {
 	Item baseobject;         // the base class of all objects on the map
 	const string name;		 // the name of the player
-	const int levelchoice;	 // the chosen level
+	int levelchoice;		 // the chosen level
 	int lives;               // the number of lives the player has
 	int score;               // the score the player has acheaved
 	bool hascheated;		 // set true if the user has cheated
@@ -99,7 +99,7 @@ int main()
 	bool endconditions(const int zombies, const int pills, const player &spot, const int key, string& message);
 	void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills);
 	void updateGame(char grid[][SIZEX], player& spot,const int key, string& message, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
-	void renderGame(const char g[][SIZEX],const string &mess,const player &spot, const int zomlives, const int remaingpills);
+	void renderGame(const char g[][SIZEX],const string &mess,const player &spot, const int zomlives, const int remaingpills,const int diff);
 	void endProgram(const string&);
 	void savegame(const string &name,const player &spot,const vector<zombie> &zombies,const vector<pill> &pills,const vector<Item> &holes);
 	void loadgame(const string &name, player& spot, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
@@ -117,6 +117,8 @@ int main()
 	string message("LET'S START...      "); //current message to player
 	int level();
 	player spot = { SPOT, 0, 0, mainloop(), level() };
+	int hours, min, seconds;
+	GetSystemTime(hours, min, seconds);// populates the varibles
 	switch (spot.levelchoice)
 	{
 	case 1:
@@ -129,29 +131,35 @@ int main()
 		spot.lives = 3;
 		break;
 	}
-	initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
-	int key(' ');                         //create key to store keyboard events 
-	do {
-		renderGame(grid, message, spot,zombies.size(), pills.size());        //render game state on screen
-		if (_kbhit() != 0)
-		{
+	int key(' ');                         //create key to store keyboard events
+	while (spot.levelchoice <= 3 && toupper(key) != QUIT)
+	{
+		initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
+		do {
+			int nhours, nmin, nseconds;
+			GetSystemTime(nhours, nmin, nseconds);
+			const int diff = (((nhours - hours)*3600) + ((nmin-min) * 60) + (nseconds-seconds)); // there is a way using delta time but this will work
+			renderGame(grid, message, spot,zombies.size(), pills.size(), diff);        //render game state on screen
+			if (_kbhit() != 0)
+			{
 			saveboard(replayer, grid);
-		message = "                    "; //reset message
-		key = getKeyPress();              //read in next keyboard event
-		if (isArrowKey(key))
-				updateGame(grid, spot, key, message, zombies, pills, holes);
-		else if (isCheatKey(key))
-				ApplyCheat(key, zombies, pills);
-			else if (issaveKey(key))
-				savegame(spot.name, spot, zombies, pills, holes);
-			else if (isloadKey(key))
-				loadgame(spot.name, spot, zombies, pills, holes);
-			else if (isreplayKey(key))
-				displayallmoves(replayer);
-		else
-			message = "INVALID KEY!        ";
-		}
-	} while (endconditions(zombies.size(), pills.size(), spot, key, message));      //while user does not want to quit
+			message = "                    "; //reset message
+			key = getKeyPress();              //read in next keyboard event
+			if (isArrowKey(key))
+					updateGame(grid, spot, key, message, zombies, pills, holes);
+			else if (isCheatKey(key))
+					ApplyCheat(key, zombies, pills);
+				else if (issaveKey(key))
+					savegame(spot.name, spot, zombies, pills, holes);
+				else if (isloadKey(key))
+					loadgame(spot.name, spot, zombies, pills, holes);
+				else if (isreplayKey(key))
+					displayallmoves(replayer);
+			else
+				message = "INVALID KEY!        ";
+			}
+		} while (endconditions(zombies.size(), pills.size(), spot, key, message));      //while user does not want to quit
+	}
 	if (!readsavedcore(spot.name, spot.score))
 		savescore(spot.name, spot.score);
 	endProgram(message);                             //display final message
@@ -242,7 +250,7 @@ string mainloop()
 		{
 		    key = getKeyPress();
 		    key = toupper(key);
-		    if (key == INFO)
+		    if (toupper(key) == INFO)
 			    showDescription();
 	    }
     }
@@ -349,14 +357,14 @@ void updateGame(char grid[][SIZEX], player& spot,const int key, string& message,
 
 void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, player& spot) // zombies move
 {
-	void getrandommove(const Item&, int& x, int& y);
+	void getrandommove(const player&, int& x, int& y);
 	for (int i = 0; i != zombies.size(); i++)
 	{
 		if (zombies[i].imobalized == false)
 		{
 			//calculate direction of movement required by key - if any
 			int dx(zombies[i].baseobject.x), dy(zombies[i].baseobject.y);
-			getrandommove(spot.baseobject, dx, dy); // if we pass the grid to this we can check to make it rare that the rombie falls down a hole 
+			getrandommove(spot, dx, dy); // if we pass the grid to this we can check to make it rare that the rombie falls down a hole 
 			//check new target position in grid 
 			//and update spot coordinates if move is possible
 			const int targetY(zombies[i].baseobject.y + dy);
@@ -369,7 +377,8 @@ void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, pla
 				zombies[i].baseobject.x += dx;   //go in that X direction
 				break;
 			case SPOT:// dont know if neede
-				spot.lives--;
+				if (!spot.isProtected)
+					spot.lives--;
 				zombies[i].baseobject.x = zombies[i].startx;
 				zombies[i].baseobject.y = zombies[i].starty;
 				break;
@@ -406,16 +415,30 @@ void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills)
 		}
 }
  
-void getrandommove(const Item &spot, int& x, int& y)
+void getrandommove(const player &spot, int& x, int& y)
 {
-	if (spot.x > x)
-		x = 1;
+	if (!spot.isProtected)
+	{
+		if (spot.baseobject.x > x)
+			x = 1;
+		else
+			x = -1;
+		if (spot.baseobject.y > y)
+			y = 1;
+		else
+			y = -1;
+	}
 	else
-		x = -1;
-	if (spot.y > y)
-		y = 1;
-	else
-		y = -1;
+	{
+		if (spot.baseobject.x > x)
+			x = -1;
+		else
+			x = 1;
+		if (spot.baseobject.y > y)
+			y = -1;
+		else
+			y = 1;
+	}
 }
 
 //---------------------------------------------------------------------------
@@ -689,9 +712,9 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp,const int key, stri
 		if (sp.isProtected)
 			sp.protectedcount--;
 		else
+			sp.lives--;
 		sp.baseobject.y += dy;   //go in that Y direction
 		sp.baseobject.x += dx;   //go in that X direction
-		sp.lives--;
 		for (zombie& it : zombies)
 		{
 			if (sp.baseobject.x == it.baseobject.x && sp.baseobject.y == it.baseobject.y)
@@ -727,10 +750,7 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp,const int key, stri
 			break;
 		case 3:
 			sp.protectedcount = 5;// set number of levels to protect
-			break;
 		}
-		  
-		break;
 	}
 }
 
@@ -930,7 +950,7 @@ void clearMessage()
 	cout << str;  //display blank message
 }
 
-void renderGame(const char gd[][SIZEX],const string &mess,const player &spot,const int zombielives,const int remainingpill)
+void renderGame(const char gd[][SIZEX],const string &mess,const player &spot,const int zombielives,const int remainingpill,const int diff)
 { //display game title, messages, maze, spot and apples on screen
 	void paintGrid(const char g[][SIZEX]);
 	void showLives(const player &spot);
@@ -943,6 +963,7 @@ void renderGame(const char gd[][SIZEX],const string &mess,const player &spot,con
 	void showMessage(const string&);
 	void showname(const string&);
 	void showname(const string &name);
+	void showdiftime(const int diff);
 
 	Gotoxy(0, 0);
 	//display grid contents
@@ -953,6 +974,7 @@ void renderGame(const char gd[][SIZEX],const string &mess,const player &spot,con
 	showtime();
 	showLives(spot);
 	showname(spot.name);
+	showdiftime(diff);
 	//show number of zombie lives
 	showzomLives(zombielives);
 	//show number of remaing pills
@@ -1134,4 +1156,13 @@ void requestname()
 	SelectTextColour(clYellow);
 	Gotoxy(2, 11);
 	cout << "please enter your name: ";
+}
+
+void showdiftime(const int diff)
+{
+	SelectBackColour(clRed);
+	SelectTextColour(clYellow);
+	Gotoxy(40, 16);
+	cout << "time spent in game: " << diff;
+
 }
