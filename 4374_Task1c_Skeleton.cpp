@@ -86,6 +86,16 @@ struct pill {
 	}
 };
 
+struct game //will be very helpfull
+{
+	player spot;
+	vector<zombie> zombies;					// initalize the 4 zombies
+	vector<pill> pills; 					// initalize avalible pills to 8
+	vector<pill> mpills; 					// initalize magic pills to 8
+	vector<Item> holes; 					// 12 holes
+	vector<Item> inwalls; 					// some walls
+};
+
 int main()
 {
 	//function declarations (prototypes)
