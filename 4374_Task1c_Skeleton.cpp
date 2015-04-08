@@ -77,6 +77,7 @@ int main()
 	void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, vector<Item>& holes, vector<pill>& pills);
 	bool isArrowKey(const int k);
 	bool isCheatKey(const int k);
+	void showDescription();
 	int  getKeyPress();
 	bool endconditions(const int zombies,const int pills,const player &spot,const int key, string& message);
 	void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills);
@@ -92,30 +93,49 @@ int main()
 	vector<pill> pills; 					// initalize avalible pills to 8
 	vector<Item> holes; 					// 12 holes
 	string message("LET'S START...      "); //current message to player
-	player spot = { SPOT, 0, 0, mainloop(), 5 };                 //Spot's symbol and position (0, 0) 
-	initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
+	player spot = { SPOT, 0, 0, mainloop(), 5 };       
 	int key(' ');                         //create key to store keyboard events 
-	do {
-		renderGame(grid, message, spot,zombies.size(), pills.size());        //render game state on screen
-		message = "                    "; //reset message
-		key = getKeyPress();              //read in next keyboard event
-		if (isArrowKey(key))
-			updateGame(grid, spot, key, message,zombies, pills, holes);
-		else if (isCheatKey(key))
-			ApplyCheat(key, zombies, pills);
-		else
-			message = "INVALID KEY!        ";
-	} while (endconditions(zombies.size(), pills.size(), spot, key, message));      //while user does not want to quit
-	if (!readsavedcore(spot.name, spot.score))
-		savescore(spot.name, spot.score);
-	endProgram(message);                             //display final message
-	return 0;
+	key = getKeyPress();
+	key = toupper(key);
+	if (key == INFO)
+	{
+		showDescription();//Spot's symbol and position (0, 0) 
+		key = getKeyPress();
+		key = toupper(key);
+	}
+	if (key == PLAY) 
+	{
+	Clrscr();
+	initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
+		do {
+			renderGame(grid, message, spot, zombies.size(), pills.size());        //render game state on screen
+			message = "                    "; //reset message
+			key = getKeyPress();              //read in next keyboard event
+			if (isArrowKey(key))
+				updateGame(grid, spot, key, message, zombies, pills, holes);
+			else if (isCheatKey(key))
+				ApplyCheat(key, zombies, pills);
+			//else
+			//	message = "INVALID KEY!        ";
+		} while (endconditions(zombies.size(), pills.size(), spot, key, message));      //while user does not want to quit
+		if (!readsavedcore(spot.name, spot.score))
+			savescore(spot.name, spot.score);
+		endProgram(message);                             //display final message
+		return 0;
+	}
+	if ((key != PLAY) || (key != INFO))
+	{
+		return false;
+		SelectBackColour(clRed);
+		SelectTextColour(clYellow);
+		Gotoxy(40, 11);
+		cout << "INVALID KEY!  ";
+	}
 }
 
 string mainloop()
 {
 	void requestname();
-	void showDescription();
 	void showTitle();
 	void showOptions();
 	void showmenu();
@@ -127,7 +147,7 @@ string mainloop()
 	void showscore(const int score);
 	string name = "";
 	char key = ' ';
-	while (toupper(key) != PLAY)
+	while (toupper(key) != PLAY && (name == ""))
 	{
 		showTitle();
 		showgametitle();
@@ -139,12 +159,7 @@ string mainloop()
 		int previousscore = getscore(name);
 		showscore(previousscore);
 		showmenu();
-		key = getKeyPress();
-		key = toupper(key);
-		if (key == INFO)
-			showDescription();
 	}
-	Clrscr();
 	return name;
 }
 
@@ -182,7 +197,7 @@ int getscore(const string &name)
 {
 	ifstream in(name + ".scr");
 	if (in.fail())// the file may not be found
-		cout << "error";
+		cout << "error sfsfs";
 	else
 	{
 		int storedscore;
@@ -539,22 +554,25 @@ bool wantToQuit(const int key, string& message)
 	return exit;
 }
 
-bool haswon(const int zombies,const int pills, string& message)
+bool haswon(const int zombies,const int pills, string& message, const player& spot)
 {
-	stringstream ss;
 	if (zombies > 0)
 		return false;
-	ss << "there are no zombies on the map and you have " << pills << " pills left";
-	message = ss.str();
+	SelectBackColour(clRed);
+	SelectTextColour(clYellow);
+	Gotoxy(40, 16);
+	cout << "Congratulations, you win ";
+	Gotoxy(40, 17);
+	cout << "Your score is: " << spot.lives;
 	return true;
 }
 
 bool endconditions(const int zombies,const int pills,const player &spot,const int key, string& message)
 {
-	bool haswon(const int zombies,const int pills, string& message);
+	bool haswon(const int zombies,const int pills, string& message, const player &spot);
 	bool haslost(const player &spot, string& message);
 	bool wantToQuit(const int k, string& message);
-	return (!wantToQuit(key, message) && (!haswon(zombies, pills, message) && !haslost(spot, message)));
+	return (!wantToQuit(key, message) && (!haswon(zombies, pills, message, spot) && !haslost(spot, message)));
 }
 
 bool haslost(const player &spot, string& message)
@@ -745,7 +763,7 @@ void showmenu()
 	Gotoxy(40, 10);
 	cout << "press p to play";
 	Gotoxy(40, 11);
-	cout << "press i to get infomaion";
+	cout << "press i to get infomation";
 
 }
 
