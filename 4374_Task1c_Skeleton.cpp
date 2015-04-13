@@ -153,8 +153,9 @@ int main()
 					message = "INVALID KEY!        ";
 			}
 		} while (endconditions(world.zombies.size(), world.pills.size(), world.spot, key, message));      //while user does not want to quit
-	} while (world.spot.lives != 0 && world.spot.levelchoice <= 3);
-	if (!readsavedcore(world.spot.name, world.spot.score))
+		key = ' ';
+	} while (world.spot.lives != 0 && world.spot.levelchoice <= 3 && key != QUIT && !world.spot.hascheated);
+	if (!readsavedcore(world.spot.name, world.spot.score) && !world.spot.hascheated)
 		savescore(world.spot.name, world.spot.score);
 	endProgram(message);                             //display final message
 	return 0;
@@ -169,23 +170,9 @@ void nextlevel(game& world, char grid[][SIZEX])
 	vector<Item> placeholeonmap(char grid[][SIZEX], const int levelChoice);
 	vector<Item> placewallsonmap(char grid[][SIZEX]);
 	vector<zombie> placezombiesonmap(char grid[][SIZEX]);
-	string mainloop();
-	int level();
-	Seed();                            //seed reandom number generator
+	Seed();					//seed reandom number generator
 	setGrid(grid);
 	game a = { { setSpotInitialCoordinates(grid), world.spot.name , world.spot.levelchoice+1 }, placezombiesonmap(grid), placepillonmap(grid, a.spot.levelchoice), placemagicpills(grid), placeholeonmap(grid, a.spot.levelchoice), placewallsonmap(grid) };//initialise spot position
-	switch (a.spot.levelchoice)
-	{
-	case 1:
-		a.spot.lives = 8;
-		break;
-	case 2:
-		a.spot.lives = 5;
-		break;
-	case 3:
-		a.spot.lives = 3;
-		break;
-	}
 	world = a;
 }
 
@@ -612,10 +599,10 @@ vector<Item> occupyHoles(char grid[][SIZEX], const int numberOfHoles)
 
 vector<zombie> placezombiesonmap(char grid[][SIZEX])
 {
-	const zombie zom1 = { ZOMBIE, 1, 1, 1, 1 };
-	const zombie zom2 = { ZOMBIE, SIZEX - 2, 1, SIZEX - 2, 1 };
-	const zombie zom3 = { ZOMBIE, 1, SIZEY - 2, 1, SIZEY - 2 };
-	const zombie zom4 = { ZOMBIE, SIZEX - 2, SIZEY - 2, SIZEX - 2, SIZEY - 2 };
+	zombie zom1 = { ZOMBIE, 1, 1, 1, 1 };
+	zombie zom2 = { ZOMBIE, SIZEX - 2, 1, SIZEX - 2, 1 };
+	zombie zom3 = { ZOMBIE, 1, SIZEY - 2, 1, SIZEY - 2 };
+	zombie zom4 = { ZOMBIE, SIZEX - 2, SIZEY - 2, SIZEX - 2, SIZEY - 2 };
 	grid[1][1] = ZOMBIE; // place it on the map	
 	grid[SIZEY - 2][1] = ZOMBIE;
 	grid[1][SIZEX - 2] = ZOMBIE;
