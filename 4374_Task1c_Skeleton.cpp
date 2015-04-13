@@ -109,36 +109,39 @@ int main()
 	int  getKeyPress();
 	bool endconditions(const int zombies, const int pills, const player &spot, const int key, string& message);
 	void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills);
-	void updateGame(char grid[][SIZEX], game& world,const int key, string& message);
-	void renderGame(const char g[][SIZEX],const string &mess,const player &spot, const int zomlives, const int remaingpills,const int diff);
+	void updateGame(char grid[][SIZEX], game& world, const int key, string& message);
+	void renderGame(const char g[][SIZEX], const string &mess, const player &spot, const int zomlives, const int remaingpills, const int diff);
 	void endProgram(const string&);
-	void savegame(const string &name,const game &world);
+	void savegame(const string &name, const game &world);
 	game loadgame(const string &name);
-	void savescore(const string &name,const int score);
+	void savescore(const string &name, const int score);
 	bool readsavedcore(const string &name, int score);
 	void saveboard(vector<replay>& replayer, const char grid[][SIZEX]);
 	void displayallmoves(const vector<replay> &replayer);
+	void nextlevel(game& world, char grid[][SIZEX]);
 	//local variable declarations 
 	char grid[SIZEY][SIZEX];                //grid for display
 	vector<replay> replayer;
 	string message("LET'S START...      "); //current message to player
 	int key(' ');                         //create key to store keyboard events
 	game world = initialiseGame(grid);  //initialise grid (incl. walls and spot)
-	int hours, min, seconds;
-	GetSystemTime(hours, min, seconds);// populates the varibles
 	do {
-		int nhours, nmin, nseconds;
-		GetSystemTime(nhours, nmin, nseconds);
-		const int diff = (((nhours - hours)*3600) + ((nmin-min) * 60) + (nseconds-seconds)); // there is a way using delta time but this will work
-		renderGame(grid, message, world.spot,world.zombies.size(), world.pills.size(), diff);        //render game state on screen
-		if (_kbhit() != 0)
-		{
-			saveboard(replayer, grid);
-			message = "                    "; //reset message
-			key = getKeyPress();              //read in next keyboard event
-			if (isArrowKey(key))
+		nextlevel(world, grid);
+		int hours, min, seconds; // do we need to reset the timer when we load the next level
+		GetSystemTime(hours, min, seconds);// populates the varibles
+		do {
+			int nhours, nmin, nseconds;
+			GetSystemTime(nhours, nmin, nseconds);
+			const int diff = (((nhours - hours) * 3600) + ((nmin - min) * 60) + (nseconds - seconds)); // there is a way using delta time but this will work
+			renderGame(grid, message, world.spot, world.zombies.size(), world.pills.size(), diff);        //render game state on screen
+			if (_kbhit() != 0)
+			{
+				saveboard(replayer, grid);
+				message = "                    "; //reset message
+				key = getKeyPress();              //read in next keyboard event
+				if (isArrowKey(key))
 					updateGame(grid, world, key, message);
-			else if (isCheatKey(key))
+				else if (isCheatKey(key))
 					ApplyCheat(key, world.zombies, world.pills);
 				else if (issaveKey(key))
 					savegame(world.spot.name, world);
@@ -146,14 +149,44 @@ int main()
 					world = loadgame(world.spot.name);
 				else if (isreplayKey(key))
 					displayallmoves(replayer);
-			else
-				message = "INVALID KEY!        ";
-		}
-	} while (endconditions(world.zombies.size(), world.pills.size(), world.spot, key, message));      //while user does not want to quit
+				else
+					message = "INVALID KEY!        ";
+			}
+		} while (endconditions(world.zombies.size(), world.pills.size(), world.spot, key, message));      //while user does not want to quit
+	} while (world.spot.lives != 0 && world.spot.levelchoice <= 3);
 	if (!readsavedcore(world.spot.name, world.spot.score))
 		savescore(world.spot.name, world.spot.score);
 	endProgram(message);                             //display final message
 	return 0;
+}
+
+void nextlevel(game& world, char grid[][SIZEX])
+{
+	void setGrid(char[][SIZEX]);
+	Item setSpotInitialCoordinates(char[][SIZEX]);
+	vector<pill> placepillonmap(char grid[][SIZEX], const int levelChoice);
+	vector<pill> placemagicpills(char grid[][SIZEX]);
+	vector<Item> placeholeonmap(char grid[][SIZEX], const int levelChoice);
+	vector<Item> placewallsonmap(char grid[][SIZEX]);
+	vector<zombie> placezombiesonmap(char grid[][SIZEX]);
+	string mainloop();
+	int level();
+	Seed();                            //seed reandom number generator
+	setGrid(grid);
+	game a = { { setSpotInitialCoordinates(grid), world.spot.name , world.spot.levelchoice+1 }, placezombiesonmap(grid), placepillonmap(grid, a.spot.levelchoice), placemagicpills(grid), placeholeonmap(grid, a.spot.levelchoice), placewallsonmap(grid) };//initialise spot position
+	switch (a.spot.levelchoice)
+	{
+	case 1:
+		a.spot.lives = 8;
+		break;
+	case 2:
+		a.spot.lives = 5;
+		break;
+	case 3:
+		a.spot.lives = 3;
+		break;
+	}
+	world = a;
 }
 
 void saveboard(vector<replay>& replayer, const char grid[][SIZEX])
@@ -348,7 +381,7 @@ void updateGame(char grid[][SIZEX], game& spot,const int key, string& message)
 void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, player& spot) // zombies move
 {
 	void getrandommove(const player&, int& x, int& y);
-	for (int i = 0; i != zombies.size(); i++)
+	for (int i = 0; i < zombies.size(); i++)
 	{
 		if (zombies[i].imobalized == false)
 		{
@@ -386,10 +419,10 @@ void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, pla
 				break;
 			case HOLE: // may need to store the starting chord of eatch zombie to make it spawn in its corner
 				zombies.erase(zombies.begin() + i);
-				}
-					}
-				}
 			}
+		}
+	}
+}
 
 void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills)
 {

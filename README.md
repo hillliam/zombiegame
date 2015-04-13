@@ -53,9 +53,9 @@ current progress
     - [x] set a random number of the 12 to be magic pills
     - [x] dont allow zombie attacks if protected turns > 0
     - [x] remove lives from zombie when it hits protected player
-    - [ ] zombies run awway from player when protected
-  - [ ] Inner walls   #9
-    - [ ] create a vector<item> for walls
+    - [x] zombies run awway from player when protected
+  - [x] Inner walls   #9
+    - [x] create a vector<item> for walls
     - [x] read the location of the walls from file or c++
     - [x] place walls before pills and holes
   - [x] Save/Load Game option   #10
@@ -64,14 +64,14 @@ current progress
     - [x] write the entire map and the number of zombie lives to the file
     - [x] read the file and set the map to what is stored in the file
     - [ ] allow user to load save in main menu if avalible
-  - [ ] Game levels   #11
-    - [ ] read new level from files (new wall positions) e.g 1.lvl
-    - [x] when the play has won the game load the next level in main
+  - [x] Game levels   #11
+    - [x] read new level from files (new wall positions) e.g 1.lvl
+    - [x] when the play has won the game load the next level in main needs some work
   - [x] Best scores record   #12
     - [x] write the best score to file
   - [x] Replay option   #13
     - [x] allow the user to press r to show all moves that have being made during the game
     - [x] save the state of the board eatch move allowing it to be replayed
-  - [ ] A ‘Timed’ Game Option #14
+  - [x] A ‘Timed’ Game Option #14
     - [x] only check for input and updategame when _kbhit() is true
-    - [ ] show the time in seconds since the game started and stoping the timer when it is done e.g GetSystemTime( int& hrs, int& mins, int& secs) to get the start time then displaying the diffrence between them in seconds
+    - [X] show the time in seconds since the game started and stoping the timer when it is done e.g GetSystemTime( int& hrs, int& mins, int& secs) to get the start time then displaying the diffrence between them in seconds
