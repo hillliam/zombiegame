@@ -93,45 +93,45 @@ int main()
 	vector<pill> pills; 					// initalize avalible pills to 8
 	vector<Item> holes; 					// 12 holes
 	string message("LET'S START...      "); //current message to player
-	player spot = { SPOT, 0, 0, mainloop(), 5 };       
-	int key(' ');                         //create key to store keyboard events 
-	key = getKeyPress();
-	key = toupper(key);
-	if (key == INFO)
-	{
-		showDescription();//Spot's symbol and position (0, 0) 
+	do{
+		player spot = { SPOT, 0, 0, mainloop(), 5 };
+		int key(' ');                         //create key to store keyboard events 
 		key = getKeyPress();
 		key = toupper(key);
-	}
-	if (key == PLAY) 
-	{
-	Clrscr();
-	initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
-		do {
-			renderGame(grid, message, spot, zombies.size(), pills.size());        //render game state on screen
-			message = "                    "; //reset message
-			key = getKeyPress();              //read in next keyboard event
-			if (isArrowKey(key))
-				updateGame(grid, spot, key, message, zombies, pills, holes);
-			else if (isCheatKey(key))
-				ApplyCheat(key, zombies, pills);
-			//else
-			//	message = "INVALID KEY!        ";
-			renderGame(grid, message, spot, zombies.size(), pills.size());        //render game state on screen
-		} while (endconditions(zombies.size(), pills.size(), spot, key, message));      //while user does not want to quit
-		if (!readsavedcore(spot.name, spot.score))
-			savescore(spot.name, spot.score);
-		endProgram(message);                             //display final message
-		return 0;
-	}
-	if ((key != PLAY) || (key != INFO))
-	{
-		return false;
-		SelectBackColour(clRed);
-		SelectTextColour(clYellow);
-		Gotoxy(40, 11);
-		cout << "INVALID KEY!  ";
-	}
+		if (key == INFO)
+		{
+			showDescription();//Spot's symbol and position (0, 0) 
+			key = getKeyPress();
+			key = toupper(key);
+		}
+		if (key == PLAY)
+		{
+			Clrscr();
+			initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
+			do {
+				renderGame(grid, message, spot, zombies.size(), pills.size());        //render game state on screen
+				message = "                    "; //reset message
+				key = getKeyPress();              //read in next keyboard event
+				if (isArrowKey(key))
+					updateGame(grid, spot, key, message, zombies, pills, holes);
+				else if (isCheatKey(key))
+					ApplyCheat(key, zombies, pills);
+				//else
+				//	message = "INVALID KEY!        ";
+				renderGame(grid, message, spot, zombies.size(), pills.size());        //render game state on screen
+			} while (endconditions(zombies.size(), pills.size(), spot, key, message));      //while user does not want to quit
+			if (!readsavedcore(spot.name, spot.score))
+				savescore(spot.name, spot.score);
+			endProgram(message);                             //display final message
+		}
+		if ((key != PLAY) || (key != INFO))
+		{
+			SelectBackColour(clRed);
+			SelectTextColour(clYellow);
+			Gotoxy(40, 11);
+			cout << "INVALID KEY!  ";
+		}
+	} while (true) //compleate me
 }
 
 string mainloop()
@@ -275,10 +275,7 @@ void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills)
 		zombies.clear();
 	else if (toupper(key) == FREEZ)// do nothing when it is the zombies turn to move
 		for (int i = 0; i != zombies.size(); i++)
-		{
-			zombie& a = zombies[i];
-			a.imobalized = !a.imobalized;
-		}
+			zombies[i].imobalized = !zombies[i].imobalized;
 }
  
 void getrandommove(const Item &spot, int& x, int& y)
