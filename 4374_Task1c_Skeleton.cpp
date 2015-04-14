@@ -131,7 +131,7 @@ int main()
 			Gotoxy(40, 11);
 			cout << "INVALID KEY!  ";
 		}
-	} while (true) //compleate me
+	} while ((key != PLAY) || (key != INFO)); //compleate me
 }
 
 string mainloop()
