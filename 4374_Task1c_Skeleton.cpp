@@ -63,6 +63,7 @@ struct zombie {
 
 struct pill {
 	Item baseobject;         // the base class of all objects on the map
+	bool eaten;
 	pill operator= (const pill& it)
 	{
 		pill a = it;
@@ -76,6 +77,7 @@ int main()
 	void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, vector<Item>& holes, vector<pill>& pills);
 	bool isArrowKey(const int k);
 	bool isCheatKey(const int k);
+	int getsize(const vector<pill> pills);
 	void showDescription();
 	int  getKeyPress();
 	bool endconditions(const int zombies,const int pills,const player &spot,const int key, string& message);
@@ -118,7 +120,7 @@ int main()
 				//else
 				//	message = "INVALID KEY!        ";
 				renderGame(grid, message, spot, zombies.size(), pills.size());        //render game state on screen
-			} while (endconditions(zombies.size(), pills.size(), spot, key, message));      //while user does not want to quit
+			} while (endconditions(zombies.size(), getsize(pills), spot, key, message));      //while user does not want to quit
 			if (!readsavedcore(spot.name, spot.score))
 				savescore(spot.name, spot.score);
 			endProgram(message);                             //display final message
@@ -131,6 +133,14 @@ int main()
 			cout << "INVALID KEY!  ";
 		}
 	} while ((key != PLAY) && (key != INFO)); //compleate me
+}
+
+int getsize(const vector<pill> pills)
+{
+	int pils=0;
+	for (const pill& item : pills)
+		if (!item.eaten)
+			++pils;
 }
 
 string mainloop()
@@ -402,19 +412,20 @@ void updateGrid(char grid[][SIZEX],const Item &spot,const vector<zombie> &zombie
 
 void placepill(char g[][SIZEX],const vector<pill> &pills)
 {
-	for (pill item : pills)
+	for (const pill& item : pills)
+		if (!item.eaten)
 			g[item.baseobject.y][item.baseobject.x] = item.baseobject.symbol;
 }
 
 void placeitem(char g[][SIZEX],const vector<Item> &holes)
 {
-	for (Item it : holes)
+	for (const Item& it : holes)
 		g[it.y][it.x] = it.symbol;
 }
 
 void placezombies(char g[][SIZEX],const vector<zombie> &zombies)
 {
-	for (zombie item : zombies)
+	for (const zombie& item : zombies)
 		g[item.baseobject.y][item.baseobject.x] = item.baseobject.symbol;
 }
 
@@ -477,12 +488,8 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp,const int key, stri
 		sp.baseobject.x += dx;   //go in that X direction
 		sp.lives++;
 		for (int i = 0; i < pills.size(); i++)
-		{
 			if (pills[i].baseobject.x == sp.baseobject.x && pills[i].baseobject.y == sp.baseobject.y) // fix me removing the wrong pill
-			{
-				pills.erase(pills.begin() + i); // again needs to be fixed
-			}
-		}
+				pills[i].eaten = true; // again needs to be fixed
 		break;
 	}
 }
