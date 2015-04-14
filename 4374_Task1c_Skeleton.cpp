@@ -117,6 +117,7 @@ int main()
 				ApplyCheat(key, zombies, pills);
 			//else
 			//	message = "INVALID KEY!        ";
+			renderGame(grid, message, spot, zombies.size(), pills.size());        //render game state on screen
 		} while (endconditions(zombies.size(), pills.size(), spot, key, message));      //while user does not want to quit
 		if (!readsavedcore(spot.name, spot.score))
 			savescore(spot.name, spot.score);
@@ -276,7 +277,7 @@ void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills)
 		for (int i = 0; i != zombies.size(); i++)
 		{
 			zombie& a = zombies[i];
-			a.imobalized = true;
+			a.imobalized = !a.imobalized;
 		}
 }
  
