@@ -63,7 +63,6 @@ struct zombie {
 
 struct pill {
 	Item baseobject;         // the base class of all objects on the map
-	bool eaten;				 // set true if the will not be displayed
 	pill operator= (const pill& it)
 	{
 		pill a = it;
@@ -93,9 +92,9 @@ int main()
 	vector<pill> pills; 					// initalize avalible pills to 8
 	vector<Item> holes; 					// 12 holes
 	string message("LET'S START...      "); //current message to player
+	int key(' ');
 	do{
-		player spot = { SPOT, 0, 0, mainloop(), 5 };
-		int key(' ');                         //create key to store keyboard events 
+		player spot = { SPOT, 0, 0, mainloop(), 5 };                        //create key to store keyboard events 
 		key = getKeyPress();
 		key = toupper(key);
 		if (key == INFO)
@@ -167,21 +166,15 @@ string mainloop()
 void savescore(const string &name,const int score)
 {
 	ofstream out(name + ".scr");
-	if (out.fail())
-		cout << "error";
-	else
-	{
+	if (!out.fail())
 		out << score;
-	}
 	out.close();
 }
 
 bool readsavedcore(const string &name,const int score)
 {
 	ifstream in(name + ".scr");
-	if (in.fail())// the file may not be found
-		cout << "error";
-	else
+	if (!in.fail())// the file may not be found
 	{
 		int storedscore;
 		in >> storedscore;
@@ -197,9 +190,7 @@ bool readsavedcore(const string &name,const int score)
 int getscore(const string &name)
 {
 	ifstream in(name + ".scr");
-	if (in.fail())// the file may not be found
-		cout << "error sfsfs";
-	else
+	if (!in.fail())// the file may not be found
 	{
 		int storedscore;
 		in >> storedscore;
@@ -412,26 +403,19 @@ void updateGrid(char grid[][SIZEX],const Item &spot,const vector<zombie> &zombie
 void placepill(char g[][SIZEX],const vector<pill> &pills)
 {
 	for (pill item : pills)
-	{
-		if (!item.eaten)
 			g[item.baseobject.y][item.baseobject.x] = item.baseobject.symbol;
-	}
 }
 
 void placeitem(char g[][SIZEX],const vector<Item> &holes)
 {
 	for (Item it : holes)
-	{
 		g[it.y][it.x] = it.symbol;
-	}
 }
 
 void placezombies(char g[][SIZEX],const vector<zombie> &zombies)
 {
 	for (zombie item : zombies)
-	{
 		g[item.baseobject.y][item.baseobject.x] = item.baseobject.symbol;
-	}
 }
 
 void updateSpotCoordinates(const char g[][SIZEX], player& sp,const int key, string& mess, vector<zombie>& zombies, vector<pill>& pills)
@@ -496,7 +480,7 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp,const int key, stri
 		{
 			if (pills[i].baseobject.x == sp.baseobject.x && pills[i].baseobject.y == sp.baseobject.y) // fix me removing the wrong pill
 			{
-				pills[i].eaten = true;// there is no point in using a vector if we have to do this
+				pills.erase(pills.begin() + i); // again needs to be fixed
 			}
 		}
 		break;
@@ -677,7 +661,6 @@ void showrempill(const int pils)
 	SelectTextColour(clYellow);
 	Gotoxy(40, 10);
 	cout << "pills left: " << pils;
-
 }
 
 void showDescription()
