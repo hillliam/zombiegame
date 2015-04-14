@@ -420,8 +420,7 @@ void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills)
 	else if (toupper(key) == FREEZ)// do nothing when it is the zombies turn to move
 		for (int i = 0; i != zombies.size(); i++)
 		{
-			zombie& a = zombies[i];
-			a.imobalized = true;
+			zombies[i].imobalized = !zombies[i].imobalized;
 		}
 }
  
