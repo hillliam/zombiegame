@@ -88,6 +88,7 @@ int main()
 	string mainloop();
 	void savescore(const string &name,const int score);
 	bool readsavedcore(const string &name,const int score);
+	void updatescore(const string &name, const int score);
 	//local variable declarations 
 	char grid[SIZEY][SIZEX];                //grid for display
 	vector<zombie> zombies;					// initalize the 4 zombies
@@ -117,12 +118,11 @@ int main()
 					updateGame(grid, spot, key, message, zombies, pills, holes);
 				else if (isCheatKey(key))
 					ApplyCheat(key, zombies, pills);
-				//else
-				//	message = "INVALID KEY!        ";
-				renderGame(grid, message, spot, zombies.size(), pills.size());        //render game state on screen
+				renderGame(grid, message, spot, zombies.size(), getsize(pills));        //render game state on screen
 			} while (endconditions(zombies.size(), getsize(pills), spot, key, message));      //while user does not want to quit
 			if (!readsavedcore(spot.name, spot.score))
 				savescore(spot.name, spot.score);
+			updatescore(spot.name, spot.score);
 			endProgram(message);                             //display final message
 		}
 		if ((key != PLAY) && (key != INFO))
@@ -141,6 +141,7 @@ int getsize(const vector<pill> pills)
 	for (const pill& item : pills)
 		if (!item.eaten)
 			++pils;
+	return pils;
 }
 
 string mainloop()
@@ -155,6 +156,7 @@ string mainloop()
 	int  getKeyPress();
 	void clearMessage();
 	void showscore(const int score);
+	void displayhighscores();
 	string name = "";
 	char key = ' ';
 	while (toupper(key) != PLAY && (name == ""))
@@ -163,6 +165,7 @@ string mainloop()
 		showgametitle();
 		showOptions();
 		showtime();
+		displayhighscores();
 		requestname();
 		cin >> name;
 		clearMessage();
@@ -792,4 +795,89 @@ void requestname()
 	SelectTextColour(clYellow);
 	Gotoxy(2, 11);
 	cout << "please enter your name: ";
+}
+
+void displayhighscores()
+{
+	ifstream in("best.scr");
+	if (!in.fail())// the file may not be found
+	{
+		Gotoxy(2, 13);
+		cout << "name	   score";
+		for (int i = 1; i != 3; ++i)
+		{
+			int storedscore; // the score 
+			string name; // the name
+			in >> name;
+			in >> storedscore;
+			Gotoxy(2, 14+i);
+			cout << name << "	" << storedscore;
+		}	
+	}
+	else
+	{
+		Gotoxy(2, 13);
+		cout<<"bob	     3";
+		Gotoxy(2, 14);
+		cout<<"tom       3";
+		Gotoxy(2, 15);
+		cout<<"jim       3";
+	}
+	in.close();
+}
+
+void updatescore(const string &name, const int score)
+{
+	ifstream in("best.scr");
+	if (!in.fail())
+	{
+		Gotoxy(2, 13);
+		string name1;
+		string name2;
+		string name3;
+		int score1;
+		int score2;
+		int score3;
+		in >> name1;
+		in >> score1;
+		in >> name2;
+		in >> score2;
+		in >> name3;
+		in >> score3;
+		in.close();
+		ofstream out("best.scr");
+		if (score1 < score)
+		{
+			score1 = score;
+			name1 = name;
+		}
+		else if (score2 < score)
+		{
+			score2 = score;
+			name2 = name;
+		}
+		else
+		{
+			score3 = score;
+			name3 = name;
+		}
+		out << name1 << endl;
+		out << score1 << endl;
+		out << name2 << endl;
+		out << score2 << endl;
+		out << name3 << endl;
+		out << score3 << endl;
+		out.close();
+	}
+	else
+	{
+		ofstream out("best.scr");
+		out << "bob" << endl;
+		out << 3 << endl;
+		out << "tom" << endl;
+		out << 2 << endl;
+		out << "jim" << endl;
+		out << 1 << endl;
+		out.close();
+	}
 }
