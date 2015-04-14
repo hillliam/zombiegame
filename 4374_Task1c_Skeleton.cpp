@@ -123,14 +123,14 @@ int main()
 				savescore(spot.name, spot.score);
 			endProgram(message);                             //display final message
 		}
-		if ((key != PLAY) || (key != INFO))
+		if ((key != PLAY) && (key != INFO))
 		{
 			SelectBackColour(clRed);
 			SelectTextColour(clYellow);
 			Gotoxy(40, 11);
 			cout << "INVALID KEY!  ";
 		}
-	} while ((key != PLAY) || (key != INFO)); //compleate me
+	} while ((key != PLAY) && (key != INFO)); //compleate me
 }
 
 string mainloop()
