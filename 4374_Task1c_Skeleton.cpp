@@ -110,8 +110,8 @@ int main()
 		{
 			Clrscr();
 			initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
+			renderGame(grid, message, spot, zombies.size(), pills.size());
 			do {
-				renderGame(grid, message, spot, zombies.size(), pills.size());        //render game state on screen
 				message = "                    "; //reset message
 				key = getKeyPress();              //read in next keyboard event
 				if (isArrowKey(key))
