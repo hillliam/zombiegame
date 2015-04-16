@@ -120,9 +120,9 @@ int main()
 					ApplyCheat(key, zombies, pills);
 				renderGame(grid, message, spot, zombies.size(), getsize(pills));        //render game state on screen
 			} while (endconditions(zombies.size(), getsize(pills), spot, key, message));      //while user does not want to quit
-			if (!readsavedcore(spot.name, spot.score))
-				savescore(spot.name, spot.score);
-			updatescore(spot.name, spot.score);
+			if (!readsavedcore(spot.name, spot.lives))
+				savescore(spot.name, spot.lives);
+			updatescore(spot.name, spot.lives);
 			endProgram(message);                             //display final message
 		}
 		if ((key != PLAY) && (key != INFO))
@@ -131,6 +131,10 @@ int main()
 			SelectTextColour(clYellow);
 			Gotoxy(40, 11);
 			cout << "INVALID KEY!  ";
+		}
+		if (key == QUIT)
+		{
+			return 1;// i am bad
 		}
 	} while ((key != PLAY) && (key != INFO)); //compleate me
 }
