@@ -154,15 +154,15 @@ string mainloop()
 		displayhighscores();
 		showmenu();
 		key = getKeyPress();
-		if (key == INFO)
+		if (toupper(key) == INFO)
 			showDescription();
-		else if (key == QUIT)
+		else if (toupper(key) == QUIT)
 			return 0;
-		else if (key != PLAY)
+		else if (toupper(key) != PLAY)
 		{
 			SelectBackColour(clRed);
 			SelectTextColour(clYellow);
-			Gotoxy(40, 11);
+			Gotoxy(40, 13);
 			cout << "INVALID KEY!  ";
 		}
 	}
