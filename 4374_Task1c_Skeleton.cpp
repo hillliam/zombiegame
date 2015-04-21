@@ -804,7 +804,7 @@ void displayhighscores()
 	{
 		Gotoxy(2, 13);
 		cout << "name	   score";
-		for (int i = 1; i != 3; ++i)
+		for (int i = 0; i != 3; ++i)
 		{
 			int storedscore; // the score 
 			string name; // the name
@@ -848,11 +848,17 @@ void updatescore(const string &name, const int score)
 		ofstream out("best.scr");
 		if (score1 < score)
 		{
+			score3 = score2; 
+			score2 = score1;
+			name3 = name2;
+			name2 = name1;
 			score1 = score;
 			name1 = name;
 		}
 		else if (score2 < score)
 		{
+			score3 = score2;
+			name3 = name2;
 			score2 = score;
 			name2 = name;
 		}
