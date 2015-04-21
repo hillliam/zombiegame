@@ -473,6 +473,15 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, const int key, str
 		sp.baseobject.y += dy;   //go in that Y direction
 		sp.baseobject.x += dx;   //go in that X direction
 		sp.lives++;
+		for (zombie& it : zombies)
+		{
+			if (sp.baseobject.x == it.baseobject.x && sp.baseobject.y == it.baseobject.y)
+			{
+				sp.lives--;
+				it.baseobject.x = it.startx;
+				it.baseobject.y = it.starty;
+			}
+		}
 		for (int i = 0; i < pills.size(); i++)
 			if (pills[i].baseobject.x == sp.baseobject.x && pills[i].baseobject.y == sp.baseobject.y) // fix me removing the wrong pill
 				pills[i].eaten = true; // again needs to be fixed
