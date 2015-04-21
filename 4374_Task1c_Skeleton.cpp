@@ -78,7 +78,6 @@ int main()
 	bool isArrowKey(const int k);
 	bool isCheatKey(const int k);
 	int getsize(const vector<pill> pills);
-	void showDescription();
 	int  getKeyPress();
 	bool endconditions(const int zombies, const int pills, const player &spot, const int key, string& message);
 	void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills);
@@ -96,43 +95,29 @@ int main()
 	vector<Item> holes; 					// 12 holes
 	string message("LET'S START...      "); //current message to player
 	int key(' ');
-
 	player spot = { SPOT, 0, 0, mainloop(), 5 };                        //create key to store keyboard events 
-	key = getKeyPress();
-	key = toupper(key);
-	if (key == INFO)
+	Clrscr();
+	initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
+	renderGame(grid, message, spot, zombies.size(), pills.size());
+	do {
+		message = "                    "; //reset message
+		key = getKeyPress();              //read in next keyboard event
+		if (isArrowKey(key))
+			updateGame(grid, spot, key, message, zombies, pills, holes);
+		else if (isCheatKey(key))
+		{
+			spot.hascheated = true;
+			ApplyCheat(key, zombies, pills);
+		}
+		renderGame(grid, message, spot, zombies.size(), getsize(pills));        //render game state on screen
+	} while (endconditions(zombies.size(), getsize(pills), spot, key, message));      //while user does not want to quit
+	if (!spot.hascheated)
 	{
-		showDescription();//Spot's symbol and position (0, 0) 
-		key = getKeyPress();
-		key = toupper(key);
-	}
-	if (key == PLAY)
-	{
-		Clrscr();
-		initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
-		renderGame(grid, message, spot, zombies.size(), pills.size());
-		do {
-			message = "                    "; //reset message
-			key = getKeyPress();              //read in next keyboard event
-			if (isArrowKey(key))
-				updateGame(grid, spot, key, message, zombies, pills, holes);
-			else if (isCheatKey(key))
-				ApplyCheat(key, zombies, pills);
-			renderGame(grid, message, spot, zombies.size(), getsize(pills));        //render game state on screen
-		} while (endconditions(zombies.size(), getsize(pills), spot, key, message));      //while user does not want to quit
 		if (!readsavedcore(spot.name, spot.lives))
 			savescore(spot.name, spot.lives);
 		updatescore(spot.name, spot.lives);
-		endProgram(message);                             //display final message
 	}
-	if ((key != PLAY) && (key != INFO))
-	{
-		SelectBackColour(clRed);
-		SelectTextColour(clYellow);
-		Gotoxy(40, 11);
-		cout << "INVALID KEY!  ";
-	}
-
+	endProgram(message);                             //display final message
 }
 
 int getsize(const vector<pill> pills)
@@ -157,22 +142,35 @@ string mainloop()
 	void clearMessage();
 	void showscore(const int score);
 	void displayhighscores();
+	void showDescription();
 	string name = "";
 	char key = ' ';
-	while (toupper(key) != PLAY && (name == ""))
+	while (toupper(key) != PLAY)
 	{
 		showTitle();
 		showgametitle();
 		showOptions();
 		showtime();
 		displayhighscores();
-		requestname();
-		cin >> name;
-		clearMessage();
-		int previousscore = getscore(name);
-		showscore(previousscore);
 		showmenu();
+		key = getKeyPress();
+		if (key == INFO)
+			showDescription();
+		else if (key == QUIT)
+			return 0;
+		else if (key != PLAY)
+		{
+			SelectBackColour(clRed);
+			SelectTextColour(clYellow);
+			Gotoxy(40, 11);
+			cout << "INVALID KEY!  ";
+		}
 	}
+	requestname();
+	cin >> name;
+	clearMessage();
+	int previousscore = getscore(name);
+	showscore(previousscore);
 	return name;
 }
 
@@ -451,21 +449,6 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, const int key, str
 		break;
 	case WALL:        //hit a wall and stay there
 		cout << '\a'; //beep the alarm
-		switch (key)
-		{
-		case UP:
-			sp.baseobject.y = SIZEY - 2;
-			break;
-		case DOWN:
-			sp.baseobject.y = 1;
-			break;
-		case LEFT:
-			sp.baseobject.x = SIZEX - 2;
-			break;
-		case RIGHT:
-			sp.baseobject.x = 1;
-			break;
-		}
 		mess = "CANNOT GO THERE!    ";
 		break;
 	case ZOMBIE:
