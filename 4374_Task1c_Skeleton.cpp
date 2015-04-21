@@ -370,8 +370,8 @@ void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies)
 
 void setSpotInitialCoordinates(Item& spot)
 {
-	spot.y = 6;      //vertical coordinate in range [1..(SIZEY - 2)]
-	spot.x = 10;    //horizontal coordinate in range [1..(SIZEX - 2)]
+	spot.y = Random(SIZEY);      //vertical coordinate in range [1..(SIZEY - 2)]
+	spot.x = Random(SIZEX);    //horizontal coordinate in range [1..(SIZEX - 2)]
 }
 
 void setGrid(char grid[][SIZEX])
