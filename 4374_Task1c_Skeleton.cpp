@@ -110,7 +110,6 @@ int main()
 	int  getKeyPress();
 	bool endconditions(const int zombies, const int pills, const player &spot, const int key, string& message);
 	void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills);
-	void updateGame(char grid[][SIZEX], player& spot, const int key, string& message, vector<zombie>& zombies, vector<pill>& pills, const vector<Item>& holes);
 	void renderGame(const char g[][SIZEX], const string &mess, const player &spot, const int zomlives, const int remaingpills);
 	void endProgram(const string &message);
 	string mainloop();
@@ -146,16 +145,16 @@ int main()
 			if (_kbhit() != 0)
 			{
 				saveboard(replayer, grid);
-		message = "                    "; //reset message
-		key = getKeyPress();              //read in next keyboard event
-		if (isArrowKey(key))
+				message = "                    "; //reset message
+				key = getKeyPress();              //read in next keyboard event
+				if (isArrowKey(key))
 					updateGame(grid, world, key, message);
-		else if (isCheatKey(key))
-		{
-			spot.hascheated = true;
-			ApplyCheat(key, world.zombies, world.pills);
-		}
-		else if (issaveKey(key))
+				else if (isCheatKey(key))
+				{
+					world.spot.hascheated = true;
+					ApplyCheat(key, world.zombies, world.pills);
+				}
+				else if (issaveKey(key))
 					savegame(world.spot.name, world);
 				else if (isloadKey(key))
 					world = loadgame(world.spot.name);
@@ -165,14 +164,14 @@ int main()
 					message = "INVALID KEY!        ";
 			}
 			renderGame(grid, message, world.spot, world.zombies.size(), world.pills.size(), diff);        //render game state on screen
-		} while (endconditions(world.zombies.size(), world.pills.size(), world.spot, key, message));      //while user does not want to quit
+	} while (endconditions(world.zombies.size(), world.pills.size(), world.spot, key, message));      //while user does not want to quit
 		key = ' ';
 	} while (world.spot.lives != 0 && world.spot.levelchoice <= 3 && key != QUIT && !world.spot.hascheated);
-	if (!spot.hascheated)
+	if (!world.spot.hascheated)
 	{
 		if (!readsavedcore(world.spot.name, world.spot.score) && !world.spot.hascheated)
 			savescore(world.spot.name, world.spot.score);
-		updatescore(spot.name, spot.lives);
+		updatescore(world.spot.name, world.spot.lives);
 	}
 	endProgram(message);                             //display final message
 }
@@ -247,7 +246,7 @@ string mainloop()
 	void displayhighscores();
 	void showDescription();
 	char key = ' ';
-	while (key != 13)//may work 
+	while (key != PLAY)//may work 
 	{
 		displayname(name.str());
 		showTitle();
@@ -269,6 +268,8 @@ string mainloop()
 			cout << "INVALID KEY!  ";
 		}
 	}
+	while (key != 13)//may work 
+	{
 		requestname();
 		if (_kbhit() != 0)
 		{
@@ -277,25 +278,7 @@ string mainloop()
 				name << key;
 		}
 	}
-		clearMessage();
-	while (toupper(key) != PLAY)
-	{
-		showTitle();
-		showgametitle();
-		showOptions();
-		showtime();
-		clearMessage();
-		int previousscore = getscore(name.str());
-		showscore(previousscore);
-		showmenu();
-		if (_kbhit() != 0)
-		{
-		    key = getKeyPress();
-		    key = toupper(key);
-		    if (toupper(key) == INFO)
-			    showDescription();
-	    }
-    }
+	clearMessage();
 	return name.str();
 }
 
@@ -330,7 +313,7 @@ void displayallmoves(const vector<replay> &replayer)
 				index++;
 			else if (key == LEFT)
 				index--;
-}
+		}
 	}
 }
 
@@ -443,9 +426,8 @@ void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills)
 		zombies.clear();
 	else if (toupper(key) == FREEZ)// do nothing when it is the zombies turn to move
 		for (int i = 0; i != zombies.size(); i++)
-		{
 			zombies[i].imobalized = !zombies[i].imobalized;
-		}
+}
  
 void getrandommove(const player &spot, int& x, int& y)
 {
@@ -453,13 +435,13 @@ void getrandommove(const player &spot, int& x, int& y)
 	{
 		if (spot.baseobject.x > x)
 		x = 1;
-	else
+		else
 		x = -1;
 		if (spot.baseobject.y > y)
 		y = 1;
-	else
+		else
 		y = -1;
-}
+	}
 	else
 	{
 		if (spot.baseobject.x > x)
