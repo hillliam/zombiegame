@@ -616,9 +616,10 @@ vector<zombie> placezombiesonmap(char grid[][SIZEX])
 
 Item setSpotInitialCoordinates(char gr[][SIZEX])
 {
-	spot.y = Random(SIZEY);      //vertical coordinate in range [1..(SIZEY - 2)]
-	spot.x = Random(SIZEX);    //horizontal coordinate in range [1..(SIZEX - 2)]
-	gr[spot.y][spot.x] = SPOT;
+	const int y = Random(SIZEY);      //vertical coordinate in range [1..(SIZEY - 2)]
+	const int x = Random(SIZEX);    //horizontal coordinate in range [1..(SIZEX - 2)]
+	gr[y][x] = SPOT;
+	return{ SPOT, x, y };
 }
 
 void setGrid(char grid[][SIZEX])
@@ -717,7 +718,7 @@ void updateSpotCoordinates(const char g[][SIZEX], game& world,const int key, str
 		world.spot.baseobject.x += dx;   //go in that X direction
 		world.spot.lives++;
 		world.spot.protectedcount--;
-		for (zombie& it : zombies)
+		for (zombie& it : world.zombies)
 		{
 			if (world.spot.baseobject.x == it.baseobject.x && world.spot.baseobject.y == it.baseobject.y)
 			{
@@ -727,14 +728,14 @@ void updateSpotCoordinates(const char g[][SIZEX], game& world,const int key, str
 			}
 		}
 		for (int i = 0; i < world.pills.size(); i++)
-			if (world.pills[i].baseobject.x == world.spot.baseobject.x && pills[i].baseobject.y == world.spot.baseobject.y) // fix me removing the wrong pill
+			if (world.pills[i].baseobject.x == world.spot.baseobject.x && world.pills[i].baseobject.y == world.spot.baseobject.y) // fix me removing the wrong pill
 				world.pills[i].eaten = true; // again needs to be fixed
 		break;
 	case MPILL:
 		world.spot.baseobject.y += dy;   //go in that Y direction
 		world.spot.baseobject.x += dx;   //go in that X direction
 		world.spot.isProtected = true;	 // protect the player
-		for (zombie& it : zombies)
+		for (zombie& it : world.zombies)
 		{
 			if (world.spot.baseobject.x == it.baseobject.x && world.spot.baseobject.y == it.baseobject.y)
 			{
@@ -754,7 +755,7 @@ void updateSpotCoordinates(const char g[][SIZEX], game& world,const int key, str
 			world.spot.protectedcount = 5;// set number of levels to protect
 		}
 		for (int i = 0; i < world.mpills.size(); i++)
-			if (world.mpills[i].baseobject.x == world.spot.baseobject.x && mpills[i].baseobject.y == world.spot.baseobject.y) // fix me removing the wrong pill
+			if (world.mpills[i].baseobject.x == world.spot.baseobject.x && world.mpills[i].baseobject.y == world.spot.baseobject.y) // fix me removing the wrong pill
 				world.mpills[i].eaten = true; // again needs to be fixed
 	}
 }
