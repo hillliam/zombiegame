@@ -246,7 +246,7 @@ string mainloop()
 	void displayhighscores();
 	void showDescription();
 	char key = ' ';
-	while (key != PLAY)//may work 
+	while (toupper(key) != PLAY)//may work 
 	{
 		displayname(name.str());
 		showTitle();
