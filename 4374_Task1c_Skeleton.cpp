@@ -231,7 +231,7 @@ bool isvalidlevel(const int level)
 
 string mainloop()
 {
-	void requestname();
+	string requestname();
 	void showTitle();
 	void showOptions();
 	void showmenu();
@@ -242,13 +242,13 @@ string mainloop()
 	void clearMessage();
 	void showscore(const int score);
 	void displayname(const string &name);
-	stringstream name;
+	string name;
 	void displayhighscores();
 	void showDescription();
 	char key = ' ';
 	while (toupper(key) != PLAY)//may work 
 	{
-		displayname(name.str());
+		displayname(name);
 		showTitle();
 		showgametitle();
 		showOptions();
@@ -268,18 +268,9 @@ string mainloop()
 			cout << "INVALID KEY!  ";
 		}
 	}
-	while (key != 13)//may work 
-	{
-		requestname();
-		if (_kbhit() != 0)
-		{
-			key = getKeyPress();
-			if (key != 13)
-				name << key;
-		}
-	}
+	name = requestname();
 	clearMessage();
-	return name.str();
+	return name;
 }
 
 void displayallmoves(const vector<replay> &replayer)
@@ -1195,12 +1186,15 @@ void showgametitle()
 	cout << "------------------------";
 }
 
-void requestname()
+string requestname()
 {
+	string name;
 	SelectBackColour(clBlue);
 	SelectTextColour(clYellow);
 	Gotoxy(2, 11);
 	cout << "please enter your name: ";
+	cin >> name;
+	return name;
 }
 
 void displayhighscores()
