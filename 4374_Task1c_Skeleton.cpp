@@ -926,9 +926,9 @@ bool haswon(const int zombies, const int pills, string& message, const player& s
 		return false;
 	SelectBackColour(clRed);
 	SelectTextColour(clYellow);
-	Gotoxy(40, 16);
+	Gotoxy(40, 19);
 	cout << "Congratulations, you win ";
-	Gotoxy(40, 17);
+	Gotoxy(40, 20);
 	cout << "Your score is: " << spot.lives;
 	return true;
 }
