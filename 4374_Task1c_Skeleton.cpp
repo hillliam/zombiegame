@@ -36,6 +36,7 @@ const char EAT('E');         //remove all pills
 const char PLAY('P');		//play buttion
 const char INFO('I');
 const char REPLAY('R');		//replay buttion
+const char SCOREBOARD('B'); //scoreboard button
 
 const char SAVE('s');		// save key
 const char LOAD('l');		// load key
@@ -253,11 +254,12 @@ string mainloop()
 		showgametitle();
 		showOptions();
 		showtime();
-		displayhighscores();
 		showmenu();
 		key = getKeyPress();
 		if (toupper(key) == INFO)
 			showDescription();
+		else if (toupper(key) == SCOREBOARD)
+			displayhighscores();
 		else if (toupper(key) == QUIT)
 			return 0;
 		else if (toupper(key) != PLAY)
@@ -1152,7 +1154,8 @@ void showmenu()
 	cout << "press p to play";
 	Gotoxy(40, 11);
 	cout << "press i to get infomation";
-
+	Gotoxy(40, 12);
+	cout << "press b to display scoreboard";
 }
 
 void showscore(const int score)
