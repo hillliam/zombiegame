@@ -135,7 +135,6 @@ int main()
 	game world = initialiseGame(grid);  //initialise grid (incl. walls and spot)
 	Clrscr();
 	do {
-		nextlevel(world, grid);
 		int hours, min, seconds; // do we need to reset the timer when we load the next level
 		GetSystemTime(hours, min, seconds);// populates the varibles
 		do {
@@ -167,6 +166,7 @@ int main()
 			renderGame(grid, message, world.spot, world.zombies.size(), world.pills.size(), diff);        //render game state on screen
 	} while (endconditions(world.zombies.size(), world.pills.size(), world.spot, key, message));      //while user does not want to quit
 		key = ' ';
+		nextlevel(world, grid);
 	} while (world.spot.lives != 0 && world.spot.levelchoice <= 3 && key != QUIT && !world.spot.hascheated);
 	if (!world.spot.hascheated)
 	{
@@ -1203,10 +1203,10 @@ string requestname()
 void displayhighscores()
 {
 	ifstream in("best.scr");
+    Gotoxy(2, 13);
+	cout << "name	   score";
 	if (!in.fail())// the file may not be found
 	{
-		Gotoxy(2, 13);
-		cout << "name	   score";
 		for (int i = 0; i != 3; ++i)
 		{
 			int storedscore; // the score 
@@ -1219,11 +1219,11 @@ void displayhighscores()
 	}
 	else
 	{
-		Gotoxy(2, 13);
-		cout << "bob	     3";
 		Gotoxy(2, 14);
-		cout << "tom       3";
+		cout << "bob	     3";
 		Gotoxy(2, 15);
+		cout << "tom       3";
+		Gotoxy(2, 16);
 		cout << "jim       3";
 	}
 	in.close();
