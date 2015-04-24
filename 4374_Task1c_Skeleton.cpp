@@ -18,7 +18,6 @@ const int SIZEX(20);         //horizontal dimension
 const char SPOT('@');        //spot
 const char TUNNEL(' ');      //open space
 const char WALL('#');        //border
-const char INSIDEWALL('#');	 //inside wall
 const char HOLE('O');        //hole
 const char ZOMBIE('Z');      //zombie
 const char PILL('.');        //pill (used in basic version insted of structure)
@@ -368,13 +367,21 @@ void updateGame(char grid[][SIZEX], game& spot,const int key, string& message)
 void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, player& spot) // zombies move
 {
 	void getrandommove(const player&, int& x, int& y);
+	void retreat(const player&, int& x, int& y);
 	for (int i = 0; i < zombies.size(); i++)
 	{
 		if (zombies[i].imobalized == false)
 		{
 			//calculate direction of movement required by key - if any
 			int dx(zombies[i].baseobject.x), dy(zombies[i].baseobject.y);
-			getrandommove(spot, dx, dy); // if we pass the grid to this we can check to make it rare that the rombie falls down a hole 
+			if (!spot.isProtected)
+			{
+				getrandommove(spot, dx, dy); // 
+			}
+			else
+			{
+				retreat(spot, dx, dy);
+			}
 			//check new target position in grid 
 			//and update spot coordinates if move is possible
 			const int targetY(zombies[i].baseobject.y + dy);
@@ -382,11 +389,18 @@ void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, pla
 			switch (g[targetY][targetX])
 			{		//...depending on what's on the target position in grid...
 			case PILL:
+				zombies[i].baseobject.y += dy;   //go in that Y direction
+				zombies[i].baseobject.x += dx;   //go in that X direction
+				break;
+			case MPILL:
+				zombies[i].baseobject.y += dy;   //go in that Y direction
+				zombies[i].baseobject.x += dx;   //go in that X direction
+				break;
 			case TUNNEL:      //can move
 				zombies[i].baseobject.y += dy;   //go in that Y direction
 				zombies[i].baseobject.x += dx;   //go in that X direction
 				break;
-			case SPOT:// dont know if neede
+			case SPOT:
 				if (!spot.isProtected)
 				spot.lives--;
 				else
@@ -427,8 +441,6 @@ void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills)
  
 void getrandommove(const player &spot, int& x, int& y)
 {
-	if (!spot.isProtected)
-	{
 		if (spot.baseobject.x > x)
 		x = 1;
 		else
@@ -437,18 +449,18 @@ void getrandommove(const player &spot, int& x, int& y)
 		y = 1;
 		else
 		y = -1;
-	}
+}
+
+void retreat(const player &spot, int& x, int& y)
+{
+	if (spot.baseobject.x > x)
+		x = -1;
 	else
-	{
-		if (spot.baseobject.x > x)
-			x = -1;
-		else
-			x = 1;
-		if (spot.baseobject.y > y)
-			y = -1;
-		else
-			y = 1;
-	}
+		x = 1;
+	if (spot.baseobject.y > y)
+		y = -1;
+	else
+		y = 1;
 }
 
 //---------------------------------------------------------------------------
@@ -667,7 +679,8 @@ void placeitem(char g[][SIZEX], const vector<Item> &holes)
 void updateSpotCoordinates(const char g[][SIZEX], game& world,const int key, string& mess)
 {
 	void setKeyDirection(const int k, int& dx, int& dy);
-
+	if (world.spot.protectedcount == 0)
+		world.spot.isProtected == false;
 	//calculate direction of movement required by key - if any
 	int dx(0), dy(0);
 	setKeyDirection(key, dx, dy); 	//find direction indicated by key
@@ -731,9 +744,11 @@ void updateSpotCoordinates(const char g[][SIZEX], game& world,const int key, str
 			if (world.pills[i].baseobject.x == world.spot.baseobject.x && world.pills[i].baseobject.y == world.spot.baseobject.y) // fix me removing the wrong pill
 				world.pills[i].eaten = true; // again needs to be fixed
 		break;
-	case MPILL:
+		case MPILL:
 		world.spot.baseobject.y += dy;   //go in that Y direction
 		world.spot.baseobject.x += dx;   //go in that X direction
+		if (world.spot.isProtected)
+			world.spot.protectedcount--;
 		world.spot.isProtected = true;	 // protect the player
 		for (zombie& it : world.zombies)
 		{
