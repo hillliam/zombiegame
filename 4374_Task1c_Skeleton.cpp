@@ -1058,7 +1058,7 @@ void showzomLives(const int lives)
 {
 	SelectBackColour(clRed);
 	SelectTextColour(clYellow);
-	Gotoxy(40, 11);
+	Gotoxy(40, 17);
 	cout << "zombie lives: " << lives;
 }
 
@@ -1113,7 +1113,7 @@ void showOptions()
 	SelectTextColour(clYellow);
 	Gotoxy(40, 7);
 	cout << "TO MOVE USE KEYBOARD ARROWS  ";
-	Gotoxy(40, 8);
+	Gotoxy(40, 18);
 	cout << "TO QUIT ENTER 'Q'   ";
 }
 
