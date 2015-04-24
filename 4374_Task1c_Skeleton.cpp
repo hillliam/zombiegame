@@ -1222,9 +1222,9 @@ void displayhighscores()
 		Gotoxy(2, 14);
 		cout << "bob	     3";
 		Gotoxy(2, 15);
-		cout << "tom       3";
+		cout << "tom       2";
 		Gotoxy(2, 16);
-		cout << "jim       3";
+		cout << "jim       1";
 	}
 	in.close();
 }
