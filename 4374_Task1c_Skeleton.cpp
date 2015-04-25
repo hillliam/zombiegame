@@ -666,6 +666,7 @@ void updateGrid(char grid[][SIZEX],const game& world)
 		if (!item.eaten)
 		placeSpot(grid, item.baseobject);      //set pills on map
 	for (const pill& item : world.mpills)
+		if (!item.eaten)
 		placeSpot(grid, item.baseobject);     //set magic pills on map
 	placeitem(grid, world.holes); // set the holes on the grid
 	placeSpot(grid, world.spot.baseobject);	 //set spot in grid
@@ -751,20 +752,13 @@ void updateSpotCoordinates(const char g[][SIZEX], game& world,const int key, str
 			if (world.pills[i].baseobject.x == world.spot.baseobject.x && world.pills[i].baseobject.y == world.spot.baseobject.y) // fix me removing the wrong pill
 				world.pills[i].eaten = true; // again needs to be fixed
 		break;
-		case MPILL:
+		
+	case MPILL:
 		world.spot.baseobject.y += dy;   //go in that Y direction
 		world.spot.baseobject.x += dx;   //go in that X direction
 		if (world.spot.isProtected)
 			world.spot.protectedcount--;
 		world.spot.isProtected = true;	 // protect the player
-		for (zombie& it : world.zombies)
-		{
-			if (world.spot.baseobject.x == it.baseobject.x && world.spot.baseobject.y == it.baseobject.y)
-			{
-				it.baseobject.x = it.startx;
-				it.baseobject.y = it.starty;
-			}
-		}
 		switch (world.spot.levelchoice)
 			{
 		case 1:
@@ -776,10 +770,20 @@ void updateSpotCoordinates(const char g[][SIZEX], game& world,const int key, str
 		case 3:
 			world.spot.protectedcount = 5;// set number of levels to protect
 		}
+		
+		for (zombie& it : world.zombies)
+		{
+			if (world.spot.baseobject.x == it.baseobject.x && world.spot.baseobject.y == it.baseobject.y)
+			{
+				world.spot.lives--;
+				it.baseobject.x = it.startx;
+				it.baseobject.y = it.starty;
+			}
+		}
 		for (int i = 0; i < world.mpills.size(); i++)
 			if (world.mpills[i].baseobject.x == world.spot.baseobject.x && world.mpills[i].baseobject.y == world.spot.baseobject.y) // fix me removing the wrong pill
 				world.mpills[i].eaten = true; // again needs to be fixed
-
+		break;
 	}
 	if (world.spot.protectedcount == 0)
 		world.spot.isProtected = false;
