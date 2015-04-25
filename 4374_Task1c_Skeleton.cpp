@@ -1150,11 +1150,11 @@ void showmenu()
 {
 	SelectBackColour(clRed);
 	SelectTextColour(clYellow);
-	Gotoxy(40, 10);
+	Gotoxy(40, 13);
 	cout << "press p to play";
-	Gotoxy(40, 11);
+	Gotoxy(40, 14);
 	cout << "press i to get infomation";
-	Gotoxy(40, 12);
+	Gotoxy(40, 15);
 	cout << "press b to display scoreboard";
 }
 
