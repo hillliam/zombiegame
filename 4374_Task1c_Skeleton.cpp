@@ -389,6 +389,9 @@ void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, pla
 			case SPOT:// dont know if neede
 				if (!spot.isProtected)
 				spot.lives--;
+				else
+				zombies.erase(zombies.begin() + i);
+
 				zombies[i].baseobject.x = zombies[i].startx;
 				zombies[i].baseobject.y = zombies[i].starty;
 				break;
@@ -755,6 +758,8 @@ void updateSpotCoordinates(const char g[][SIZEX], game& world,const int key, str
 			if (world.mpills[i].baseobject.x == world.spot.baseobject.x && world.mpills[i].baseobject.y == world.spot.baseobject.y) // fix me removing the wrong pill
 				world.mpills[i].eaten = true; // again needs to be fixed
 	}
+	if (world.spot.protectedcount == 0)
+		world.spot.isProtected = false;
 }
 
 void setKeyDirection(const int key, int& dx, int& dy)
