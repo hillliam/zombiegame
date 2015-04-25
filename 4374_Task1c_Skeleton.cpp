@@ -624,8 +624,15 @@ vector<zombie> placezombiesonmap(char grid[][SIZEX])
 
 Item setSpotInitialCoordinates(char gr[][SIZEX])
 {
-	const int y = Random(SIZEY);      //vertical coordinate in range [1..(SIZEY - 2)]
-	const int x = Random(SIZEX);    //horizontal coordinate in range [1..(SIZEX - 2)]
+	bool ocupiedpeace(const char gd[][SIZEX], const int x, const int y);
+	int x = Random(SIZEX - 2); //
+	int y = Random(SIZEY - 2); // 
+	while (ocupiedpeace(gr, x, y))
+	{
+		Seed();
+		x = Random(SIZEX - 2); // get new chordinates
+		y = Random(SIZEY - 2); // 
+	}
 	gr[y][x] = SPOT;
 	return{ SPOT, x, y };
 }
@@ -772,6 +779,7 @@ void updateSpotCoordinates(const char g[][SIZEX], game& world,const int key, str
 		for (int i = 0; i < world.mpills.size(); i++)
 			if (world.mpills[i].baseobject.x == world.spot.baseobject.x && world.mpills[i].baseobject.y == world.spot.baseobject.y) // fix me removing the wrong pill
 				world.mpills[i].eaten = true; // again needs to be fixed
+
 	}
 	if (world.spot.protectedcount == 0)
 		world.spot.isProtected = false;
