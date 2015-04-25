@@ -677,12 +677,14 @@ void updateSpotCoordinates(const char g[][SIZEX], game& world,const int key, str
 	case TUNNEL:      //can move
 		world.spot.baseobject.y += dy;   //go in that Y direction
 		world.spot.baseobject.x += dx;   //go in that X direction
-		world.spot.protectedcount--;
+		if (world.spot.isProtected)
+			world.spot.protectedcount--;
 		break;
 	case WALL:        //hit a wall and stay there
 		cout << '\a'; //beep the alarm
 		mess = "CANNOT GO THERE!    ";
-		world.spot.protectedcount--;
+		if (world.spot.isProtected)
+			world.spot.protectedcount--;
 		break;
 	case ZOMBIE:
 		if (world.spot.isProtected)
@@ -704,13 +706,15 @@ void updateSpotCoordinates(const char g[][SIZEX], game& world,const int key, str
 		world.spot.baseobject.y += dy;   //go in that Y direction
 		world.spot.baseobject.x += dx;   //go in that X direction
 		world.spot.lives--;
-		world.spot.protectedcount--;
+		if (world.spot.isProtected)
+			world.spot.protectedcount--;
 		break;
 	case PILL:
 		world.spot.baseobject.y += dy;   //go in that Y direction
 		world.spot.baseobject.x += dx;   //go in that X direction
 		world.spot.lives++;
-		world.spot.protectedcount--;
+		if (world.spot.isProtected)
+			world.spot.protectedcount--;
 		for (zombie& it : world.zombies)
 		{
 			if (world.spot.baseobject.x == it.baseobject.x && world.spot.baseobject.y == it.baseobject.y)
