@@ -54,6 +54,7 @@ struct zombie {
 	int startx;              // the start location of the zombie
 	int starty;
 	bool imobalized;		 // set true if the zombie cant move
+	bool alive;
 	zombie operator= (const zombie& it)
 	{
 		zombie a = it;
@@ -97,6 +98,10 @@ int main()
 	int key(' ');
 	player spot = { SPOT, 0, 0, mainloop(), 5 };                        //create key to store keyboard events 
 	Clrscr();
+	for (int i = 0; i < zombies.size(); i++)
+	{
+		zombies[i].alive = true;
+	}
 	initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
 	renderGame(grid, message, spot, zombies.size(), pills.size());
 	do {
@@ -108,6 +113,7 @@ int main()
 		{
 			spot.hascheated = true;
 			ApplyCheat(key, zombies, pills);
+			updateGame(grid, spot, key, message, zombies, pills, holes);
 		}
 		renderGame(grid, message, spot, zombies.size(), getsize(pills));        //render game state on screen
 	} while (endconditions(zombies.size(), getsize(pills), spot, key, message));      //while user does not want to quit
@@ -263,7 +269,7 @@ void updatezombieCoordinates(const char g[][SIZEX], player& spot, vector<zombie>
 				}
 				break;
 			case HOLE://remove the zombie from map
-				zombies.erase(zombies.begin() + i);
+				zombies[i].alive = false;
 			}
 		}
 	}
@@ -274,7 +280,14 @@ void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills)
 	if (toupper(key) == EAT)//remove all pils from the grid
 		pills.clear();
 	else if (toupper(key) == EXTERMINATE)//remove all zombies from board
-		zombies.clear();
+	{
+		for (int i = 0; i != zombies.size(); i++)
+		{
+			zombies[i].alive = !zombies[i].alive;
+		    zombies[i].baseobject.x = zombies[i].startx;
+		    zombies[i].baseobject.y = zombies[i].starty;		
+		}
+	}
 	else if (toupper(key) == FREEZ)// do nothing when it is the zombies turn to move
 		for (int i = 0; i != zombies.size(); i++)
 			zombies[i].imobalized = !zombies[i].imobalized;
@@ -299,19 +312,19 @@ void getrandommove(const Item &spot, int& x, int& y)
 void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, vector<Item>& holes, vector<pill>& pills)
 { //initialise grid and place spot in middle
 	void setGrid(char[][SIZEX]);
-	void setSpotInitialCoordinates(Item& spot);
+	void setSpotInitialCoordinates(char grid[][SIZEX], Item& spot);
 	void placeSpot(char gr[][SIZEX], const Item &spot);
 	void placepillonmap(char grid[][SIZEX], vector<pill>& pills);
 	void placeholeonmap(char grid[][SIZEX], vector<Item>& holes);
 	void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies);
 
 	Seed();                            //seed reandom number generator
-	setSpotInitialCoordinates(spot.baseobject);//initialise spot position
+	setSpotInitialCoordinates(grid,spot.baseobject);//initialise spot position
 	setGrid(grid);                     //reset empty grid
+	placezombiesonmap(grid, zombies);  // place the zombies on the map
 	placeSpot(grid, spot.baseobject);  //set spot in grid
 	placepillonmap(grid, pills);	   // place pills on the map
 	placeholeonmap(grid, holes);       // place holes on the map
-	placezombiesonmap(grid, zombies);  // place the zombies on the map
 }
 
 void placepillonmap(char grid[][SIZEX], vector<pill>& pills)
@@ -354,7 +367,7 @@ void placeholeonmap(char grid[][SIZEX], vector<Item>& holes)
 
 void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies)
 {
-	zombie zom1 = { ZOMBIE, 1, 1, 1, 1 };
+	zombie zom1 = { ZOMBIE, 1, 1, 1, 1};
 	zombie zom2 = { ZOMBIE, SIZEX - 2, 1, SIZEX - 2, 1 };
 	zombie zom3 = { ZOMBIE, 1, SIZEY - 2, 1, SIZEY - 2 };
 	zombie zom4 = { ZOMBIE, SIZEX - 2, SIZEY - 2, SIZEX - 2, SIZEY - 2 };
@@ -366,12 +379,23 @@ void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies)
 	grid[SIZEY - 2][1] = ZOMBIE;
 	grid[1][SIZEX - 2] = ZOMBIE;
 	grid[SIZEY - 2][SIZEX - 2] = ZOMBIE;
+	for (int i = 0; i < zombies.size(); i++)
+	{
+		zombies[i].alive = true;
+	}
 }
 
-void setSpotInitialCoordinates(Item& spot)
+void setSpotInitialCoordinates(char grid[][SIZEX], Item& spot)
 {
-	spot.y = Random(SIZEY);      //vertical coordinate in range [1..(SIZEY - 2)]
-	spot.x = Random(SIZEX);    //horizontal coordinate in range [1..(SIZEX - 2)]
+	bool ocupiedpeace(const char gd[][SIZEX], const int x, const int y);
+	spot.y = Random(SIZEY-2);      //vertical coordinate in range [1..(SIZEY - 2)]
+	spot.x = Random(SIZEX-2);    //horizontal coordinate in range [1..(SIZEX - 2)]
+	while (ocupiedpeace(grid, spot.x, spot.y))
+	{
+		Seed();
+		spot.x = Random(SIZEX - 2); // get new chordinates
+		spot.y = Random(SIZEY - 2); // 
+	}
 }
 
 void setGrid(char grid[][SIZEX])
@@ -427,6 +451,7 @@ void placeitem(char g[][SIZEX], const vector<Item> &holes)
 void placezombies(char g[][SIZEX], const vector<zombie> &zombies)
 {
 	for (const zombie& item : zombies)
+		if (item.alive == true)
 		g[item.baseobject.y][item.baseobject.x] = item.baseobject.symbol;
 }
 
