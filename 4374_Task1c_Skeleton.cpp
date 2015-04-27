@@ -373,13 +373,9 @@ void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, pla
 			//calculate direction of movement required by key - if any
 			int dx(zombies[i].baseobject.x), dy(zombies[i].baseobject.y);
 			if (!spot.isProtected)
-			{
 				getrandommove(spot, dx, dy); // 
-			}
 			else
-			{
 				retreat(spot, dx, dy);
-			}
 			//check new target position in grid 
 			//and update spot coordinates if move is possible
 			const int targetY(zombies[i].baseobject.y + dy);
@@ -387,13 +383,6 @@ void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, pla
 			switch (g[targetY][targetX])
 			{		//...depending on what's on the target position in grid...
 			case PILL:
-				zombies[i].baseobject.y += dy;   //go in that Y direction
-				zombies[i].baseobject.x += dx;   //go in that X direction
-				break;
-			case MPILL:
-				zombies[i].baseobject.y += dy;   //go in that Y direction
-				zombies[i].baseobject.x += dx;   //go in that X direction
-				break;
 			case TUNNEL:      //can move
 				zombies[i].baseobject.y += dy;   //go in that Y direction
 				zombies[i].baseobject.x += dx;   //go in that X direction
@@ -403,7 +392,6 @@ void updatezombieCoordinates(const char g[][SIZEX], vector<zombie>& zombies, pla
 				spot.lives--;
 				else
 				zombies.erase(zombies.begin() + i);
-
 				zombies[i].baseobject.x = zombies[i].startx;
 				zombies[i].baseobject.y = zombies[i].starty;
 				break;
@@ -608,10 +596,10 @@ vector<Item> occupyHoles(char grid[][SIZEX], const int numberOfHoles)
 
 vector<zombie> placezombiesonmap(char grid[][SIZEX])
 {
-	zombie zom1 = { ZOMBIE, 1, 1, 1, 1 };
-	zombie zom2 = { ZOMBIE, SIZEX - 2, 1, SIZEX - 2, 1 };
-	zombie zom3 = { ZOMBIE, 1, SIZEY - 2, 1, SIZEY - 2 };
-	zombie zom4 = { ZOMBIE, SIZEX - 2, SIZEY - 2, SIZEX - 2, SIZEY - 2 };
+	const zombie zom1 = { ZOMBIE, 1, 1, 1, 1 };
+	const zombie zom2 = { ZOMBIE, SIZEX - 2, 1, SIZEX - 2, 1 };
+	const zombie zom3 = { ZOMBIE, 1, SIZEY - 2, 1, SIZEY - 2 };
+	const zombie zom4 = { ZOMBIE, SIZEX - 2, SIZEY - 2, SIZEX - 2, SIZEY - 2 };
 	grid[1][1] = ZOMBIE; // place it on the map	
 	grid[SIZEY - 2][1] = ZOMBIE;
 	grid[1][SIZEX - 2] = ZOMBIE;
@@ -705,12 +693,17 @@ void updateSpotCoordinates(const char g[][SIZEX], game& world,const int key, str
 			world.spot.protectedcount--;
 		break;
 	case ZOMBIE:
-		if (world.spot.isProtected)
-			world.spot.protectedcount--;
-		else
-			world.spot.lives--;
 		world.spot.baseobject.y += dy;   //go in that Y direction
 		world.spot.baseobject.x += dx;   //go in that X direction
+		if (world.spot.isProtected)
+		{
+			world.spot.protectedcount--;
+			for (int i = 0; i < world.zombies.size(); i++)
+				if (world.spot.baseobject.x == world.zombies[i].baseobject.x && world.spot.baseobject.y == world.zombies[i].baseobject.y)
+					world.zombies.erase(world.zombies.begin() + i);
+		}
+		else
+			world.spot.lives--;
 		for (zombie& it : world.zombies)
 		{
 			if (world.spot.baseobject.x == it.baseobject.x && world.spot.baseobject.y == it.baseobject.y)
@@ -745,7 +738,6 @@ void updateSpotCoordinates(const char g[][SIZEX], game& world,const int key, str
 		case 3:
 			world.spot.protectedcount = 5;// set number of levels to protect
 		}
-
 		for (zombie& it : world.zombies)
 		{
 			if (world.spot.baseobject.x == it.baseobject.x && world.spot.baseobject.y == it.baseobject.y)
