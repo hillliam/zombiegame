@@ -811,10 +811,10 @@ void requestname()
 void displayhighscores()
 {
 	ifstream in("best.scr");
+	Gotoxy(2, 13);
+	cout << "name	   score";
 	if (!in.fail())// the file may not be found
 	{
-		Gotoxy(2, 13);
-		cout << "name	   score";
 		for (int i = 0; i != 3; ++i)
 		{
 			int storedscore; // the score 
@@ -827,11 +827,11 @@ void displayhighscores()
 	}
 	else
 	{
-		Gotoxy(2, 13);
-		cout << "bob	     3";
 		Gotoxy(2, 14);
-		cout << "tom       3";
+		cout << "bob	     3";
 		Gotoxy(2, 15);
+		cout << "tom       3";
+		Gotoxy(2, 16);
 		cout << "jim       3";
 	}
 	in.close();
