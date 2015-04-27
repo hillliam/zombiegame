@@ -37,8 +37,8 @@ const char INFO('I');
 const char REPLAY('R');		//replay buttion
 const char SCOREBOARD('B'); //scoreboard button
 
-const char SAVE('s');		// save key
-const char LOAD('l');		// load key
+const char SAVE('S');		// save key
+const char LOAD('L');		// load key
 
 const char QUIT('Q');        //end the game
 
