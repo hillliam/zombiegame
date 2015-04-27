@@ -363,6 +363,10 @@ void placeholeonmap(char grid[][SIZEX], vector<Item>& holes)
 
 void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies)
 {
+	const zombie zom1 = { ZOMBIE, 1, 1, 1, 1, false , true}; // {{item}, startx, starty, imobilzed, alive}
+	const zombie zom2 = { ZOMBIE, SIZEX - 2, 1, SIZEX - 2, 1, false, true };
+	const zombie zom3 = { ZOMBIE, 1, SIZEY - 2, 1, SIZEY - 2, false, true };
+	const zombie zom4 = { ZOMBIE, SIZEX - 2, SIZEY - 2, SIZEX - 2, SIZEY - 2, false, true };
 	zombies.push_back(zom1);
 	zombies.push_back(zom2);
 	zombies.push_back(zom3);
@@ -371,10 +375,6 @@ void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies)
 	grid[SIZEY - 2][1] = ZOMBIE;
 	grid[1][SIZEX - 2] = ZOMBIE;
 	grid[SIZEY - 2][SIZEX - 2] = ZOMBIE;
-	for (int i = 0; i < zombies.size(); i++)
-	{
-		zombies[i].alive = true;
-	}
 }
 
 void setSpotInitialCoordinates(char grid[][SIZEX], Item& spot)
