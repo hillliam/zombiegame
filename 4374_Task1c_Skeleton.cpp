@@ -55,6 +55,7 @@ struct zombie {
 	int starty;
 	bool imobalized;		 // set true if the zombie cant move
 	bool alive;
+	bool hidden;
 	zombie operator= (const zombie& it)
 	{
 		zombie a = it;
@@ -80,7 +81,7 @@ int main()
 	bool isCheatKey(const int k);
 	int getsize(const vector<pill>& pills);
 	int  getKeyPress();
-	bool endconditions(const int zombies, const int pills, const player &spot, const int key, string& message);
+	bool endconditions(vector<zombie>& zombies, const int pills, const player &spot, const int key, string& message);
 	void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills);
 	void updateGame(char grid[][SIZEX], player& spot, const int key, string& message, vector<zombie>& zombies, vector<pill>& pills, const vector<Item>& holes);
 	void renderGame(const char g[][SIZEX], const string &mess, const player &spot, const int zomlives, const int remaingpills);
@@ -112,7 +113,7 @@ int main()
 			updateGame(grid, spot, key, message, zombies, pills, holes);
 		}
 		renderGame(grid, message, spot, zombies.size(), getsize(pills));        //render game state on screen
-	} while (endconditions(zombies.size(), getsize(pills), spot, key, message));      //while user does not want to quit
+	} while (endconditions(zombies, getsize(pills), spot, key, message));      //while user does not want to quit
 	if (!spot.hascheated)
 	{
 		if (!readsavedcore(spot.name, spot.lives))
@@ -143,7 +144,6 @@ string mainloop()
 	int  getKeyPress();
 	void clearMessage();
 	void showscore(const int score);
-	void displayhighscores();
 	void showDescription();
 	string name = "";
 	char key = ' ';
@@ -153,7 +153,6 @@ string mainloop()
 		showgametitle();
 		showOptions();
 		showtime();
-		displayhighscores();
 		showmenu();
 		key = getKeyPress();
 		if (toupper(key) == INFO)
@@ -279,9 +278,9 @@ void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills)
 	{
 		for (int i = 0; i != zombies.size(); i++)
 		{
-			zombies[i].alive = !zombies[i].alive;
-		    zombies[i].baseobject.x = zombies[i].startx;
-		    zombies[i].baseobject.y = zombies[i].starty;		
+			zombies[i].hidden = !zombies[i].hidden;
+			zombies[i].baseobject.x = zombies[i].startx;
+			zombies[i].baseobject.y = zombies[i].starty;
 		}
 	}
 	else if (toupper(key) == FREEZ)// do nothing when it is the zombies turn to move
@@ -315,7 +314,7 @@ void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, v
 	void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies);
 
 	Seed();                            //seed reandom number generator
-	setSpotInitialCoordinates(grid,spot.baseobject);//initialise spot position
+	setSpotInitialCoordinates(grid, spot.baseobject);//initialise spot position
 	setGrid(grid);                     //reset empty grid
 	placezombiesonmap(grid, zombies);  // place the zombies on the map
 	placeSpot(grid, spot.baseobject);  //set spot in grid
@@ -363,7 +362,7 @@ void placeholeonmap(char grid[][SIZEX], vector<Item>& holes)
 
 void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies)
 {
-	const zombie zom1 = { ZOMBIE, 1, 1, 1, 1, false , true}; // {{item}, startx, starty, imobilzed, alive}
+	const zombie zom1 = { ZOMBIE, 1, 1, 1, 1, false, true }; // {{item}, startx, starty, imobilzed, alive}
 	const zombie zom2 = { ZOMBIE, SIZEX - 2, 1, SIZEX - 2, 1, false, true };
 	const zombie zom3 = { ZOMBIE, 1, SIZEY - 2, 1, SIZEY - 2, false, true };
 	const zombie zom4 = { ZOMBIE, SIZEX - 2, SIZEY - 2, SIZEX - 2, SIZEY - 2, false, true };
@@ -380,8 +379,8 @@ void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies)
 void setSpotInitialCoordinates(char grid[][SIZEX], Item& spot)
 {
 	bool ocupiedpeace(const char gd[][SIZEX], const int x, const int y);
-	spot.y = Random(SIZEY-2);      //vertical coordinate in range [1..(SIZEY - 2)]
-	spot.x = Random(SIZEX-2);    //horizontal coordinate in range [1..(SIZEX - 2)]
+	spot.y = Random(SIZEY - 2);      //vertical coordinate in range [1..(SIZEY - 2)]
+	spot.x = Random(SIZEX - 2);    //horizontal coordinate in range [1..(SIZEX - 2)]
 	while (ocupiedpeace(grid, spot.x, spot.y))
 	{
 		Seed();
@@ -443,7 +442,7 @@ void placeitem(char g[][SIZEX], const vector<Item> &holes)
 void placezombies(char g[][SIZEX], const vector<zombie> &zombies)
 {
 	for (const zombie& item : zombies)
-		if (item.alive == true)
+		if (item.alive == true && item.hidden == false)
 			g[item.baseobject.y][item.baseobject.x] = item.baseobject.symbol;
 }
 
@@ -555,10 +554,12 @@ bool wantToQuit(const int key, string& message)
 	return exit;
 }
 
-bool haswon(const int zombies, const int pills, string& message, const player& spot)
-{
-	if (zombies > 0)
+bool haswon(vector<zombie>& zombies, const int pills, string& message, const player& spot)
+{		
+	if (zombies[0].alive == true || zombies[1].alive == true || zombies[2].alive == true || zombies[3].alive == true)
+	{
 		return false;
+	}
 	SelectBackColour(clRed);
 	SelectTextColour(clYellow);
 	Gotoxy(40, 16);
@@ -568,9 +569,9 @@ bool haswon(const int zombies, const int pills, string& message, const player& s
 	return true;
 }
 
-bool endconditions(const int zombies, const int pills, const player &spot, const int key, string& message)
+bool endconditions(vector<zombie>& zombies, const int pills, const player &spot, const int key, string& message)
 {
-	bool haswon(const int zombies, const int pills, string& message, const player &spot);
+	bool haswon(vector<zombie>& zombies, const int pills, string& message, const player &spot);
 	bool haslost(const player &spot, string& message);
 	bool wantToQuit(const int k, string& message);
 	return (!wantToQuit(key, message) && (!haswon(zombies, pills, message, spot) && !haslost(spot, message)));
@@ -615,7 +616,7 @@ void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, 
 	void showOptions();
 	void showtime();
 	void showMessage(const string&);
-	void showname(const string &name); 
+	void showname(const string &name);
 	void showscore(const int score);
 
 	Gotoxy(0, 0);
@@ -808,34 +809,6 @@ void requestname()
 	cout << "please enter your name: ";
 }
 
-void displayhighscores()
-{
-	ifstream in("best.scr");
-	Gotoxy(2, 13);
-	cout << "name	   score";
-	if (!in.fail())// the file may not be found
-	{
-		for (int i = 0; i != 3; ++i)
-		{
-			int storedscore; // the score 
-			string name; // the name
-			in >> name;
-			in >> storedscore;
-			Gotoxy(2, 14 + i);
-			cout << name << "	" << storedscore;
-		}
-	}
-	else
-	{
-		Gotoxy(2, 14);
-		cout << "bob	     3";
-		Gotoxy(2, 15);
-		cout << "tom       3";
-		Gotoxy(2, 16);
-		cout << "jim       3";
-	}
-	in.close();
-}
 
 void updatescore(const string &name, const int score)
 {
