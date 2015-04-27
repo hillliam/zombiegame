@@ -865,16 +865,6 @@ game loadgame(const string &name)
 		pills.push_back(a);
 	}
 	reader >> numofzom;
-	vector<pill> mpills;
-	for (int i = 0; i != numofzom; i++)
-	{
-		pill a = { PILL };
-		reader >> a.baseobject.x;
-		reader >> a.baseobject.y;
-		reader >> a.eaten;
-		mpills.push_back(a);
-	}
-	reader >> numofzom;
 	vector<Item> holes;
 	for (int i = 0; i != numofzom; i++)
 	{
