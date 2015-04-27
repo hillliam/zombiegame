@@ -88,7 +88,6 @@ struct game //will be very helpfull
 	player spot;
 	vector<zombie> zombies;					// initalize the 4 zombies
 	vector<pill> pills; 					// initalize avalible pills to 8
-	vector<pill> mpills; 					// initalize magic pills to 8
 	const vector<Item> holes; 				// 12 holes
 	const vector<Item> inwalls; 			// some walls
 	game operator= (const game& it)
@@ -181,13 +180,12 @@ void nextlevel(game& world, char grid[][SIZEX])
 	void setGrid(char[][SIZEX]);
 	Item setSpotInitialCoordinates(char[][SIZEX]);
 	vector<pill> placepillonmap(char grid[][SIZEX], const int levelChoice);
-	vector<pill> placemagicpills(char grid[][SIZEX]);
 	vector<Item> placeholeonmap(char grid[][SIZEX], const int levelChoice);
 	vector<Item> placewallsonmap(char grid[][SIZEX]);
 	vector<zombie> placezombiesonmap(char grid[][SIZEX]);
 	Seed();					//seed reandom number generator
 	setGrid(grid);
-	game a = { { setSpotInitialCoordinates(grid), world.spot.name , world.spot.levelchoice+1 }, placezombiesonmap(grid), placepillonmap(grid, a.spot.levelchoice), placemagicpills(grid), placeholeonmap(grid, a.spot.levelchoice), placewallsonmap(grid) };//initialise spot position
+	game a = { { setSpotInitialCoordinates(grid), world.spot.name , world.spot.levelchoice+1 }, placezombiesonmap(grid), placepillonmap(grid, a.spot.levelchoice), placeholeonmap(grid, a.spot.levelchoice), placewallsonmap(grid) };//initialise spot position
 	world = a;
 }
 
@@ -472,7 +470,6 @@ game initialiseGame(char grid[][SIZEX])
 	void setGrid(char[][SIZEX]);
 	Item setSpotInitialCoordinates(char[][SIZEX]);
 	vector<pill> placepillonmap(char grid[][SIZEX], const int levelChoice);
-	vector<pill> placemagicpills(char grid[][SIZEX]);
 	vector<Item> placeholeonmap(char grid[][SIZEX], const int levelChoice);
 	vector<Item> placewallsonmap(char grid[][SIZEX]);
 	vector<zombie> placezombiesonmap(char grid[][SIZEX]);
@@ -480,7 +477,7 @@ game initialiseGame(char grid[][SIZEX])
 	int level();
 	Seed();                            //seed reandom number generator
 	setGrid(grid);
-	game a = { { setSpotInitialCoordinates(grid), mainloop(), level() }, placezombiesonmap(grid), placepillonmap(grid, a.spot.levelchoice), placemagicpills(grid), placeholeonmap(grid, a.spot.levelchoice), placewallsonmap(grid) };//initialise spot position
+	game a = { { setSpotInitialCoordinates(grid), mainloop(), level() }, placezombiesonmap(grid), placepillonmap(grid, a.spot.levelchoice), placeholeonmap(grid, a.spot.levelchoice), placewallsonmap(grid) };//initialise spot position
 	switch (a.spot.levelchoice)
 	{
 	case 1:
@@ -665,9 +662,6 @@ void updateGrid(char grid[][SIZEX],const game& world)
 	for (const pill& item : world.pills)
 		if (!item.eaten)
 		placeSpot(grid, item.baseobject);      //set pills on map
-	for (const pill& item : world.mpills)
-		if (!item.eaten)
-		placeSpot(grid, item.baseobject);     //set magic pills on map
 	placeitem(grid, world.holes); // set the holes on the grid
 	placeSpot(grid, world.spot.baseobject);	 //set spot in grid
 	placeitem(grid, world.inwalls);
@@ -739,6 +733,19 @@ void updateSpotCoordinates(const char g[][SIZEX], game& world,const int key, str
 		world.spot.lives++;
 		if (world.spot.isProtected)
 			world.spot.protectedcount--;
+		world.spot.isProtected = true;	 // protect the player
+		switch (world.spot.levelchoice)
+		{
+		case 1:
+			world.spot.protectedcount = 10;// set number of levels to protect
+			break;
+		case 2:
+			world.spot.protectedcount = 8;// set number of levels to protect
+			break;
+		case 3:
+			world.spot.protectedcount = 5;// set number of levels to protect
+		}
+
 		for (zombie& it : world.zombies)
 		{
 			if (world.spot.baseobject.x == it.baseobject.x && world.spot.baseobject.y == it.baseobject.y)
@@ -751,38 +758,6 @@ void updateSpotCoordinates(const char g[][SIZEX], game& world,const int key, str
 		for (int i = 0; i < world.pills.size(); i++)
 			if (world.pills[i].baseobject.x == world.spot.baseobject.x && world.pills[i].baseobject.y == world.spot.baseobject.y) // fix me removing the wrong pill
 				world.pills[i].eaten = true; // again needs to be fixed
-		break;
-		
-	case MPILL:
-		world.spot.baseobject.y += dy;   //go in that Y direction
-		world.spot.baseobject.x += dx;   //go in that X direction
-		if (world.spot.isProtected)
-			world.spot.protectedcount--;
-		world.spot.isProtected = true;	 // protect the player
-		switch (world.spot.levelchoice)
-			{
-		case 1:
-			world.spot.protectedcount = 10;// set number of levels to protect
-			break;
-		case 2:
-			world.spot.protectedcount = 8;// set number of levels to protect
-			break;
-		case 3:
-			world.spot.protectedcount = 5;// set number of levels to protect
-		}
-		
-		for (zombie& it : world.zombies)
-		{
-			if (world.spot.baseobject.x == it.baseobject.x && world.spot.baseobject.y == it.baseobject.y)
-			{
-				world.spot.lives--;
-				it.baseobject.x = it.startx;
-				it.baseobject.y = it.starty;
-			}
-		}
-		for (int i = 0; i < world.mpills.size(); i++)
-			if (world.mpills[i].baseobject.x == world.spot.baseobject.x && world.mpills[i].baseobject.y == world.spot.baseobject.y) // fix me removing the wrong pill
-				world.mpills[i].eaten = true; // again needs to be fixed
 		break;
 	}
 	if (world.spot.protectedcount == 0)
@@ -842,13 +817,6 @@ void savegame(const string &name,const game& world)
 	}
 	writer << world.pills.size() << endl;
 	for (const pill& a : world.pills)
-	{
-		writer << a.baseobject.x << endl;
-		writer << a.baseobject.y << endl;
-		writer << a.eaten << endl;
-	}
-	writer << world.mpills.size() << endl;
-	for (const pill& a : world.mpills)
 	{
 		writer << a.baseobject.x << endl;
 		writer << a.baseobject.y << endl;
@@ -932,7 +900,7 @@ game loadgame(const string &name)
 		reader >> a.y;
 		inwalls.push_back(a);
 	}
-	return { spot, zombies, pills, mpills, holes, inwalls };
+	return { spot, zombies, pills, holes, inwalls };
 }
 
 bool isArrowKey(const int key)
