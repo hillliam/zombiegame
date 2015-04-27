@@ -78,7 +78,7 @@ int main()
 	void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, vector<Item>& holes, vector<pill>& pills);
 	bool isArrowKey(const int k);
 	bool isCheatKey(const int k);
-	int getsize(const vector<pill> pills);
+	int getsize(const vector<pill>& pills);
 	int  getKeyPress();
 	bool endconditions(const int zombies, const int pills, const player &spot, const int key, string& message);
 	void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills);
@@ -98,10 +98,6 @@ int main()
 	int key(' ');
 	player spot = { SPOT, 0, 0, mainloop(), 5 };                        //create key to store keyboard events 
 	Clrscr();
-	for (int i = 0; i < zombies.size(); i++)
-	{
-		zombies[i].alive = true;
-	}
 	initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
 	renderGame(grid, message, spot, zombies.size(), pills.size());
 	do {
@@ -126,7 +122,7 @@ int main()
 	endProgram(message);                             //display final message
 }
 
-int getsize(const vector<pill> pills)
+int getsize(const vector<pill>& pills)
 {
 	int pils = 0;
 	for (const pill& item : pills)
@@ -367,10 +363,6 @@ void placeholeonmap(char grid[][SIZEX], vector<Item>& holes)
 
 void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies)
 {
-	zombie zom1 = { ZOMBIE, 1, 1, 1, 1};
-	zombie zom2 = { ZOMBIE, SIZEX - 2, 1, SIZEX - 2, 1 };
-	zombie zom3 = { ZOMBIE, 1, SIZEY - 2, 1, SIZEY - 2 };
-	zombie zom4 = { ZOMBIE, SIZEX - 2, SIZEY - 2, SIZEX - 2, SIZEY - 2 };
 	zombies.push_back(zom1);
 	zombies.push_back(zom2);
 	zombies.push_back(zom3);
@@ -452,7 +444,7 @@ void placezombies(char g[][SIZEX], const vector<zombie> &zombies)
 {
 	for (const zombie& item : zombies)
 		if (item.alive == true)
-		g[item.baseobject.y][item.baseobject.x] = item.baseobject.symbol;
+			g[item.baseobject.y][item.baseobject.x] = item.baseobject.symbol;
 }
 
 void updateSpotCoordinates(const char g[][SIZEX], player& sp, const int key, string& mess, vector<zombie>& zombies, vector<pill>& pills)
