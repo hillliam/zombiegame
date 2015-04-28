@@ -112,6 +112,7 @@ int main()
 	void displayallmoves(const vector<replay> &replayer);
 	void savegame(const player& spot, const vector<zombie>& zombies, const vector<pill>& pills, const vector<Item>& holes);
 	void loadgame(player& spot, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
+	void saveboard(vector<replay>& replayer, const char grid[][SIZEX]);
 	//local variable declarations 
 	char grid[SIZEY][SIZEX];                //grid for display
 	string message("LET'S START...      "); //current message to player
@@ -134,6 +135,7 @@ int main()
 		do {
 			if (_kbhit())
 			{
+				saveboard(replayer, grid);
 			message = "                    "; //reset message
 			key = getKeyPress();              //read in next keyboard event
 			if (isArrowKey(key))
@@ -227,6 +229,8 @@ void savegame(const player &spot, const vector<zombie> &zombies, const vector<pi
 	writer << spot.isProtected << endl;
 	writer << spot.lives << endl;
 	writer << spot.score << endl;
+	writer << spot.levelChoice << endl;
+	writer << spot.protectedCount << endl;
 	writer << zombies.size() << endl;
 	for (zombie a : zombies)
 	{
@@ -235,6 +239,8 @@ void savegame(const player &spot, const vector<zombie> &zombies, const vector<pi
 		writer << a.imobalized << endl;
 		writer << a.startx << endl;
 		writer << a.starty << endl;
+		writer << a.alive << endl;
+		writer << a.hidden << endl;
 	}
 	writer << pills.size() << endl;
 	for (pill a : pills)
@@ -250,7 +256,18 @@ void savegame(const player &spot, const vector<zombie> &zombies, const vector<pi
 		writer << a.y << endl;
 	}
 }
-
+void saveboard(vector<replay>& replayer, const char grid[][SIZEX])
+{
+	replay newstep;
+	for (int row(0); row < SIZEY; ++row) //for each column
+	{
+		for (int col(0); col < SIZEX; ++col) //for each col
+		{
+			newstep.grid[row][col] = grid[row][col]; // save the board
+		}
+	}
+	replayer.push_back(newstep);
+}
 void loadgame(player& spot, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes)
 {
 	zombies.clear();
@@ -263,6 +280,8 @@ void loadgame(player& spot, vector<zombie>& zombies, vector<pill>& pills, vector
 	reader >> spot.isProtected;
 	reader >> spot.lives;
 	reader >> spot.score;
+	reader >> spot.levelChoice;
+	reader >> spot.protectedCount;
 	int numofzom;
 	reader >> numofzom;
 	for (int i = 0; i != numofzom; i++)
@@ -273,6 +292,8 @@ void loadgame(player& spot, vector<zombie>& zombies, vector<pill>& pills, vector
 		reader >> a.imobalized;
 		reader >> a.startx;
 		reader >> a.starty;
+		reader >> a.alive;
+		reader >> a.hidden;
 		zombies.push_back(a);
 	}
 	reader >> numofzom;
