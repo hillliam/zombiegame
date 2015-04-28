@@ -986,6 +986,7 @@ bool wantToQuit(const int key, string& message)
 	if (exit)
 		message = "you have quit";
 	return exit;
+	//if the user quits send a message and return true
 }
 
 bool haswon(vector<zombie>& zombies, string& message, const player& spot)
@@ -994,13 +995,15 @@ bool haswon(vector<zombie>& zombies, string& message, const player& spot)
 	{
 		return false;
 	}
+	// if any zombies are alive return false
 	SelectBackColour(clRed);
 	SelectTextColour(clYellow);
 	Gotoxy(40, 16);
-	cout << "Congratulations, you win ";
+	cout << "Congratulations, you have finished this level!";
 	Gotoxy(40, 17);
 	cout << "Your score is: " << spot.lives;
 	return true;
+	//displays a message if not
 }
 
 
@@ -1010,6 +1013,7 @@ bool haslost(const player &spot, string& message)
 	{
 		message = "you have no lives";
 		return true;
+	//if the user has no lives the message is shown and true is returned back
 	}
 	else
 		return false;
@@ -1021,6 +1025,7 @@ bool ocupiedpeace(const char gd[][SIZEX], const int x, const int y)
 		return true;
 	else
 		return false;
+	//this functions determines if there's a space free on the grid
 }
 
 void clearMessage()
@@ -1071,7 +1076,7 @@ void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, 
 
 void paintGrid(const char g[][SIZEX])
 {
-	SelectBackColour(clBlack);
+	SelectBackColour(clRed);
 	Gotoxy(0, 2);
 	for (int row(0); row < SIZEY; ++row)      //for each row (vertically)
 	{
@@ -1092,6 +1097,7 @@ void paintGrid(const char g[][SIZEX])
 			case PILL:
 				SelectTextColour(clYellow);
 			}
+			//adds all the pills and their colours
 			cout << g[row][col];              //output cell content
 		} //end of col-loop
 		cout << endl;
@@ -1282,8 +1288,9 @@ void updatescore(const string &name, const int score)
 		in >> score2;
 		in >> name3;
 		in >> score3;
+		//declares all variables
 		in.close();
-		ofstream out("best.scr");
+		ofstream out("best.scr"); //creates a stream
 		if (score1 < score)
 		{
 			score3 = score2;
@@ -1292,6 +1299,7 @@ void updatescore(const string &name, const int score)
 			name2 = name1;
 			score1 = score;
 			name1 = name;
+			//if the score is greater than the first entry shift all the scores
 		}
 		else if (score2 < score)
 		{
@@ -1299,11 +1307,13 @@ void updatescore(const string &name, const int score)
 			name3 = name2;
 			score2 = score;
 			name2 = name;
+			//if the score is greater than the second entry shift all the scores
 		}
 		else if (score3 < score)
 		{
 			score3 = score;
 			name3 = name;
+			//if the score is greater than the third entry set the scores
 		}
 		out << name1 << endl;
 
@@ -1312,6 +1322,7 @@ void updatescore(const string &name, const int score)
 		out << score2 << endl;
 		out << name3 << endl;
 		out << score3 << endl;
+		//output all of the scores
 		out.close();
 	}
 
@@ -1322,5 +1333,6 @@ void updatescore(const string &name, const int score)
 		SelectTextColour(clYellow);
 		Gotoxy(40, 16);
 		cout << "time spent in game: " << diff;
+		//shows the time spent
 	}
 
