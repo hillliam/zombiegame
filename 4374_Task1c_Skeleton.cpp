@@ -92,7 +92,7 @@ int main()
 	bool isArrowKey(const int k);
 	bool isCheatKey(const int k);
 	int getsize(const vector<pill>& pills);
-	int levelSelection;
+	int levelSelection = 0;
 	int  getKeyPress();
 	bool endconditions(vector<zombie>& zombies, const int pills, const player &spot, const int key, string& message);
 	void ApplyCheat(const int key, player& spot, vector<zombie>& zombies, vector<pill>& pills);
@@ -180,24 +180,24 @@ int main()
 	//this while loop runs until they reach the end of the game or quit or lose
 	if (!spot.hascheated)						//this is called if spot cheats
 	{
-		if (!readsavedcore(spot.name, spot.lives))
-			savescore(spot.name, spot.lives);
-		updatescore(spot.name, spot.lives);
+		if (!readsavedcore(spot.name, spot.lives)) //checks if there is a current score
+			savescore(spot.name, spot.lives);      //if there isn't this is called to save the score
+		updatescore(spot.name, spot.lives);		   //if not this is called to update it if the new score is higher
 	}
 	endProgram(message);                             //display final message
 }
-bool canload(const string& name)
+bool canload(const string& name)	
 {
 	int  getKeyPress();
-	ifstream reader(name + ".save");
-	if (reader.fail())
+	ifstream reader(name + ".save");				//this starts a reader
+	if (reader.fail())								//if it cant a read a saved file from the name
 		return false;
 	else
 	{
-		cout << "save file avalible press l to continue";
-		cout << "from save any other key is no";
-		int key = getKeyPress();
-		if (toupper(key) == LOAD)
+		cout << "save file avalible press l to continue";	
+		cout << "from save any other key is no";	//asks the user if they want to load the saved game or start a new one
+		int key = getKeyPress();					//gets their input
+		if (toupper(key) == LOAD)					//determines their answer
 			return true;
 		else
 			return false;
@@ -205,11 +205,11 @@ bool canload(const string& name)
 }
 bool isreplayKey(const int key)
 {
-	return (toupper(key) == REPLAY);
+	return (toupper(key) == REPLAY);				//returns true if replay key
 }
 bool issaveKey(const int k)
 {
-	if (toupper(k) == SAVE)
+	if (toupper(k) == SAVE)							//returns true if save key
 		return true;
 	else
 		return false;
@@ -224,21 +224,24 @@ void displayallmoves(const vector<replay> &replayer)
 	void showmenu();
 	void showtime();
 	void showMessage(const string&);
+	//all the menu functions defined here
 	int index = 0;
 	char key = ' ';
-	Clrscr();
-	while (index != replayer.size())
+	//sets up the index an key
+	Clrscr();										//clears the screen
+	while (index != replayer.size())				//whilst there is still moves to show run this loop
 	{
 		showDescription();
 		showTitle();
 		showOptions();
 		showmenu();
 		showtime();
-		stringstream a;
+		//call all display functions
+		stringstream a;								//creates a stringstream to display the amount of moves
 		a << "displaying move " << index << " of " << replayer.size();
-		showMessage(a.str());
-		paintGrid(replayer[index].grid);
-		index++;
+		showMessage(a.str());						// displays the above message;
+		paintGrid(replayer[index].grid);			//this calls the paint grid function with the grid at that point in the list
+		index++;									//increments index
 	}
 	Clrscr();
 }
@@ -257,10 +260,11 @@ int getsize(const vector<pill>& pills)
 		if (!item.eaten)
 			++pils;
 	return pils;
+	//gets the size of the pills based on what is eaten
 }
 void savegame(const player &spot, const vector<zombie> &zombies, const vector<pill> &pills, const vector<Item> &holes)
 {
-	ofstream writer(spot.name + ".save");
+	ofstream writer(spot.name + ".save");			//starts up a writer to a file
 	writer << spot.baseobject.x << endl;
 	writer << spot.baseobject.y << endl;
 	writer << spot.hascheated << endl;
@@ -269,8 +273,9 @@ void savegame(const player &spot, const vector<zombie> &zombies, const vector<pi
 	writer << spot.score << endl;
 	writer << spot.levelChoice << endl;
 	writer << spot.protectedCount << endl;
-	writer << zombies.size() << endl;
-	for (zombie a : zombies)
+	//writes all of spots features to the file
+	writer << zombies.size() << endl;				//gets the amount of zombies
+	for (zombie a : zombies)						//runs for all zombies
 	{
 		writer << a.baseobject.x << endl;
 		writer << a.baseobject.y << endl;
@@ -279,21 +284,24 @@ void savegame(const player &spot, const vector<zombie> &zombies, const vector<pi
 		writer << a.starty << endl;
 		writer << a.alive << endl;
 		writer << a.hidden << endl;
+		//writes all zombie features to the file
 	}
-	writer << pills.size() << endl;
+	writer << pills.size() << endl;					//runs for all pills
 	for (pill a : pills)
 	{
 		writer << a.baseobject.x << endl;
 		writer << a.baseobject.y << endl;
 		writer << a.eaten << endl;
+		//writes all pill features to the file
 	}
-	writer << holes.size() << endl;
+	writer << holes.size() << endl;					//runs for all holes
 	for (Item a : holes)
 	{
 		writer << a.x << endl;
 		writer << a.y << endl;
+		//writes all hole features to the file
 	}
-	writer.close();
+	writer.close();									//closes the file
 }
 void saveboard(vector<replay>& replayer, const char grid[][SIZEX])
 {
@@ -309,14 +317,15 @@ void saveboard(vector<replay>& replayer, const char grid[][SIZEX])
 }
 void loadgame(player& spot, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes)
 {
-	zombies.clear();
-	pills.clear();
-	holes.clear();
-	ifstream reader(spot.name + ".save");
+	ifstream reader(spot.name + ".save");			//creates a reader for the program
 	if (reader.fail())
-		cout << "no save avalible";
+		cout << "Error: no save avalible";			//if it fails output this message
 	else
 	{
+		zombies.clear();
+		pills.clear();
+		holes.clear();
+		//clears all the items so new ones can replace them
 		reader >> spot.baseobject.x;
 		reader >> spot.baseobject.y;
 		reader >> spot.hascheated;
@@ -325,8 +334,10 @@ void loadgame(player& spot, vector<zombie>& zombies, vector<pill>& pills, vector
 		reader >> spot.score;
 		reader >> spot.levelChoice;
 		reader >> spot.protectedCount;
+		//reads in all of spots features
 		int numofzom;
 		reader >> numofzom;
+		//gets the amount of zombies
 		for (int i = 0; i != numofzom; i++)
 		{
 			zombie a = { ZOMBIE };
@@ -338,6 +349,7 @@ void loadgame(player& spot, vector<zombie>& zombies, vector<pill>& pills, vector
 			reader >> a.alive;
 			reader >> a.hidden;
 			zombies.push_back(a);
+			//adds all the zombies to the list
 		}
 		reader >> numofzom;
 		for (int i = 0; i != numofzom; i++)
@@ -347,6 +359,7 @@ void loadgame(player& spot, vector<zombie>& zombies, vector<pill>& pills, vector
 			reader >> a.baseobject.y;
 			reader >> a.eaten;
 			pills.push_back(a);
+			//adds all the pills to the list
 		}
 		reader >> numofzom;
 		for (int i = 0; i != numofzom; i++)
@@ -355,8 +368,10 @@ void loadgame(player& spot, vector<zombie>& zombies, vector<pill>& pills, vector
 			reader >> a.x;
 			reader >> a.y;
 			holes.push_back(a);
+			//adds all the zombies to the list
 		}
 		reader.close();
+		//closes the reader
 	}
 }
 string mainloop(int& levelSelection)
@@ -374,38 +389,54 @@ string mainloop(int& levelSelection)
 	void getLevel();
 	void displayhighscores();
 	void showDescription();
+	//all the functions going to be used in this part of the code
 	string name = "";
 	char key = ' ';
-	while (toupper(key) != PLAY)
+	//sets up some variables
+	while (toupper(key) != PLAY)						//whilst they havent clicked play yet
 	{
 		showTitle();
 		showgametitle();
 		showOptions();
 		showtime();
 		showmenu();
-		if (_kbhit())
+		//displays all the menu items
+		if (_kbhit())						
 		{
 			key = getKeyPress();
 			if (toupper(key) == INFO)
 				showDescription();
+			//if the hit info it displays the game descriptions
 			else if (toupper(key) == LEADERBOARD)
 				displayhighscores();
+			//if they click leaderboard it opens the leaderboard
 			else if (toupper(key) == QUIT)
 				return 0;
+			//if they click quit it closes the game
 			else if (toupper(key) != PLAY)
 			{
 				SelectBackColour(clRed);
 				SelectTextColour(clYellow);
 				Gotoxy(40, 13);
 				cout << "INVALID KEY!  ";
+				//if a different key is pressed an error message appears
 			}
 		}
 	}
 	requestname();
 	cin >> name;
+	//this calls the function to request the name and then gets it as an input
 	clearMessage();
 	getLevel();
-	cin >> levelSelection;
+	cin >> levelSelection; //gets initial level
+	while(levelSelection < 0 || levelSelection > 3)	//code runs until the user enters a correct level
+	{
+		getLevel();
+		cin >> levelSelection;
+		cout << "Error: please enter a correct level";
+	}
+	
+	//this calls the function to ask for the level chosen an
 	clearMessage();
 	int previousscore = getscore(name);
 	showscore(previousscore);
