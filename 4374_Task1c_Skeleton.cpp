@@ -203,6 +203,7 @@ void displayallmoves(const vector<replay> &replayer)
 		paintGrid(replayer[index].grid);
 		index++;
 	}
+	Clrscr();
 }
 bool isloadKey(const int k)
 {
@@ -935,7 +936,6 @@ void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, 
 	void paintGrid(const char g[][SIZEX]);
 	void showLives(const player &spot);
 	void showDescription();
-	void showzomLives(const int lives);
 	void showrempill(const int pils);
 	void showTitle();
 	void showOptions();
@@ -958,7 +958,6 @@ void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, 
 	int previousscore = getscore(spot.name);
 	showscore(previousscore);
 	//show number of zombie lives
-	showzomLives(zombielives);
 	//show number of remaing pills
 	showrempill(remainingpill);
 	//display menu options available
@@ -996,13 +995,6 @@ void paintGrid(const char g[][SIZEX])
 	} //end of row-loop
 }
 
-void showzomLives(const int lives)
-{
-	SelectBackColour(clRed);
-	SelectTextColour(clYellow);
-	Gotoxy(40, 11);
-	cout << "zombie lives: " << lives;
-}
 
 void showrempill(const int pils)
 {
@@ -1055,7 +1047,7 @@ void showOptions()
 	SelectTextColour(clYellow);
 	Gotoxy(40, 7);
 	cout << "TO MOVE USE KEYBOARD ARROWS  ";
-	Gotoxy(40, 8);
+	Gotoxy(40, 19);
 	cout << "TO QUIT ENTER 'Q'   ";
 }
 
@@ -1103,7 +1095,7 @@ void showscore(const int score)
 {
 	SelectBackColour(clRed);
 	SelectTextColour(clYellow);
-	Gotoxy(40, 15);
+	Gotoxy(40, 20);
 	cout << "player score: " << score;
 
 }
@@ -1112,9 +1104,9 @@ void showtime()
 {
 	SelectBackColour(clRed);
 	SelectTextColour(clYellow);
-	Gotoxy(40, 11);
+	Gotoxy(40, 14);
 	cout << GetDate();
-	Gotoxy(40, 12);
+	Gotoxy(40, 15);
 	cout << GetTime();
 }
 
