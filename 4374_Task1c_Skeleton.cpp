@@ -146,7 +146,10 @@ int main()
 				else if (issaveKey(key))
 					savegame(spot, zombies, pills, holes);
 				else if (isloadKey(key))
+				{
 					loadgame(spot, zombies, pills, holes);
+					updateGame(grid, spot, key, message, zombies, pills, holes);
+				}					
 				else if (isreplayKey(key))
 					displayallmoves(replayer);
 			}
@@ -256,6 +259,7 @@ void savegame(const player &spot, const vector<zombie> &zombies, const vector<pi
 		writer << a.x << endl;
 		writer << a.y << endl;
 	}
+	writer.close();
 }
 void saveboard(vector<replay>& replayer, const char grid[][SIZEX])
 {
@@ -314,6 +318,7 @@ void loadgame(player& spot, vector<zombie>& zombies, vector<pill>& pills, vector
 		reader >> a.y;
 		holes.push_back(a);
 	}
+	reader.close();
 }
 string mainloop(int& levelSelection)
 {
