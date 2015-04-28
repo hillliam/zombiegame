@@ -111,7 +111,7 @@ int main()
 	bool isreplayKey(const int k);
 	void displayallmoves(const vector<replay> &replayer);
 	void savegame(const player& spot, const vector<zombie>& zombies, const vector<pill>& pills, const vector<Item>& holes);
-	void loadgame(const string &name, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
+	void loadgame(player& spot, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
 	//local variable declarations 
 	char grid[SIZEY][SIZEX];                //grid for display
 	string message("LET'S START...      "); //current message to player
@@ -147,7 +147,7 @@ int main()
 				else if (issaveKey(key))
 					savegame(spot, zombies, pills, holes);
 				else if (isloadKey(key))
-					loadgame(spot.name, zombies, pills, holes);
+					loadgame(spot, zombies, pills, holes);
 				else if (isreplayKey(key))
 					displayallmoves(replayer);
 			}
