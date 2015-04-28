@@ -1076,7 +1076,7 @@ void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, 
 
 void paintGrid(const char g[][SIZEX])
 {
-	SelectBackColour(clRed);
+	SelectBackColour(clBlack);
 	Gotoxy(0, 2);
 	for (int row(0); row < SIZEY; ++row)      //for each row (vertically)
 	{
