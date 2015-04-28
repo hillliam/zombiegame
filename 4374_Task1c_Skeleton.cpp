@@ -114,6 +114,7 @@ int main()
 	void loadgame(player& spot, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
 	void saveboard(vector<replay>& replayer, const char grid[][SIZEX]);
 	bool canload(const string& name);
+	void setGrid(char[][SIZEX]);
 	//local variable declarations 
 	char grid[SIZEY][SIZEX];                //grid for display
 	string message("LET'S START...      "); //current message to player
@@ -129,11 +130,17 @@ int main()
 		vector<zombie> zombies;					// initalize the 4 zombies
 		vector<pill> pills; 					// initalize avalible pills to 8
 		vector<Item> holes; 					// 12 holes
-		initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
+		
 		if (loadgames)
 		{
+			setGrid(grid);
 			loadgame(spot, zombies, pills, holes);
+			updateGame(grid, spot, key, message, zombies, pills, holes);
 			loadgames = false;
+		}
+		else
+		{
+			initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
 		}
 		renderGame(grid, message, spot, zombies.size(), pills.size(), 0);
 		do {
@@ -184,9 +191,10 @@ bool canload(const string& name)
 		return false;
 	else
 	{
-		cout << "save file avalible press l to continue from save any other key is no";
+		cout << "save file avalible press l to continue";
+		cout << "from save any other key is no";
 		int key = getKeyPress();
-		if (key == LOAD)
+		if (toupper(key) == LOAD)
 			return true;
 		else
 			return false;
