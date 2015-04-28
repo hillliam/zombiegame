@@ -33,6 +33,9 @@ const char EAT('E');         //remove all pills
 
 const char PLAY('P');		//play buttion
 const char INFO('I');
+const char SAVE('S');		// save key
+const char LOAD('L');		// load key
+const char REPLAY('R');		//replay buttion
 const char LEADERBOARD('B'); //key to display leaderboard
 
 const char QUIT('Q');        //end the game
@@ -77,6 +80,11 @@ struct pill {
 	}
 };
 
+struct replay
+{
+	char grid[SIZEY][SIZEX]; // store the grid 
+};
+
 int main()
 {
 	//function declarations (prototypes)
@@ -98,10 +106,17 @@ int main()
 	bool haslost(const player &spot, string& message);
 	bool wantToQuit(const int k, string& message);
 	void updatescore(const string &name, const int score);
+	bool issaveKey(const int k);
+	bool isloadKey(const int k);
+	bool isreplayKey(const int k);
+	void displayallmoves(const vector<replay> &replayer);
+	void savegame(const player& spot, const vector<zombie>& zombies, const vector<pill>& pills, const vector<Item>& holes);
+	void loadgame(const string &name, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
 	//local variable declarations 
 	char grid[SIZEY][SIZEX];                //grid for display
 	string message("LET'S START...      "); //current message to player
 	int key(' ');
+	vector<replay> replayer;
 	player spot = { SPOT, 0, 0, mainloop(levelSelection), 5 };                        //create key to store keyboard events 
 	spot.levelChoice = levelSelection;
 	Clrscr();
@@ -117,15 +132,24 @@ int main()
 		const int diff = (((nhours - hours) * 3600) + ((nmin - min) * 60) + (nseconds - seconds));
 		renderGame(grid, message, spot, zombies.size(), pills.size(), diff);
 		do {
-			message = "                    "; //reset message
-			key = getKeyPress();              //read in next keyboard event
-			if (isArrowKey(key))
-				updateGame(grid, spot, key, message, zombies, pills, holes);
-			else if (isCheatKey(key))
+			if (_kbhit())
 			{
-				spot.hascheated = true;
-				ApplyCheat(key, zombies, pills);
-				updateGame(grid, spot, key, message, zombies, pills, holes);
+				message = "                    "; //reset message
+				key = getKeyPress();              //read in next keyboard event
+				if (isArrowKey(key))
+					updateGame(grid, spot, key, message, zombies, pills, holes);
+				else if (isCheatKey(key))
+				{
+					spot.hascheated = true;
+					ApplyCheat(key, zombies, pills);
+					updateGame(grid, spot, key, message, zombies, pills, holes);
+				}
+				else if (issaveKey(key))
+					savegame(spot, zombies, pills, holes);
+				else if (isloadKey(key))
+					loadgame(spot.name, zombies, pills, holes);
+				else if (isreplayKey(key))
+					displayallmoves(replayer);
 			}
 			renderGame(grid, message, spot, zombies.size(), getsize(pills), diff);        //render game state on screen
 		} while (!wantToQuit(key, message) && (!haswon(zombies, message, spot) && !haslost(spot, message)));      //while user does not want to quit
@@ -140,6 +164,51 @@ int main()
 	}
 	endProgram(message);                             //display final message
 }
+bool isreplayKey(const int key)
+{
+	return (toupper(key) == REPLAY);
+}
+bool issaveKey(const int k)
+{
+	if (toupper(k) == SAVE)
+		return true;
+	else
+		return false;
+}
+void displayallmoves(const vector<replay> &replayer)
+{
+	void paintGrid(const char g[][SIZEX]);
+	int getKeyPress();
+	void showDescription();
+	void showTitle();
+	void showOptions();
+	void showmenu();
+	void showtime();
+	void showMessage(const string&);
+	int index = 0;
+	char key = ' ';
+	Clrscr();
+	while (index != replayer.size())
+	{
+		showDescription();
+		showTitle();
+		showOptions();
+		showmenu();
+		showtime();
+		stringstream a;
+		a << "displaying move " << index << " of " << replayer.size();
+		showMessage(a.str());
+		paintGrid(replayer[index].grid);
+		index++;
+	}
+}
+bool isloadKey(const int k)
+{
+	if (toupper(k) == LOAD)
+		return true;
+	else
+		return false;
+}
 
 int getsize(const vector<pill>& pills)
 {
@@ -149,7 +218,81 @@ int getsize(const vector<pill>& pills)
 			++pils;
 	return pils;
 }
+void savegame(const player &spot, const vector<zombie> &zombies, const vector<pill> &pills, const vector<Item> &holes)
+{
+	ofstream writer(spot.name + ".save");
+	writer << spot.baseobject.x << endl;
+	writer << spot.baseobject.y << endl;
+	writer << spot.hascheated << endl;
+	writer << spot.isProtected << endl;
+	writer << spot.lives << endl;
+	writer << spot.score << endl;
+	writer << zombies.size() << endl;
+	for (zombie a : zombies)
+	{
+		writer << a.baseobject.x << endl;
+		writer << a.baseobject.y << endl;
+		writer << a.imobalized << endl;
+		writer << a.startx << endl;
+		writer << a.starty << endl;
+	}
+	writer << pills.size() << endl;
+	for (pill a : pills)
+	{
+		writer << a.baseobject.x << endl;
+		writer << a.baseobject.y << endl;
+		writer << a.eaten << endl;
+	}
+	writer << holes.size() << endl;
+	for (Item a : holes)
+	{
+		writer << a.x << endl;
+		writer << a.y << endl;
+	}
+}
 
+void loadgame(player& spot, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes)
+{
+	zombies.clear();
+	pills.clear();
+	holes.clear();
+	ifstream reader(spot.name + ".save");
+	reader >> spot.baseobject.x;
+	reader >> spot.baseobject.y;
+	reader >> spot.hascheated;
+	reader >> spot.isProtected;
+	reader >> spot.lives;
+	reader >> spot.score;
+	int numofzom;
+	reader >> numofzom;
+	for (int i = 0; i != numofzom; i++)
+	{
+		zombie a = { ZOMBIE };
+		reader >> a.baseobject.x;
+		reader >> a.baseobject.y;
+		reader >> a.imobalized;
+		reader >> a.startx;
+		reader >> a.starty;
+		zombies.push_back(a);
+	}
+	reader >> numofzom;
+	for (int i = 0; i != numofzom; i++)
+	{
+		pill a = { PILL };
+		reader >> a.baseobject.x;
+		reader >> a.baseobject.y;
+		reader >> a.eaten;
+		pills.push_back(a);
+	}
+	reader >> numofzom;
+	for (int i = 0; i != numofzom; i++)
+	{
+		Item a = { HOLE };
+		reader >> a.x;
+		reader >> a.y;
+		holes.push_back(a);
+	}
+}
 string mainloop(int& levelSelection)
 {
 	void requestname();
