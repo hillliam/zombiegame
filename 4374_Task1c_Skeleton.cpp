@@ -228,7 +228,7 @@ void updatezombieCoordinates(const char g[][SIZEX], player& spot, vector<zombie>
 	void getrandommove(const Item &spot, int& x, int& y);
 	for (int i = 0; i < zombies.size(); i++)
 	{
-		if (zombies[i].imobalized == false)
+		if (zombies[i].imobalized == false && zombies[i].hidden == false && zombies[i].alive == true)
 		{
 			//calculate direction of movement required by key - if any
 			int dx(zombies[i].baseobject.x), dy(zombies[i].baseobject.y);
