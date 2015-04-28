@@ -271,7 +271,16 @@ void updatezombieCoordinates(const char g[][SIZEX], player& spot, vector<zombie>
 void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills)
 {
 	if (toupper(key) == EAT)//remove all pils from the grid
+	{
+		int livesGained = 0;
+		for (int i = 0; i < pills.size(); i++)
+		{
+			if (pills[i].eaten == true);
+				livesGained++;
+		}
+		spot.lives = spot.lives + livesGained;
 		pills.clear();
+	}
 	else if (toupper(key) == EXTERMINATE)//remove all zombies from board
 	{
 		for (int i = 0; i != zombies.size(); i++)
