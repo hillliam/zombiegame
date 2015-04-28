@@ -959,7 +959,7 @@ void setKeyDirection(const int key, int& dx, int& dy)
 }
 
 int getKeyPress()
-{
+{ // gets a single key press
 	int keyPressed;
 	keyPressed = getch();      //read in the selected arrow key or command letter
 	while (keyPressed == 224)     //ignore symbol following cursor key
@@ -968,12 +968,12 @@ int getKeyPress()
 }
 
 bool isArrowKey(const int key)
-{
+{// checks if the key pressed is a direction key 
 	return ((key == LEFT) || (key == RIGHT) || (key == UP) || (key == DOWN));
 }
 
 bool isCheatKey(const int key)
-{
+{// checks if the key pressed is a cheat key
 	return ((toupper(key) == EAT) || (toupper(key) == EXTERMINATE) || (toupper(key) == FREEZ));
 }
 
@@ -1025,7 +1025,7 @@ bool ocupiedpeace(const char gd[][SIZEX], const int x, const int y)
 }
 
 void clearMessage()
-{
+{// removes a message that has being drawn to the screen
 	SelectBackColour(clBlack);
 	SelectTextColour(clWhite);
 	Gotoxy(40, 8);
@@ -1059,9 +1059,8 @@ void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, 
 	showSaveLoad();
 	showLives(spot);
 	showname(spot.name);
-	int previousscore = getscore(spot.name);
+	const int previousscore = getscore(spot.name);
 	showscore(previousscore);
-	//show number of zombie lives
 	//show number of remaing pills
 	showrempill(remainingpill);
 	//display menu options available
@@ -1101,7 +1100,7 @@ void paintGrid(const char g[][SIZEX])
 }
 
 void showrempill(const int pils)
-{
+{// display the number of pills left on the board 
 	SelectBackColour(clRed);
 	SelectTextColour(clYellow);
 	Gotoxy(40, 10);
@@ -1109,7 +1108,7 @@ void showrempill(const int pils)
 }
 
 void showDescription()
-{
+{// displays a description of the game during the main menu
 	SelectBackColour(clRed);
 	SelectTextColour(clYellow);
 	Gotoxy(40, 2);
@@ -1139,7 +1138,7 @@ void showTitle()
 }
 
 void showSaveLoad()
-{
+{//displays the save and load options during the game
 	SelectBackColour(clRed);
 	SelectTextColour(clYellow);
 	Gotoxy(40, 11);
@@ -1149,7 +1148,7 @@ void showSaveLoad()
 }
 
 void showname(const string &name)
-{
+{// display the players name during the game
 	SelectBackColour(clRed);
 	SelectTextColour(clYellow);
 	Gotoxy(40, 13);
@@ -1194,7 +1193,7 @@ void endProgram(const string &message)
 }
 
 void showmenu()
-{
+{//shows the buttions the user can press
 	SelectBackColour(clRed);
 	SelectTextColour(clYellow);
 	Gotoxy(40, 10);
@@ -1207,7 +1206,7 @@ void showmenu()
 }
 
 void showscore(const int score)
-{
+{// shows the players score
 	SelectBackColour(clRed);
 	SelectTextColour(clYellow);
 	Gotoxy(40, 20);
@@ -1216,7 +1215,7 @@ void showscore(const int score)
 }
 
 void showtime()
-{
+{// shows the current date and time
 	SelectBackColour(clRed);
 	SelectTextColour(clYellow);
 	Gotoxy(40, 14);
@@ -1226,7 +1225,7 @@ void showtime()
 }
 
 void showgametitle()
-{
+{// displays the title of the game before the board is drawn
 	SelectBackColour(clBlue);
 	SelectTextColour(clYellow);
 	Gotoxy(2, 4);
@@ -1238,7 +1237,7 @@ void showgametitle()
 }
 
 void requestname()
-{
+{// asks the user for there name after they have clicked there option in the main menu
 	SelectBackColour(clBlue);
 	SelectTextColour(clYellow);
 	Gotoxy(2, 11);
@@ -1259,7 +1258,7 @@ void displayhighscores()
 			in >> name;
 			in >> storedscore;
 			Gotoxy(2, 14 + i);
-			cout << name << "	" << storedscore;
+			cout << name << "	" << storedscore;// display them on board
 		}
 	}
 	in.close();
@@ -1274,28 +1273,28 @@ void updatescore(const string &name, const int score)
 		string names[6];
 		int scores[6];
 		for (int i = 0; i != 6; ++i)
-		{
+		{// read leaderboard
 			in >> names[i];
 			in >> scores[i];
 		}
-		in.close();
+		in.close();// close 
 		ofstream out("best.scr");
 		for (int i = 0; i != 6; ++i)
 		{
-			if (score > scores[i])
+			if (score > scores[i]) // find the first leaderboard entry that i smaller than the score going to be writen 
 			{
-				for (int j = i; j != 5; ++j)// back shift
-		{
+				for (int j = i; j != 5; ++j) // back shift
+				{
 					names[j + 1] = names[j];
 					scores[j + 1] = scores[j];
 				}
-				scores[i] = score;
+				scores[i] = score;// set that as the new score
 				names[i] = name;
 				break; // prevent redo
 		}
 		}
 		for (int i = 0; i != 6; ++i)
-		{
+		{ // write all back to files
 			out << names[i];
 			out << scores[i];
 		}
@@ -1304,10 +1303,10 @@ void updatescore(const string &name, const int score)
 }
 
 void showdiff(const int diff)
-	{
-		SelectBackColour(clRed);
-		SelectTextColour(clYellow);
-		Gotoxy(40, 16);
-		cout << "time spent in game: " << diff;
-		//shows the time spent
-	}
+{
+	SelectBackColour(clRed);
+	SelectTextColour(clYellow);
+	Gotoxy(40, 16);
+	cout << "time spent in game: " << diff;
+	//shows the time spent
+}
