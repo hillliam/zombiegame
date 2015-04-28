@@ -113,12 +113,14 @@ int main()
 	void savegame(const player& spot, const vector<zombie>& zombies, const vector<pill>& pills, const vector<Item>& holes);
 	void loadgame(player& spot, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
 	void saveboard(vector<replay>& replayer, const char grid[][SIZEX]);
+	bool canload(const string& name);
 	//local variable declarations 
 	char grid[SIZEY][SIZEX];                //grid for display
 	string message("LET'S START...      "); //current message to player
 	int key(' ');
 	vector<replay> replayer;
 	player spot = { SPOT, 0, 0, mainloop(levelSelection), 5 };                        //create key to store keyboard events 
+	bool loadgames = canload(spot.name);
 	spot.levelChoice = levelSelection;
 	Clrscr();
 	int hours, min, seconds; // do we need to reset the timer when we load the next level
@@ -128,6 +130,11 @@ int main()
 		vector<pill> pills; 					// initalize avalible pills to 8
 		vector<Item> holes; 					// 12 holes
 		initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
+		if (loadgames)
+		{
+			loadgame(spot, zombies, pills, holes);
+			loadgames = false;
+		}
 		renderGame(grid, message, spot, zombies.size(), pills.size(), 0);
 		do {
 			if (_kbhit())
@@ -168,6 +175,22 @@ int main()
 		updatescore(spot.name, spot.lives);
 	}
 	endProgram(message);                             //display final message
+}
+bool canload(const string& name)
+{
+	int  getKeyPress();
+	ifstream reader(name + ".save");
+	if (reader.fail())
+		return false;
+	else
+	{
+		cout << "save file avalible press l to continue from save any other key is no";
+		int key = getKeyPress();
+		if (key == LOAD)
+			return true;
+		else
+			return false;
+	}
 }
 bool isreplayKey(const int key)
 {
@@ -279,46 +302,51 @@ void loadgame(player& spot, vector<zombie>& zombies, vector<pill>& pills, vector
 	pills.clear();
 	holes.clear();
 	ifstream reader(spot.name + ".save");
-	reader >> spot.baseobject.x;
-	reader >> spot.baseobject.y;
-	reader >> spot.hascheated;
-	reader >> spot.isProtected;
-	reader >> spot.lives;
-	reader >> spot.score;
-	reader >> spot.levelChoice;
-	reader >> spot.protectedCount;
-	int numofzom;
-	reader >> numofzom;
-	for (int i = 0; i != numofzom; i++)
+	if (reader.fail())
+		cout << "no save avalible";
+	else
 	{
-		zombie a = { ZOMBIE };
-		reader >> a.baseobject.x;
-		reader >> a.baseobject.y;
-		reader >> a.imobalized;
-		reader >> a.startx;
-		reader >> a.starty;
-		reader >> a.alive;
-		reader >> a.hidden;
-		zombies.push_back(a);
+		reader >> spot.baseobject.x;
+		reader >> spot.baseobject.y;
+		reader >> spot.hascheated;
+		reader >> spot.isProtected;
+		reader >> spot.lives;
+		reader >> spot.score;
+		reader >> spot.levelChoice;
+		reader >> spot.protectedCount;
+		int numofzom;
+		reader >> numofzom;
+		for (int i = 0; i != numofzom; i++)
+		{
+			zombie a = { ZOMBIE };
+			reader >> a.baseobject.x;
+			reader >> a.baseobject.y;
+			reader >> a.imobalized;
+			reader >> a.startx;
+			reader >> a.starty;
+			reader >> a.alive;
+			reader >> a.hidden;
+			zombies.push_back(a);
+		}
+		reader >> numofzom;
+		for (int i = 0; i != numofzom; i++)
+		{
+			pill a = { PILL };
+			reader >> a.baseobject.x;
+			reader >> a.baseobject.y;
+			reader >> a.eaten;
+			pills.push_back(a);
+		}
+		reader >> numofzom;
+		for (int i = 0; i != numofzom; i++)
+		{
+			Item a = { HOLE };
+			reader >> a.x;
+			reader >> a.y;
+			holes.push_back(a);
+		}
+		reader.close();
 	}
-	reader >> numofzom;
-	for (int i = 0; i != numofzom; i++)
-	{
-		pill a = { PILL };
-		reader >> a.baseobject.x;
-		reader >> a.baseobject.y;
-		reader >> a.eaten;
-		pills.push_back(a);
-	}
-	reader >> numofzom;
-	for (int i = 0; i != numofzom; i++)
-	{
-		Item a = { HOLE };
-		reader >> a.x;
-		reader >> a.y;
-		holes.push_back(a);
-	}
-	reader.close();
 }
 string mainloop(int& levelSelection)
 {
