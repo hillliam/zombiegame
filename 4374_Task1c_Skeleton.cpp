@@ -128,10 +128,7 @@ int main()
 		vector<pill> pills; 					// initalize avalible pills to 8
 		vector<Item> holes; 					// 12 holes
 		initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
-		int nhours, nmin, nseconds;
-		GetSystemTime(nhours, nmin, nseconds);
-		const int diff = (((nhours - hours) * 3600) + ((nmin - min) * 60) + (nseconds - seconds));
-		renderGame(grid, message, spot, zombies.size(), pills.size(), diff);
+		renderGame(grid, message, spot, zombies.size(), pills.size(), 0);
 		do {
 			if (_kbhit())
 			{
@@ -153,6 +150,9 @@ int main()
 				else if (isreplayKey(key))
 					displayallmoves(replayer);
 			}
+			int nhours, nmin, nseconds;
+			GetSystemTime(nhours, nmin, nseconds);
+			const int diff = (((nhours - hours) * 3600) + ((nmin - min) * 60) + (nseconds - seconds));
 			renderGame(grid, message, spot, zombies.size(), getsize(pills), diff);        //render game state on screen
 		} while (!wantToQuit(key, message) && (!haswon(zombies, message, spot) && !haslost(spot, message)));      //while user does not want to quit
 		spot.levelChoice++;
