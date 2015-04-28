@@ -135,47 +135,50 @@ int main()
 		{
 			setGrid(grid);						//this sets up the grid to load the game onto
 			loadgame(spot, zombies, pills, holes); //this loads the game based on variables read in
-			updateGame(grid, spot, key, message, zombies, pills, holes); //
-			loadgames = false;
+			updateGame(grid, spot, key, message, zombies, pills, holes); // this then updates the menu screen
+			loadgames = false;					//resets the value of loadgames to false so this isnt entered again
 		}
 		else
 		{
-			initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot)
+			initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot etc)
 		}
-		renderGame(grid, message, spot, zombies.size(), pills.size(), 0);
+		renderGame(grid, message, spot, zombies.size(), pills.size(), 0); //this renders all the information on the screen (lives, pills left etc)
 		do {
-			if (_kbhit())
+			if (_kbhit()) //if the keyboard has been hit this if statement enters
 			{
-				saveboard(replayer, grid);
-			message = "                    "; //reset message
-			key = getKeyPress();              //read in next keyboard event
-			if (isArrowKey(key))
-				updateGame(grid, spot, key, message, zombies, pills, holes);
-			else if (isCheatKey(key))
+				saveboard(replayer, grid);		//this adds the current state of the grid to the replay structure
+			message = "                    ";	//reset message
+			key = getKeyPress();				//read in next keyboard event
+			if (isArrowKey(key))				//if this is an arrow key enter this
+				updateGame(grid, spot, key, message, zombies, pills, holes); //this calls the update game function based on what button pressed
+			else if (isCheatKey(key))			//if its a cheat character enter this
 			{
-				spot.hascheated = true;
-				ApplyCheat(key, spot, zombies, pills);
-				updateGame(grid, spot, key, message, zombies, pills, holes);
+				spot.hascheated = true;			//makes it so the player has cheated, so score isnt saved
+				ApplyCheat(key, spot, zombies, pills); //calls the function to actually apply the cheat
+				updateGame(grid, spot, key, message, zombies, pills, holes); //calls the function to update the game
 			}
-				else if (issaveKey(key))
-					savegame(spot, zombies, pills, holes);
-				else if (isloadKey(key))
+				else if (issaveKey(key))		//if its the save game key
+					savegame(spot, zombies, pills, holes); //this calls the save game function to save to a file
+				else if (isloadKey(key))		//if its the load key
 				{
-					loadgame(spot, zombies, pills, holes);
+					loadgame(spot, zombies, pills, holes); //calls the load game function then updates the game to apply load
 					updateGame(grid, spot, key, message, zombies, pills, holes);
 				}					
-				else if (isreplayKey(key))
-					displayallmoves(replayer);
+				else if (isreplayKey(key))		//if its the replay key
+					displayallmoves(replayer);	//replays all moves up till the point pressed
 			}
-			int nhours, nmin, nseconds;
-			GetSystemTime(nhours, nmin, nseconds);
-			const int diff = (((nhours - hours) * 3600) + ((nmin - min) * 60) + (nseconds - seconds));
+			int nhours, nmin, nseconds;			//declares the time to track
+			GetSystemTime(nhours, nmin, nseconds); //gets the new time after this has passed
+			const int diff = (((nhours - hours) * 3600) + ((nmin - min) * 60) + (nseconds - seconds)); //gets the time based on the difference
+			//of the two times
 			renderGame(grid, message, spot, zombies.size(), getsize(pills), diff);        //render game state on screen
-		} while (!wantToQuit(key, message) && (!haswon(zombies, message, spot) && !haslost(spot, message)));      //while user does not want to quit
-		spot.levelChoice++;
-		spot.isProtected = false;
+		} while (!wantToQuit(key, message) && (!haswon(zombies, message, spot) && !haslost(spot, message))); 
+		//while the user doesn't want to quit, hasn't lost or won this will run
+		spot.levelChoice++;						// after they have finished one level it will increase their lifes
+		spot.isProtected = false;				// resets the protection
 	} while (spot.levelChoice <= 3 && !wantToQuit(key, message) && !haslost(spot, message));
-	if (!spot.hascheated)
+	//this while loop runs until they reach the end of the game or quit or lose
+	if (!spot.hascheated)						//this is called if spot cheats
 	{
 		if (!readsavedcore(spot.name, spot.lives))
 			savescore(spot.name, spot.lives);
