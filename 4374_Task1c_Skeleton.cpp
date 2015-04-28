@@ -32,7 +32,7 @@ const char EXTERMINATE('X');  //remove all zombies
 const char EAT('E');         //remove all pills
 
 const char PLAY('P');		//play buttion
-const char INFO('I');
+const char INFO('I');		//info key
 const char SAVE('S');		// save key
 const char LOAD('L');		// load key
 const char REPLAY('R');		//replay buttion
@@ -61,8 +61,8 @@ struct zombie {
 	int startx;              // the start location of the zombie
 	int starty;
 	bool imobalized;		 // set true if the zombie cant move
-	bool alive;
-	bool hidden;
+	bool alive;				 // variable to set the zombies being dead or not
+	bool hidden;			 // variable to set whether the zombies have been hidden
 	zombie operator= (const zombie& it)
 	{
 		zombie a = it;
@@ -72,7 +72,7 @@ struct zombie {
 
 struct pill {
 	Item baseobject;         // the base class of all objects on the map
-	bool eaten;
+	bool eaten;				 // variable that determines if the pill had been eaten or not
 	pill operator= (const pill& it)
 	{
 		pill a = it;
@@ -115,27 +115,27 @@ int main()
 	void saveboard(vector<replay>& replayer, const char grid[][SIZEX]);
 	bool canload(const string& name);
 	void setGrid(char[][SIZEX]);
-	//local variable declarations 
-	char grid[SIZEY][SIZEX];                //grid for display
-	string message("LET'S START...      "); //current message to player
-	int key(' ');
-	vector<replay> replayer;
-	player spot = { SPOT, 0, 0, mainloop(levelSelection), 5 };                        //create key to store keyboard events 
-	bool loadgames = canload(spot.name);
-	spot.levelChoice = levelSelection;
-	Clrscr();
-	int hours, min, seconds; // do we need to reset the timer when we load the next level
-	GetSystemTime(hours, min, seconds);// populates the varibles
+	//These are all the functions we call in our main body of code, they all pass different paramters
+	char grid[SIZEY][SIZEX];					//grid for display
+	string message("LET'S START...      ");		//current message to player
+	int key(' ');								//declares the input key
+	vector<replay> replayer;					//creates a list of moves to replay
+	player spot = { SPOT, 0, 0, mainloop(levelSelection), 5 };     //creates the player based on what level and name they choose
+	bool loadgames = canload(spot.name);		//determines if that can load a current game or not
+	spot.levelChoice = levelSelection;			//this sets the level that is selected in the main loop
+	Clrscr();									//this clears the screan
+	int hours, min, seconds;					//sets up the current time
+	GetSystemTime(hours, min, seconds);			//gets the current time on the system
 	do {
-		vector<zombie> zombies;					// initalize the 4 zombies
-		vector<pill> pills; 					// initalize avalible pills to 8
-		vector<Item> holes; 					// 12 holes
+		vector<zombie> zombies;					//initalize the zombies
+		vector<pill> pills; 					//initalize pills
+		vector<Item> holes; 					//initalize holes
 		
-		if (loadgames)
+		if (loadgames)							//if the player has a saved game this is called
 		{
-			setGrid(grid);
-			loadgame(spot, zombies, pills, holes);
-			updateGame(grid, spot, key, message, zombies, pills, holes);
+			setGrid(grid);						//this sets up the grid to load the game onto
+			loadgame(spot, zombies, pills, holes); //this loads the game based on variables read in
+			updateGame(grid, spot, key, message, zombies, pills, holes); //
 			loadgames = false;
 		}
 		else
