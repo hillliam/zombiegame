@@ -945,6 +945,7 @@ void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, 
 	void showTitle();
 	void showOptions();
 	void showtime();
+	void showSaveLoad();
 	void showMessage(const string&);
 	void showname(const string &name);
 	void showscore(const int score);
@@ -958,6 +959,7 @@ void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, 
 	showDescription();
 	showdiff(diff);
 	showtime();
+	showSaveLoad();
 	showLives(spot);
 	showname(spot.name);
 	int previousscore = getscore(spot.name);
@@ -1027,6 +1029,7 @@ void showDescription()
 
 void showTitle()
 { //display game title
+	SelectBackColour(clRed);
 	SelectTextColour(clYellow);
 	Gotoxy(0, 0);
 	cout << "___ZOMBIES GAME SKELETON___\n" << endl;
@@ -1036,6 +1039,16 @@ void showTitle()
 	cout << "Oliver Parker, Liam Hill, Alex Odgen";
 	Gotoxy(40, 1);
 	cout << "1RR - COMPUTER SCIENCE";
+}
+
+void showSaveLoad()
+{
+	SelectBackColour(clRed);
+	SelectTextColour(clYellow);
+	Gotoxy(40, 11);
+	cout << "Press S to save your game";
+	Gotoxy(40, 12);
+	cout << "Press L to load your game";
 }
 
 void showname(const string &name)
