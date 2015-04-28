@@ -82,7 +82,7 @@ int main()
 	int getsize(const vector<pill>& pills);
 	int  getKeyPress();
 	bool endconditions(vector<zombie>& zombies, const int pills, const player &spot, const int key, string& message);
-	void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills);
+	void ApplyCheat(const int key, player& spot, vector<zombie>& zombies, vector<pill>& pills);
 	void updateGame(char grid[][SIZEX], player& spot, const int key, string& message, vector<zombie>& zombies, vector<pill>& pills, const vector<Item>& holes);
 	void renderGame(const char g[][SIZEX], const string &mess, const player &spot, const int zomlives, const int remaingpills);
 	void endProgram(const string &message);
@@ -108,7 +108,7 @@ int main()
 		else if (isCheatKey(key))
 		{
 			spot.hascheated = true;
-			ApplyCheat(key, zombies, pills);
+			ApplyCheat(key, spot, zombies, pills);
 			updateGame(grid, spot, key, message, zombies, pills, holes);
 		}
 		renderGame(grid, message, spot, zombies.size(), getsize(pills));        //render game state on screen
@@ -268,7 +268,7 @@ void updatezombieCoordinates(const char g[][SIZEX], player& spot, vector<zombie>
 	}
 }
 
-void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills)
+void ApplyCheat(const int key, player& spot, vector<zombie>& zombies, vector<pill>& pills)
 {
 	if (toupper(key) == EAT)//remove all pils from the grid
 	{
