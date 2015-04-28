@@ -8,7 +8,7 @@
 
 #include "RandomUtils.h"
 #include "ConsoleUtils.h"
-#include "TimeUtils.h"
+#include "TimeUtils.h"	
 
 using namespace std;
 
@@ -128,8 +128,8 @@ int main()
 int getsize(const vector<pill>& pills)
 {
 	int pils = 0;
-	for (const pill& item : pills) // this loop runs through every item in the pills list
-		if (!item.eaten) // if the pill is still on the map the pill integer gets increased, this is the size of the pills
+	for (const pill& item : pills)	// this loop runs through every item in the pills list
+		if (!item.eaten)			// if the pill is still on the map the pill integer gets increased, this is the size of the pills
 			// or the pills left one the map
 			++pils;
 	return pils;
@@ -161,12 +161,12 @@ string mainloop()
 		showtime();
 		showmenu();
 		//calls different display functions
-		key = getKeyPress(); //gets the key press from the user
-		if (toupper(key) == INFO) // if the key is the i key it displays the game info
+		key = getKeyPress();			//gets the key press from the user
+		if (toupper(key) == INFO)		// if the key is the i key it displays the game info
 			showDescription();
-		else if (toupper(key) == QUIT) // if the key is the q key it quits
+		else if (toupper(key) == QUIT)	// if the key is the q key it quits
 			return 0;
-		else if (toupper(key) != PLAY) // if the key is anythoing else it displays an error message
+		else if (toupper(key) != PLAY)	// if the key is anythoing else it displays an error message
 		{
 			SelectBackColour(clRed);
 			SelectTextColour(clYellow);
@@ -174,49 +174,49 @@ string mainloop()
 			cout << "INVALID KEY!  ";
 		}
 	}
-	requestname(); // once the user enters their name it
+	requestname();						// once the user enters their name it
 	cin >> name;
-	clearMessage(); // clears the message
+	clearMessage();						// clears the message
 	int previousscore = getscore(name); // gets the previous score from the name, -1 if first time playing
-	showscore(previousscore); // displays that score
-	return name; // returns the value of name for the player
+	showscore(previousscore);			// displays that score
+	return name;						// returns the value of name for the player
 }
 
 void savescore(const string &name, const int score)
 {
-	ofstream out(name + ".scr"); // creates a file stream names out
-	if (!out.fail()) // if it is available
-		out << score; // saves the score into this document
-	out.close(); //closes the stream
+	ofstream out(name + ".scr");	// creates a file stream names out
+	if (!out.fail())				// if it is available
+		out << score;				// saves the score into this document
+	out.close();					//closes the stream
 }
 
 bool readsavedcore(const string &name, const int score)
 {
 	ifstream in(name + ".scr");
-	if (!in.fail())// the file may not be found
+	if (!in.fail())					// the file may not be found
 	{
-		int storedscore; //sets up where to store it
-		in >> storedscore; // takes in the stored value
-		if (storedscore > score) // if the score is greater than original return true
+		int storedscore;			//sets up where to store it
+		in >> storedscore;			// takes in the stored value
+		if (storedscore > score)	// if the score is greater than original return true
 			return true;
 		else
 			return false;
 	}
-	in.close(); //closes the stream
+	in.close();						//closes the stream
 	return false;
 }
 
 int getscore(const string &name)
 {
-	ifstream in(name + ".scr");
-	if (!in.fail())// the file may not be found
+	ifstream in(name + ".scr");		//Create input file stream with player name and extension
+	if (!in.fail())					//The file may not be found
 	{
-		int storedscore; //gets the score
+		int storedscore;			//Gets the score
 		in >> storedscore;
-		return storedscore; // returns it from the stream
+		return storedscore;			//Returns it from the stream
 	}
-	in.close();
-	return -1; //returns -1 if it is the players first game
+	in.close();						//Close the stream
+	return -1;						//returns -1 if it is the players first game
 }
 
 void updateGame(char grid[][SIZEX], player& spot, const int key, string& message, vector<zombie>& zombies, vector<pill>& pills, const vector<Item>& holes)
