@@ -338,19 +338,22 @@ string mainloop(int& levelSelection)
 		showOptions();
 		showtime();
 		showmenu();
-		key = getKeyPress();
-		if (toupper(key) == INFO)
-			showDescription();
-		else if (toupper(key) == LEADERBOARD)
-			displayhighscores();
-		else if (toupper(key) == QUIT)
-			return 0;
-		else if (toupper(key) != PLAY)
+		if (_kbhit())
 		{
-			SelectBackColour(clRed);
-			SelectTextColour(clYellow);
-			Gotoxy(40, 13);
-			cout << "INVALID KEY!  ";
+			key = getKeyPress();
+			if (toupper(key) == INFO)
+				showDescription();
+			else if (toupper(key) == LEADERBOARD)
+				displayhighscores();
+			else if (toupper(key) == QUIT)
+				return 0;
+			else if (toupper(key) != PLAY)
+			{
+				SelectBackColour(clRed);
+				SelectTextColour(clYellow);
+				Gotoxy(40, 13);
+				cout << "INVALID KEY!  ";
+			}
 		}
 	}
 	requestname();
