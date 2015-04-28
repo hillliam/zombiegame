@@ -97,12 +97,12 @@ int main()
 	bool endconditions(vector<zombie>& zombies, const int pills, const player &spot, const int key, string& message);
 	void ApplyCheat(const int key, player& spot, vector<zombie>& zombies, vector<pill>& pills);
 	void updateGame(char grid[][SIZEX], player& spot, const int key, string& message, vector<zombie>& zombies, vector<pill>& pills, const vector<Item>& holes);
-	void renderGame(const char g[][SIZEX], const string &mess, const player &spot, const int zomlives, const int remaingpills, int diff);
+	void renderGame(const char g[][SIZEX], const string &mess, const player &spot, const int zomlives, const int remaingpills, const int diff);
 	void endProgram(const string &message);
 	string mainloop(int& levelSelection);
 	void savescore(const string &name, const int score);
 	bool readsavedcore(const string &name, const int score);
-	bool haswon(vector<zombie>& zombies, string& message, const player &spot);
+	bool haswon(const vector<zombie>& zombies, const player &spot);
 	bool haslost(const player &spot, string& message);
 	bool wantToQuit(const int k, string& message);
 	void updatescore(const string &name, const int score);
@@ -164,7 +164,7 @@ int main()
 			GetSystemTime(nhours, nmin, nseconds);
 			const int diff = (((nhours - hours) * 3600) + ((nmin - min) * 60) + (nseconds - seconds));
 			renderGame(grid, message, spot, zombies.size(), getsize(pills), diff);        //render game state on screen
-		} while (!wantToQuit(key, message) && (!haswon(zombies, message, spot) && !haslost(spot, message)));      //while user does not want to quit
+		} while (!wantToQuit(key, message) && (!haswon(zombies, spot) && !haslost(spot, message)));      //while user does not want to quit
 		spot.levelChoice++;
 		spot.isProtected = false;
 	} while (spot.levelChoice <= 3 && !wantToQuit(key, message) && !haslost(spot, message));
@@ -176,6 +176,7 @@ int main()
 	}
 	endProgram(message);                             //display final message
 }
+
 bool canload(const string& name)
 {
 	int  getKeyPress();
@@ -192,10 +193,12 @@ bool canload(const string& name)
 			return false;
 	}
 }
+
 bool isreplayKey(const int key)
 {
 	return (toupper(key) == REPLAY);
 }
+
 bool issaveKey(const int k)
 {
 	if (toupper(k) == SAVE)
@@ -203,6 +206,7 @@ bool issaveKey(const int k)
 	else
 		return false;
 }
+
 void displayallmoves(const vector<replay> &replayer)
 {
 	void paintGrid(const char g[][SIZEX]);
@@ -231,6 +235,7 @@ void displayallmoves(const vector<replay> &replayer)
 	}
 	Clrscr();
 }
+
 bool isloadKey(const int k)
 {
 	if (toupper(k) == LOAD)
@@ -247,6 +252,7 @@ int getsize(const vector<pill>& pills)
 			++pils;
 	return pils;
 }
+
 void savegame(const player &spot, const vector<zombie> &zombies, const vector<pill> &pills, const vector<Item> &holes)
 {
 	ofstream writer(spot.name + ".save");
@@ -284,6 +290,7 @@ void savegame(const player &spot, const vector<zombie> &zombies, const vector<pi
 	}
 	writer.close();
 }
+
 void saveboard(vector<replay>& replayer, const char grid[][SIZEX])
 {
 	replay newstep;
@@ -296,6 +303,7 @@ void saveboard(vector<replay>& replayer, const char grid[][SIZEX])
 	}
 	replayer.push_back(newstep);
 }
+
 void loadgame(player& spot, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes)
 {
 	zombies.clear();
@@ -348,6 +356,7 @@ void loadgame(player& spot, vector<zombie>& zombies, vector<pill>& pills, vector
 		reader.close();
 	}
 }
+
 string mainloop(int& levelSelection)
 {
 	void requestname();
@@ -589,6 +598,7 @@ void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, v
 	placepillonmap(grid, pills, spot);	   // place pills on the map
 	placeholeonmap(grid, holes, spot);       // place holes on the map
 }
+
 void getLevel()
 {
 	SelectBackColour(clRed);
@@ -599,26 +609,22 @@ void getLevel()
 
 void placepillonmap(char grid[][SIZEX], vector<pill>& pills, player& spot)
 {
-	void occupyPills(int numberOfPills, char grid[][SIZEX], vector<pill>& pills);
-	int selection;
+	void occupyPills(const int numberOfPills, char grid[][SIZEX], vector<pill>& pills);
 	switch (spot.levelChoice)
 	{
 	case 1:
-		 selection = 8;
-		occupyPills(selection, grid, pills);
+		occupyPills(8, grid, pills);
 		break;
 	case 2:
-		 selection = 5;
-		occupyPills(selection, grid, pills);
+		occupyPills(5, grid, pills);
 		break;
 	case 3:
-		 selection = 3;
-		occupyPills(selection, grid, pills);
+		occupyPills(3, grid, pills);
 		break;
 	}
 }
 
-void occupyPills(int numberOfPills, char grid[][SIZEX], vector<pill>& pills)
+void occupyPills(const int numberOfPills, char grid[][SIZEX], vector<pill>& pills)
 {
 	bool ocupiedpeace(const char gd[][SIZEX], const int x, const int y);
 	for (int i = 0; i < numberOfPills; i++) // place 8 pills on the map
@@ -639,28 +645,23 @@ void occupyPills(int numberOfPills, char grid[][SIZEX], vector<pill>& pills)
 
 void placeholeonmap(char grid[][SIZEX], vector<Item>& holes, player& spot)
 {
-	void occupyHoles(char grid[][SIZEX], vector<Item>& holes, int numberOfHoles);
-	int selection;
+	void occupyHoles(char grid[][SIZEX], vector<Item>& holes, const int numberOfHoles);
 	switch (spot.levelChoice)
 	{
 	case 1:
-		selection = 12;
-		occupyHoles(grid, holes, selection);
+		occupyHoles(grid, holes, 12);
 		break;
 	case 2:
-		selection = 5;
-		occupyHoles(grid, holes, selection);
+		occupyHoles(grid, holes, 5);
 		break;
 	case 3:
-		selection = 2;
-		occupyHoles(grid, holes, selection);
+		occupyHoles(grid, holes, 2);
 		break;
 	}
 }
 
-void occupyHoles(char grid[][SIZEX], vector<Item>& holes, int numberOfHoles)
+void occupyHoles(char grid[][SIZEX], vector<Item>& holes,const int numberOfHoles)
 {
-	void occupyHoles(char grid[][SIZEX], vector<Item>& holes, int numberOfHoles);
 	bool ocupiedpeace(const char gd[][SIZEX], const int x, const int y);
 	for (int i = 0; i < numberOfHoles; i++) // place 12 holes on the map
 	{
@@ -685,8 +686,7 @@ void placewallonmap(char grid[][SIZEX])
 		for (int x = 4; x < 7; x++)
 		{
 			grid[y][x] = WALL;
-		}
-			
+		}	
 	}
 	for (int y2 = 8; y2 > 5; y2--)
 	{
@@ -694,9 +694,7 @@ void placewallonmap(char grid[][SIZEX])
 		{
 			grid[y2][x2] = WALL;
 		}
-
 	}
-		
 }
 
 void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies)
@@ -870,7 +868,6 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, const int key, str
 		sp.isProtected = false;
 }
 
-
 void setKeyDirection(const int key, int& dx, int& dy)
 {
 	switch (key)    //...depending on the selected key...
@@ -920,7 +917,7 @@ bool wantToQuit(const int key, string& message)
 	return exit;
 }
 
-bool haswon(vector<zombie>& zombies, string& message, const player& spot)
+bool haswon(const vector<zombie>& zombies, const player& spot)
 {		
 	if (zombies[0].alive == true || zombies[1].alive == true || zombies[2].alive == true || zombies[3].alive == true)
 	{
@@ -934,7 +931,6 @@ bool haswon(vector<zombie>& zombies, string& message, const player& spot)
 	cout << "Your score is: " << spot.lives;
 	return true;
 }
-
 
 bool haslost(const player &spot, string& message)
 {
@@ -964,7 +960,7 @@ void clearMessage()
 	cout << str;  //display blank message
 }
 
-void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, const int zombielives, const int remainingpill, int diff)
+void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, const int zombielives, const int remainingpill,const int diff)
 { //display game title, messages, maze, spot and apples on screen
 	void paintGrid(const char g[][SIZEX]);
 	void showLives(const player &spot);
@@ -977,7 +973,7 @@ void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, 
 	void showMessage(const string&);
 	void showname(const string &name);
 	void showscore(const int score);
-	void showdiff(int diff);
+	void showdiff(const int diff);
 
 	Gotoxy(0, 0);
 	//display grid contents
@@ -1029,7 +1025,6 @@ void paintGrid(const char g[][SIZEX])
 		cout << endl;
 	} //end of row-loop
 }
-
 
 void showrempill(const int pils)
 {
@@ -1183,7 +1178,7 @@ void displayhighscores()
 	cout << "name	   score";
 	if (!in.fail())// the file may not be found
 	{
-		for (int i = 0; i != 3; ++i)
+		for (int i = 0; i != 6; ++i)
 		{
 			int storedscore; // the score 
 			string name; // the name
@@ -1202,57 +1197,42 @@ void updatescore(const string &name, const int score)
 	if (!in.fail())
 	{
 		Gotoxy(2, 13);
-		string name1;
-		string name2;
-		string name3;
-		int score1;
-		int score2;
-		int score3;
-		in >> name1;
-		in >> score1;
-		in >> name2;
-		in >> score2;
-		in >> name3;
-		in >> score3;
+		string names[6];
+		int scores[6];
+		for (int i = 0; i != 6; ++i)
+		{
+			in >> names[i];
+			in >> scores[i];
+		}
 		in.close();
 		ofstream out("best.scr");
-		if (score1 < score)
+		for (int i = 0; i != 6; ++i)
 		{
-			score3 = score2;
-			score2 = score1;
-			name3 = name2;
-			name2 = name1;
-			score1 = score;
-			name1 = name;
+			if (score > scores[i])
+			{
+				for (int j = i; j != 5; ++j)// back shift
+				{
+					names[j + 1] = names[j];
+					scores[j + 1] = scores[j];
+				}
+				scores[i] = score;
+				names[i] = name;
+				break; // prevent redo
+			}
 		}
-		else if (score2 < score)
+		for (int i = 0; i != 6; ++i)
 		{
-			score3 = score2;
-			name3 = name2;
-			score2 = score;
-			name2 = name;
+			out << names[i];
+			out << scores[i];
 		}
-		else if (score3 < score)
-		{
-			score3 = score;
-			name3 = name;
-		}
-		out << name1 << endl;
-
-		out << score1 << endl;
-		out << name2 << endl;
-		out << score2 << endl;
-		out << name3 << endl;
-		out << score3 << endl;
 		out.close();
 	}
-
 }
-	void showdiff(int diff)
-	{
-		SelectBackColour(clRed);
-		SelectTextColour(clYellow);
-		Gotoxy(40, 16);
-		cout << "time spent in game: " << diff;
-	}
 
+void showdiff(const int diff)
+{
+	SelectBackColour(clRed);
+	SelectTextColour(clYellow);
+	Gotoxy(40, 16);
+	cout << "time spent in game: " << diff;
+}
