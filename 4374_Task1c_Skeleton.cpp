@@ -89,7 +89,6 @@ int main()
 	string mainloop();
 	void savescore(const string &name, const int score);
 	bool readsavedcore(const string &name, const int score);
-	void updatescore(const string &name, const int score);
 	//local variable declarations 
 	char grid[SIZEY][SIZEX];                //grid for display
 	vector<zombie> zombies;					// initalize the 4 zombies
@@ -118,7 +117,6 @@ int main()
 	{
 		if (!readsavedcore(spot.name, spot.lives))
 			savescore(spot.name, spot.lives);
-		updatescore(spot.name, spot.lives);
 	}
 	endProgram(message);                             //display final message
 }
@@ -807,68 +805,4 @@ void requestname()
 	SelectTextColour(clYellow);
 	Gotoxy(2, 11);
 	cout << "please enter your name: ";
-}
-
-
-void updatescore(const string &name, const int score)
-{
-	ifstream in("best.scr");
-	if (!in.fail())
-	{
-		Gotoxy(2, 13);
-		string name1;
-		string name2;
-		string name3;
-		int score1;
-		int score2;
-		int score3;
-		in >> name1;
-		in >> score1;
-		in >> name2;
-		in >> score2;
-		in >> name3;
-		in >> score3;
-		in.close();
-		ofstream out("best.scr");
-		if (score1 < score)
-		{
-			score3 = score2;
-			score2 = score1;
-			name3 = name2;
-			name2 = name1;
-			score1 = score;
-			name1 = name;
-		}
-		else if (score2 < score)
-		{
-			score3 = score2;
-			name3 = name2;
-			score2 = score;
-			name2 = name;
-		}
-		else if (score3 < score)
-		{
-			score3 = score;
-			name3 = name;
-		}
-		out << name1 << endl;
-
-		out << score1 << endl;
-		out << name2 << endl;
-		out << score2 << endl;
-		out << name3 << endl;
-		out << score3 << endl;
-		out.close();
-	}
-	else
-	{
-		ofstream out("best.scr");
-		out << "bob" << endl;
-		out << 3 << endl;
-		out << "tom" << endl;
-		out << 2 << endl;
-		out << "jim" << endl;
-		out << 1 << endl;
-		out.close();
-	}
 }
