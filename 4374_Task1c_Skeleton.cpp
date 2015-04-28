@@ -301,7 +301,7 @@ void updatezombieCoordinates(const char g[][SIZEX], player& spot, vector<zombie>
 	}
 }
 
-void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills)
+void ApplyCheat(const int key, player& spot, vector<zombie>& zombies, vector<pill>& pills)
 {
 	if (toupper(key) == EAT)//remove all pils from the grid
 	{
