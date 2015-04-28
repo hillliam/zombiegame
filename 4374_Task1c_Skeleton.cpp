@@ -87,7 +87,7 @@ int main()
 	int levelSelection;
 	int  getKeyPress();
 	bool endconditions(vector<zombie>& zombies, const int pills, const player &spot, const int key, string& message);
-	void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills);
+	void ApplyCheat(const int key, player& spot, vector<zombie>& zombies, vector<pill>& pills);
 	void updateGame(char grid[][SIZEX], player& spot, const int key, string& message, vector<zombie>& zombies, vector<pill>& pills, const vector<Item>& holes);
 	void renderGame(const char g[][SIZEX], const string &mess, const player &spot, const int zomlives, const int remaingpills, int diff);
 	void endProgram(const string &message);
@@ -124,7 +124,7 @@ int main()
 			else if (isCheatKey(key))
 			{
 				spot.hascheated = true;
-				ApplyCheat(key, zombies, pills);
+				ApplyCheat(key, spot, zombies, pills);
 				updateGame(grid, spot, key, message, zombies, pills, holes);
 			}
 			renderGame(grid, message, spot, zombies.size(), getsize(pills), diff);        //render game state on screen
@@ -256,7 +256,7 @@ void updatezombieCoordinates(const char g[][SIZEX], player& spot, vector<zombie>
 	void retreat(const player&, int& x, int& y);
 	for (int i = 0; i < zombies.size(); i++)
 	{
-		if (zombies[i].imobalized == false)
+		if (zombies[i].imobalized == false && zombies[i].hidden == false && zombies[i].alive == true)
 		{
 			//calculate direction of movement required by key - if any
 			int dx(zombies[i].baseobject.x), dy(zombies[i].baseobject.y);
@@ -304,7 +304,16 @@ void updatezombieCoordinates(const char g[][SIZEX], player& spot, vector<zombie>
 void ApplyCheat(const int key, vector<zombie>& zombies, vector<pill>& pills)
 {
 	if (toupper(key) == EAT)//remove all pils from the grid
+	{
+		int livesGained = 0;
+		for (int i = 0; i < pills.size(); i++)
+		{
+			if (pills[i].eaten == true);
+				livesGained++;
+		}
+		spot.lives = spot.lives + livesGained;
 		pills.clear();
+	}
 	else if (toupper(key) == EXTERMINATE)//remove all zombies from board
 	{
 		for (int i = 0; i != zombies.size(); i++)
