@@ -1,3 +1,6 @@
+/*
+Oliver Parker, Liam Hill, Alex Ogden - RR4 - Computer Science - Basic version
+*/
 #include <iostream>
 #include <iomanip>
 #include <conio.h>
@@ -837,3 +840,4 @@ void requestname()
 	Gotoxy(2, 11);
 	cout << "please enter your name: ";
 }
+
