@@ -1,3 +1,6 @@
+/*
+Oliver Parker, Liam Hill, Alex Ogden - RR4 - Computer Science - Extended version
+*/
 #include <iostream>
 #include <iomanip>
 #include <conio.h>
