@@ -52,11 +52,11 @@ struct player {
 	Item baseobject;         // the base class of all objects on the map
 	const string name;		 // the name of the player
 	int lives;               // the number of lives the player has
-	int score;               // the score the player has acheaved
+	int totalscore;			 // keeps track of the total score for the leaderboard
 	bool hascheated;		 // set true if the user has cheated
-	bool isProtected;
-	int protectedCount;
-	int levelChoice;
+	bool isProtected;		 // boolean variable to check if the player is protected by magic pill
+	int protectedCount;		 // sets the amount moves the player can make before their protection goes
+	int levelChoice;		 // sets the level choice 
 };
 
 struct zombie {
@@ -124,6 +124,7 @@ int main()
 	int key(' ');								//declares the input key
 	vector<replay> replayer;					//creates a list of moves to replay
 	player spot = { SPOT, 0, 0, mainloop(levelSelection), 5 };     //creates the player based on what level and name they choose
+	spot.totalscore = 0;						//sets the total score to 0
 	bool loadgames = canload(spot.name);		//determines if that can load a current game or not
 	spot.levelChoice = levelSelection;			//this sets the level that is selected in the main loop
 	Clrscr();									//this clears the screan
@@ -177,14 +178,15 @@ int main()
 			renderGame(grid, message, spot, zombies.size(), getsize(pills), diff);        //render game state on screen
 		} while (!wantToQuit(key, message) && (!haswon(zombies, spot) && !haslost(spot, message)));      //while user does not want to quit
 		spot.levelChoice++;
+		spot.totalscore = spot.totalscore + spot.lives;
 		spot.isProtected = false;
 	} while (spot.levelChoice <= 3 && !wantToQuit(key, message) && !haslost(spot, message));
 	//this while loop runs until they reach the end of the game or quit or lose
 	if (!spot.hascheated)						//this is called if spot cheats
 	{
-		if (!readsavedcore(spot.name, spot.lives)) //checks if there is a current score
-			savescore(spot.name, spot.lives);      //if there isn't this is called to save the score
-		updatescore(spot.name, spot.lives);		   //if not this is called to update it if the new score is higher
+		if (!readsavedcore(spot.name, spot.totalscore)) //checks if there is a current score
+			savescore(spot.name, spot.totalscore);      //if there isn't this is called to save the score
+		updatescore(spot.name, spot.totalscore);		   //if not this is called to update it if the new score is higher
 	}
 	endProgram(message);                             //display final message
 }
@@ -278,7 +280,7 @@ void savegame(const player &spot, const vector<zombie> &zombies, const vector<pi
 	writer << spot.hascheated << endl;
 	writer << spot.isProtected << endl;
 	writer << spot.lives << endl;
-	writer << spot.score << endl;
+	writer << spot.totalscore << endl;
 	writer << spot.levelChoice << endl;
 	writer << spot.protectedCount << endl;
 	//writes all of spots features to the file
@@ -341,7 +343,7 @@ void loadgame(player& spot, vector<zombie>& zombies, vector<pill>& pills, vector
 		reader >> spot.hascheated;
 		reader >> spot.isProtected;
 		reader >> spot.lives;
-		reader >> spot.score;
+		reader >> spot.totalscore;
 		reader >> spot.levelChoice;
 		reader >> spot.protectedCount;
 		//reads in all of spots features
@@ -998,11 +1000,20 @@ bool haswon(const vector<zombie>& zombies, const player& spot)
 	// if any zombies are alive return false
 	SelectBackColour(clRed);
 	SelectTextColour(clYellow);
-	Gotoxy(40, 16);
-	cout << "Congratulations, you have finished this level!";
-	Gotoxy(40, 17);
-	cout << "Your score is: " << spot.lives;
-	return true;
+	if (spot.levelChoice < 3)
+	{
+		Gotoxy(40, 17);
+		cout << "Congratulations, you have finished this level!";
+		return true;
+	}
+	else
+	{
+		Gotoxy(40, 17);
+		cout << "Congratulations, you have finished the game!";
+		Gotoxy(40, 18);
+		cout << "Your score is: " << spot.totalscore;
+		return true;
+	}
 	//displays a message if not
 }
 
