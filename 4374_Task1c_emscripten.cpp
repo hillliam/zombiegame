@@ -1,22 +1,23 @@
-/*
-Oliver Parker, Liam Hill, Alex Ogden - RR4 - Computer Science - Extended version
-*/
 #include <iostream>
 #include <iomanip>
-#include <conio.h>
+//#include <conio.h>
 #include <string>
 #include <vector>
 #include <fstream>
-#include <Windows.h>
+#include <emscripten.h>
 
 #include "RandomUtils.h"
-#include "ConsoleUtils.h"
+//#include "ConsoleUtils.h"
 #include "TimeUtils.h"
 
 using namespace std;
 
 const int SIZEY(12);         //vertical dimension
 const int SIZEX(20);         //horizontal dimension
+
+const int screenhight(500);
+const int screenwith(500);
+const int pixels(32);
 
 const char SPOT('@');        //spot
 const char TUNNEL(' ');      //open space
@@ -100,9 +101,9 @@ int main()
 	bool endconditions(vector<zombie>& zombies, const int pills, const player &spot, const int key, string& message);
 	void ApplyCheat(const int key, player& spot, vector<zombie>& zombies, vector<pill>& pills);
 	void updateGame(char grid[][SIZEX], player& spot, const int key, string& message, vector<zombie>& zombies, vector<pill>& pills, const vector<Item>& holes);
-	void renderGame(const char g[][SIZEX], const string &mess, const player &spot, const int zomlives, const int remaingpills, const int diff);
+	void renderGame(const char g[][SIZEX], const string &mess, const player &spot, const int zomlives, const int remaingpills, const int diff, SDL_Surface* display, TTF_Font *font);
 	void endProgram(const string &message);
-	string mainloop(int& levelSelection);
+	string mainloop(int& levelSelection, SDL_Surface* display, TTF_Font *font);
 	void savescore(const string &name, const int score);
 	bool readsavedcore(const string &name, const int score);
 	bool haswon(const vector<zombie>& zombies, const player &spot);
@@ -112,26 +113,26 @@ int main()
 	bool issaveKey(const int k);
 	bool isloadKey(const int k);
 	bool isreplayKey(const int k);
-	void displayallmoves(const vector<replay> &replayer);
+	void displayallmoves(const vector<replay> &replayer, SDL_Surface* display, TTF_Font *font);
 	void savegame(const player& spot, const vector<zombie>& zombies, const vector<pill>& pills, const vector<Item>& holes);
 	void loadgame(player& spot, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes);
 	void saveboard(vector<replay>& replayer, const char grid[][SIZEX]);
 	bool canload(const string& name);
 	void setGrid(char[][SIZEX]);
+	bool setupdisplay(SDL_Surface* display);
+	TTF_Font * setuptext();
 	//These are all the functions we call in our main body of code, they all pass different paramters
+	SDL_Surface* display;						// the screen
+	setupdisplay(display);						// setup screen
+	TTF_Font *font = setuptext();				// text system
 	char grid[SIZEY][SIZEX];					//grid for display
 	string message("LET'S START...      ");		//current message to player
 	int key(' ');								//declares the input key
 	vector<replay> replayer;					//creates a list of moves to replay
-	player spot = { SPOT, 0, 0, mainloop(levelSelection), 5 };     //creates the player based on what level and name they choose
-	if (spot.name == "")
-		return 0;
-	spot.totalscore = 0;						//sets the total score to 0
+	player spot = { SPOT, 0, 0, mainloop(levelSelection, display, font), 5 };     //creates the player based on what level and name they choose
 	bool loadgames = canload(spot.name);		//determines if that can load a current game or not
 	spot.levelChoice = levelSelection;			//this sets the level that is selected in the main loop
-	Clrscr();									//this clears the screan
-	int hours, min, seconds;					//sets up the current time
-	GetSystemTime(hours, min, seconds);			//gets the current time on the system
+	//Clrscr();									//this clears the screan
 	do {
 		vector<zombie> zombies;					//initalize the zombies
 		vector<pill> pills; 					//initalize pills
@@ -145,13 +146,11 @@ int main()
 			loadgames = false;					//resets the value of loadgames to false so this isnt entered again
 		}
 		else
-		{
 			initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot etc)
-		}
+		int hours, min, seconds;					//sets up the current time
+		GetSystemTime(hours, min, seconds);			//gets the current time on the system
 		renderGame(grid, message, spot, zombies.size(), pills.size(), 0); //this renders all the information on the screen (lives, pills left etc)
 		do {
-			if (_kbhit()) //if the keyboard has been hit this if statement enters
-			{
 				saveboard(replayer, grid);		//this adds the current state of the grid to the replay structure
 			message = "                    ";	//reset message
 			key = getKeyPress();				//read in next keyboard event
@@ -172,7 +171,6 @@ int main()
 				}					
 				else if (isreplayKey(key))		//if its the replay key
 					displayallmoves(replayer);	//replays all moves up till the point pressed
-			}
 			int nhours, nmin, nseconds;			//declares the time to track
 			GetSystemTime(nhours, nmin, nseconds); //gets the new time after this has passed
 			const int diff = (((nhours - hours) * 3600) + ((nmin - min) * 60) + (nseconds - seconds)); //gets the time based on the difference
@@ -193,7 +191,7 @@ int main()
 	endProgram(message);                             //display final message
 }
 
-bool canload(const string& name)
+bool canload(const string& name, SDL_Surface *image, TTF_Font *font)
 {
 	int  getKeyPress();
 	ifstream reader(name + ".save");				//this starts a reader
@@ -201,6 +199,7 @@ bool canload(const string& name)
 		return false;
 	else
 	{
+
 		cout << "save file avalible press l to continue";	
 		cout << "from save any other key is no";	//asks the user if they want to load the saved game or start a new one
 		int key = getKeyPress();					//gets their input
@@ -224,36 +223,36 @@ bool issaveKey(const int k)
 		return false;
 }
 
-void displayallmoves(const vector<replay> &replayer)
+void displayallmoves(const vector<replay> &replayer, SDL_Surface *image, TTF_Font *font)
 {
-	void paintGrid(const char g[][SIZEX]);
-	int getKeyPress();
-	void showDescription();
-	void showTitle();
-	void showOptions();
-	void showmenu();
-	void showtime();
-	void showMessage(const string&);
+	void paintGrid(const char g[][SIZEX], SDL_Surface *image, TTF_Font *font);
+	int getKeyPress(SDL_Surface *image, TTF_Font *font);
+	void showDescription(SDL_Surface *image, TTF_Font *font);
+	void showTitle(SDL_Surface *image, TTF_Font *font);
+	void showOptions(SDL_Surface *image, TTF_Font *font);
+	void showmenu(SDL_Surface *image, TTF_Font *font);
+	void showtime(SDL_Surface *image, TTF_Font *font);
+	void showMessage(const string&, SDL_Surface *image, TTF_Font *font);
 	//all the menu functions defined here
 	int index = 0;
 	char key = ' ';
 	//sets up the index an key
-	Clrscr();										//clears the screen
+	//Clrscr();										//clears the screen
 	while (index != replayer.size())				//whilst there is still moves to show run this loop
 	{
-		showDescription();
-		showTitle();
-		showOptions();
-		showmenu();
-		showtime();
+		showDescription(image, font);
+		showTitle(image, font);
+		showOptions(image, font);
+		showmenu(image, font);
+		showtime(image, font);
 		//call all display functions
 		stringstream a;								//creates a stringstream to display the amount of moves
 		a << "displaying move " << index << " of " << replayer.size();
-		showMessage(a.str());						// displays the above message;
-		paintGrid(replayer[index].grid);			//this calls the paint grid function with the grid at that point in the list
+		showMessage(a.str(), image, font);						// displays the above message;
+		paintGrid(replayer[index].grid, image, font);			//this calls the paint grid function with the grid at that point in the list
 		index++;									//increments index
 	}
-	Clrscr();
+	//Clrscr();
 }
 
 bool isloadKey(const int k)
@@ -389,110 +388,27 @@ void loadgame(player& spot, vector<zombie>& zombies, vector<pill>& pills, vector
 	}
 }
 
-string mainloop(int& levelSelection)
+string mainloop(int& levelSelection, SDL_Surface *image, TTF_Font *font)
 {
-	void requestname();
-	void showTitle();
-	void showOptions();
-	void showmenu();
-	void showtime();
-	void showgametitle();
+	void requestname(SDL_Surface *image, TTF_Font *font);
+	void showTitle(SDL_Surface *image, TTF_Font *font);
+	void showOptions(SDL_Surface *image, TTF_Font *font);
+	void showmenu(SDL_Surface *image, TTF_Font *font);
+	void showtime(SDL_Surface *image, TTF_Font *font);
+	void showgametitle(SDL_Surface *image, TTF_Font *font);
 	int getscore(const string&);
-	int  getKeyPress();
-	void clearMessage();
-	void showscore(const int score);
-	void getLevel();
-	void displayhighscores();
-	void showDescription();
+	int  getKeyPress(SDL_Surface *image, TTF_Font *font);
+	void clearMessage(SDL_Surface *image, TTF_Font *font);
+	void showscore(const int score, SDL_Surface *image, TTF_Font *font);
+	void getLevel(SDL_Surface *image, TTF_Font *font);
+	void displayhighscores(SDL_Surface *image, TTF_Font *font);
+	void showDescription(SDL_Surface *image, TTF_Font *font);
 	//all the functions going to be used in this part of the code
 	string name = "";
 	char key = ' ';
-	//sets up some variables
-	while (toupper(key) != PLAY)						//whilst they havent clicked play yet
-	{
-		showTitle();
-		showgametitle();
-		showOptions();
-		showtime();
-		showmenu();
-		//displays all the menu items
-		if (_kbhit())
-		{
-			key = getKeyPress();
-			if (toupper(key) == INFO)
-				showDescription();
-			//if the hit info it displays the game descriptions
-			else if (toupper(key) == LEADERBOARD)
-				displayhighscores();
-			//if they click leaderboard it opens the leaderboard
-			else if (toupper(key) == QUIT)
-				return "";
-			//if they click quit it closes the game
-			else if (toupper(key) != PLAY)
-			{
-				SelectBackColour(clRed);
-				SelectTextColour(clYellow);
-				Gotoxy(40, 13);
-				cout << "INVALID KEY!  ";
-				//if a different key is pressed an error message appears
-			}
-		}
-	}
-	requestname();
-	cin >> name;
-	//this calls the function to request the name and then gets it as an input
-	clearMessage();
-	while(levelSelection < 1 || levelSelection > 3)	//code runs until the user enters a correct level
-	{
-	getLevel();
-	cin >> levelSelection;
-		if (levelSelection < 0 || levelSelection > 3)
-			cout << "Error: please enter a correct level";
-		//this runs until the user enters a correct value
-	}
-	
-	//this calls the function to ask for the level chosen an
-	clearMessage();
-	int previousscore = getscore(name); //this gets the score for the user
-	showscore(previousscore);//this shows the score
+	name = "";
+	levelSelection = 1;
 	return name;
-}
-
-void savescore(const string &name, const int score)
-{
-	ofstream out(name + ".scr"); //creates a stream
-	if (!out.fail())
-		out << score; //returns the score based on the name
-	out.close();
-}
-
-bool readsavedcore(const string &name, const int score)
-{
-	ifstream in(name + ".scr");//creates a stream
-	if (!in.fail())// the file may not be found
-	{
-		int storedscore;
-		in >> storedscore;
-		if (storedscore > score) //if the score they got is greater than the one atm it returns true
-			return true;
-		else
-			return false;
-	}
-	in.close();
-	return false;
-}
-
-int getscore(const string &name)
-{
-	ifstream in(name + ".scr");
-	if (!in.fail())// the file may not be found
-	{
-		int storedscore;
-		in >> storedscore;	//gets the score
-		return storedscore;
-	}
-	in.close();
-	return -1; //returns -1 if not previous score
 }
 
 void updateGame(char grid[][SIZEX], player& spot, const int key, string& message, vector<zombie>& zombies, vector<pill>& pills, const vector<Item>& holes)
@@ -520,13 +436,9 @@ void updatezombieCoordinates(const char g[][SIZEX], player& spot, vector<zombie>
 			//calculate direction of movement required by key - if any
 			int dx(zombies[i].baseobject.x), dy(zombies[i].baseobject.y);
 			if (!spot.isProtected) //if spot is protected the zombies move differently
-			{
 				getrandommove(spot, dx, dy); //gets the move as regular
-			}
 			else
-			{
 				retreat(spot, dx, dy); //moves the zombie away from spot if is protected
-			}
 			const int targetY(zombies[i].baseobject.y + dy);
 			const int targetX(zombies[i].baseobject.x + dx);
 			//gets the target x and y
@@ -667,12 +579,14 @@ void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, v
 	placeholeonmap(grid, holes, spot);       // place holes on the map
 }
 
-void getLevel()
+void getLevel(SDL_Surface *image, TTF_Font *font)
 {
-	SelectBackColour(clRed);
-	SelectTextColour(clYellow);
-	Gotoxy(40, 15);
-	cout << "please select a level: ";
+	SDL_Color text_color = { 255, 0, 255 };
+	SDL_Rect dstrect = { 40, 15 };
+	SDL_Surface *text;
+	text = TTF_RenderText_Solid(font, "please select a level: ", text_color);
+	SDL_BlitSurface(text, null, image, dstrect); // add text to framebuffer
+	SDL_FreeSurface(text); // prevent mem leak
 	//prints out this message
 }
 
@@ -975,11 +889,14 @@ void setKeyDirection(const int key, int& dx, int& dy)
 
 int getKeyPress()
 { // gets a single key press
-	int keyPressed;
-	keyPressed = getch();      //read in the selected arrow key or command letter
-	while (keyPressed == 224)     //ignore symbol following cursor key
-		keyPressed = getch();
-	return(keyPressed);
+	SDL_Event event;
+	SDL_PollEvent(&event);
+	switch (event.type)
+	{
+	case SDL_KEYDOWN:
+		return event.key.keysym.sym;
+	}
+	return 0;
 }
 
 bool isArrowKey(const int key)
@@ -1001,29 +918,25 @@ bool wantToQuit(const int key, string& message)
 	//if the user quits send a message and return true
 }
 
-bool haswon(const vector<zombie>& zombies, const player& spot)
+bool haswon(const vector<zombie>& zombies, const player& spot, SDL_Surface *image, TTF_Font *font)
 {		
 	if (zombies[0].alive == true || zombies[1].alive == true || zombies[2].alive == true || zombies[3].alive == true)
 	{
 		return false;
 	}
 	// if any zombies are alive return false
-	SelectBackColour(clRed);
-	SelectTextColour(clYellow);
+	SDL_Color text_color = { 255, 0, 255 };
+	SDL_Rect dstrect = { 40, 17 };
+	stringstream a;
+    SDL_Surface *text;
 	if (spot.levelChoice < 3)
-	{
-		Gotoxy(40, 17);
-		cout << "Congratulations, you have finished this level!";
-		return true;
-	}
+		a << "Congratulations, you have finished this level!";
 	else
-	{
-		Gotoxy(40, 17);
-		cout << "Congratulations, you have finished the game!";
-		Gotoxy(40, 18);
-		cout << "Your score is: " << spot.totalscore;
-		return true;
-	}
+		a << "Congratulations, you have finished the game!" << endl << "Your score is: " << spot.totalscore;
+	text = TTF_RenderText_Solid(font, a, text_color);
+	SDL_BlitSurface(text, null, image, dstrect); // add text to framebuffer
+	SDL_FreeSurface(text); // prevent mem leak
+	return false;
 	//displays a message if not
 }
 
@@ -1050,31 +963,25 @@ bool ocupiedpeace(const char gd[][SIZEX], const int x, const int y)
 
 void clearMessage()
 {// removes a message that has being drawn to the screen
-	SelectBackColour(clBlack);
-	SelectTextColour(clWhite);
-	Gotoxy(40, 8);
-	string str(20, ' ');
-	cout << str;  //display blank message
 }
 
-void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, const int zombielives, const int remainingpill,const int diff)
+void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, const int zombielives, const int remainingpill, const int diff, TTF_Font *font, SDL_Surface *screen)
 { //display game title, messages, maze, spot and apples on screen
-	void paintGrid(const char g[][SIZEX]);
-	void showLives(const player &spot);
-	void showDescription();
-	void showrempill(const int pils);
-	void showTitle();
-	void showOptions();
-	void showtime();
-	void showSaveLoad();
-	void showMessage(const string&);
-	void showname(const string &name);
-	void showscore(const int score);
-	void showdiff(const int diff);
+	void paintGrid(const char g[][SIZEX],SDL_Surface *text, TTF_Font *font);
+	void showLives(const player &spot,SDL_Surface *text, TTF_Font *font);
+	void showDescription(SDL_Surface *text, TTF_Font *font);
+	void showrempill(const int pils, SDL_Surface *text, TTF_Font *font);
+	void showTitle(SDL_Surface *text, TTF_Font *font);
+	void showOptions(SDL_Surface *text, TTF_Font *font);
+	void showtime(SDL_Surface *text, TTF_Font *font);
+	void showSaveLoad(SDL_Surface *text, TTF_Font *font);
+	void showMessage(const string&, SDL_Surface *text, TTF_Font *font);
+	void showname(const string &name, SDL_Surface *text, TTF_Font *font);
+	void showscore(const int score, SDL_Surface *text, TTF_Font *font);
+	void showdiff(const int diff, SDL_Surface *text, TTF_Font *font);
 
-	Gotoxy(0, 0);
 	//display grid contents
-	paintGrid(gd);
+	paintGrid(gd, );
 	//display game title
 	showTitle();
 	showDescription();
@@ -1093,254 +1000,225 @@ void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, 
 	showMessage(mess);
 }
 
-void paintGrid(const char g[][SIZEX])
+void paintGrid(const char g[][SIZEX], SDL_Surface *image, TTF_Font *font)
 {
-	SelectBackColour(clBlack);
-	Gotoxy(0, 2);
+	SDL_Color text_color = { 255, 255, 255 }; // R,G,B
+	SDL_Rect dstrect = { 0, 2 };
+	stringstream a;
 	for (int row(0); row < SIZEY; ++row)      //for each row (vertically)
 	{
 		for (int col(0); col < SIZEX; ++col)  //for each column (horizontally)
 		{
-			switch (g[row][col])
-			{
-			case SPOT:
-			case WALL:
-				SelectTextColour(clWhite);
-				break;
-			case ZOMBIE:
-				SelectTextColour(clGreen);
-				break;
-			case HOLE:
-				SelectTextColour(clRed);
-				break;
-			case PILL:
-				SelectTextColour(clYellow);
-			}
 			//adds all the pills and their colours
-			cout << g[row][col];              //output cell content
+			a << g[row][col];              //output cell content
 		} //end of col-loop
-		cout << endl;
+		a << endl;
 	} //end of row-loop
+	SDL_Surface *text;
+	text = TTF_RenderText_Solid(font, a, text_color);
+	SDL_BlitSurface(text, null, image, dstrect); // add text to framebuffer
+	SDL_FreeSurface(text); // prevent mem leak
 }
 
-void showrempill(const int pils)
+void showrempill(const int pils, SDL_Surface *image, TTF_Font *font)
 {// display the number of pills left on the board 
-	SelectBackColour(clRed);
-	SelectTextColour(clYellow);
-	Gotoxy(40, 10);
-	cout << "pills left: " << pils;
+	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
+	SDL_Rect dstrect = { 40, 10 };
+	stringstream a;
+	a << "pills left: " << pils;
+	SDL_Surface *text;
+	text = TTF_RenderText_Solid(font, a, text_color);
+	SDL_BlitSurface(text, null, image, dstrect); // add text to framebuffer
+	SDL_FreeSurface(text); // prevent mem leak
 }
 
-void showDescription()
+void showDescription(SDL_Surface *image, TTF_Font *font)
 {// displays a description of the game during the main menu
-	SelectBackColour(clRed);
-	SelectTextColour(clYellow);
-	Gotoxy(40, 2);
-	cout << "This is a game where you must escape";
-	Gotoxy(40, 3);
-	cout << "the zombies and survive. Pills mean";
-	Gotoxy(40, 4);
-	cout << "a life is gained.";
-	Gotoxy(40, 5);
-	cout << "Contact with a hole(0) or zombie(Z)";
-	Gotoxy(40, 6);
-	cout << "means a life is lost ";
+	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
+	SDL_Rect dstrect = { 40, 2 };
+	SDL_Surface *text;
+	text = TTF_RenderText_Solid(font, "This is a game where you must escape/nthe zombies and survive. Pills mean/na life is gained./nContact with a hole(0) or zombie(Z)/nmeans a life is lost ", text_color);
+	SDL_BlitSurface(text, null, image, dstrect); // add text to framebuffer
+	SDL_FreeSurface(text); // prevent mem leak
 }
 
-void showTitle()
+void showTitle(SDL_Surface *image, TTF_Font *font)
 { //display game title
-	SelectBackColour(clRed);
-	SelectTextColour(clYellow);
-	Gotoxy(0, 0);
-	cout << "___ZOMBIES GAME SKELETON___\n" << endl;
-	SelectBackColour(clWhite);
-	SelectTextColour(clRed);
-	Gotoxy(40, 0);
-	cout << "Oliver Parker, Liam Hill, Alex Odgen";
-	Gotoxy(40, 1);
-	cout << "1RR - COMPUTER SCIENCE";
+	SDL_Color text_color1 = { 255, 0, 255 }; // R,G,B
+	SDL_Rect dstrect1 = { 0, 0 };
+	SDL_Surface *text2;
+	text1 = TTF_RenderText_Solid(font, "___ZOMBIES GAME SKELETON___", text_color1);
+	SDL_Color text_color2 = { 255, 0, 0 }; // R,G,B
+	SDL_Rect dstrect = { 40, 0 };
+	SDL_Surface *text2;
+	text2 = TTF_RenderText_Solid(font, "Oliver Parker, Liam Hill, Alex Odgen/n1RR - COMPUTER SCIENCE", text_color2);
+	SDL_BlitSurface(text2, null, image, dstrect2); // add text to framebuffer
+	SDL_FreeSurface(text2); // prevent mem leak
+	SDL_BlitSurface(text1, null, image, dstrect1); // add text to framebuffer
+	SDL_FreeSurface(text1); // prevent mem leak
 }
 
-void showSaveLoad()
+void showSaveLoad(SDL_Surface *image, TTF_Font *font)
 {//displays the save and load options during the game
-	SelectBackColour(clRed);
-	SelectTextColour(clYellow);
-	Gotoxy(40, 11);
-	cout << "Press S to save your game";
-	Gotoxy(40, 12);
-	cout << "Press L to load your game";
+	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
+	SDL_Rect dstrect = { 40, 11 };
+	SDL_Surface *text;
+	text = TTF_RenderText_Solid(font, "Press S to save your game/nPress L to load your game", text_color);
+	SDL_BlitSurface(text, null, image, dstrect); // add text to framebuffer
+	SDL_FreeSurface(text); // prevent mem leak
 }
 
-void showname(const string &name)
+void showname(const string &name, SDL_Surface *image, TTF_Font *font)
 {// display the players name during the game
-	SelectBackColour(clRed);
-	SelectTextColour(clYellow);
-	Gotoxy(40, 13);
-	cout << "your name: " << name;
+	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
+	SDL_Rect dstrect = { 40, 13 };
+	stringstream a;
+	a << "your name: " << name;
+	SDL_Surface *text;
+	text = TTF_RenderText_Solid(font, a, text_color);
+	SDL_BlitSurface(text, null, image, dstrect); // add text to framebuffer
+	SDL_FreeSurface(text); // prevent mem leak
 }
 
-void showOptions()
+void showOptions(SDL_Surface *image, TTF_Font *font)
 { //show game options
-	SelectBackColour(clRed);
-	SelectTextColour(clYellow);
-	Gotoxy(40, 7);
-	cout << "TO MOVE USE KEYBOARD ARROWS  ";
-	Gotoxy(40, 19);
-	cout << "TO QUIT ENTER 'Q'   ";
+	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
+	SDL_Rect dstrect1 = { 40, 7 };
+	SDL_Rect dstrect2 = { 40, 19 };
+	SDL_Surface *text1;
+	SDL_Surface *text2;
+	text1 = TTF_RenderText_Solid(font, "TO MOVE USE KEYBOARD ARROWS  ", text_color);
+	text2 = TTF_RenderText_Solid(font, "TO QUIT ENTER 'Q'   ", text_color);
+	SDL_BlitSurface(text1, null, image, dstrect1); // add text to framebuffer
+	SDL_FreeSurface(text1); // prevent mem leak
+	SDL_BlitSurface(text2, null, image, dstrect2); // add text to framebuffer
+	SDL_FreeSurface(text2); // prevent mem leak
 }
 
-void showLives(const player &spot)
+void showLives(const player &spot, SDL_Surface *image, TTF_Font *font)
 { //show game options
-	SelectBackColour(clRed);
-	SelectTextColour(clYellow);
-	Gotoxy(40, 9);
-	cout << spot.lives << " lives left";
+	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
+	SDL_Rect dstrect = { 40, 9 };
+	stringstream a;
+	a << spot.lives << " lives left";
+	SDL_Surface *text;
+	text = TTF_RenderText_Solid(font, a, text_color);
+	SDL_BlitSurface(text, null, image, dstrect); // add text to framebuffer
+	SDL_FreeSurface(text); // prevent mem leak
 }
 
-void showMessage(const string &m)
+void showMessage(const string &m, SDL_Surface *image, TTF_Font *font)
 { //print auxiliary messages if any
-	SelectBackColour(clBlack);
-	SelectTextColour(clWhite);
-	Gotoxy(40, 8);
-	cout << m;	//display current message
+	SDL_Color text_color = { 255, 255, 255 }; // R,G,B
+	SDL_Rect dstrect = { 40, 8 };
+	SDL_Surface *text;
+	text = TTF_RenderText_Solid(font, m, text_color);
+	SDL_BlitSurface(text, null, image, dstrect); // add text to framebuffer
+	SDL_FreeSurface(text); // prevent mem leak
 }
 
-void endProgram(const string &message)
+void endProgram(const string &message, SDL_Surface *image, TTF_Font *font)
 { //end program with appropriate message
-	SelectBackColour(clBlack);
-	SelectTextColour(clYellow);
-	Gotoxy(40, 8);
-	cout << message;
-	//hold output screen until a keyboard key is hit
-	Gotoxy(40, 9);
-	system("pause");
+	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
+	SDL_Rect dstrect = { 40, 8 };
+	SDL_Surface *text;
+	text = TTF_RenderText_Solid(font, message, text_color);
+	SDL_BlitSurface(text, null, image, dstrect); // add text to framebuffer
+	SDL_FreeSurface(text); // prevent mem leak
 }
 
-void showmenu()
+void showmenu(SDL_Surface *image, TTF_Font *font)
 {//shows the buttions the user can press
-	SelectBackColour(clRed);
-	SelectTextColour(clYellow);
-	Gotoxy(40, 10);
-	cout << "press p to play";
-	Gotoxy(40, 11);
-	cout << "press i to get infomation";
-	Gotoxy(40, 12);
-	cout << "press b to display leaderboard";
-
+	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
+	SDL_Rect dstrect = { 40, 10 };
+	SDL_Surface *text;
+	stringstream a;
+	a << "press p to play" << endl << "press i to get infomation" << endl << "press b to display leaderboard";
+	text = TTF_RenderText_Solid(font, a, text_color);
+	SDL_BlitSurface(text, null, image, dstrect); // add text to framebuffer
+	SDL_FreeSurface(text); // prevent mem leak
 }
 
-void showscore(const int score)
+void showscore(const int score, SDL_Surface *image, TTF_Font *font)
 {// shows the players score
-	SelectBackColour(clRed);
-	SelectTextColour(clYellow);
-	Gotoxy(40, 20);
-	cout << "player score: " << score;
-
+	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
+	SDL_Rect dstrect = { 40, 20 };
+	SDL_Surface *text;
+	stringstream a;
+	a << "player score: " << score;
+	text = TTF_RenderText_Solid(font, a, text_color);
+	SDL_BlitSurface(text, null, image, dstrect); // add text to framebuffer
+	SDL_FreeSurface(text); // prevent mem leak
 }
 
-void showtime()
+void showtime(SDL_Surface *image, TTF_Font *font)
 {// shows the current date and time
-	SelectBackColour(clRed);
-	SelectTextColour(clYellow);
-	Gotoxy(40, 14);
-	cout << GetDate();
-	Gotoxy(40, 15);
-	cout << GetTime();
+	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
+	SDL_Rect dstrect = { 40, 14 };
+	stringstream a;
+	SDL_Surface *text;
+	a << GetDate()<< endl << GetTime();
+	text = TTF_RenderText_Solid(font, a, text_color);
+	SDL_BlitSurface(text, null, image, dstrect); // add text to framebuffer
+	SDL_FreeSurface(text); // prevent mem leak
 }
 
-void showgametitle()
+void showgametitle(SDL_Surface *image, TTF_Font *font)
 {// displays the title of the game before the board is drawn
-	SelectBackColour(clBlue);
-	SelectTextColour(clYellow);
-	Gotoxy(2, 4);
-	cout << "------------------------";
-	Gotoxy(2, 5);
-	cout << "| SPOT AND ZOMBIE GAME |";
-	Gotoxy(2, 6);
-	cout << "------------------------";
+	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
+	SDL_Rect dstrect = { 2, 4 };
+	SDL_Surface *text;
+	text = TTF_RenderText_Solid(font, "------------------------/n| SPOT AND ZOMBIE GAME |/n------------------------", text_color);
+	SDL_BlitSurface(text, null, image, dstrect); // add text to framebuffer
+	SDL_FreeSurface(text); // prevent mem leak
 }
 
-void requestname()
-{// asks the user for there name after they have clicked there option in the main menu
-	SelectBackColour(clBlue);
-	SelectTextColour(clYellow);
-	Gotoxy(2, 11);
-	cout << "please enter your name: ";
-}
-
-void displayhighscores()
+void showdiff(const int diff, SDL_Surface *image, TTF_Font *font)
 {
-	ifstream in("best.scr");
-	Gotoxy(2, 13);
-	cout << "name	   score";
-	if (!in.fail())// the file may not be found
-	{
-		int numentries;
-		in >> numentries;
-		for (int i = 0; i != numentries; ++i)
-		{
-			int storedscore; // the score 
-			string name; // the name
-			in >> name;
-			in >> storedscore;
-			Gotoxy(2, 14 + i);
-			cout << name << "	" << storedscore;// display them on board
-		}
-	}
-	in.close();
-}
-
-void updatescore(const string &name, const int score)
-{
-	ifstream in("best.scr");
-	if (!in.fail())
-	{
-		int numentries;
-		in >> numentries;
-		vector<string> names;
-		vector<int> scores;
-		for (int i = 0; i != numentries; ++i)
-		{// read leaderboard
-			string n;
-			int s;
-			in >> n;
-			in >> s;
-			names.push_back(n);
-			scores.push_back(s);
-		}
-		in.close();// close 
-		ofstream out("best.scr");
-		for (int i = 0; i != numentries; ++i)
-		{
-			if (score > scores[i]) // find the first leaderboard entry that i smaller than the score going to be writen 
-			{
-				for (int j = i; j != 5; ++j) // back shift
-				{
-					names[j + 1] = names[j];
-					scores[j + 1] = scores[j];
-				}
-				scores[i] = score;// set that as the new score
-				names[i] = name;
-				break; // prevent redo
-			}
-		}
-		if (numentries > 6)
-			numentries = 6;
-		out << numentries << endl;
-		for (int i = 0; i != numentries; ++i)
-		{ // write all back to files
-			out << names[i] << endl;
-			out << scores[i] << endl;
-		}
-		out.close();
-	}
-}
-
-void showdiff(const int diff)
-{
-	SelectBackColour(clRed);
-	SelectTextColour(clYellow);
-	Gotoxy(40, 16);
-	cout << "time spent in game: " << diff;
+	SDL_Rect dstrect = { 40, 16 };
+	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
+	SDL_Surface *text;
+	stringstream a;
+	a << "time spent in game: " << diff << endl;
+	text = TTF_RenderText_Solid(font, a, text_color);
+	SDL_BlitSurface(text, null, image, dstrect); // add text to framebuffer
+	SDL_FreeSurface(text); // prevent mem leak
 	//shows the time spent
+}
+
+bool setupdisplay(SDL_Surface* display)
+{
+	if (SDL_Init(SDL_INIT_VIDEO) != 0)
+	{
+		cerr << "SDL_Init() Failed: " <<
+			SDL_GetError() << endl;
+		return false;
+	}
+	// Set the video mode
+	display = SDL_SetVideoMode(screenhight, screenwith, pixels, SDL_HWSURFACE | SDL_DOUBLEBUF);
+	if (display == NULL)
+	{
+		cerr << "SDL_SetVideoMode() Failed: " <<
+			SDL_GetError() << endl;
+		return false;
+	}
+	return true;
+}
+
+TTF_Font * setuptext()
+{
+	if (TTF_Init() != 0)
+	{
+		cerr << "TTF_Init() Failed: " << TTF_GetError() << endl;
+		SDL_Quit();
+	}
+	TTF_Font *font;
+	font = TTF_OpenFont("FreeSans.ttf", 24);
+	if (font == NULL)
+	{
+		cerr << "TTF_OpenFont() Failed: " << TTF_GetError() << endl;
+		TTF_Quit();
+		SDL_Quit();
+		exit(1);
+	}
 }
