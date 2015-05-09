@@ -5,15 +5,8 @@ compiler:
   - emscripten
   - clang
 
-before_install:
-  - echo $LANG
-  - echo $LC_ALL
-  - gem --version
-
 script: 
-  - gcc 4374_Task1c_emscripten.cpp -I RandomUtils.h TimeUtils.h -o project.o;
-  - emcc 4374_Task1c_emscripten.cpp -I RandomUtils.h TimeUtils.h -o project.o;
-  - clang 4374_Task1c_emscripten.cpp -I RandomUtils.h TimeUtils.h -o project.o;
+  - CXX 4374_Task1c_emscripten.cpp -o project.o;
 
 after_success:
   - if [ $TRAVIS_BRANCH == $TRAVIS_TAG ]; then rake deploy; fi
