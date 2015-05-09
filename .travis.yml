@@ -2,11 +2,11 @@ language: cpp
 
 compiler:
   - gcc
-  - emscripten
   - clang
 
 script: 
-  - CXX 4374_Task1c_emscripten.cpp -o project.o;
+  - gcc 4374_Task1c_linux.cpp -o project.o;
+  - clang 4374_Task1c_linux.cpp -o project.o;
 
 after_success:
   - if [ $TRAVIS_BRANCH == $TRAVIS_TAG ]; then rake deploy; fi
