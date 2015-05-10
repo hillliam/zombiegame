@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <sstream>
 #include <SDL/SDL.h>
 #include <SDL/SDL_ttf.h>
 
@@ -604,7 +605,7 @@ void getLevel(SDL_Surface *image, TTF_Font *font)
 	SDL_Rect dstrect = { 40, 15 };
 	SDL_Surface *text;
 	text = TTF_RenderText_Solid(font, "please select a level: ", text_color);
-	SDL_BlitSurface(text, NULL, image, dstrect); // add text to framebuffer
+	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
 	SDL_FreeSurface(text); // prevent mem leak
 	//prints out this message
 }
@@ -952,8 +953,8 @@ bool haswon(const vector<zombie>& zombies, const player& spot, SDL_Surface *imag
 		a << "Congratulations, you have finished this level!";
 	else
 		a << "Congratulations, you have finished the game!" << endl << "Your score is: " << spot.totalscore;
-	text = TTF_RenderText_Solid(font, a, text_color);
-	SDL_BlitSurface(text, NULL, image, dstrect); // add text to framebuffer
+	text = TTF_RenderText_Solid(font, a.str().c_str(), text_color);
+	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
 	SDL_FreeSurface(text); // prevent mem leak
 	return false;
 	//displays a message if not
@@ -1031,8 +1032,8 @@ void paintGrid(const char g[][SIZEX], SDL_Surface *image, TTF_Font *font)
 		a << endl;
 	} //end of row-loop
 	SDL_Surface *text;
-	text = TTF_RenderText_Solid(font, a, text_color);
-	SDL_BlitSurface(text, NULL, image, dstrect); // add text to framebuffer
+	text = TTF_RenderText_Solid(font, a.str().c_str(), text_color);
+	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
 	SDL_FreeSurface(text); // prevent mem leak
 }
 
@@ -1043,8 +1044,8 @@ void showrempill(const int pils, SDL_Surface *image, TTF_Font *font)
 	stringstream a;
 	a << "pills left: " << pils;
 	SDL_Surface *text;
-	text = TTF_RenderText_Solid(font, a, text_color);
-	SDL_BlitSurface(text, NULL, image, dstrect); // add text to framebuffer
+	text = TTF_RenderText_Solid(font, a.str().c_str(), text_color);
+	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
 	SDL_FreeSurface(text); // prevent mem leak
 }
 
@@ -1054,7 +1055,7 @@ void showDescription(SDL_Surface *image, TTF_Font *font)
 	SDL_Rect dstrect = { 40, 2 };
 	SDL_Surface *text;
 	text = TTF_RenderText_Solid(font, "This is a game where you must escape/nthe zombies and survive. Pills mean/na life is gained./nContact with a hole(0) or zombie(Z)/nmeans a life is lost ", text_color);
-	SDL_BlitSurface(text, NULL, image, dstrect); // add text to framebuffer
+	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
 	SDL_FreeSurface(text); // prevent mem leak
 }
 
@@ -1068,9 +1069,9 @@ void showTitle(SDL_Surface *image, TTF_Font *font)
 	SDL_Rect dstrect = { 40, 0 };
 	SDL_Surface *text2;
 	text2 = TTF_RenderText_Solid(font, "Oliver Parker, Liam Hill, Alex Odgen/n1RR - COMPUTER SCIENCE", text_color2);
-	SDL_BlitSurface(text2, NULL, image, dstrect); // add text to framebuffer
+	SDL_BlitSurface(text2, NULL, image, &dstrect); // add text to framebuffer
 	SDL_FreeSurface(text2); // prevent mem leak
-	SDL_BlitSurface(text1, NULL, image, dstrect1); // add text to framebuffer
+	SDL_BlitSurface(text1, NULL, image, &dstrect1); // add text to framebuffer
 	SDL_FreeSurface(text1); // prevent mem leak
 }
 
@@ -1080,7 +1081,7 @@ void showSaveLoad(SDL_Surface *image, TTF_Font *font)
 	SDL_Rect dstrect = { 40, 11 };
 	SDL_Surface *text;
 	text = TTF_RenderText_Solid(font, "Press S to save your game/nPress L to load your game", text_color);
-	SDL_BlitSurface(text, NULL, image, dstrect); // add text to framebuffer
+	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
 	SDL_FreeSurface(text); // prevent mem leak
 }
 
@@ -1091,8 +1092,8 @@ void showname(const string &name, SDL_Surface *image, TTF_Font *font)
 	stringstream a;
 	a << "your name: " << name;
 	SDL_Surface *text;
-	text = TTF_RenderText_Solid(font, a, text_color);
-	SDL_BlitSurface(text, NULL, image, dstrect); // add text to framebuffer
+	text = TTF_RenderText_Solid(font, a.str().c_str(), text_color);
+	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
 	SDL_FreeSurface(text); // prevent mem leak
 }
 
@@ -1105,9 +1106,9 @@ void showOptions(SDL_Surface *image, TTF_Font *font)
 	SDL_Surface *text2;
 	text1 = TTF_RenderText_Solid(font, "TO MOVE USE KEYBOARD ARROWS  ", text_color);
 	text2 = TTF_RenderText_Solid(font, "TO QUIT ENTER 'Q'   ", text_color);
-	SDL_BlitSurface(text1, NULL, image, dstrect1); // add text to framebuffer
+	SDL_BlitSurface(text1, NULL, image, &dstrect1); // add text to framebuffer
 	SDL_FreeSurface(text1); // prevent mem leak
-	SDL_BlitSurface(text2, NULL, image, dstrect2); // add text to framebuffer
+	SDL_BlitSurface(text2, NULL, image, &dstrect2); // add text to framebuffer
 	SDL_FreeSurface(text2); // prevent mem leak
 }
 
@@ -1118,8 +1119,8 @@ void showLives(const player &spot, SDL_Surface *image, TTF_Font *font)
 	stringstream a;
 	a << spot.lives << " lives left";
 	SDL_Surface *text;
-	text = TTF_RenderText_Solid(font, a, text_color);
-	SDL_BlitSurface(text, NULL, image, dstrect); // add text to framebuffer
+	text = TTF_RenderText_Solid(font, a.str().c_str(), text_color);
+	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
 	SDL_FreeSurface(text); // prevent mem leak
 }
 
@@ -1128,8 +1129,8 @@ void showMessage(const string &m, SDL_Surface *image, TTF_Font *font)
 	SDL_Color text_color = { 255, 255, 255 }; // R,G,B
 	SDL_Rect dstrect = { 40, 8 };
 	SDL_Surface *text;
-	text = TTF_RenderText_Solid(font, m, text_color);
-	SDL_BlitSurface(text, NULL, image, dstrect); // add text to framebuffer
+	text = TTF_RenderText_Solid(font, m.c_str(), text_color);
+	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
 	SDL_FreeSurface(text); // prevent mem leak
 }
 
@@ -1138,8 +1139,8 @@ void endProgram(const string &message, SDL_Surface *image, TTF_Font *font)
 	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
 	SDL_Rect dstrect = { 40, 8 };
 	SDL_Surface *text;
-	text = TTF_RenderText_Solid(font, message, text_color);
-	SDL_BlitSurface(text, NULL, image, dstrect); // add text to framebuffer
+	text = TTF_RenderText_Solid(font, message.c_str(), text_color);
+	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
 	SDL_FreeSurface(text); // prevent mem leak
 }
 
@@ -1150,8 +1151,8 @@ void showmenu(SDL_Surface *image, TTF_Font *font)
 	SDL_Surface *text;
 	stringstream a;
 	a << "press p to play" << endl << "press i to get infomation" << endl << "press b to display leaderboard";
-	text = TTF_RenderText_Solid(font, a, text_color);
-	SDL_BlitSurface(text, NULL, image, dstrect); // add text to framebuffer
+	text = TTF_RenderText_Solid(font, a.str().c_str(), text_color);
+	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
 	SDL_FreeSurface(text); // prevent mem leak
 }
 
@@ -1162,8 +1163,8 @@ void showtime(SDL_Surface *image, TTF_Font *font)
 	stringstream a;
 	SDL_Surface *text;
 	a << GetDate()<< endl << GetTime();
-	text = TTF_RenderText_Solid(font, a, text_color);
-	SDL_BlitSurface(text, NULL, image, dstrect); // add text to framebuffer
+	text = TTF_RenderText_Solid(font, a.str().c_str(), text_color);
+	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
 	SDL_FreeSurface(text); // prevent mem leak
 }
 
@@ -1173,7 +1174,7 @@ void showgametitle(SDL_Surface *image, TTF_Font *font)
 	SDL_Rect dstrect = { 2, 4 };
 	SDL_Surface *text;
 	text = TTF_RenderText_Solid(font, "------------------------/n| SPOT AND ZOMBIE GAME |/n------------------------", text_color);
-	SDL_BlitSurface(text, NULL, image, dstrect); // add text to framebuffer
+	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
 	SDL_FreeSurface(text); // prevent mem leak
 }
 
@@ -1184,8 +1185,8 @@ void showdiff(const int diff, SDL_Surface *image, TTF_Font *font)
 	SDL_Surface *text;
 	stringstream a;
 	a << "time spent in game: " << diff << endl;
-	text = TTF_RenderText_Solid(font, a, text_color);
-	SDL_BlitSurface(text, NULL, image, dstrect); // add text to framebuffer
+	text = TTF_RenderText_Solid(font, a.str().c_str(), text_color);
+	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
 	SDL_FreeSurface(text); // prevent mem leak
 	//shows the time spent
 }
