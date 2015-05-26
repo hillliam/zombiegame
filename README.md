@@ -9,7 +9,7 @@ In-progress.
 
 current progress
 
-- [ ] basic version
+- [x] basic version
   - [x] spot & holes #1 @done
     - [x] position 12 holes on map
     - [x] add spot movment
@@ -63,7 +63,7 @@ current progress
     - [x] allow user to press l to load the game
     - [x] write the entire map and the number of zombie lives to the file
     - [x] read the file and set the map to what is stored in the file
-    - [ ] allow user to load save in main menu if avalible
+    - [x] allow user to load save in main menu if avalible
   - [x] Game levels   #11
     - [x] read new level from files (new wall positions) e.g 1.lvl
     - [x] when the play has won the game load the next level in main needs some work
@@ -78,16 +78,16 @@ current progress
 
 ---
 # improved check list
-- [ ] game rules
-	- [ ] When Spot eats a power pill (i.e. moves onto a cell that contains one) he gains one life and the power pill that has just been eaten disappears from the grid.
-	- [ ] When Spot falls into a hole, he loses one life but, providing he still has at least one life left, he will move out of the hole again on his next move. The hole remains in its place.
-	- [ ] When Spot moves into a cell that contains a zombie or when a zombie catches up with Spot, Spot loses one life and that particular zombie moves back onto its corner, ready to resume the chase as soon as it is the zombies' turn to move.
-	- [ ] Zombies cannot eat power pills. When a zombie moves onto a cell that contains one pill, the zombie is unaffected and the pill remains where it was after the zombie has left the cell.
-	- [ ] When Spot moves into a cell that contains both a zombie and a pill, Spot neither loses nor gains a life, the pill disappears and the zombie moves back onto its corner, ready to resume the chase as soon as it is the zombies' turn to move.
-	- [ ] Zombies must remain within the grid's boundaries. If they bump into a wall they remain in the same cell or slide along the wall in a blind attempt to remain close to Spot.
-	- [ ] When (if) two zombies bump into each other, they are both sent back to their corner, ready to resume the chase as soon as it is the zombies' turn to move.
-	- [ ] A zombie dies and disappears forever when it falls into a hole.
-- [ ] basic version
+- [x] game rules
+	- [x] When Spot eats a power pill (i.e. moves onto a cell that contains one) he gains one life and the power pill that has just been eaten disappears from the grid.
+	- [x] When Spot falls into a hole, he loses one life but, providing he still has at least one life left, he will move out of the hole again on his next move. The hole remains in its place.
+	- [x] When Spot moves into a cell that contains a zombie or when a zombie catches up with Spot, Spot loses one life and that particular zombie moves back onto its corner, ready to resume the chase as soon as it is the zombies' turn to move.
+	- [x] Zombies cannot eat power pills. When a zombie moves onto a cell that contains one pill, the zombie is unaffected and the pill remains where it was after the zombie has left the cell.
+	- [x] When Spot moves into a cell that contains both a zombie and a pill, Spot neither loses nor gains a life, the pill disappears and the zombie moves back onto its corner, ready to resume the chase as soon as it is the zombies' turn to move.
+	- [x] Zombies must remain within the grid's boundaries. If they bump into a wall they remain in the same cell or slide along the wall in a blind attempt to remain close to Spot.
+	- [x] When (if) two zombies bump into each other, they are both sent back to their corner, ready to resume the chase as soon as it is the zombies' turn to move.
+	- [x] A zombie dies and disappears forever when it falls into a hole.
+- [x] basic version
 	- [ ] spot and zombie
 		- [ ] positioning Spot and 12 holes at random on the grid, making sure they are not placed on the same cells
 		- [ ] allowing the player to control Spot's movements on the grid
@@ -161,3 +161,14 @@ current progress
 | RandomUtils.h 	   | yes               	       | yes   			       |
 | TimeUtils.cpp 	   | yes               	       | yes   			       |
 | TimeUtils.h 		   | yes              	       | yes			       |
+
+----
+# building with emscriptem
+## debug
+```
+emcc 4374_Task1c_emscripten.cpp -o project.js -g4
+```
+## release
+```
+emcc 4374_Task1c_emscripten.cpp -o project.js -O3 --js-opts 1 --closure 2
+```

@@ -89,25 +89,73 @@ struct replay
 
 void Seed()
 {
+	srand(static_cast<unsigned>(time(0)));
 }
 
 int Random(int max) {
 	return (rand() % max) + 1;
 }
 
-string GetDate()
-{
-
-}
-
-string GetTime()
-{
-
+void GetSystemDate(int& day, int& month, int& year)
+{ //get date from system
+	time_t ltime;
+	struct tm *now;
+	// Set time zone from TZ environment variable. If TZ is not set, the operating
+	// system is queried to obtain the default value for the variable. 
+	tzset();
+	// Get UNIX-style time. 
+	time(&ltime);
+	// Convert to time structure. 
+	now = localtime(&ltime);
+	// Set Time objects members. 
+	day = now->tm_mday;
+	month = now->tm_mon + 1;
+	year = now->tm_year + 1900;
 }
 
 void GetSystemTime(int& hrs, int& mins, int& secs)
 {
+	time_t now = time(0);
+	struct tm& t = *localtime(&now);
+	hrs = t.tm_hour;
+	mins = t.tm_min;
+	secs = t.tm_sec;
+}
 
+string DateToString(int day, int month, int year)
+{ //convert the date to a string in format (dd/mm/yyyy)
+	ostringstream os;
+	const char prev(os.fill('0'));
+	os << setw(2) << day << "/"
+		<< setw(2) << month << "/"
+		<< setw(4) << year;
+	os.fill(prev);
+	return (os.str());
+}
+
+string TimeToString(int h, int m, int s)
+{ //convert the time to a string in 24-h digital clock format (00:00:00)
+	ostringstream os;
+	const char prev(os.fill('0'));
+	os << setw(2) << h << ":"
+		<< setw(2) << m << ":"
+		<< setw(2) << s;
+	os.fill(prev);
+	return (os.str());
+}
+
+string GetDate()
+{
+	int day, month, year;		//hold the current date
+	GetSystemDate(day, month, year);
+	return (DateToString(day, month, year));
+}
+
+string GetTime()
+{
+	int hrs, mins, secs;		//hold the current time
+	GetSystemTime(hrs, mins, secs);
+	return (TimeToString(hrs, mins, secs));
 }
 
 int main()
@@ -134,7 +182,6 @@ int main()
 	spot.levelChoice = levelSelection;			//this sets the level that is selected in the main loop
 	initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot etc)
 	GetSystemTime(hours, amin, seconds);			//gets the current time on the system
-
 	emscripten_set_main_loop_arg((gameloop)(display, font, spot, zombies, pills, holes, grid, replayer, hours, amin, seconds), (display, font, spot, zombies, pills, holes, grid, replayer, hours, amin, seconds), 60, 0);
 }
 
@@ -243,19 +290,6 @@ void saveboard(vector<replay>& replayer, const char grid[][SIZEX])
 
 string mainloop(int& levelSelection, SDL_Surface *image, TTF_Font *font)
 {
-	void requestname(SDL_Surface *image, TTF_Font *font);
-	void showTitle(SDL_Surface *image, TTF_Font *font);
-	void showOptions(SDL_Surface *image, TTF_Font *font);
-	void showmenu(SDL_Surface *image, TTF_Font *font);
-	void showtime(SDL_Surface *image, TTF_Font *font);
-	void showgametitle(SDL_Surface *image, TTF_Font *font);
-	int getscore(const string&);
-	int  getKeyPress(SDL_Surface *image, TTF_Font *font);
-	void clearMessage(SDL_Surface *image, TTF_Font *font);
-	void showscore(const int score, SDL_Surface *image, TTF_Font *font);
-	void getLevel(SDL_Surface *image, TTF_Font *font);
-	void displayhighscores(SDL_Surface *image, TTF_Font *font);
-	void showDescription(SDL_Surface *image, TTF_Font *font);
 	//all the functions going to be used in this part of the code
 	string name = "";
 	char key = ' ';
@@ -435,10 +469,11 @@ void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, v
 void getLevel(SDL_Surface *image, TTF_Font *font)
 {
 	SDL_Color text_color = { 255, 0, 255 };
-	SDL_Rect dstrect = { 40, 15 };
+	SDL_Color backgroundColor = { 0, 0, 255 };
+	SDL_Rect dstrect = { 40, 15, 0, 0 };
 	SDL_Surface *text;
-	text = TTF_RenderText_Solid(font, "please select a level: ", text_color);
-	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
+	text = TTF_RenderText_Shaded(font, "please select a level: ", text_color, backgroundColor);
+	SDL_BlitSurface(text, NULL, image, NULL); // add text to framebuffer
 	SDL_FreeSurface(text); // prevent mem leak
 	//prints out this message
 }
@@ -779,6 +814,7 @@ bool haswon(const vector<zombie>& zombies, const player& spot, SDL_Surface *imag
 	}
 	// if any zombies are alive return false
 	SDL_Color text_color = { 255, 0, 255 };
+	SDL_Color backgroundColor = { 0, 0, 255 };
 	SDL_Rect dstrect = { 40, 17 };
 	stringstream a;
     SDL_Surface *text;
@@ -786,8 +822,8 @@ bool haswon(const vector<zombie>& zombies, const player& spot, SDL_Surface *imag
 		a << "Congratulations, you have finished this level!";
 	else
 		a << "Congratulations, you have finished the game!" << endl << "Your score is: " << spot.totalscore;
-	text = TTF_RenderText_Solid(font, a.str().c_str(), text_color);
-	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
+	text = TTF_RenderText_Shaded(font, a.str().c_str(), text_color, backgroundColor);
+	SDL_BlitSurface(text, NULL, image, NULL); // add text to framebuffer
 	SDL_FreeSurface(text); // prevent mem leak
 	return false;
 	//displays a message if not
@@ -832,6 +868,7 @@ void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, 
 	void showname(const string &name, SDL_Surface *text, TTF_Font *font);
 	void showdiff(const int diff, SDL_Surface *text, TTF_Font *font);
 
+	//SDL_FillRect(image, NULL, SDL_MapRGB(image->format, 0, 0, 0));
 	//display grid contents
 	paintGrid(gd, image, font);
 	//display game title
@@ -848,12 +885,16 @@ void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, 
 	showOptions(image, font);
 	//display message if any
 	showMessage(mess, image, font);
+	// display screen to user
+	SDL_Flip(image);
 }
 
 void paintGrid(const char g[][SIZEX], SDL_Surface *image, TTF_Font *font)
 {
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, SDL_Color text_color, SDL_Color backgroundColor, SDL_Rect dstrect); 
 	SDL_Color text_color = { 255, 255, 255 }; // R,G,B
-	SDL_Rect dstrect = { 0, 2 };
+	SDL_Color backgroundColor = { 0, 0, 255 };
+	SDL_Rect dstrect = { 0, 2, 0,0 };
 	stringstream a;
 	for (int row(0); row < SIZEY; ++row)      //for each row (vertically)
 	{
@@ -864,163 +905,141 @@ void paintGrid(const char g[][SIZEX], SDL_Surface *image, TTF_Font *font)
 		} //end of col-loop
 		a << endl;
 	} //end of row-loop
-	SDL_Surface *text;
-	text = TTF_RenderText_Solid(font, a.str().c_str(), text_color);
-	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
-	SDL_FreeSurface(text); // prevent mem leak
+	drawtext(a.str().c_str(), image, font, text_color, backgroundColor, dstrect);
 }
 
 void showrempill(const int pils, SDL_Surface *image, TTF_Font *font)
 {// display the number of pills left on the board 
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, SDL_Color text_color, SDL_Color backgroundColor, SDL_Rect dstrect); 
 	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
-	SDL_Rect dstrect = { 40, 10 };
+	SDL_Color backgroundColor = { 0, 0, 255 };
+	SDL_Rect dstrect = { 40, 10, 0, 0 };
 	stringstream a;
 	a << "pills left: " << pils;
-	SDL_Surface *text;
-	text = TTF_RenderText_Solid(font, a.str().c_str(), text_color);
-	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
-	SDL_FreeSurface(text); // prevent mem leak
+	drawtext(a.str().c_str(), image, font, text_color, backgroundColor, dstrect);
 }
 
 void showDescription(SDL_Surface *image, TTF_Font *font)
 {// displays a description of the game during the main menu
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, SDL_Color text_color, SDL_Color backgroundColor, SDL_Rect dstrect); 
 	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
-	SDL_Rect dstrect = { 40, 2 };
-	SDL_Surface *text;
-	text = TTF_RenderText_Solid(font, "This is a game where you must escape/nthe zombies and survive. Pills mean/na life is gained./nContact with a hole(0) or zombie(Z)/nmeans a life is lost ", text_color);
-	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
-	SDL_FreeSurface(text); // prevent mem leak
+	SDL_Color backgroundColor = { 0, 0, 255 };
+	SDL_Rect dstrect = { 40, 2, 0, 0 };
+	drawtext("This is a game where you must escape/nthe zombies and survive. Pills mean/na life is gained./nContact with a hole(0) or zombie(Z)/nmeans a life is lost ", image, font, text_color, backgroundColor, dstrect);
 }
 
 void showTitle(SDL_Surface *image, TTF_Font *font)
 { //display game title
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, SDL_Color text_color, SDL_Color backgroundColor, SDL_Rect dstrect); 
 	SDL_Color text_color1 = { 255, 0, 255 }; // R,G,B
-	SDL_Rect dstrect1 = { 0, 0 };
-	SDL_Surface *text1;
-	text1 = TTF_RenderText_Solid(font, "___ZOMBIES GAME SKELETON___", text_color1);
+	SDL_Color backgroundColor = { 0, 0, 255 };
 	SDL_Color text_color2 = { 255, 0, 0 }; // R,G,B
-	SDL_Rect dstrect = { 40, 0 };
-	SDL_Surface *text2;
-	text2 = TTF_RenderText_Solid(font, "Oliver Parker, Liam Hill, Alex Odgen/n1RR - COMPUTER SCIENCE", text_color2);
-	SDL_BlitSurface(text2, NULL, image, &dstrect); // add text to framebuffer
-	SDL_FreeSurface(text2); // prevent mem leak
-	SDL_BlitSurface(text1, NULL, image, &dstrect1); // add text to framebuffer
-	SDL_FreeSurface(text1); // prevent mem leak
+	SDL_Rect dstrect = { 40, 0, 0, 0 };
+	SDL_Rect dstrec2 = { 0, 0, 0, 0 };
+	drawtext("___ZOMBIES GAME SKELETON___", image, font, text_color1, backgroundColor, dstrec2);
+	drawtext("Oliver Parker, Liam Hill, Alex Odgen/n1RR - COMPUTER SCIENCE", image, font, text_color2, backgroundColor, dstrect);
 }
 
 void showSaveLoad(SDL_Surface *image, TTF_Font *font)
 {//displays the save and load options during the game
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, SDL_Color text_color, SDL_Color backgroundColor, SDL_Rect dstrect); 
 	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
-	SDL_Rect dstrect = { 40, 11 };
-	SDL_Surface *text;
-	text = TTF_RenderText_Solid(font, "Press S to save your game/nPress L to load your game", text_color);
-	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
-	SDL_FreeSurface(text); // prevent mem leak
+	SDL_Color backgroundColor = { 0, 0, 255 };
+	SDL_Rect dstrect = { 40, 11, 40, 11 };
+	drawtext("Press S to save your game/nPress L to load your game", image, font, text_color, backgroundColor, dstrect);
 }
 
 void showname(const string &name, SDL_Surface *image, TTF_Font *font)
 {// display the players name during the game
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, SDL_Color text_color, SDL_Color backgroundColor, SDL_Rect dstrect); 
 	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
-	SDL_Rect dstrect = { 40, 13 };
+	SDL_Color backgroundColor = { 0, 0, 255 };
+	SDL_Rect dstrect = { 40, 13, 0, 0 };
 	stringstream a;
 	a << "your name: " << name;
-	SDL_Surface *text;
-	text = TTF_RenderText_Solid(font, a.str().c_str(), text_color);
-	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
-	SDL_FreeSurface(text); // prevent mem leak
+	drawtext(a.str().c_str(), image, font, text_color, backgroundColor, dstrect);
 }
 
 void showOptions(SDL_Surface *image, TTF_Font *font)
 { //show game options
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, SDL_Color text_color, SDL_Color backgroundColor, SDL_Rect dstrect); 
 	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
-	SDL_Rect dstrect1 = { 40, 7 };
-	SDL_Rect dstrect2 = { 40, 19 };
-	SDL_Surface *text1;
-	SDL_Surface *text2;
-	text1 = TTF_RenderText_Solid(font, "TO MOVE USE KEYBOARD ARROWS  ", text_color);
-	text2 = TTF_RenderText_Solid(font, "TO QUIT ENTER 'Q'   ", text_color);
-	SDL_BlitSurface(text1, NULL, image, &dstrect1); // add text to framebuffer
-	SDL_FreeSurface(text1); // prevent mem leak
-	SDL_BlitSurface(text2, NULL, image, &dstrect2); // add text to framebuffer
-	SDL_FreeSurface(text2); // prevent mem leak
+	SDL_Color backgroundColor = { 0, 0, 255 };
+	SDL_Rect dstrect1 = { 40, 7, 0, 0 };
+	SDL_Rect dstrect2 = { 40, 19, 0, 0 };
+	drawtext("TO MOVE USE KEYBOARD ARROWS  ", image, font, text_color, backgroundColor, dstrect1);
+	drawtext("TO QUIT ENTER 'Q'   ", image, font, text_color, backgroundColor, dstrect2);
 }
 
 void showLives(const player &spot, SDL_Surface *image, TTF_Font *font)
 { //show game options
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, SDL_Color text_color, SDL_Color backgroundColor, SDL_Rect dstrect); 
 	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
-	SDL_Rect dstrect = { 40, 9 };
+	SDL_Color backgroundColor = { 0, 0,  255 };
+	SDL_Rect dstrect = { 40, 9, 0, 0 };
 	stringstream a;
 	a << spot.lives << " lives left";
-	SDL_Surface *text;
-	text = TTF_RenderText_Solid(font, a.str().c_str(), text_color);
-	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
-	SDL_FreeSurface(text); // prevent mem leak
+	drawtext(a.str().c_str(), image, font, text_color, backgroundColor, dstrect);
 }
 
 void showMessage(const string &m, SDL_Surface *image, TTF_Font *font)
 { //print auxiliary messages if any
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, SDL_Color text_color, SDL_Color backgroundColor, SDL_Rect dstrect); 
 	SDL_Color text_color = { 255, 255, 255 }; // R,G,B
-	SDL_Rect dstrect = { 40, 8 };
-	SDL_Surface *text;
-	text = TTF_RenderText_Solid(font, m.c_str(), text_color);
-	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
-	SDL_FreeSurface(text); // prevent mem leak
+	SDL_Color backgroundColor = { 0, 0, 255 };
+	SDL_Rect dstrect = { 40, 8, 0, 0 };
+	drawtext(m.c_str(), image, font, text_color, backgroundColor, dstrect);
 }
 
 void endProgram(const string &message, SDL_Surface *image, TTF_Font *font)
 { //end program with appropriate message
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, SDL_Color text_color, SDL_Color backgroundColor, SDL_Rect dstrect); 
 	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
-	SDL_Rect dstrect = { 40, 8 };
-	SDL_Surface *text;
-	text = TTF_RenderText_Solid(font, message.c_str(), text_color);
-	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
-	SDL_FreeSurface(text); // prevent mem leak
+	SDL_Color backgroundColor = { 0, 0, 255 };
+	SDL_Rect dstrect = { 40, 8, 0, 0 };
+	drawtext(message.c_str(), image, font, text_color, backgroundColor, dstrect);
 }
 
 void showmenu(SDL_Surface *image, TTF_Font *font)
 {//shows the buttions the user can press
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, SDL_Color text_color, SDL_Color backgroundColor, SDL_Rect dstrect); 
 	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
-	SDL_Rect dstrect = { 40, 10 };
+	SDL_Color backgroundColor = { 0, 0, 255 };
+	SDL_Rect dstrect = { 40, 10, 0, 0 };
 	SDL_Surface *text;
-	stringstream a;
-	a << "press p to play" << endl << "press i to get infomation" << endl << "press b to display leaderboard";
-	text = TTF_RenderText_Solid(font, a.str().c_str(), text_color);
-	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
-	SDL_FreeSurface(text); // prevent mem leak
+	drawtext("press p to play/npress i to get infomation/npress b to display leaderboard", image, font, text_color, backgroundColor, dstrect);
 }
 
 void showtime(SDL_Surface *image, TTF_Font *font)
 {// shows the current date and time
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, SDL_Color text_color, SDL_Color backgroundColor, SDL_Rect dstrect); 
 	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
-	SDL_Rect dstrect = { 40, 14 };
+	SDL_Color backgroundColor = { 0, 0, 255 };
+	SDL_Rect dstrect = { 40, 14, 0, 0 };
 	stringstream a;
 	SDL_Surface *text;
 	a << GetDate()<< endl << GetTime();
-	text = TTF_RenderText_Solid(font, a.str().c_str(), text_color);
-	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
-	SDL_FreeSurface(text); // prevent mem leak
+	drawtext(a.str().c_str(), image, font, text_color, backgroundColor, dstrect);
 }
 
 void showgametitle(SDL_Surface *image, TTF_Font *font)
 {// displays the title of the game before the board is drawn
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, SDL_Color text_color, SDL_Color backgroundColor, SDL_Rect dstrect);
 	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
-	SDL_Rect dstrect = { 2, 4 };
-	SDL_Surface *text;
-	text = TTF_RenderText_Solid(font, "------------------------/n| SPOT AND ZOMBIE GAME |/n------------------------", text_color);
-	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
-	SDL_FreeSurface(text); // prevent mem leak
+	SDL_Color backgroundColor = { 0, 0, 255 };
+	SDL_Rect dstrect = { 2, 4, 0, 0 };
+	drawtext("------------------------/n| SPOT AND ZOMBIE GAME |/n------------------------", image, font, text_color, backgroundColor, dstrect);
 }
 
 void showdiff(const int diff, SDL_Surface *image, TTF_Font *font)
 {
-	SDL_Rect dstrect = { 40, 16 };
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, SDL_Color text_color, SDL_Color backgroundColor, SDL_Rect dstrect);
+	SDL_Rect dstrect = { 40, 16, 0, 0 }; // x,y,w,h
 	SDL_Color text_color = { 255, 0, 255 }; // R,G,B
-	SDL_Surface *text;
+	SDL_Color backgroundColor = { 0, 0, 255 };
 	stringstream a;
 	a << "time spent in game: " << diff << endl;
-	text = TTF_RenderText_Solid(font, a.str().c_str(), text_color);
-	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
-	SDL_FreeSurface(text); // prevent mem leak
+	drawtext(a.str().c_str(), image, font, text_color, backgroundColor, dstrect);
 	//shows the time spent
 }
 
@@ -1033,7 +1052,7 @@ bool setupdisplay(SDL_Surface* display)
 		return false;
 	}
 	// Set the video mode
-	display = SDL_SetVideoMode(screenhight, screenwith, pixels, SDL_HWSURFACE | SDL_DOUBLEBUF);
+	display = SDL_SetVideoMode(screenhight, screenwith, pixels, SDL_SWSURFACE);
 	if (display == NULL)
 	{
 		cout << "SDL_SetVideoMode() Failed: " <<
@@ -1049,9 +1068,17 @@ void setuptext(TTF_Font *font)
 	{
 		cout << "TTF_Init() Failed: " << TTF_GetError() << endl;
 	}
-	font = TTF_OpenFont("FreeSans.ttf", 10);
+	font = TTF_OpenFont("ARIAL.TTF", 12);
 	if (font == NULL)
 	{
 		cout << "TTF_OpenFont() Failed: " << TTF_GetError() << endl;
 	}
+}
+
+void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, SDL_Color text_color, SDL_Color backgroundColor, SDL_Rect dstrect)
+{
+	cout << "drawing string " << string << " at location x: " << dstrect.x << " y: " << dstrect.y << endl;
+	SDL_Surface *text = TTF_RenderText_Shaded(font, string, text_color, backgroundColor);
+	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
+	SDL_FreeSurface(text);
 }
