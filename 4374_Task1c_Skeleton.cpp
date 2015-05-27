@@ -124,7 +124,7 @@ int main()
 	int key(' ');								//declares the input key
 	vector<replay> replayer;					//creates a list of moves to replay
 	player spot = { SPOT, 0, 0, mainloop(levelSelection), 5 };     //creates the player based on what level and name they choose
-	if (spot.name == "")
+	if (spot.name.empty())
 		return 0;
 	spot.totalscore = 0;						//sets the total score to 0
 	bool loadgames = canload(spot.name);		//determines if that can load a current game or not
@@ -563,7 +563,7 @@ void ApplyCheat(const int key, player& spot, vector<zombie>& zombies, vector<pil
 	{
 		int livesGained = 0;
 		for (const pill& it : pills)
-			if (it.eaten == true);
+			if (it.eaten == true)
 				livesGained++; //calculates the lives gained from all the bills 
 		spot.lives = spot.lives + livesGained; //adds this number to the total life
 		pills.clear(); //clears all the pills from the game
@@ -626,8 +626,8 @@ void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, v
 	void setSpotInitialCoordinates(char grid[][SIZEX], Item& spot);
 	void placewallonmap(char grid[][SIZEX]);
 	void placeSpot(char gr[][SIZEX], const Item &spot);
-	void placepillonmap(char grid[][SIZEX], vector<pill>& pills, player& spot);
-	void placeholeonmap(char grid[][SIZEX], vector<Item>& holes, player& spot);
+	void placepillonmap(char grid[][SIZEX], vector<pill>& pills, const player& spot);
+	void placeholeonmap(char grid[][SIZEX], vector<Item>& holes, const player& spot);
 	void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies);
 	void getLevel();
 	//all functions used to set up game
@@ -664,7 +664,7 @@ void getLevel()
 	//prints out this message
 }
 
-void placepillonmap(char grid[][SIZEX], vector<pill>& pills, player& spot)
+void placepillonmap(char grid[][SIZEX], vector<pill>& pills, const player& spot)
 {
 	void occupyPills(const int numberOfPills, char grid[][SIZEX], vector<pill>& pills);
 	//creates a new function to occupy pills on the map based on an int value	
@@ -702,7 +702,7 @@ void occupyPills(const int numberOfPills, char grid[][SIZEX], vector<pill>& pill
 	}
 }
 
-void placeholeonmap(char grid[][SIZEX], vector<Item>& holes, player& spot)
+void placeholeonmap(char grid[][SIZEX], vector<Item>& holes, const player& spot)
 {
 	void occupyHoles(char grid[][SIZEX], vector<Item>& holes, const int numberOfHoles);
 	//creates a new function to occupy holes on the map based on an int value
