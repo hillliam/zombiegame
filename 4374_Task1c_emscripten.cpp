@@ -821,6 +821,7 @@ bool haswon(const vector<zombie>& zombies, const player& spot, SDL_Surface *imag
 	else
 		a << "Congratulations, you have finished the game!" << endl << "Your score is: " << spot.totalscore;
 	SDL_Surface *text = TTF_RenderText_Shaded(font, a.str().c_str(), text_color, backgroundColor);
+	SDL_UnlockSurface(image);
 	SDL_BlitSurface(text, NULL, image, NULL); // add text to framebuffer
 	SDL_FreeSurface(text); // prevent mem leak
 	return false;
@@ -1075,6 +1076,7 @@ void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_
 {
 	cout << "drawing string " << string << " at location x: " << dstrect.x << " y: " << dstrect.y << endl;
 	SDL_Surface *text = TTF_RenderText_Shaded(font, string, text_color, backgroundColor);
+	SDL_UnlockSurface(image);
 	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
 	SDL_FreeSurface(text);
 }
@@ -1085,6 +1087,7 @@ void DrawImage(SDL_Surface *surface, const char *image_path, const int x_pos, co
 	if (!image)
 		printf("IMG_Load: %s\n", IMG_GetError());
 	SDL_Rect rcDest = { x_pos, y_pos, 0, 0 };
+	SDL_UnlockSurface(surface);
 	SDL_BlitSurface(image, NULL, surface, &rcDest);
 	SDL_FreeSurface(image);
 }
