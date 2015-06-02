@@ -14,8 +14,8 @@ using namespace std;
 const int SIZEY(12);         //vertical dimension
 const int SIZEX(20);         //horizontal dimension
 
-const int screenhight(500);
-const int screenwith(500);
+const int screenhight(600);
+const int screenwith(250);
 const int pixels(32);
 
 const char SPOT('@');        //spot
@@ -891,28 +891,29 @@ void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, 
 void paintGrid(const char g[][SIZEX], SDL_Surface *image, TTF_Font *font)
 {
 	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect); 
-	SDL_Color text_color = { 255, 255, 255 }; // R,G,B
+	SDL_Color text_color = { 255, 255, 255 };
 	const SDL_Color backgroundColor = { 0, 0, 255 };
-	//stringstream a;
 	for (int row(0); row < SIZEY; ++row)      //for each row (vertically)
 	{
 		for (int col(0); col < SIZEX; ++col)  //for each column (horizontally)
 		{
+			stringstream a;
 			//adds all the pills and their colours
 			SDL_Rect dstrect = { ((row * 10) + 0), ((col*10)+20), 0, 0 };
 			switch (g[row][col])
 			{
-			case SPOT:
-				text_color = { 255, 255, 255 };
 			case HOLE:
-				text_color = { 255, 0, 0 };
+				text_color.g = 0;
+				text_color.b = 0;
 			case ZOMBIE:  
-				text_color = { 0, 255, 0 };
+				text_color.b = 0;
+				text_color.r = 0;
 			case PILL:
-				text_color = { 0, 0, 255 };
+				text_color.g = 0;
+				text_color.r = 0;
 			}
-			drawtext(g[row][col], image, font, text_color, backgroundColor, dstrect);
-			//a << g[row][col];              //output cell content
+			a << g[row][col];              //output cell content
+			drawtext(a.str().c_str(), image, font, text_color, backgroundColor, dstrect);
 		} //end of col-loop
 		//a << endl;
 	} //end of row-loop
@@ -936,7 +937,15 @@ void showDescription(SDL_Surface *image, TTF_Font *font)
 	const SDL_Color text_color = { 255, 0, 255 }; // R,G,B
 	const SDL_Color backgroundColor = { 0, 0, 255 };
 	const SDL_Rect dstrect = { 400, 20, 0, 0 };
-	drawtext("This is a game where you must escape /n the zombies and survive. Pills mean /n a life is gained. /n Contact with a hole(0) or zombie(Z) /n means a life is lost ", image, font, text_color, backgroundColor, dstrect);
+	const SDL_Rect dstrect1 = { 400, 30, 0, 0 };
+	const SDL_Rect dstrect2 = { 400, 40, 0, 0 };
+	const SDL_Rect dstrect3 = { 400, 50, 0, 0 };
+	const SDL_Rect dstrect4 = { 400, 60, 0, 0 };
+	drawtext("This is a game where you must escape", image, font, text_color, backgroundColor, dstrect);
+	drawtext("the zombies and survive. Pills mean", image, font, text_color, backgroundColor, dstrect1);
+	drawtext("a life is gained.", image, font, text_color, backgroundColor, dstrect2);
+	drawtext("Contact with a hole(0) or zombie(Z)", image, font, text_color, backgroundColor, dstrect3);
+	drawtext("means a life is lost ", image, font, text_color, backgroundColor, dstrect4);
 }
 
 void showTitle(SDL_Surface *image, TTF_Font *font)
@@ -946,9 +955,11 @@ void showTitle(SDL_Surface *image, TTF_Font *font)
 	const SDL_Color backgroundColor = { 0, 0, 255 };
 	const SDL_Color text_color2 = { 255, 0, 0 }; // R,G,B
 	const SDL_Rect dstrect = { 400, 0, 0, 0 };
+	const SDL_Rect dstrect1 = { 400, 10, 0, 0 };
 	const SDL_Rect dstrec2 = { 0, 0, 0, 0 };
 	drawtext("___ZOMBIES GAME SKELETON___", image, font, text_color1, backgroundColor, dstrec2);
-	drawtext("Oliver Parker, Liam Hill, Alex Odgen/n1RR - COMPUTER SCIENCE", image, font, text_color2, backgroundColor, dstrect);
+	drawtext("Oliver Parker, Liam Hill, Alex Odgen", image, font, text_color2, backgroundColor, dstrect);
+	drawtext("1RR - COMPUTER SCIENCE", image, font, text_color2, backgroundColor, dstrect1);
 }
 
 void showSaveLoad(SDL_Surface *image, TTF_Font *font)
@@ -957,7 +968,9 @@ void showSaveLoad(SDL_Surface *image, TTF_Font *font)
 	const SDL_Color text_color = { 255, 0, 255 }; // R,G,B
 	const SDL_Color backgroundColor = { 0, 0, 255 };
 	const SDL_Rect dstrect = { 400, 110, 0, 0 };
-	drawtext("Press S to save your game/nPress L to load your game", image, font, text_color, backgroundColor, dstrect);
+	const SDL_Rect dstrect1 = { 400, 120, 0, 0 };
+	drawtext("Press S to save your game", image, font, text_color, backgroundColor, dstrect);
+	drawtext("Press L to load your game", image, font, text_color, backgroundColor, dstrect1);
 }
 
 void showname(const string &name, SDL_Surface *image, TTF_Font *font)
@@ -1017,7 +1030,11 @@ void showmenu(SDL_Surface *image, TTF_Font *font)
 	const SDL_Color text_color = { 255, 0, 255 }; // R,G,B
 	const SDL_Color backgroundColor = { 0, 0, 255 };
 	const SDL_Rect dstrect = { 400, 100, 0, 0 };
-	drawtext("press p to play/npress i to get infomation/npress b to display leaderboard", image, font, text_color, backgroundColor, dstrect);
+	const SDL_Rect dstrect1 = { 400, 110, 0, 0 };
+	const SDL_Rect dstrect2 = { 400, 120, 0, 0 };
+	drawtext("press p to play", image, font, text_color, backgroundColor, dstrect);
+	drawtext("press i to get infomation", image, font, text_color, backgroundColor, dstrect1);
+	drawtext("press b to display leaderboard", image, font, text_color, backgroundColor, dstrect2);
 }
 
 void showtime(SDL_Surface *image, TTF_Font *font)
@@ -1036,8 +1053,12 @@ void showgametitle(SDL_Surface *image, TTF_Font *font)
 	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect);
 	const SDL_Color text_color = { 255, 0, 255 }; // R,G,B
 	const SDL_Color backgroundColor = { 0, 0, 255 };
-	const SDL_Rect dstrect = { 200, 400, 0, 0 };
-	drawtext("------------------------ /n | SPOT AND ZOMBIE GAME | /n ------------------------", image, font, text_color, backgroundColor, dstrect);
+	const SDL_Rect dstrect = { 200, 400, 0, 0 }; 
+	const SDL_Rect dstrect1 = { 200, 410, 0, 0 };
+	const SDL_Rect dstrect2 = { 200, 420, 0, 0 };
+	drawtext("------------------------", image, font, text_color, backgroundColor, dstrect);
+	drawtext("| SPOT AND ZOMBIE GAME |", image, font, text_color, backgroundColor, dstrect1);
+	drawtext("------------------------", image, font, text_color, backgroundColor, dstrect2);
 }
 
 void showdiff(const int diff, SDL_Surface *image, TTF_Font *font)
