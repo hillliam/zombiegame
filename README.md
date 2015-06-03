@@ -6,5 +6,6 @@
 Alex Ogden, Liam Hill, Oliver Parker
 ------------------------------------
 ## http://hillliam.github.io/zombiegame/
+http://hillliam.github.io/zombiegame/index_debug.html
 
 In-progress version of game using sdl and emscripten.
