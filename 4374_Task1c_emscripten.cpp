@@ -897,23 +897,26 @@ void paintGrid(const char g[][SIZEX], SDL_Surface *image, TTF_Font *font)
 	{
 		for (int col(0); col < SIZEX; ++col)  //for each column (horizontally)
 		{
-			stringstream a;
-			//adds all the pills and their colours
-			SDL_Rect dstrect = { ((row * 10) + 0), ((col*10)+20), 0, 0 };
-			switch (g[row][col])
+			if (g[row][col] != TUNNEL)
 			{
-			case HOLE:
-				text_color.g = 0;
-				text_color.b = 0;
-			case ZOMBIE:  
-				text_color.b = 0;
-				text_color.r = 0;
-			case PILL:
-				text_color.g = 0;
-				text_color.r = 0;
+				stringstream a;
+				//adds all the pills and their colours
+				SDL_Rect dstrect = { ((row * 10) + 0), ((col * 10) + 20), 0, 0 };
+				switch (g[row][col])
+				{
+				case HOLE:
+					text_color.g = 0;
+					text_color.b = 0;
+				case ZOMBIE:
+					text_color.b = 0;
+					text_color.r = 0;
+				case PILL:
+					text_color.g = 0;
+					text_color.r = 0;
+				}
+				a << g[row][col];              //output cell content
+				drawtext(a.str().c_str(), image, font, text_color, backgroundColor, dstrect);
 			}
-			a << g[row][col];              //output cell content
-			drawtext(a.str().c_str(), image, font, text_color, backgroundColor, dstrect);
 		} //end of col-loop
 		//a << endl;
 	} //end of row-loop
