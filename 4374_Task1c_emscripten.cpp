@@ -907,12 +907,15 @@ void paintGrid(const char g[][SIZEX], SDL_Surface *image, TTF_Font *font)
 				case HOLE:
 					text_color.g = 0;
 					text_color.b = 0;
+					break;
 				case ZOMBIE:
 					text_color.b = 0;
 					text_color.r = 0;
+					break;
 				case PILL:
 					text_color.g = 0;
 					text_color.r = 0;
+					break;
 				}
 				a << g[row][col];              //output cell content
 				drawtext(a.str().c_str(), image, font, text_color, backgroundColor, dstrect);
