@@ -856,6 +856,7 @@ void clearMessage()
 void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, const int zombielives, const int remainingpill, const int diff, SDL_Surface *image, TTF_Font *font)
 { //display game title, messages, maze, spot and apples on screen
 	void paintGrid(const char g[][SIZEX],SDL_Surface *text, TTF_Font *font);
+	void paintGridimages(const char g[][SIZEX], SDL_Surface *image)
 	void showLives(const player &spot,SDL_Surface *text, TTF_Font *font);
 	void showDescription(SDL_Surface *text, TTF_Font *font);
 	void showrempill(const int pils, SDL_Surface *text, TTF_Font *font);
@@ -869,7 +870,8 @@ void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, 
 
 	SDL_FillRect(image, NULL, SDL_MapRGB(image->format, 0, 0, 0));
 	//display grid contents
-	paintGrid(gd, image, font);
+	//paintGrid(gd, image, font);
+	paintGridimages(gd, image);
 	//display game title
 	showTitle(image, font);
 	showDescription(image, font);
@@ -925,6 +927,39 @@ void paintGrid(const char g[][SIZEX], SDL_Surface *image, TTF_Font *font)
 	} //end of row-loop
 	//drawtext(a.str().c_str(), image, font, text_color, backgroundColor, dstrect);
 }
+void paintGridimages(const char g[][SIZEX], SDL_Surface *image)
+{
+	void DrawImage(SDL_Surface *surface, const char *image_path, const int x_pos, const int y_pos);
+	for (int row(0); row < SIZEY; ++row)      //for each row (vertically)
+	{
+		for (int col(0); col < SIZEX; ++col)  //for each column (horizontally)
+		{
+			if (g[row][col] != TUNNEL)
+			{
+				//adds all the pills and their colours
+				const int xlocation = row * 10;
+				const int ylocation = (col * 10) + 20;
+				switch (g[row][col])
+				{
+				case WALL:
+					DrawImage(image, "wall.png", xlocation, ylocation);
+					break;
+				case HOLE:
+					DrawImage(image, "hole.png", xlocation, ylocation);
+					break;
+				case ZOMBIE:
+				  DrawImage(image, "zombie.png", xlocation, ylocation);
+					break;
+				case PILL:
+					DrawImage(image, "pill.png", xlocation, ylocation);
+					break;
+				case SPOT:
+					DrawImage(image, "player.png", xlocation, ylocation);
+				}
+			}
+		} //end of col-loop
+	} //end of row-loop
+}
 
 void showrempill(const int pils, SDL_Surface *image, TTF_Font *font)
 {// display the number of pills left on the board 
@@ -941,7 +976,7 @@ void showDescription(SDL_Surface *image, TTF_Font *font)
 {// displays a description of the game during the main menu
 	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect); 
 	const SDL_Color text_color = { 255, 0, 255 }; // R,G,B
-	const SDL_Color backgroundColor = { 0, 0, 255 };
+	const SDL_Color backgroundColor = { 0, 0, 0 };
 	const SDL_Rect dstrect = { 400, 20, 0, 0 };
 	const SDL_Rect dstrect1 = { 400, 30, 0, 0 };
 	const SDL_Rect dstrect2 = { 400, 40, 0, 0 };
