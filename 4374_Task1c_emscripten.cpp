@@ -856,7 +856,7 @@ void clearMessage()
 void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, const int zombielives, const int remainingpill, const int diff, SDL_Surface *image, TTF_Font *font)
 { //display game title, messages, maze, spot and apples on screen
 	void paintGrid(const char g[][SIZEX],SDL_Surface *text, TTF_Font *font);
-	void paintGridimages(const char g[][SIZEX], SDL_Surface *image)
+	void paintGridimages(const char g[][SIZEX], SDL_Surface *image);
 	void showLives(const player &spot,SDL_Surface *text, TTF_Font *font);
 	void showDescription(SDL_Surface *text, TTF_Font *font);
 	void showrempill(const int pils, SDL_Surface *text, TTF_Font *font);
