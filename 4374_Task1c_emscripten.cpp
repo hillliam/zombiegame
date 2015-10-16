@@ -25,10 +25,10 @@ const char HOLE('O');        //hole
 const char ZOMBIE('Z');      //zombie
 const char PILL('.');        //pill (used in basic version insted of structure)
 
-const int  UP(72);           //up arrow
-const int  DOWN(80);         //down arrow
-const int  RIGHT(77);        //right arrow
-const int  LEFT(75);         //left arrow
+const int  UP(97);           //up arrow
+const int  DOWN(100);         //down arrow
+const int  RIGHT(115);        //right arrow
+const int  LEFT(119);         //left arrow
 
 const char FREEZ('F');        //stop the zombies moving
 const char EXTERMINATE('X');  //remove all zombies
@@ -44,19 +44,19 @@ const char LEADERBOARD('B'); //key to display leaderboard
 const char QUIT('Q');        //end the game
 
 struct Item {
-	const char symbol;	     //symbol on grid
+	char symbol;	     //symbol on grid
 	int x, y;			     //coordinates
 };
 
 struct player {
 	Item baseobject;         // the base class of all objects on the map
-	const string name;		 // the name of the player
+	string name;		 // the name of the player
 	int lives;               // the number of lives the player has
 	int totalscore;			 // keeps track of the total score for the leaderboard
 	bool hascheated;		 // set true if the user has cheated
 	bool isProtected;		 // boolean variable to check if the player is protected by magic pill
 	int protectedCount;		 // sets the amount moves the player can make before their protection goes
-	int levelChoice;		 // sets the level choice 
+	int levelChoice;		 // sets the level choice
 };
 
 struct zombie {
@@ -85,7 +85,7 @@ struct pill {
 
 struct replay
 {
-	char grid[SIZEY][SIZEX]; // store the grid 
+	char grid[SIZEY][SIZEX]; // store the grid
 };
 
 void Seed()
@@ -102,13 +102,13 @@ void GetSystemDate(int& day, int& month, int& year)
 	time_t ltime;
 	struct tm *now;
 	// Set time zone from TZ environment variable. If TZ is not set, the operating
-	// system is queried to obtain the default value for the variable. 
+	// system is queried to obtain the default value for the variable.
 	tzset();
-	// Get UNIX-style time. 
+	// Get UNIX-style time.
 	time(&ltime);
-	// Convert to time structure. 
+	// Convert to time structure.
 	now = localtime(&ltime);
-	// Set Time objects members. 
+	// Set Time objects members.
 	day = now->tm_mday;
 	month = now->tm_mon + 1;
 	year = now->tm_year + 1900;
@@ -158,35 +158,35 @@ string GetTime()
 	GetSystemTime(hrs, mins, secs);
 	return (TimeToString(hrs, mins, secs));
 }
-
+int levelSelection;
+SDL_Surface* display;						// the screen
+vector<zombie> zombies;					//initalize the zombies
+vector<pill> pills; 					//initalize pills
+vector<Item> holes; 					//initalize holes
+TTF_Font *font;
+char grid[SIZEY][SIZEX];					//grid for display
+vector<replay> replayer;					//creates a list of moves to replay
+int hours, amin, seconds;
+player spot;
 int main()
 {
-	bool setupdisplay(SDL_Surface* display);
-	void setuptext(TTF_Font *font);
-	void gameloop(SDL_Surface* display, TTF_Font *font, player& spot, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes, char grid[SIZEY][SIZEX], vector<replay>& replayer, int& hours, int& amin, int& seconds);
+	bool setupdisplay();
+	void setuptext();
+	void gameloop();
 	string mainloop(int& levelSelection, SDL_Surface *image, TTF_Font *font);
 	void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, vector<Item>& holes, vector<pill>& pills);
-	int levelSelection;
-	SDL_Surface* display;						// the screen
-	vector<zombie> zombies;					//initalize the zombies
-	vector<pill> pills; 					//initalize pills
-	vector<Item> holes; 					//initalize holes
-	TTF_Font *font;
-	char grid[SIZEY][SIZEX];					//grid for display
-	vector<replay> replayer;					//creates a list of moves to replay
-	int hours, amin, seconds;					//sets up the current time
-
 	//These are all the functions we call in our main body of code, they all pass different paramters
-	setupdisplay(display);						// setup screen
-	setuptext(font);							// text system
-	player spot = { SPOT, 0, 0, mainloop(levelSelection, display, font), 5 };     //creates the player based on what level and name they choose
-	spot.levelChoice = levelSelection;			//this sets the level that is selected in the main loop
+	setupdisplay();						// setup screen
+	setuptext();							// text system
+	player spot2 = { SPOT, 0, 0, mainloop(levelSelection, display, font), 5 };     //creates the player based on what level and name they choose
+	spot2.levelChoice = levelSelection;			//this sets the level that is selected in the main loop
+	spot = spot2;
 	initialiseGame(grid, spot, zombies, holes, pills);  //initialise grid (incl. walls and spot etc)
 	GetSystemTime(hours, amin, seconds);			//gets the current time on the system
-	emscripten_set_main_loop_arg((em_arg_callback_func)gameloop, &(display, font, spot, zombies, pills, holes, grid, replayer, hours, amin, seconds), 60, 0);
+	emscripten_set_main_loop((em_callback_func)gameloop, 60, 0);
 }
 
-void gameloop(SDL_Surface* display, TTF_Font *font, player& spot, vector<zombie>& zombies, vector<pill>& pills, vector<Item>& holes, char grid[SIZEY][SIZEX], vector<replay>& replayer, int& hours, int& amin, int& seconds)
+void gameloop()
 {
 	bool isArrowKey(const int k);
 	bool isCheatKey(const int k);
@@ -206,6 +206,7 @@ void gameloop(SDL_Surface* display, TTF_Font *font, player& spot, vector<zombie>
 	saveboard(replayer, grid);		//this adds the current state of the grid to the replay structure
 	message = "                    ";	//reset message
 	key = getKeyPress();				//read in next keyboard event
+	cout << key<<endl;
 	if (isArrowKey(key))				//if this is an arrow key enter this
 		updateGame(grid, spot, key, message, zombies, pills, holes); //this calls the update game function based on what button pressed
 	else if (isCheatKey(key))			//if its a cheat character enter this
@@ -213,7 +214,7 @@ void gameloop(SDL_Surface* display, TTF_Font *font, player& spot, vector<zombie>
 		spot.hascheated = true;			//makes it so the player has cheated, so score isnt saved
 		ApplyCheat(key, spot, zombies, pills); //calls the function to actually apply the cheat
 		updateGame(grid, spot, key, message, zombies, pills, holes); //calls the function to update the game
-	}			
+	}
 	else if (isreplayKey(key))		//if its the replay key
 		displayallmoves(replayer, display, font);	//replays all moves up till the point pressed
 	int nhours, nmin, nseconds;			//declares the time to track
@@ -300,7 +301,7 @@ string mainloop(int& levelSelection, SDL_Surface *image, TTF_Font *font)
 
 void updateGame(char grid[][SIZEX], player& spot, const int key, string& message, vector<zombie>& zombies, vector<pill>& pills, const vector<Item>& holes)
 {
-	void updateSpotCoordinates(const char g[][SIZEX], player& spot, const int key, string& mess, vector<zombie>& zombies, vector<pill>& pills); // player move 
+	void updateSpotCoordinates(const char g[][SIZEX], player& spot, const int key, string& mess, vector<zombie>& zombies, vector<pill>& pills); // player move
 	void updatezombieCoordinates(const char g[][SIZEX], player& spot, vector<zombie>& zombies); // zombies move
 	void updateGrid(char grid[][SIZEX], const Item &spot, const vector<zombie> &zombies, const vector<pill> &pills, const vector<Item> &holes);
 
@@ -372,7 +373,7 @@ void ApplyCheat(const int key, player& spot, vector<zombie>& zombies, vector<pil
 		for (int i = 0; i < pills.size(); i++)
 		{
 			if (pills[i].eaten == true)
-				livesGained++; //calculates the lives gained from all the bills 
+				livesGained++; //calculates the lives gained from all the bills
 		}
 		spot.lives = spot.lives + livesGained; //adds this number to the total life
 		pills.clear(); //clears all the pills from the game
@@ -481,7 +482,7 @@ void getLevel(SDL_Surface *image, TTF_Font *font)
 void placepillonmap(char grid[][SIZEX], vector<pill>& pills,const player& spot)
 {
 	void occupyPills(const int numberOfPills, char grid[][SIZEX], vector<pill>& pills);
-	//creates a new function to occupy pills on the map based on an int value	
+	//creates a new function to occupy pills on the map based on an int value
 	switch (spot.levelChoice)
 	{
 	case 1:
@@ -503,16 +504,16 @@ void occupyPills(const int numberOfPills, char grid[][SIZEX], vector<pill>& pill
 	for (int i = 0; i < numberOfPills; i++) // places pills on the map
 	{
 		int x = Random(SIZEX - 2); // gets the first coordinates
-		int y = Random(SIZEY - 2); 
+		int y = Random(SIZEY - 2);
 		while (ocupiedpeace(grid, x, y))//checks if the space is free
 		{
 			Seed();
 			x = Random(SIZEX - 2); // get new coordinates
-			y = Random(SIZEY - 2); // 
+			y = Random(SIZEY - 2); //
 		}
 		pill pilla = { PILL, x, y };
 		pills.push_back(pilla); //creates the pill in the list
-		grid[y][x] = PILL; // place it on the map	
+		grid[y][x] = PILL; // place it on the map
 	}
 }
 
@@ -541,12 +542,12 @@ void occupyHoles(char grid[][SIZEX], vector<Item>& holes,const int numberOfHoles
 	for (int i = 0; i < numberOfHoles; i++) // places holes on the map
 	{
 		int x = Random(SIZEX - 2); //original coordinates
-		int y = Random(SIZEY - 2); // 
+		int y = Random(SIZEY - 2); //
 		while (ocupiedpeace(grid, x, y)) //checks if the space is free
 		{
 			Seed();
 			x = Random(SIZEX - 2); // get new coordinates
-			y = Random(SIZEY - 2); // 
+			y = Random(SIZEY - 2); //
 		}
 		Item hole = { HOLE, x, y };
 		grid[y][x] = HOLE; //places hole on the grid
@@ -585,7 +586,7 @@ void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies)
 	zombies.push_back(zom3);
 	zombies.push_back(zom4);
 	//adds all zombies to the list
-	grid[1][1] = ZOMBIE; 
+	grid[1][1] = ZOMBIE;
 	grid[SIZEY - 2][1] = ZOMBIE;
 	grid[1][SIZEX - 2] = ZOMBIE;
 	grid[SIZEY - 2][SIZEX - 2] = ZOMBIE;
@@ -601,7 +602,7 @@ void setSpotInitialCoordinates(char grid[][SIZEX], Item& spot)
 	{
 		Seed();
 		spot.x = Random(SIZEX - 2); // get new chordinates
-		spot.y = Random(SIZEY - 2); // 
+		spot.y = Random(SIZEY - 2); //
 	}
 }
 
@@ -672,7 +673,7 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, const int key, str
 	//calculate direction of movement required by key - if any
 	int dx(0), dy(0);
 	setKeyDirection(key, dx, dy); 	//find direction indicated by key
-	//check new target position in grid 
+	//check new target position in grid
 	//and update spot coordinates if move is possible
 	const int targetY(sp.baseobject.y + dy);
 	const int targetX(sp.baseobject.x + dx);
@@ -698,8 +699,8 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, const int key, str
 		{
 			sp.protectedCount--;
 			for (int i = 0; i < zombies.size(); i++)
-				if (zombies[i].baseobject.x == sp.baseobject.x && zombies[i].baseobject.y == sp.baseobject.y) 
-					zombies[i].alive = false; 
+				if (zombies[i].baseobject.x == sp.baseobject.x && zombies[i].baseobject.y == sp.baseobject.y)
+					zombies[i].alive = false;
 			//when the player is protected this loop is called to see what zombie was hit and then that zombie is killed
 			break;
 		}
@@ -743,8 +744,8 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, const int key, str
 			break;
 		}
 		for (int i = 0; i < pills.size(); i++)
-			if (pills[i].baseobject.x == sp.baseobject.x && pills[i].baseobject.y == sp.baseobject.y) 
-				pills[i].eaten = true; 
+			if (pills[i].baseobject.x == sp.baseobject.x && pills[i].baseobject.y == sp.baseobject.y)
+				pills[i].eaten = true;
 		//this loop goes through all the pills and finds what one got hit and then declares it as eaten
 		break;
 	}
@@ -788,7 +789,7 @@ int getKeyPress()
 }
 
 bool isArrowKey(const int key)
-{// checks if the key pressed is a direction key 
+{// checks if the key pressed is a direction key
 	return ((key == LEFT) || (key == RIGHT) || (key == UP) || (key == DOWN));
 }
 
@@ -807,7 +808,7 @@ bool wantToQuit(const int key, string& message)
 }
 
 bool haswon(const vector<zombie>& zombies, const player& spot, SDL_Surface *image, TTF_Font *font)
-{		
+{
 	for (const zombie& zom : zombies)
 		if (zom.alive == true)
 			return false;
@@ -892,7 +893,7 @@ void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, 
 
 void paintGrid(const char g[][SIZEX], SDL_Surface *image, TTF_Font *font)
 {
-	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect); 
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect);
 	SDL_Color text_color = { 255, 255, 255 };
 	const SDL_Color backgroundColor = { 0, 0, 255 };
 	for (int row(0); row < SIZEY; ++row)      //for each row (vertically)
@@ -962,8 +963,8 @@ void paintGridimages(const char g[][SIZEX], SDL_Surface *image)
 }
 
 void showrempill(const int pils, SDL_Surface *image, TTF_Font *font)
-{// display the number of pills left on the board 
-	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect); 
+{// display the number of pills left on the board
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect);
 	const SDL_Color text_color = { 255, 0, 255 }; // R,G,B
 	const SDL_Color backgroundColor = { 0, 0, 255 };
 	const SDL_Rect dstrect = { 400, 100, 0, 0 };
@@ -974,7 +975,7 @@ void showrempill(const int pils, SDL_Surface *image, TTF_Font *font)
 
 void showDescription(SDL_Surface *image, TTF_Font *font)
 {// displays a description of the game during the main menu
-	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect); 
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect);
 	const SDL_Color text_color = { 255, 0, 255 }; // R,G,B
 	const SDL_Color backgroundColor = { 0, 0, 0 };
 	const SDL_Rect dstrect = { 400, 20, 0, 0 };
@@ -991,7 +992,7 @@ void showDescription(SDL_Surface *image, TTF_Font *font)
 
 void showTitle(SDL_Surface *image, TTF_Font *font)
 { //display game title
-	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect); 
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect);
 	const SDL_Color text_color1 = { 255, 0, 255 }; // R,G,B
 	const SDL_Color backgroundColor = { 0, 0, 255 };
 	const SDL_Color text_color2 = { 255, 0, 0 }; // R,G,B
@@ -1005,7 +1006,7 @@ void showTitle(SDL_Surface *image, TTF_Font *font)
 
 void showSaveLoad(SDL_Surface *image, TTF_Font *font)
 {//displays the save and load options during the game
-	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect); 
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect);
 	const SDL_Color text_color = { 255, 0, 255 }; // R,G,B
 	const SDL_Color backgroundColor = { 0, 0, 255 };
 	const SDL_Rect dstrect = { 400, 110, 0, 0 };
@@ -1016,7 +1017,7 @@ void showSaveLoad(SDL_Surface *image, TTF_Font *font)
 
 void showname(const string &name, SDL_Surface *image, TTF_Font *font)
 {// display the players name during the game
-	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect); 
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect);
 	const SDL_Color text_color = { 255, 0, 255 }; // R,G,B
 	const SDL_Color backgroundColor = { 0, 0, 255 };
 	const SDL_Rect dstrect = { 400, 130, 0, 0 };
@@ -1027,7 +1028,7 @@ void showname(const string &name, SDL_Surface *image, TTF_Font *font)
 
 void showOptions(SDL_Surface *image, TTF_Font *font)
 { //show game options
-	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect); 
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect);
 	const SDL_Color text_color = { 255, 0, 255 }; // R,G,B
 	const SDL_Color backgroundColor = { 0, 0, 255 };
 	const SDL_Rect dstrect1 = { 400, 70, 0, 0 };
@@ -1038,7 +1039,7 @@ void showOptions(SDL_Surface *image, TTF_Font *font)
 
 void showLives(const player &spot, SDL_Surface *image, TTF_Font *font)
 { //show game options
-	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect); 
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect);
 	const SDL_Color text_color = { 255, 0, 255 }; // R,G,B
 	const SDL_Color backgroundColor = { 0, 0,  255 };
 	const SDL_Rect dstrect = { 400, 90, 0, 0 };
@@ -1049,7 +1050,7 @@ void showLives(const player &spot, SDL_Surface *image, TTF_Font *font)
 
 void showMessage(const string &m, SDL_Surface *image, TTF_Font *font)
 { //print auxiliary messages if any
-	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect); 
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect);
 	const SDL_Color text_color = { 255, 255, 255 }; // R,G,B
 	const SDL_Color backgroundColor = { 0, 0, 255 };
 	const SDL_Rect dstrect = { 400, 80, 0, 0 };
@@ -1058,7 +1059,7 @@ void showMessage(const string &m, SDL_Surface *image, TTF_Font *font)
 
 void endProgram(const string &message, SDL_Surface *image, TTF_Font *font)
 { //end program with appropriate message
-	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect); 
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect);
 	const SDL_Color text_color = { 255, 0, 255 }; // R,G,B
 	const SDL_Color backgroundColor = { 0, 0, 255 };
 	const SDL_Rect dstrect = { 400, 80, 0, 0 };
@@ -1067,7 +1068,7 @@ void endProgram(const string &message, SDL_Surface *image, TTF_Font *font)
 
 void showmenu(SDL_Surface *image, TTF_Font *font)
 {//shows the buttions the user can press
-	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect); 
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect);
 	const SDL_Color text_color = { 255, 0, 255 }; // R,G,B
 	const SDL_Color backgroundColor = { 0, 0, 255 };
 	const SDL_Rect dstrect = { 400, 100, 0, 0 };
@@ -1080,7 +1081,7 @@ void showmenu(SDL_Surface *image, TTF_Font *font)
 
 void showtime(SDL_Surface *image, TTF_Font *font)
 {// shows the current date and time
-	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect); 
+	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect);
 	const SDL_Color text_color = { 255, 0, 255 }; // R,G,B
 	const SDL_Color backgroundColor = { 0, 0, 255 };
 	const SDL_Rect dstrect = { 400, 140, 0, 0 };
@@ -1094,7 +1095,7 @@ void showgametitle(SDL_Surface *image, TTF_Font *font)
 	void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect);
 	const SDL_Color text_color = { 255, 0, 255 }; // R,G,B
 	const SDL_Color backgroundColor = { 0, 0, 255 };
-	const SDL_Rect dstrect = { 200, 400, 0, 0 }; 
+	const SDL_Rect dstrect = { 200, 400, 0, 0 };
 	const SDL_Rect dstrect1 = { 200, 410, 0, 0 };
 	const SDL_Rect dstrect2 = { 200, 420, 0, 0 };
 	drawtext("------------------------", image, font, text_color, backgroundColor, dstrect);
@@ -1114,7 +1115,7 @@ void showdiff(const int diff, SDL_Surface *image, TTF_Font *font)
 	//shows the time spent
 }
 
-bool setupdisplay(SDL_Surface* display)
+bool setupdisplay()
 {
 	if (SDL_Init(SDL_INIT_VIDEO) != 0)
 	{
@@ -1133,7 +1134,7 @@ bool setupdisplay(SDL_Surface* display)
 	return true;
 }
 
-void setuptext(TTF_Font *font)
+void setuptext()
 {
 	if (TTF_Init() != 0)
 	{
@@ -1148,7 +1149,7 @@ void setuptext(TTF_Font *font)
 
 void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect)
 {
-	cout << "drawing string " << string << " at location x: " << dstrect.x << " y: " << dstrect.y << endl;
+	//cout << "drawing string " << string << " at location x: " << dstrect.x << " y: " << dstrect.y << endl;
 	SDL_Surface *text = TTF_RenderText_Shaded(font, string, text_color, backgroundColor);
 	SDL_UnlockSurface(image);
 	SDL_BlitSurface(text, NULL, image, &dstrect); // add text to framebuffer
