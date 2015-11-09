@@ -21,7 +21,8 @@ const int framerate(0); // 0 = dynamic
 const int fontsize(32); // size of renderd font
 const int imagesize(10); // size of image block
 int randomwalls(23); // number of random wall blocks to place
-const bool pathfinding(true);
+const bool pathfinding(true); // is pathfinding enambled
+const int portalsonmap(5);
 
 const char SPOT('@'); //spot
 const char TUNNEL(' '); //open space
@@ -29,6 +30,7 @@ const char WALL('#'); //border
 const char HOLE('O'); //hole
 const char ZOMBIE('Z'); //zombie
 const char PILL('.'); //pill (used in basic version insted of structure)
+const char PORTAL('&'); // portal 
 
 const int UP(97); //up arrow
 const int DOWN(100); //down arrow
@@ -52,6 +54,12 @@ struct Item
 {
     char symbol; //symbol on grid
     int x, y; //coordinates
+};
+
+struct portal
+{
+    Item baseobject; // the base class of all objects on the map
+    portal* to; // the place where the player appears
 };
 
 struct player
@@ -176,6 +184,7 @@ vector<zombie> zombies; //initalize the zombies
 vector<pill> pills; //initalize pills
 vector<Item> holes; //initalize holes
 vector<Item> walls; //initalize random walls
+vector<portal> portals; //initalize portal
 TTF_Font *font;
 char grid[SIZEY][SIZEX]; //grid for display
 int distancemap[SIZEY][SIZEX];
@@ -189,7 +198,7 @@ int main()
     void setuptext();
     void gameloop();
     string mainloop(int& levelSelection, SDL_Surface *image, TTF_Font * font);
-    void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, vector<Item>& holes, vector<pill>& pills, vector<Item>& walls);
+    void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, vector<Item>& holes, vector<pill>& pills, vector<Item>& walls, vector<portal>& portals);
     //These are all the functions we call in our main body of code, they all pass different paramters
     setupdisplay(); // setup screen
     setuptext(); // text system
@@ -199,7 +208,7 @@ int main()
     player spot2 = {SPOT, 0, 0, mainloop(levelSelection, display, font), 5}; //creates the player based on what level and name they choose
     spot2.levelChoice = levelSelection; //this sets the level that is selected in the main loop
     spot = spot2;
-    initialiseGame(grid, spot, zombies, holes, pills, walls); //initialise grid (incl. walls and spot etc)
+    initialiseGame(grid, spot, zombies, holes, pills, walls, portals); //initialise grid (incl. walls and spot etc)
     GetSystemTime(hours, amin, seconds); //gets the current time on the system
     emscripten_set_main_loop((em_callback_func) gameloop, framerate, 0);
 }
@@ -210,7 +219,7 @@ void gameloop()
     bool isCheatKey(const int k);
     int getsize(const vector<pill>& pills);
     void ApplyCheat(const int key, player& spot, vector<zombie>& zombies, vector<pill>& pills);
-    void updateGame(char grid[][SIZEX], player& spot, const int key, string& message, vector<zombie>& zombies, vector<pill>& pills, const vector<Item>& holes, const vector<Item>& walls);
+    void updateGame(char grid[][SIZEX], player& spot, const int key, string& message, vector<zombie>& zombies, vector<pill>& pills, const vector<Item>& holes, const vector<Item>& walls, const vector<portal>& portals);
     void renderGame(const char g[][SIZEX], const string &mess, const player &spot, const int zomlives, const int remaingpills, const int diff, SDL_Surface* display, TTF_Font * font);
     bool haswon(const vector<zombie>& zombies, const player &spot, SDL_Surface* display, TTF_Font * font);
     bool haslost(const player &spot, string & message);
@@ -219,7 +228,7 @@ void gameloop()
     bool ispauseKey(const int k);
     void displayallmoves(const vector<replay> &replayer, SDL_Surface* display, TTF_Font * font);
     void saveboard(vector<replay>& replayer, const char grid[][SIZEX]);
-    void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, vector<Item>& holes, vector<pill>& pills, vector<Item>& walls);
+    void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, vector<Item>& holes, vector<pill>& pills, vector<Item>& walls, vector<portal>& portals);
     int getKeyPress();
     void setpauseloop();
     string message(""); //current message to player
@@ -229,12 +238,12 @@ void gameloop()
     key = getKeyPress(); //read in next keyboard event
     cout << key << endl;
     if (isArrowKey(key)) //if this is an arrow key enter this
-        updateGame(grid, spot, key, message, zombies, pills, holes, walls); //this calls the update game function based on what button pressed
+        updateGame(grid, spot, key, message, zombies, pills, holes, walls, portals); //this calls the update game function based on what button pressed
     else if (isCheatKey(key)) //if its a cheat character enter this
     {
         spot.hascheated = true; //makes it so the player has cheated, so score isnt saved
         ApplyCheat(key, spot, zombies, pills); //calls the function to actually apply the cheat
-        updateGame(grid, spot, key, message, zombies, pills, holes, walls); //calls the function to update the game
+        updateGame(grid, spot, key, message, zombies, pills, holes, walls, portals); //calls the function to update the game
     }
     else if (isreplayKey(key)) //if its the replay key
         displayallmoves(replayer, display, font); //replays all moves up till the point pressed
@@ -256,7 +265,7 @@ void gameloop()
             cout << "compleated all 3 levels" << endl;
             emscripten_cancel_main_loop();
         }
-        initialiseGame(grid, spot, zombies, holes, pills, walls);
+        initialiseGame(grid, spot, zombies, holes, pills, walls, portals);
     }
 }
 
@@ -329,22 +338,22 @@ string mainloop(int& levelSelection, SDL_Surface *image, TTF_Font *font)
     return name;
 }
 
-void updateGame(char grid[][SIZEX], player& spot, const int key, string& message, vector<zombie>& zombies, vector<pill>& pills, const vector<Item>& holes, const vector<Item>& walls)
+void updateGame(char grid[][SIZEX], player& spot, const int key, string& message, vector<zombie>& zombies, vector<pill>& pills, const vector<Item>& holes, const vector<Item>& walls, const vector<portal>& portals)
 {
     void Pathfind(const char grid[][SIZEX], const Item & spot);
-    void updateSpotCoordinates(const char g[][SIZEX], player& spot, const int key, string& mess, vector<zombie>& zombies, vector<pill>& pills); // player move
-    void updatezombieCoordinates(const char g[][SIZEX], player& spot, vector<zombie>& zombies); // zombies move
-    void updateGrid(char grid[][SIZEX], const Item &spot, const vector<zombie> &zombies, const vector<pill> &pills, const vector<Item> &holes, const vector<Item> &walls);
+    void updateSpotCoordinates(const char g[][SIZEX], player& spot, const int key, string& mess, vector<zombie>& zombies, vector<pill>& pills, const vector<portal>& portals); // player move
+    void updatezombieCoordinates(const char g[][SIZEX], player& spot, vector<zombie>& zombies, const vector<portal>& portals); // zombies move
+    void updateGrid(char grid[][SIZEX], const Item &spot, const vector<zombie> &zombies, const vector<pill> &pills, const vector<Item> &holes, const vector<Item> &walls, const vector<portal>& portals);
     void Pathfind(const char grid[][SIZEX], const Item & spot);
     Pathfind(grid, spot.baseobject);
-    updateSpotCoordinates(grid, spot, key, message, zombies, pills); //update spot coordinates
+    updateSpotCoordinates(grid, spot, key, message, zombies, pills, portals); //update spot coordinates
     //according to key
-    updatezombieCoordinates(grid, spot, zombies); // zombies move
+    updatezombieCoordinates(grid, spot, zombies, portals); // zombies move
     // this can be just passed a vector<item> made from the .baseobject of all objects needing to be renderd
-    updateGrid(grid, spot.baseobject, zombies, pills, holes, walls); //update grid information
+    updateGrid(grid, spot.baseobject, zombies, pills, holes, walls, portals); //update grid information
 }
 
-void updatezombieCoordinates(const char g[][SIZEX], player& spot, vector<zombie>& zombies) // zombies move
+void updatezombieCoordinates(const char g[][SIZEX], player& spot, vector<zombie>& zombies, const vector<portal>& portals) // zombies move
 {
     void getrandommove(const player&, int& x, int& y);
     void retreat(const player&, int& x, int& y);
@@ -364,9 +373,9 @@ void updatezombieCoordinates(const char g[][SIZEX], player& spot, vector<zombie>
                     getrandommove(spot, dx, dy); //gets the move as regular
             else
                 if (pathfinding)
-                findexitmove(dx, dy);
-            else
-                retreat(spot, dx, dy); //moves the zombie away from spot if is protected
+                    findexitmove(dx, dy);
+                else
+                    retreat(spot, dx, dy); //moves the zombie away from spot if is protected
             const int targetY(zombies[i].baseobject.y + dy);
             const int targetX(zombies[i].baseobject.x + dx);
             //gets the target x and y
@@ -394,6 +403,16 @@ void updatezombieCoordinates(const char g[][SIZEX], player& spot, vector<zombie>
                             item.baseobject.x = item.startx;
                             item.baseobject.y = item.starty;
                             //determines what zombie was hit and respawns it
+                        }
+                    }
+                    break;
+                case PORTAL:
+                    for (const portal& item : portals)
+                    {
+                        if (item.baseobject.x == targetX && item.baseobject.y == targetY)
+                        {
+                            zombies[i].baseobject.y = item.to->baseobject.y; //go in that Y direction
+                            zombies[i].baseobject.x = item.to->baseobject.x; //go in that X direction
                         }
                     }
                     break;
@@ -473,32 +492,32 @@ void retreat(const player &spot, int& x, int& y)
 void findbestmove(int& x, int& y)
 {
     if (distancemap[y][x] < distancemap[y][x - 1])
-        x--;
+        x = -1;
     else if (distancemap[y][x] < distancemap[y][x + 1])
-        x++;
+        x = 1;
     else if (distancemap[y][x] < distancemap[y - 1][x])
-        y--;
+        y = -1;
     else if (distancemap[y][x] < distancemap[y + 1][x])
-        y++;
+        y = 1;
 }
 
 void findexitmove(int& x, int& y)
 {
     if (distancemap[y][x] > distancemap[y][x - 1])
-        x--;
+        x = -1;
     else if (distancemap[y][x] > distancemap[y][x + 1])
-        x++;
+        x = 1;
     else if (distancemap[y][x] > distancemap[y - 1][x])
-        y--;
+        y = -1;
     else if (distancemap[y][x] > distancemap[y + 1][x])
-        y++;
+        y = 1;
 }
 
 //---------------------------------------------------------------------------
 //----- initialise game state
 //---------------------------------------------------------------------------
 
-void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, vector<Item>& holes, vector<pill>& pills, vector<Item>& walls)
+void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, vector<Item>& holes, vector<pill>& pills, vector<Item>& walls, vector<portal>& portals)
 { //initialise grid and place spot in middle
     void setGrid(char[][SIZEX]);
     void setSpotInitialCoordinates(char grid[][SIZEX], Item & spot);
@@ -508,6 +527,7 @@ void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, v
     void placepillonmap(char grid[][SIZEX], vector<pill>& pills, const player & spot);
     void placeholeonmap(char grid[][SIZEX], vector<Item>& holes, const player & spot);
     void placezombiesonmap(char grid[][SIZEX], vector<zombie>& zombies);
+    void placeportalonmap(char grid[][SIZEX], vector<portal>& portals);
     //all functions used to set up game
 
     Seed(); //seed reandom number generator
@@ -534,6 +554,7 @@ void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, v
     //this variates the amount of lives based on level chosen
     placepillonmap(grid, pills, spot); // place pills on the map
     placeholeonmap(grid, holes, spot); // place holes on the map
+    placeportalonmap(grid, portals);
 }
 
 void getLevel(SDL_Surface *image, TTF_Font *font)
@@ -546,6 +567,27 @@ void getLevel(SDL_Surface *image, TTF_Font *font)
     SDL_BlitSurface(text, NULL, image, NULL); // add text to framebuffer
     SDL_FreeSurface(text); // prevent mem leak
     //prints out this message
+}
+
+void placeportalonmap(char grid[][SIZEX], vector<portal>& portals)
+{
+    bool ocupiedpeace(const char gd[][SIZEX], const int x, const int y);
+    for (int i = 0; i < portalsonmap; i++) // places holes on the map
+    {
+        int x = Random(SIZEX - 2); //original coordinates
+        int y = Random(SIZEY - 2); //
+        while (ocupiedpeace(grid, x, y)) //checks if the space is free
+        {
+            Seed();
+            x = Random(SIZEX - 2); // get new coordinates
+            y = Random(SIZEY - 2); //
+        }
+        portal port = {PORTAL, x, y};
+        grid[y][x] = PORTAL; //places hole on the grid
+        portals.push_back(port); //adds hole to the list
+    }
+    for (int i = 0; i < portalsonmap-1; i++) // places holes on the map
+        portals[i].to = &portals[i+1];
 }
 
 void placepillonmap(char grid[][SIZEX], vector<pill>& pills, const player& spot)
@@ -716,7 +758,7 @@ void placeSpot(char gr[][SIZEX], const Item &spot)
     gr[spot.y][spot.x] = spot.symbol;
 }
 
-void updateGrid(char grid[][SIZEX], const Item &spot, const vector<zombie> &zombies, const vector<pill> &pills, const vector<Item> &holes, const vector<Item> &walls)
+void updateGrid(char grid[][SIZEX], const Item &spot, const vector<zombie> &zombies, const vector<pill> &pills, const vector<Item> &holes, const vector<Item> &walls, const vector<portal> &portals)
 {
     void setGrid(char[][SIZEX]);
     void placewallonmap(char g[][SIZEX]);
@@ -724,6 +766,7 @@ void updateGrid(char grid[][SIZEX], const Item &spot, const vector<zombie> &zomb
     void placezombies(char g[][SIZEX], const vector<zombie> &zombies);
     void placepill(char g[][SIZEX], const vector<pill> &pills);
     void placeitem(char g[][SIZEX], const vector<Item> &holes);
+    void placeportal(char g[][SIZEX], const vector<portal> &portals);
     //all functions needed
 
     setGrid(grid); //reset empty grid
@@ -734,7 +777,14 @@ void updateGrid(char grid[][SIZEX], const Item &spot, const vector<zombie> &zomb
     placezombies(grid, zombies); //set zombies on map
     placepill(grid, pills); //set pills on map
     placeitem(grid, holes); // set the holes on the grid
+    placeportal(grid, portals); // place the portals
     placeSpot(grid, spot); //set spot in grid
+}
+
+void placeportal(char g[][SIZEX], const vector<portal> &portals)
+{
+    for (const portal& it : portals)
+        g[it.baseobject.y][it.baseobject.x] = it.baseobject.symbol;
 }
 
 void placepill(char g[][SIZEX], const vector<pill> &pills)
@@ -757,7 +807,7 @@ void placezombies(char g[][SIZEX], const vector<zombie> &zombies)
             g[item.baseobject.y][item.baseobject.x] = item.baseobject.symbol;
 }
 
-void updateSpotCoordinates(const char g[][SIZEX], player& sp, const int key, string& mess, vector<zombie>& zombies, vector<pill>& pills)
+void updateSpotCoordinates(const char g[][SIZEX], player& sp, const int key, string& mess, vector<zombie>& zombies, vector<pill>& pills, const vector<portal>& portals)
 {
     void setKeyDirection(const int k, int& dx, int& dy);
 
@@ -814,6 +864,15 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, const int key, str
             sp.lives--;
             if (sp.isProtected)
                 sp.protectedCount--;
+            break;
+        case PORTAL:
+            for (const portal& it : portals)
+            {
+                if (sp.baseobject.x == it.baseobject.x && sp.baseobject.y == it.baseobject.y)
+                {
+                    
+                }
+            }
             break;
         case PILL:
             sp.baseobject.y += dy; //go in that Y direction
@@ -1049,6 +1108,9 @@ void paintGridimages(const char g[][SIZEX], SDL_Surface *image)
                         break;
                     case PILL:
                         DrawImage(image, "pill.png", xlocation, ylocation);
+                        break;
+                    case PORTAL:
+                        DrawImage(image, "portal.png", xlocation, ylocation);
                         break;
                     case SPOT:
                         DrawImage(image, "player.png", xlocation, ylocation);
@@ -1341,14 +1403,6 @@ extern "C"
 
     EMSCRIPTEN_KEEPALIVE void restart()
     {
-        /*SIZEX = EM_ASM_INT_V(
-        {
-            return document.getElementById('sizex').value;
-        }); // get board size from html 
-        SIZEY = EM_ASM_INT_V(
-        {
-            return document.getElementById('sizey').value;
-        });*/
         randomwalls = EM_ASM_INT_V(
         {
             return document.getElementById('walls').value;

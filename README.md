@@ -168,9 +168,9 @@ current progress
 # building with emscriptem
 ## debug
 ```
-emcc 4374_Task1c_emscripten.cpp -o project.js -g4 --preload-file hole.png --preload-file pill.png --preload-file player.png --preload-file wall.png --preload-file zombie.png
+emcc 4374_Task1c_emscripten.cpp -o project.js -g4 --preload-file hole.png --preload-file pill.png --preload-file player.png --preload-file wall.png --preload-file zombie.png --preload-file portal.png
 ```
 ## release
 ```
-emcc 4374_Task1c_emscripten.cpp -o project.js -O2 --preload-file hole.png --preload-file pill.png --preload-file player.png --preload-file wall.png --preload-file zombie.png
+emcc 4374_Task1c_emscripten.cpp -o project.js -O2 --preload-file hole.png --preload-file pill.png --preload-file player.png --preload-file wall.png --preload-file zombie.png --preload-file portal.png
 ```
