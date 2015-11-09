@@ -18,10 +18,10 @@ const int screenhight(600);
 const int screenwith(250);
 const int pixels(32);
 const int framerate(0); // 0 = dynamic
-const int fontsize(32); // size of renderd font
+const int fontsize(32); // size of font
 const int imagesize(10); // size of image block
 int randomwalls(23); // number of random wall blocks to place
-const bool pathfinding(true); // is pathfinding enambled
+const bool pathfinding(true); // is pathfinding enabled
 const int portalsonmap(5);
 
 const char SPOT('@'); //spot
@@ -29,7 +29,7 @@ const char TUNNEL(' '); //open space
 const char WALL('#'); //border
 const char HOLE('O'); //hole
 const char ZOMBIE('Z'); //zombie
-const char PILL('.'); //pill (used in basic version insted of structure)
+const char PILL('.'); //pill 
 const char PORTAL('&'); // portal 
 
 const int UP(97); //up arrow
@@ -226,17 +226,18 @@ void gameloop()
     bool wantToQuit(const int k, string & message);
     bool isreplayKey(const int k);
     bool ispauseKey(const int k);
-    void displayallmoves(const vector<replay> &replayer, SDL_Surface* display, TTF_Font * font);
+    void displayallmoves();
     void saveboard(vector<replay>& replayer, const char grid[][SIZEX]);
     void initialiseGame(char grid[][SIZEX], player& spot, vector<zombie>& zombies, vector<Item>& holes, vector<pill>& pills, vector<Item>& walls, vector<portal>& portals);
     int getKeyPress();
     void setpauseloop();
     string message(""); //current message to player
     int key(' '); //declares the input key
-    saveboard(replayer, grid); //this adds the current state of the grid to the replay structure
     message = "                    "; //reset message
     key = getKeyPress(); //read in next keyboard event
-    cout << key << endl;
+    //cout << key << endl;
+    if (isArrowKey(key) || isCheatKey(key))
+         saveboard(replayer, grid); //this adds the current state of the grid to the replay structure
     if (isArrowKey(key)) //if this is an arrow key enter this
         updateGame(grid, spot, key, message, zombies, pills, holes, walls, portals); //this calls the update game function based on what button pressed
     else if (isCheatKey(key)) //if its a cheat character enter this
@@ -246,7 +247,10 @@ void gameloop()
         updateGame(grid, spot, key, message, zombies, pills, holes, walls, portals); //calls the function to update the game
     }
     else if (isreplayKey(key)) //if its the replay key
-        displayallmoves(replayer, display, font); //replays all moves up till the point pressed
+    {
+        emscripten_cancel_main_loop();
+        emscripten_set_main_loop((em_callback_func) displayallmoves, framerate, 0); //replays all moves up till the point pressed
+    }
     else if (ispauseKey(key))
         setpauseloop();
     int nhours, nmin, nseconds; //declares the time to track
@@ -279,10 +283,10 @@ bool ispauseKey(const int key)
     return (toupper(key) == PAUSE); //returns true if pause key
 }
 
-void displayallmoves(const vector<replay> &replayer, SDL_Surface *image, TTF_Font *font)
+void displayallmoves()
 {
     void paintGrid(const char g[][SIZEX], SDL_Surface *image, TTF_Font * font);
-    int getKeyPress(SDL_Surface *image, TTF_Font * font);
+    int getKeyPress();
     void showDescription(SDL_Surface *image, TTF_Font * font);
     void showTitle(SDL_Surface *image, TTF_Font * font);
     void showOptions(SDL_Surface *image, TTF_Font * font);
@@ -291,21 +295,32 @@ void displayallmoves(const vector<replay> &replayer, SDL_Surface *image, TTF_Fon
     void showMessage(const string&, SDL_Surface *image, TTF_Font * font);
     //all the menu functions defined here
     int index = 0;
+    SDL_FillRect(display, NULL, SDL_MapRGB(display->format, 0, 0, 0));
     //sets up the index an key
     //Clrscr();										//clears the screen
-    while (index != replayer.size()) //whilst there is still moves to show run this loop
+    int key(' '); //declares the input key
+    if (index != replayer.size()) //whilst there is still moves to show run this loop
     {
-        showDescription(image, font);
-        showTitle(image, font);
-        showOptions(image, font);
-        showmenu(image, font);
-        showtime(image, font);
+        key = getKeyPress(); //read in next keyboard event
+        showDescription(display, font);
+        showTitle(display, font);
+        showOptions(display, font);
+        showmenu(display, font);
+        showtime(display, font);
         //call all display functions
         stringstream a; //creates a stringstream to display the amount of moves
         a << "displaying move " << index << " of " << replayer.size();
-        showMessage(a.str(), image, font); // displays the above message;
-        paintGrid(replayer[index].grid, image, font); //this calls the paint grid function with the grid at that point in the list
-        index++; //increments index
+        showMessage(a.str(), display, font); // displays the above message;
+        paintGrid(replayer[index].grid, display, font); //this calls the paint grid function with the grid at that point in the list
+        if (key == RIGHT || key == DOWN)
+            index++; //increments index
+        else if (key == LEFT || key == UP)
+            index--;
+    }
+    else
+    {
+        emscripten_cancel_main_loop();
+        emscripten_set_main_loop((em_callback_func) gameloop, framerate, 0);
     }
     //Clrscr();
 }
@@ -411,8 +426,8 @@ void updatezombieCoordinates(const char g[][SIZEX], player& spot, vector<zombie>
                     {
                         if (item.baseobject.x == targetX && item.baseobject.y == targetY)
                         {
-                            zombies[i].baseobject.y = item.to->baseobject.y; //go in that Y direction
-                            zombies[i].baseobject.x = item.to->baseobject.x; //go in that X direction
+                            zombies[i].baseobject.y = item.to->baseobject.y + dy; //go in that Y direction
+                            zombies[i].baseobject.x = item.to->baseobject.x + dx; //go in that X direction
                         }
                     }
                     break;
@@ -491,26 +506,50 @@ void retreat(const player &spot, int& x, int& y)
 
 void findbestmove(int& x, int& y)
 {
-    if (distancemap[y][x] < distancemap[y][x - 1])
+    if (distancemap[y][x] <= distancemap[y][x - 1])
+    {
+        y = 0;
         x = -1;
-    else if (distancemap[y][x] < distancemap[y][x + 1])
+    }
+    else if (distancemap[y][x] <= distancemap[y][x + 1])
+    {
+        y = 0;
         x = 1;
-    else if (distancemap[y][x] < distancemap[y - 1][x])
+    }
+    else if (distancemap[y][x] <= distancemap[y - 1][x])
+    {
         y = -1;
-    else if (distancemap[y][x] < distancemap[y + 1][x])
+        x = 0;
+    }
+    else if (distancemap[y][x] <= distancemap[y + 1][x])
+    {
         y = 1;
+        x = 0;
+    }
 }
 
 void findexitmove(int& x, int& y)
 {
-    if (distancemap[y][x] > distancemap[y][x - 1])
+    if (distancemap[y][x] >= distancemap[y][x - 1])
+    {
         x = -1;
-    else if (distancemap[y][x] > distancemap[y][x + 1])
+        y = 0;
+    }
+    else if (distancemap[y][x] >= distancemap[y][x + 1])
+    {
         x = 1;
-    else if (distancemap[y][x] > distancemap[y - 1][x])
+        y = 0;
+    }
+    else if (distancemap[y][x] >= distancemap[y - 1][x])
+    {
+        x = 0;
         y = -1;
-    else if (distancemap[y][x] > distancemap[y + 1][x])
+    }
+    else if (distancemap[y][x] >= distancemap[y + 1][x])
+    {
+        x = 0;
         y = 1;
+    }
 }
 
 //---------------------------------------------------------------------------
@@ -588,6 +627,7 @@ void placeportalonmap(char grid[][SIZEX], vector<portal>& portals)
     }
     for (int i = 0; i < portalsonmap-1; i++) // places holes on the map
         portals[i].to = &portals[i+1];
+    portals[portalsonmap].to = &portals[0];
 }
 
 void placepillonmap(char grid[][SIZEX], vector<pill>& pills, const player& spot)
@@ -866,11 +906,15 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, const int key, str
                 sp.protectedCount--;
             break;
         case PORTAL:
+            sp.baseobject.y += dy; //go in that Y direction
+            sp.baseobject.x += dx; //go in that X direction
             for (const portal& it : portals)
             {
                 if (sp.baseobject.x == it.baseobject.x && sp.baseobject.y == it.baseobject.y)
                 {
-                    
+                    cout << "teliporting to " << it.to->baseobject.y << " " << it.to->baseobject.x<< endl;
+                    sp.baseobject.y = it.to->baseobject.y + dy;
+                    sp.baseobject.x = it.to->baseobject.x + dx;
                 }
             }
             break;
@@ -950,7 +994,7 @@ bool isCheatKey(const int key)
 
 bool wantToQuit(const int key, string& message)
 {
-    cout << "exit check" << endl;
+    //cout << "exit check" << endl;
     bool exit = (toupper(key) == QUIT);
     if (exit)
         cout << "you have quit" << endl;
@@ -960,7 +1004,7 @@ bool wantToQuit(const int key, string& message)
 
 bool haswon(const vector<zombie>& zombies, const player& spot, SDL_Surface *image, TTF_Font *font)
 {
-    cout << "has won check" << endl;
+    //cout << "has won check" << endl;
     for (const zombie& zom : zombies)
         if (zom.alive == true)
             return false;
@@ -984,7 +1028,7 @@ bool haswon(const vector<zombie>& zombies, const player& spot, SDL_Surface *imag
 
 bool haslost(const player &spot, string& message)
 {
-    cout << "has lost check" << endl;
+    //cout << "has lost check" << endl;
     if (spot.lives == 0)
     {
         message = "you have no lives";
