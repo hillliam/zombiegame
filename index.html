@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Zombiegame - Emscripten-Generated Code</title>
+    <title>Emscripten-Generated Code</title>
     <style>
       body {
         font-family: arial;
@@ -98,7 +98,6 @@
     </style>
   </head>
   <body>
-  <div class="title" id="title"><h1>Zombiegame</div>
     <a href="http://emscripten.org">
       <?xml version="1.0" encoding="UTF-8" standalone="no"?><svg
    version="1.1"
@@ -1196,11 +1195,14 @@
     <div class="emscripten" id="status">Downloading...</div>
 
 <span id='controls'>
+  <span>number of walls:<input type="textbox" id="walls" default="23" value="23"></span>
+  <span>name:<input type="textbox" id="name" default="bob" value="bob"></span>
   <span><input type="checkbox" id="resize">Resize canvas</span>
   <span><input type="checkbox" id="pointerLock" checked>Lock/hide mouse pointer &nbsp;&nbsp;&nbsp;</span>
   <span><input type="button" value="Fullscreen" onclick="Module.requestFullScreen(document.getElementById('pointerLock').checked, 
                                                                             document.getElementById('resize').checked)">
   </span>
+  <span><input type="button" value="restart" onclick="_restart();"></span>
 </span>
 
     <div class="emscripten">
