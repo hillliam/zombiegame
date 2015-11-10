@@ -361,6 +361,9 @@ void updateGame(char grid[][SIZEX], player& spot, const int key, string& message
     void updatezombieCoordinates(const char g[][SIZEX], player& spot, vector<zombie>& zombies, const vector<portal>& portals); // zombies move
     void updateGrid(char grid[][SIZEX], const Item &spot, const vector<zombie> &zombies, const vector<pill> &pills, const vector<Item> &holes, const vector<Item> &walls, const vector<portal>& portals);
     void Pathfind(const char grid[][SIZEX], const Item & spot);
+    for (int row(0); row < SIZEY; ++row) //for each row (vertically)
+        for (int col(0); col < SIZEX; ++col) //for each column (horizontally)
+            distancemap[row][col] = 10000;
     Pathfind(grid, spot.baseobject);
     updateSpotCoordinates(grid, spot, key, message, zombies, pills, portals); //update spot coordinates
     //according to key
@@ -1043,7 +1046,7 @@ bool haslost(const player &spot, string& message)
 
 bool ocupiedpeace(const char gd[][SIZEX], const int x, const int y)
 {
-    if (gd[y][x] == PILL || gd[y][x] == HOLE || gd[y][x] == ZOMBIE || gd[y][x] == SPOT || gd[y][x] == WALL)
+    if (gd[y][x] == PILL || gd[y][x] == HOLE || gd[y][x] == ZOMBIE || gd[y][x] == SPOT || gd[y][x] == WALL || gd[y][x] == PORTAL)
         return true;
     else
         return false;
@@ -1387,23 +1390,23 @@ void Pathfind(const char grid[][SIZEX], const Item &spot)
     while (true)
     {
         bool madeProgress = false;
-        for (int i = 0; i < SIZEY; i++)
+        for (int row(0); row < SIZEY; ++row) //for each row (vertically)
         {
-            for (int j = 0; j < SIZEX; j++)
+            for (int col(0); col < SIZEX; ++col) //for each column (horizontally)
             {
-                int x = i;
-                int y = j;
+                int x = col;
+                int y = row;
                 int passHere = distancemap[y][x];
                 for (int a = 1; a < 5; a++)
                 {
                     int newx = getmovesx(x, a);
                     int newy = getmovesy(y, a);
-                    if (ocupiedpeace(grid, newx, newy))
+                    if (!ocupiedpeace(grid, newx, newy))
                     {
                         int newPass = passHere + 1;
-                        if (distancemap[newx][newy] > newPass)
+                        if (distancemap[newy][newx] > newPass)
                         {
-                            distancemap[newx][newy] = newPass;
+                            distancemap[newy][newx] = newPass;
                             madeProgress = true;
                         }
                     }
