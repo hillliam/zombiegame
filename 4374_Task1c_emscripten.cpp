@@ -22,6 +22,7 @@ const int fontsize(32); // size of font
 const int imagesize(10); // size of image block
 int randomwalls(23); // number of random wall blocks to place
 const bool pathfinding(true); // is pathfinding enabled
+bool replaying(false);
 const int portalsonmap(5);
 
 const char SPOT('@'); //spot
@@ -236,7 +237,7 @@ void gameloop()
     message = "                    "; //reset message
     key = getKeyPress(); //read in next keyboard event
     //cout << key << endl;
-    if (isArrowKey(key) || isCheatKey(key))
+    if ((isArrowKey(key) || isCheatKey(key)) && replaying)
          saveboard(replayer, grid); //this adds the current state of the grid to the replay structure
     if (isArrowKey(key)) //if this is an arrow key enter this
         updateGame(grid, spot, key, message, zombies, pills, holes, walls, portals); //this calls the update game function based on what button pressed
@@ -246,7 +247,7 @@ void gameloop()
         ApplyCheat(key, spot, zombies, pills); //calls the function to actually apply the cheat
         updateGame(grid, spot, key, message, zombies, pills, holes, walls, portals); //calls the function to update the game
     }
-    else if (isreplayKey(key)) //if its the replay key
+    else if (isreplayKey(key) && replaying) //if its the replay key
     {
         emscripten_cancel_main_loop();
         emscripten_set_main_loop((em_callback_func) displayallmoves, framerate, 0); //replays all moves up till the point pressed
@@ -1178,6 +1179,7 @@ void showrempill(const int pils, SDL_Surface *image, TTF_Font *font)
 void showDescription(SDL_Surface *image, TTF_Font *font)
 {// displays a description of the game during the main menu
     void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect);
+    void DrawImage(SDL_Surface *surface, const char *image_path, const int x_pos, const int y_pos);
     const SDL_Color text_color = {255, 0, 255}; // R,G,B
     const SDL_Color backgroundColor = {0, 0, 0};
     const SDL_Rect dstrect = {400, 20, 0, 0};
@@ -1185,11 +1187,16 @@ void showDescription(SDL_Surface *image, TTF_Font *font)
     const SDL_Rect dstrect2 = {400, 40, 0, 0};
     const SDL_Rect dstrect3 = {400, 50, 0, 0};
     const SDL_Rect dstrect4 = {400, 60, 0, 0};
+    const SDL_Rect dstrect5 = {400, 70, 0, 0};
     drawtext("This is a game where you must escape", image, font, text_color, backgroundColor, dstrect);
     drawtext("the zombies and survive. Pills mean", image, font, text_color, backgroundColor, dstrect1);
     drawtext("a life is gained.", image, font, text_color, backgroundColor, dstrect2);
-    drawtext("Contact with a hole(0) or zombie(Z)", image, font, text_color, backgroundColor, dstrect3);
+    drawtext("Contact with a hole(    ) or zombie(    )", image, font, text_color, backgroundColor, dstrect3);
     drawtext("means a life is lost ", image, font, text_color, backgroundColor, dstrect4);
+    drawtext("Contact with a portal(    ) moves you", image, font, text_color, backgroundColor, dstrect5);
+    DrawImage(image, "zombie.png", 563, 50);
+    DrawImage(image, "hole.png", 495, 50);
+    DrawImage(image, "portal.png", 500, 70);
 }
 
 void showTitle(SDL_Surface *image, TTF_Font *font)
@@ -1233,9 +1240,9 @@ void showOptions(SDL_Surface *image, TTF_Font *font)
     void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect);
     const SDL_Color text_color = {255, 0, 255}; // R,G,B
     const SDL_Color backgroundColor = {0, 0, 255};
-    const SDL_Rect dstrect1 = {400, 70, 0, 0};
+    const SDL_Rect dstrect1 = {400, 80, 0, 0};
     const SDL_Rect dstrect2 = {400, 190, 0, 0};
-    drawtext("TO MOVE USE KEYBOARD ARROWS  ", image, font, text_color, backgroundColor, dstrect1);
+    drawtext("TO MOVE USE W A S D keys  ", image, font, text_color, backgroundColor, dstrect1);
     drawtext("TO QUIT ENTER 'Q'   ", image, font, text_color, backgroundColor, dstrect2);
 }
 
@@ -1444,13 +1451,22 @@ int getmovesy(const int starty, const int direction)
 
 extern "C"
 {
-
+    EMSCRIPTEN_KEEPALIVE void stop()
+    {
+        emscripten_cancel_main_loop();
+    }
+    
     EMSCRIPTEN_KEEPALIVE void restart()
     {
         randomwalls = EM_ASM_INT_V(
         {
             return document.getElementById('walls').value;
         });
+        replaying = EM_ASM_INT_V(
+        {
+            return document.getElementById('resize').checked; //1 checked 0 unchecked
+        });
+        cout << replaying<< endl;
         emscripten_cancel_main_loop();
         main();
     }
