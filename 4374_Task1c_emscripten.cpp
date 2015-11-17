@@ -14,8 +14,8 @@ using namespace std;
 const int SIZEY(39); //vertical dimension
 const int SIZEX(22); //horizontal dimension
 
-const int screenhight(600);
-const int screenwith(250);
+const int screenhight(500);
+const int screenwith(600);
 const int pixels(32);
 const int framerate(0); // 0 = dynamic
 const int fontsize(32); // size of font
@@ -23,7 +23,7 @@ const int imagesize(10); // size of image block
 int randomwalls(23); // number of random wall blocks to place
 const bool pathfinding(true); // is pathfinding enabled
 bool replaying(false);
-const int portalsonmap(5);
+int portalsonmap(5);
 
 const char SPOT('@'); //spot
 const char TUNNEL(' '); //open space
@@ -204,8 +204,13 @@ int main()
     setupdisplay(); // setup screen
     setuptext(); // text system
     for (int row(0); row < SIZEY; ++row) //for each row (vertically)
+    {
         for (int col(0); col < SIZEX; ++col) //for each column (horizontally)
+        {
+            grid[row][col] = TUNNEL;
             distancemap[row][col] = 10000;
+        }
+    }
     player spot2 = {SPOT, 0, 0, mainloop(levelSelection, display, font), 5}; //creates the player based on what level and name they choose
     spot2.levelChoice = levelSelection; //this sets the level that is selected in the main loop
     spot = spot2;
@@ -1070,10 +1075,12 @@ void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, 
     void showMessage(const string&, SDL_Surface *text, TTF_Font * font);
     void showname(const string &name, SDL_Surface *text, TTF_Font * font);
     void showdiff(const int diff, SDL_Surface *text, TTF_Font * font);
-
+    void paintdistance(SDL_Surface *image, TTF_Font *font);
+    
     SDL_FillRect(image, NULL, SDL_MapRGB(image->format, 0, 0, 0));
     //display grid contents
     //paintGrid(gd, image, font);
+    paintdistance(image, font);
     paintGridimages(gd, image);
     //display game title
     showTitle(image, font);
@@ -1336,7 +1343,7 @@ bool setupdisplay()
         return false;
     }
     // Set the video mode
-    display = SDL_SetVideoMode(screenhight, screenwith, pixels, SDL_SWSURFACE);
+    display = SDL_SetVideoMode(screenwith, screenhight, pixels, SDL_SWSURFACE);
     if (display == NULL)
     {
         cout << "SDL_SetVideoMode() Failed: " <<
@@ -1467,7 +1474,11 @@ extern "C"
         });
         replaying = EM_ASM_INT_V(
         {
-            return document.getElementById('resize').checked; //1 checked 0 unchecked
+            return document.getElementById('moves').checked; //1 checked 0 unchecked
+        });
+        portalsonmap = EM_ASM_INT_V(
+        {
+            return document.getElementById('portals').value;
         });
         cout << replaying<< endl;
         emscripten_cancel_main_loop();
@@ -1493,4 +1504,22 @@ void setpauseloop()
 {
     emscripten_cancel_main_loop();
     emscripten_set_main_loop((em_callback_func) pauseloop, framerate, 0);
+}
+
+void paintdistance(SDL_Surface *image, TTF_Font *font)
+{
+    void drawtext(const char* string, SDL_Surface *image, TTF_Font *font, const SDL_Color& text_color, const SDL_Color& backgroundColor, SDL_Rect dstrect);
+    SDL_Color text_color = {255, 255, 255};
+    const SDL_Color backgroundColor = {0, 0, 255};
+    for (int row(0); row < SIZEY; ++row) //for each row (vertically)
+    {
+        for (int col(0); col < SIZEX; ++col) //for each column (horizontally)
+        {
+                stringstream a;
+                //adds all the pills and their colours
+                SDL_Rect dstrect = {((row * 10) + 0), ((col * 10) + 250), 0, 0};
+                a << distancemap[row][col]; //output cell content
+                drawtext(a.str().c_str(), image, font, text_color, backgroundColor, dstrect);
+        } //end of col-loop
+    } //end of row-loop
 }
