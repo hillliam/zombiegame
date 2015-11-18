@@ -244,7 +244,7 @@ void gameloop()
     key = getKeyPress(); //read in next keyboard event
     cout << key << endl;
     if ((isArrowKey(key) || isCheatKey(key)) && replaying)
-         saveboard(replayer, grid); //this adds the current state of the grid to the replay structure
+        saveboard(replayer, grid); //this adds the current state of the grid to the replay structure
     if (isArrowKey(key)) //if this is an arrow key enter this
         updateGame(grid, spot, key, message, zombies, pills, holes, walls, portals); //this calls the update game function based on what button pressed
     else if (isCheatKey(key)) //if its a cheat character enter this
@@ -354,7 +354,7 @@ void saveboard(vector<replay>& replayer, const char grid[][SIZEX])
 string mainloop(int& levelSelection, SDL_Surface *image, TTF_Font *font)
 {
     //all the functions going to be used in this part of the code
-    string name = "bob";//emscripten_run_script_string("return document.getElementById('name').value;");// get name from html
+    string name = "bob"; //emscripten_run_script_string("return document.getElementById('name').value;");// get name from html
     char key = ' ';
     levelSelection = 1;
     return name;
@@ -382,8 +382,8 @@ void updatezombieCoordinates(const char g[][SIZEX], player& spot, vector<zombie>
 {
     void getrandommove(const player&, int& x, int& y);
     void retreat(const player&, int& x, int& y);
-    void findbestmove(int& x, int& y);
-    void findexitmove(int& x, int& y);
+    void findbestmove(const char g[][SIZEX], const vector<portal>& portals, int& x, int& y);
+    void findexitmove(const char g[][SIZEX], const vector<portal>& portals, int& x, int& y);
     //4 functions used
     for (int i = 0; i < zombies.size(); i++)
     {
@@ -393,14 +393,14 @@ void updatezombieCoordinates(const char g[][SIZEX], player& spot, vector<zombie>
             int dx(zombies[i].baseobject.x), dy(zombies[i].baseobject.y);
             if (!spot.isProtected) //if spot is protected the zombies move differently
                 if (pathfinding)
-                    findbestmove(dx, dy);
+                    findbestmove(g, portals, dx, dy);
                 else
                     getrandommove(spot, dx, dy); //gets the move as regular
             else
                 if (pathfinding)
-                    findexitmove(dx, dy);
-                else
-                    retreat(spot, dx, dy); //moves the zombie away from spot if is protected
+                findexitmove(g, portals, dx, dy);
+            else
+                retreat(spot, dx, dy); //moves the zombie away from spot if is protected
             const int targetY(zombies[i].baseobject.y + dy);
             const int targetX(zombies[i].baseobject.x + dx);
             //gets the target x and y
@@ -514,8 +514,46 @@ void retreat(const player &spot, int& x, int& y)
     //gets the move of the zombie based on where spot is
 }
 
-void findbestmove(int& x, int& y)
+void findbestmove(const char g[][SIZEX], const vector<portal>& portals, int& x, int& y)
 {
+    if (g[y][x - 1] == PORTAL || g[y][x + 1] == PORTAL || g[y - 1][x] == PORTAL || g[y + 1][x] == PORTAL)
+    {
+        for (const portal& item : portals)
+        {
+            if (item.baseobject.x == x - 1 && item.baseobject.y == y)
+            {
+                if (distancemap[y][x] > distancemap[item.to->baseobject.y][item.to->baseobject.x-1])
+                {
+                    y = 0;
+                    x = -1;
+                }
+            }
+            else if (item.baseobject.x == x + 1 && item.baseobject.y == y)
+            {
+                if (distancemap[y][x] > distancemap[item.to->baseobject.y][item.to->baseobject.x+1])
+                {
+                    y = 0;
+                    x = 1;
+                }
+            }
+            else if (item.baseobject.x == x && item.baseobject.y == y - 1)
+            {
+                if (distancemap[y][x] > distancemap[item.to->baseobject.y-1][item.to->baseobject.x])
+                {
+                    y = -1;
+                    x = 0;
+                }
+            }
+            else if (item.baseobject.x == x && item.baseobject.y == y + 1)
+            {
+                if (distancemap[y][x] > distancemap[item.to->baseobject.y+1][item.to->baseobject.x])
+                {
+                    y = 1;
+                    x = 0;
+                }
+            }
+        }
+    }
     if (distancemap[y][x] > distancemap[y][x - 1])
     {
         y = 0;
@@ -538,8 +576,46 @@ void findbestmove(int& x, int& y)
     }
 }
 
-void findexitmove(int& x, int& y)
+void findexitmove(const char g[][SIZEX], const vector<portal>& portals, int& x, int& y)
 {
+    if (g[y][x - 1] == PORTAL || g[y][x + 1] == PORTAL || g[y - 1][x] == PORTAL || g[y + 1][x] == PORTAL)
+    {
+        for (const portal& item : portals)
+        {
+            if (item.baseobject.x == x - 1 && item.baseobject.y == y)
+            {
+                if (distancemap[y][x] < distancemap[item.to->baseobject.y][item.to->baseobject.x-1])
+                {
+                    y = 0;
+                    x = -1;
+                }
+            }
+            else if (item.baseobject.x == x + 1 && item.baseobject.y == y)
+            {
+                if (distancemap[y][x] < distancemap[item.to->baseobject.y][item.to->baseobject.x+1])
+                {
+                    y = 0;
+                    x = 1;
+                }
+            }
+            else if (item.baseobject.x == x && item.baseobject.y == y - 1)
+            {
+                if (distancemap[y][x] < distancemap[item.to->baseobject.y-1][item.to->baseobject.x])
+                {
+                    y = -1;
+                    x = 0;
+                }
+            }
+            else if (item.baseobject.x == x && item.baseobject.y == y + 1)
+            {
+                if (distancemap[y][x] < distancemap[item.to->baseobject.y+1][item.to->baseobject.x])
+                {
+                    y = 1;
+                    x = 0;
+                }
+            }
+        }
+    }
     if (distancemap[y][x] < distancemap[y][x - 1])
     {
         x = -1;
@@ -635,8 +711,8 @@ void placeportalonmap(char grid[][SIZEX], vector<portal>& portals)
         grid[y][x] = PORTAL; //places hole on the grid
         portals.push_back(port); //adds hole to the list
     }
-    for (int i = 0; i < portalsonmap-1; i++) // places holes on the map
-        portals[i].to = &portals[i+1];
+    for (int i = 0; i < portalsonmap - 1; i++) // places holes on the map
+        portals[i].to = &portals[i + 1];
     portals[portalsonmap].to = &portals[0];
 }
 
@@ -922,7 +998,7 @@ void updateSpotCoordinates(const char g[][SIZEX], player& sp, const int key, str
             {
                 if (sp.baseobject.x == it.baseobject.x && sp.baseobject.y == it.baseobject.y)
                 {
-                    cout << "teliporting to " << it.to->baseobject.y << " " << it.to->baseobject.x<< endl;
+                    cout << "teliporting to " << it.to->baseobject.y << " " << it.to->baseobject.x << endl;
                     sp.baseobject.y = it.to->baseobject.y + dy;
                     sp.baseobject.x = it.to->baseobject.x + dx;
                 }
@@ -1076,8 +1152,8 @@ void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, 
     void showMessage(const string&, SDL_Surface *text, TTF_Font * font);
     void showname(const string &name, SDL_Surface *text, TTF_Font * font);
     void showdiff(const int diff, SDL_Surface *text, TTF_Font * font);
-    void paintdistance(SDL_Surface *image, TTF_Font *font);
-    
+    void paintdistance(SDL_Surface *image, TTF_Font * font);
+
     SDL_FillRect(image, NULL, SDL_MapRGB(image->format, 0, 0, 0));
     //display grid contents
     //paintGrid(gd, image, font);
@@ -1472,30 +1548,27 @@ int getmovesy(const int starty, const int direction)
 
 extern "C"
 {
+
     EMSCRIPTEN_KEEPALIVE void stop()
     {
         emscripten_cancel_main_loop();
     }
-    
+
     EMSCRIPTEN_KEEPALIVE void restart()
     {
-        randomwalls = EM_ASM_INT_V(
-        {
-            return document.getElementById('walls').value;
+        randomwalls = EM_ASM_INT_V({
+                                   return document.getElementById('walls').value;
         });
-        replaying = EM_ASM_INT_V(
-        {
-            return document.getElementById('moves').checked; //1 checked 0 unchecked
+        replaying = EM_ASM_INT_V({
+                                 return document.getElementById('moves').checked; //1 checked 0 unchecked
         });
-        portalsonmap = EM_ASM_INT_V(
-        {
-            return document.getElementById('portals').value;
+        portalsonmap = EM_ASM_INT_V({
+                                    return document.getElementById('portals').value;
         });
-        debugpathfinding = EM_ASM_INT_V(
-        {
-            return document.getElementById('grid').checked; //1 checked 0 unchecked
+        debugpathfinding = EM_ASM_INT_V({
+                                        return document.getElementById('grid').checked; //1 checked 0 unchecked
         });
-        cout << replaying<< endl;
+        cout << replaying << endl;
         emscripten_cancel_main_loop();
         main();
     }
@@ -1515,6 +1588,7 @@ extern "C"
         }
     }
 }
+
 void setpauseloop()
 {
     emscripten_cancel_main_loop();
@@ -1530,11 +1604,14 @@ void paintdistance(SDL_Surface *image, TTF_Font *font)
     {
         for (int col(0); col < SIZEX; ++col) //for each column (horizontally)
         {
+            if (distancemap[row][col] != 10000)
+            {
                 stringstream a;
                 //adds all the pills and their colours
                 SDL_Rect dstrect = {((row * 10) + 0), ((col * 10) + 250), 0, 0};
                 a << distancemap[row][col]; //output cell content
                 drawtext(a.str().c_str(), image, font, text_color, backgroundColor, dstrect);
+            }
         } //end of col-loop
     } //end of row-loop
 }
