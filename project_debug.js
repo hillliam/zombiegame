@@ -31,7 +31,7 @@ Module.expectedDataFileDownloads++;
                               ((Module['filePackagePrefixURL'] || '') + REMOTE_PACKAGE_BASE);
   
       var REMOTE_PACKAGE_SIZE = 4781;
-      var PACKAGE_UUID = '1550046c-58e3-4095-abf5-d42329d1aa33';
+      var PACKAGE_UUID = '615f9542-2284-444c-ba45-add173ca6491';
     
     function fetchRemotePackage(packageName, packageSize, callback, errback) {
       var xhr = new XMLHttpRequest();
@@ -11385,47 +11385,47 @@ function __Z12setupdisplayv() {
  sp = STACKTOP;
  STACKTOP = STACKTOP + 32|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
  $4 = sp + 16|0;
- $5 = (_SDL_Init(32)|0); //@line 1341 "4374_Task1c_emscripten.cpp"
- $6 = ($5|0)!=(0); //@line 1341 "4374_Task1c_emscripten.cpp"
+ $5 = (_SDL_Init(32)|0); //@line 1417 "4374_Task1c_emscripten.cpp"
+ $6 = ($5|0)!=(0); //@line 1417 "4374_Task1c_emscripten.cpp"
  if ($6) {
-  $7 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(10504,4664)|0); //@line 1343 "4374_Task1c_emscripten.cpp"
-  $8 = (_SDL_GetError()|0); //@line 1344 "4374_Task1c_emscripten.cpp"
-  $9 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc($7,$8)|0); //@line 1343 "4374_Task1c_emscripten.cpp"
-  $2 = $9; //@line 1344 "4374_Task1c_emscripten.cpp"
-  $3 = 384; //@line 1344 "4374_Task1c_emscripten.cpp"
-  $10 = $2; //@line 1344 "4374_Task1c_emscripten.cpp"
+  $7 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(10504,4664)|0); //@line 1419 "4374_Task1c_emscripten.cpp"
+  $8 = (_SDL_GetError()|0); //@line 1420 "4374_Task1c_emscripten.cpp"
+  $9 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc($7,$8)|0); //@line 1419 "4374_Task1c_emscripten.cpp"
+  $2 = $9; //@line 1420 "4374_Task1c_emscripten.cpp"
+  $3 = 384; //@line 1420 "4374_Task1c_emscripten.cpp"
+  $10 = $2; //@line 1420 "4374_Task1c_emscripten.cpp"
   $11 = $3; //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
   (FUNCTION_TABLE_ii[$11 & 1023]($10)|0); //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
-  $$expand_i1_val = 0; //@line 1345 "4374_Task1c_emscripten.cpp"
-  HEAP8[$4>>0] = $$expand_i1_val; //@line 1345 "4374_Task1c_emscripten.cpp"
-  $$pre_trunc = HEAP8[$4>>0]|0; //@line 1356 "4374_Task1c_emscripten.cpp"
-  $20 = $$pre_trunc&1; //@line 1356 "4374_Task1c_emscripten.cpp"
-  STACKTOP = sp;return ($20|0); //@line 1356 "4374_Task1c_emscripten.cpp"
+  $$expand_i1_val = 0; //@line 1421 "4374_Task1c_emscripten.cpp"
+  HEAP8[$4>>0] = $$expand_i1_val; //@line 1421 "4374_Task1c_emscripten.cpp"
+  $$pre_trunc = HEAP8[$4>>0]|0; //@line 1432 "4374_Task1c_emscripten.cpp"
+  $20 = $$pre_trunc&1; //@line 1432 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return ($20|0); //@line 1432 "4374_Task1c_emscripten.cpp"
  }
- $12 = (_SDL_SetVideoMode(600,500,32,0)|0); //@line 1348 "4374_Task1c_emscripten.cpp"
- HEAP32[48>>2] = $12; //@line 1348 "4374_Task1c_emscripten.cpp"
- $13 = HEAP32[48>>2]|0; //@line 1349 "4374_Task1c_emscripten.cpp"
- $14 = ($13|0)==(0|0); //@line 1349 "4374_Task1c_emscripten.cpp"
+ $12 = (_SDL_SetVideoMode(600,500,32,0)|0); //@line 1424 "4374_Task1c_emscripten.cpp"
+ HEAP32[48>>2] = $12; //@line 1424 "4374_Task1c_emscripten.cpp"
+ $13 = HEAP32[48>>2]|0; //@line 1425 "4374_Task1c_emscripten.cpp"
+ $14 = ($13|0)==(0|0); //@line 1425 "4374_Task1c_emscripten.cpp"
  if ($14) {
-  $15 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(10504,4688)|0); //@line 1351 "4374_Task1c_emscripten.cpp"
-  $16 = (_SDL_GetError()|0); //@line 1352 "4374_Task1c_emscripten.cpp"
-  $17 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc($15,$16)|0); //@line 1351 "4374_Task1c_emscripten.cpp"
-  $0 = $17; //@line 1352 "4374_Task1c_emscripten.cpp"
-  $1 = 384; //@line 1352 "4374_Task1c_emscripten.cpp"
-  $18 = $0; //@line 1352 "4374_Task1c_emscripten.cpp"
+  $15 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(10504,4688)|0); //@line 1427 "4374_Task1c_emscripten.cpp"
+  $16 = (_SDL_GetError()|0); //@line 1428 "4374_Task1c_emscripten.cpp"
+  $17 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc($15,$16)|0); //@line 1427 "4374_Task1c_emscripten.cpp"
+  $0 = $17; //@line 1428 "4374_Task1c_emscripten.cpp"
+  $1 = 384; //@line 1428 "4374_Task1c_emscripten.cpp"
+  $18 = $0; //@line 1428 "4374_Task1c_emscripten.cpp"
   $19 = $1; //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
   (FUNCTION_TABLE_ii[$19 & 1023]($18)|0); //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
-  $$expand_i1_val2 = 0; //@line 1353 "4374_Task1c_emscripten.cpp"
-  HEAP8[$4>>0] = $$expand_i1_val2; //@line 1353 "4374_Task1c_emscripten.cpp"
-  $$pre_trunc = HEAP8[$4>>0]|0; //@line 1356 "4374_Task1c_emscripten.cpp"
-  $20 = $$pre_trunc&1; //@line 1356 "4374_Task1c_emscripten.cpp"
-  STACKTOP = sp;return ($20|0); //@line 1356 "4374_Task1c_emscripten.cpp"
+  $$expand_i1_val2 = 0; //@line 1429 "4374_Task1c_emscripten.cpp"
+  HEAP8[$4>>0] = $$expand_i1_val2; //@line 1429 "4374_Task1c_emscripten.cpp"
+  $$pre_trunc = HEAP8[$4>>0]|0; //@line 1432 "4374_Task1c_emscripten.cpp"
+  $20 = $$pre_trunc&1; //@line 1432 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return ($20|0); //@line 1432 "4374_Task1c_emscripten.cpp"
  } else {
-  $$expand_i1_val4 = 1; //@line 1355 "4374_Task1c_emscripten.cpp"
-  HEAP8[$4>>0] = $$expand_i1_val4; //@line 1355 "4374_Task1c_emscripten.cpp"
-  $$pre_trunc = HEAP8[$4>>0]|0; //@line 1356 "4374_Task1c_emscripten.cpp"
-  $20 = $$pre_trunc&1; //@line 1356 "4374_Task1c_emscripten.cpp"
-  STACKTOP = sp;return ($20|0); //@line 1356 "4374_Task1c_emscripten.cpp"
+  $$expand_i1_val4 = 1; //@line 1431 "4374_Task1c_emscripten.cpp"
+  HEAP8[$4>>0] = $$expand_i1_val4; //@line 1431 "4374_Task1c_emscripten.cpp"
+  $$pre_trunc = HEAP8[$4>>0]|0; //@line 1432 "4374_Task1c_emscripten.cpp"
+  $20 = $$pre_trunc&1; //@line 1432 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return ($20|0); //@line 1432 "4374_Task1c_emscripten.cpp"
  }
  return (0)|0;
 }
@@ -11434,34 +11434,34 @@ function __Z9setuptextv() {
  var sp = 0;
  sp = STACKTOP;
  STACKTOP = STACKTOP + 16|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
- $4 = (_TTF_Init()|0); //@line 1360 "4374_Task1c_emscripten.cpp"
- $5 = ($4|0)!=(0); //@line 1360 "4374_Task1c_emscripten.cpp"
+ $4 = (_TTF_Init()|0); //@line 1436 "4374_Task1c_emscripten.cpp"
+ $5 = ($4|0)!=(0); //@line 1436 "4374_Task1c_emscripten.cpp"
  if ($5) {
-  $6 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(10504,4720)|0); //@line 1362 "4374_Task1c_emscripten.cpp"
-  $7 = (_SDL_GetError()|0); //@line 1362 "4374_Task1c_emscripten.cpp"
-  $8 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc($6,$7)|0); //@line 1362 "4374_Task1c_emscripten.cpp"
-  $2 = $8; //@line 1362 "4374_Task1c_emscripten.cpp"
-  $3 = 384; //@line 1362 "4374_Task1c_emscripten.cpp"
-  $9 = $2; //@line 1362 "4374_Task1c_emscripten.cpp"
+  $6 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(10504,4720)|0); //@line 1438 "4374_Task1c_emscripten.cpp"
+  $7 = (_SDL_GetError()|0); //@line 1438 "4374_Task1c_emscripten.cpp"
+  $8 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc($6,$7)|0); //@line 1438 "4374_Task1c_emscripten.cpp"
+  $2 = $8; //@line 1438 "4374_Task1c_emscripten.cpp"
+  $3 = 384; //@line 1438 "4374_Task1c_emscripten.cpp"
+  $9 = $2; //@line 1438 "4374_Task1c_emscripten.cpp"
   $10 = $3; //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
   (FUNCTION_TABLE_ii[$10 & 1023]($9)|0); //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
  }
- $11 = (_TTF_OpenFont((4744|0),32)|0); //@line 1364 "4374_Task1c_emscripten.cpp"
- HEAP32[136>>2] = $11; //@line 1364 "4374_Task1c_emscripten.cpp"
- $12 = HEAP32[136>>2]|0; //@line 1365 "4374_Task1c_emscripten.cpp"
- $13 = ($12|0)==(0|0); //@line 1365 "4374_Task1c_emscripten.cpp"
+ $11 = (_TTF_OpenFont((4744|0),32)|0); //@line 1440 "4374_Task1c_emscripten.cpp"
+ HEAP32[136>>2] = $11; //@line 1440 "4374_Task1c_emscripten.cpp"
+ $12 = HEAP32[136>>2]|0; //@line 1441 "4374_Task1c_emscripten.cpp"
+ $13 = ($12|0)==(0|0); //@line 1441 "4374_Task1c_emscripten.cpp"
  if (!($13)) {
-  STACKTOP = sp;return; //@line 1369 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return; //@line 1445 "4374_Task1c_emscripten.cpp"
  }
- $14 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(10504,4760)|0); //@line 1367 "4374_Task1c_emscripten.cpp"
- $15 = (_SDL_GetError()|0); //@line 1367 "4374_Task1c_emscripten.cpp"
- $16 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc($14,$15)|0); //@line 1367 "4374_Task1c_emscripten.cpp"
- $0 = $16; //@line 1367 "4374_Task1c_emscripten.cpp"
- $1 = 384; //@line 1367 "4374_Task1c_emscripten.cpp"
- $17 = $0; //@line 1367 "4374_Task1c_emscripten.cpp"
+ $14 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(10504,4760)|0); //@line 1443 "4374_Task1c_emscripten.cpp"
+ $15 = (_SDL_GetError()|0); //@line 1443 "4374_Task1c_emscripten.cpp"
+ $16 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc($14,$15)|0); //@line 1443 "4374_Task1c_emscripten.cpp"
+ $0 = $16; //@line 1443 "4374_Task1c_emscripten.cpp"
+ $1 = 384; //@line 1443 "4374_Task1c_emscripten.cpp"
+ $17 = $0; //@line 1443 "4374_Task1c_emscripten.cpp"
  $18 = $1; //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
  (FUNCTION_TABLE_ii[$18 & 1023]($17)|0); //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
- STACKTOP = sp;return; //@line 1369 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 1445 "4374_Task1c_emscripten.cpp"
 }
 function __Z8mainloopRiP11SDL_SurfaceP9_TTF_Font($agg$result,$levelSelection,$image,$font) {
  $agg$result = $agg$result|0;
@@ -11523,49 +11523,49 @@ function __Z14initialiseGamePA22_cR6playerRNSt3__16vectorI6zombieNS3_9allocatorI
  $4 = $pills;
  $5 = $walls;
  $6 = $portals;
- __Z4Seedv(); //@line 582 "4374_Task1c_emscripten.cpp"
- $7 = $0; //@line 583 "4374_Task1c_emscripten.cpp"
- __Z7setGridPA22_c($7); //@line 583 "4374_Task1c_emscripten.cpp"
- $8 = $0; //@line 585 "4374_Task1c_emscripten.cpp"
- $9 = $5; //@line 585 "4374_Task1c_emscripten.cpp"
- __Z20placerandomwallonmapPA22_cRNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEE($8,$9); //@line 585 "4374_Task1c_emscripten.cpp"
- $10 = $0; //@line 588 "4374_Task1c_emscripten.cpp"
- $11 = $2; //@line 588 "4374_Task1c_emscripten.cpp"
- __Z17placezombiesonmapPA22_cRNSt3__16vectorI6zombieNS1_9allocatorIS3_EEEE($10,$11); //@line 588 "4374_Task1c_emscripten.cpp"
- $12 = $0; //@line 589 "4374_Task1c_emscripten.cpp"
- $13 = $1; //@line 589 "4374_Task1c_emscripten.cpp"
- __Z25setSpotInitialCoordinatesPA22_cR4Item($12,$13); //@line 589 "4374_Task1c_emscripten.cpp"
- $14 = $0; //@line 590 "4374_Task1c_emscripten.cpp"
- $15 = $1; //@line 590 "4374_Task1c_emscripten.cpp"
- __Z9placeSpotPA22_cRK4Item($14,$15); //@line 590 "4374_Task1c_emscripten.cpp"
- $16 = $1; //@line 591 "4374_Task1c_emscripten.cpp"
- $17 = ((($16)) + 40|0); //@line 591 "4374_Task1c_emscripten.cpp"
- $18 = HEAP32[$17>>2]|0; //@line 591 "4374_Task1c_emscripten.cpp"
- if ((($18|0) == 2)) {
-  $21 = $1; //@line 597 "4374_Task1c_emscripten.cpp"
-  $22 = ((($21)) + 24|0); //@line 597 "4374_Task1c_emscripten.cpp"
-  HEAP32[$22>>2] = 5; //@line 597 "4374_Task1c_emscripten.cpp"
- } else if ((($18|0) == 3)) {
-  $23 = $1; //@line 600 "4374_Task1c_emscripten.cpp"
-  $24 = ((($23)) + 24|0); //@line 600 "4374_Task1c_emscripten.cpp"
-  HEAP32[$24>>2] = 3; //@line 600 "4374_Task1c_emscripten.cpp"
+ __Z4Seedv(); //@line 658 "4374_Task1c_emscripten.cpp"
+ $7 = $0; //@line 659 "4374_Task1c_emscripten.cpp"
+ __Z7setGridPA22_c($7); //@line 659 "4374_Task1c_emscripten.cpp"
+ $8 = $0; //@line 661 "4374_Task1c_emscripten.cpp"
+ $9 = $5; //@line 661 "4374_Task1c_emscripten.cpp"
+ __Z20placerandomwallonmapPA22_cRNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEE($8,$9); //@line 661 "4374_Task1c_emscripten.cpp"
+ $10 = $0; //@line 664 "4374_Task1c_emscripten.cpp"
+ $11 = $2; //@line 664 "4374_Task1c_emscripten.cpp"
+ __Z17placezombiesonmapPA22_cRNSt3__16vectorI6zombieNS1_9allocatorIS3_EEEE($10,$11); //@line 664 "4374_Task1c_emscripten.cpp"
+ $12 = $0; //@line 665 "4374_Task1c_emscripten.cpp"
+ $13 = $1; //@line 665 "4374_Task1c_emscripten.cpp"
+ __Z25setSpotInitialCoordinatesPA22_cR4Item($12,$13); //@line 665 "4374_Task1c_emscripten.cpp"
+ $14 = $0; //@line 666 "4374_Task1c_emscripten.cpp"
+ $15 = $1; //@line 666 "4374_Task1c_emscripten.cpp"
+ __Z9placeSpotPA22_cRK4Item($14,$15); //@line 666 "4374_Task1c_emscripten.cpp"
+ $16 = $1; //@line 667 "4374_Task1c_emscripten.cpp"
+ $17 = ((($16)) + 40|0); //@line 667 "4374_Task1c_emscripten.cpp"
+ $18 = HEAP32[$17>>2]|0; //@line 667 "4374_Task1c_emscripten.cpp"
+ if ((($18|0) == 3)) {
+  $23 = $1; //@line 676 "4374_Task1c_emscripten.cpp"
+  $24 = ((($23)) + 24|0); //@line 676 "4374_Task1c_emscripten.cpp"
+  HEAP32[$24>>2] = 3; //@line 676 "4374_Task1c_emscripten.cpp"
+ } else if ((($18|0) == 2)) {
+  $21 = $1; //@line 673 "4374_Task1c_emscripten.cpp"
+  $22 = ((($21)) + 24|0); //@line 673 "4374_Task1c_emscripten.cpp"
+  HEAP32[$22>>2] = 5; //@line 673 "4374_Task1c_emscripten.cpp"
  } else if ((($18|0) == 1)) {
-  $19 = $1; //@line 594 "4374_Task1c_emscripten.cpp"
-  $20 = ((($19)) + 24|0); //@line 594 "4374_Task1c_emscripten.cpp"
-  HEAP32[$20>>2] = 8; //@line 594 "4374_Task1c_emscripten.cpp"
+  $19 = $1; //@line 670 "4374_Task1c_emscripten.cpp"
+  $20 = ((($19)) + 24|0); //@line 670 "4374_Task1c_emscripten.cpp"
+  HEAP32[$20>>2] = 8; //@line 670 "4374_Task1c_emscripten.cpp"
  }
- $25 = $0; //@line 604 "4374_Task1c_emscripten.cpp"
- $26 = $4; //@line 604 "4374_Task1c_emscripten.cpp"
- $27 = $1; //@line 604 "4374_Task1c_emscripten.cpp"
- __Z14placepillonmapPA22_cRNSt3__16vectorI4pillNS1_9allocatorIS3_EEEERK6player($25,$26,$27); //@line 604 "4374_Task1c_emscripten.cpp"
- $28 = $0; //@line 605 "4374_Task1c_emscripten.cpp"
- $29 = $3; //@line 605 "4374_Task1c_emscripten.cpp"
- $30 = $1; //@line 605 "4374_Task1c_emscripten.cpp"
- __Z14placeholeonmapPA22_cRNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEERK6player($28,$29,$30); //@line 605 "4374_Task1c_emscripten.cpp"
- $31 = $0; //@line 606 "4374_Task1c_emscripten.cpp"
- $32 = $6; //@line 606 "4374_Task1c_emscripten.cpp"
- __Z16placeportalonmapPA22_cRNSt3__16vectorI6portalNS1_9allocatorIS3_EEEE($31,$32); //@line 606 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return; //@line 607 "4374_Task1c_emscripten.cpp"
+ $25 = $0; //@line 680 "4374_Task1c_emscripten.cpp"
+ $26 = $4; //@line 680 "4374_Task1c_emscripten.cpp"
+ $27 = $1; //@line 680 "4374_Task1c_emscripten.cpp"
+ __Z14placepillonmapPA22_cRNSt3__16vectorI4pillNS1_9allocatorIS3_EEEERK6player($25,$26,$27); //@line 680 "4374_Task1c_emscripten.cpp"
+ $28 = $0; //@line 681 "4374_Task1c_emscripten.cpp"
+ $29 = $3; //@line 681 "4374_Task1c_emscripten.cpp"
+ $30 = $1; //@line 681 "4374_Task1c_emscripten.cpp"
+ __Z14placeholeonmapPA22_cRNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEERK6player($28,$29,$30); //@line 681 "4374_Task1c_emscripten.cpp"
+ $31 = $0; //@line 682 "4374_Task1c_emscripten.cpp"
+ $32 = $6; //@line 682 "4374_Task1c_emscripten.cpp"
+ __Z16placeportalonmapPA22_cRNSt3__16vectorI6portalNS1_9allocatorIS3_EEEE($31,$32); //@line 682 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 683 "4374_Task1c_emscripten.cpp"
 }
 function __Z8gameloopv() {
  var $0 = 0, $1 = 0, $10 = 0, $100 = 0, $101 = 0, $102 = 0, $103 = 0, $104 = 0, $105 = 0, $106 = 0, $107 = 0, $108 = 0, $109 = 0, $11 = 0, $110 = 0, $111 = 0, $112 = 0, $113 = 0, $114 = 0, $115 = 0;
@@ -11937,20 +11937,20 @@ function __Z11getKeyPressv() {
  sp = STACKTOP;
  STACKTOP = STACKTOP + 64|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
  $event = sp;
- (_SDL_PollEvent(($event|0))|0); //@line 986 "4374_Task1c_emscripten.cpp"
- $1 = HEAP32[$event>>2]|0; //@line 987 "4374_Task1c_emscripten.cpp"
- $cond = ($1|0)==(768); //@line 987 "4374_Task1c_emscripten.cpp"
+ (_SDL_PollEvent(($event|0))|0); //@line 1062 "4374_Task1c_emscripten.cpp"
+ $1 = HEAP32[$event>>2]|0; //@line 1063 "4374_Task1c_emscripten.cpp"
+ $cond = ($1|0)==(768); //@line 1063 "4374_Task1c_emscripten.cpp"
  if ($cond) {
-  $2 = ((($event)) + 12|0); //@line 990 "4374_Task1c_emscripten.cpp"
-  $3 = ((($2)) + 4|0); //@line 990 "4374_Task1c_emscripten.cpp"
-  $4 = HEAP32[$3>>2]|0; //@line 990 "4374_Task1c_emscripten.cpp"
-  $0 = $4; //@line 990 "4374_Task1c_emscripten.cpp"
-  $5 = $0; //@line 993 "4374_Task1c_emscripten.cpp"
-  STACKTOP = sp;return ($5|0); //@line 993 "4374_Task1c_emscripten.cpp"
+  $2 = ((($event)) + 12|0); //@line 1066 "4374_Task1c_emscripten.cpp"
+  $3 = ((($2)) + 4|0); //@line 1066 "4374_Task1c_emscripten.cpp"
+  $4 = HEAP32[$3>>2]|0; //@line 1066 "4374_Task1c_emscripten.cpp"
+  $0 = $4; //@line 1066 "4374_Task1c_emscripten.cpp"
+  $5 = $0; //@line 1069 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return ($5|0); //@line 1069 "4374_Task1c_emscripten.cpp"
  } else {
-  $0 = 0; //@line 992 "4374_Task1c_emscripten.cpp"
-  $5 = $0; //@line 993 "4374_Task1c_emscripten.cpp"
-  STACKTOP = sp;return ($5|0); //@line 993 "4374_Task1c_emscripten.cpp"
+  $0 = 0; //@line 1068 "4374_Task1c_emscripten.cpp"
+  $5 = $0; //@line 1069 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return ($5|0); //@line 1069 "4374_Task1c_emscripten.cpp"
  }
  return (0)|0;
 }
@@ -11960,22 +11960,22 @@ function __Z10isArrowKeyi($key) {
  sp = STACKTOP;
  STACKTOP = STACKTOP + 16|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
  $0 = $key;
- $1 = $0; //@line 997 "4374_Task1c_emscripten.cpp"
- $2 = ($1|0)==(119); //@line 997 "4374_Task1c_emscripten.cpp"
+ $1 = $0; //@line 1073 "4374_Task1c_emscripten.cpp"
+ $2 = ($1|0)==(119); //@line 1073 "4374_Task1c_emscripten.cpp"
  $3 = $0;
- $4 = ($3|0)==(115); //@line 997 "4374_Task1c_emscripten.cpp"
- $or$cond = $2 | $4; //@line 997 "4374_Task1c_emscripten.cpp"
+ $4 = ($3|0)==(115); //@line 1073 "4374_Task1c_emscripten.cpp"
+ $or$cond = $2 | $4; //@line 1073 "4374_Task1c_emscripten.cpp"
  $5 = $0;
- $6 = ($5|0)==(97); //@line 997 "4374_Task1c_emscripten.cpp"
- $or$cond3 = $or$cond | $6; //@line 997 "4374_Task1c_emscripten.cpp"
+ $6 = ($5|0)==(97); //@line 1073 "4374_Task1c_emscripten.cpp"
+ $or$cond3 = $or$cond | $6; //@line 1073 "4374_Task1c_emscripten.cpp"
  if ($or$cond3) {
   $9 = 1;
-  STACKTOP = sp;return ($9|0); //@line 997 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return ($9|0); //@line 1073 "4374_Task1c_emscripten.cpp"
  }
- $7 = $0; //@line 997 "4374_Task1c_emscripten.cpp"
- $8 = ($7|0)==(100); //@line 997 "4374_Task1c_emscripten.cpp"
+ $7 = $0; //@line 1073 "4374_Task1c_emscripten.cpp"
+ $8 = ($7|0)==(100); //@line 1073 "4374_Task1c_emscripten.cpp"
  $9 = $8;
- STACKTOP = sp;return ($9|0); //@line 997 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return ($9|0); //@line 1073 "4374_Task1c_emscripten.cpp"
 }
 function __Z10isCheatKeyi($key) {
  $key = $key|0;
@@ -11983,25 +11983,25 @@ function __Z10isCheatKeyi($key) {
  sp = STACKTOP;
  STACKTOP = STACKTOP + 16|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
  $0 = $key;
- $1 = $0; //@line 1002 "4374_Task1c_emscripten.cpp"
- $2 = (_toupper($1)|0); //@line 1002 "4374_Task1c_emscripten.cpp"
- $3 = ($2|0)==(69); //@line 1002 "4374_Task1c_emscripten.cpp"
+ $1 = $0; //@line 1078 "4374_Task1c_emscripten.cpp"
+ $2 = (_toupper($1)|0); //@line 1078 "4374_Task1c_emscripten.cpp"
+ $3 = ($2|0)==(69); //@line 1078 "4374_Task1c_emscripten.cpp"
  if ($3) {
   $10 = 1;
  } else {
-  $4 = $0; //@line 1002 "4374_Task1c_emscripten.cpp"
-  $5 = (_toupper($4)|0); //@line 1002 "4374_Task1c_emscripten.cpp"
-  $6 = ($5|0)==(88); //@line 1002 "4374_Task1c_emscripten.cpp"
+  $4 = $0; //@line 1078 "4374_Task1c_emscripten.cpp"
+  $5 = (_toupper($4)|0); //@line 1078 "4374_Task1c_emscripten.cpp"
+  $6 = ($5|0)==(88); //@line 1078 "4374_Task1c_emscripten.cpp"
   if ($6) {
    $10 = 1;
   } else {
-   $7 = $0; //@line 1002 "4374_Task1c_emscripten.cpp"
-   $8 = (_toupper($7)|0); //@line 1002 "4374_Task1c_emscripten.cpp"
-   $9 = ($8|0)==(70); //@line 1002 "4374_Task1c_emscripten.cpp"
+   $7 = $0; //@line 1078 "4374_Task1c_emscripten.cpp"
+   $8 = (_toupper($7)|0); //@line 1078 "4374_Task1c_emscripten.cpp"
+   $9 = ($8|0)==(70); //@line 1078 "4374_Task1c_emscripten.cpp"
    $10 = $9;
   }
  }
- STACKTOP = sp;return ($10|0); //@line 1002 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return ($10|0); //@line 1078 "4374_Task1c_emscripten.cpp"
 }
 function __Z9saveboardRNSt3__16vectorI6replayNS_9allocatorIS1_EEEEPA22_Kc($replayer,$grid) {
  $replayer = $replayer|0;
@@ -12979,9 +12979,9 @@ function __Z10ispauseKeyi($key) {
 function __Z12setpauseloopv() {
  var label = 0, sp = 0;
  sp = STACKTOP;
- _emscripten_cancel_main_loop(); //@line 1520 "4374_Task1c_emscripten.cpp"
- _emscripten_set_main_loop((406|0),0,0); //@line 1521 "4374_Task1c_emscripten.cpp"
- return; //@line 1522 "4374_Task1c_emscripten.cpp"
+ _emscripten_cancel_main_loop(); //@line 1594 "4374_Task1c_emscripten.cpp"
+ _emscripten_set_main_loop((406|0),0,0); //@line 1595 "4374_Task1c_emscripten.cpp"
+ return; //@line 1596 "4374_Task1c_emscripten.cpp"
 }
 function __Z10renderGamePA22_KcRKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEERK6playeriiiP11SDL_SurfaceP9_TTF_Font($gd,$mess,$spot,$zombielives,$remainingpill,$diff,$image,$font) {
  $gd = $gd|0;
@@ -13005,61 +13005,61 @@ function __Z10renderGamePA22_KcRKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2
  $5 = $diff;
  $6 = $image;
  $7 = $font;
- $8 = $6; //@line 1081 "4374_Task1c_emscripten.cpp"
- $9 = $6; //@line 1081 "4374_Task1c_emscripten.cpp"
- $10 = ((($9)) + 4|0); //@line 1081 "4374_Task1c_emscripten.cpp"
- $11 = HEAP32[$10>>2]|0; //@line 1081 "4374_Task1c_emscripten.cpp"
- $12 = (_SDL_MapRGB(($11|0),0,0,0)|0); //@line 1081 "4374_Task1c_emscripten.cpp"
- (_SDL_FillRect(($8|0),(0|0),($12|0))|0); //@line 1081 "4374_Task1c_emscripten.cpp"
- $13 = HEAP8[24>>0]|0; //@line 1084 "4374_Task1c_emscripten.cpp"
- $14 = $13&1; //@line 1084 "4374_Task1c_emscripten.cpp"
+ $8 = $6; //@line 1157 "4374_Task1c_emscripten.cpp"
+ $9 = $6; //@line 1157 "4374_Task1c_emscripten.cpp"
+ $10 = ((($9)) + 4|0); //@line 1157 "4374_Task1c_emscripten.cpp"
+ $11 = HEAP32[$10>>2]|0; //@line 1157 "4374_Task1c_emscripten.cpp"
+ $12 = (_SDL_MapRGB(($11|0),0,0,0)|0); //@line 1157 "4374_Task1c_emscripten.cpp"
+ (_SDL_FillRect(($8|0),(0|0),($12|0))|0); //@line 1157 "4374_Task1c_emscripten.cpp"
+ $13 = HEAP8[24>>0]|0; //@line 1160 "4374_Task1c_emscripten.cpp"
+ $14 = $13&1; //@line 1160 "4374_Task1c_emscripten.cpp"
  if ($14) {
-  $15 = $6; //@line 1085 "4374_Task1c_emscripten.cpp"
-  $16 = $7; //@line 1085 "4374_Task1c_emscripten.cpp"
-  __Z13paintdistanceP11SDL_SurfaceP9_TTF_Font($15,$16); //@line 1085 "4374_Task1c_emscripten.cpp"
+  $15 = $6; //@line 1161 "4374_Task1c_emscripten.cpp"
+  $16 = $7; //@line 1161 "4374_Task1c_emscripten.cpp"
+  __Z13paintdistanceP11SDL_SurfaceP9_TTF_Font($15,$16); //@line 1161 "4374_Task1c_emscripten.cpp"
  }
- $17 = $0; //@line 1086 "4374_Task1c_emscripten.cpp"
- $18 = $6; //@line 1086 "4374_Task1c_emscripten.cpp"
- __Z15paintGridimagesPA22_KcP11SDL_Surface($17,$18); //@line 1086 "4374_Task1c_emscripten.cpp"
- $19 = $6; //@line 1088 "4374_Task1c_emscripten.cpp"
- $20 = $7; //@line 1088 "4374_Task1c_emscripten.cpp"
- __Z9showTitleP11SDL_SurfaceP9_TTF_Font($19,$20); //@line 1088 "4374_Task1c_emscripten.cpp"
- $21 = $6; //@line 1089 "4374_Task1c_emscripten.cpp"
- $22 = $7; //@line 1089 "4374_Task1c_emscripten.cpp"
- __Z15showDescriptionP11SDL_SurfaceP9_TTF_Font($21,$22); //@line 1089 "4374_Task1c_emscripten.cpp"
- $23 = $5; //@line 1090 "4374_Task1c_emscripten.cpp"
- $24 = $6; //@line 1090 "4374_Task1c_emscripten.cpp"
- $25 = $7; //@line 1090 "4374_Task1c_emscripten.cpp"
- __Z8showdiffiP11SDL_SurfaceP9_TTF_Font($23,$24,$25); //@line 1090 "4374_Task1c_emscripten.cpp"
- $26 = $6; //@line 1091 "4374_Task1c_emscripten.cpp"
- $27 = $7; //@line 1091 "4374_Task1c_emscripten.cpp"
- __Z8showtimeP11SDL_SurfaceP9_TTF_Font($26,$27); //@line 1091 "4374_Task1c_emscripten.cpp"
- $28 = $6; //@line 1092 "4374_Task1c_emscripten.cpp"
- $29 = $7; //@line 1092 "4374_Task1c_emscripten.cpp"
- __Z12showSaveLoadP11SDL_SurfaceP9_TTF_Font($28,$29); //@line 1092 "4374_Task1c_emscripten.cpp"
- $30 = $2; //@line 1093 "4374_Task1c_emscripten.cpp"
- $31 = $6; //@line 1093 "4374_Task1c_emscripten.cpp"
- $32 = $7; //@line 1093 "4374_Task1c_emscripten.cpp"
- __Z9showLivesRK6playerP11SDL_SurfaceP9_TTF_Font($30,$31,$32); //@line 1093 "4374_Task1c_emscripten.cpp"
- $33 = $2; //@line 1094 "4374_Task1c_emscripten.cpp"
- $34 = ((($33)) + 12|0); //@line 1094 "4374_Task1c_emscripten.cpp"
- $35 = $6; //@line 1094 "4374_Task1c_emscripten.cpp"
- $36 = $7; //@line 1094 "4374_Task1c_emscripten.cpp"
- __Z8shownameRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP11SDL_SurfaceP9_TTF_Font($34,$35,$36); //@line 1094 "4374_Task1c_emscripten.cpp"
- $37 = $4; //@line 1096 "4374_Task1c_emscripten.cpp"
- $38 = $6; //@line 1096 "4374_Task1c_emscripten.cpp"
- $39 = $7; //@line 1096 "4374_Task1c_emscripten.cpp"
- __Z11showrempilliP11SDL_SurfaceP9_TTF_Font($37,$38,$39); //@line 1096 "4374_Task1c_emscripten.cpp"
- $40 = $6; //@line 1098 "4374_Task1c_emscripten.cpp"
- $41 = $7; //@line 1098 "4374_Task1c_emscripten.cpp"
- __Z11showOptionsP11SDL_SurfaceP9_TTF_Font($40,$41); //@line 1098 "4374_Task1c_emscripten.cpp"
- $42 = $1; //@line 1100 "4374_Task1c_emscripten.cpp"
- $43 = $6; //@line 1100 "4374_Task1c_emscripten.cpp"
- $44 = $7; //@line 1100 "4374_Task1c_emscripten.cpp"
- __Z11showMessageRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP11SDL_SurfaceP9_TTF_Font($42,$43,$44); //@line 1100 "4374_Task1c_emscripten.cpp"
- $45 = $6; //@line 1102 "4374_Task1c_emscripten.cpp"
- (_SDL_Flip(($45|0))|0); //@line 1102 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return; //@line 1103 "4374_Task1c_emscripten.cpp"
+ $17 = $0; //@line 1162 "4374_Task1c_emscripten.cpp"
+ $18 = $6; //@line 1162 "4374_Task1c_emscripten.cpp"
+ __Z15paintGridimagesPA22_KcP11SDL_Surface($17,$18); //@line 1162 "4374_Task1c_emscripten.cpp"
+ $19 = $6; //@line 1164 "4374_Task1c_emscripten.cpp"
+ $20 = $7; //@line 1164 "4374_Task1c_emscripten.cpp"
+ __Z9showTitleP11SDL_SurfaceP9_TTF_Font($19,$20); //@line 1164 "4374_Task1c_emscripten.cpp"
+ $21 = $6; //@line 1165 "4374_Task1c_emscripten.cpp"
+ $22 = $7; //@line 1165 "4374_Task1c_emscripten.cpp"
+ __Z15showDescriptionP11SDL_SurfaceP9_TTF_Font($21,$22); //@line 1165 "4374_Task1c_emscripten.cpp"
+ $23 = $5; //@line 1166 "4374_Task1c_emscripten.cpp"
+ $24 = $6; //@line 1166 "4374_Task1c_emscripten.cpp"
+ $25 = $7; //@line 1166 "4374_Task1c_emscripten.cpp"
+ __Z8showdiffiP11SDL_SurfaceP9_TTF_Font($23,$24,$25); //@line 1166 "4374_Task1c_emscripten.cpp"
+ $26 = $6; //@line 1167 "4374_Task1c_emscripten.cpp"
+ $27 = $7; //@line 1167 "4374_Task1c_emscripten.cpp"
+ __Z8showtimeP11SDL_SurfaceP9_TTF_Font($26,$27); //@line 1167 "4374_Task1c_emscripten.cpp"
+ $28 = $6; //@line 1168 "4374_Task1c_emscripten.cpp"
+ $29 = $7; //@line 1168 "4374_Task1c_emscripten.cpp"
+ __Z12showSaveLoadP11SDL_SurfaceP9_TTF_Font($28,$29); //@line 1168 "4374_Task1c_emscripten.cpp"
+ $30 = $2; //@line 1169 "4374_Task1c_emscripten.cpp"
+ $31 = $6; //@line 1169 "4374_Task1c_emscripten.cpp"
+ $32 = $7; //@line 1169 "4374_Task1c_emscripten.cpp"
+ __Z9showLivesRK6playerP11SDL_SurfaceP9_TTF_Font($30,$31,$32); //@line 1169 "4374_Task1c_emscripten.cpp"
+ $33 = $2; //@line 1170 "4374_Task1c_emscripten.cpp"
+ $34 = ((($33)) + 12|0); //@line 1170 "4374_Task1c_emscripten.cpp"
+ $35 = $6; //@line 1170 "4374_Task1c_emscripten.cpp"
+ $36 = $7; //@line 1170 "4374_Task1c_emscripten.cpp"
+ __Z8shownameRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP11SDL_SurfaceP9_TTF_Font($34,$35,$36); //@line 1170 "4374_Task1c_emscripten.cpp"
+ $37 = $4; //@line 1172 "4374_Task1c_emscripten.cpp"
+ $38 = $6; //@line 1172 "4374_Task1c_emscripten.cpp"
+ $39 = $7; //@line 1172 "4374_Task1c_emscripten.cpp"
+ __Z11showrempilliP11SDL_SurfaceP9_TTF_Font($37,$38,$39); //@line 1172 "4374_Task1c_emscripten.cpp"
+ $40 = $6; //@line 1174 "4374_Task1c_emscripten.cpp"
+ $41 = $7; //@line 1174 "4374_Task1c_emscripten.cpp"
+ __Z11showOptionsP11SDL_SurfaceP9_TTF_Font($40,$41); //@line 1174 "4374_Task1c_emscripten.cpp"
+ $42 = $1; //@line 1176 "4374_Task1c_emscripten.cpp"
+ $43 = $6; //@line 1176 "4374_Task1c_emscripten.cpp"
+ $44 = $7; //@line 1176 "4374_Task1c_emscripten.cpp"
+ __Z11showMessageRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP11SDL_SurfaceP9_TTF_Font($42,$43,$44); //@line 1176 "4374_Task1c_emscripten.cpp"
+ $45 = $6; //@line 1178 "4374_Task1c_emscripten.cpp"
+ (_SDL_Flip(($45|0))|0); //@line 1178 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 1179 "4374_Task1c_emscripten.cpp"
 }
 function __Z7getsizeRKNSt3__16vectorI4pillNS_9allocatorIS1_EEEE($pills) {
  $pills = $pills|0;
@@ -13162,27 +13162,27 @@ function __Z10wantToQuitiRNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocat
  STACKTOP = STACKTOP + 32|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
  $2 = $key;
  $3 = $message;
- $4 = $2; //@line 1008 "4374_Task1c_emscripten.cpp"
- $5 = (_toupper($4)|0); //@line 1008 "4374_Task1c_emscripten.cpp"
- $6 = ($5|0)==(81); //@line 1008 "4374_Task1c_emscripten.cpp"
- $7 = $6&1; //@line 1008 "4374_Task1c_emscripten.cpp"
- $exit = $7; //@line 1008 "4374_Task1c_emscripten.cpp"
- $8 = $exit; //@line 1009 "4374_Task1c_emscripten.cpp"
- $9 = $8&1; //@line 1009 "4374_Task1c_emscripten.cpp"
+ $4 = $2; //@line 1084 "4374_Task1c_emscripten.cpp"
+ $5 = (_toupper($4)|0); //@line 1084 "4374_Task1c_emscripten.cpp"
+ $6 = ($5|0)==(81); //@line 1084 "4374_Task1c_emscripten.cpp"
+ $7 = $6&1; //@line 1084 "4374_Task1c_emscripten.cpp"
+ $exit = $7; //@line 1084 "4374_Task1c_emscripten.cpp"
+ $8 = $exit; //@line 1085 "4374_Task1c_emscripten.cpp"
+ $9 = $8&1; //@line 1085 "4374_Task1c_emscripten.cpp"
  if (!($9)) {
-  $13 = $exit; //@line 1011 "4374_Task1c_emscripten.cpp"
-  $14 = $13&1; //@line 1011 "4374_Task1c_emscripten.cpp"
-  STACKTOP = sp;return ($14|0); //@line 1011 "4374_Task1c_emscripten.cpp"
+  $13 = $exit; //@line 1087 "4374_Task1c_emscripten.cpp"
+  $14 = $13&1; //@line 1087 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return ($14|0); //@line 1087 "4374_Task1c_emscripten.cpp"
  }
- $10 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(10504,5056)|0); //@line 1010 "4374_Task1c_emscripten.cpp"
- $0 = $10; //@line 1010 "4374_Task1c_emscripten.cpp"
- $1 = 384; //@line 1010 "4374_Task1c_emscripten.cpp"
- $11 = $0; //@line 1010 "4374_Task1c_emscripten.cpp"
+ $10 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(10504,5056)|0); //@line 1086 "4374_Task1c_emscripten.cpp"
+ $0 = $10; //@line 1086 "4374_Task1c_emscripten.cpp"
+ $1 = 384; //@line 1086 "4374_Task1c_emscripten.cpp"
+ $11 = $0; //@line 1086 "4374_Task1c_emscripten.cpp"
  $12 = $1; //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
  (FUNCTION_TABLE_ii[$12 & 1023]($11)|0); //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
- $13 = $exit; //@line 1011 "4374_Task1c_emscripten.cpp"
- $14 = $13&1; //@line 1011 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return ($14|0); //@line 1011 "4374_Task1c_emscripten.cpp"
+ $13 = $exit; //@line 1087 "4374_Task1c_emscripten.cpp"
+ $14 = $13&1; //@line 1087 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return ($14|0); //@line 1087 "4374_Task1c_emscripten.cpp"
 }
 function __Z6haswonRKNSt3__16vectorI6zombieNS_9allocatorIS1_EEEERK6playerP11SDL_SurfaceP9_TTF_Font($zombies,$spot,$image,$font) {
  $zombies = $zombies|0;
@@ -13229,11 +13229,11 @@ function __Z6haswonRKNSt3__16vectorI6zombieNS_9allocatorIS1_EEEERK6playerP11SDL_
  $79 = $spot;
  $80 = $image;
  $81 = $font;
- $88 = $78; //@line 1018 "4374_Task1c_emscripten.cpp"
- $__range = $88; //@line 1018 "4374_Task1c_emscripten.cpp"
- $89 = $__range; //@line 1018 "4374_Task1c_emscripten.cpp"
- $76 = $89; //@line 1018 "4374_Task1c_emscripten.cpp"
- $90 = $76; //@line 1018 "4374_Task1c_emscripten.cpp"
+ $88 = $78; //@line 1094 "4374_Task1c_emscripten.cpp"
+ $__range = $88; //@line 1094 "4374_Task1c_emscripten.cpp"
+ $89 = $__range; //@line 1094 "4374_Task1c_emscripten.cpp"
+ $76 = $89; //@line 1094 "4374_Task1c_emscripten.cpp"
+ $90 = $76; //@line 1094 "4374_Task1c_emscripten.cpp"
  $91 = HEAP32[$90>>2]|0; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $73 = $90; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $74 = $91; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -13246,10 +13246,10 @@ function __Z6haswonRKNSt3__16vectorI6zombieNS_9allocatorIS1_EEEERK6playerP11SDL_
  $95 = HEAP32[$72>>2]|0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  HEAP32[$75>>2] = $95; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $96 = HEAP32[$75>>2]|0; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
- HEAP32[$__begin>>2] = $96; //@line 1018 "4374_Task1c_emscripten.cpp"
- $97 = $__range; //@line 1018 "4374_Task1c_emscripten.cpp"
- $69 = $97; //@line 1018 "4374_Task1c_emscripten.cpp"
- $98 = $69; //@line 1018 "4374_Task1c_emscripten.cpp"
+ HEAP32[$__begin>>2] = $96; //@line 1094 "4374_Task1c_emscripten.cpp"
+ $97 = $__range; //@line 1094 "4374_Task1c_emscripten.cpp"
+ $69 = $97; //@line 1094 "4374_Task1c_emscripten.cpp"
+ $98 = $69; //@line 1094 "4374_Task1c_emscripten.cpp"
  $99 = ((($98)) + 4|0); //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $100 = HEAP32[$99>>2]|0; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $66 = $98; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -13263,10 +13263,10 @@ function __Z6haswonRKNSt3__16vectorI6zombieNS_9allocatorIS1_EEEERK6playerP11SDL_
  $104 = HEAP32[$65>>2]|0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  HEAP32[$68>>2] = $104; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $105 = HEAP32[$68>>2]|0; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
- HEAP32[$__end>>2] = $105; //@line 1018 "4374_Task1c_emscripten.cpp"
+ HEAP32[$__end>>2] = $105; //@line 1094 "4374_Task1c_emscripten.cpp"
  while(1) {
-  $61 = $__begin; //@line 1018 "4374_Task1c_emscripten.cpp"
-  $62 = $__end; //@line 1018 "4374_Task1c_emscripten.cpp"
+  $61 = $__begin; //@line 1094 "4374_Task1c_emscripten.cpp"
+  $62 = $__end; //@line 1094 "4374_Task1c_emscripten.cpp"
   $106 = $61; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
   $107 = $62; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
   $59 = $106; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
@@ -13284,37 +13284,37 @@ function __Z6haswonRKNSt3__16vectorI6zombieNS_9allocatorIS1_EEEERK6playerP11SDL_
   if (!($115)) {
    break;
   }
-  $56 = $__begin; //@line 1018 "4374_Task1c_emscripten.cpp"
-  $116 = $56; //@line 1018 "4374_Task1c_emscripten.cpp"
+  $56 = $__begin; //@line 1094 "4374_Task1c_emscripten.cpp"
+  $116 = $56; //@line 1094 "4374_Task1c_emscripten.cpp"
   $117 = HEAP32[$116>>2]|0; //@line 1163 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-  $zom = $117; //@line 1018 "4374_Task1c_emscripten.cpp"
-  $118 = $zom; //@line 1019 "4374_Task1c_emscripten.cpp"
-  $119 = ((($118)) + 21|0); //@line 1019 "4374_Task1c_emscripten.cpp"
-  $120 = HEAP8[$119>>0]|0; //@line 1019 "4374_Task1c_emscripten.cpp"
-  $121 = $120&1; //@line 1019 "4374_Task1c_emscripten.cpp"
-  $122 = $121&1; //@line 1019 "4374_Task1c_emscripten.cpp"
-  $123 = ($122|0)==(1); //@line 1019 "4374_Task1c_emscripten.cpp"
+  $zom = $117; //@line 1094 "4374_Task1c_emscripten.cpp"
+  $118 = $zom; //@line 1095 "4374_Task1c_emscripten.cpp"
+  $119 = ((($118)) + 21|0); //@line 1095 "4374_Task1c_emscripten.cpp"
+  $120 = HEAP8[$119>>0]|0; //@line 1095 "4374_Task1c_emscripten.cpp"
+  $121 = $120&1; //@line 1095 "4374_Task1c_emscripten.cpp"
+  $122 = $121&1; //@line 1095 "4374_Task1c_emscripten.cpp"
+  $123 = ($122|0)==(1); //@line 1095 "4374_Task1c_emscripten.cpp"
   if ($123) {
    label = 4;
    break;
   }
-  $53 = $__begin; //@line 1018 "4374_Task1c_emscripten.cpp"
-  $124 = $53; //@line 1018 "4374_Task1c_emscripten.cpp"
+  $53 = $__begin; //@line 1094 "4374_Task1c_emscripten.cpp"
+  $124 = $53; //@line 1094 "4374_Task1c_emscripten.cpp"
   $125 = HEAP32[$124>>2]|0; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
   $126 = ((($125)) + 24|0); //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
   HEAP32[$124>>2] = $126; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
  }
  if ((label|0) == 4) {
-  $$expand_i1_val = 0; //@line 1020 "4374_Task1c_emscripten.cpp"
-  HEAP8[$77>>0] = $$expand_i1_val; //@line 1020 "4374_Task1c_emscripten.cpp"
-  $$pre_trunc = HEAP8[$77>>0]|0; //@line 1037 "4374_Task1c_emscripten.cpp"
-  $340 = $$pre_trunc&1; //@line 1037 "4374_Task1c_emscripten.cpp"
-  STACKTOP = sp;return ($340|0); //@line 1037 "4374_Task1c_emscripten.cpp"
+  $$expand_i1_val = 0; //@line 1096 "4374_Task1c_emscripten.cpp"
+  HEAP8[$77>>0] = $$expand_i1_val; //@line 1096 "4374_Task1c_emscripten.cpp"
+  $$pre_trunc = HEAP8[$77>>0]|0; //@line 1113 "4374_Task1c_emscripten.cpp"
+  $340 = $$pre_trunc&1; //@line 1113 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return ($340|0); //@line 1113 "4374_Task1c_emscripten.cpp"
  }
- ;HEAP32[$dstrect>>2]=HEAP32[5072>>2]|0;HEAP32[$dstrect+4>>2]=HEAP32[5072+4>>2]|0;HEAP32[$dstrect+8>>2]=HEAP32[5072+8>>2]|0;HEAP32[$dstrect+12>>2]=HEAP32[5072+12>>2]|0; //@line 1024 "4374_Task1c_emscripten.cpp"
- $49 = $a; //@line 1025 "4374_Task1c_emscripten.cpp"
- $50 = 24; //@line 1025 "4374_Task1c_emscripten.cpp"
- $127 = $49; //@line 1025 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$dstrect>>2]=HEAP32[5072>>2]|0;HEAP32[$dstrect+4>>2]=HEAP32[5072+4>>2]|0;HEAP32[$dstrect+8>>2]=HEAP32[5072+8>>2]|0;HEAP32[$dstrect+12>>2]=HEAP32[5072+12>>2]|0; //@line 1100 "4374_Task1c_emscripten.cpp"
+ $49 = $a; //@line 1101 "4374_Task1c_emscripten.cpp"
+ $50 = 24; //@line 1101 "4374_Task1c_emscripten.cpp"
+ $127 = $49; //@line 1101 "4374_Task1c_emscripten.cpp"
  $128 = ((($127)) + 64|0); //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
  $48 = $128; //@line 877 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
  $129 = $48; //@line 877 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
@@ -13530,14 +13530,14 @@ function __Z6haswonRKNSt3__16vectorI6zombieNS_9allocatorIS1_EEEERK6playerP11SDL_
        $35 = $233; //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
        break;
       }
-      $259 = $79; //@line 1026 "4374_Task1c_emscripten.cpp"
-      $260 = ((($259)) + 40|0); //@line 1026 "4374_Task1c_emscripten.cpp"
-      $261 = HEAP32[$260>>2]|0; //@line 1026 "4374_Task1c_emscripten.cpp"
-      $262 = ($261|0)<(3); //@line 1026 "4374_Task1c_emscripten.cpp"
-      $263 = ((($a)) + 8|0); //@line 1027 "4374_Task1c_emscripten.cpp"
+      $259 = $79; //@line 1102 "4374_Task1c_emscripten.cpp"
+      $260 = ((($259)) + 40|0); //@line 1102 "4374_Task1c_emscripten.cpp"
+      $261 = HEAP32[$260>>2]|0; //@line 1102 "4374_Task1c_emscripten.cpp"
+      $262 = ($261|0)<(3); //@line 1102 "4374_Task1c_emscripten.cpp"
+      $263 = ((($a)) + 8|0); //@line 1103 "4374_Task1c_emscripten.cpp"
       __THREW__ = 0;
       if ($262) {
-       (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc($263,5088)|0); //@line 1027 "4374_Task1c_emscripten.cpp"
+       (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc($263,5088)|0); //@line 1103 "4374_Task1c_emscripten.cpp"
        $264 = __THREW__; __THREW__ = 0;
        $265 = $264&1;
        if ($265) {
@@ -13546,15 +13546,15 @@ function __Z6haswonRKNSt3__16vectorI6zombieNS_9allocatorIS1_EEEERK6playerP11SDL_
         label = 35;
        }
       } else {
-       $268 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc($263,5136)|0); //@line 1029 "4374_Task1c_emscripten.cpp"
+       $268 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc($263,5136)|0); //@line 1105 "4374_Task1c_emscripten.cpp"
        $269 = __THREW__; __THREW__ = 0;
        $270 = $269&1;
        if ($270) {
         label = 30;
        } else {
-        $16 = $268; //@line 1029 "4374_Task1c_emscripten.cpp"
-        $17 = 384; //@line 1029 "4374_Task1c_emscripten.cpp"
-        $271 = $16; //@line 1029 "4374_Task1c_emscripten.cpp"
+        $16 = $268; //@line 1105 "4374_Task1c_emscripten.cpp"
+        $17 = 384; //@line 1105 "4374_Task1c_emscripten.cpp"
+        $271 = $16; //@line 1105 "4374_Task1c_emscripten.cpp"
         $272 = $17; //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
         __THREW__ = 0;
         $273 = (invoke_ii($272|0,($271|0))|0); //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
@@ -13564,17 +13564,17 @@ function __Z6haswonRKNSt3__16vectorI6zombieNS_9allocatorIS1_EEEERK6playerP11SDL_
          label = 30;
         } else {
          __THREW__ = 0;
-         $276 = (invoke_iii(376,($273|0),(5184|0))|0); //@line 1029 "4374_Task1c_emscripten.cpp"
+         $276 = (invoke_iii(376,($273|0),(5184|0))|0); //@line 1105 "4374_Task1c_emscripten.cpp"
          $277 = __THREW__; __THREW__ = 0;
          $278 = $277&1;
          if ($278) {
           label = 30;
          } else {
-          $279 = $79; //@line 1029 "4374_Task1c_emscripten.cpp"
-          $280 = ((($279)) + 28|0); //@line 1029 "4374_Task1c_emscripten.cpp"
-          $281 = HEAP32[$280>>2]|0; //@line 1029 "4374_Task1c_emscripten.cpp"
+          $279 = $79; //@line 1105 "4374_Task1c_emscripten.cpp"
+          $280 = ((($279)) + 28|0); //@line 1105 "4374_Task1c_emscripten.cpp"
+          $281 = HEAP32[$280>>2]|0; //@line 1105 "4374_Task1c_emscripten.cpp"
           __THREW__ = 0;
-          (invoke_iii(375,($276|0),($281|0))|0); //@line 1029 "4374_Task1c_emscripten.cpp"
+          (invoke_iii(375,($276|0),($281|0))|0); //@line 1105 "4374_Task1c_emscripten.cpp"
           $282 = __THREW__; __THREW__ = 0;
           $283 = $282&1;
           if ($283) {
@@ -13588,9 +13588,9 @@ function __Z6haswonRKNSt3__16vectorI6zombieNS_9allocatorIS1_EEEERK6playerP11SDL_
       }
       do {
        if ((label|0) == 35) {
-        $284 = $81; //@line 1030 "4374_Task1c_emscripten.cpp"
-        $15 = $a; //@line 1030 "4374_Task1c_emscripten.cpp"
-        $285 = $15; //@line 1030 "4374_Task1c_emscripten.cpp"
+        $284 = $81; //@line 1106 "4374_Task1c_emscripten.cpp"
+        $15 = $a; //@line 1106 "4374_Task1c_emscripten.cpp"
+        $285 = $15; //@line 1106 "4374_Task1c_emscripten.cpp"
         $286 = ((($285)) + 12|0); //@line 964 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
         __THREW__ = 0;
         invoke_vii(377,($84|0),($286|0)); //@line 964 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
@@ -13599,8 +13599,8 @@ function __Z6haswonRKNSt3__16vectorI6zombieNS_9allocatorIS1_EEEERK6playerP11SDL_
         if ($288) {
          label = 30;
         } else {
-         $14 = $84; //@line 1030 "4374_Task1c_emscripten.cpp"
-         $289 = $14; //@line 1030 "4374_Task1c_emscripten.cpp"
+         $14 = $84; //@line 1106 "4374_Task1c_emscripten.cpp"
+         $289 = $14; //@line 1106 "4374_Task1c_emscripten.cpp"
          $13 = $289; //@line 1598 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
          $290 = $13; //@line 1598 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
          $12 = $290; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
@@ -13641,21 +13641,21 @@ function __Z6haswonRKNSt3__16vectorI6zombieNS_9allocatorIS1_EEEERK6playerP11SDL_
          }
          $0 = $310; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
          $311 = $0; //@line 1043 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-         ;HEAP8[$85>>0]=HEAP8[5200>>0]|0;HEAP8[$85+1>>0]=HEAP8[5200+1>>0]|0;HEAP8[$85+2>>0]=HEAP8[5200+2>>0]|0;HEAP8[$85+3>>0]=HEAP8[5200+3>>0]|0; //@line 1030 "4374_Task1c_emscripten.cpp"
-         ;HEAP8[$86>>0]=HEAP8[5208>>0]|0;HEAP8[$86+1>>0]=HEAP8[5208+1>>0]|0;HEAP8[$86+2>>0]=HEAP8[5208+2>>0]|0;HEAP8[$86+3>>0]=HEAP8[5208+3>>0]|0; //@line 1030 "4374_Task1c_emscripten.cpp"
+         ;HEAP8[$85>>0]=HEAP8[5200>>0]|0;HEAP8[$85+1>>0]=HEAP8[5200+1>>0]|0;HEAP8[$85+2>>0]=HEAP8[5200+2>>0]|0;HEAP8[$85+3>>0]=HEAP8[5200+3>>0]|0; //@line 1106 "4374_Task1c_emscripten.cpp"
+         ;HEAP8[$86>>0]=HEAP8[5208>>0]|0;HEAP8[$86+1>>0]=HEAP8[5208+1>>0]|0;HEAP8[$86+2>>0]=HEAP8[5208+2>>0]|0;HEAP8[$86+3>>0]=HEAP8[5208+3>>0]|0; //@line 1106 "4374_Task1c_emscripten.cpp"
          __THREW__ = 0;
-         ;HEAP8[$$byval_copy>>0]=HEAP8[$85>>0]|0;HEAP8[$$byval_copy+1>>0]=HEAP8[$85+1>>0]|0;HEAP8[$$byval_copy+2>>0]=HEAP8[$85+2>>0]|0;HEAP8[$$byval_copy+3>>0]=HEAP8[$85+3>>0]|0; //@line 1030 "4374_Task1c_emscripten.cpp"
-         ;HEAP8[$$byval_copy6>>0]=HEAP8[$86>>0]|0;HEAP8[$$byval_copy6+1>>0]=HEAP8[$86+1>>0]|0;HEAP8[$$byval_copy6+2>>0]=HEAP8[$86+2>>0]|0;HEAP8[$$byval_copy6+3>>0]=HEAP8[$86+3>>0]|0; //@line 1030 "4374_Task1c_emscripten.cpp"
-         $312 = (invoke_iiiii(407,($284|0),($311|0),($$byval_copy|0),($$byval_copy6|0))|0); //@line 1030 "4374_Task1c_emscripten.cpp"
+         ;HEAP8[$$byval_copy>>0]=HEAP8[$85>>0]|0;HEAP8[$$byval_copy+1>>0]=HEAP8[$85+1>>0]|0;HEAP8[$$byval_copy+2>>0]=HEAP8[$85+2>>0]|0;HEAP8[$$byval_copy+3>>0]=HEAP8[$85+3>>0]|0; //@line 1106 "4374_Task1c_emscripten.cpp"
+         ;HEAP8[$$byval_copy6>>0]=HEAP8[$86>>0]|0;HEAP8[$$byval_copy6+1>>0]=HEAP8[$86+1>>0]|0;HEAP8[$$byval_copy6+2>>0]=HEAP8[$86+2>>0]|0;HEAP8[$$byval_copy6+3>>0]=HEAP8[$86+3>>0]|0; //@line 1106 "4374_Task1c_emscripten.cpp"
+         $312 = (invoke_iiiii(407,($284|0),($311|0),($$byval_copy|0),($$byval_copy6|0))|0); //@line 1106 "4374_Task1c_emscripten.cpp"
          $313 = __THREW__; __THREW__ = 0;
          $314 = $313&1;
          if ($314) {
           $334 = ___cxa_find_matching_catch()|0;
           $335 = tempRet0;
-          $82 = $334; //@line 1037 "4374_Task1c_emscripten.cpp"
-          $83 = $335; //@line 1037 "4374_Task1c_emscripten.cpp"
+          $82 = $334; //@line 1113 "4374_Task1c_emscripten.cpp"
+          $83 = $335; //@line 1113 "4374_Task1c_emscripten.cpp"
           __THREW__ = 0;
-          invoke_vi(374,($84|0)); //@line 1030 "4374_Task1c_emscripten.cpp"
+          invoke_vi(374,($84|0)); //@line 1106 "4374_Task1c_emscripten.cpp"
           $336 = __THREW__; __THREW__ = 0;
           $337 = $336&1;
           if (!($337)) {
@@ -13663,52 +13663,52 @@ function __Z6haswonRKNSt3__16vectorI6zombieNS_9allocatorIS1_EEEERK6playerP11SDL_
           }
           $343 = ___cxa_find_matching_catch(0|0)|0;
           $344 = tempRet0;
-          ___clang_call_terminate($343); //@line 1030 "4374_Task1c_emscripten.cpp"
-          // unreachable; //@line 1030 "4374_Task1c_emscripten.cpp"
+          ___clang_call_terminate($343); //@line 1106 "4374_Task1c_emscripten.cpp"
+          // unreachable; //@line 1106 "4374_Task1c_emscripten.cpp"
          }
          __THREW__ = 0;
-         invoke_vi(374,($84|0)); //@line 1030 "4374_Task1c_emscripten.cpp"
+         invoke_vi(374,($84|0)); //@line 1106 "4374_Task1c_emscripten.cpp"
          $315 = __THREW__; __THREW__ = 0;
          $316 = $315&1;
          if ($316) {
           label = 30;
          } else {
-          $text = $312; //@line 1030 "4374_Task1c_emscripten.cpp"
-          $317 = $80; //@line 1031 "4374_Task1c_emscripten.cpp"
+          $text = $312; //@line 1106 "4374_Task1c_emscripten.cpp"
+          $317 = $80; //@line 1107 "4374_Task1c_emscripten.cpp"
           __THREW__ = 0;
-          invoke_vi(408,($317|0)); //@line 1031 "4374_Task1c_emscripten.cpp"
+          invoke_vi(408,($317|0)); //@line 1107 "4374_Task1c_emscripten.cpp"
           $318 = __THREW__; __THREW__ = 0;
           $319 = $318&1;
           if ($319) {
            label = 30;
           } else {
-           $320 = $text; //@line 1032 "4374_Task1c_emscripten.cpp"
-           $321 = $80; //@line 1032 "4374_Task1c_emscripten.cpp"
+           $320 = $text; //@line 1108 "4374_Task1c_emscripten.cpp"
+           $321 = $80; //@line 1108 "4374_Task1c_emscripten.cpp"
            __THREW__ = 0;
-           (invoke_iiiii(409,($320|0),(0|0),($321|0),(0|0))|0); //@line 1032 "4374_Task1c_emscripten.cpp"
+           (invoke_iiiii(409,($320|0),(0|0),($321|0),(0|0))|0); //@line 1108 "4374_Task1c_emscripten.cpp"
            $322 = __THREW__; __THREW__ = 0;
            $323 = $322&1;
            if ($323) {
             label = 30;
            } else {
-            $324 = $text; //@line 1033 "4374_Task1c_emscripten.cpp"
+            $324 = $text; //@line 1109 "4374_Task1c_emscripten.cpp"
             __THREW__ = 0;
-            invoke_vi(410,($324|0)); //@line 1033 "4374_Task1c_emscripten.cpp"
+            invoke_vi(410,($324|0)); //@line 1109 "4374_Task1c_emscripten.cpp"
             $325 = __THREW__; __THREW__ = 0;
             $326 = $325&1;
             if ($326) {
              label = 30;
             } else {
              __THREW__ = 0;
-             $327 = (invoke_iii(376,(10504|0),(5216|0))|0); //@line 1034 "4374_Task1c_emscripten.cpp"
+             $327 = (invoke_iii(376,(10504|0),(5216|0))|0); //@line 1110 "4374_Task1c_emscripten.cpp"
              $328 = __THREW__; __THREW__ = 0;
              $329 = $328&1;
              if ($329) {
               label = 30;
              } else {
-              $54 = $327; //@line 1034 "4374_Task1c_emscripten.cpp"
-              $55 = 384; //@line 1034 "4374_Task1c_emscripten.cpp"
-              $330 = $54; //@line 1034 "4374_Task1c_emscripten.cpp"
+              $54 = $327; //@line 1110 "4374_Task1c_emscripten.cpp"
+              $55 = 384; //@line 1110 "4374_Task1c_emscripten.cpp"
+              $330 = $54; //@line 1110 "4374_Task1c_emscripten.cpp"
               $331 = $55; //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
               __THREW__ = 0;
               (invoke_ii($331|0,($330|0))|0); //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
@@ -13717,13 +13717,13 @@ function __Z6haswonRKNSt3__16vectorI6zombieNS_9allocatorIS1_EEEERK6playerP11SDL_
               if ($333) {
                label = 30;
               } else {
-               $$expand_i1_val8 = 1; //@line 1035 "4374_Task1c_emscripten.cpp"
-               HEAP8[$77>>0] = $$expand_i1_val8; //@line 1035 "4374_Task1c_emscripten.cpp"
+               $$expand_i1_val8 = 1; //@line 1111 "4374_Task1c_emscripten.cpp"
+               HEAP8[$77>>0] = $$expand_i1_val8; //@line 1111 "4374_Task1c_emscripten.cpp"
                $87 = 1;
-               __ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev($a); //@line 1037 "4374_Task1c_emscripten.cpp"
-               $$pre_trunc = HEAP8[$77>>0]|0; //@line 1037 "4374_Task1c_emscripten.cpp"
-               $340 = $$pre_trunc&1; //@line 1037 "4374_Task1c_emscripten.cpp"
-               STACKTOP = sp;return ($340|0); //@line 1037 "4374_Task1c_emscripten.cpp"
+               __ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev($a); //@line 1113 "4374_Task1c_emscripten.cpp"
+               $$pre_trunc = HEAP8[$77>>0]|0; //@line 1113 "4374_Task1c_emscripten.cpp"
+               $340 = $$pre_trunc&1; //@line 1113 "4374_Task1c_emscripten.cpp"
+               STACKTOP = sp;return ($340|0); //@line 1113 "4374_Task1c_emscripten.cpp"
               }
              }
             }
@@ -13736,21 +13736,21 @@ function __Z6haswonRKNSt3__16vectorI6zombieNS_9allocatorIS1_EEEERK6playerP11SDL_
       if ((label|0) == 30) {
        $266 = ___cxa_find_matching_catch()|0;
        $267 = tempRet0;
-       $82 = $266; //@line 1037 "4374_Task1c_emscripten.cpp"
-       $83 = $267; //@line 1037 "4374_Task1c_emscripten.cpp"
+       $82 = $266; //@line 1113 "4374_Task1c_emscripten.cpp"
+       $83 = $267; //@line 1113 "4374_Task1c_emscripten.cpp"
       }
       __THREW__ = 0;
-      invoke_vi(19,($a|0)); //@line 1037 "4374_Task1c_emscripten.cpp"
+      invoke_vi(19,($a|0)); //@line 1113 "4374_Task1c_emscripten.cpp"
       $338 = __THREW__; __THREW__ = 0;
       $339 = $338&1;
       if ($339) {
        $343 = ___cxa_find_matching_catch(0|0)|0;
        $344 = tempRet0;
-       ___clang_call_terminate($343); //@line 1030 "4374_Task1c_emscripten.cpp"
-       // unreachable; //@line 1030 "4374_Task1c_emscripten.cpp"
+       ___clang_call_terminate($343); //@line 1106 "4374_Task1c_emscripten.cpp"
+       // unreachable; //@line 1106 "4374_Task1c_emscripten.cpp"
       } else {
-       $341 = $82; //@line 1037 "4374_Task1c_emscripten.cpp"
-       $342 = $83; //@line 1037 "4374_Task1c_emscripten.cpp"
+       $341 = $82; //@line 1113 "4374_Task1c_emscripten.cpp"
+       $342 = $83; //@line 1113 "4374_Task1c_emscripten.cpp"
        ___resumeException($341|0);
        // unreachable;
       }
@@ -13823,34 +13823,34 @@ function __Z7haslostRK6playerRNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9a
  $4 = sp + 24|0;
  $5 = $spot;
  $6 = $message;
- $7 = $5; //@line 1042 "4374_Task1c_emscripten.cpp"
- $8 = ((($7)) + 24|0); //@line 1042 "4374_Task1c_emscripten.cpp"
- $9 = HEAP32[$8>>2]|0; //@line 1042 "4374_Task1c_emscripten.cpp"
- $10 = ($9|0)==(0); //@line 1042 "4374_Task1c_emscripten.cpp"
+ $7 = $5; //@line 1118 "4374_Task1c_emscripten.cpp"
+ $8 = ((($7)) + 24|0); //@line 1118 "4374_Task1c_emscripten.cpp"
+ $9 = HEAP32[$8>>2]|0; //@line 1118 "4374_Task1c_emscripten.cpp"
+ $10 = ($9|0)==(0); //@line 1118 "4374_Task1c_emscripten.cpp"
  if ($10) {
-  $11 = $6; //@line 1044 "4374_Task1c_emscripten.cpp"
-  $2 = $11; //@line 1044 "4374_Task1c_emscripten.cpp"
-  $3 = 5240; //@line 1044 "4374_Task1c_emscripten.cpp"
-  $12 = $2; //@line 1044 "4374_Task1c_emscripten.cpp"
+  $11 = $6; //@line 1120 "4374_Task1c_emscripten.cpp"
+  $2 = $11; //@line 1120 "4374_Task1c_emscripten.cpp"
+  $3 = 5240; //@line 1120 "4374_Task1c_emscripten.cpp"
+  $12 = $2; //@line 1120 "4374_Task1c_emscripten.cpp"
   $13 = $3; //@line 1370 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
   (__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6assignEPKc($12,$13)|0); //@line 1370 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-  $14 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(10504,5240)|0); //@line 1045 "4374_Task1c_emscripten.cpp"
-  $0 = $14; //@line 1045 "4374_Task1c_emscripten.cpp"
-  $1 = 384; //@line 1045 "4374_Task1c_emscripten.cpp"
-  $15 = $0; //@line 1045 "4374_Task1c_emscripten.cpp"
+  $14 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(10504,5240)|0); //@line 1121 "4374_Task1c_emscripten.cpp"
+  $0 = $14; //@line 1121 "4374_Task1c_emscripten.cpp"
+  $1 = 384; //@line 1121 "4374_Task1c_emscripten.cpp"
+  $15 = $0; //@line 1121 "4374_Task1c_emscripten.cpp"
   $16 = $1; //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
   (FUNCTION_TABLE_ii[$16 & 1023]($15)|0); //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
-  $$expand_i1_val = 1; //@line 1046 "4374_Task1c_emscripten.cpp"
-  HEAP8[$4>>0] = $$expand_i1_val; //@line 1046 "4374_Task1c_emscripten.cpp"
-  $$pre_trunc = HEAP8[$4>>0]|0; //@line 1051 "4374_Task1c_emscripten.cpp"
-  $17 = $$pre_trunc&1; //@line 1051 "4374_Task1c_emscripten.cpp"
-  STACKTOP = sp;return ($17|0); //@line 1051 "4374_Task1c_emscripten.cpp"
+  $$expand_i1_val = 1; //@line 1122 "4374_Task1c_emscripten.cpp"
+  HEAP8[$4>>0] = $$expand_i1_val; //@line 1122 "4374_Task1c_emscripten.cpp"
+  $$pre_trunc = HEAP8[$4>>0]|0; //@line 1127 "4374_Task1c_emscripten.cpp"
+  $17 = $$pre_trunc&1; //@line 1127 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return ($17|0); //@line 1127 "4374_Task1c_emscripten.cpp"
  } else {
-  $$expand_i1_val2 = 0; //@line 1050 "4374_Task1c_emscripten.cpp"
-  HEAP8[$4>>0] = $$expand_i1_val2; //@line 1050 "4374_Task1c_emscripten.cpp"
-  $$pre_trunc = HEAP8[$4>>0]|0; //@line 1051 "4374_Task1c_emscripten.cpp"
-  $17 = $$pre_trunc&1; //@line 1051 "4374_Task1c_emscripten.cpp"
-  STACKTOP = sp;return ($17|0); //@line 1051 "4374_Task1c_emscripten.cpp"
+  $$expand_i1_val2 = 0; //@line 1126 "4374_Task1c_emscripten.cpp"
+  HEAP8[$4>>0] = $$expand_i1_val2; //@line 1126 "4374_Task1c_emscripten.cpp"
+  $$pre_trunc = HEAP8[$4>>0]|0; //@line 1127 "4374_Task1c_emscripten.cpp"
+  $17 = $$pre_trunc&1; //@line 1127 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return ($17|0); //@line 1127 "4374_Task1c_emscripten.cpp"
  }
  return (0)|0;
 }
@@ -13875,43 +13875,43 @@ function __Z15showDescriptionP11SDL_SurfaceP9_TTF_Font($image,$font) {
  $7 = sp + 80|0;
  $0 = $image;
  $1 = $font;
- $8 = $0; //@line 1203 "4374_Task1c_emscripten.cpp"
- $9 = $1; //@line 1203 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$2>>2]=HEAP32[5264>>2]|0;HEAP32[$2+4>>2]=HEAP32[5264+4>>2]|0;HEAP32[$2+8>>2]=HEAP32[5264+8>>2]|0;HEAP32[$2+12>>2]=HEAP32[5264+12>>2]|0; //@line 1203 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$$byval_copy>>2]=HEAP32[$2>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$2+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$2+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$2+12>>2]|0; //@line 1203 "4374_Task1c_emscripten.cpp"
- __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5280,$8,$9,5320,5328,$$byval_copy); //@line 1203 "4374_Task1c_emscripten.cpp"
- $10 = $0; //@line 1204 "4374_Task1c_emscripten.cpp"
- $11 = $1; //@line 1204 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$3>>2]=HEAP32[5336>>2]|0;HEAP32[$3+4>>2]=HEAP32[5336+4>>2]|0;HEAP32[$3+8>>2]=HEAP32[5336+8>>2]|0;HEAP32[$3+12>>2]=HEAP32[5336+12>>2]|0; //@line 1204 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$$byval_copy1>>2]=HEAP32[$3>>2]|0;HEAP32[$$byval_copy1+4>>2]=HEAP32[$3+4>>2]|0;HEAP32[$$byval_copy1+8>>2]=HEAP32[$3+8>>2]|0;HEAP32[$$byval_copy1+12>>2]=HEAP32[$3+12>>2]|0; //@line 1204 "4374_Task1c_emscripten.cpp"
- __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5352,$10,$11,5320,5328,$$byval_copy1); //@line 1204 "4374_Task1c_emscripten.cpp"
- $12 = $0; //@line 1205 "4374_Task1c_emscripten.cpp"
- $13 = $1; //@line 1205 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$4>>2]=HEAP32[5392>>2]|0;HEAP32[$4+4>>2]=HEAP32[5392+4>>2]|0;HEAP32[$4+8>>2]=HEAP32[5392+8>>2]|0;HEAP32[$4+12>>2]=HEAP32[5392+12>>2]|0; //@line 1205 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$$byval_copy2>>2]=HEAP32[$4>>2]|0;HEAP32[$$byval_copy2+4>>2]=HEAP32[$4+4>>2]|0;HEAP32[$$byval_copy2+8>>2]=HEAP32[$4+8>>2]|0;HEAP32[$$byval_copy2+12>>2]=HEAP32[$4+12>>2]|0; //@line 1205 "4374_Task1c_emscripten.cpp"
- __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5408,$12,$13,5320,5328,$$byval_copy2); //@line 1205 "4374_Task1c_emscripten.cpp"
- $14 = $0; //@line 1206 "4374_Task1c_emscripten.cpp"
- $15 = $1; //@line 1206 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$5>>2]=HEAP32[5432>>2]|0;HEAP32[$5+4>>2]=HEAP32[5432+4>>2]|0;HEAP32[$5+8>>2]=HEAP32[5432+8>>2]|0;HEAP32[$5+12>>2]=HEAP32[5432+12>>2]|0; //@line 1206 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$$byval_copy3>>2]=HEAP32[$5>>2]|0;HEAP32[$$byval_copy3+4>>2]=HEAP32[$5+4>>2]|0;HEAP32[$$byval_copy3+8>>2]=HEAP32[$5+8>>2]|0;HEAP32[$$byval_copy3+12>>2]=HEAP32[$5+12>>2]|0; //@line 1206 "4374_Task1c_emscripten.cpp"
- __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5448,$14,$15,5320,5328,$$byval_copy3); //@line 1206 "4374_Task1c_emscripten.cpp"
- $16 = $0; //@line 1207 "4374_Task1c_emscripten.cpp"
- $17 = $1; //@line 1207 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$6>>2]=HEAP32[5496>>2]|0;HEAP32[$6+4>>2]=HEAP32[5496+4>>2]|0;HEAP32[$6+8>>2]=HEAP32[5496+8>>2]|0;HEAP32[$6+12>>2]=HEAP32[5496+12>>2]|0; //@line 1207 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$$byval_copy4>>2]=HEAP32[$6>>2]|0;HEAP32[$$byval_copy4+4>>2]=HEAP32[$6+4>>2]|0;HEAP32[$$byval_copy4+8>>2]=HEAP32[$6+8>>2]|0;HEAP32[$$byval_copy4+12>>2]=HEAP32[$6+12>>2]|0; //@line 1207 "4374_Task1c_emscripten.cpp"
- __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5512,$16,$17,5320,5328,$$byval_copy4); //@line 1207 "4374_Task1c_emscripten.cpp"
- $18 = $0; //@line 1208 "4374_Task1c_emscripten.cpp"
- $19 = $1; //@line 1208 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$7>>2]=HEAP32[5536>>2]|0;HEAP32[$7+4>>2]=HEAP32[5536+4>>2]|0;HEAP32[$7+8>>2]=HEAP32[5536+8>>2]|0;HEAP32[$7+12>>2]=HEAP32[5536+12>>2]|0; //@line 1208 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$$byval_copy5>>2]=HEAP32[$7>>2]|0;HEAP32[$$byval_copy5+4>>2]=HEAP32[$7+4>>2]|0;HEAP32[$$byval_copy5+8>>2]=HEAP32[$7+8>>2]|0;HEAP32[$$byval_copy5+12>>2]=HEAP32[$7+12>>2]|0; //@line 1208 "4374_Task1c_emscripten.cpp"
- __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5552,$18,$19,5320,5328,$$byval_copy5); //@line 1208 "4374_Task1c_emscripten.cpp"
- $20 = $0; //@line 1209 "4374_Task1c_emscripten.cpp"
- __Z9DrawImageP11SDL_SurfacePKcii($20,5592,563,50); //@line 1209 "4374_Task1c_emscripten.cpp"
- $21 = $0; //@line 1210 "4374_Task1c_emscripten.cpp"
- __Z9DrawImageP11SDL_SurfacePKcii($21,5608,495,50); //@line 1210 "4374_Task1c_emscripten.cpp"
- $22 = $0; //@line 1211 "4374_Task1c_emscripten.cpp"
- __Z9DrawImageP11SDL_SurfacePKcii($22,5624,500,70); //@line 1211 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return; //@line 1212 "4374_Task1c_emscripten.cpp"
+ $8 = $0; //@line 1279 "4374_Task1c_emscripten.cpp"
+ $9 = $1; //@line 1279 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$2>>2]=HEAP32[5264>>2]|0;HEAP32[$2+4>>2]=HEAP32[5264+4>>2]|0;HEAP32[$2+8>>2]=HEAP32[5264+8>>2]|0;HEAP32[$2+12>>2]=HEAP32[5264+12>>2]|0; //@line 1279 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$$byval_copy>>2]=HEAP32[$2>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$2+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$2+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$2+12>>2]|0; //@line 1279 "4374_Task1c_emscripten.cpp"
+ __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5280,$8,$9,5320,5328,$$byval_copy); //@line 1279 "4374_Task1c_emscripten.cpp"
+ $10 = $0; //@line 1280 "4374_Task1c_emscripten.cpp"
+ $11 = $1; //@line 1280 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$3>>2]=HEAP32[5336>>2]|0;HEAP32[$3+4>>2]=HEAP32[5336+4>>2]|0;HEAP32[$3+8>>2]=HEAP32[5336+8>>2]|0;HEAP32[$3+12>>2]=HEAP32[5336+12>>2]|0; //@line 1280 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$$byval_copy1>>2]=HEAP32[$3>>2]|0;HEAP32[$$byval_copy1+4>>2]=HEAP32[$3+4>>2]|0;HEAP32[$$byval_copy1+8>>2]=HEAP32[$3+8>>2]|0;HEAP32[$$byval_copy1+12>>2]=HEAP32[$3+12>>2]|0; //@line 1280 "4374_Task1c_emscripten.cpp"
+ __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5352,$10,$11,5320,5328,$$byval_copy1); //@line 1280 "4374_Task1c_emscripten.cpp"
+ $12 = $0; //@line 1281 "4374_Task1c_emscripten.cpp"
+ $13 = $1; //@line 1281 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$4>>2]=HEAP32[5392>>2]|0;HEAP32[$4+4>>2]=HEAP32[5392+4>>2]|0;HEAP32[$4+8>>2]=HEAP32[5392+8>>2]|0;HEAP32[$4+12>>2]=HEAP32[5392+12>>2]|0; //@line 1281 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$$byval_copy2>>2]=HEAP32[$4>>2]|0;HEAP32[$$byval_copy2+4>>2]=HEAP32[$4+4>>2]|0;HEAP32[$$byval_copy2+8>>2]=HEAP32[$4+8>>2]|0;HEAP32[$$byval_copy2+12>>2]=HEAP32[$4+12>>2]|0; //@line 1281 "4374_Task1c_emscripten.cpp"
+ __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5408,$12,$13,5320,5328,$$byval_copy2); //@line 1281 "4374_Task1c_emscripten.cpp"
+ $14 = $0; //@line 1282 "4374_Task1c_emscripten.cpp"
+ $15 = $1; //@line 1282 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$5>>2]=HEAP32[5432>>2]|0;HEAP32[$5+4>>2]=HEAP32[5432+4>>2]|0;HEAP32[$5+8>>2]=HEAP32[5432+8>>2]|0;HEAP32[$5+12>>2]=HEAP32[5432+12>>2]|0; //@line 1282 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$$byval_copy3>>2]=HEAP32[$5>>2]|0;HEAP32[$$byval_copy3+4>>2]=HEAP32[$5+4>>2]|0;HEAP32[$$byval_copy3+8>>2]=HEAP32[$5+8>>2]|0;HEAP32[$$byval_copy3+12>>2]=HEAP32[$5+12>>2]|0; //@line 1282 "4374_Task1c_emscripten.cpp"
+ __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5448,$14,$15,5320,5328,$$byval_copy3); //@line 1282 "4374_Task1c_emscripten.cpp"
+ $16 = $0; //@line 1283 "4374_Task1c_emscripten.cpp"
+ $17 = $1; //@line 1283 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$6>>2]=HEAP32[5496>>2]|0;HEAP32[$6+4>>2]=HEAP32[5496+4>>2]|0;HEAP32[$6+8>>2]=HEAP32[5496+8>>2]|0;HEAP32[$6+12>>2]=HEAP32[5496+12>>2]|0; //@line 1283 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$$byval_copy4>>2]=HEAP32[$6>>2]|0;HEAP32[$$byval_copy4+4>>2]=HEAP32[$6+4>>2]|0;HEAP32[$$byval_copy4+8>>2]=HEAP32[$6+8>>2]|0;HEAP32[$$byval_copy4+12>>2]=HEAP32[$6+12>>2]|0; //@line 1283 "4374_Task1c_emscripten.cpp"
+ __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5512,$16,$17,5320,5328,$$byval_copy4); //@line 1283 "4374_Task1c_emscripten.cpp"
+ $18 = $0; //@line 1284 "4374_Task1c_emscripten.cpp"
+ $19 = $1; //@line 1284 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$7>>2]=HEAP32[5536>>2]|0;HEAP32[$7+4>>2]=HEAP32[5536+4>>2]|0;HEAP32[$7+8>>2]=HEAP32[5536+8>>2]|0;HEAP32[$7+12>>2]=HEAP32[5536+12>>2]|0; //@line 1284 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$$byval_copy5>>2]=HEAP32[$7>>2]|0;HEAP32[$$byval_copy5+4>>2]=HEAP32[$7+4>>2]|0;HEAP32[$$byval_copy5+8>>2]=HEAP32[$7+8>>2]|0;HEAP32[$$byval_copy5+12>>2]=HEAP32[$7+12>>2]|0; //@line 1284 "4374_Task1c_emscripten.cpp"
+ __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5552,$18,$19,5320,5328,$$byval_copy5); //@line 1284 "4374_Task1c_emscripten.cpp"
+ $20 = $0; //@line 1285 "4374_Task1c_emscripten.cpp"
+ __Z9DrawImageP11SDL_SurfacePKcii($20,5592,563,50); //@line 1285 "4374_Task1c_emscripten.cpp"
+ $21 = $0; //@line 1286 "4374_Task1c_emscripten.cpp"
+ __Z9DrawImageP11SDL_SurfacePKcii($21,5608,495,50); //@line 1286 "4374_Task1c_emscripten.cpp"
+ $22 = $0; //@line 1287 "4374_Task1c_emscripten.cpp"
+ __Z9DrawImageP11SDL_SurfacePKcii($22,5624,500,70); //@line 1287 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 1288 "4374_Task1c_emscripten.cpp"
 }
 function __Z9showTitleP11SDL_SurfaceP9_TTF_Font($image,$font) {
  $image = $image|0;
@@ -13927,22 +13927,22 @@ function __Z9showTitleP11SDL_SurfaceP9_TTF_Font($image,$font) {
  $4 = sp + 72|0;
  $0 = $image;
  $1 = $font;
- $5 = $0; //@line 1223 "4374_Task1c_emscripten.cpp"
- $6 = $1; //@line 1223 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$2>>2]=HEAP32[5640>>2]|0;HEAP32[$2+4>>2]=HEAP32[5640+4>>2]|0;HEAP32[$2+8>>2]=HEAP32[5640+8>>2]|0;HEAP32[$2+12>>2]=HEAP32[5640+12>>2]|0; //@line 1223 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$$byval_copy>>2]=HEAP32[$2>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$2+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$2+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$2+12>>2]|0; //@line 1223 "4374_Task1c_emscripten.cpp"
- __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5656,$5,$6,5688,5696,$$byval_copy); //@line 1223 "4374_Task1c_emscripten.cpp"
- $7 = $0; //@line 1224 "4374_Task1c_emscripten.cpp"
- $8 = $1; //@line 1224 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$3>>2]=HEAP32[5704>>2]|0;HEAP32[$3+4>>2]=HEAP32[5704+4>>2]|0;HEAP32[$3+8>>2]=HEAP32[5704+8>>2]|0;HEAP32[$3+12>>2]=HEAP32[5704+12>>2]|0; //@line 1224 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$$byval_copy1>>2]=HEAP32[$3>>2]|0;HEAP32[$$byval_copy1+4>>2]=HEAP32[$3+4>>2]|0;HEAP32[$$byval_copy1+8>>2]=HEAP32[$3+8>>2]|0;HEAP32[$$byval_copy1+12>>2]=HEAP32[$3+12>>2]|0; //@line 1224 "4374_Task1c_emscripten.cpp"
- __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5720,$7,$8,5760,5696,$$byval_copy1); //@line 1224 "4374_Task1c_emscripten.cpp"
- $9 = $0; //@line 1225 "4374_Task1c_emscripten.cpp"
- $10 = $1; //@line 1225 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$4>>2]=HEAP32[5768>>2]|0;HEAP32[$4+4>>2]=HEAP32[5768+4>>2]|0;HEAP32[$4+8>>2]=HEAP32[5768+8>>2]|0;HEAP32[$4+12>>2]=HEAP32[5768+12>>2]|0; //@line 1225 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$$byval_copy2>>2]=HEAP32[$4>>2]|0;HEAP32[$$byval_copy2+4>>2]=HEAP32[$4+4>>2]|0;HEAP32[$$byval_copy2+8>>2]=HEAP32[$4+8>>2]|0;HEAP32[$$byval_copy2+12>>2]=HEAP32[$4+12>>2]|0; //@line 1225 "4374_Task1c_emscripten.cpp"
- __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5784,$9,$10,5760,5696,$$byval_copy2); //@line 1225 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return; //@line 1226 "4374_Task1c_emscripten.cpp"
+ $5 = $0; //@line 1299 "4374_Task1c_emscripten.cpp"
+ $6 = $1; //@line 1299 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$2>>2]=HEAP32[5640>>2]|0;HEAP32[$2+4>>2]=HEAP32[5640+4>>2]|0;HEAP32[$2+8>>2]=HEAP32[5640+8>>2]|0;HEAP32[$2+12>>2]=HEAP32[5640+12>>2]|0; //@line 1299 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$$byval_copy>>2]=HEAP32[$2>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$2+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$2+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$2+12>>2]|0; //@line 1299 "4374_Task1c_emscripten.cpp"
+ __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5656,$5,$6,5688,5696,$$byval_copy); //@line 1299 "4374_Task1c_emscripten.cpp"
+ $7 = $0; //@line 1300 "4374_Task1c_emscripten.cpp"
+ $8 = $1; //@line 1300 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$3>>2]=HEAP32[5704>>2]|0;HEAP32[$3+4>>2]=HEAP32[5704+4>>2]|0;HEAP32[$3+8>>2]=HEAP32[5704+8>>2]|0;HEAP32[$3+12>>2]=HEAP32[5704+12>>2]|0; //@line 1300 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$$byval_copy1>>2]=HEAP32[$3>>2]|0;HEAP32[$$byval_copy1+4>>2]=HEAP32[$3+4>>2]|0;HEAP32[$$byval_copy1+8>>2]=HEAP32[$3+8>>2]|0;HEAP32[$$byval_copy1+12>>2]=HEAP32[$3+12>>2]|0; //@line 1300 "4374_Task1c_emscripten.cpp"
+ __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5720,$7,$8,5760,5696,$$byval_copy1); //@line 1300 "4374_Task1c_emscripten.cpp"
+ $9 = $0; //@line 1301 "4374_Task1c_emscripten.cpp"
+ $10 = $1; //@line 1301 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$4>>2]=HEAP32[5768>>2]|0;HEAP32[$4+4>>2]=HEAP32[5768+4>>2]|0;HEAP32[$4+8>>2]=HEAP32[5768+8>>2]|0;HEAP32[$4+12>>2]=HEAP32[5768+12>>2]|0; //@line 1301 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$$byval_copy2>>2]=HEAP32[$4>>2]|0;HEAP32[$$byval_copy2+4>>2]=HEAP32[$4+4>>2]|0;HEAP32[$$byval_copy2+8>>2]=HEAP32[$4+8>>2]|0;HEAP32[$$byval_copy2+12>>2]=HEAP32[$4+12>>2]|0; //@line 1301 "4374_Task1c_emscripten.cpp"
+ __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5784,$9,$10,5760,5696,$$byval_copy2); //@line 1301 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 1302 "4374_Task1c_emscripten.cpp"
 }
 function __Z11showOptionsP11SDL_SurfaceP9_TTF_Font($image,$font) {
  $image = $image|0;
@@ -13956,17 +13956,17 @@ function __Z11showOptionsP11SDL_SurfaceP9_TTF_Font($image,$font) {
  $3 = sp + 40|0;
  $0 = $image;
  $1 = $font;
- $4 = $0; //@line 1257 "4374_Task1c_emscripten.cpp"
- $5 = $1; //@line 1257 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$2>>2]=HEAP32[5808>>2]|0;HEAP32[$2+4>>2]=HEAP32[5808+4>>2]|0;HEAP32[$2+8>>2]=HEAP32[5808+8>>2]|0;HEAP32[$2+12>>2]=HEAP32[5808+12>>2]|0; //@line 1257 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$$byval_copy>>2]=HEAP32[$2>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$2+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$2+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$2+12>>2]|0; //@line 1257 "4374_Task1c_emscripten.cpp"
- __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5824,$4,$5,5856,5864,$$byval_copy); //@line 1257 "4374_Task1c_emscripten.cpp"
- $6 = $0; //@line 1258 "4374_Task1c_emscripten.cpp"
- $7 = $1; //@line 1258 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$3>>2]=HEAP32[5872>>2]|0;HEAP32[$3+4>>2]=HEAP32[5872+4>>2]|0;HEAP32[$3+8>>2]=HEAP32[5872+8>>2]|0;HEAP32[$3+12>>2]=HEAP32[5872+12>>2]|0; //@line 1258 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$$byval_copy1>>2]=HEAP32[$3>>2]|0;HEAP32[$$byval_copy1+4>>2]=HEAP32[$3+4>>2]|0;HEAP32[$$byval_copy1+8>>2]=HEAP32[$3+8>>2]|0;HEAP32[$$byval_copy1+12>>2]=HEAP32[$3+12>>2]|0; //@line 1258 "4374_Task1c_emscripten.cpp"
- __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5888,$6,$7,5856,5864,$$byval_copy1); //@line 1258 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return; //@line 1259 "4374_Task1c_emscripten.cpp"
+ $4 = $0; //@line 1333 "4374_Task1c_emscripten.cpp"
+ $5 = $1; //@line 1333 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$2>>2]=HEAP32[5808>>2]|0;HEAP32[$2+4>>2]=HEAP32[5808+4>>2]|0;HEAP32[$2+8>>2]=HEAP32[5808+8>>2]|0;HEAP32[$2+12>>2]=HEAP32[5808+12>>2]|0; //@line 1333 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$$byval_copy>>2]=HEAP32[$2>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$2+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$2+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$2+12>>2]|0; //@line 1333 "4374_Task1c_emscripten.cpp"
+ __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5824,$4,$5,5856,5864,$$byval_copy); //@line 1333 "4374_Task1c_emscripten.cpp"
+ $6 = $0; //@line 1334 "4374_Task1c_emscripten.cpp"
+ $7 = $1; //@line 1334 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$3>>2]=HEAP32[5872>>2]|0;HEAP32[$3+4>>2]=HEAP32[5872+4>>2]|0;HEAP32[$3+8>>2]=HEAP32[5872+8>>2]|0;HEAP32[$3+12>>2]=HEAP32[5872+12>>2]|0; //@line 1334 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$$byval_copy1>>2]=HEAP32[$3>>2]|0;HEAP32[$$byval_copy1+4>>2]=HEAP32[$3+4>>2]|0;HEAP32[$$byval_copy1+8>>2]=HEAP32[$3+8>>2]|0;HEAP32[$$byval_copy1+12>>2]=HEAP32[$3+12>>2]|0; //@line 1334 "4374_Task1c_emscripten.cpp"
+ __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5888,$6,$7,5856,5864,$$byval_copy1); //@line 1334 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 1335 "4374_Task1c_emscripten.cpp"
 }
 function __Z8showmenuP11SDL_SurfaceP9_TTF_Font($image,$font) {
  $image = $image|0;
@@ -13982,22 +13982,22 @@ function __Z8showmenuP11SDL_SurfaceP9_TTF_Font($image,$font) {
  $4 = sp + 72|0;
  $0 = $image;
  $1 = $font;
- $5 = $0; //@line 1298 "4374_Task1c_emscripten.cpp"
- $6 = $1; //@line 1298 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$2>>2]=HEAP32[5912>>2]|0;HEAP32[$2+4>>2]=HEAP32[5912+4>>2]|0;HEAP32[$2+8>>2]=HEAP32[5912+8>>2]|0;HEAP32[$2+12>>2]=HEAP32[5912+12>>2]|0; //@line 1298 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$$byval_copy>>2]=HEAP32[$2>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$2+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$2+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$2+12>>2]|0; //@line 1298 "4374_Task1c_emscripten.cpp"
- __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5928,$5,$6,5944,5952,$$byval_copy); //@line 1298 "4374_Task1c_emscripten.cpp"
- $7 = $0; //@line 1299 "4374_Task1c_emscripten.cpp"
- $8 = $1; //@line 1299 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$3>>2]=HEAP32[5960>>2]|0;HEAP32[$3+4>>2]=HEAP32[5960+4>>2]|0;HEAP32[$3+8>>2]=HEAP32[5960+8>>2]|0;HEAP32[$3+12>>2]=HEAP32[5960+12>>2]|0; //@line 1299 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$$byval_copy1>>2]=HEAP32[$3>>2]|0;HEAP32[$$byval_copy1+4>>2]=HEAP32[$3+4>>2]|0;HEAP32[$$byval_copy1+8>>2]=HEAP32[$3+8>>2]|0;HEAP32[$$byval_copy1+12>>2]=HEAP32[$3+12>>2]|0; //@line 1299 "4374_Task1c_emscripten.cpp"
- __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5976,$7,$8,5944,5952,$$byval_copy1); //@line 1299 "4374_Task1c_emscripten.cpp"
- $9 = $0; //@line 1300 "4374_Task1c_emscripten.cpp"
- $10 = $1; //@line 1300 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$4>>2]=HEAP32[6008>>2]|0;HEAP32[$4+4>>2]=HEAP32[6008+4>>2]|0;HEAP32[$4+8>>2]=HEAP32[6008+8>>2]|0;HEAP32[$4+12>>2]=HEAP32[6008+12>>2]|0; //@line 1300 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$$byval_copy2>>2]=HEAP32[$4>>2]|0;HEAP32[$$byval_copy2+4>>2]=HEAP32[$4+4>>2]|0;HEAP32[$$byval_copy2+8>>2]=HEAP32[$4+8>>2]|0;HEAP32[$$byval_copy2+12>>2]=HEAP32[$4+12>>2]|0; //@line 1300 "4374_Task1c_emscripten.cpp"
- __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(6024,$9,$10,5944,5952,$$byval_copy2); //@line 1300 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return; //@line 1301 "4374_Task1c_emscripten.cpp"
+ $5 = $0; //@line 1374 "4374_Task1c_emscripten.cpp"
+ $6 = $1; //@line 1374 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$2>>2]=HEAP32[5912>>2]|0;HEAP32[$2+4>>2]=HEAP32[5912+4>>2]|0;HEAP32[$2+8>>2]=HEAP32[5912+8>>2]|0;HEAP32[$2+12>>2]=HEAP32[5912+12>>2]|0; //@line 1374 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$$byval_copy>>2]=HEAP32[$2>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$2+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$2+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$2+12>>2]|0; //@line 1374 "4374_Task1c_emscripten.cpp"
+ __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5928,$5,$6,5944,5952,$$byval_copy); //@line 1374 "4374_Task1c_emscripten.cpp"
+ $7 = $0; //@line 1375 "4374_Task1c_emscripten.cpp"
+ $8 = $1; //@line 1375 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$3>>2]=HEAP32[5960>>2]|0;HEAP32[$3+4>>2]=HEAP32[5960+4>>2]|0;HEAP32[$3+8>>2]=HEAP32[5960+8>>2]|0;HEAP32[$3+12>>2]=HEAP32[5960+12>>2]|0; //@line 1375 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$$byval_copy1>>2]=HEAP32[$3>>2]|0;HEAP32[$$byval_copy1+4>>2]=HEAP32[$3+4>>2]|0;HEAP32[$$byval_copy1+8>>2]=HEAP32[$3+8>>2]|0;HEAP32[$$byval_copy1+12>>2]=HEAP32[$3+12>>2]|0; //@line 1375 "4374_Task1c_emscripten.cpp"
+ __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(5976,$7,$8,5944,5952,$$byval_copy1); //@line 1375 "4374_Task1c_emscripten.cpp"
+ $9 = $0; //@line 1376 "4374_Task1c_emscripten.cpp"
+ $10 = $1; //@line 1376 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$4>>2]=HEAP32[6008>>2]|0;HEAP32[$4+4>>2]=HEAP32[6008+4>>2]|0;HEAP32[$4+8>>2]=HEAP32[6008+8>>2]|0;HEAP32[$4+12>>2]=HEAP32[6008+12>>2]|0; //@line 1376 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$$byval_copy2>>2]=HEAP32[$4>>2]|0;HEAP32[$$byval_copy2+4>>2]=HEAP32[$4+4>>2]|0;HEAP32[$$byval_copy2+8>>2]=HEAP32[$4+8>>2]|0;HEAP32[$$byval_copy2+12>>2]=HEAP32[$4+12>>2]|0; //@line 1376 "4374_Task1c_emscripten.cpp"
+ __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(6024,$9,$10,5944,5952,$$byval_copy2); //@line 1376 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 1377 "4374_Task1c_emscripten.cpp"
 }
 function __Z8showtimeP11SDL_SurfaceP9_TTF_Font($image,$font) {
  $image = $image|0;
@@ -14027,9 +14027,9 @@ function __Z8showtimeP11SDL_SurfaceP9_TTF_Font($image,$font) {
  $60 = sp + 304|0;
  $53 = $image;
  $54 = $font;
- $49 = $a; //@line 1309 "4374_Task1c_emscripten.cpp"
- $50 = 24; //@line 1309 "4374_Task1c_emscripten.cpp"
- $61 = $49; //@line 1309 "4374_Task1c_emscripten.cpp"
+ $49 = $a; //@line 1385 "4374_Task1c_emscripten.cpp"
+ $50 = 24; //@line 1385 "4374_Task1c_emscripten.cpp"
+ $61 = $49; //@line 1385 "4374_Task1c_emscripten.cpp"
  $62 = ((($61)) + 64|0); //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
  $48 = $62; //@line 877 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
  $63 = $48; //@line 877 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
@@ -14245,9 +14245,9 @@ function __Z8showtimeP11SDL_SurfaceP9_TTF_Font($image,$font) {
        $35 = $167; //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
        break;
       }
-      $193 = ((($a)) + 8|0); //@line 1310 "4374_Task1c_emscripten.cpp"
+      $193 = ((($a)) + 8|0); //@line 1386 "4374_Task1c_emscripten.cpp"
       __THREW__ = 0;
-      invoke_vi(411,($55|0)); //@line 1310 "4374_Task1c_emscripten.cpp"
+      invoke_vi(411,($55|0)); //@line 1386 "4374_Task1c_emscripten.cpp"
       $194 = __THREW__; __THREW__ = 0;
       $195 = $194&1;
       L20: do {
@@ -14255,16 +14255,16 @@ function __Z8showtimeP11SDL_SurfaceP9_TTF_Font($image,$font) {
         label = 37;
        } else {
         __THREW__ = 0;
-        $196 = (invoke_iii(412,($193|0),($55|0))|0); //@line 1310 "4374_Task1c_emscripten.cpp"
+        $196 = (invoke_iii(412,($193|0),($55|0))|0); //@line 1386 "4374_Task1c_emscripten.cpp"
         $197 = __THREW__; __THREW__ = 0;
         $198 = $197&1;
         do {
          if ($198) {
           label = 38;
          } else {
-          $16 = $196; //@line 1310 "4374_Task1c_emscripten.cpp"
-          $17 = 384; //@line 1310 "4374_Task1c_emscripten.cpp"
-          $199 = $16; //@line 1310 "4374_Task1c_emscripten.cpp"
+          $16 = $196; //@line 1386 "4374_Task1c_emscripten.cpp"
+          $17 = 384; //@line 1386 "4374_Task1c_emscripten.cpp"
+          $199 = $16; //@line 1386 "4374_Task1c_emscripten.cpp"
           $200 = $17; //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
           __THREW__ = 0;
           $201 = (invoke_ii($200|0,($199|0))|0); //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
@@ -14274,23 +14274,23 @@ function __Z8showtimeP11SDL_SurfaceP9_TTF_Font($image,$font) {
            label = 38;
           } else {
            __THREW__ = 0;
-           invoke_vi(413,($58|0)); //@line 1310 "4374_Task1c_emscripten.cpp"
+           invoke_vi(413,($58|0)); //@line 1386 "4374_Task1c_emscripten.cpp"
            $204 = __THREW__; __THREW__ = 0;
            $205 = $204&1;
            if ($205) {
             label = 38;
            } else {
             __THREW__ = 0;
-            (invoke_iii(412,($201|0),($58|0))|0); //@line 1310 "4374_Task1c_emscripten.cpp"
+            (invoke_iii(412,($201|0),($58|0))|0); //@line 1386 "4374_Task1c_emscripten.cpp"
             $206 = __THREW__; __THREW__ = 0;
             $207 = $206&1;
             if ($207) {
              $249 = ___cxa_find_matching_catch()|0;
              $250 = tempRet0;
-             $56 = $249; //@line 1312 "4374_Task1c_emscripten.cpp"
-             $57 = $250; //@line 1312 "4374_Task1c_emscripten.cpp"
+             $56 = $249; //@line 1388 "4374_Task1c_emscripten.cpp"
+             $57 = $250; //@line 1388 "4374_Task1c_emscripten.cpp"
              __THREW__ = 0;
-             invoke_vi(374,($58|0)); //@line 1310 "4374_Task1c_emscripten.cpp"
+             invoke_vi(374,($58|0)); //@line 1386 "4374_Task1c_emscripten.cpp"
              $251 = __THREW__; __THREW__ = 0;
              $252 = $251&1;
              if (!($252)) {
@@ -14298,26 +14298,26 @@ function __Z8showtimeP11SDL_SurfaceP9_TTF_Font($image,$font) {
              }
              $263 = ___cxa_find_matching_catch(0|0)|0;
              $264 = tempRet0;
-             ___clang_call_terminate($263); //@line 1310 "4374_Task1c_emscripten.cpp"
-             // unreachable; //@line 1310 "4374_Task1c_emscripten.cpp"
+             ___clang_call_terminate($263); //@line 1386 "4374_Task1c_emscripten.cpp"
+             // unreachable; //@line 1386 "4374_Task1c_emscripten.cpp"
             }
             __THREW__ = 0;
-            invoke_vi(374,($58|0)); //@line 1310 "4374_Task1c_emscripten.cpp"
+            invoke_vi(374,($58|0)); //@line 1386 "4374_Task1c_emscripten.cpp"
             $208 = __THREW__; __THREW__ = 0;
             $209 = $208&1;
             if ($209) {
              label = 38;
             } else {
              __THREW__ = 0;
-             invoke_vi(374,($55|0)); //@line 1310 "4374_Task1c_emscripten.cpp"
+             invoke_vi(374,($55|0)); //@line 1386 "4374_Task1c_emscripten.cpp"
              $210 = __THREW__; __THREW__ = 0;
              $211 = $210&1;
              if ($211) {
               label = 37;
               break L20;
              }
-             $15 = $a; //@line 1311 "4374_Task1c_emscripten.cpp"
-             $212 = $15; //@line 1311 "4374_Task1c_emscripten.cpp"
+             $15 = $a; //@line 1387 "4374_Task1c_emscripten.cpp"
+             $212 = $15; //@line 1387 "4374_Task1c_emscripten.cpp"
              $213 = ((($212)) + 12|0); //@line 964 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
              __THREW__ = 0;
              invoke_vii(377,($59|0),($213|0)); //@line 964 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
@@ -14327,8 +14327,8 @@ function __Z8showtimeP11SDL_SurfaceP9_TTF_Font($image,$font) {
               label = 37;
               break L20;
              }
-             $14 = $59; //@line 1311 "4374_Task1c_emscripten.cpp"
-             $216 = $14; //@line 1311 "4374_Task1c_emscripten.cpp"
+             $14 = $59; //@line 1387 "4374_Task1c_emscripten.cpp"
+             $216 = $14; //@line 1387 "4374_Task1c_emscripten.cpp"
              $13 = $216; //@line 1598 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
              $217 = $13; //@line 1598 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
              $12 = $217; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
@@ -14369,21 +14369,21 @@ function __Z8showtimeP11SDL_SurfaceP9_TTF_Font($image,$font) {
              }
              $0 = $237; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
              $238 = $0; //@line 1043 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-             $239 = $53; //@line 1311 "4374_Task1c_emscripten.cpp"
-             $240 = $54; //@line 1311 "4374_Task1c_emscripten.cpp"
-             ;HEAP32[$60>>2]=HEAP32[6056>>2]|0;HEAP32[$60+4>>2]=HEAP32[6056+4>>2]|0;HEAP32[$60+8>>2]=HEAP32[6056+8>>2]|0;HEAP32[$60+12>>2]=HEAP32[6056+12>>2]|0; //@line 1311 "4374_Task1c_emscripten.cpp"
+             $239 = $53; //@line 1387 "4374_Task1c_emscripten.cpp"
+             $240 = $54; //@line 1387 "4374_Task1c_emscripten.cpp"
+             ;HEAP32[$60>>2]=HEAP32[6056>>2]|0;HEAP32[$60+4>>2]=HEAP32[6056+4>>2]|0;HEAP32[$60+8>>2]=HEAP32[6056+8>>2]|0;HEAP32[$60+12>>2]=HEAP32[6056+12>>2]|0; //@line 1387 "4374_Task1c_emscripten.cpp"
              __THREW__ = 0;
-             ;HEAP32[$$byval_copy>>2]=HEAP32[$60>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$60+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$60+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$60+12>>2]|0; //@line 1311 "4374_Task1c_emscripten.cpp"
-             invoke_viiiiii(414,($238|0),($239|0),($240|0),(6072|0),(6080|0),($$byval_copy|0)); //@line 1311 "4374_Task1c_emscripten.cpp"
+             ;HEAP32[$$byval_copy>>2]=HEAP32[$60>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$60+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$60+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$60+12>>2]|0; //@line 1387 "4374_Task1c_emscripten.cpp"
+             invoke_viiiiii(414,($238|0),($239|0),($240|0),(6072|0),(6080|0),($$byval_copy|0)); //@line 1387 "4374_Task1c_emscripten.cpp"
              $241 = __THREW__; __THREW__ = 0;
              $242 = $241&1;
              if ($242) {
               $255 = ___cxa_find_matching_catch()|0;
               $256 = tempRet0;
-              $56 = $255; //@line 1312 "4374_Task1c_emscripten.cpp"
-              $57 = $256; //@line 1312 "4374_Task1c_emscripten.cpp"
+              $56 = $255; //@line 1388 "4374_Task1c_emscripten.cpp"
+              $57 = $256; //@line 1388 "4374_Task1c_emscripten.cpp"
               __THREW__ = 0;
-              invoke_vi(374,($59|0)); //@line 1311 "4374_Task1c_emscripten.cpp"
+              invoke_vi(374,($59|0)); //@line 1387 "4374_Task1c_emscripten.cpp"
               $257 = __THREW__; __THREW__ = 0;
               $258 = $257&1;
               if (!($258)) {
@@ -14391,19 +14391,19 @@ function __Z8showtimeP11SDL_SurfaceP9_TTF_Font($image,$font) {
               }
               $263 = ___cxa_find_matching_catch(0|0)|0;
               $264 = tempRet0;
-              ___clang_call_terminate($263); //@line 1310 "4374_Task1c_emscripten.cpp"
-              // unreachable; //@line 1310 "4374_Task1c_emscripten.cpp"
+              ___clang_call_terminate($263); //@line 1386 "4374_Task1c_emscripten.cpp"
+              // unreachable; //@line 1386 "4374_Task1c_emscripten.cpp"
              } else {
               __THREW__ = 0;
-              invoke_vi(374,($59|0)); //@line 1311 "4374_Task1c_emscripten.cpp"
+              invoke_vi(374,($59|0)); //@line 1387 "4374_Task1c_emscripten.cpp"
               $243 = __THREW__; __THREW__ = 0;
               $244 = $243&1;
               if ($244) {
                label = 37;
                break L20;
               }
-              __ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev($a); //@line 1312 "4374_Task1c_emscripten.cpp"
-              STACKTOP = sp;return; //@line 1312 "4374_Task1c_emscripten.cpp"
+              __ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev($a); //@line 1388 "4374_Task1c_emscripten.cpp"
+              STACKTOP = sp;return; //@line 1388 "4374_Task1c_emscripten.cpp"
              }
             }
            }
@@ -14413,39 +14413,39 @@ function __Z8showtimeP11SDL_SurfaceP9_TTF_Font($image,$font) {
         if ((label|0) == 38) {
          $247 = ___cxa_find_matching_catch()|0;
          $248 = tempRet0;
-         $56 = $247; //@line 1312 "4374_Task1c_emscripten.cpp"
-         $57 = $248; //@line 1312 "4374_Task1c_emscripten.cpp"
+         $56 = $247; //@line 1388 "4374_Task1c_emscripten.cpp"
+         $57 = $248; //@line 1388 "4374_Task1c_emscripten.cpp"
         }
         __THREW__ = 0;
-        invoke_vi(374,($55|0)); //@line 1310 "4374_Task1c_emscripten.cpp"
+        invoke_vi(374,($55|0)); //@line 1386 "4374_Task1c_emscripten.cpp"
         $253 = __THREW__; __THREW__ = 0;
         $254 = $253&1;
         if ($254) {
          $263 = ___cxa_find_matching_catch(0|0)|0;
          $264 = tempRet0;
-         ___clang_call_terminate($263); //@line 1310 "4374_Task1c_emscripten.cpp"
-         // unreachable; //@line 1310 "4374_Task1c_emscripten.cpp"
+         ___clang_call_terminate($263); //@line 1386 "4374_Task1c_emscripten.cpp"
+         // unreachable; //@line 1386 "4374_Task1c_emscripten.cpp"
         }
        }
       } while(0);
       if ((label|0) == 37) {
        $245 = ___cxa_find_matching_catch()|0;
        $246 = tempRet0;
-       $56 = $245; //@line 1312 "4374_Task1c_emscripten.cpp"
-       $57 = $246; //@line 1312 "4374_Task1c_emscripten.cpp"
+       $56 = $245; //@line 1388 "4374_Task1c_emscripten.cpp"
+       $57 = $246; //@line 1388 "4374_Task1c_emscripten.cpp"
       }
       __THREW__ = 0;
-      invoke_vi(19,($a|0)); //@line 1312 "4374_Task1c_emscripten.cpp"
+      invoke_vi(19,($a|0)); //@line 1388 "4374_Task1c_emscripten.cpp"
       $259 = __THREW__; __THREW__ = 0;
       $260 = $259&1;
       if ($260) {
        $263 = ___cxa_find_matching_catch(0|0)|0;
        $264 = tempRet0;
-       ___clang_call_terminate($263); //@line 1310 "4374_Task1c_emscripten.cpp"
-       // unreachable; //@line 1310 "4374_Task1c_emscripten.cpp"
+       ___clang_call_terminate($263); //@line 1386 "4374_Task1c_emscripten.cpp"
+       // unreachable; //@line 1386 "4374_Task1c_emscripten.cpp"
       } else {
-       $261 = $56; //@line 1312 "4374_Task1c_emscripten.cpp"
-       $262 = $57; //@line 1312 "4374_Task1c_emscripten.cpp"
+       $261 = $56; //@line 1388 "4374_Task1c_emscripten.cpp"
+       $262 = $57; //@line 1388 "4374_Task1c_emscripten.cpp"
        ___resumeException($261|0);
        // unreachable;
       }
@@ -14521,9 +14521,9 @@ function __Z11showMessageRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9alloca
  $15 = $m;
  $16 = $image;
  $17 = $font;
- $19 = $15; //@line 1278 "4374_Task1c_emscripten.cpp"
- $14 = $19; //@line 1278 "4374_Task1c_emscripten.cpp"
- $20 = $14; //@line 1278 "4374_Task1c_emscripten.cpp"
+ $19 = $15; //@line 1354 "4374_Task1c_emscripten.cpp"
+ $14 = $19; //@line 1354 "4374_Task1c_emscripten.cpp"
+ $20 = $14; //@line 1354 "4374_Task1c_emscripten.cpp"
  $13 = $20; //@line 1598 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
  $21 = $13; //@line 1598 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
  $12 = $21; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
@@ -14564,12 +14564,12 @@ function __Z11showMessageRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9alloca
  }
  $0 = $41; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
  $42 = $0; //@line 1043 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
- $43 = $16; //@line 1278 "4374_Task1c_emscripten.cpp"
- $44 = $17; //@line 1278 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$18>>2]=HEAP32[6088>>2]|0;HEAP32[$18+4>>2]=HEAP32[6088+4>>2]|0;HEAP32[$18+8>>2]=HEAP32[6088+8>>2]|0;HEAP32[$18+12>>2]=HEAP32[6088+12>>2]|0; //@line 1278 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$$byval_copy>>2]=HEAP32[$18>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$18+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$18+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$18+12>>2]|0; //@line 1278 "4374_Task1c_emscripten.cpp"
- __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect($42,$43,$44,6168,6104,$$byval_copy); //@line 1278 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return; //@line 1279 "4374_Task1c_emscripten.cpp"
+ $43 = $16; //@line 1354 "4374_Task1c_emscripten.cpp"
+ $44 = $17; //@line 1354 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$18>>2]=HEAP32[6088>>2]|0;HEAP32[$18+4>>2]=HEAP32[6088+4>>2]|0;HEAP32[$18+8>>2]=HEAP32[6088+8>>2]|0;HEAP32[$18+12>>2]=HEAP32[6088+12>>2]|0; //@line 1354 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$$byval_copy>>2]=HEAP32[$18>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$18+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$18+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$18+12>>2]|0; //@line 1354 "4374_Task1c_emscripten.cpp"
+ __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect($42,$43,$44,6168,6104,$$byval_copy); //@line 1354 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 1355 "4374_Task1c_emscripten.cpp"
 }
 function __Z9paintGridPA22_KcP11SDL_SurfaceP9_TTF_Font($g,$image,$font) {
  $g = $g|0;
@@ -14602,34 +14602,34 @@ function __Z9paintGridPA22_KcP11SDL_SurfaceP9_TTF_Font($g,$image,$font) {
  $51 = $g;
  $52 = $image;
  $53 = $font;
- ;HEAP8[$text_color>>0]=HEAP8[6168>>0]|0;HEAP8[$text_color+1>>0]=HEAP8[6168+1>>0]|0;HEAP8[$text_color+2>>0]=HEAP8[6168+2>>0]|0;HEAP8[$text_color+3>>0]=HEAP8[6168+3>>0]|0; //@line 1108 "4374_Task1c_emscripten.cpp"
- $row = 0; //@line 1110 "4374_Task1c_emscripten.cpp"
+ ;HEAP8[$text_color>>0]=HEAP8[6168>>0]|0;HEAP8[$text_color+1>>0]=HEAP8[6168+1>>0]|0;HEAP8[$text_color+2>>0]=HEAP8[6168+2>>0]|0;HEAP8[$text_color+3>>0]=HEAP8[6168+3>>0]|0; //@line 1184 "4374_Task1c_emscripten.cpp"
+ $row = 0; //@line 1186 "4374_Task1c_emscripten.cpp"
  L1: while(1) {
-  $58 = $row; //@line 1110 "4374_Task1c_emscripten.cpp"
-  $59 = ($58|0)<(39); //@line 1110 "4374_Task1c_emscripten.cpp"
+  $58 = $row; //@line 1186 "4374_Task1c_emscripten.cpp"
+  $59 = ($58|0)<(39); //@line 1186 "4374_Task1c_emscripten.cpp"
   if (!($59)) {
    label = 45;
    break;
   }
-  $col = 0; //@line 1112 "4374_Task1c_emscripten.cpp"
+  $col = 0; //@line 1188 "4374_Task1c_emscripten.cpp"
   while(1) {
-   $60 = $col; //@line 1112 "4374_Task1c_emscripten.cpp"
-   $61 = ($60|0)<(22); //@line 1112 "4374_Task1c_emscripten.cpp"
+   $60 = $col; //@line 1188 "4374_Task1c_emscripten.cpp"
+   $61 = ($60|0)<(22); //@line 1188 "4374_Task1c_emscripten.cpp"
    if (!($61)) {
     break;
    }
-   $62 = $col; //@line 1114 "4374_Task1c_emscripten.cpp"
-   $63 = $row; //@line 1114 "4374_Task1c_emscripten.cpp"
-   $64 = $51; //@line 1114 "4374_Task1c_emscripten.cpp"
-   $65 = (($64) + (($63*22)|0)|0); //@line 1114 "4374_Task1c_emscripten.cpp"
-   $66 = (($65) + ($62)|0); //@line 1114 "4374_Task1c_emscripten.cpp"
-   $67 = HEAP8[$66>>0]|0; //@line 1114 "4374_Task1c_emscripten.cpp"
-   $68 = $67 << 24 >> 24; //@line 1114 "4374_Task1c_emscripten.cpp"
-   $69 = ($68|0)!=(32); //@line 1114 "4374_Task1c_emscripten.cpp"
+   $62 = $col; //@line 1190 "4374_Task1c_emscripten.cpp"
+   $63 = $row; //@line 1190 "4374_Task1c_emscripten.cpp"
+   $64 = $51; //@line 1190 "4374_Task1c_emscripten.cpp"
+   $65 = (($64) + (($63*22)|0)|0); //@line 1190 "4374_Task1c_emscripten.cpp"
+   $66 = (($65) + ($62)|0); //@line 1190 "4374_Task1c_emscripten.cpp"
+   $67 = HEAP8[$66>>0]|0; //@line 1190 "4374_Task1c_emscripten.cpp"
+   $68 = $67 << 24 >> 24; //@line 1190 "4374_Task1c_emscripten.cpp"
+   $69 = ($68|0)!=(32); //@line 1190 "4374_Task1c_emscripten.cpp"
    if ($69) {
-    $47 = $a; //@line 1116 "4374_Task1c_emscripten.cpp"
-    $48 = 24; //@line 1116 "4374_Task1c_emscripten.cpp"
-    $70 = $47; //@line 1116 "4374_Task1c_emscripten.cpp"
+    $47 = $a; //@line 1192 "4374_Task1c_emscripten.cpp"
+    $48 = 24; //@line 1192 "4374_Task1c_emscripten.cpp"
+    $70 = $47; //@line 1192 "4374_Task1c_emscripten.cpp"
     $71 = ((($70)) + 64|0); //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
     $46 = $71; //@line 877 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
     $72 = $46; //@line 877 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
@@ -14825,57 +14825,57 @@ function __Z9paintGridPA22_KcP11SDL_SurfaceP9_TTF_Font($g,$image,$font) {
      label = 16;
      break L1;
     }
-    $202 = $row; //@line 1118 "4374_Task1c_emscripten.cpp"
-    $203 = ($202*10)|0; //@line 1118 "4374_Task1c_emscripten.cpp"
-    $204 = (($203) + 0)|0; //@line 1118 "4374_Task1c_emscripten.cpp"
-    HEAP32[$dstrect>>2] = $204; //@line 1118 "4374_Task1c_emscripten.cpp"
-    $205 = ((($dstrect)) + 4|0); //@line 1118 "4374_Task1c_emscripten.cpp"
-    $206 = $col; //@line 1118 "4374_Task1c_emscripten.cpp"
-    $207 = ($206*10)|0; //@line 1118 "4374_Task1c_emscripten.cpp"
-    $208 = (($207) + 20)|0; //@line 1118 "4374_Task1c_emscripten.cpp"
-    HEAP32[$205>>2] = $208; //@line 1118 "4374_Task1c_emscripten.cpp"
-    $209 = ((($dstrect)) + 8|0); //@line 1118 "4374_Task1c_emscripten.cpp"
-    HEAP32[$209>>2] = 0; //@line 1118 "4374_Task1c_emscripten.cpp"
-    $210 = ((($dstrect)) + 12|0); //@line 1118 "4374_Task1c_emscripten.cpp"
-    HEAP32[$210>>2] = 0; //@line 1118 "4374_Task1c_emscripten.cpp"
-    $211 = $col; //@line 1119 "4374_Task1c_emscripten.cpp"
-    $212 = $row; //@line 1119 "4374_Task1c_emscripten.cpp"
-    $213 = $51; //@line 1119 "4374_Task1c_emscripten.cpp"
-    $214 = (($213) + (($212*22)|0)|0); //@line 1119 "4374_Task1c_emscripten.cpp"
-    $215 = (($214) + ($211)|0); //@line 1119 "4374_Task1c_emscripten.cpp"
-    $216 = HEAP8[$215>>0]|0; //@line 1119 "4374_Task1c_emscripten.cpp"
-    $217 = $216 << 24 >> 24; //@line 1119 "4374_Task1c_emscripten.cpp"
-    if ((($217|0) == 90)) {
-     $220 = ((($text_color)) + 2|0); //@line 1126 "4374_Task1c_emscripten.cpp"
-     HEAP8[$220>>0] = 0; //@line 1126 "4374_Task1c_emscripten.cpp"
-     HEAP8[$text_color>>0] = 0; //@line 1127 "4374_Task1c_emscripten.cpp"
+    $202 = $row; //@line 1194 "4374_Task1c_emscripten.cpp"
+    $203 = ($202*10)|0; //@line 1194 "4374_Task1c_emscripten.cpp"
+    $204 = (($203) + 0)|0; //@line 1194 "4374_Task1c_emscripten.cpp"
+    HEAP32[$dstrect>>2] = $204; //@line 1194 "4374_Task1c_emscripten.cpp"
+    $205 = ((($dstrect)) + 4|0); //@line 1194 "4374_Task1c_emscripten.cpp"
+    $206 = $col; //@line 1194 "4374_Task1c_emscripten.cpp"
+    $207 = ($206*10)|0; //@line 1194 "4374_Task1c_emscripten.cpp"
+    $208 = (($207) + 20)|0; //@line 1194 "4374_Task1c_emscripten.cpp"
+    HEAP32[$205>>2] = $208; //@line 1194 "4374_Task1c_emscripten.cpp"
+    $209 = ((($dstrect)) + 8|0); //@line 1194 "4374_Task1c_emscripten.cpp"
+    HEAP32[$209>>2] = 0; //@line 1194 "4374_Task1c_emscripten.cpp"
+    $210 = ((($dstrect)) + 12|0); //@line 1194 "4374_Task1c_emscripten.cpp"
+    HEAP32[$210>>2] = 0; //@line 1194 "4374_Task1c_emscripten.cpp"
+    $211 = $col; //@line 1195 "4374_Task1c_emscripten.cpp"
+    $212 = $row; //@line 1195 "4374_Task1c_emscripten.cpp"
+    $213 = $51; //@line 1195 "4374_Task1c_emscripten.cpp"
+    $214 = (($213) + (($212*22)|0)|0); //@line 1195 "4374_Task1c_emscripten.cpp"
+    $215 = (($214) + ($211)|0); //@line 1195 "4374_Task1c_emscripten.cpp"
+    $216 = HEAP8[$215>>0]|0; //@line 1195 "4374_Task1c_emscripten.cpp"
+    $217 = $216 << 24 >> 24; //@line 1195 "4374_Task1c_emscripten.cpp"
+    if ((($217|0) == 79)) {
+     $218 = ((($text_color)) + 1|0); //@line 1198 "4374_Task1c_emscripten.cpp"
+     HEAP8[$218>>0] = 0; //@line 1198 "4374_Task1c_emscripten.cpp"
+     $219 = ((($text_color)) + 2|0); //@line 1199 "4374_Task1c_emscripten.cpp"
+     HEAP8[$219>>0] = 0; //@line 1199 "4374_Task1c_emscripten.cpp"
     } else if ((($217|0) == 46)) {
-     $221 = ((($text_color)) + 1|0); //@line 1130 "4374_Task1c_emscripten.cpp"
-     HEAP8[$221>>0] = 0; //@line 1130 "4374_Task1c_emscripten.cpp"
-     HEAP8[$text_color>>0] = 0; //@line 1131 "4374_Task1c_emscripten.cpp"
-    } else if ((($217|0) == 79)) {
-     $218 = ((($text_color)) + 1|0); //@line 1122 "4374_Task1c_emscripten.cpp"
-     HEAP8[$218>>0] = 0; //@line 1122 "4374_Task1c_emscripten.cpp"
-     $219 = ((($text_color)) + 2|0); //@line 1123 "4374_Task1c_emscripten.cpp"
-     HEAP8[$219>>0] = 0; //@line 1123 "4374_Task1c_emscripten.cpp"
+     $221 = ((($text_color)) + 1|0); //@line 1206 "4374_Task1c_emscripten.cpp"
+     HEAP8[$221>>0] = 0; //@line 1206 "4374_Task1c_emscripten.cpp"
+     HEAP8[$text_color>>0] = 0; //@line 1207 "4374_Task1c_emscripten.cpp"
+    } else if ((($217|0) == 90)) {
+     $220 = ((($text_color)) + 2|0); //@line 1202 "4374_Task1c_emscripten.cpp"
+     HEAP8[$220>>0] = 0; //@line 1202 "4374_Task1c_emscripten.cpp"
+     HEAP8[$text_color>>0] = 0; //@line 1203 "4374_Task1c_emscripten.cpp"
     }
-    $222 = ((($a)) + 8|0); //@line 1134 "4374_Task1c_emscripten.cpp"
-    $223 = $col; //@line 1134 "4374_Task1c_emscripten.cpp"
-    $224 = $row; //@line 1134 "4374_Task1c_emscripten.cpp"
-    $225 = $51; //@line 1134 "4374_Task1c_emscripten.cpp"
-    $226 = (($225) + (($224*22)|0)|0); //@line 1134 "4374_Task1c_emscripten.cpp"
-    $227 = (($226) + ($223)|0); //@line 1134 "4374_Task1c_emscripten.cpp"
-    $228 = HEAP8[$227>>0]|0; //@line 1134 "4374_Task1c_emscripten.cpp"
+    $222 = ((($a)) + 8|0); //@line 1210 "4374_Task1c_emscripten.cpp"
+    $223 = $col; //@line 1210 "4374_Task1c_emscripten.cpp"
+    $224 = $row; //@line 1210 "4374_Task1c_emscripten.cpp"
+    $225 = $51; //@line 1210 "4374_Task1c_emscripten.cpp"
+    $226 = (($225) + (($224*22)|0)|0); //@line 1210 "4374_Task1c_emscripten.cpp"
+    $227 = (($226) + ($223)|0); //@line 1210 "4374_Task1c_emscripten.cpp"
+    $228 = HEAP8[$227>>0]|0; //@line 1210 "4374_Task1c_emscripten.cpp"
     __THREW__ = 0;
-    (invoke_iii(415,($222|0),($228|0))|0); //@line 1134 "4374_Task1c_emscripten.cpp"
+    (invoke_iii(415,($222|0),($228|0))|0); //@line 1210 "4374_Task1c_emscripten.cpp"
     $229 = __THREW__; __THREW__ = 0;
     $230 = $229&1;
     if ($230) {
      label = 40;
      break L1;
     }
-    $15 = $a; //@line 1135 "4374_Task1c_emscripten.cpp"
-    $231 = $15; //@line 1135 "4374_Task1c_emscripten.cpp"
+    $15 = $a; //@line 1211 "4374_Task1c_emscripten.cpp"
+    $231 = $15; //@line 1211 "4374_Task1c_emscripten.cpp"
     $232 = ((($231)) + 12|0); //@line 964 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
     __THREW__ = 0;
     invoke_vii(377,($56|0),($232|0)); //@line 964 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
@@ -14885,8 +14885,8 @@ function __Z9paintGridPA22_KcP11SDL_SurfaceP9_TTF_Font($g,$image,$font) {
      label = 40;
      break L1;
     }
-    $14 = $56; //@line 1135 "4374_Task1c_emscripten.cpp"
-    $235 = $14; //@line 1135 "4374_Task1c_emscripten.cpp"
+    $14 = $56; //@line 1211 "4374_Task1c_emscripten.cpp"
+    $235 = $14; //@line 1211 "4374_Task1c_emscripten.cpp"
     $13 = $235; //@line 1598 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
     $236 = $13; //@line 1598 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
     $12 = $236; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
@@ -14927,12 +14927,12 @@ function __Z9paintGridPA22_KcP11SDL_SurfaceP9_TTF_Font($g,$image,$font) {
     }
     $0 = $256; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
     $257 = $0; //@line 1043 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-    $258 = $52; //@line 1135 "4374_Task1c_emscripten.cpp"
-    $259 = $53; //@line 1135 "4374_Task1c_emscripten.cpp"
-    ;HEAP32[$57>>2]=HEAP32[$dstrect>>2]|0;HEAP32[$57+4>>2]=HEAP32[$dstrect+4>>2]|0;HEAP32[$57+8>>2]=HEAP32[$dstrect+8>>2]|0;HEAP32[$57+12>>2]=HEAP32[$dstrect+12>>2]|0; //@line 1135 "4374_Task1c_emscripten.cpp"
+    $258 = $52; //@line 1211 "4374_Task1c_emscripten.cpp"
+    $259 = $53; //@line 1211 "4374_Task1c_emscripten.cpp"
+    ;HEAP32[$57>>2]=HEAP32[$dstrect>>2]|0;HEAP32[$57+4>>2]=HEAP32[$dstrect+4>>2]|0;HEAP32[$57+8>>2]=HEAP32[$dstrect+8>>2]|0;HEAP32[$57+12>>2]=HEAP32[$dstrect+12>>2]|0; //@line 1211 "4374_Task1c_emscripten.cpp"
     __THREW__ = 0;
-    ;HEAP32[$$byval_copy>>2]=HEAP32[$57>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$57+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$57+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$57+12>>2]|0; //@line 1135 "4374_Task1c_emscripten.cpp"
-    invoke_viiiiii(414,($257|0),($258|0),($259|0),($text_color|0),(6112|0),($$byval_copy|0)); //@line 1135 "4374_Task1c_emscripten.cpp"
+    ;HEAP32[$$byval_copy>>2]=HEAP32[$57>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$57+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$57+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$57+12>>2]|0; //@line 1211 "4374_Task1c_emscripten.cpp"
+    invoke_viiiiii(414,($257|0),($258|0),($259|0),($text_color|0),(6112|0),($$byval_copy|0)); //@line 1211 "4374_Task1c_emscripten.cpp"
     $260 = __THREW__; __THREW__ = 0;
     $261 = $260&1;
     if ($261) {
@@ -14940,22 +14940,22 @@ function __Z9paintGridPA22_KcP11SDL_SurfaceP9_TTF_Font($g,$image,$font) {
      break L1;
     }
     __THREW__ = 0;
-    invoke_vi(374,($56|0)); //@line 1135 "4374_Task1c_emscripten.cpp"
+    invoke_vi(374,($56|0)); //@line 1211 "4374_Task1c_emscripten.cpp"
     $262 = __THREW__; __THREW__ = 0;
     $263 = $262&1;
     if ($263) {
      label = 40;
      break L1;
     }
-    __ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev($a); //@line 1136 "4374_Task1c_emscripten.cpp"
+    __ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev($a); //@line 1212 "4374_Task1c_emscripten.cpp"
    }
-   $272 = $col; //@line 1112 "4374_Task1c_emscripten.cpp"
-   $273 = (($272) + 1)|0; //@line 1112 "4374_Task1c_emscripten.cpp"
-   $col = $273; //@line 1112 "4374_Task1c_emscripten.cpp"
+   $272 = $col; //@line 1188 "4374_Task1c_emscripten.cpp"
+   $273 = (($272) + 1)|0; //@line 1188 "4374_Task1c_emscripten.cpp"
+   $col = $273; //@line 1188 "4374_Task1c_emscripten.cpp"
   }
-  $274 = $row; //@line 1110 "4374_Task1c_emscripten.cpp"
-  $275 = (($274) + 1)|0; //@line 1110 "4374_Task1c_emscripten.cpp"
-  $row = $275; //@line 1110 "4374_Task1c_emscripten.cpp"
+  $274 = $row; //@line 1186 "4374_Task1c_emscripten.cpp"
+  $275 = (($274) + 1)|0; //@line 1186 "4374_Task1c_emscripten.cpp"
+  $row = $275; //@line 1186 "4374_Task1c_emscripten.cpp"
  }
  if ((label|0) == 16) {
   $175 = ___cxa_find_matching_catch()|0;
@@ -14997,44 +14997,44 @@ function __Z9paintGridPA22_KcP11SDL_SurfaceP9_TTF_Font($g,$image,$font) {
  else if ((label|0) == 40) {
   $264 = ___cxa_find_matching_catch()|0;
   $265 = tempRet0;
-  $54 = $264; //@line 1141 "4374_Task1c_emscripten.cpp"
-  $55 = $265; //@line 1141 "4374_Task1c_emscripten.cpp"
+  $54 = $264; //@line 1217 "4374_Task1c_emscripten.cpp"
+  $55 = $265; //@line 1217 "4374_Task1c_emscripten.cpp"
   label = 42;
  }
  else if ((label|0) == 41) {
   $266 = ___cxa_find_matching_catch()|0;
   $267 = tempRet0;
-  $54 = $266; //@line 1141 "4374_Task1c_emscripten.cpp"
-  $55 = $267; //@line 1141 "4374_Task1c_emscripten.cpp"
+  $54 = $266; //@line 1217 "4374_Task1c_emscripten.cpp"
+  $55 = $267; //@line 1217 "4374_Task1c_emscripten.cpp"
   __THREW__ = 0;
-  invoke_vi(374,($56|0)); //@line 1135 "4374_Task1c_emscripten.cpp"
+  invoke_vi(374,($56|0)); //@line 1211 "4374_Task1c_emscripten.cpp"
   $268 = __THREW__; __THREW__ = 0;
   $269 = $268&1;
   if ($269) {
    $278 = ___cxa_find_matching_catch(0|0)|0;
    $279 = tempRet0;
-   ___clang_call_terminate($278); //@line 1135 "4374_Task1c_emscripten.cpp"
-   // unreachable; //@line 1135 "4374_Task1c_emscripten.cpp"
+   ___clang_call_terminate($278); //@line 1211 "4374_Task1c_emscripten.cpp"
+   // unreachable; //@line 1211 "4374_Task1c_emscripten.cpp"
   } else {
    label = 42;
   }
  }
  else if ((label|0) == 45) {
-  STACKTOP = sp;return; //@line 1141 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return; //@line 1217 "4374_Task1c_emscripten.cpp"
  }
  if ((label|0) == 42) {
   __THREW__ = 0;
-  invoke_vi(19,($a|0)); //@line 1136 "4374_Task1c_emscripten.cpp"
+  invoke_vi(19,($a|0)); //@line 1212 "4374_Task1c_emscripten.cpp"
   $270 = __THREW__; __THREW__ = 0;
   $271 = $270&1;
   if ($271) {
    $278 = ___cxa_find_matching_catch(0|0)|0;
    $279 = tempRet0;
-   ___clang_call_terminate($278); //@line 1135 "4374_Task1c_emscripten.cpp"
-   // unreachable; //@line 1135 "4374_Task1c_emscripten.cpp"
+   ___clang_call_terminate($278); //@line 1211 "4374_Task1c_emscripten.cpp"
+   // unreachable; //@line 1211 "4374_Task1c_emscripten.cpp"
   } else {
-   $276 = $54; //@line 1136 "4374_Task1c_emscripten.cpp"
-   $277 = $55; //@line 1136 "4374_Task1c_emscripten.cpp"
+   $276 = $54; //@line 1212 "4374_Task1c_emscripten.cpp"
+   $277 = $55; //@line 1212 "4374_Task1c_emscripten.cpp"
    ___resumeException($276|0);
    // unreachable;
   }
@@ -15110,104 +15110,104 @@ function __Z8PathfindPA22_KcRK4Item($grid,$spot) {
  STACKTOP = STACKTOP + 64|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
  $0 = $grid;
  $1 = $spot;
- $2 = $1; //@line 1396 "4374_Task1c_emscripten.cpp"
- $3 = ((($2)) + 4|0); //@line 1396 "4374_Task1c_emscripten.cpp"
- $4 = HEAP32[$3>>2]|0; //@line 1396 "4374_Task1c_emscripten.cpp"
- $startx = $4; //@line 1396 "4374_Task1c_emscripten.cpp"
- $5 = $1; //@line 1397 "4374_Task1c_emscripten.cpp"
- $6 = ((($5)) + 8|0); //@line 1397 "4374_Task1c_emscripten.cpp"
- $7 = HEAP32[$6>>2]|0; //@line 1397 "4374_Task1c_emscripten.cpp"
- $starty = $7; //@line 1397 "4374_Task1c_emscripten.cpp"
- $8 = $startx; //@line 1398 "4374_Task1c_emscripten.cpp"
- $9 = $starty; //@line 1398 "4374_Task1c_emscripten.cpp"
- $10 = (1008 + (($9*88)|0)|0); //@line 1398 "4374_Task1c_emscripten.cpp"
- $11 = (($10) + ($8<<2)|0); //@line 1398 "4374_Task1c_emscripten.cpp"
- HEAP32[$11>>2] = 0; //@line 1398 "4374_Task1c_emscripten.cpp"
+ $2 = $1; //@line 1472 "4374_Task1c_emscripten.cpp"
+ $3 = ((($2)) + 4|0); //@line 1472 "4374_Task1c_emscripten.cpp"
+ $4 = HEAP32[$3>>2]|0; //@line 1472 "4374_Task1c_emscripten.cpp"
+ $startx = $4; //@line 1472 "4374_Task1c_emscripten.cpp"
+ $5 = $1; //@line 1473 "4374_Task1c_emscripten.cpp"
+ $6 = ((($5)) + 8|0); //@line 1473 "4374_Task1c_emscripten.cpp"
+ $7 = HEAP32[$6>>2]|0; //@line 1473 "4374_Task1c_emscripten.cpp"
+ $starty = $7; //@line 1473 "4374_Task1c_emscripten.cpp"
+ $8 = $startx; //@line 1474 "4374_Task1c_emscripten.cpp"
+ $9 = $starty; //@line 1474 "4374_Task1c_emscripten.cpp"
+ $10 = (1008 + (($9*88)|0)|0); //@line 1474 "4374_Task1c_emscripten.cpp"
+ $11 = (($10) + ($8<<2)|0); //@line 1474 "4374_Task1c_emscripten.cpp"
+ HEAP32[$11>>2] = 0; //@line 1474 "4374_Task1c_emscripten.cpp"
  while(1) {
-  $madeProgress = 0; //@line 1401 "4374_Task1c_emscripten.cpp"
-  $row = 0; //@line 1402 "4374_Task1c_emscripten.cpp"
+  $madeProgress = 0; //@line 1477 "4374_Task1c_emscripten.cpp"
+  $row = 0; //@line 1478 "4374_Task1c_emscripten.cpp"
   while(1) {
-   $12 = $row; //@line 1402 "4374_Task1c_emscripten.cpp"
-   $13 = ($12|0)<(39); //@line 1402 "4374_Task1c_emscripten.cpp"
+   $12 = $row; //@line 1478 "4374_Task1c_emscripten.cpp"
+   $13 = ($12|0)<(39); //@line 1478 "4374_Task1c_emscripten.cpp"
    if (!($13)) {
     break;
    }
-   $col = 0; //@line 1404 "4374_Task1c_emscripten.cpp"
+   $col = 0; //@line 1480 "4374_Task1c_emscripten.cpp"
    while(1) {
-    $14 = $col; //@line 1404 "4374_Task1c_emscripten.cpp"
-    $15 = ($14|0)<(22); //@line 1404 "4374_Task1c_emscripten.cpp"
+    $14 = $col; //@line 1480 "4374_Task1c_emscripten.cpp"
+    $15 = ($14|0)<(22); //@line 1480 "4374_Task1c_emscripten.cpp"
     if (!($15)) {
      break;
     }
-    $16 = $col; //@line 1406 "4374_Task1c_emscripten.cpp"
-    $x = $16; //@line 1406 "4374_Task1c_emscripten.cpp"
-    $17 = $row; //@line 1407 "4374_Task1c_emscripten.cpp"
-    $y = $17; //@line 1407 "4374_Task1c_emscripten.cpp"
-    $18 = $x; //@line 1408 "4374_Task1c_emscripten.cpp"
-    $19 = $y; //@line 1408 "4374_Task1c_emscripten.cpp"
-    $20 = (1008 + (($19*88)|0)|0); //@line 1408 "4374_Task1c_emscripten.cpp"
-    $21 = (($20) + ($18<<2)|0); //@line 1408 "4374_Task1c_emscripten.cpp"
-    $22 = HEAP32[$21>>2]|0; //@line 1408 "4374_Task1c_emscripten.cpp"
-    $passHere = $22; //@line 1408 "4374_Task1c_emscripten.cpp"
-    $a = 1; //@line 1409 "4374_Task1c_emscripten.cpp"
+    $16 = $col; //@line 1482 "4374_Task1c_emscripten.cpp"
+    $x = $16; //@line 1482 "4374_Task1c_emscripten.cpp"
+    $17 = $row; //@line 1483 "4374_Task1c_emscripten.cpp"
+    $y = $17; //@line 1483 "4374_Task1c_emscripten.cpp"
+    $18 = $x; //@line 1484 "4374_Task1c_emscripten.cpp"
+    $19 = $y; //@line 1484 "4374_Task1c_emscripten.cpp"
+    $20 = (1008 + (($19*88)|0)|0); //@line 1484 "4374_Task1c_emscripten.cpp"
+    $21 = (($20) + ($18<<2)|0); //@line 1484 "4374_Task1c_emscripten.cpp"
+    $22 = HEAP32[$21>>2]|0; //@line 1484 "4374_Task1c_emscripten.cpp"
+    $passHere = $22; //@line 1484 "4374_Task1c_emscripten.cpp"
+    $a = 1; //@line 1485 "4374_Task1c_emscripten.cpp"
     while(1) {
-     $23 = $a; //@line 1409 "4374_Task1c_emscripten.cpp"
-     $24 = ($23|0)<(5); //@line 1409 "4374_Task1c_emscripten.cpp"
+     $23 = $a; //@line 1485 "4374_Task1c_emscripten.cpp"
+     $24 = ($23|0)<(5); //@line 1485 "4374_Task1c_emscripten.cpp"
      if (!($24)) {
       break;
      }
-     $25 = $x; //@line 1411 "4374_Task1c_emscripten.cpp"
-     $26 = $a; //@line 1411 "4374_Task1c_emscripten.cpp"
-     $27 = (__Z9getmovesxii($25,$26)|0); //@line 1411 "4374_Task1c_emscripten.cpp"
-     $newx = $27; //@line 1411 "4374_Task1c_emscripten.cpp"
-     $28 = $y; //@line 1412 "4374_Task1c_emscripten.cpp"
-     $29 = $a; //@line 1412 "4374_Task1c_emscripten.cpp"
-     $30 = (__Z9getmovesyii($28,$29)|0); //@line 1412 "4374_Task1c_emscripten.cpp"
-     $newy = $30; //@line 1412 "4374_Task1c_emscripten.cpp"
-     $31 = $0; //@line 1413 "4374_Task1c_emscripten.cpp"
-     $32 = $newx; //@line 1413 "4374_Task1c_emscripten.cpp"
-     $33 = $newy; //@line 1413 "4374_Task1c_emscripten.cpp"
-     $34 = (__Z6iswallPA22_Kcii($31,$32,$33)|0); //@line 1413 "4374_Task1c_emscripten.cpp"
+     $25 = $x; //@line 1487 "4374_Task1c_emscripten.cpp"
+     $26 = $a; //@line 1487 "4374_Task1c_emscripten.cpp"
+     $27 = (__Z9getmovesxii($25,$26)|0); //@line 1487 "4374_Task1c_emscripten.cpp"
+     $newx = $27; //@line 1487 "4374_Task1c_emscripten.cpp"
+     $28 = $y; //@line 1488 "4374_Task1c_emscripten.cpp"
+     $29 = $a; //@line 1488 "4374_Task1c_emscripten.cpp"
+     $30 = (__Z9getmovesyii($28,$29)|0); //@line 1488 "4374_Task1c_emscripten.cpp"
+     $newy = $30; //@line 1488 "4374_Task1c_emscripten.cpp"
+     $31 = $0; //@line 1489 "4374_Task1c_emscripten.cpp"
+     $32 = $newx; //@line 1489 "4374_Task1c_emscripten.cpp"
+     $33 = $newy; //@line 1489 "4374_Task1c_emscripten.cpp"
+     $34 = (__Z6iswallPA22_Kcii($31,$32,$33)|0); //@line 1489 "4374_Task1c_emscripten.cpp"
      if (!($34)) {
-      $35 = $passHere; //@line 1415 "4374_Task1c_emscripten.cpp"
-      $36 = (($35) + 1)|0; //@line 1415 "4374_Task1c_emscripten.cpp"
-      $newPass = $36; //@line 1415 "4374_Task1c_emscripten.cpp"
-      $37 = $newx; //@line 1416 "4374_Task1c_emscripten.cpp"
-      $38 = $newy; //@line 1416 "4374_Task1c_emscripten.cpp"
-      $39 = (1008 + (($38*88)|0)|0); //@line 1416 "4374_Task1c_emscripten.cpp"
-      $40 = (($39) + ($37<<2)|0); //@line 1416 "4374_Task1c_emscripten.cpp"
-      $41 = HEAP32[$40>>2]|0; //@line 1416 "4374_Task1c_emscripten.cpp"
-      $42 = $newPass; //@line 1416 "4374_Task1c_emscripten.cpp"
-      $43 = ($41|0)>($42|0); //@line 1416 "4374_Task1c_emscripten.cpp"
+      $35 = $passHere; //@line 1491 "4374_Task1c_emscripten.cpp"
+      $36 = (($35) + 1)|0; //@line 1491 "4374_Task1c_emscripten.cpp"
+      $newPass = $36; //@line 1491 "4374_Task1c_emscripten.cpp"
+      $37 = $newx; //@line 1492 "4374_Task1c_emscripten.cpp"
+      $38 = $newy; //@line 1492 "4374_Task1c_emscripten.cpp"
+      $39 = (1008 + (($38*88)|0)|0); //@line 1492 "4374_Task1c_emscripten.cpp"
+      $40 = (($39) + ($37<<2)|0); //@line 1492 "4374_Task1c_emscripten.cpp"
+      $41 = HEAP32[$40>>2]|0; //@line 1492 "4374_Task1c_emscripten.cpp"
+      $42 = $newPass; //@line 1492 "4374_Task1c_emscripten.cpp"
+      $43 = ($41|0)>($42|0); //@line 1492 "4374_Task1c_emscripten.cpp"
       if ($43) {
-       $44 = $newPass; //@line 1418 "4374_Task1c_emscripten.cpp"
-       $45 = $newx; //@line 1418 "4374_Task1c_emscripten.cpp"
-       $46 = $newy; //@line 1418 "4374_Task1c_emscripten.cpp"
-       $47 = (1008 + (($46*88)|0)|0); //@line 1418 "4374_Task1c_emscripten.cpp"
-       $48 = (($47) + ($45<<2)|0); //@line 1418 "4374_Task1c_emscripten.cpp"
-       HEAP32[$48>>2] = $44; //@line 1418 "4374_Task1c_emscripten.cpp"
-       $madeProgress = 1; //@line 1419 "4374_Task1c_emscripten.cpp"
+       $44 = $newPass; //@line 1494 "4374_Task1c_emscripten.cpp"
+       $45 = $newx; //@line 1494 "4374_Task1c_emscripten.cpp"
+       $46 = $newy; //@line 1494 "4374_Task1c_emscripten.cpp"
+       $47 = (1008 + (($46*88)|0)|0); //@line 1494 "4374_Task1c_emscripten.cpp"
+       $48 = (($47) + ($45<<2)|0); //@line 1494 "4374_Task1c_emscripten.cpp"
+       HEAP32[$48>>2] = $44; //@line 1494 "4374_Task1c_emscripten.cpp"
+       $madeProgress = 1; //@line 1495 "4374_Task1c_emscripten.cpp"
       }
      }
-     $49 = $a; //@line 1409 "4374_Task1c_emscripten.cpp"
-     $50 = (($49) + 1)|0; //@line 1409 "4374_Task1c_emscripten.cpp"
-     $a = $50; //@line 1409 "4374_Task1c_emscripten.cpp"
+     $49 = $a; //@line 1485 "4374_Task1c_emscripten.cpp"
+     $50 = (($49) + 1)|0; //@line 1485 "4374_Task1c_emscripten.cpp"
+     $a = $50; //@line 1485 "4374_Task1c_emscripten.cpp"
     }
-    $51 = $col; //@line 1404 "4374_Task1c_emscripten.cpp"
-    $52 = (($51) + 1)|0; //@line 1404 "4374_Task1c_emscripten.cpp"
-    $col = $52; //@line 1404 "4374_Task1c_emscripten.cpp"
+    $51 = $col; //@line 1480 "4374_Task1c_emscripten.cpp"
+    $52 = (($51) + 1)|0; //@line 1480 "4374_Task1c_emscripten.cpp"
+    $col = $52; //@line 1480 "4374_Task1c_emscripten.cpp"
    }
-   $53 = $row; //@line 1402 "4374_Task1c_emscripten.cpp"
-   $54 = (($53) + 1)|0; //@line 1402 "4374_Task1c_emscripten.cpp"
-   $row = $54; //@line 1402 "4374_Task1c_emscripten.cpp"
+   $53 = $row; //@line 1478 "4374_Task1c_emscripten.cpp"
+   $54 = (($53) + 1)|0; //@line 1478 "4374_Task1c_emscripten.cpp"
+   $row = $54; //@line 1478 "4374_Task1c_emscripten.cpp"
   }
-  $55 = $madeProgress; //@line 1425 "4374_Task1c_emscripten.cpp"
-  $56 = $55&1; //@line 1425 "4374_Task1c_emscripten.cpp"
+  $55 = $madeProgress; //@line 1501 "4374_Task1c_emscripten.cpp"
+  $56 = $55&1; //@line 1501 "4374_Task1c_emscripten.cpp"
   if (!($56)) {
    break;
   }
  }
- STACKTOP = sp;return; //@line 1430 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 1506 "4374_Task1c_emscripten.cpp"
 }
 function __Z21updateSpotCoordinatesPA22_KcR6playeriRNSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEERNS4_6vectorI6zombieNS8_ISD_EEEERNSC_I4pillNS8_ISH_EEEERKNSC_I6portalNS8_ISL_EEEE($g,$sp,$key,$mess,$zombies,$pills,$portals) {
  $g = $g|0;
@@ -15263,60 +15263,86 @@ function __Z21updateSpotCoordinatesPA22_KcR6playeriRNSt3__112basic_stringIcNS4_1
  $66 = $zombies;
  $67 = $pills;
  $68 = $portals;
- HEAP32[$dx>>2] = 0; //@line 865 "4374_Task1c_emscripten.cpp"
- HEAP32[$dy>>2] = 0; //@line 865 "4374_Task1c_emscripten.cpp"
- $69 = $64; //@line 866 "4374_Task1c_emscripten.cpp"
- __Z15setKeyDirectioniRiS_($69,$dx,$dy); //@line 866 "4374_Task1c_emscripten.cpp"
- $70 = $63; //@line 869 "4374_Task1c_emscripten.cpp"
- $71 = ((($70)) + 8|0); //@line 869 "4374_Task1c_emscripten.cpp"
- $72 = HEAP32[$71>>2]|0; //@line 869 "4374_Task1c_emscripten.cpp"
- $73 = HEAP32[$dy>>2]|0; //@line 869 "4374_Task1c_emscripten.cpp"
- $74 = (($72) + ($73))|0; //@line 869 "4374_Task1c_emscripten.cpp"
- $targetY = $74; //@line 869 "4374_Task1c_emscripten.cpp"
- $75 = $63; //@line 870 "4374_Task1c_emscripten.cpp"
- $76 = ((($75)) + 4|0); //@line 870 "4374_Task1c_emscripten.cpp"
- $77 = HEAP32[$76>>2]|0; //@line 870 "4374_Task1c_emscripten.cpp"
- $78 = HEAP32[$dx>>2]|0; //@line 870 "4374_Task1c_emscripten.cpp"
- $79 = (($77) + ($78))|0; //@line 870 "4374_Task1c_emscripten.cpp"
- $targetX = $79; //@line 870 "4374_Task1c_emscripten.cpp"
- $80 = $targetX; //@line 872 "4374_Task1c_emscripten.cpp"
- $81 = $targetY; //@line 872 "4374_Task1c_emscripten.cpp"
- $82 = $62; //@line 872 "4374_Task1c_emscripten.cpp"
- $83 = (($82) + (($81*22)|0)|0); //@line 872 "4374_Task1c_emscripten.cpp"
- $84 = (($83) + ($80)|0); //@line 872 "4374_Task1c_emscripten.cpp"
- $85 = HEAP8[$84>>0]|0; //@line 872 "4374_Task1c_emscripten.cpp"
- $86 = $85 << 24 >> 24; //@line 872 "4374_Task1c_emscripten.cpp"
+ HEAP32[$dx>>2] = 0; //@line 941 "4374_Task1c_emscripten.cpp"
+ HEAP32[$dy>>2] = 0; //@line 941 "4374_Task1c_emscripten.cpp"
+ $69 = $64; //@line 942 "4374_Task1c_emscripten.cpp"
+ __Z15setKeyDirectioniRiS_($69,$dx,$dy); //@line 942 "4374_Task1c_emscripten.cpp"
+ $70 = $63; //@line 945 "4374_Task1c_emscripten.cpp"
+ $71 = ((($70)) + 8|0); //@line 945 "4374_Task1c_emscripten.cpp"
+ $72 = HEAP32[$71>>2]|0; //@line 945 "4374_Task1c_emscripten.cpp"
+ $73 = HEAP32[$dy>>2]|0; //@line 945 "4374_Task1c_emscripten.cpp"
+ $74 = (($72) + ($73))|0; //@line 945 "4374_Task1c_emscripten.cpp"
+ $targetY = $74; //@line 945 "4374_Task1c_emscripten.cpp"
+ $75 = $63; //@line 946 "4374_Task1c_emscripten.cpp"
+ $76 = ((($75)) + 4|0); //@line 946 "4374_Task1c_emscripten.cpp"
+ $77 = HEAP32[$76>>2]|0; //@line 946 "4374_Task1c_emscripten.cpp"
+ $78 = HEAP32[$dx>>2]|0; //@line 946 "4374_Task1c_emscripten.cpp"
+ $79 = (($77) + ($78))|0; //@line 946 "4374_Task1c_emscripten.cpp"
+ $targetX = $79; //@line 946 "4374_Task1c_emscripten.cpp"
+ $80 = $targetX; //@line 948 "4374_Task1c_emscripten.cpp"
+ $81 = $targetY; //@line 948 "4374_Task1c_emscripten.cpp"
+ $82 = $62; //@line 948 "4374_Task1c_emscripten.cpp"
+ $83 = (($82) + (($81*22)|0)|0); //@line 948 "4374_Task1c_emscripten.cpp"
+ $84 = (($83) + ($80)|0); //@line 948 "4374_Task1c_emscripten.cpp"
+ $85 = HEAP8[$84>>0]|0; //@line 948 "4374_Task1c_emscripten.cpp"
+ $86 = $85 << 24 >> 24; //@line 948 "4374_Task1c_emscripten.cpp"
  L1: do {
   switch ($86|0) {
+  case 32:  {
+   $87 = HEAP32[$dy>>2]|0; //@line 951 "4374_Task1c_emscripten.cpp"
+   $88 = $63; //@line 951 "4374_Task1c_emscripten.cpp"
+   $89 = ((($88)) + 8|0); //@line 951 "4374_Task1c_emscripten.cpp"
+   $90 = HEAP32[$89>>2]|0; //@line 951 "4374_Task1c_emscripten.cpp"
+   $91 = (($90) + ($87))|0; //@line 951 "4374_Task1c_emscripten.cpp"
+   HEAP32[$89>>2] = $91; //@line 951 "4374_Task1c_emscripten.cpp"
+   $92 = HEAP32[$dx>>2]|0; //@line 952 "4374_Task1c_emscripten.cpp"
+   $93 = $63; //@line 952 "4374_Task1c_emscripten.cpp"
+   $94 = ((($93)) + 4|0); //@line 952 "4374_Task1c_emscripten.cpp"
+   $95 = HEAP32[$94>>2]|0; //@line 952 "4374_Task1c_emscripten.cpp"
+   $96 = (($95) + ($92))|0; //@line 952 "4374_Task1c_emscripten.cpp"
+   HEAP32[$94>>2] = $96; //@line 952 "4374_Task1c_emscripten.cpp"
+   $97 = $63; //@line 953 "4374_Task1c_emscripten.cpp"
+   $98 = ((($97)) + 33|0); //@line 953 "4374_Task1c_emscripten.cpp"
+   $99 = HEAP8[$98>>0]|0; //@line 953 "4374_Task1c_emscripten.cpp"
+   $100 = $99&1; //@line 953 "4374_Task1c_emscripten.cpp"
+   if ($100) {
+    $101 = $63; //@line 954 "4374_Task1c_emscripten.cpp"
+    $102 = ((($101)) + 36|0); //@line 954 "4374_Task1c_emscripten.cpp"
+    $103 = HEAP32[$102>>2]|0; //@line 954 "4374_Task1c_emscripten.cpp"
+    $104 = (($103) + -1)|0; //@line 954 "4374_Task1c_emscripten.cpp"
+    HEAP32[$102>>2] = $104; //@line 954 "4374_Task1c_emscripten.cpp"
+   }
+   break;
+  }
   case 90:  {
-   $116 = HEAP32[$dy>>2]|0; //@line 887 "4374_Task1c_emscripten.cpp"
-   $117 = $63; //@line 887 "4374_Task1c_emscripten.cpp"
-   $118 = ((($117)) + 8|0); //@line 887 "4374_Task1c_emscripten.cpp"
-   $119 = HEAP32[$118>>2]|0; //@line 887 "4374_Task1c_emscripten.cpp"
-   $120 = (($119) + ($116))|0; //@line 887 "4374_Task1c_emscripten.cpp"
-   HEAP32[$118>>2] = $120; //@line 887 "4374_Task1c_emscripten.cpp"
-   $121 = HEAP32[$dx>>2]|0; //@line 888 "4374_Task1c_emscripten.cpp"
-   $122 = $63; //@line 888 "4374_Task1c_emscripten.cpp"
-   $123 = ((($122)) + 4|0); //@line 888 "4374_Task1c_emscripten.cpp"
-   $124 = HEAP32[$123>>2]|0; //@line 888 "4374_Task1c_emscripten.cpp"
-   $125 = (($124) + ($121))|0; //@line 888 "4374_Task1c_emscripten.cpp"
-   HEAP32[$123>>2] = $125; //@line 888 "4374_Task1c_emscripten.cpp"
-   $126 = $63; //@line 889 "4374_Task1c_emscripten.cpp"
-   $127 = ((($126)) + 33|0); //@line 889 "4374_Task1c_emscripten.cpp"
-   $128 = HEAP8[$127>>0]|0; //@line 889 "4374_Task1c_emscripten.cpp"
-   $129 = $128&1; //@line 889 "4374_Task1c_emscripten.cpp"
-   $130 = $63; //@line 891 "4374_Task1c_emscripten.cpp"
+   $116 = HEAP32[$dy>>2]|0; //@line 963 "4374_Task1c_emscripten.cpp"
+   $117 = $63; //@line 963 "4374_Task1c_emscripten.cpp"
+   $118 = ((($117)) + 8|0); //@line 963 "4374_Task1c_emscripten.cpp"
+   $119 = HEAP32[$118>>2]|0; //@line 963 "4374_Task1c_emscripten.cpp"
+   $120 = (($119) + ($116))|0; //@line 963 "4374_Task1c_emscripten.cpp"
+   HEAP32[$118>>2] = $120; //@line 963 "4374_Task1c_emscripten.cpp"
+   $121 = HEAP32[$dx>>2]|0; //@line 964 "4374_Task1c_emscripten.cpp"
+   $122 = $63; //@line 964 "4374_Task1c_emscripten.cpp"
+   $123 = ((($122)) + 4|0); //@line 964 "4374_Task1c_emscripten.cpp"
+   $124 = HEAP32[$123>>2]|0; //@line 964 "4374_Task1c_emscripten.cpp"
+   $125 = (($124) + ($121))|0; //@line 964 "4374_Task1c_emscripten.cpp"
+   HEAP32[$123>>2] = $125; //@line 964 "4374_Task1c_emscripten.cpp"
+   $126 = $63; //@line 965 "4374_Task1c_emscripten.cpp"
+   $127 = ((($126)) + 33|0); //@line 965 "4374_Task1c_emscripten.cpp"
+   $128 = HEAP8[$127>>0]|0; //@line 965 "4374_Task1c_emscripten.cpp"
+   $129 = $128&1; //@line 965 "4374_Task1c_emscripten.cpp"
+   $130 = $63; //@line 967 "4374_Task1c_emscripten.cpp"
    if ($129) {
-    $131 = ((($130)) + 36|0); //@line 891 "4374_Task1c_emscripten.cpp"
-    $132 = HEAP32[$131>>2]|0; //@line 891 "4374_Task1c_emscripten.cpp"
-    $133 = (($132) + -1)|0; //@line 891 "4374_Task1c_emscripten.cpp"
-    HEAP32[$131>>2] = $133; //@line 891 "4374_Task1c_emscripten.cpp"
-    $i = 0; //@line 892 "4374_Task1c_emscripten.cpp"
+    $131 = ((($130)) + 36|0); //@line 967 "4374_Task1c_emscripten.cpp"
+    $132 = HEAP32[$131>>2]|0; //@line 967 "4374_Task1c_emscripten.cpp"
+    $133 = (($132) + -1)|0; //@line 967 "4374_Task1c_emscripten.cpp"
+    HEAP32[$131>>2] = $133; //@line 967 "4374_Task1c_emscripten.cpp"
+    $i = 0; //@line 968 "4374_Task1c_emscripten.cpp"
     while(1) {
-     $134 = $i; //@line 892 "4374_Task1c_emscripten.cpp"
-     $135 = $66; //@line 892 "4374_Task1c_emscripten.cpp"
-     $59 = $135; //@line 892 "4374_Task1c_emscripten.cpp"
-     $136 = $59; //@line 892 "4374_Task1c_emscripten.cpp"
+     $134 = $i; //@line 968 "4374_Task1c_emscripten.cpp"
+     $135 = $66; //@line 968 "4374_Task1c_emscripten.cpp"
+     $59 = $135; //@line 968 "4374_Task1c_emscripten.cpp"
+     $136 = $59; //@line 968 "4374_Task1c_emscripten.cpp"
      $137 = ((($136)) + 4|0); //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
      $138 = HEAP32[$137>>2]|0; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
      $139 = HEAP32[$136>>2]|0; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -15324,66 +15350,66 @@ function __Z21updateSpotCoordinatesPA22_KcR6playeriRNSt3__112basic_stringIcNS4_1
      $141 = $139; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
      $142 = (($140) - ($141))|0; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
      $143 = (($142|0) / 24)&-1; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-     $144 = ($134>>>0)<($143>>>0); //@line 892 "4374_Task1c_emscripten.cpp"
+     $144 = ($134>>>0)<($143>>>0); //@line 968 "4374_Task1c_emscripten.cpp"
      if (!($144)) {
       break L1;
      }
-     $145 = $66; //@line 893 "4374_Task1c_emscripten.cpp"
-     $146 = $i; //@line 893 "4374_Task1c_emscripten.cpp"
-     $47 = $145; //@line 893 "4374_Task1c_emscripten.cpp"
-     $48 = $146; //@line 893 "4374_Task1c_emscripten.cpp"
-     $147 = $47; //@line 893 "4374_Task1c_emscripten.cpp"
+     $145 = $66; //@line 969 "4374_Task1c_emscripten.cpp"
+     $146 = $i; //@line 969 "4374_Task1c_emscripten.cpp"
+     $47 = $145; //@line 969 "4374_Task1c_emscripten.cpp"
+     $48 = $146; //@line 969 "4374_Task1c_emscripten.cpp"
+     $147 = $47; //@line 969 "4374_Task1c_emscripten.cpp"
      $148 = $48; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
      $149 = HEAP32[$147>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
      $150 = (($149) + (($148*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-     $151 = ((($150)) + 4|0); //@line 893 "4374_Task1c_emscripten.cpp"
-     $152 = HEAP32[$151>>2]|0; //@line 893 "4374_Task1c_emscripten.cpp"
-     $153 = $63; //@line 893 "4374_Task1c_emscripten.cpp"
-     $154 = ((($153)) + 4|0); //@line 893 "4374_Task1c_emscripten.cpp"
-     $155 = HEAP32[$154>>2]|0; //@line 893 "4374_Task1c_emscripten.cpp"
-     $156 = ($152|0)==($155|0); //@line 893 "4374_Task1c_emscripten.cpp"
+     $151 = ((($150)) + 4|0); //@line 969 "4374_Task1c_emscripten.cpp"
+     $152 = HEAP32[$151>>2]|0; //@line 969 "4374_Task1c_emscripten.cpp"
+     $153 = $63; //@line 969 "4374_Task1c_emscripten.cpp"
+     $154 = ((($153)) + 4|0); //@line 969 "4374_Task1c_emscripten.cpp"
+     $155 = HEAP32[$154>>2]|0; //@line 969 "4374_Task1c_emscripten.cpp"
+     $156 = ($152|0)==($155|0); //@line 969 "4374_Task1c_emscripten.cpp"
      if ($156) {
-      $157 = $66; //@line 893 "4374_Task1c_emscripten.cpp"
-      $158 = $i; //@line 893 "4374_Task1c_emscripten.cpp"
-      $45 = $157; //@line 893 "4374_Task1c_emscripten.cpp"
-      $46 = $158; //@line 893 "4374_Task1c_emscripten.cpp"
-      $159 = $45; //@line 893 "4374_Task1c_emscripten.cpp"
+      $157 = $66; //@line 969 "4374_Task1c_emscripten.cpp"
+      $158 = $i; //@line 969 "4374_Task1c_emscripten.cpp"
+      $45 = $157; //@line 969 "4374_Task1c_emscripten.cpp"
+      $46 = $158; //@line 969 "4374_Task1c_emscripten.cpp"
+      $159 = $45; //@line 969 "4374_Task1c_emscripten.cpp"
       $160 = $46; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
       $161 = HEAP32[$159>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
       $162 = (($161) + (($160*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-      $163 = ((($162)) + 8|0); //@line 893 "4374_Task1c_emscripten.cpp"
-      $164 = HEAP32[$163>>2]|0; //@line 893 "4374_Task1c_emscripten.cpp"
-      $165 = $63; //@line 893 "4374_Task1c_emscripten.cpp"
-      $166 = ((($165)) + 8|0); //@line 893 "4374_Task1c_emscripten.cpp"
-      $167 = HEAP32[$166>>2]|0; //@line 893 "4374_Task1c_emscripten.cpp"
-      $168 = ($164|0)==($167|0); //@line 893 "4374_Task1c_emscripten.cpp"
+      $163 = ((($162)) + 8|0); //@line 969 "4374_Task1c_emscripten.cpp"
+      $164 = HEAP32[$163>>2]|0; //@line 969 "4374_Task1c_emscripten.cpp"
+      $165 = $63; //@line 969 "4374_Task1c_emscripten.cpp"
+      $166 = ((($165)) + 8|0); //@line 969 "4374_Task1c_emscripten.cpp"
+      $167 = HEAP32[$166>>2]|0; //@line 969 "4374_Task1c_emscripten.cpp"
+      $168 = ($164|0)==($167|0); //@line 969 "4374_Task1c_emscripten.cpp"
       if ($168) {
-       $169 = $66; //@line 894 "4374_Task1c_emscripten.cpp"
-       $170 = $i; //@line 894 "4374_Task1c_emscripten.cpp"
-       $43 = $169; //@line 894 "4374_Task1c_emscripten.cpp"
-       $44 = $170; //@line 894 "4374_Task1c_emscripten.cpp"
-       $171 = $43; //@line 894 "4374_Task1c_emscripten.cpp"
+       $169 = $66; //@line 970 "4374_Task1c_emscripten.cpp"
+       $170 = $i; //@line 970 "4374_Task1c_emscripten.cpp"
+       $43 = $169; //@line 970 "4374_Task1c_emscripten.cpp"
+       $44 = $170; //@line 970 "4374_Task1c_emscripten.cpp"
+       $171 = $43; //@line 970 "4374_Task1c_emscripten.cpp"
        $172 = $44; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
        $173 = HEAP32[$171>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
        $174 = (($173) + (($172*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $175 = ((($174)) + 21|0); //@line 894 "4374_Task1c_emscripten.cpp"
-       HEAP8[$175>>0] = 0; //@line 894 "4374_Task1c_emscripten.cpp"
+       $175 = ((($174)) + 21|0); //@line 970 "4374_Task1c_emscripten.cpp"
+       HEAP8[$175>>0] = 0; //@line 970 "4374_Task1c_emscripten.cpp"
       }
      }
-     $176 = $i; //@line 892 "4374_Task1c_emscripten.cpp"
-     $177 = (($176) + 1)|0; //@line 892 "4374_Task1c_emscripten.cpp"
-     $i = $177; //@line 892 "4374_Task1c_emscripten.cpp"
+     $176 = $i; //@line 968 "4374_Task1c_emscripten.cpp"
+     $177 = (($176) + 1)|0; //@line 968 "4374_Task1c_emscripten.cpp"
+     $i = $177; //@line 968 "4374_Task1c_emscripten.cpp"
     }
    } else {
-    $178 = ((($130)) + 24|0); //@line 899 "4374_Task1c_emscripten.cpp"
-    $179 = HEAP32[$178>>2]|0; //@line 899 "4374_Task1c_emscripten.cpp"
-    $180 = (($179) + -1)|0; //@line 899 "4374_Task1c_emscripten.cpp"
-    HEAP32[$178>>2] = $180; //@line 899 "4374_Task1c_emscripten.cpp"
-    $181 = $66; //@line 901 "4374_Task1c_emscripten.cpp"
-    $__range = $181; //@line 901 "4374_Task1c_emscripten.cpp"
-    $182 = $__range; //@line 901 "4374_Task1c_emscripten.cpp"
-    $6 = $182; //@line 901 "4374_Task1c_emscripten.cpp"
-    $183 = $6; //@line 901 "4374_Task1c_emscripten.cpp"
+    $178 = ((($130)) + 24|0); //@line 975 "4374_Task1c_emscripten.cpp"
+    $179 = HEAP32[$178>>2]|0; //@line 975 "4374_Task1c_emscripten.cpp"
+    $180 = (($179) + -1)|0; //@line 975 "4374_Task1c_emscripten.cpp"
+    HEAP32[$178>>2] = $180; //@line 975 "4374_Task1c_emscripten.cpp"
+    $181 = $66; //@line 977 "4374_Task1c_emscripten.cpp"
+    $__range = $181; //@line 977 "4374_Task1c_emscripten.cpp"
+    $182 = $__range; //@line 977 "4374_Task1c_emscripten.cpp"
+    $6 = $182; //@line 977 "4374_Task1c_emscripten.cpp"
+    $183 = $6; //@line 977 "4374_Task1c_emscripten.cpp"
     $184 = HEAP32[$183>>2]|0; //@line 1472 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
     $3 = $183; //@line 1472 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
     $4 = $184; //@line 1472 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -15396,10 +15422,10 @@ function __Z21updateSpotCoordinatesPA22_KcR6playeriRNSt3__112basic_stringIcNS4_1
     $188 = HEAP32[$2>>2]|0; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
     HEAP32[$5>>2] = $188; //@line 1472 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
     $189 = HEAP32[$5>>2]|0; //@line 1472 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-    HEAP32[$__begin>>2] = $189; //@line 901 "4374_Task1c_emscripten.cpp"
-    $190 = $__range; //@line 901 "4374_Task1c_emscripten.cpp"
-    $13 = $190; //@line 901 "4374_Task1c_emscripten.cpp"
-    $191 = $13; //@line 901 "4374_Task1c_emscripten.cpp"
+    HEAP32[$__begin>>2] = $189; //@line 977 "4374_Task1c_emscripten.cpp"
+    $190 = $__range; //@line 977 "4374_Task1c_emscripten.cpp"
+    $13 = $190; //@line 977 "4374_Task1c_emscripten.cpp"
+    $191 = $13; //@line 977 "4374_Task1c_emscripten.cpp"
     $192 = ((($191)) + 4|0); //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
     $193 = HEAP32[$192>>2]|0; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
     $10 = $191; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -15413,10 +15439,10 @@ function __Z21updateSpotCoordinatesPA22_KcR6playeriRNSt3__112basic_stringIcNS4_1
     $197 = HEAP32[$9>>2]|0; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
     HEAP32[$12>>2] = $197; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
     $198 = HEAP32[$12>>2]|0; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-    HEAP32[$__end>>2] = $198; //@line 901 "4374_Task1c_emscripten.cpp"
+    HEAP32[$__end>>2] = $198; //@line 977 "4374_Task1c_emscripten.cpp"
     while(1) {
-     $18 = $__begin; //@line 901 "4374_Task1c_emscripten.cpp"
-     $19 = $__end; //@line 901 "4374_Task1c_emscripten.cpp"
+     $18 = $__begin; //@line 977 "4374_Task1c_emscripten.cpp"
+     $19 = $__end; //@line 977 "4374_Task1c_emscripten.cpp"
      $199 = $18; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
      $200 = $19; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
      $16 = $199; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
@@ -15434,42 +15460,42 @@ function __Z21updateSpotCoordinatesPA22_KcR6playeriRNSt3__112basic_stringIcNS4_1
      if (!($208)) {
       break L1;
      }
-     $20 = $__begin; //@line 901 "4374_Task1c_emscripten.cpp"
-     $209 = $20; //@line 901 "4374_Task1c_emscripten.cpp"
+     $20 = $__begin; //@line 977 "4374_Task1c_emscripten.cpp"
+     $209 = $20; //@line 977 "4374_Task1c_emscripten.cpp"
      $210 = HEAP32[$209>>2]|0; //@line 1163 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-     $it = $210; //@line 901 "4374_Task1c_emscripten.cpp"
-     $211 = $63; //@line 903 "4374_Task1c_emscripten.cpp"
-     $212 = ((($211)) + 4|0); //@line 903 "4374_Task1c_emscripten.cpp"
-     $213 = HEAP32[$212>>2]|0; //@line 903 "4374_Task1c_emscripten.cpp"
-     $214 = $it; //@line 903 "4374_Task1c_emscripten.cpp"
-     $215 = ((($214)) + 4|0); //@line 903 "4374_Task1c_emscripten.cpp"
-     $216 = HEAP32[$215>>2]|0; //@line 903 "4374_Task1c_emscripten.cpp"
-     $217 = ($213|0)==($216|0); //@line 903 "4374_Task1c_emscripten.cpp"
+     $it = $210; //@line 977 "4374_Task1c_emscripten.cpp"
+     $211 = $63; //@line 979 "4374_Task1c_emscripten.cpp"
+     $212 = ((($211)) + 4|0); //@line 979 "4374_Task1c_emscripten.cpp"
+     $213 = HEAP32[$212>>2]|0; //@line 979 "4374_Task1c_emscripten.cpp"
+     $214 = $it; //@line 979 "4374_Task1c_emscripten.cpp"
+     $215 = ((($214)) + 4|0); //@line 979 "4374_Task1c_emscripten.cpp"
+     $216 = HEAP32[$215>>2]|0; //@line 979 "4374_Task1c_emscripten.cpp"
+     $217 = ($213|0)==($216|0); //@line 979 "4374_Task1c_emscripten.cpp"
      if ($217) {
-      $218 = $63; //@line 903 "4374_Task1c_emscripten.cpp"
-      $219 = ((($218)) + 8|0); //@line 903 "4374_Task1c_emscripten.cpp"
-      $220 = HEAP32[$219>>2]|0; //@line 903 "4374_Task1c_emscripten.cpp"
-      $221 = $it; //@line 903 "4374_Task1c_emscripten.cpp"
-      $222 = ((($221)) + 8|0); //@line 903 "4374_Task1c_emscripten.cpp"
-      $223 = HEAP32[$222>>2]|0; //@line 903 "4374_Task1c_emscripten.cpp"
-      $224 = ($220|0)==($223|0); //@line 903 "4374_Task1c_emscripten.cpp"
+      $218 = $63; //@line 979 "4374_Task1c_emscripten.cpp"
+      $219 = ((($218)) + 8|0); //@line 979 "4374_Task1c_emscripten.cpp"
+      $220 = HEAP32[$219>>2]|0; //@line 979 "4374_Task1c_emscripten.cpp"
+      $221 = $it; //@line 979 "4374_Task1c_emscripten.cpp"
+      $222 = ((($221)) + 8|0); //@line 979 "4374_Task1c_emscripten.cpp"
+      $223 = HEAP32[$222>>2]|0; //@line 979 "4374_Task1c_emscripten.cpp"
+      $224 = ($220|0)==($223|0); //@line 979 "4374_Task1c_emscripten.cpp"
       if ($224) {
-       $225 = $it; //@line 905 "4374_Task1c_emscripten.cpp"
-       $226 = ((($225)) + 12|0); //@line 905 "4374_Task1c_emscripten.cpp"
-       $227 = HEAP32[$226>>2]|0; //@line 905 "4374_Task1c_emscripten.cpp"
-       $228 = $it; //@line 905 "4374_Task1c_emscripten.cpp"
-       $229 = ((($228)) + 4|0); //@line 905 "4374_Task1c_emscripten.cpp"
-       HEAP32[$229>>2] = $227; //@line 905 "4374_Task1c_emscripten.cpp"
-       $230 = $it; //@line 906 "4374_Task1c_emscripten.cpp"
-       $231 = ((($230)) + 16|0); //@line 906 "4374_Task1c_emscripten.cpp"
-       $232 = HEAP32[$231>>2]|0; //@line 906 "4374_Task1c_emscripten.cpp"
-       $233 = $it; //@line 906 "4374_Task1c_emscripten.cpp"
-       $234 = ((($233)) + 8|0); //@line 906 "4374_Task1c_emscripten.cpp"
-       HEAP32[$234>>2] = $232; //@line 906 "4374_Task1c_emscripten.cpp"
+       $225 = $it; //@line 981 "4374_Task1c_emscripten.cpp"
+       $226 = ((($225)) + 12|0); //@line 981 "4374_Task1c_emscripten.cpp"
+       $227 = HEAP32[$226>>2]|0; //@line 981 "4374_Task1c_emscripten.cpp"
+       $228 = $it; //@line 981 "4374_Task1c_emscripten.cpp"
+       $229 = ((($228)) + 4|0); //@line 981 "4374_Task1c_emscripten.cpp"
+       HEAP32[$229>>2] = $227; //@line 981 "4374_Task1c_emscripten.cpp"
+       $230 = $it; //@line 982 "4374_Task1c_emscripten.cpp"
+       $231 = ((($230)) + 16|0); //@line 982 "4374_Task1c_emscripten.cpp"
+       $232 = HEAP32[$231>>2]|0; //@line 982 "4374_Task1c_emscripten.cpp"
+       $233 = $it; //@line 982 "4374_Task1c_emscripten.cpp"
+       $234 = ((($233)) + 8|0); //@line 982 "4374_Task1c_emscripten.cpp"
+       HEAP32[$234>>2] = $232; //@line 982 "4374_Task1c_emscripten.cpp"
       }
      }
-     $21 = $__begin; //@line 901 "4374_Task1c_emscripten.cpp"
-     $235 = $21; //@line 901 "4374_Task1c_emscripten.cpp"
+     $21 = $__begin; //@line 977 "4374_Task1c_emscripten.cpp"
+     $235 = $21; //@line 977 "4374_Task1c_emscripten.cpp"
      $236 = HEAP32[$235>>2]|0; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
      $237 = ((($236)) + 24|0); //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
      HEAP32[$235>>2] = $237; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
@@ -15477,24 +15503,189 @@ function __Z21updateSpotCoordinatesPA22_KcR6playeriRNSt3__112basic_stringIcNS4_1
    }
    break;
   }
+  case 79:  {
+   $238 = HEAP32[$dy>>2]|0; //@line 988 "4374_Task1c_emscripten.cpp"
+   $239 = $63; //@line 988 "4374_Task1c_emscripten.cpp"
+   $240 = ((($239)) + 8|0); //@line 988 "4374_Task1c_emscripten.cpp"
+   $241 = HEAP32[$240>>2]|0; //@line 988 "4374_Task1c_emscripten.cpp"
+   $242 = (($241) + ($238))|0; //@line 988 "4374_Task1c_emscripten.cpp"
+   HEAP32[$240>>2] = $242; //@line 988 "4374_Task1c_emscripten.cpp"
+   $243 = HEAP32[$dx>>2]|0; //@line 989 "4374_Task1c_emscripten.cpp"
+   $244 = $63; //@line 989 "4374_Task1c_emscripten.cpp"
+   $245 = ((($244)) + 4|0); //@line 989 "4374_Task1c_emscripten.cpp"
+   $246 = HEAP32[$245>>2]|0; //@line 989 "4374_Task1c_emscripten.cpp"
+   $247 = (($246) + ($243))|0; //@line 989 "4374_Task1c_emscripten.cpp"
+   HEAP32[$245>>2] = $247; //@line 989 "4374_Task1c_emscripten.cpp"
+   $248 = $63; //@line 990 "4374_Task1c_emscripten.cpp"
+   $249 = ((($248)) + 24|0); //@line 990 "4374_Task1c_emscripten.cpp"
+   $250 = HEAP32[$249>>2]|0; //@line 990 "4374_Task1c_emscripten.cpp"
+   $251 = (($250) + -1)|0; //@line 990 "4374_Task1c_emscripten.cpp"
+   HEAP32[$249>>2] = $251; //@line 990 "4374_Task1c_emscripten.cpp"
+   $252 = $63; //@line 991 "4374_Task1c_emscripten.cpp"
+   $253 = ((($252)) + 33|0); //@line 991 "4374_Task1c_emscripten.cpp"
+   $254 = HEAP8[$253>>0]|0; //@line 991 "4374_Task1c_emscripten.cpp"
+   $255 = $254&1; //@line 991 "4374_Task1c_emscripten.cpp"
+   if ($255) {
+    $256 = $63; //@line 992 "4374_Task1c_emscripten.cpp"
+    $257 = ((($256)) + 36|0); //@line 992 "4374_Task1c_emscripten.cpp"
+    $258 = HEAP32[$257>>2]|0; //@line 992 "4374_Task1c_emscripten.cpp"
+    $259 = (($258) + -1)|0; //@line 992 "4374_Task1c_emscripten.cpp"
+    HEAP32[$257>>2] = $259; //@line 992 "4374_Task1c_emscripten.cpp"
+   }
+   break;
+  }
+  case 35:  {
+   (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_c(10504,7)|0); //@line 957 "4374_Task1c_emscripten.cpp"
+   $105 = $65; //@line 958 "4374_Task1c_emscripten.cpp"
+   $60 = $105; //@line 958 "4374_Task1c_emscripten.cpp"
+   $61 = 6120; //@line 958 "4374_Task1c_emscripten.cpp"
+   $106 = $60; //@line 958 "4374_Task1c_emscripten.cpp"
+   $107 = $61; //@line 1370 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+   (__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6assignEPKc($106,$107)|0); //@line 1370 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+   $108 = $63; //@line 959 "4374_Task1c_emscripten.cpp"
+   $109 = ((($108)) + 33|0); //@line 959 "4374_Task1c_emscripten.cpp"
+   $110 = HEAP8[$109>>0]|0; //@line 959 "4374_Task1c_emscripten.cpp"
+   $111 = $110&1; //@line 959 "4374_Task1c_emscripten.cpp"
+   if ($111) {
+    $112 = $63; //@line 960 "4374_Task1c_emscripten.cpp"
+    $113 = ((($112)) + 36|0); //@line 960 "4374_Task1c_emscripten.cpp"
+    $114 = HEAP32[$113>>2]|0; //@line 960 "4374_Task1c_emscripten.cpp"
+    $115 = (($114) + -1)|0; //@line 960 "4374_Task1c_emscripten.cpp"
+    HEAP32[$113>>2] = $115; //@line 960 "4374_Task1c_emscripten.cpp"
+   }
+   break;
+  }
+  case 46:  {
+   $351 = HEAP32[$dy>>2]|0; //@line 1008 "4374_Task1c_emscripten.cpp"
+   $352 = $63; //@line 1008 "4374_Task1c_emscripten.cpp"
+   $353 = ((($352)) + 8|0); //@line 1008 "4374_Task1c_emscripten.cpp"
+   $354 = HEAP32[$353>>2]|0; //@line 1008 "4374_Task1c_emscripten.cpp"
+   $355 = (($354) + ($351))|0; //@line 1008 "4374_Task1c_emscripten.cpp"
+   HEAP32[$353>>2] = $355; //@line 1008 "4374_Task1c_emscripten.cpp"
+   $356 = HEAP32[$dx>>2]|0; //@line 1009 "4374_Task1c_emscripten.cpp"
+   $357 = $63; //@line 1009 "4374_Task1c_emscripten.cpp"
+   $358 = ((($357)) + 4|0); //@line 1009 "4374_Task1c_emscripten.cpp"
+   $359 = HEAP32[$358>>2]|0; //@line 1009 "4374_Task1c_emscripten.cpp"
+   $360 = (($359) + ($356))|0; //@line 1009 "4374_Task1c_emscripten.cpp"
+   HEAP32[$358>>2] = $360; //@line 1009 "4374_Task1c_emscripten.cpp"
+   $361 = $63; //@line 1010 "4374_Task1c_emscripten.cpp"
+   $362 = ((($361)) + 24|0); //@line 1010 "4374_Task1c_emscripten.cpp"
+   $363 = HEAP32[$362>>2]|0; //@line 1010 "4374_Task1c_emscripten.cpp"
+   $364 = (($363) + 1)|0; //@line 1010 "4374_Task1c_emscripten.cpp"
+   HEAP32[$362>>2] = $364; //@line 1010 "4374_Task1c_emscripten.cpp"
+   $365 = $63; //@line 1011 "4374_Task1c_emscripten.cpp"
+   $366 = ((($365)) + 33|0); //@line 1011 "4374_Task1c_emscripten.cpp"
+   $367 = HEAP8[$366>>0]|0; //@line 1011 "4374_Task1c_emscripten.cpp"
+   $368 = $367&1; //@line 1011 "4374_Task1c_emscripten.cpp"
+   if ($368) {
+    $369 = $63; //@line 1012 "4374_Task1c_emscripten.cpp"
+    $370 = ((($369)) + 36|0); //@line 1012 "4374_Task1c_emscripten.cpp"
+    $371 = HEAP32[$370>>2]|0; //@line 1012 "4374_Task1c_emscripten.cpp"
+    $372 = (($371) + -1)|0; //@line 1012 "4374_Task1c_emscripten.cpp"
+    HEAP32[$370>>2] = $372; //@line 1012 "4374_Task1c_emscripten.cpp"
+   }
+   $373 = $63; //@line 1013 "4374_Task1c_emscripten.cpp"
+   $374 = ((($373)) + 33|0); //@line 1013 "4374_Task1c_emscripten.cpp"
+   HEAP8[$374>>0] = 1; //@line 1013 "4374_Task1c_emscripten.cpp"
+   $375 = $63; //@line 1014 "4374_Task1c_emscripten.cpp"
+   $376 = ((($375)) + 40|0); //@line 1014 "4374_Task1c_emscripten.cpp"
+   $377 = HEAP32[$376>>2]|0; //@line 1014 "4374_Task1c_emscripten.cpp"
+   if ((($377|0) == 2)) {
+    $380 = $63; //@line 1020 "4374_Task1c_emscripten.cpp"
+    $381 = ((($380)) + 36|0); //@line 1020 "4374_Task1c_emscripten.cpp"
+    HEAP32[$381>>2] = 8; //@line 1020 "4374_Task1c_emscripten.cpp"
+   } else if ((($377|0) == 3)) {
+    $382 = $63; //@line 1023 "4374_Task1c_emscripten.cpp"
+    $383 = ((($382)) + 36|0); //@line 1023 "4374_Task1c_emscripten.cpp"
+    HEAP32[$383>>2] = 5; //@line 1023 "4374_Task1c_emscripten.cpp"
+   } else if ((($377|0) == 1)) {
+    $378 = $63; //@line 1017 "4374_Task1c_emscripten.cpp"
+    $379 = ((($378)) + 36|0); //@line 1017 "4374_Task1c_emscripten.cpp"
+    HEAP32[$379>>2] = 10; //@line 1017 "4374_Task1c_emscripten.cpp"
+   }
+   $i5 = 0; //@line 1026 "4374_Task1c_emscripten.cpp"
+   while(1) {
+    $384 = $i5; //@line 1026 "4374_Task1c_emscripten.cpp"
+    $385 = $67; //@line 1026 "4374_Task1c_emscripten.cpp"
+    $52 = $385; //@line 1026 "4374_Task1c_emscripten.cpp"
+    $386 = $52; //@line 1026 "4374_Task1c_emscripten.cpp"
+    $387 = ((($386)) + 4|0); //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+    $388 = HEAP32[$387>>2]|0; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+    $389 = HEAP32[$386>>2]|0; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+    $390 = $388; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+    $391 = $389; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+    $392 = (($390) - ($391))|0; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+    $393 = (($392|0) / 16)&-1; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+    $394 = ($384>>>0)<($393>>>0); //@line 1026 "4374_Task1c_emscripten.cpp"
+    if (!($394)) {
+     break L1;
+    }
+    $395 = $67; //@line 1027 "4374_Task1c_emscripten.cpp"
+    $396 = $i5; //@line 1027 "4374_Task1c_emscripten.cpp"
+    $53 = $395; //@line 1027 "4374_Task1c_emscripten.cpp"
+    $54 = $396; //@line 1027 "4374_Task1c_emscripten.cpp"
+    $397 = $53; //@line 1027 "4374_Task1c_emscripten.cpp"
+    $398 = $54; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+    $399 = HEAP32[$397>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+    $400 = (($399) + ($398<<4)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+    $401 = ((($400)) + 4|0); //@line 1027 "4374_Task1c_emscripten.cpp"
+    $402 = HEAP32[$401>>2]|0; //@line 1027 "4374_Task1c_emscripten.cpp"
+    $403 = $63; //@line 1027 "4374_Task1c_emscripten.cpp"
+    $404 = ((($403)) + 4|0); //@line 1027 "4374_Task1c_emscripten.cpp"
+    $405 = HEAP32[$404>>2]|0; //@line 1027 "4374_Task1c_emscripten.cpp"
+    $406 = ($402|0)==($405|0); //@line 1027 "4374_Task1c_emscripten.cpp"
+    if ($406) {
+     $407 = $67; //@line 1027 "4374_Task1c_emscripten.cpp"
+     $408 = $i5; //@line 1027 "4374_Task1c_emscripten.cpp"
+     $55 = $407; //@line 1027 "4374_Task1c_emscripten.cpp"
+     $56 = $408; //@line 1027 "4374_Task1c_emscripten.cpp"
+     $409 = $55; //@line 1027 "4374_Task1c_emscripten.cpp"
+     $410 = $56; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+     $411 = HEAP32[$409>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+     $412 = (($411) + ($410<<4)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+     $413 = ((($412)) + 8|0); //@line 1027 "4374_Task1c_emscripten.cpp"
+     $414 = HEAP32[$413>>2]|0; //@line 1027 "4374_Task1c_emscripten.cpp"
+     $415 = $63; //@line 1027 "4374_Task1c_emscripten.cpp"
+     $416 = ((($415)) + 8|0); //@line 1027 "4374_Task1c_emscripten.cpp"
+     $417 = HEAP32[$416>>2]|0; //@line 1027 "4374_Task1c_emscripten.cpp"
+     $418 = ($414|0)==($417|0); //@line 1027 "4374_Task1c_emscripten.cpp"
+     if ($418) {
+      $419 = $67; //@line 1028 "4374_Task1c_emscripten.cpp"
+      $420 = $i5; //@line 1028 "4374_Task1c_emscripten.cpp"
+      $57 = $419; //@line 1028 "4374_Task1c_emscripten.cpp"
+      $58 = $420; //@line 1028 "4374_Task1c_emscripten.cpp"
+      $421 = $57; //@line 1028 "4374_Task1c_emscripten.cpp"
+      $422 = $58; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+      $423 = HEAP32[$421>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+      $424 = (($423) + ($422<<4)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+      $425 = ((($424)) + 12|0); //@line 1028 "4374_Task1c_emscripten.cpp"
+      HEAP8[$425>>0] = 1; //@line 1028 "4374_Task1c_emscripten.cpp"
+     }
+    }
+    $426 = $i5; //@line 1026 "4374_Task1c_emscripten.cpp"
+    $427 = (($426) + 1)|0; //@line 1026 "4374_Task1c_emscripten.cpp"
+    $i5 = $427; //@line 1026 "4374_Task1c_emscripten.cpp"
+   }
+   break;
+  }
   case 38:  {
-   $260 = HEAP32[$dy>>2]|0; //@line 919 "4374_Task1c_emscripten.cpp"
-   $261 = $63; //@line 919 "4374_Task1c_emscripten.cpp"
-   $262 = ((($261)) + 8|0); //@line 919 "4374_Task1c_emscripten.cpp"
-   $263 = HEAP32[$262>>2]|0; //@line 919 "4374_Task1c_emscripten.cpp"
-   $264 = (($263) + ($260))|0; //@line 919 "4374_Task1c_emscripten.cpp"
-   HEAP32[$262>>2] = $264; //@line 919 "4374_Task1c_emscripten.cpp"
-   $265 = HEAP32[$dx>>2]|0; //@line 920 "4374_Task1c_emscripten.cpp"
-   $266 = $63; //@line 920 "4374_Task1c_emscripten.cpp"
-   $267 = ((($266)) + 4|0); //@line 920 "4374_Task1c_emscripten.cpp"
-   $268 = HEAP32[$267>>2]|0; //@line 920 "4374_Task1c_emscripten.cpp"
-   $269 = (($268) + ($265))|0; //@line 920 "4374_Task1c_emscripten.cpp"
-   HEAP32[$267>>2] = $269; //@line 920 "4374_Task1c_emscripten.cpp"
-   $270 = $68; //@line 921 "4374_Task1c_emscripten.cpp"
-   $__range1 = $270; //@line 921 "4374_Task1c_emscripten.cpp"
-   $271 = $__range1; //@line 921 "4374_Task1c_emscripten.cpp"
-   $28 = $271; //@line 921 "4374_Task1c_emscripten.cpp"
-   $272 = $28; //@line 921 "4374_Task1c_emscripten.cpp"
+   $260 = HEAP32[$dy>>2]|0; //@line 995 "4374_Task1c_emscripten.cpp"
+   $261 = $63; //@line 995 "4374_Task1c_emscripten.cpp"
+   $262 = ((($261)) + 8|0); //@line 995 "4374_Task1c_emscripten.cpp"
+   $263 = HEAP32[$262>>2]|0; //@line 995 "4374_Task1c_emscripten.cpp"
+   $264 = (($263) + ($260))|0; //@line 995 "4374_Task1c_emscripten.cpp"
+   HEAP32[$262>>2] = $264; //@line 995 "4374_Task1c_emscripten.cpp"
+   $265 = HEAP32[$dx>>2]|0; //@line 996 "4374_Task1c_emscripten.cpp"
+   $266 = $63; //@line 996 "4374_Task1c_emscripten.cpp"
+   $267 = ((($266)) + 4|0); //@line 996 "4374_Task1c_emscripten.cpp"
+   $268 = HEAP32[$267>>2]|0; //@line 996 "4374_Task1c_emscripten.cpp"
+   $269 = (($268) + ($265))|0; //@line 996 "4374_Task1c_emscripten.cpp"
+   HEAP32[$267>>2] = $269; //@line 996 "4374_Task1c_emscripten.cpp"
+   $270 = $68; //@line 997 "4374_Task1c_emscripten.cpp"
+   $__range1 = $270; //@line 997 "4374_Task1c_emscripten.cpp"
+   $271 = $__range1; //@line 997 "4374_Task1c_emscripten.cpp"
+   $28 = $271; //@line 997 "4374_Task1c_emscripten.cpp"
+   $272 = $28; //@line 997 "4374_Task1c_emscripten.cpp"
    $273 = HEAP32[$272>>2]|0; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
    $25 = $272; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
    $26 = $273; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -15507,10 +15698,10 @@ function __Z21updateSpotCoordinatesPA22_KcR6playeriRNSt3__112basic_stringIcNS4_1
    $277 = HEAP32[$24>>2]|0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
    HEAP32[$27>>2] = $277; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
    $278 = HEAP32[$27>>2]|0; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-   HEAP32[$__begin2>>2] = $278; //@line 921 "4374_Task1c_emscripten.cpp"
-   $279 = $__range1; //@line 921 "4374_Task1c_emscripten.cpp"
-   $35 = $279; //@line 921 "4374_Task1c_emscripten.cpp"
-   $280 = $35; //@line 921 "4374_Task1c_emscripten.cpp"
+   HEAP32[$__begin2>>2] = $278; //@line 997 "4374_Task1c_emscripten.cpp"
+   $279 = $__range1; //@line 997 "4374_Task1c_emscripten.cpp"
+   $35 = $279; //@line 997 "4374_Task1c_emscripten.cpp"
+   $280 = $35; //@line 997 "4374_Task1c_emscripten.cpp"
    $281 = ((($280)) + 4|0); //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
    $282 = HEAP32[$281>>2]|0; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
    $32 = $280; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -15524,10 +15715,10 @@ function __Z21updateSpotCoordinatesPA22_KcR6playeriRNSt3__112basic_stringIcNS4_1
    $286 = HEAP32[$31>>2]|0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
    HEAP32[$34>>2] = $286; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
    $287 = HEAP32[$34>>2]|0; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-   HEAP32[$__end3>>2] = $287; //@line 921 "4374_Task1c_emscripten.cpp"
+   HEAP32[$__end3>>2] = $287; //@line 997 "4374_Task1c_emscripten.cpp"
    while(1) {
-    $40 = $__begin2; //@line 921 "4374_Task1c_emscripten.cpp"
-    $41 = $__end3; //@line 921 "4374_Task1c_emscripten.cpp"
+    $40 = $__begin2; //@line 997 "4374_Task1c_emscripten.cpp"
+    $41 = $__end3; //@line 997 "4374_Task1c_emscripten.cpp"
     $288 = $40; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
     $289 = $41; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
     $38 = $288; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
@@ -15545,263 +15736,72 @@ function __Z21updateSpotCoordinatesPA22_KcR6playeriRNSt3__112basic_stringIcNS4_1
     if (!($297)) {
      break L1;
     }
-    $42 = $__begin2; //@line 921 "4374_Task1c_emscripten.cpp"
-    $298 = $42; //@line 921 "4374_Task1c_emscripten.cpp"
+    $42 = $__begin2; //@line 997 "4374_Task1c_emscripten.cpp"
+    $298 = $42; //@line 997 "4374_Task1c_emscripten.cpp"
     $299 = HEAP32[$298>>2]|0; //@line 1163 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-    $it4 = $299; //@line 921 "4374_Task1c_emscripten.cpp"
-    $300 = $63; //@line 923 "4374_Task1c_emscripten.cpp"
-    $301 = ((($300)) + 4|0); //@line 923 "4374_Task1c_emscripten.cpp"
-    $302 = HEAP32[$301>>2]|0; //@line 923 "4374_Task1c_emscripten.cpp"
-    $303 = $it4; //@line 923 "4374_Task1c_emscripten.cpp"
-    $304 = ((($303)) + 4|0); //@line 923 "4374_Task1c_emscripten.cpp"
-    $305 = HEAP32[$304>>2]|0; //@line 923 "4374_Task1c_emscripten.cpp"
-    $306 = ($302|0)==($305|0); //@line 923 "4374_Task1c_emscripten.cpp"
+    $it4 = $299; //@line 997 "4374_Task1c_emscripten.cpp"
+    $300 = $63; //@line 999 "4374_Task1c_emscripten.cpp"
+    $301 = ((($300)) + 4|0); //@line 999 "4374_Task1c_emscripten.cpp"
+    $302 = HEAP32[$301>>2]|0; //@line 999 "4374_Task1c_emscripten.cpp"
+    $303 = $it4; //@line 999 "4374_Task1c_emscripten.cpp"
+    $304 = ((($303)) + 4|0); //@line 999 "4374_Task1c_emscripten.cpp"
+    $305 = HEAP32[$304>>2]|0; //@line 999 "4374_Task1c_emscripten.cpp"
+    $306 = ($302|0)==($305|0); //@line 999 "4374_Task1c_emscripten.cpp"
     if ($306) {
-     $307 = $63; //@line 923 "4374_Task1c_emscripten.cpp"
-     $308 = ((($307)) + 8|0); //@line 923 "4374_Task1c_emscripten.cpp"
-     $309 = HEAP32[$308>>2]|0; //@line 923 "4374_Task1c_emscripten.cpp"
-     $310 = $it4; //@line 923 "4374_Task1c_emscripten.cpp"
-     $311 = ((($310)) + 8|0); //@line 923 "4374_Task1c_emscripten.cpp"
-     $312 = HEAP32[$311>>2]|0; //@line 923 "4374_Task1c_emscripten.cpp"
-     $313 = ($309|0)==($312|0); //@line 923 "4374_Task1c_emscripten.cpp"
+     $307 = $63; //@line 999 "4374_Task1c_emscripten.cpp"
+     $308 = ((($307)) + 8|0); //@line 999 "4374_Task1c_emscripten.cpp"
+     $309 = HEAP32[$308>>2]|0; //@line 999 "4374_Task1c_emscripten.cpp"
+     $310 = $it4; //@line 999 "4374_Task1c_emscripten.cpp"
+     $311 = ((($310)) + 8|0); //@line 999 "4374_Task1c_emscripten.cpp"
+     $312 = HEAP32[$311>>2]|0; //@line 999 "4374_Task1c_emscripten.cpp"
+     $313 = ($309|0)==($312|0); //@line 999 "4374_Task1c_emscripten.cpp"
      if ($313) {
-      $314 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(10504,6144)|0); //@line 925 "4374_Task1c_emscripten.cpp"
-      $315 = $it4; //@line 925 "4374_Task1c_emscripten.cpp"
-      $316 = ((($315)) + 12|0); //@line 925 "4374_Task1c_emscripten.cpp"
-      $317 = HEAP32[$316>>2]|0; //@line 925 "4374_Task1c_emscripten.cpp"
-      $318 = ((($317)) + 8|0); //@line 925 "4374_Task1c_emscripten.cpp"
-      $319 = HEAP32[$318>>2]|0; //@line 925 "4374_Task1c_emscripten.cpp"
-      $320 = (__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi($314,$319)|0); //@line 925 "4374_Task1c_emscripten.cpp"
-      $321 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc($320,6160)|0); //@line 925 "4374_Task1c_emscripten.cpp"
-      $322 = $it4; //@line 925 "4374_Task1c_emscripten.cpp"
-      $323 = ((($322)) + 12|0); //@line 925 "4374_Task1c_emscripten.cpp"
-      $324 = HEAP32[$323>>2]|0; //@line 925 "4374_Task1c_emscripten.cpp"
-      $325 = ((($324)) + 4|0); //@line 925 "4374_Task1c_emscripten.cpp"
-      $326 = HEAP32[$325>>2]|0; //@line 925 "4374_Task1c_emscripten.cpp"
-      $327 = (__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi($321,$326)|0); //@line 925 "4374_Task1c_emscripten.cpp"
-      $49 = $327; //@line 925 "4374_Task1c_emscripten.cpp"
-      $50 = 384; //@line 925 "4374_Task1c_emscripten.cpp"
-      $328 = $49; //@line 925 "4374_Task1c_emscripten.cpp"
+      $314 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(10504,6144)|0); //@line 1001 "4374_Task1c_emscripten.cpp"
+      $315 = $it4; //@line 1001 "4374_Task1c_emscripten.cpp"
+      $316 = ((($315)) + 12|0); //@line 1001 "4374_Task1c_emscripten.cpp"
+      $317 = HEAP32[$316>>2]|0; //@line 1001 "4374_Task1c_emscripten.cpp"
+      $318 = ((($317)) + 8|0); //@line 1001 "4374_Task1c_emscripten.cpp"
+      $319 = HEAP32[$318>>2]|0; //@line 1001 "4374_Task1c_emscripten.cpp"
+      $320 = (__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi($314,$319)|0); //@line 1001 "4374_Task1c_emscripten.cpp"
+      $321 = (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc($320,6160)|0); //@line 1001 "4374_Task1c_emscripten.cpp"
+      $322 = $it4; //@line 1001 "4374_Task1c_emscripten.cpp"
+      $323 = ((($322)) + 12|0); //@line 1001 "4374_Task1c_emscripten.cpp"
+      $324 = HEAP32[$323>>2]|0; //@line 1001 "4374_Task1c_emscripten.cpp"
+      $325 = ((($324)) + 4|0); //@line 1001 "4374_Task1c_emscripten.cpp"
+      $326 = HEAP32[$325>>2]|0; //@line 1001 "4374_Task1c_emscripten.cpp"
+      $327 = (__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi($321,$326)|0); //@line 1001 "4374_Task1c_emscripten.cpp"
+      $49 = $327; //@line 1001 "4374_Task1c_emscripten.cpp"
+      $50 = 384; //@line 1001 "4374_Task1c_emscripten.cpp"
+      $328 = $49; //@line 1001 "4374_Task1c_emscripten.cpp"
       $329 = $50; //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
       (FUNCTION_TABLE_ii[$329 & 1023]($328)|0); //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
-      $330 = $it4; //@line 926 "4374_Task1c_emscripten.cpp"
-      $331 = ((($330)) + 12|0); //@line 926 "4374_Task1c_emscripten.cpp"
-      $332 = HEAP32[$331>>2]|0; //@line 926 "4374_Task1c_emscripten.cpp"
-      $333 = ((($332)) + 8|0); //@line 926 "4374_Task1c_emscripten.cpp"
-      $334 = HEAP32[$333>>2]|0; //@line 926 "4374_Task1c_emscripten.cpp"
-      $335 = HEAP32[$dy>>2]|0; //@line 926 "4374_Task1c_emscripten.cpp"
-      $336 = (($334) + ($335))|0; //@line 926 "4374_Task1c_emscripten.cpp"
-      $337 = $63; //@line 926 "4374_Task1c_emscripten.cpp"
-      $338 = ((($337)) + 8|0); //@line 926 "4374_Task1c_emscripten.cpp"
-      HEAP32[$338>>2] = $336; //@line 926 "4374_Task1c_emscripten.cpp"
-      $339 = $it4; //@line 927 "4374_Task1c_emscripten.cpp"
-      $340 = ((($339)) + 12|0); //@line 927 "4374_Task1c_emscripten.cpp"
-      $341 = HEAP32[$340>>2]|0; //@line 927 "4374_Task1c_emscripten.cpp"
-      $342 = ((($341)) + 4|0); //@line 927 "4374_Task1c_emscripten.cpp"
-      $343 = HEAP32[$342>>2]|0; //@line 927 "4374_Task1c_emscripten.cpp"
-      $344 = HEAP32[$dx>>2]|0; //@line 927 "4374_Task1c_emscripten.cpp"
-      $345 = (($343) + ($344))|0; //@line 927 "4374_Task1c_emscripten.cpp"
-      $346 = $63; //@line 927 "4374_Task1c_emscripten.cpp"
-      $347 = ((($346)) + 4|0); //@line 927 "4374_Task1c_emscripten.cpp"
-      HEAP32[$347>>2] = $345; //@line 927 "4374_Task1c_emscripten.cpp"
+      $330 = $it4; //@line 1002 "4374_Task1c_emscripten.cpp"
+      $331 = ((($330)) + 12|0); //@line 1002 "4374_Task1c_emscripten.cpp"
+      $332 = HEAP32[$331>>2]|0; //@line 1002 "4374_Task1c_emscripten.cpp"
+      $333 = ((($332)) + 8|0); //@line 1002 "4374_Task1c_emscripten.cpp"
+      $334 = HEAP32[$333>>2]|0; //@line 1002 "4374_Task1c_emscripten.cpp"
+      $335 = HEAP32[$dy>>2]|0; //@line 1002 "4374_Task1c_emscripten.cpp"
+      $336 = (($334) + ($335))|0; //@line 1002 "4374_Task1c_emscripten.cpp"
+      $337 = $63; //@line 1002 "4374_Task1c_emscripten.cpp"
+      $338 = ((($337)) + 8|0); //@line 1002 "4374_Task1c_emscripten.cpp"
+      HEAP32[$338>>2] = $336; //@line 1002 "4374_Task1c_emscripten.cpp"
+      $339 = $it4; //@line 1003 "4374_Task1c_emscripten.cpp"
+      $340 = ((($339)) + 12|0); //@line 1003 "4374_Task1c_emscripten.cpp"
+      $341 = HEAP32[$340>>2]|0; //@line 1003 "4374_Task1c_emscripten.cpp"
+      $342 = ((($341)) + 4|0); //@line 1003 "4374_Task1c_emscripten.cpp"
+      $343 = HEAP32[$342>>2]|0; //@line 1003 "4374_Task1c_emscripten.cpp"
+      $344 = HEAP32[$dx>>2]|0; //@line 1003 "4374_Task1c_emscripten.cpp"
+      $345 = (($343) + ($344))|0; //@line 1003 "4374_Task1c_emscripten.cpp"
+      $346 = $63; //@line 1003 "4374_Task1c_emscripten.cpp"
+      $347 = ((($346)) + 4|0); //@line 1003 "4374_Task1c_emscripten.cpp"
+      HEAP32[$347>>2] = $345; //@line 1003 "4374_Task1c_emscripten.cpp"
      }
     }
-    $51 = $__begin2; //@line 921 "4374_Task1c_emscripten.cpp"
-    $348 = $51; //@line 921 "4374_Task1c_emscripten.cpp"
+    $51 = $__begin2; //@line 997 "4374_Task1c_emscripten.cpp"
+    $348 = $51; //@line 997 "4374_Task1c_emscripten.cpp"
     $349 = HEAP32[$348>>2]|0; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
     $350 = ((($349)) + 16|0); //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
     HEAP32[$348>>2] = $350; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-   }
-   break;
-  }
-  case 46:  {
-   $351 = HEAP32[$dy>>2]|0; //@line 932 "4374_Task1c_emscripten.cpp"
-   $352 = $63; //@line 932 "4374_Task1c_emscripten.cpp"
-   $353 = ((($352)) + 8|0); //@line 932 "4374_Task1c_emscripten.cpp"
-   $354 = HEAP32[$353>>2]|0; //@line 932 "4374_Task1c_emscripten.cpp"
-   $355 = (($354) + ($351))|0; //@line 932 "4374_Task1c_emscripten.cpp"
-   HEAP32[$353>>2] = $355; //@line 932 "4374_Task1c_emscripten.cpp"
-   $356 = HEAP32[$dx>>2]|0; //@line 933 "4374_Task1c_emscripten.cpp"
-   $357 = $63; //@line 933 "4374_Task1c_emscripten.cpp"
-   $358 = ((($357)) + 4|0); //@line 933 "4374_Task1c_emscripten.cpp"
-   $359 = HEAP32[$358>>2]|0; //@line 933 "4374_Task1c_emscripten.cpp"
-   $360 = (($359) + ($356))|0; //@line 933 "4374_Task1c_emscripten.cpp"
-   HEAP32[$358>>2] = $360; //@line 933 "4374_Task1c_emscripten.cpp"
-   $361 = $63; //@line 934 "4374_Task1c_emscripten.cpp"
-   $362 = ((($361)) + 24|0); //@line 934 "4374_Task1c_emscripten.cpp"
-   $363 = HEAP32[$362>>2]|0; //@line 934 "4374_Task1c_emscripten.cpp"
-   $364 = (($363) + 1)|0; //@line 934 "4374_Task1c_emscripten.cpp"
-   HEAP32[$362>>2] = $364; //@line 934 "4374_Task1c_emscripten.cpp"
-   $365 = $63; //@line 935 "4374_Task1c_emscripten.cpp"
-   $366 = ((($365)) + 33|0); //@line 935 "4374_Task1c_emscripten.cpp"
-   $367 = HEAP8[$366>>0]|0; //@line 935 "4374_Task1c_emscripten.cpp"
-   $368 = $367&1; //@line 935 "4374_Task1c_emscripten.cpp"
-   if ($368) {
-    $369 = $63; //@line 936 "4374_Task1c_emscripten.cpp"
-    $370 = ((($369)) + 36|0); //@line 936 "4374_Task1c_emscripten.cpp"
-    $371 = HEAP32[$370>>2]|0; //@line 936 "4374_Task1c_emscripten.cpp"
-    $372 = (($371) + -1)|0; //@line 936 "4374_Task1c_emscripten.cpp"
-    HEAP32[$370>>2] = $372; //@line 936 "4374_Task1c_emscripten.cpp"
-   }
-   $373 = $63; //@line 937 "4374_Task1c_emscripten.cpp"
-   $374 = ((($373)) + 33|0); //@line 937 "4374_Task1c_emscripten.cpp"
-   HEAP8[$374>>0] = 1; //@line 937 "4374_Task1c_emscripten.cpp"
-   $375 = $63; //@line 938 "4374_Task1c_emscripten.cpp"
-   $376 = ((($375)) + 40|0); //@line 938 "4374_Task1c_emscripten.cpp"
-   $377 = HEAP32[$376>>2]|0; //@line 938 "4374_Task1c_emscripten.cpp"
-   if ((($377|0) == 3)) {
-    $382 = $63; //@line 947 "4374_Task1c_emscripten.cpp"
-    $383 = ((($382)) + 36|0); //@line 947 "4374_Task1c_emscripten.cpp"
-    HEAP32[$383>>2] = 5; //@line 947 "4374_Task1c_emscripten.cpp"
-   } else if ((($377|0) == 1)) {
-    $378 = $63; //@line 941 "4374_Task1c_emscripten.cpp"
-    $379 = ((($378)) + 36|0); //@line 941 "4374_Task1c_emscripten.cpp"
-    HEAP32[$379>>2] = 10; //@line 941 "4374_Task1c_emscripten.cpp"
-   } else if ((($377|0) == 2)) {
-    $380 = $63; //@line 944 "4374_Task1c_emscripten.cpp"
-    $381 = ((($380)) + 36|0); //@line 944 "4374_Task1c_emscripten.cpp"
-    HEAP32[$381>>2] = 8; //@line 944 "4374_Task1c_emscripten.cpp"
-   }
-   $i5 = 0; //@line 950 "4374_Task1c_emscripten.cpp"
-   while(1) {
-    $384 = $i5; //@line 950 "4374_Task1c_emscripten.cpp"
-    $385 = $67; //@line 950 "4374_Task1c_emscripten.cpp"
-    $52 = $385; //@line 950 "4374_Task1c_emscripten.cpp"
-    $386 = $52; //@line 950 "4374_Task1c_emscripten.cpp"
-    $387 = ((($386)) + 4|0); //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-    $388 = HEAP32[$387>>2]|0; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-    $389 = HEAP32[$386>>2]|0; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-    $390 = $388; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-    $391 = $389; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-    $392 = (($390) - ($391))|0; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-    $393 = (($392|0) / 16)&-1; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-    $394 = ($384>>>0)<($393>>>0); //@line 950 "4374_Task1c_emscripten.cpp"
-    if (!($394)) {
-     break L1;
-    }
-    $395 = $67; //@line 951 "4374_Task1c_emscripten.cpp"
-    $396 = $i5; //@line 951 "4374_Task1c_emscripten.cpp"
-    $53 = $395; //@line 951 "4374_Task1c_emscripten.cpp"
-    $54 = $396; //@line 951 "4374_Task1c_emscripten.cpp"
-    $397 = $53; //@line 951 "4374_Task1c_emscripten.cpp"
-    $398 = $54; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-    $399 = HEAP32[$397>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-    $400 = (($399) + ($398<<4)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-    $401 = ((($400)) + 4|0); //@line 951 "4374_Task1c_emscripten.cpp"
-    $402 = HEAP32[$401>>2]|0; //@line 951 "4374_Task1c_emscripten.cpp"
-    $403 = $63; //@line 951 "4374_Task1c_emscripten.cpp"
-    $404 = ((($403)) + 4|0); //@line 951 "4374_Task1c_emscripten.cpp"
-    $405 = HEAP32[$404>>2]|0; //@line 951 "4374_Task1c_emscripten.cpp"
-    $406 = ($402|0)==($405|0); //@line 951 "4374_Task1c_emscripten.cpp"
-    if ($406) {
-     $407 = $67; //@line 951 "4374_Task1c_emscripten.cpp"
-     $408 = $i5; //@line 951 "4374_Task1c_emscripten.cpp"
-     $55 = $407; //@line 951 "4374_Task1c_emscripten.cpp"
-     $56 = $408; //@line 951 "4374_Task1c_emscripten.cpp"
-     $409 = $55; //@line 951 "4374_Task1c_emscripten.cpp"
-     $410 = $56; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-     $411 = HEAP32[$409>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-     $412 = (($411) + ($410<<4)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-     $413 = ((($412)) + 8|0); //@line 951 "4374_Task1c_emscripten.cpp"
-     $414 = HEAP32[$413>>2]|0; //@line 951 "4374_Task1c_emscripten.cpp"
-     $415 = $63; //@line 951 "4374_Task1c_emscripten.cpp"
-     $416 = ((($415)) + 8|0); //@line 951 "4374_Task1c_emscripten.cpp"
-     $417 = HEAP32[$416>>2]|0; //@line 951 "4374_Task1c_emscripten.cpp"
-     $418 = ($414|0)==($417|0); //@line 951 "4374_Task1c_emscripten.cpp"
-     if ($418) {
-      $419 = $67; //@line 952 "4374_Task1c_emscripten.cpp"
-      $420 = $i5; //@line 952 "4374_Task1c_emscripten.cpp"
-      $57 = $419; //@line 952 "4374_Task1c_emscripten.cpp"
-      $58 = $420; //@line 952 "4374_Task1c_emscripten.cpp"
-      $421 = $57; //@line 952 "4374_Task1c_emscripten.cpp"
-      $422 = $58; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-      $423 = HEAP32[$421>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-      $424 = (($423) + ($422<<4)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-      $425 = ((($424)) + 12|0); //@line 952 "4374_Task1c_emscripten.cpp"
-      HEAP8[$425>>0] = 1; //@line 952 "4374_Task1c_emscripten.cpp"
-     }
-    }
-    $426 = $i5; //@line 950 "4374_Task1c_emscripten.cpp"
-    $427 = (($426) + 1)|0; //@line 950 "4374_Task1c_emscripten.cpp"
-    $i5 = $427; //@line 950 "4374_Task1c_emscripten.cpp"
-   }
-   break;
-  }
-  case 32:  {
-   $87 = HEAP32[$dy>>2]|0; //@line 875 "4374_Task1c_emscripten.cpp"
-   $88 = $63; //@line 875 "4374_Task1c_emscripten.cpp"
-   $89 = ((($88)) + 8|0); //@line 875 "4374_Task1c_emscripten.cpp"
-   $90 = HEAP32[$89>>2]|0; //@line 875 "4374_Task1c_emscripten.cpp"
-   $91 = (($90) + ($87))|0; //@line 875 "4374_Task1c_emscripten.cpp"
-   HEAP32[$89>>2] = $91; //@line 875 "4374_Task1c_emscripten.cpp"
-   $92 = HEAP32[$dx>>2]|0; //@line 876 "4374_Task1c_emscripten.cpp"
-   $93 = $63; //@line 876 "4374_Task1c_emscripten.cpp"
-   $94 = ((($93)) + 4|0); //@line 876 "4374_Task1c_emscripten.cpp"
-   $95 = HEAP32[$94>>2]|0; //@line 876 "4374_Task1c_emscripten.cpp"
-   $96 = (($95) + ($92))|0; //@line 876 "4374_Task1c_emscripten.cpp"
-   HEAP32[$94>>2] = $96; //@line 876 "4374_Task1c_emscripten.cpp"
-   $97 = $63; //@line 877 "4374_Task1c_emscripten.cpp"
-   $98 = ((($97)) + 33|0); //@line 877 "4374_Task1c_emscripten.cpp"
-   $99 = HEAP8[$98>>0]|0; //@line 877 "4374_Task1c_emscripten.cpp"
-   $100 = $99&1; //@line 877 "4374_Task1c_emscripten.cpp"
-   if ($100) {
-    $101 = $63; //@line 878 "4374_Task1c_emscripten.cpp"
-    $102 = ((($101)) + 36|0); //@line 878 "4374_Task1c_emscripten.cpp"
-    $103 = HEAP32[$102>>2]|0; //@line 878 "4374_Task1c_emscripten.cpp"
-    $104 = (($103) + -1)|0; //@line 878 "4374_Task1c_emscripten.cpp"
-    HEAP32[$102>>2] = $104; //@line 878 "4374_Task1c_emscripten.cpp"
-   }
-   break;
-  }
-  case 35:  {
-   (__ZNSt3__1lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_c(10504,7)|0); //@line 881 "4374_Task1c_emscripten.cpp"
-   $105 = $65; //@line 882 "4374_Task1c_emscripten.cpp"
-   $60 = $105; //@line 882 "4374_Task1c_emscripten.cpp"
-   $61 = 6120; //@line 882 "4374_Task1c_emscripten.cpp"
-   $106 = $60; //@line 882 "4374_Task1c_emscripten.cpp"
-   $107 = $61; //@line 1370 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   (__ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6assignEPKc($106,$107)|0); //@line 1370 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $108 = $63; //@line 883 "4374_Task1c_emscripten.cpp"
-   $109 = ((($108)) + 33|0); //@line 883 "4374_Task1c_emscripten.cpp"
-   $110 = HEAP8[$109>>0]|0; //@line 883 "4374_Task1c_emscripten.cpp"
-   $111 = $110&1; //@line 883 "4374_Task1c_emscripten.cpp"
-   if ($111) {
-    $112 = $63; //@line 884 "4374_Task1c_emscripten.cpp"
-    $113 = ((($112)) + 36|0); //@line 884 "4374_Task1c_emscripten.cpp"
-    $114 = HEAP32[$113>>2]|0; //@line 884 "4374_Task1c_emscripten.cpp"
-    $115 = (($114) + -1)|0; //@line 884 "4374_Task1c_emscripten.cpp"
-    HEAP32[$113>>2] = $115; //@line 884 "4374_Task1c_emscripten.cpp"
-   }
-   break;
-  }
-  case 79:  {
-   $238 = HEAP32[$dy>>2]|0; //@line 912 "4374_Task1c_emscripten.cpp"
-   $239 = $63; //@line 912 "4374_Task1c_emscripten.cpp"
-   $240 = ((($239)) + 8|0); //@line 912 "4374_Task1c_emscripten.cpp"
-   $241 = HEAP32[$240>>2]|0; //@line 912 "4374_Task1c_emscripten.cpp"
-   $242 = (($241) + ($238))|0; //@line 912 "4374_Task1c_emscripten.cpp"
-   HEAP32[$240>>2] = $242; //@line 912 "4374_Task1c_emscripten.cpp"
-   $243 = HEAP32[$dx>>2]|0; //@line 913 "4374_Task1c_emscripten.cpp"
-   $244 = $63; //@line 913 "4374_Task1c_emscripten.cpp"
-   $245 = ((($244)) + 4|0); //@line 913 "4374_Task1c_emscripten.cpp"
-   $246 = HEAP32[$245>>2]|0; //@line 913 "4374_Task1c_emscripten.cpp"
-   $247 = (($246) + ($243))|0; //@line 913 "4374_Task1c_emscripten.cpp"
-   HEAP32[$245>>2] = $247; //@line 913 "4374_Task1c_emscripten.cpp"
-   $248 = $63; //@line 914 "4374_Task1c_emscripten.cpp"
-   $249 = ((($248)) + 24|0); //@line 914 "4374_Task1c_emscripten.cpp"
-   $250 = HEAP32[$249>>2]|0; //@line 914 "4374_Task1c_emscripten.cpp"
-   $251 = (($250) + -1)|0; //@line 914 "4374_Task1c_emscripten.cpp"
-   HEAP32[$249>>2] = $251; //@line 914 "4374_Task1c_emscripten.cpp"
-   $252 = $63; //@line 915 "4374_Task1c_emscripten.cpp"
-   $253 = ((($252)) + 33|0); //@line 915 "4374_Task1c_emscripten.cpp"
-   $254 = HEAP8[$253>>0]|0; //@line 915 "4374_Task1c_emscripten.cpp"
-   $255 = $254&1; //@line 915 "4374_Task1c_emscripten.cpp"
-   if ($255) {
-    $256 = $63; //@line 916 "4374_Task1c_emscripten.cpp"
-    $257 = ((($256)) + 36|0); //@line 916 "4374_Task1c_emscripten.cpp"
-    $258 = HEAP32[$257>>2]|0; //@line 916 "4374_Task1c_emscripten.cpp"
-    $259 = (($258) + -1)|0; //@line 916 "4374_Task1c_emscripten.cpp"
-    HEAP32[$257>>2] = $259; //@line 916 "4374_Task1c_emscripten.cpp"
    }
    break;
   }
@@ -15809,17 +15809,17 @@ function __Z21updateSpotCoordinatesPA22_KcR6playeriRNSt3__112basic_stringIcNS4_1
   }
   }
  } while(0);
- $428 = $63; //@line 956 "4374_Task1c_emscripten.cpp"
- $429 = ((($428)) + 36|0); //@line 956 "4374_Task1c_emscripten.cpp"
- $430 = HEAP32[$429>>2]|0; //@line 956 "4374_Task1c_emscripten.cpp"
- $431 = ($430|0)==(0); //@line 956 "4374_Task1c_emscripten.cpp"
+ $428 = $63; //@line 1032 "4374_Task1c_emscripten.cpp"
+ $429 = ((($428)) + 36|0); //@line 1032 "4374_Task1c_emscripten.cpp"
+ $430 = HEAP32[$429>>2]|0; //@line 1032 "4374_Task1c_emscripten.cpp"
+ $431 = ($430|0)==(0); //@line 1032 "4374_Task1c_emscripten.cpp"
  if (!($431)) {
-  STACKTOP = sp;return; //@line 959 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return; //@line 1035 "4374_Task1c_emscripten.cpp"
  }
- $432 = $63; //@line 957 "4374_Task1c_emscripten.cpp"
- $433 = ((($432)) + 33|0); //@line 957 "4374_Task1c_emscripten.cpp"
- HEAP8[$433>>0] = 0; //@line 957 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return; //@line 959 "4374_Task1c_emscripten.cpp"
+ $432 = $63; //@line 1033 "4374_Task1c_emscripten.cpp"
+ $433 = ((($432)) + 33|0); //@line 1033 "4374_Task1c_emscripten.cpp"
+ HEAP8[$433>>0] = 0; //@line 1033 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 1035 "4374_Task1c_emscripten.cpp"
 }
 function __Z23updatezombieCoordinatesPA22_KcR6playerRNSt3__16vectorI6zombieNS4_9allocatorIS6_EEEERKNS5_I6portalNS7_ISB_EEEE($g,$spot,$zombies,$portals) {
  $g = $g|0;
@@ -15842,11 +15842,11 @@ function __Z23updatezombieCoordinatesPA22_KcR6playerRNSt3__16vectorI6zombieNS4_9
  var $332 = 0, $333 = 0, $334 = 0, $335 = 0, $336 = 0, $337 = 0, $338 = 0, $339 = 0, $34 = 0, $340 = 0, $341 = 0, $342 = 0, $343 = 0, $344 = 0, $345 = 0, $346 = 0, $347 = 0, $348 = 0, $349 = 0, $35 = 0;
  var $350 = 0, $351 = 0, $352 = 0, $353 = 0, $354 = 0, $355 = 0, $356 = 0, $357 = 0, $358 = 0, $359 = 0, $36 = 0, $360 = 0, $361 = 0, $362 = 0, $363 = 0, $364 = 0, $365 = 0, $366 = 0, $367 = 0, $368 = 0;
  var $369 = 0, $37 = 0, $370 = 0, $371 = 0, $372 = 0, $373 = 0, $374 = 0, $375 = 0, $376 = 0, $377 = 0, $378 = 0, $379 = 0, $38 = 0, $380 = 0, $381 = 0, $382 = 0, $383 = 0, $384 = 0, $385 = 0, $386 = 0;
- var $387 = 0, $388 = 0, $389 = 0, $39 = 0, $390 = 0, $391 = 0, $392 = 0, $393 = 0, $394 = 0, $395 = 0, $396 = 0, $4 = 0, $40 = 0, $41 = 0, $42 = 0, $43 = 0, $44 = 0, $45 = 0, $46 = 0, $47 = 0;
- var $48 = 0, $49 = 0, $5 = 0, $50 = 0, $51 = 0, $52 = 0, $53 = 0, $54 = 0, $55 = 0, $56 = 0, $57 = 0, $58 = 0, $59 = 0, $6 = 0, $60 = 0, $61 = 0, $62 = 0, $63 = 0, $64 = 0, $65 = 0;
- var $66 = 0, $67 = 0, $68 = 0, $69 = 0, $7 = 0, $70 = 0, $71 = 0, $72 = 0, $73 = 0, $74 = 0, $75 = 0, $76 = 0, $77 = 0, $78 = 0, $79 = 0, $8 = 0, $80 = 0, $81 = 0, $82 = 0, $83 = 0;
- var $84 = 0, $85 = 0, $86 = 0, $87 = 0, $88 = 0, $89 = 0, $9 = 0, $90 = 0, $91 = 0, $92 = 0, $93 = 0, $94 = 0, $95 = 0, $96 = 0, $97 = 0, $98 = 0, $99 = 0, $__begin = 0, $__begin2 = 0, $__end = 0;
- var $__end3 = 0, $__range = 0, $__range1 = 0, $dx = 0, $dy = 0, $i = 0, $item = 0, $item4 = 0, $targetX = 0, $targetY = 0, label = 0, sp = 0;
+ var $387 = 0, $388 = 0, $389 = 0, $39 = 0, $390 = 0, $391 = 0, $392 = 0, $393 = 0, $394 = 0, $395 = 0, $396 = 0, $397 = 0, $398 = 0, $4 = 0, $40 = 0, $41 = 0, $42 = 0, $43 = 0, $44 = 0, $45 = 0;
+ var $46 = 0, $47 = 0, $48 = 0, $49 = 0, $5 = 0, $50 = 0, $51 = 0, $52 = 0, $53 = 0, $54 = 0, $55 = 0, $56 = 0, $57 = 0, $58 = 0, $59 = 0, $6 = 0, $60 = 0, $61 = 0, $62 = 0, $63 = 0;
+ var $64 = 0, $65 = 0, $66 = 0, $67 = 0, $68 = 0, $69 = 0, $7 = 0, $70 = 0, $71 = 0, $72 = 0, $73 = 0, $74 = 0, $75 = 0, $76 = 0, $77 = 0, $78 = 0, $79 = 0, $8 = 0, $80 = 0, $81 = 0;
+ var $82 = 0, $83 = 0, $84 = 0, $85 = 0, $86 = 0, $87 = 0, $88 = 0, $89 = 0, $9 = 0, $90 = 0, $91 = 0, $92 = 0, $93 = 0, $94 = 0, $95 = 0, $96 = 0, $97 = 0, $98 = 0, $99 = 0, $__begin = 0;
+ var $__begin2 = 0, $__end = 0, $__end3 = 0, $__range = 0, $__range1 = 0, $dx = 0, $dy = 0, $i = 0, $item = 0, $item4 = 0, $targetX = 0, $targetY = 0, label = 0, sp = 0;
  sp = STACKTOP;
  STACKTOP = STACKTOP + 416|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
  $36 = sp + 260|0;
@@ -15953,386 +15953,388 @@ function __Z23updatezombieCoordinatesPA22_KcR6playerRNSt3__16vectorI6zombieNS4_9
       $150 = ((($149)) + 33|0); //@line 394 "4374_Task1c_emscripten.cpp"
       $151 = HEAP8[$150>>0]|0; //@line 394 "4374_Task1c_emscripten.cpp"
       $152 = $151&1; //@line 394 "4374_Task1c_emscripten.cpp"
+      $153 = $85; //@line 401 "4374_Task1c_emscripten.cpp"
+      $154 = $88; //@line 401 "4374_Task1c_emscripten.cpp"
       if ($152) {
-       __Z12findexitmoveRiS_($dx,$dy); //@line 401 "4374_Task1c_emscripten.cpp"
+       __Z12findexitmovePA22_KcRKNSt3__16vectorI6portalNS2_9allocatorIS4_EEEERiSA_($153,$154,$dx,$dy); //@line 401 "4374_Task1c_emscripten.cpp"
       } else {
-       __Z12findbestmoveRiS_($dx,$dy); //@line 396 "4374_Task1c_emscripten.cpp"
+       __Z12findbestmovePA22_KcRKNSt3__16vectorI6portalNS2_9allocatorIS4_EEEERiSA_($153,$154,$dx,$dy); //@line 396 "4374_Task1c_emscripten.cpp"
       }
-      $153 = $87; //@line 404 "4374_Task1c_emscripten.cpp"
-      $154 = $i; //@line 404 "4374_Task1c_emscripten.cpp"
-      $10 = $153; //@line 404 "4374_Task1c_emscripten.cpp"
-      $11 = $154; //@line 404 "4374_Task1c_emscripten.cpp"
-      $155 = $10; //@line 404 "4374_Task1c_emscripten.cpp"
-      $156 = $11; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-      $157 = HEAP32[$155>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-      $158 = (($157) + (($156*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-      $159 = ((($158)) + 8|0); //@line 404 "4374_Task1c_emscripten.cpp"
-      $160 = HEAP32[$159>>2]|0; //@line 404 "4374_Task1c_emscripten.cpp"
-      $161 = HEAP32[$dy>>2]|0; //@line 404 "4374_Task1c_emscripten.cpp"
-      $162 = (($160) + ($161))|0; //@line 404 "4374_Task1c_emscripten.cpp"
-      $targetY = $162; //@line 404 "4374_Task1c_emscripten.cpp"
-      $163 = $87; //@line 405 "4374_Task1c_emscripten.cpp"
-      $164 = $i; //@line 405 "4374_Task1c_emscripten.cpp"
-      $12 = $163; //@line 405 "4374_Task1c_emscripten.cpp"
-      $13 = $164; //@line 405 "4374_Task1c_emscripten.cpp"
-      $165 = $12; //@line 405 "4374_Task1c_emscripten.cpp"
-      $166 = $13; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-      $167 = HEAP32[$165>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-      $168 = (($167) + (($166*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-      $169 = ((($168)) + 4|0); //@line 405 "4374_Task1c_emscripten.cpp"
-      $170 = HEAP32[$169>>2]|0; //@line 405 "4374_Task1c_emscripten.cpp"
-      $171 = HEAP32[$dx>>2]|0; //@line 405 "4374_Task1c_emscripten.cpp"
-      $172 = (($170) + ($171))|0; //@line 405 "4374_Task1c_emscripten.cpp"
-      $targetX = $172; //@line 405 "4374_Task1c_emscripten.cpp"
-      $173 = $targetX; //@line 407 "4374_Task1c_emscripten.cpp"
-      $174 = $targetY; //@line 407 "4374_Task1c_emscripten.cpp"
-      $175 = $85; //@line 407 "4374_Task1c_emscripten.cpp"
-      $176 = (($175) + (($174*22)|0)|0); //@line 407 "4374_Task1c_emscripten.cpp"
-      $177 = (($176) + ($173)|0); //@line 407 "4374_Task1c_emscripten.cpp"
-      $178 = HEAP8[$177>>0]|0; //@line 407 "4374_Task1c_emscripten.cpp"
-      $179 = $178 << 24 >> 24; //@line 407 "4374_Task1c_emscripten.cpp"
-      switch ($179|0) {
-      case 90:  {
-       $234 = $87; //@line 421 "4374_Task1c_emscripten.cpp"
-       $235 = $i; //@line 421 "4374_Task1c_emscripten.cpp"
-       $26 = $234; //@line 421 "4374_Task1c_emscripten.cpp"
-       $27 = $235; //@line 421 "4374_Task1c_emscripten.cpp"
-       $236 = $26; //@line 421 "4374_Task1c_emscripten.cpp"
-       $237 = $27; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $238 = HEAP32[$236>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $239 = (($238) + (($237*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $240 = ((($239)) + 12|0); //@line 421 "4374_Task1c_emscripten.cpp"
-       $241 = HEAP32[$240>>2]|0; //@line 421 "4374_Task1c_emscripten.cpp"
-       $242 = $87; //@line 421 "4374_Task1c_emscripten.cpp"
-       $243 = $i; //@line 421 "4374_Task1c_emscripten.cpp"
-       $28 = $242; //@line 421 "4374_Task1c_emscripten.cpp"
-       $29 = $243; //@line 421 "4374_Task1c_emscripten.cpp"
-       $244 = $28; //@line 421 "4374_Task1c_emscripten.cpp"
-       $245 = $29; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $246 = HEAP32[$244>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $247 = (($246) + (($245*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $248 = ((($247)) + 4|0); //@line 421 "4374_Task1c_emscripten.cpp"
-       HEAP32[$248>>2] = $241; //@line 421 "4374_Task1c_emscripten.cpp"
-       $249 = $87; //@line 422 "4374_Task1c_emscripten.cpp"
-       $250 = $i; //@line 422 "4374_Task1c_emscripten.cpp"
-       $30 = $249; //@line 422 "4374_Task1c_emscripten.cpp"
-       $31 = $250; //@line 422 "4374_Task1c_emscripten.cpp"
-       $251 = $30; //@line 422 "4374_Task1c_emscripten.cpp"
-       $252 = $31; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $253 = HEAP32[$251>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $254 = (($253) + (($252*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $255 = ((($254)) + 16|0); //@line 422 "4374_Task1c_emscripten.cpp"
-       $256 = HEAP32[$255>>2]|0; //@line 422 "4374_Task1c_emscripten.cpp"
-       $257 = $87; //@line 422 "4374_Task1c_emscripten.cpp"
-       $258 = $i; //@line 422 "4374_Task1c_emscripten.cpp"
-       $32 = $257; //@line 422 "4374_Task1c_emscripten.cpp"
-       $33 = $258; //@line 422 "4374_Task1c_emscripten.cpp"
-       $259 = $32; //@line 422 "4374_Task1c_emscripten.cpp"
-       $260 = $33; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $261 = HEAP32[$259>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $262 = (($261) + (($260*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $263 = ((($262)) + 8|0); //@line 422 "4374_Task1c_emscripten.cpp"
-       HEAP32[$263>>2] = $256; //@line 422 "4374_Task1c_emscripten.cpp"
-       $264 = $87; //@line 424 "4374_Task1c_emscripten.cpp"
-       $__range = $264; //@line 424 "4374_Task1c_emscripten.cpp"
-       $265 = $__range; //@line 424 "4374_Task1c_emscripten.cpp"
-       $40 = $265; //@line 424 "4374_Task1c_emscripten.cpp"
-       $266 = $40; //@line 424 "4374_Task1c_emscripten.cpp"
-       $267 = HEAP32[$266>>2]|0; //@line 1472 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $37 = $266; //@line 1472 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $38 = $267; //@line 1472 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $268 = $38; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $34 = $36; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $35 = $268; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $269 = $34; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $270 = $35; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-       HEAP32[$269>>2] = $270; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-       $271 = HEAP32[$36>>2]|0; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       HEAP32[$39>>2] = $271; //@line 1472 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $272 = HEAP32[$39>>2]|0; //@line 1472 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       HEAP32[$__begin>>2] = $272; //@line 424 "4374_Task1c_emscripten.cpp"
-       $273 = $__range; //@line 424 "4374_Task1c_emscripten.cpp"
-       $47 = $273; //@line 424 "4374_Task1c_emscripten.cpp"
-       $274 = $47; //@line 424 "4374_Task1c_emscripten.cpp"
-       $275 = ((($274)) + 4|0); //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $276 = HEAP32[$275>>2]|0; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $44 = $274; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $45 = $276; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $277 = $45; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $41 = $43; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $42 = $277; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $278 = $41; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $279 = $42; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-       HEAP32[$278>>2] = $279; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-       $280 = HEAP32[$43>>2]|0; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       HEAP32[$46>>2] = $280; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $281 = HEAP32[$46>>2]|0; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       HEAP32[$__end>>2] = $281; //@line 424 "4374_Task1c_emscripten.cpp"
-       while(1) {
-        $52 = $__begin; //@line 424 "4374_Task1c_emscripten.cpp"
-        $53 = $__end; //@line 424 "4374_Task1c_emscripten.cpp"
-        $282 = $52; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $283 = $53; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $50 = $282; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $51 = $283; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $284 = $50; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $49 = $284; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $285 = $49; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $286 = HEAP32[$285>>2]|0; //@line 1219 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $287 = $51; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $48 = $287; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $288 = $48; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $289 = HEAP32[$288>>2]|0; //@line 1219 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $290 = ($286|0)==($289|0); //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $291 = $290 ^ 1; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        if (!($291)) {
-         break L4;
-        }
-        $54 = $__begin; //@line 424 "4374_Task1c_emscripten.cpp"
-        $292 = $54; //@line 424 "4374_Task1c_emscripten.cpp"
-        $293 = HEAP32[$292>>2]|0; //@line 1163 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $item = $293; //@line 424 "4374_Task1c_emscripten.cpp"
-        $294 = $item; //@line 426 "4374_Task1c_emscripten.cpp"
-        $295 = ((($294)) + 4|0); //@line 426 "4374_Task1c_emscripten.cpp"
-        $296 = HEAP32[$295>>2]|0; //@line 426 "4374_Task1c_emscripten.cpp"
-        $297 = $targetX; //@line 426 "4374_Task1c_emscripten.cpp"
-        $298 = ($296|0)==($297|0); //@line 426 "4374_Task1c_emscripten.cpp"
-        if ($298) {
-         $299 = $item; //@line 426 "4374_Task1c_emscripten.cpp"
-         $300 = ((($299)) + 8|0); //@line 426 "4374_Task1c_emscripten.cpp"
-         $301 = HEAP32[$300>>2]|0; //@line 426 "4374_Task1c_emscripten.cpp"
-         $302 = $targetY; //@line 426 "4374_Task1c_emscripten.cpp"
-         $303 = ($301|0)==($302|0); //@line 426 "4374_Task1c_emscripten.cpp"
-         if ($303) {
-          $304 = $item; //@line 428 "4374_Task1c_emscripten.cpp"
-          $305 = ((($304)) + 12|0); //@line 428 "4374_Task1c_emscripten.cpp"
-          $306 = HEAP32[$305>>2]|0; //@line 428 "4374_Task1c_emscripten.cpp"
-          $307 = $item; //@line 428 "4374_Task1c_emscripten.cpp"
-          $308 = ((($307)) + 4|0); //@line 428 "4374_Task1c_emscripten.cpp"
-          HEAP32[$308>>2] = $306; //@line 428 "4374_Task1c_emscripten.cpp"
-          $309 = $item; //@line 429 "4374_Task1c_emscripten.cpp"
-          $310 = ((($309)) + 16|0); //@line 429 "4374_Task1c_emscripten.cpp"
-          $311 = HEAP32[$310>>2]|0; //@line 429 "4374_Task1c_emscripten.cpp"
-          $312 = $item; //@line 429 "4374_Task1c_emscripten.cpp"
-          $313 = ((($312)) + 8|0); //@line 429 "4374_Task1c_emscripten.cpp"
-          HEAP32[$313>>2] = $311; //@line 429 "4374_Task1c_emscripten.cpp"
-         }
-        }
-        $55 = $__begin; //@line 424 "4374_Task1c_emscripten.cpp"
-        $314 = $55; //@line 424 "4374_Task1c_emscripten.cpp"
-        $315 = HEAP32[$314>>2]|0; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $316 = ((($315)) + 24|0); //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        HEAP32[$314>>2] = $316; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-       }
-       break;
-      }
-      case 38:  {
-       $317 = $88; //@line 435 "4374_Task1c_emscripten.cpp"
-       $__range1 = $317; //@line 435 "4374_Task1c_emscripten.cpp"
-       $318 = $__range1; //@line 435 "4374_Task1c_emscripten.cpp"
-       $62 = $318; //@line 435 "4374_Task1c_emscripten.cpp"
-       $319 = $62; //@line 435 "4374_Task1c_emscripten.cpp"
-       $320 = HEAP32[$319>>2]|0; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $59 = $319; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $60 = $320; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $321 = $60; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $56 = $58; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $57 = $321; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $322 = $56; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $323 = $57; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-       HEAP32[$322>>2] = $323; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-       $324 = HEAP32[$58>>2]|0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       HEAP32[$61>>2] = $324; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $325 = HEAP32[$61>>2]|0; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       HEAP32[$__begin2>>2] = $325; //@line 435 "4374_Task1c_emscripten.cpp"
-       $326 = $__range1; //@line 435 "4374_Task1c_emscripten.cpp"
-       $69 = $326; //@line 435 "4374_Task1c_emscripten.cpp"
-       $327 = $69; //@line 435 "4374_Task1c_emscripten.cpp"
-       $328 = ((($327)) + 4|0); //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $329 = HEAP32[$328>>2]|0; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $66 = $327; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $67 = $329; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $330 = $67; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $63 = $65; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $64 = $330; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $331 = $63; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $332 = $64; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-       HEAP32[$331>>2] = $332; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-       $333 = HEAP32[$65>>2]|0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       HEAP32[$68>>2] = $333; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $334 = HEAP32[$68>>2]|0; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       HEAP32[$__end3>>2] = $334; //@line 435 "4374_Task1c_emscripten.cpp"
-       while(1) {
-        $74 = $__begin2; //@line 435 "4374_Task1c_emscripten.cpp"
-        $75 = $__end3; //@line 435 "4374_Task1c_emscripten.cpp"
-        $335 = $74; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $336 = $75; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $72 = $335; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $73 = $336; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $337 = $72; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $71 = $337; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $338 = $71; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $339 = HEAP32[$338>>2]|0; //@line 1219 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $340 = $73; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $70 = $340; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $341 = $70; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $342 = HEAP32[$341>>2]|0; //@line 1219 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $343 = ($339|0)==($342|0); //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $344 = $343 ^ 1; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        if (!($344)) {
-         break L4;
-        }
-        $76 = $__begin2; //@line 435 "4374_Task1c_emscripten.cpp"
-        $345 = $76; //@line 435 "4374_Task1c_emscripten.cpp"
-        $346 = HEAP32[$345>>2]|0; //@line 1163 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $item4 = $346; //@line 435 "4374_Task1c_emscripten.cpp"
-        $347 = $item4; //@line 437 "4374_Task1c_emscripten.cpp"
-        $348 = ((($347)) + 4|0); //@line 437 "4374_Task1c_emscripten.cpp"
-        $349 = HEAP32[$348>>2]|0; //@line 437 "4374_Task1c_emscripten.cpp"
-        $350 = $targetX; //@line 437 "4374_Task1c_emscripten.cpp"
-        $351 = ($349|0)==($350|0); //@line 437 "4374_Task1c_emscripten.cpp"
-        if ($351) {
-         $352 = $item4; //@line 437 "4374_Task1c_emscripten.cpp"
-         $353 = ((($352)) + 8|0); //@line 437 "4374_Task1c_emscripten.cpp"
-         $354 = HEAP32[$353>>2]|0; //@line 437 "4374_Task1c_emscripten.cpp"
-         $355 = $targetY; //@line 437 "4374_Task1c_emscripten.cpp"
-         $356 = ($354|0)==($355|0); //@line 437 "4374_Task1c_emscripten.cpp"
-         if ($356) {
-          $357 = $item4; //@line 439 "4374_Task1c_emscripten.cpp"
-          $358 = ((($357)) + 12|0); //@line 439 "4374_Task1c_emscripten.cpp"
-          $359 = HEAP32[$358>>2]|0; //@line 439 "4374_Task1c_emscripten.cpp"
-          $360 = ((($359)) + 8|0); //@line 439 "4374_Task1c_emscripten.cpp"
-          $361 = HEAP32[$360>>2]|0; //@line 439 "4374_Task1c_emscripten.cpp"
-          $362 = HEAP32[$dy>>2]|0; //@line 439 "4374_Task1c_emscripten.cpp"
-          $363 = (($361) + ($362))|0; //@line 439 "4374_Task1c_emscripten.cpp"
-          $364 = $87; //@line 439 "4374_Task1c_emscripten.cpp"
-          $365 = $i; //@line 439 "4374_Task1c_emscripten.cpp"
-          $77 = $364; //@line 439 "4374_Task1c_emscripten.cpp"
-          $78 = $365; //@line 439 "4374_Task1c_emscripten.cpp"
-          $366 = $77; //@line 439 "4374_Task1c_emscripten.cpp"
-          $367 = $78; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-          $368 = HEAP32[$366>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-          $369 = (($368) + (($367*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-          $370 = ((($369)) + 8|0); //@line 439 "4374_Task1c_emscripten.cpp"
-          HEAP32[$370>>2] = $363; //@line 439 "4374_Task1c_emscripten.cpp"
-          $371 = $item4; //@line 440 "4374_Task1c_emscripten.cpp"
-          $372 = ((($371)) + 12|0); //@line 440 "4374_Task1c_emscripten.cpp"
-          $373 = HEAP32[$372>>2]|0; //@line 440 "4374_Task1c_emscripten.cpp"
-          $374 = ((($373)) + 4|0); //@line 440 "4374_Task1c_emscripten.cpp"
-          $375 = HEAP32[$374>>2]|0; //@line 440 "4374_Task1c_emscripten.cpp"
-          $376 = HEAP32[$dx>>2]|0; //@line 440 "4374_Task1c_emscripten.cpp"
-          $377 = (($375) + ($376))|0; //@line 440 "4374_Task1c_emscripten.cpp"
-          $378 = $87; //@line 440 "4374_Task1c_emscripten.cpp"
-          $379 = $i; //@line 440 "4374_Task1c_emscripten.cpp"
-          $79 = $378; //@line 440 "4374_Task1c_emscripten.cpp"
-          $80 = $379; //@line 440 "4374_Task1c_emscripten.cpp"
-          $380 = $79; //@line 440 "4374_Task1c_emscripten.cpp"
-          $381 = $80; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-          $382 = HEAP32[$380>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-          $383 = (($382) + (($381*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-          $384 = ((($383)) + 4|0); //@line 440 "4374_Task1c_emscripten.cpp"
-          HEAP32[$384>>2] = $377; //@line 440 "4374_Task1c_emscripten.cpp"
-         }
-        }
-        $81 = $__begin2; //@line 435 "4374_Task1c_emscripten.cpp"
-        $385 = $81; //@line 435 "4374_Task1c_emscripten.cpp"
-        $386 = HEAP32[$385>>2]|0; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        $387 = ((($386)) + 16|0); //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-        HEAP32[$385>>2] = $387; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-       }
+      $155 = $87; //@line 404 "4374_Task1c_emscripten.cpp"
+      $156 = $i; //@line 404 "4374_Task1c_emscripten.cpp"
+      $10 = $155; //@line 404 "4374_Task1c_emscripten.cpp"
+      $11 = $156; //@line 404 "4374_Task1c_emscripten.cpp"
+      $157 = $10; //@line 404 "4374_Task1c_emscripten.cpp"
+      $158 = $11; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+      $159 = HEAP32[$157>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+      $160 = (($159) + (($158*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+      $161 = ((($160)) + 8|0); //@line 404 "4374_Task1c_emscripten.cpp"
+      $162 = HEAP32[$161>>2]|0; //@line 404 "4374_Task1c_emscripten.cpp"
+      $163 = HEAP32[$dy>>2]|0; //@line 404 "4374_Task1c_emscripten.cpp"
+      $164 = (($162) + ($163))|0; //@line 404 "4374_Task1c_emscripten.cpp"
+      $targetY = $164; //@line 404 "4374_Task1c_emscripten.cpp"
+      $165 = $87; //@line 405 "4374_Task1c_emscripten.cpp"
+      $166 = $i; //@line 405 "4374_Task1c_emscripten.cpp"
+      $12 = $165; //@line 405 "4374_Task1c_emscripten.cpp"
+      $13 = $166; //@line 405 "4374_Task1c_emscripten.cpp"
+      $167 = $12; //@line 405 "4374_Task1c_emscripten.cpp"
+      $168 = $13; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+      $169 = HEAP32[$167>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+      $170 = (($169) + (($168*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+      $171 = ((($170)) + 4|0); //@line 405 "4374_Task1c_emscripten.cpp"
+      $172 = HEAP32[$171>>2]|0; //@line 405 "4374_Task1c_emscripten.cpp"
+      $173 = HEAP32[$dx>>2]|0; //@line 405 "4374_Task1c_emscripten.cpp"
+      $174 = (($172) + ($173))|0; //@line 405 "4374_Task1c_emscripten.cpp"
+      $targetX = $174; //@line 405 "4374_Task1c_emscripten.cpp"
+      $175 = $targetX; //@line 407 "4374_Task1c_emscripten.cpp"
+      $176 = $targetY; //@line 407 "4374_Task1c_emscripten.cpp"
+      $177 = $85; //@line 407 "4374_Task1c_emscripten.cpp"
+      $178 = (($177) + (($176*22)|0)|0); //@line 407 "4374_Task1c_emscripten.cpp"
+      $179 = (($178) + ($175)|0); //@line 407 "4374_Task1c_emscripten.cpp"
+      $180 = HEAP8[$179>>0]|0; //@line 407 "4374_Task1c_emscripten.cpp"
+      $181 = $180 << 24 >> 24; //@line 407 "4374_Task1c_emscripten.cpp"
+      switch ($181|0) {
+      case 79:  {
+       $390 = $87; //@line 445 "4374_Task1c_emscripten.cpp"
+       $391 = $i; //@line 445 "4374_Task1c_emscripten.cpp"
+       $82 = $390; //@line 445 "4374_Task1c_emscripten.cpp"
+       $83 = $391; //@line 445 "4374_Task1c_emscripten.cpp"
+       $392 = $82; //@line 445 "4374_Task1c_emscripten.cpp"
+       $393 = $83; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $394 = HEAP32[$392>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $395 = (($394) + (($393*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $396 = ((($395)) + 21|0); //@line 445 "4374_Task1c_emscripten.cpp"
+       HEAP8[$396>>0] = 0; //@line 445 "4374_Task1c_emscripten.cpp"
+       break L4;
        break;
       }
       case 64:  {
-       $200 = $86; //@line 415 "4374_Task1c_emscripten.cpp"
-       $201 = ((($200)) + 24|0); //@line 415 "4374_Task1c_emscripten.cpp"
-       $202 = HEAP32[$201>>2]|0; //@line 415 "4374_Task1c_emscripten.cpp"
-       $203 = (($202) + -1)|0; //@line 415 "4374_Task1c_emscripten.cpp"
-       HEAP32[$201>>2] = $203; //@line 415 "4374_Task1c_emscripten.cpp"
-       $204 = $87; //@line 416 "4374_Task1c_emscripten.cpp"
-       $205 = $i; //@line 416 "4374_Task1c_emscripten.cpp"
-       $18 = $204; //@line 416 "4374_Task1c_emscripten.cpp"
-       $19 = $205; //@line 416 "4374_Task1c_emscripten.cpp"
-       $206 = $18; //@line 416 "4374_Task1c_emscripten.cpp"
-       $207 = $19; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $208 = HEAP32[$206>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $209 = (($208) + (($207*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $210 = ((($209)) + 12|0); //@line 416 "4374_Task1c_emscripten.cpp"
-       $211 = HEAP32[$210>>2]|0; //@line 416 "4374_Task1c_emscripten.cpp"
-       $212 = $87; //@line 416 "4374_Task1c_emscripten.cpp"
-       $213 = $i; //@line 416 "4374_Task1c_emscripten.cpp"
-       $20 = $212; //@line 416 "4374_Task1c_emscripten.cpp"
-       $21 = $213; //@line 416 "4374_Task1c_emscripten.cpp"
-       $214 = $20; //@line 416 "4374_Task1c_emscripten.cpp"
-       $215 = $21; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $216 = HEAP32[$214>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $217 = (($216) + (($215*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $218 = ((($217)) + 4|0); //@line 416 "4374_Task1c_emscripten.cpp"
-       HEAP32[$218>>2] = $211; //@line 416 "4374_Task1c_emscripten.cpp"
-       $219 = $87; //@line 417 "4374_Task1c_emscripten.cpp"
-       $220 = $i; //@line 417 "4374_Task1c_emscripten.cpp"
-       $22 = $219; //@line 417 "4374_Task1c_emscripten.cpp"
-       $23 = $220; //@line 417 "4374_Task1c_emscripten.cpp"
-       $221 = $22; //@line 417 "4374_Task1c_emscripten.cpp"
-       $222 = $23; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $223 = HEAP32[$221>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $224 = (($223) + (($222*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $225 = ((($224)) + 16|0); //@line 417 "4374_Task1c_emscripten.cpp"
-       $226 = HEAP32[$225>>2]|0; //@line 417 "4374_Task1c_emscripten.cpp"
-       $227 = $87; //@line 417 "4374_Task1c_emscripten.cpp"
-       $228 = $i; //@line 417 "4374_Task1c_emscripten.cpp"
-       $24 = $227; //@line 417 "4374_Task1c_emscripten.cpp"
-       $25 = $228; //@line 417 "4374_Task1c_emscripten.cpp"
-       $229 = $24; //@line 417 "4374_Task1c_emscripten.cpp"
-       $230 = $25; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $231 = HEAP32[$229>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $232 = (($231) + (($230*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $233 = ((($232)) + 8|0); //@line 417 "4374_Task1c_emscripten.cpp"
-       HEAP32[$233>>2] = $226; //@line 417 "4374_Task1c_emscripten.cpp"
+       $202 = $86; //@line 415 "4374_Task1c_emscripten.cpp"
+       $203 = ((($202)) + 24|0); //@line 415 "4374_Task1c_emscripten.cpp"
+       $204 = HEAP32[$203>>2]|0; //@line 415 "4374_Task1c_emscripten.cpp"
+       $205 = (($204) + -1)|0; //@line 415 "4374_Task1c_emscripten.cpp"
+       HEAP32[$203>>2] = $205; //@line 415 "4374_Task1c_emscripten.cpp"
+       $206 = $87; //@line 416 "4374_Task1c_emscripten.cpp"
+       $207 = $i; //@line 416 "4374_Task1c_emscripten.cpp"
+       $18 = $206; //@line 416 "4374_Task1c_emscripten.cpp"
+       $19 = $207; //@line 416 "4374_Task1c_emscripten.cpp"
+       $208 = $18; //@line 416 "4374_Task1c_emscripten.cpp"
+       $209 = $19; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $210 = HEAP32[$208>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $211 = (($210) + (($209*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $212 = ((($211)) + 12|0); //@line 416 "4374_Task1c_emscripten.cpp"
+       $213 = HEAP32[$212>>2]|0; //@line 416 "4374_Task1c_emscripten.cpp"
+       $214 = $87; //@line 416 "4374_Task1c_emscripten.cpp"
+       $215 = $i; //@line 416 "4374_Task1c_emscripten.cpp"
+       $20 = $214; //@line 416 "4374_Task1c_emscripten.cpp"
+       $21 = $215; //@line 416 "4374_Task1c_emscripten.cpp"
+       $216 = $20; //@line 416 "4374_Task1c_emscripten.cpp"
+       $217 = $21; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $218 = HEAP32[$216>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $219 = (($218) + (($217*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $220 = ((($219)) + 4|0); //@line 416 "4374_Task1c_emscripten.cpp"
+       HEAP32[$220>>2] = $213; //@line 416 "4374_Task1c_emscripten.cpp"
+       $221 = $87; //@line 417 "4374_Task1c_emscripten.cpp"
+       $222 = $i; //@line 417 "4374_Task1c_emscripten.cpp"
+       $22 = $221; //@line 417 "4374_Task1c_emscripten.cpp"
+       $23 = $222; //@line 417 "4374_Task1c_emscripten.cpp"
+       $223 = $22; //@line 417 "4374_Task1c_emscripten.cpp"
+       $224 = $23; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $225 = HEAP32[$223>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $226 = (($225) + (($224*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $227 = ((($226)) + 16|0); //@line 417 "4374_Task1c_emscripten.cpp"
+       $228 = HEAP32[$227>>2]|0; //@line 417 "4374_Task1c_emscripten.cpp"
+       $229 = $87; //@line 417 "4374_Task1c_emscripten.cpp"
+       $230 = $i; //@line 417 "4374_Task1c_emscripten.cpp"
+       $24 = $229; //@line 417 "4374_Task1c_emscripten.cpp"
+       $25 = $230; //@line 417 "4374_Task1c_emscripten.cpp"
+       $231 = $24; //@line 417 "4374_Task1c_emscripten.cpp"
+       $232 = $25; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $233 = HEAP32[$231>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $234 = (($233) + (($232*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $235 = ((($234)) + 8|0); //@line 417 "4374_Task1c_emscripten.cpp"
+       HEAP32[$235>>2] = $228; //@line 417 "4374_Task1c_emscripten.cpp"
        break L4;
        break;
       }
       case 32: case 46:  {
-       $180 = HEAP32[$dy>>2]|0; //@line 411 "4374_Task1c_emscripten.cpp"
-       $181 = $87; //@line 411 "4374_Task1c_emscripten.cpp"
-       $182 = $i; //@line 411 "4374_Task1c_emscripten.cpp"
-       $14 = $181; //@line 411 "4374_Task1c_emscripten.cpp"
-       $15 = $182; //@line 411 "4374_Task1c_emscripten.cpp"
-       $183 = $14; //@line 411 "4374_Task1c_emscripten.cpp"
-       $184 = $15; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $185 = HEAP32[$183>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $186 = (($185) + (($184*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $187 = ((($186)) + 8|0); //@line 411 "4374_Task1c_emscripten.cpp"
-       $188 = HEAP32[$187>>2]|0; //@line 411 "4374_Task1c_emscripten.cpp"
-       $189 = (($188) + ($180))|0; //@line 411 "4374_Task1c_emscripten.cpp"
-       HEAP32[$187>>2] = $189; //@line 411 "4374_Task1c_emscripten.cpp"
-       $190 = HEAP32[$dx>>2]|0; //@line 412 "4374_Task1c_emscripten.cpp"
-       $191 = $87; //@line 412 "4374_Task1c_emscripten.cpp"
-       $192 = $i; //@line 412 "4374_Task1c_emscripten.cpp"
-       $16 = $191; //@line 412 "4374_Task1c_emscripten.cpp"
-       $17 = $192; //@line 412 "4374_Task1c_emscripten.cpp"
-       $193 = $16; //@line 412 "4374_Task1c_emscripten.cpp"
-       $194 = $17; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $195 = HEAP32[$193>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $196 = (($195) + (($194*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $197 = ((($196)) + 4|0); //@line 412 "4374_Task1c_emscripten.cpp"
-       $198 = HEAP32[$197>>2]|0; //@line 412 "4374_Task1c_emscripten.cpp"
-       $199 = (($198) + ($190))|0; //@line 412 "4374_Task1c_emscripten.cpp"
-       HEAP32[$197>>2] = $199; //@line 412 "4374_Task1c_emscripten.cpp"
+       $182 = HEAP32[$dy>>2]|0; //@line 411 "4374_Task1c_emscripten.cpp"
+       $183 = $87; //@line 411 "4374_Task1c_emscripten.cpp"
+       $184 = $i; //@line 411 "4374_Task1c_emscripten.cpp"
+       $14 = $183; //@line 411 "4374_Task1c_emscripten.cpp"
+       $15 = $184; //@line 411 "4374_Task1c_emscripten.cpp"
+       $185 = $14; //@line 411 "4374_Task1c_emscripten.cpp"
+       $186 = $15; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $187 = HEAP32[$185>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $188 = (($187) + (($186*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $189 = ((($188)) + 8|0); //@line 411 "4374_Task1c_emscripten.cpp"
+       $190 = HEAP32[$189>>2]|0; //@line 411 "4374_Task1c_emscripten.cpp"
+       $191 = (($190) + ($182))|0; //@line 411 "4374_Task1c_emscripten.cpp"
+       HEAP32[$189>>2] = $191; //@line 411 "4374_Task1c_emscripten.cpp"
+       $192 = HEAP32[$dx>>2]|0; //@line 412 "4374_Task1c_emscripten.cpp"
+       $193 = $87; //@line 412 "4374_Task1c_emscripten.cpp"
+       $194 = $i; //@line 412 "4374_Task1c_emscripten.cpp"
+       $16 = $193; //@line 412 "4374_Task1c_emscripten.cpp"
+       $17 = $194; //@line 412 "4374_Task1c_emscripten.cpp"
+       $195 = $16; //@line 412 "4374_Task1c_emscripten.cpp"
+       $196 = $17; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $197 = HEAP32[$195>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $198 = (($197) + (($196*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $199 = ((($198)) + 4|0); //@line 412 "4374_Task1c_emscripten.cpp"
+       $200 = HEAP32[$199>>2]|0; //@line 412 "4374_Task1c_emscripten.cpp"
+       $201 = (($200) + ($192))|0; //@line 412 "4374_Task1c_emscripten.cpp"
+       HEAP32[$199>>2] = $201; //@line 412 "4374_Task1c_emscripten.cpp"
        break L4;
        break;
       }
-      case 79:  {
-       $388 = $87; //@line 445 "4374_Task1c_emscripten.cpp"
-       $389 = $i; //@line 445 "4374_Task1c_emscripten.cpp"
-       $82 = $388; //@line 445 "4374_Task1c_emscripten.cpp"
-       $83 = $389; //@line 445 "4374_Task1c_emscripten.cpp"
-       $390 = $82; //@line 445 "4374_Task1c_emscripten.cpp"
-       $391 = $83; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $392 = HEAP32[$390>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $393 = (($392) + (($391*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-       $394 = ((($393)) + 21|0); //@line 445 "4374_Task1c_emscripten.cpp"
-       HEAP8[$394>>0] = 0; //@line 445 "4374_Task1c_emscripten.cpp"
-       break L4;
+      case 38:  {
+       $319 = $88; //@line 435 "4374_Task1c_emscripten.cpp"
+       $__range1 = $319; //@line 435 "4374_Task1c_emscripten.cpp"
+       $320 = $__range1; //@line 435 "4374_Task1c_emscripten.cpp"
+       $62 = $320; //@line 435 "4374_Task1c_emscripten.cpp"
+       $321 = $62; //@line 435 "4374_Task1c_emscripten.cpp"
+       $322 = HEAP32[$321>>2]|0; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $59 = $321; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $60 = $322; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $323 = $60; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $56 = $58; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $57 = $323; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $324 = $56; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $325 = $57; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+       HEAP32[$324>>2] = $325; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+       $326 = HEAP32[$58>>2]|0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       HEAP32[$61>>2] = $326; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $327 = HEAP32[$61>>2]|0; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       HEAP32[$__begin2>>2] = $327; //@line 435 "4374_Task1c_emscripten.cpp"
+       $328 = $__range1; //@line 435 "4374_Task1c_emscripten.cpp"
+       $69 = $328; //@line 435 "4374_Task1c_emscripten.cpp"
+       $329 = $69; //@line 435 "4374_Task1c_emscripten.cpp"
+       $330 = ((($329)) + 4|0); //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $331 = HEAP32[$330>>2]|0; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $66 = $329; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $67 = $331; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $332 = $67; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $63 = $65; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $64 = $332; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $333 = $63; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $334 = $64; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+       HEAP32[$333>>2] = $334; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+       $335 = HEAP32[$65>>2]|0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       HEAP32[$68>>2] = $335; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $336 = HEAP32[$68>>2]|0; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       HEAP32[$__end3>>2] = $336; //@line 435 "4374_Task1c_emscripten.cpp"
+       while(1) {
+        $74 = $__begin2; //@line 435 "4374_Task1c_emscripten.cpp"
+        $75 = $__end3; //@line 435 "4374_Task1c_emscripten.cpp"
+        $337 = $74; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $338 = $75; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $72 = $337; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $73 = $338; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $339 = $72; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $71 = $339; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $340 = $71; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $341 = HEAP32[$340>>2]|0; //@line 1219 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $342 = $73; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $70 = $342; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $343 = $70; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $344 = HEAP32[$343>>2]|0; //@line 1219 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $345 = ($341|0)==($344|0); //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $346 = $345 ^ 1; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        if (!($346)) {
+         break L4;
+        }
+        $76 = $__begin2; //@line 435 "4374_Task1c_emscripten.cpp"
+        $347 = $76; //@line 435 "4374_Task1c_emscripten.cpp"
+        $348 = HEAP32[$347>>2]|0; //@line 1163 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $item4 = $348; //@line 435 "4374_Task1c_emscripten.cpp"
+        $349 = $item4; //@line 437 "4374_Task1c_emscripten.cpp"
+        $350 = ((($349)) + 4|0); //@line 437 "4374_Task1c_emscripten.cpp"
+        $351 = HEAP32[$350>>2]|0; //@line 437 "4374_Task1c_emscripten.cpp"
+        $352 = $targetX; //@line 437 "4374_Task1c_emscripten.cpp"
+        $353 = ($351|0)==($352|0); //@line 437 "4374_Task1c_emscripten.cpp"
+        if ($353) {
+         $354 = $item4; //@line 437 "4374_Task1c_emscripten.cpp"
+         $355 = ((($354)) + 8|0); //@line 437 "4374_Task1c_emscripten.cpp"
+         $356 = HEAP32[$355>>2]|0; //@line 437 "4374_Task1c_emscripten.cpp"
+         $357 = $targetY; //@line 437 "4374_Task1c_emscripten.cpp"
+         $358 = ($356|0)==($357|0); //@line 437 "4374_Task1c_emscripten.cpp"
+         if ($358) {
+          $359 = $item4; //@line 439 "4374_Task1c_emscripten.cpp"
+          $360 = ((($359)) + 12|0); //@line 439 "4374_Task1c_emscripten.cpp"
+          $361 = HEAP32[$360>>2]|0; //@line 439 "4374_Task1c_emscripten.cpp"
+          $362 = ((($361)) + 8|0); //@line 439 "4374_Task1c_emscripten.cpp"
+          $363 = HEAP32[$362>>2]|0; //@line 439 "4374_Task1c_emscripten.cpp"
+          $364 = HEAP32[$dy>>2]|0; //@line 439 "4374_Task1c_emscripten.cpp"
+          $365 = (($363) + ($364))|0; //@line 439 "4374_Task1c_emscripten.cpp"
+          $366 = $87; //@line 439 "4374_Task1c_emscripten.cpp"
+          $367 = $i; //@line 439 "4374_Task1c_emscripten.cpp"
+          $77 = $366; //@line 439 "4374_Task1c_emscripten.cpp"
+          $78 = $367; //@line 439 "4374_Task1c_emscripten.cpp"
+          $368 = $77; //@line 439 "4374_Task1c_emscripten.cpp"
+          $369 = $78; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+          $370 = HEAP32[$368>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+          $371 = (($370) + (($369*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+          $372 = ((($371)) + 8|0); //@line 439 "4374_Task1c_emscripten.cpp"
+          HEAP32[$372>>2] = $365; //@line 439 "4374_Task1c_emscripten.cpp"
+          $373 = $item4; //@line 440 "4374_Task1c_emscripten.cpp"
+          $374 = ((($373)) + 12|0); //@line 440 "4374_Task1c_emscripten.cpp"
+          $375 = HEAP32[$374>>2]|0; //@line 440 "4374_Task1c_emscripten.cpp"
+          $376 = ((($375)) + 4|0); //@line 440 "4374_Task1c_emscripten.cpp"
+          $377 = HEAP32[$376>>2]|0; //@line 440 "4374_Task1c_emscripten.cpp"
+          $378 = HEAP32[$dx>>2]|0; //@line 440 "4374_Task1c_emscripten.cpp"
+          $379 = (($377) + ($378))|0; //@line 440 "4374_Task1c_emscripten.cpp"
+          $380 = $87; //@line 440 "4374_Task1c_emscripten.cpp"
+          $381 = $i; //@line 440 "4374_Task1c_emscripten.cpp"
+          $79 = $380; //@line 440 "4374_Task1c_emscripten.cpp"
+          $80 = $381; //@line 440 "4374_Task1c_emscripten.cpp"
+          $382 = $79; //@line 440 "4374_Task1c_emscripten.cpp"
+          $383 = $80; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+          $384 = HEAP32[$382>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+          $385 = (($384) + (($383*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+          $386 = ((($385)) + 4|0); //@line 440 "4374_Task1c_emscripten.cpp"
+          HEAP32[$386>>2] = $379; //@line 440 "4374_Task1c_emscripten.cpp"
+         }
+        }
+        $81 = $__begin2; //@line 435 "4374_Task1c_emscripten.cpp"
+        $387 = $81; //@line 435 "4374_Task1c_emscripten.cpp"
+        $388 = HEAP32[$387>>2]|0; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $389 = ((($388)) + 16|0); //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        HEAP32[$387>>2] = $389; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+       }
+       break;
+      }
+      case 90:  {
+       $236 = $87; //@line 421 "4374_Task1c_emscripten.cpp"
+       $237 = $i; //@line 421 "4374_Task1c_emscripten.cpp"
+       $26 = $236; //@line 421 "4374_Task1c_emscripten.cpp"
+       $27 = $237; //@line 421 "4374_Task1c_emscripten.cpp"
+       $238 = $26; //@line 421 "4374_Task1c_emscripten.cpp"
+       $239 = $27; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $240 = HEAP32[$238>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $241 = (($240) + (($239*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $242 = ((($241)) + 12|0); //@line 421 "4374_Task1c_emscripten.cpp"
+       $243 = HEAP32[$242>>2]|0; //@line 421 "4374_Task1c_emscripten.cpp"
+       $244 = $87; //@line 421 "4374_Task1c_emscripten.cpp"
+       $245 = $i; //@line 421 "4374_Task1c_emscripten.cpp"
+       $28 = $244; //@line 421 "4374_Task1c_emscripten.cpp"
+       $29 = $245; //@line 421 "4374_Task1c_emscripten.cpp"
+       $246 = $28; //@line 421 "4374_Task1c_emscripten.cpp"
+       $247 = $29; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $248 = HEAP32[$246>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $249 = (($248) + (($247*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $250 = ((($249)) + 4|0); //@line 421 "4374_Task1c_emscripten.cpp"
+       HEAP32[$250>>2] = $243; //@line 421 "4374_Task1c_emscripten.cpp"
+       $251 = $87; //@line 422 "4374_Task1c_emscripten.cpp"
+       $252 = $i; //@line 422 "4374_Task1c_emscripten.cpp"
+       $30 = $251; //@line 422 "4374_Task1c_emscripten.cpp"
+       $31 = $252; //@line 422 "4374_Task1c_emscripten.cpp"
+       $253 = $30; //@line 422 "4374_Task1c_emscripten.cpp"
+       $254 = $31; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $255 = HEAP32[$253>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $256 = (($255) + (($254*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $257 = ((($256)) + 16|0); //@line 422 "4374_Task1c_emscripten.cpp"
+       $258 = HEAP32[$257>>2]|0; //@line 422 "4374_Task1c_emscripten.cpp"
+       $259 = $87; //@line 422 "4374_Task1c_emscripten.cpp"
+       $260 = $i; //@line 422 "4374_Task1c_emscripten.cpp"
+       $32 = $259; //@line 422 "4374_Task1c_emscripten.cpp"
+       $33 = $260; //@line 422 "4374_Task1c_emscripten.cpp"
+       $261 = $32; //@line 422 "4374_Task1c_emscripten.cpp"
+       $262 = $33; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $263 = HEAP32[$261>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $264 = (($263) + (($262*24)|0)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $265 = ((($264)) + 8|0); //@line 422 "4374_Task1c_emscripten.cpp"
+       HEAP32[$265>>2] = $258; //@line 422 "4374_Task1c_emscripten.cpp"
+       $266 = $87; //@line 424 "4374_Task1c_emscripten.cpp"
+       $__range = $266; //@line 424 "4374_Task1c_emscripten.cpp"
+       $267 = $__range; //@line 424 "4374_Task1c_emscripten.cpp"
+       $40 = $267; //@line 424 "4374_Task1c_emscripten.cpp"
+       $268 = $40; //@line 424 "4374_Task1c_emscripten.cpp"
+       $269 = HEAP32[$268>>2]|0; //@line 1472 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $37 = $268; //@line 1472 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $38 = $269; //@line 1472 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $270 = $38; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $34 = $36; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $35 = $270; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $271 = $34; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $272 = $35; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+       HEAP32[$271>>2] = $272; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+       $273 = HEAP32[$36>>2]|0; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       HEAP32[$39>>2] = $273; //@line 1472 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $274 = HEAP32[$39>>2]|0; //@line 1472 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       HEAP32[$__begin>>2] = $274; //@line 424 "4374_Task1c_emscripten.cpp"
+       $275 = $__range; //@line 424 "4374_Task1c_emscripten.cpp"
+       $47 = $275; //@line 424 "4374_Task1c_emscripten.cpp"
+       $276 = $47; //@line 424 "4374_Task1c_emscripten.cpp"
+       $277 = ((($276)) + 4|0); //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $278 = HEAP32[$277>>2]|0; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $44 = $276; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $45 = $278; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $279 = $45; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $41 = $43; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $42 = $279; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $280 = $41; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $281 = $42; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+       HEAP32[$280>>2] = $281; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+       $282 = HEAP32[$43>>2]|0; //@line 1451 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       HEAP32[$46>>2] = $282; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       $283 = HEAP32[$46>>2]|0; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+       HEAP32[$__end>>2] = $283; //@line 424 "4374_Task1c_emscripten.cpp"
+       while(1) {
+        $52 = $__begin; //@line 424 "4374_Task1c_emscripten.cpp"
+        $53 = $__end; //@line 424 "4374_Task1c_emscripten.cpp"
+        $284 = $52; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $285 = $53; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $50 = $284; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $51 = $285; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $286 = $50; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $49 = $286; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $287 = $49; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $288 = HEAP32[$287>>2]|0; //@line 1219 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $289 = $51; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $48 = $289; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $290 = $48; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $291 = HEAP32[$290>>2]|0; //@line 1219 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $292 = ($288|0)==($291|0); //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $293 = $292 ^ 1; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        if (!($293)) {
+         break L4;
+        }
+        $54 = $__begin; //@line 424 "4374_Task1c_emscripten.cpp"
+        $294 = $54; //@line 424 "4374_Task1c_emscripten.cpp"
+        $295 = HEAP32[$294>>2]|0; //@line 1163 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $item = $295; //@line 424 "4374_Task1c_emscripten.cpp"
+        $296 = $item; //@line 426 "4374_Task1c_emscripten.cpp"
+        $297 = ((($296)) + 4|0); //@line 426 "4374_Task1c_emscripten.cpp"
+        $298 = HEAP32[$297>>2]|0; //@line 426 "4374_Task1c_emscripten.cpp"
+        $299 = $targetX; //@line 426 "4374_Task1c_emscripten.cpp"
+        $300 = ($298|0)==($299|0); //@line 426 "4374_Task1c_emscripten.cpp"
+        if ($300) {
+         $301 = $item; //@line 426 "4374_Task1c_emscripten.cpp"
+         $302 = ((($301)) + 8|0); //@line 426 "4374_Task1c_emscripten.cpp"
+         $303 = HEAP32[$302>>2]|0; //@line 426 "4374_Task1c_emscripten.cpp"
+         $304 = $targetY; //@line 426 "4374_Task1c_emscripten.cpp"
+         $305 = ($303|0)==($304|0); //@line 426 "4374_Task1c_emscripten.cpp"
+         if ($305) {
+          $306 = $item; //@line 428 "4374_Task1c_emscripten.cpp"
+          $307 = ((($306)) + 12|0); //@line 428 "4374_Task1c_emscripten.cpp"
+          $308 = HEAP32[$307>>2]|0; //@line 428 "4374_Task1c_emscripten.cpp"
+          $309 = $item; //@line 428 "4374_Task1c_emscripten.cpp"
+          $310 = ((($309)) + 4|0); //@line 428 "4374_Task1c_emscripten.cpp"
+          HEAP32[$310>>2] = $308; //@line 428 "4374_Task1c_emscripten.cpp"
+          $311 = $item; //@line 429 "4374_Task1c_emscripten.cpp"
+          $312 = ((($311)) + 16|0); //@line 429 "4374_Task1c_emscripten.cpp"
+          $313 = HEAP32[$312>>2]|0; //@line 429 "4374_Task1c_emscripten.cpp"
+          $314 = $item; //@line 429 "4374_Task1c_emscripten.cpp"
+          $315 = ((($314)) + 8|0); //@line 429 "4374_Task1c_emscripten.cpp"
+          HEAP32[$315>>2] = $313; //@line 429 "4374_Task1c_emscripten.cpp"
+         }
+        }
+        $55 = $__begin; //@line 424 "4374_Task1c_emscripten.cpp"
+        $316 = $55; //@line 424 "4374_Task1c_emscripten.cpp"
+        $317 = HEAP32[$316>>2]|0; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        $318 = ((($317)) + 24|0); //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+        HEAP32[$316>>2] = $318; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+       }
        break;
       }
       default: {
@@ -16343,9 +16345,9 @@ function __Z23updatezombieCoordinatesPA22_KcR6playerRNSt3__16vectorI6zombieNS4_9
     }
    }
   } while(0);
-  $395 = $i; //@line 388 "4374_Task1c_emscripten.cpp"
-  $396 = (($395) + 1)|0; //@line 388 "4374_Task1c_emscripten.cpp"
-  $i = $396; //@line 388 "4374_Task1c_emscripten.cpp"
+  $397 = $i; //@line 388 "4374_Task1c_emscripten.cpp"
+  $398 = (($397) + 1)|0; //@line 388 "4374_Task1c_emscripten.cpp"
+  $i = $398; //@line 388 "4374_Task1c_emscripten.cpp"
  }
  STACKTOP = sp;return; //@line 450 "4374_Task1c_emscripten.cpp"
 }
@@ -16368,234 +16370,922 @@ function __Z10updateGridPA22_cRK4ItemRKNSt3__16vectorI6zombieNS4_9allocatorIS6_E
  $4 = $holes;
  $5 = $walls;
  $6 = $portals;
- $7 = $0; //@line 822 "4374_Task1c_emscripten.cpp"
- __Z7setGridPA22_c($7); //@line 822 "4374_Task1c_emscripten.cpp"
- $8 = $0; //@line 824 "4374_Task1c_emscripten.cpp"
- $9 = $5; //@line 824 "4374_Task1c_emscripten.cpp"
- __Z9placeitemPA22_cRKNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEE($8,$9); //@line 824 "4374_Task1c_emscripten.cpp"
- $10 = $0; //@line 827 "4374_Task1c_emscripten.cpp"
- $11 = $2; //@line 827 "4374_Task1c_emscripten.cpp"
- __Z12placezombiesPA22_cRKNSt3__16vectorI6zombieNS1_9allocatorIS3_EEEE($10,$11); //@line 827 "4374_Task1c_emscripten.cpp"
- $12 = $0; //@line 828 "4374_Task1c_emscripten.cpp"
- $13 = $3; //@line 828 "4374_Task1c_emscripten.cpp"
- __Z9placepillPA22_cRKNSt3__16vectorI4pillNS1_9allocatorIS3_EEEE($12,$13); //@line 828 "4374_Task1c_emscripten.cpp"
- $14 = $0; //@line 829 "4374_Task1c_emscripten.cpp"
- $15 = $4; //@line 829 "4374_Task1c_emscripten.cpp"
- __Z9placeitemPA22_cRKNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEE($14,$15); //@line 829 "4374_Task1c_emscripten.cpp"
- $16 = $0; //@line 830 "4374_Task1c_emscripten.cpp"
- $17 = $6; //@line 830 "4374_Task1c_emscripten.cpp"
- __Z11placeportalPA22_cRKNSt3__16vectorI6portalNS1_9allocatorIS3_EEEE($16,$17); //@line 830 "4374_Task1c_emscripten.cpp"
- $18 = $0; //@line 831 "4374_Task1c_emscripten.cpp"
- $19 = $1; //@line 831 "4374_Task1c_emscripten.cpp"
- __Z9placeSpotPA22_cRK4Item($18,$19); //@line 831 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return; //@line 832 "4374_Task1c_emscripten.cpp"
+ $7 = $0; //@line 898 "4374_Task1c_emscripten.cpp"
+ __Z7setGridPA22_c($7); //@line 898 "4374_Task1c_emscripten.cpp"
+ $8 = $0; //@line 900 "4374_Task1c_emscripten.cpp"
+ $9 = $5; //@line 900 "4374_Task1c_emscripten.cpp"
+ __Z9placeitemPA22_cRKNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEE($8,$9); //@line 900 "4374_Task1c_emscripten.cpp"
+ $10 = $0; //@line 903 "4374_Task1c_emscripten.cpp"
+ $11 = $2; //@line 903 "4374_Task1c_emscripten.cpp"
+ __Z12placezombiesPA22_cRKNSt3__16vectorI6zombieNS1_9allocatorIS3_EEEE($10,$11); //@line 903 "4374_Task1c_emscripten.cpp"
+ $12 = $0; //@line 904 "4374_Task1c_emscripten.cpp"
+ $13 = $3; //@line 904 "4374_Task1c_emscripten.cpp"
+ __Z9placepillPA22_cRKNSt3__16vectorI4pillNS1_9allocatorIS3_EEEE($12,$13); //@line 904 "4374_Task1c_emscripten.cpp"
+ $14 = $0; //@line 905 "4374_Task1c_emscripten.cpp"
+ $15 = $4; //@line 905 "4374_Task1c_emscripten.cpp"
+ __Z9placeitemPA22_cRKNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEE($14,$15); //@line 905 "4374_Task1c_emscripten.cpp"
+ $16 = $0; //@line 906 "4374_Task1c_emscripten.cpp"
+ $17 = $6; //@line 906 "4374_Task1c_emscripten.cpp"
+ __Z11placeportalPA22_cRKNSt3__16vectorI6portalNS1_9allocatorIS3_EEEE($16,$17); //@line 906 "4374_Task1c_emscripten.cpp"
+ $18 = $0; //@line 907 "4374_Task1c_emscripten.cpp"
+ $19 = $1; //@line 907 "4374_Task1c_emscripten.cpp"
+ __Z9placeSpotPA22_cRK4Item($18,$19); //@line 907 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 908 "4374_Task1c_emscripten.cpp"
 }
-function __Z12findbestmoveRiS_($x,$y) {
+function __Z12findbestmovePA22_KcRKNSt3__16vectorI6portalNS2_9allocatorIS4_EEEERiSA_($g,$portals,$x,$y) {
+ $g = $g|0;
+ $portals = $portals|0;
  $x = $x|0;
  $y = $y|0;
- var $0 = 0, $1 = 0, $10 = 0, $11 = 0, $12 = 0, $13 = 0, $14 = 0, $15 = 0, $16 = 0, $17 = 0, $18 = 0, $19 = 0, $2 = 0, $20 = 0, $21 = 0, $22 = 0, $23 = 0, $24 = 0, $25 = 0, $26 = 0;
- var $27 = 0, $28 = 0, $29 = 0, $3 = 0, $30 = 0, $31 = 0, $32 = 0, $33 = 0, $34 = 0, $35 = 0, $36 = 0, $37 = 0, $38 = 0, $39 = 0, $4 = 0, $40 = 0, $41 = 0, $42 = 0, $43 = 0, $44 = 0;
- var $45 = 0, $46 = 0, $47 = 0, $48 = 0, $49 = 0, $5 = 0, $50 = 0, $51 = 0, $52 = 0, $53 = 0, $54 = 0, $55 = 0, $56 = 0, $57 = 0, $58 = 0, $59 = 0, $6 = 0, $60 = 0, $61 = 0, $62 = 0;
- var $63 = 0, $64 = 0, $65 = 0, $66 = 0, $67 = 0, $68 = 0, $69 = 0, $7 = 0, $70 = 0, $71 = 0, $72 = 0, $73 = 0, $8 = 0, $9 = 0, label = 0, sp = 0;
+ var $0 = 0, $1 = 0, $10 = 0, $100 = 0, $101 = 0, $102 = 0, $103 = 0, $104 = 0, $105 = 0, $106 = 0, $107 = 0, $108 = 0, $109 = 0, $11 = 0, $110 = 0, $111 = 0, $112 = 0, $113 = 0, $114 = 0, $115 = 0;
+ var $116 = 0, $117 = 0, $118 = 0, $119 = 0, $12 = 0, $120 = 0, $121 = 0, $122 = 0, $123 = 0, $124 = 0, $125 = 0, $126 = 0, $127 = 0, $128 = 0, $129 = 0, $13 = 0, $130 = 0, $131 = 0, $132 = 0, $133 = 0;
+ var $134 = 0, $135 = 0, $136 = 0, $137 = 0, $138 = 0, $139 = 0, $14 = 0, $140 = 0, $141 = 0, $142 = 0, $143 = 0, $144 = 0, $145 = 0, $146 = 0, $147 = 0, $148 = 0, $149 = 0, $15 = 0, $150 = 0, $151 = 0;
+ var $152 = 0, $153 = 0, $154 = 0, $155 = 0, $156 = 0, $157 = 0, $158 = 0, $159 = 0, $16 = 0, $160 = 0, $161 = 0, $162 = 0, $163 = 0, $164 = 0, $165 = 0, $166 = 0, $167 = 0, $168 = 0, $169 = 0, $17 = 0;
+ var $170 = 0, $171 = 0, $172 = 0, $173 = 0, $174 = 0, $175 = 0, $176 = 0, $177 = 0, $178 = 0, $179 = 0, $18 = 0, $180 = 0, $181 = 0, $182 = 0, $183 = 0, $184 = 0, $185 = 0, $186 = 0, $187 = 0, $188 = 0;
+ var $189 = 0, $19 = 0, $190 = 0, $191 = 0, $192 = 0, $193 = 0, $194 = 0, $195 = 0, $196 = 0, $197 = 0, $198 = 0, $199 = 0, $2 = 0, $20 = 0, $200 = 0, $201 = 0, $202 = 0, $203 = 0, $204 = 0, $205 = 0;
+ var $206 = 0, $207 = 0, $208 = 0, $209 = 0, $21 = 0, $210 = 0, $211 = 0, $212 = 0, $213 = 0, $214 = 0, $215 = 0, $216 = 0, $217 = 0, $218 = 0, $219 = 0, $22 = 0, $220 = 0, $221 = 0, $222 = 0, $223 = 0;
+ var $224 = 0, $225 = 0, $226 = 0, $227 = 0, $228 = 0, $229 = 0, $23 = 0, $230 = 0, $231 = 0, $232 = 0, $233 = 0, $234 = 0, $235 = 0, $236 = 0, $237 = 0, $238 = 0, $239 = 0, $24 = 0, $240 = 0, $241 = 0;
+ var $242 = 0, $243 = 0, $244 = 0, $245 = 0, $246 = 0, $247 = 0, $248 = 0, $249 = 0, $25 = 0, $250 = 0, $251 = 0, $252 = 0, $253 = 0, $254 = 0, $255 = 0, $256 = 0, $257 = 0, $258 = 0, $259 = 0, $26 = 0;
+ var $260 = 0, $261 = 0, $262 = 0, $263 = 0, $264 = 0, $265 = 0, $266 = 0, $267 = 0, $268 = 0, $269 = 0, $27 = 0, $270 = 0, $271 = 0, $272 = 0, $273 = 0, $274 = 0, $275 = 0, $276 = 0, $277 = 0, $278 = 0;
+ var $279 = 0, $28 = 0, $280 = 0, $281 = 0, $282 = 0, $283 = 0, $284 = 0, $285 = 0, $286 = 0, $287 = 0, $288 = 0, $289 = 0, $29 = 0, $290 = 0, $291 = 0, $292 = 0, $293 = 0, $294 = 0, $295 = 0, $296 = 0;
+ var $297 = 0, $298 = 0, $299 = 0, $3 = 0, $30 = 0, $300 = 0, $301 = 0, $302 = 0, $303 = 0, $304 = 0, $305 = 0, $306 = 0, $307 = 0, $308 = 0, $309 = 0, $31 = 0, $310 = 0, $311 = 0, $312 = 0, $313 = 0;
+ var $314 = 0, $315 = 0, $316 = 0, $317 = 0, $318 = 0, $319 = 0, $32 = 0, $320 = 0, $321 = 0, $322 = 0, $33 = 0, $34 = 0, $35 = 0, $36 = 0, $37 = 0, $38 = 0, $39 = 0, $4 = 0, $40 = 0, $41 = 0;
+ var $42 = 0, $43 = 0, $44 = 0, $45 = 0, $46 = 0, $47 = 0, $48 = 0, $49 = 0, $5 = 0, $50 = 0, $51 = 0, $52 = 0, $53 = 0, $54 = 0, $55 = 0, $56 = 0, $57 = 0, $58 = 0, $59 = 0, $6 = 0;
+ var $60 = 0, $61 = 0, $62 = 0, $63 = 0, $64 = 0, $65 = 0, $66 = 0, $67 = 0, $68 = 0, $69 = 0, $7 = 0, $70 = 0, $71 = 0, $72 = 0, $73 = 0, $74 = 0, $75 = 0, $76 = 0, $77 = 0, $78 = 0;
+ var $79 = 0, $8 = 0, $80 = 0, $81 = 0, $82 = 0, $83 = 0, $84 = 0, $85 = 0, $86 = 0, $87 = 0, $88 = 0, $89 = 0, $9 = 0, $90 = 0, $91 = 0, $92 = 0, $93 = 0, $94 = 0, $95 = 0, $96 = 0;
+ var $97 = 0, $98 = 0, $99 = 0, $__begin = 0, $__end = 0, $__range = 0, $item = 0, label = 0, sp = 0;
  sp = STACKTOP;
- STACKTOP = STACKTOP + 16|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
- $0 = $x;
- $1 = $y;
- $2 = $0; //@line 519 "4374_Task1c_emscripten.cpp"
- $3 = HEAP32[$2>>2]|0; //@line 519 "4374_Task1c_emscripten.cpp"
- $4 = $1; //@line 519 "4374_Task1c_emscripten.cpp"
- $5 = HEAP32[$4>>2]|0; //@line 519 "4374_Task1c_emscripten.cpp"
- $6 = (1008 + (($5*88)|0)|0); //@line 519 "4374_Task1c_emscripten.cpp"
- $7 = (($6) + ($3<<2)|0); //@line 519 "4374_Task1c_emscripten.cpp"
- $8 = HEAP32[$7>>2]|0; //@line 519 "4374_Task1c_emscripten.cpp"
- $9 = $0; //@line 519 "4374_Task1c_emscripten.cpp"
- $10 = HEAP32[$9>>2]|0; //@line 519 "4374_Task1c_emscripten.cpp"
- $11 = (($10) - 1)|0; //@line 519 "4374_Task1c_emscripten.cpp"
- $12 = $1; //@line 519 "4374_Task1c_emscripten.cpp"
- $13 = HEAP32[$12>>2]|0; //@line 519 "4374_Task1c_emscripten.cpp"
- $14 = (1008 + (($13*88)|0)|0); //@line 519 "4374_Task1c_emscripten.cpp"
- $15 = (($14) + ($11<<2)|0); //@line 519 "4374_Task1c_emscripten.cpp"
- $16 = HEAP32[$15>>2]|0; //@line 519 "4374_Task1c_emscripten.cpp"
- $17 = ($8|0)>($16|0); //@line 519 "4374_Task1c_emscripten.cpp"
- if ($17) {
-  $18 = $1; //@line 521 "4374_Task1c_emscripten.cpp"
-  HEAP32[$18>>2] = 0; //@line 521 "4374_Task1c_emscripten.cpp"
-  $19 = $0; //@line 522 "4374_Task1c_emscripten.cpp"
-  HEAP32[$19>>2] = -1; //@line 522 "4374_Task1c_emscripten.cpp"
-  STACKTOP = sp;return; //@line 539 "4374_Task1c_emscripten.cpp"
+ STACKTOP = STACKTOP + 128|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
+ $2 = sp + 108|0;
+ $5 = sp + 96|0;
+ $17 = sp;
+ $20 = sp + 12|0;
+ $__begin = sp + 44|0;
+ $__end = sp + 48|0;
+ $22 = $g;
+ $23 = $portals;
+ $24 = $x;
+ $25 = $y;
+ $26 = $24; //@line 519 "4374_Task1c_emscripten.cpp"
+ $27 = HEAP32[$26>>2]|0; //@line 519 "4374_Task1c_emscripten.cpp"
+ $28 = (($27) - 1)|0; //@line 519 "4374_Task1c_emscripten.cpp"
+ $29 = $25; //@line 519 "4374_Task1c_emscripten.cpp"
+ $30 = HEAP32[$29>>2]|0; //@line 519 "4374_Task1c_emscripten.cpp"
+ $31 = $22; //@line 519 "4374_Task1c_emscripten.cpp"
+ $32 = (($31) + (($30*22)|0)|0); //@line 519 "4374_Task1c_emscripten.cpp"
+ $33 = (($32) + ($28)|0); //@line 519 "4374_Task1c_emscripten.cpp"
+ $34 = HEAP8[$33>>0]|0; //@line 519 "4374_Task1c_emscripten.cpp"
+ $35 = $34 << 24 >> 24; //@line 519 "4374_Task1c_emscripten.cpp"
+ $36 = ($35|0)==(38); //@line 519 "4374_Task1c_emscripten.cpp"
+ if ($36) {
+  label = 5;
+ } else {
+  $37 = $24; //@line 519 "4374_Task1c_emscripten.cpp"
+  $38 = HEAP32[$37>>2]|0; //@line 519 "4374_Task1c_emscripten.cpp"
+  $39 = (($38) + 1)|0; //@line 519 "4374_Task1c_emscripten.cpp"
+  $40 = $25; //@line 519 "4374_Task1c_emscripten.cpp"
+  $41 = HEAP32[$40>>2]|0; //@line 519 "4374_Task1c_emscripten.cpp"
+  $42 = $22; //@line 519 "4374_Task1c_emscripten.cpp"
+  $43 = (($42) + (($41*22)|0)|0); //@line 519 "4374_Task1c_emscripten.cpp"
+  $44 = (($43) + ($39)|0); //@line 519 "4374_Task1c_emscripten.cpp"
+  $45 = HEAP8[$44>>0]|0; //@line 519 "4374_Task1c_emscripten.cpp"
+  $46 = $45 << 24 >> 24; //@line 519 "4374_Task1c_emscripten.cpp"
+  $47 = ($46|0)==(38); //@line 519 "4374_Task1c_emscripten.cpp"
+  if ($47) {
+   label = 5;
+  } else {
+   $48 = $24; //@line 519 "4374_Task1c_emscripten.cpp"
+   $49 = HEAP32[$48>>2]|0; //@line 519 "4374_Task1c_emscripten.cpp"
+   $50 = $25; //@line 519 "4374_Task1c_emscripten.cpp"
+   $51 = HEAP32[$50>>2]|0; //@line 519 "4374_Task1c_emscripten.cpp"
+   $52 = (($51) - 1)|0; //@line 519 "4374_Task1c_emscripten.cpp"
+   $53 = $22; //@line 519 "4374_Task1c_emscripten.cpp"
+   $54 = (($53) + (($52*22)|0)|0); //@line 519 "4374_Task1c_emscripten.cpp"
+   $55 = (($54) + ($49)|0); //@line 519 "4374_Task1c_emscripten.cpp"
+   $56 = HEAP8[$55>>0]|0; //@line 519 "4374_Task1c_emscripten.cpp"
+   $57 = $56 << 24 >> 24; //@line 519 "4374_Task1c_emscripten.cpp"
+   $58 = ($57|0)==(38); //@line 519 "4374_Task1c_emscripten.cpp"
+   if ($58) {
+    label = 5;
+   } else {
+    $59 = $24; //@line 519 "4374_Task1c_emscripten.cpp"
+    $60 = HEAP32[$59>>2]|0; //@line 519 "4374_Task1c_emscripten.cpp"
+    $61 = $25; //@line 519 "4374_Task1c_emscripten.cpp"
+    $62 = HEAP32[$61>>2]|0; //@line 519 "4374_Task1c_emscripten.cpp"
+    $63 = (($62) + 1)|0; //@line 519 "4374_Task1c_emscripten.cpp"
+    $64 = $22; //@line 519 "4374_Task1c_emscripten.cpp"
+    $65 = (($64) + (($63*22)|0)|0); //@line 519 "4374_Task1c_emscripten.cpp"
+    $66 = (($65) + ($60)|0); //@line 519 "4374_Task1c_emscripten.cpp"
+    $67 = HEAP8[$66>>0]|0; //@line 519 "4374_Task1c_emscripten.cpp"
+    $68 = $67 << 24 >> 24; //@line 519 "4374_Task1c_emscripten.cpp"
+    $69 = ($68|0)==(38); //@line 519 "4374_Task1c_emscripten.cpp"
+    if ($69) {
+     label = 5;
+    }
+   }
+  }
  }
- $20 = $0; //@line 524 "4374_Task1c_emscripten.cpp"
- $21 = HEAP32[$20>>2]|0; //@line 524 "4374_Task1c_emscripten.cpp"
- $22 = $1; //@line 524 "4374_Task1c_emscripten.cpp"
- $23 = HEAP32[$22>>2]|0; //@line 524 "4374_Task1c_emscripten.cpp"
- $24 = (1008 + (($23*88)|0)|0); //@line 524 "4374_Task1c_emscripten.cpp"
- $25 = (($24) + ($21<<2)|0); //@line 524 "4374_Task1c_emscripten.cpp"
- $26 = HEAP32[$25>>2]|0; //@line 524 "4374_Task1c_emscripten.cpp"
- $27 = $0; //@line 524 "4374_Task1c_emscripten.cpp"
- $28 = HEAP32[$27>>2]|0; //@line 524 "4374_Task1c_emscripten.cpp"
- $29 = (($28) + 1)|0; //@line 524 "4374_Task1c_emscripten.cpp"
- $30 = $1; //@line 524 "4374_Task1c_emscripten.cpp"
- $31 = HEAP32[$30>>2]|0; //@line 524 "4374_Task1c_emscripten.cpp"
- $32 = (1008 + (($31*88)|0)|0); //@line 524 "4374_Task1c_emscripten.cpp"
- $33 = (($32) + ($29<<2)|0); //@line 524 "4374_Task1c_emscripten.cpp"
- $34 = HEAP32[$33>>2]|0; //@line 524 "4374_Task1c_emscripten.cpp"
- $35 = ($26|0)>($34|0); //@line 524 "4374_Task1c_emscripten.cpp"
- if ($35) {
-  $36 = $1; //@line 526 "4374_Task1c_emscripten.cpp"
-  HEAP32[$36>>2] = 0; //@line 526 "4374_Task1c_emscripten.cpp"
-  $37 = $0; //@line 527 "4374_Task1c_emscripten.cpp"
-  HEAP32[$37>>2] = 1; //@line 527 "4374_Task1c_emscripten.cpp"
-  STACKTOP = sp;return; //@line 539 "4374_Task1c_emscripten.cpp"
+ L5: do {
+  if ((label|0) == 5) {
+   $70 = $23; //@line 521 "4374_Task1c_emscripten.cpp"
+   $__range = $70; //@line 521 "4374_Task1c_emscripten.cpp"
+   $71 = $__range; //@line 521 "4374_Task1c_emscripten.cpp"
+   $21 = $71; //@line 521 "4374_Task1c_emscripten.cpp"
+   $72 = $21; //@line 521 "4374_Task1c_emscripten.cpp"
+   $73 = HEAP32[$72>>2]|0; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $18 = $72; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $19 = $73; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $74 = $19; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $15 = $17; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $16 = $74; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $75 = $15; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $76 = $16; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+   HEAP32[$75>>2] = $76; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+   $77 = HEAP32[$17>>2]|0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   HEAP32[$20>>2] = $77; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $78 = HEAP32[$20>>2]|0; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   HEAP32[$__begin>>2] = $78; //@line 521 "4374_Task1c_emscripten.cpp"
+   $79 = $__range; //@line 521 "4374_Task1c_emscripten.cpp"
+   $6 = $79; //@line 521 "4374_Task1c_emscripten.cpp"
+   $80 = $6; //@line 521 "4374_Task1c_emscripten.cpp"
+   $81 = ((($80)) + 4|0); //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $82 = HEAP32[$81>>2]|0; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $3 = $80; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $4 = $82; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $83 = $4; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $0 = $2; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $1 = $83; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $84 = $0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $85 = $1; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+   HEAP32[$84>>2] = $85; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+   $86 = HEAP32[$2>>2]|0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   HEAP32[$5>>2] = $86; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $87 = HEAP32[$5>>2]|0; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   HEAP32[$__end>>2] = $87; //@line 521 "4374_Task1c_emscripten.cpp"
+   while(1) {
+    $11 = $__begin; //@line 521 "4374_Task1c_emscripten.cpp"
+    $12 = $__end; //@line 521 "4374_Task1c_emscripten.cpp"
+    $88 = $11; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $89 = $12; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $9 = $88; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $10 = $89; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $90 = $9; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $8 = $90; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $91 = $8; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $92 = HEAP32[$91>>2]|0; //@line 1219 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $93 = $10; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $7 = $93; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $94 = $7; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $95 = HEAP32[$94>>2]|0; //@line 1219 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $96 = ($92|0)==($95|0); //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $97 = $96 ^ 1; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    if (!($97)) {
+     break L5;
+    }
+    $13 = $__begin; //@line 521 "4374_Task1c_emscripten.cpp"
+    $98 = $13; //@line 521 "4374_Task1c_emscripten.cpp"
+    $99 = HEAP32[$98>>2]|0; //@line 1163 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $item = $99; //@line 521 "4374_Task1c_emscripten.cpp"
+    $100 = $item; //@line 523 "4374_Task1c_emscripten.cpp"
+    $101 = ((($100)) + 4|0); //@line 523 "4374_Task1c_emscripten.cpp"
+    $102 = HEAP32[$101>>2]|0; //@line 523 "4374_Task1c_emscripten.cpp"
+    $103 = $24; //@line 523 "4374_Task1c_emscripten.cpp"
+    $104 = HEAP32[$103>>2]|0; //@line 523 "4374_Task1c_emscripten.cpp"
+    $105 = (($104) - 1)|0; //@line 523 "4374_Task1c_emscripten.cpp"
+    $106 = ($102|0)==($105|0); //@line 523 "4374_Task1c_emscripten.cpp"
+    if ($106) {
+     $107 = $item; //@line 523 "4374_Task1c_emscripten.cpp"
+     $108 = ((($107)) + 8|0); //@line 523 "4374_Task1c_emscripten.cpp"
+     $109 = HEAP32[$108>>2]|0; //@line 523 "4374_Task1c_emscripten.cpp"
+     $110 = $25; //@line 523 "4374_Task1c_emscripten.cpp"
+     $111 = HEAP32[$110>>2]|0; //@line 523 "4374_Task1c_emscripten.cpp"
+     $112 = ($109|0)==($111|0); //@line 523 "4374_Task1c_emscripten.cpp"
+     if ($112) {
+      $113 = $24; //@line 525 "4374_Task1c_emscripten.cpp"
+      $114 = HEAP32[$113>>2]|0; //@line 525 "4374_Task1c_emscripten.cpp"
+      $115 = $25; //@line 525 "4374_Task1c_emscripten.cpp"
+      $116 = HEAP32[$115>>2]|0; //@line 525 "4374_Task1c_emscripten.cpp"
+      $117 = (1008 + (($116*88)|0)|0); //@line 525 "4374_Task1c_emscripten.cpp"
+      $118 = (($117) + ($114<<2)|0); //@line 525 "4374_Task1c_emscripten.cpp"
+      $119 = HEAP32[$118>>2]|0; //@line 525 "4374_Task1c_emscripten.cpp"
+      $120 = $item; //@line 525 "4374_Task1c_emscripten.cpp"
+      $121 = ((($120)) + 12|0); //@line 525 "4374_Task1c_emscripten.cpp"
+      $122 = HEAP32[$121>>2]|0; //@line 525 "4374_Task1c_emscripten.cpp"
+      $123 = ((($122)) + 4|0); //@line 525 "4374_Task1c_emscripten.cpp"
+      $124 = HEAP32[$123>>2]|0; //@line 525 "4374_Task1c_emscripten.cpp"
+      $125 = (($124) - 1)|0; //@line 525 "4374_Task1c_emscripten.cpp"
+      $126 = $item; //@line 525 "4374_Task1c_emscripten.cpp"
+      $127 = ((($126)) + 12|0); //@line 525 "4374_Task1c_emscripten.cpp"
+      $128 = HEAP32[$127>>2]|0; //@line 525 "4374_Task1c_emscripten.cpp"
+      $129 = ((($128)) + 8|0); //@line 525 "4374_Task1c_emscripten.cpp"
+      $130 = HEAP32[$129>>2]|0; //@line 525 "4374_Task1c_emscripten.cpp"
+      $131 = (1008 + (($130*88)|0)|0); //@line 525 "4374_Task1c_emscripten.cpp"
+      $132 = (($131) + ($125<<2)|0); //@line 525 "4374_Task1c_emscripten.cpp"
+      $133 = HEAP32[$132>>2]|0; //@line 525 "4374_Task1c_emscripten.cpp"
+      $134 = ($119|0)>($133|0); //@line 525 "4374_Task1c_emscripten.cpp"
+      if ($134) {
+       $135 = $25; //@line 527 "4374_Task1c_emscripten.cpp"
+       HEAP32[$135>>2] = 0; //@line 527 "4374_Task1c_emscripten.cpp"
+       $136 = $24; //@line 528 "4374_Task1c_emscripten.cpp"
+       HEAP32[$136>>2] = -1; //@line 528 "4374_Task1c_emscripten.cpp"
+      }
+     } else {
+      label = 11;
+     }
+    } else {
+     label = 11;
+    }
+    do {
+     if ((label|0) == 11) {
+      label = 0;
+      $137 = $item; //@line 531 "4374_Task1c_emscripten.cpp"
+      $138 = ((($137)) + 4|0); //@line 531 "4374_Task1c_emscripten.cpp"
+      $139 = HEAP32[$138>>2]|0; //@line 531 "4374_Task1c_emscripten.cpp"
+      $140 = $24; //@line 531 "4374_Task1c_emscripten.cpp"
+      $141 = HEAP32[$140>>2]|0; //@line 531 "4374_Task1c_emscripten.cpp"
+      $142 = (($141) + 1)|0; //@line 531 "4374_Task1c_emscripten.cpp"
+      $143 = ($139|0)==($142|0); //@line 531 "4374_Task1c_emscripten.cpp"
+      if ($143) {
+       $144 = $item; //@line 531 "4374_Task1c_emscripten.cpp"
+       $145 = ((($144)) + 8|0); //@line 531 "4374_Task1c_emscripten.cpp"
+       $146 = HEAP32[$145>>2]|0; //@line 531 "4374_Task1c_emscripten.cpp"
+       $147 = $25; //@line 531 "4374_Task1c_emscripten.cpp"
+       $148 = HEAP32[$147>>2]|0; //@line 531 "4374_Task1c_emscripten.cpp"
+       $149 = ($146|0)==($148|0); //@line 531 "4374_Task1c_emscripten.cpp"
+       if ($149) {
+        $150 = $24; //@line 533 "4374_Task1c_emscripten.cpp"
+        $151 = HEAP32[$150>>2]|0; //@line 533 "4374_Task1c_emscripten.cpp"
+        $152 = $25; //@line 533 "4374_Task1c_emscripten.cpp"
+        $153 = HEAP32[$152>>2]|0; //@line 533 "4374_Task1c_emscripten.cpp"
+        $154 = (1008 + (($153*88)|0)|0); //@line 533 "4374_Task1c_emscripten.cpp"
+        $155 = (($154) + ($151<<2)|0); //@line 533 "4374_Task1c_emscripten.cpp"
+        $156 = HEAP32[$155>>2]|0; //@line 533 "4374_Task1c_emscripten.cpp"
+        $157 = $item; //@line 533 "4374_Task1c_emscripten.cpp"
+        $158 = ((($157)) + 12|0); //@line 533 "4374_Task1c_emscripten.cpp"
+        $159 = HEAP32[$158>>2]|0; //@line 533 "4374_Task1c_emscripten.cpp"
+        $160 = ((($159)) + 4|0); //@line 533 "4374_Task1c_emscripten.cpp"
+        $161 = HEAP32[$160>>2]|0; //@line 533 "4374_Task1c_emscripten.cpp"
+        $162 = (($161) + 1)|0; //@line 533 "4374_Task1c_emscripten.cpp"
+        $163 = $item; //@line 533 "4374_Task1c_emscripten.cpp"
+        $164 = ((($163)) + 12|0); //@line 533 "4374_Task1c_emscripten.cpp"
+        $165 = HEAP32[$164>>2]|0; //@line 533 "4374_Task1c_emscripten.cpp"
+        $166 = ((($165)) + 8|0); //@line 533 "4374_Task1c_emscripten.cpp"
+        $167 = HEAP32[$166>>2]|0; //@line 533 "4374_Task1c_emscripten.cpp"
+        $168 = (1008 + (($167*88)|0)|0); //@line 533 "4374_Task1c_emscripten.cpp"
+        $169 = (($168) + ($162<<2)|0); //@line 533 "4374_Task1c_emscripten.cpp"
+        $170 = HEAP32[$169>>2]|0; //@line 533 "4374_Task1c_emscripten.cpp"
+        $171 = ($156|0)>($170|0); //@line 533 "4374_Task1c_emscripten.cpp"
+        if (!($171)) {
+         break;
+        }
+        $172 = $25; //@line 535 "4374_Task1c_emscripten.cpp"
+        HEAP32[$172>>2] = 0; //@line 535 "4374_Task1c_emscripten.cpp"
+        $173 = $24; //@line 536 "4374_Task1c_emscripten.cpp"
+        HEAP32[$173>>2] = 1; //@line 536 "4374_Task1c_emscripten.cpp"
+        break;
+       }
+      }
+      $174 = $item; //@line 539 "4374_Task1c_emscripten.cpp"
+      $175 = ((($174)) + 4|0); //@line 539 "4374_Task1c_emscripten.cpp"
+      $176 = HEAP32[$175>>2]|0; //@line 539 "4374_Task1c_emscripten.cpp"
+      $177 = $24; //@line 539 "4374_Task1c_emscripten.cpp"
+      $178 = HEAP32[$177>>2]|0; //@line 539 "4374_Task1c_emscripten.cpp"
+      $179 = ($176|0)==($178|0); //@line 539 "4374_Task1c_emscripten.cpp"
+      if ($179) {
+       $180 = $item; //@line 539 "4374_Task1c_emscripten.cpp"
+       $181 = ((($180)) + 8|0); //@line 539 "4374_Task1c_emscripten.cpp"
+       $182 = HEAP32[$181>>2]|0; //@line 539 "4374_Task1c_emscripten.cpp"
+       $183 = $25; //@line 539 "4374_Task1c_emscripten.cpp"
+       $184 = HEAP32[$183>>2]|0; //@line 539 "4374_Task1c_emscripten.cpp"
+       $185 = (($184) - 1)|0; //@line 539 "4374_Task1c_emscripten.cpp"
+       $186 = ($182|0)==($185|0); //@line 539 "4374_Task1c_emscripten.cpp"
+       if ($186) {
+        $187 = $24; //@line 541 "4374_Task1c_emscripten.cpp"
+        $188 = HEAP32[$187>>2]|0; //@line 541 "4374_Task1c_emscripten.cpp"
+        $189 = $25; //@line 541 "4374_Task1c_emscripten.cpp"
+        $190 = HEAP32[$189>>2]|0; //@line 541 "4374_Task1c_emscripten.cpp"
+        $191 = (1008 + (($190*88)|0)|0); //@line 541 "4374_Task1c_emscripten.cpp"
+        $192 = (($191) + ($188<<2)|0); //@line 541 "4374_Task1c_emscripten.cpp"
+        $193 = HEAP32[$192>>2]|0; //@line 541 "4374_Task1c_emscripten.cpp"
+        $194 = $item; //@line 541 "4374_Task1c_emscripten.cpp"
+        $195 = ((($194)) + 12|0); //@line 541 "4374_Task1c_emscripten.cpp"
+        $196 = HEAP32[$195>>2]|0; //@line 541 "4374_Task1c_emscripten.cpp"
+        $197 = ((($196)) + 4|0); //@line 541 "4374_Task1c_emscripten.cpp"
+        $198 = HEAP32[$197>>2]|0; //@line 541 "4374_Task1c_emscripten.cpp"
+        $199 = $item; //@line 541 "4374_Task1c_emscripten.cpp"
+        $200 = ((($199)) + 12|0); //@line 541 "4374_Task1c_emscripten.cpp"
+        $201 = HEAP32[$200>>2]|0; //@line 541 "4374_Task1c_emscripten.cpp"
+        $202 = ((($201)) + 8|0); //@line 541 "4374_Task1c_emscripten.cpp"
+        $203 = HEAP32[$202>>2]|0; //@line 541 "4374_Task1c_emscripten.cpp"
+        $204 = (($203) - 1)|0; //@line 541 "4374_Task1c_emscripten.cpp"
+        $205 = (1008 + (($204*88)|0)|0); //@line 541 "4374_Task1c_emscripten.cpp"
+        $206 = (($205) + ($198<<2)|0); //@line 541 "4374_Task1c_emscripten.cpp"
+        $207 = HEAP32[$206>>2]|0; //@line 541 "4374_Task1c_emscripten.cpp"
+        $208 = ($193|0)>($207|0); //@line 541 "4374_Task1c_emscripten.cpp"
+        if (!($208)) {
+         break;
+        }
+        $209 = $25; //@line 543 "4374_Task1c_emscripten.cpp"
+        HEAP32[$209>>2] = -1; //@line 543 "4374_Task1c_emscripten.cpp"
+        $210 = $24; //@line 544 "4374_Task1c_emscripten.cpp"
+        HEAP32[$210>>2] = 0; //@line 544 "4374_Task1c_emscripten.cpp"
+        break;
+       }
+      }
+      $211 = $item; //@line 547 "4374_Task1c_emscripten.cpp"
+      $212 = ((($211)) + 4|0); //@line 547 "4374_Task1c_emscripten.cpp"
+      $213 = HEAP32[$212>>2]|0; //@line 547 "4374_Task1c_emscripten.cpp"
+      $214 = $24; //@line 547 "4374_Task1c_emscripten.cpp"
+      $215 = HEAP32[$214>>2]|0; //@line 547 "4374_Task1c_emscripten.cpp"
+      $216 = ($213|0)==($215|0); //@line 547 "4374_Task1c_emscripten.cpp"
+      if ($216) {
+       $217 = $item; //@line 547 "4374_Task1c_emscripten.cpp"
+       $218 = ((($217)) + 8|0); //@line 547 "4374_Task1c_emscripten.cpp"
+       $219 = HEAP32[$218>>2]|0; //@line 547 "4374_Task1c_emscripten.cpp"
+       $220 = $25; //@line 547 "4374_Task1c_emscripten.cpp"
+       $221 = HEAP32[$220>>2]|0; //@line 547 "4374_Task1c_emscripten.cpp"
+       $222 = (($221) + 1)|0; //@line 547 "4374_Task1c_emscripten.cpp"
+       $223 = ($219|0)==($222|0); //@line 547 "4374_Task1c_emscripten.cpp"
+       if ($223) {
+        $224 = $24; //@line 549 "4374_Task1c_emscripten.cpp"
+        $225 = HEAP32[$224>>2]|0; //@line 549 "4374_Task1c_emscripten.cpp"
+        $226 = $25; //@line 549 "4374_Task1c_emscripten.cpp"
+        $227 = HEAP32[$226>>2]|0; //@line 549 "4374_Task1c_emscripten.cpp"
+        $228 = (1008 + (($227*88)|0)|0); //@line 549 "4374_Task1c_emscripten.cpp"
+        $229 = (($228) + ($225<<2)|0); //@line 549 "4374_Task1c_emscripten.cpp"
+        $230 = HEAP32[$229>>2]|0; //@line 549 "4374_Task1c_emscripten.cpp"
+        $231 = $item; //@line 549 "4374_Task1c_emscripten.cpp"
+        $232 = ((($231)) + 12|0); //@line 549 "4374_Task1c_emscripten.cpp"
+        $233 = HEAP32[$232>>2]|0; //@line 549 "4374_Task1c_emscripten.cpp"
+        $234 = ((($233)) + 4|0); //@line 549 "4374_Task1c_emscripten.cpp"
+        $235 = HEAP32[$234>>2]|0; //@line 549 "4374_Task1c_emscripten.cpp"
+        $236 = $item; //@line 549 "4374_Task1c_emscripten.cpp"
+        $237 = ((($236)) + 12|0); //@line 549 "4374_Task1c_emscripten.cpp"
+        $238 = HEAP32[$237>>2]|0; //@line 549 "4374_Task1c_emscripten.cpp"
+        $239 = ((($238)) + 8|0); //@line 549 "4374_Task1c_emscripten.cpp"
+        $240 = HEAP32[$239>>2]|0; //@line 549 "4374_Task1c_emscripten.cpp"
+        $241 = (($240) + 1)|0; //@line 549 "4374_Task1c_emscripten.cpp"
+        $242 = (1008 + (($241*88)|0)|0); //@line 549 "4374_Task1c_emscripten.cpp"
+        $243 = (($242) + ($235<<2)|0); //@line 549 "4374_Task1c_emscripten.cpp"
+        $244 = HEAP32[$243>>2]|0; //@line 549 "4374_Task1c_emscripten.cpp"
+        $245 = ($230|0)>($244|0); //@line 549 "4374_Task1c_emscripten.cpp"
+        if ($245) {
+         $246 = $25; //@line 551 "4374_Task1c_emscripten.cpp"
+         HEAP32[$246>>2] = 1; //@line 551 "4374_Task1c_emscripten.cpp"
+         $247 = $24; //@line 552 "4374_Task1c_emscripten.cpp"
+         HEAP32[$247>>2] = 0; //@line 552 "4374_Task1c_emscripten.cpp"
+        }
+       }
+      }
+     }
+    } while(0);
+    $14 = $__begin; //@line 521 "4374_Task1c_emscripten.cpp"
+    $248 = $14; //@line 521 "4374_Task1c_emscripten.cpp"
+    $249 = HEAP32[$248>>2]|0; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $250 = ((($249)) + 16|0); //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    HEAP32[$248>>2] = $250; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+   }
+  }
+ } while(0);
+ $251 = $24; //@line 557 "4374_Task1c_emscripten.cpp"
+ $252 = HEAP32[$251>>2]|0; //@line 557 "4374_Task1c_emscripten.cpp"
+ $253 = $25; //@line 557 "4374_Task1c_emscripten.cpp"
+ $254 = HEAP32[$253>>2]|0; //@line 557 "4374_Task1c_emscripten.cpp"
+ $255 = (1008 + (($254*88)|0)|0); //@line 557 "4374_Task1c_emscripten.cpp"
+ $256 = (($255) + ($252<<2)|0); //@line 557 "4374_Task1c_emscripten.cpp"
+ $257 = HEAP32[$256>>2]|0; //@line 557 "4374_Task1c_emscripten.cpp"
+ $258 = $24; //@line 557 "4374_Task1c_emscripten.cpp"
+ $259 = HEAP32[$258>>2]|0; //@line 557 "4374_Task1c_emscripten.cpp"
+ $260 = (($259) - 1)|0; //@line 557 "4374_Task1c_emscripten.cpp"
+ $261 = $25; //@line 557 "4374_Task1c_emscripten.cpp"
+ $262 = HEAP32[$261>>2]|0; //@line 557 "4374_Task1c_emscripten.cpp"
+ $263 = (1008 + (($262*88)|0)|0); //@line 557 "4374_Task1c_emscripten.cpp"
+ $264 = (($263) + ($260<<2)|0); //@line 557 "4374_Task1c_emscripten.cpp"
+ $265 = HEAP32[$264>>2]|0; //@line 557 "4374_Task1c_emscripten.cpp"
+ $266 = ($257|0)>($265|0); //@line 557 "4374_Task1c_emscripten.cpp"
+ if ($266) {
+  $267 = $25; //@line 559 "4374_Task1c_emscripten.cpp"
+  HEAP32[$267>>2] = 0; //@line 559 "4374_Task1c_emscripten.cpp"
+  $268 = $24; //@line 560 "4374_Task1c_emscripten.cpp"
+  HEAP32[$268>>2] = -1; //@line 560 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return; //@line 577 "4374_Task1c_emscripten.cpp"
  }
- $38 = $0; //@line 529 "4374_Task1c_emscripten.cpp"
- $39 = HEAP32[$38>>2]|0; //@line 529 "4374_Task1c_emscripten.cpp"
- $40 = $1; //@line 529 "4374_Task1c_emscripten.cpp"
- $41 = HEAP32[$40>>2]|0; //@line 529 "4374_Task1c_emscripten.cpp"
- $42 = (1008 + (($41*88)|0)|0); //@line 529 "4374_Task1c_emscripten.cpp"
- $43 = (($42) + ($39<<2)|0); //@line 529 "4374_Task1c_emscripten.cpp"
- $44 = HEAP32[$43>>2]|0; //@line 529 "4374_Task1c_emscripten.cpp"
- $45 = $0; //@line 529 "4374_Task1c_emscripten.cpp"
- $46 = HEAP32[$45>>2]|0; //@line 529 "4374_Task1c_emscripten.cpp"
- $47 = $1; //@line 529 "4374_Task1c_emscripten.cpp"
- $48 = HEAP32[$47>>2]|0; //@line 529 "4374_Task1c_emscripten.cpp"
- $49 = (($48) - 1)|0; //@line 529 "4374_Task1c_emscripten.cpp"
- $50 = (1008 + (($49*88)|0)|0); //@line 529 "4374_Task1c_emscripten.cpp"
- $51 = (($50) + ($46<<2)|0); //@line 529 "4374_Task1c_emscripten.cpp"
- $52 = HEAP32[$51>>2]|0; //@line 529 "4374_Task1c_emscripten.cpp"
- $53 = ($44|0)>($52|0); //@line 529 "4374_Task1c_emscripten.cpp"
- if ($53) {
-  $54 = $1; //@line 531 "4374_Task1c_emscripten.cpp"
-  HEAP32[$54>>2] = -1; //@line 531 "4374_Task1c_emscripten.cpp"
-  $55 = $0; //@line 532 "4374_Task1c_emscripten.cpp"
-  HEAP32[$55>>2] = 0; //@line 532 "4374_Task1c_emscripten.cpp"
-  STACKTOP = sp;return; //@line 539 "4374_Task1c_emscripten.cpp"
+ $269 = $24; //@line 562 "4374_Task1c_emscripten.cpp"
+ $270 = HEAP32[$269>>2]|0; //@line 562 "4374_Task1c_emscripten.cpp"
+ $271 = $25; //@line 562 "4374_Task1c_emscripten.cpp"
+ $272 = HEAP32[$271>>2]|0; //@line 562 "4374_Task1c_emscripten.cpp"
+ $273 = (1008 + (($272*88)|0)|0); //@line 562 "4374_Task1c_emscripten.cpp"
+ $274 = (($273) + ($270<<2)|0); //@line 562 "4374_Task1c_emscripten.cpp"
+ $275 = HEAP32[$274>>2]|0; //@line 562 "4374_Task1c_emscripten.cpp"
+ $276 = $24; //@line 562 "4374_Task1c_emscripten.cpp"
+ $277 = HEAP32[$276>>2]|0; //@line 562 "4374_Task1c_emscripten.cpp"
+ $278 = (($277) + 1)|0; //@line 562 "4374_Task1c_emscripten.cpp"
+ $279 = $25; //@line 562 "4374_Task1c_emscripten.cpp"
+ $280 = HEAP32[$279>>2]|0; //@line 562 "4374_Task1c_emscripten.cpp"
+ $281 = (1008 + (($280*88)|0)|0); //@line 562 "4374_Task1c_emscripten.cpp"
+ $282 = (($281) + ($278<<2)|0); //@line 562 "4374_Task1c_emscripten.cpp"
+ $283 = HEAP32[$282>>2]|0; //@line 562 "4374_Task1c_emscripten.cpp"
+ $284 = ($275|0)>($283|0); //@line 562 "4374_Task1c_emscripten.cpp"
+ if ($284) {
+  $285 = $25; //@line 564 "4374_Task1c_emscripten.cpp"
+  HEAP32[$285>>2] = 0; //@line 564 "4374_Task1c_emscripten.cpp"
+  $286 = $24; //@line 565 "4374_Task1c_emscripten.cpp"
+  HEAP32[$286>>2] = 1; //@line 565 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return; //@line 577 "4374_Task1c_emscripten.cpp"
  }
- $56 = $0; //@line 534 "4374_Task1c_emscripten.cpp"
- $57 = HEAP32[$56>>2]|0; //@line 534 "4374_Task1c_emscripten.cpp"
- $58 = $1; //@line 534 "4374_Task1c_emscripten.cpp"
- $59 = HEAP32[$58>>2]|0; //@line 534 "4374_Task1c_emscripten.cpp"
- $60 = (1008 + (($59*88)|0)|0); //@line 534 "4374_Task1c_emscripten.cpp"
- $61 = (($60) + ($57<<2)|0); //@line 534 "4374_Task1c_emscripten.cpp"
- $62 = HEAP32[$61>>2]|0; //@line 534 "4374_Task1c_emscripten.cpp"
- $63 = $0; //@line 534 "4374_Task1c_emscripten.cpp"
- $64 = HEAP32[$63>>2]|0; //@line 534 "4374_Task1c_emscripten.cpp"
- $65 = $1; //@line 534 "4374_Task1c_emscripten.cpp"
- $66 = HEAP32[$65>>2]|0; //@line 534 "4374_Task1c_emscripten.cpp"
- $67 = (($66) + 1)|0; //@line 534 "4374_Task1c_emscripten.cpp"
- $68 = (1008 + (($67*88)|0)|0); //@line 534 "4374_Task1c_emscripten.cpp"
- $69 = (($68) + ($64<<2)|0); //@line 534 "4374_Task1c_emscripten.cpp"
- $70 = HEAP32[$69>>2]|0; //@line 534 "4374_Task1c_emscripten.cpp"
- $71 = ($62|0)>($70|0); //@line 534 "4374_Task1c_emscripten.cpp"
- if (!($71)) {
-  STACKTOP = sp;return; //@line 539 "4374_Task1c_emscripten.cpp"
+ $287 = $24; //@line 567 "4374_Task1c_emscripten.cpp"
+ $288 = HEAP32[$287>>2]|0; //@line 567 "4374_Task1c_emscripten.cpp"
+ $289 = $25; //@line 567 "4374_Task1c_emscripten.cpp"
+ $290 = HEAP32[$289>>2]|0; //@line 567 "4374_Task1c_emscripten.cpp"
+ $291 = (1008 + (($290*88)|0)|0); //@line 567 "4374_Task1c_emscripten.cpp"
+ $292 = (($291) + ($288<<2)|0); //@line 567 "4374_Task1c_emscripten.cpp"
+ $293 = HEAP32[$292>>2]|0; //@line 567 "4374_Task1c_emscripten.cpp"
+ $294 = $24; //@line 567 "4374_Task1c_emscripten.cpp"
+ $295 = HEAP32[$294>>2]|0; //@line 567 "4374_Task1c_emscripten.cpp"
+ $296 = $25; //@line 567 "4374_Task1c_emscripten.cpp"
+ $297 = HEAP32[$296>>2]|0; //@line 567 "4374_Task1c_emscripten.cpp"
+ $298 = (($297) - 1)|0; //@line 567 "4374_Task1c_emscripten.cpp"
+ $299 = (1008 + (($298*88)|0)|0); //@line 567 "4374_Task1c_emscripten.cpp"
+ $300 = (($299) + ($295<<2)|0); //@line 567 "4374_Task1c_emscripten.cpp"
+ $301 = HEAP32[$300>>2]|0; //@line 567 "4374_Task1c_emscripten.cpp"
+ $302 = ($293|0)>($301|0); //@line 567 "4374_Task1c_emscripten.cpp"
+ if ($302) {
+  $303 = $25; //@line 569 "4374_Task1c_emscripten.cpp"
+  HEAP32[$303>>2] = -1; //@line 569 "4374_Task1c_emscripten.cpp"
+  $304 = $24; //@line 570 "4374_Task1c_emscripten.cpp"
+  HEAP32[$304>>2] = 0; //@line 570 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return; //@line 577 "4374_Task1c_emscripten.cpp"
  }
- $72 = $1; //@line 536 "4374_Task1c_emscripten.cpp"
- HEAP32[$72>>2] = 1; //@line 536 "4374_Task1c_emscripten.cpp"
- $73 = $0; //@line 537 "4374_Task1c_emscripten.cpp"
- HEAP32[$73>>2] = 0; //@line 537 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return; //@line 539 "4374_Task1c_emscripten.cpp"
+ $305 = $24; //@line 572 "4374_Task1c_emscripten.cpp"
+ $306 = HEAP32[$305>>2]|0; //@line 572 "4374_Task1c_emscripten.cpp"
+ $307 = $25; //@line 572 "4374_Task1c_emscripten.cpp"
+ $308 = HEAP32[$307>>2]|0; //@line 572 "4374_Task1c_emscripten.cpp"
+ $309 = (1008 + (($308*88)|0)|0); //@line 572 "4374_Task1c_emscripten.cpp"
+ $310 = (($309) + ($306<<2)|0); //@line 572 "4374_Task1c_emscripten.cpp"
+ $311 = HEAP32[$310>>2]|0; //@line 572 "4374_Task1c_emscripten.cpp"
+ $312 = $24; //@line 572 "4374_Task1c_emscripten.cpp"
+ $313 = HEAP32[$312>>2]|0; //@line 572 "4374_Task1c_emscripten.cpp"
+ $314 = $25; //@line 572 "4374_Task1c_emscripten.cpp"
+ $315 = HEAP32[$314>>2]|0; //@line 572 "4374_Task1c_emscripten.cpp"
+ $316 = (($315) + 1)|0; //@line 572 "4374_Task1c_emscripten.cpp"
+ $317 = (1008 + (($316*88)|0)|0); //@line 572 "4374_Task1c_emscripten.cpp"
+ $318 = (($317) + ($313<<2)|0); //@line 572 "4374_Task1c_emscripten.cpp"
+ $319 = HEAP32[$318>>2]|0; //@line 572 "4374_Task1c_emscripten.cpp"
+ $320 = ($311|0)>($319|0); //@line 572 "4374_Task1c_emscripten.cpp"
+ if (!($320)) {
+  STACKTOP = sp;return; //@line 577 "4374_Task1c_emscripten.cpp"
+ }
+ $321 = $25; //@line 574 "4374_Task1c_emscripten.cpp"
+ HEAP32[$321>>2] = 1; //@line 574 "4374_Task1c_emscripten.cpp"
+ $322 = $24; //@line 575 "4374_Task1c_emscripten.cpp"
+ HEAP32[$322>>2] = 0; //@line 575 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 577 "4374_Task1c_emscripten.cpp"
 }
-function __Z12findexitmoveRiS_($x,$y) {
+function __Z12findexitmovePA22_KcRKNSt3__16vectorI6portalNS2_9allocatorIS4_EEEERiSA_($g,$portals,$x,$y) {
+ $g = $g|0;
+ $portals = $portals|0;
  $x = $x|0;
  $y = $y|0;
- var $0 = 0, $1 = 0, $10 = 0, $11 = 0, $12 = 0, $13 = 0, $14 = 0, $15 = 0, $16 = 0, $17 = 0, $18 = 0, $19 = 0, $2 = 0, $20 = 0, $21 = 0, $22 = 0, $23 = 0, $24 = 0, $25 = 0, $26 = 0;
- var $27 = 0, $28 = 0, $29 = 0, $3 = 0, $30 = 0, $31 = 0, $32 = 0, $33 = 0, $34 = 0, $35 = 0, $36 = 0, $37 = 0, $38 = 0, $39 = 0, $4 = 0, $40 = 0, $41 = 0, $42 = 0, $43 = 0, $44 = 0;
+ var $0 = 0, $1 = 0, $10 = 0, $100 = 0, $101 = 0, $102 = 0, $103 = 0, $104 = 0, $105 = 0, $106 = 0, $107 = 0, $108 = 0, $109 = 0, $11 = 0, $110 = 0, $111 = 0, $112 = 0, $113 = 0, $114 = 0, $115 = 0;
+ var $116 = 0, $117 = 0, $118 = 0, $119 = 0, $12 = 0, $120 = 0, $121 = 0, $122 = 0, $123 = 0, $124 = 0, $125 = 0, $126 = 0, $127 = 0, $128 = 0, $129 = 0, $13 = 0, $130 = 0, $131 = 0, $132 = 0, $133 = 0;
+ var $134 = 0, $135 = 0, $136 = 0, $137 = 0, $138 = 0, $139 = 0, $14 = 0, $140 = 0, $141 = 0, $142 = 0, $143 = 0, $144 = 0, $145 = 0, $146 = 0, $147 = 0, $148 = 0, $149 = 0, $15 = 0, $150 = 0, $151 = 0;
+ var $152 = 0, $153 = 0, $154 = 0, $155 = 0, $156 = 0, $157 = 0, $158 = 0, $159 = 0, $16 = 0, $160 = 0, $161 = 0, $162 = 0, $163 = 0, $164 = 0, $165 = 0, $166 = 0, $167 = 0, $168 = 0, $169 = 0, $17 = 0;
+ var $170 = 0, $171 = 0, $172 = 0, $173 = 0, $174 = 0, $175 = 0, $176 = 0, $177 = 0, $178 = 0, $179 = 0, $18 = 0, $180 = 0, $181 = 0, $182 = 0, $183 = 0, $184 = 0, $185 = 0, $186 = 0, $187 = 0, $188 = 0;
+ var $189 = 0, $19 = 0, $190 = 0, $191 = 0, $192 = 0, $193 = 0, $194 = 0, $195 = 0, $196 = 0, $197 = 0, $198 = 0, $199 = 0, $2 = 0, $20 = 0, $200 = 0, $201 = 0, $202 = 0, $203 = 0, $204 = 0, $205 = 0;
+ var $206 = 0, $207 = 0, $208 = 0, $209 = 0, $21 = 0, $210 = 0, $211 = 0, $212 = 0, $213 = 0, $214 = 0, $215 = 0, $216 = 0, $217 = 0, $218 = 0, $219 = 0, $22 = 0, $220 = 0, $221 = 0, $222 = 0, $223 = 0;
+ var $224 = 0, $225 = 0, $226 = 0, $227 = 0, $228 = 0, $229 = 0, $23 = 0, $230 = 0, $231 = 0, $232 = 0, $233 = 0, $234 = 0, $235 = 0, $236 = 0, $237 = 0, $238 = 0, $239 = 0, $24 = 0, $240 = 0, $241 = 0;
+ var $242 = 0, $243 = 0, $244 = 0, $245 = 0, $246 = 0, $247 = 0, $248 = 0, $249 = 0, $25 = 0, $250 = 0, $251 = 0, $252 = 0, $253 = 0, $254 = 0, $255 = 0, $256 = 0, $257 = 0, $258 = 0, $259 = 0, $26 = 0;
+ var $260 = 0, $261 = 0, $262 = 0, $263 = 0, $264 = 0, $265 = 0, $266 = 0, $267 = 0, $268 = 0, $269 = 0, $27 = 0, $270 = 0, $271 = 0, $272 = 0, $273 = 0, $274 = 0, $275 = 0, $276 = 0, $277 = 0, $278 = 0;
+ var $279 = 0, $28 = 0, $280 = 0, $281 = 0, $282 = 0, $283 = 0, $284 = 0, $285 = 0, $286 = 0, $287 = 0, $288 = 0, $289 = 0, $29 = 0, $290 = 0, $291 = 0, $292 = 0, $293 = 0, $294 = 0, $295 = 0, $296 = 0;
+ var $297 = 0, $298 = 0, $299 = 0, $3 = 0, $30 = 0, $300 = 0, $301 = 0, $302 = 0, $303 = 0, $304 = 0, $305 = 0, $306 = 0, $307 = 0, $308 = 0, $309 = 0, $31 = 0, $310 = 0, $311 = 0, $312 = 0, $313 = 0;
+ var $314 = 0, $315 = 0, $316 = 0, $317 = 0, $318 = 0, $319 = 0, $32 = 0, $33 = 0, $34 = 0, $35 = 0, $36 = 0, $37 = 0, $38 = 0, $39 = 0, $4 = 0, $40 = 0, $41 = 0, $42 = 0, $43 = 0, $44 = 0;
  var $45 = 0, $46 = 0, $47 = 0, $48 = 0, $49 = 0, $5 = 0, $50 = 0, $51 = 0, $52 = 0, $53 = 0, $54 = 0, $55 = 0, $56 = 0, $57 = 0, $58 = 0, $59 = 0, $6 = 0, $60 = 0, $61 = 0, $62 = 0;
- var $63 = 0, $64 = 0, $65 = 0, $66 = 0, $67 = 0, $68 = 0, $69 = 0, $7 = 0, $70 = 0, $8 = 0, $9 = 0, label = 0, sp = 0;
+ var $63 = 0, $64 = 0, $65 = 0, $66 = 0, $67 = 0, $68 = 0, $69 = 0, $7 = 0, $70 = 0, $71 = 0, $72 = 0, $73 = 0, $74 = 0, $75 = 0, $76 = 0, $77 = 0, $78 = 0, $79 = 0, $8 = 0, $80 = 0;
+ var $81 = 0, $82 = 0, $83 = 0, $84 = 0, $85 = 0, $86 = 0, $87 = 0, $88 = 0, $89 = 0, $9 = 0, $90 = 0, $91 = 0, $92 = 0, $93 = 0, $94 = 0, $95 = 0, $96 = 0, $97 = 0, $98 = 0, $99 = 0;
+ var $__begin = 0, $__end = 0, $__range = 0, $item = 0, label = 0, sp = 0;
  sp = STACKTOP;
- STACKTOP = STACKTOP + 16|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
- $0 = $x;
- $1 = $y;
- $2 = $0; //@line 543 "4374_Task1c_emscripten.cpp"
- $3 = HEAP32[$2>>2]|0; //@line 543 "4374_Task1c_emscripten.cpp"
- $4 = $1; //@line 543 "4374_Task1c_emscripten.cpp"
- $5 = HEAP32[$4>>2]|0; //@line 543 "4374_Task1c_emscripten.cpp"
- $6 = (1008 + (($5*88)|0)|0); //@line 543 "4374_Task1c_emscripten.cpp"
- $7 = (($6) + ($3<<2)|0); //@line 543 "4374_Task1c_emscripten.cpp"
- $8 = HEAP32[$7>>2]|0; //@line 543 "4374_Task1c_emscripten.cpp"
- $9 = $0; //@line 543 "4374_Task1c_emscripten.cpp"
- $10 = HEAP32[$9>>2]|0; //@line 543 "4374_Task1c_emscripten.cpp"
- $11 = (($10) - 1)|0; //@line 543 "4374_Task1c_emscripten.cpp"
- $12 = $1; //@line 543 "4374_Task1c_emscripten.cpp"
- $13 = HEAP32[$12>>2]|0; //@line 543 "4374_Task1c_emscripten.cpp"
- $14 = (1008 + (($13*88)|0)|0); //@line 543 "4374_Task1c_emscripten.cpp"
- $15 = (($14) + ($11<<2)|0); //@line 543 "4374_Task1c_emscripten.cpp"
- $16 = HEAP32[$15>>2]|0; //@line 543 "4374_Task1c_emscripten.cpp"
- $17 = ($8|0)<($16|0); //@line 543 "4374_Task1c_emscripten.cpp"
- $18 = $0; //@line 545 "4374_Task1c_emscripten.cpp"
- if ($17) {
-  HEAP32[$18>>2] = -1; //@line 545 "4374_Task1c_emscripten.cpp"
-  $19 = $1; //@line 546 "4374_Task1c_emscripten.cpp"
-  HEAP32[$19>>2] = 0; //@line 546 "4374_Task1c_emscripten.cpp"
-  STACKTOP = sp;return; //@line 563 "4374_Task1c_emscripten.cpp"
+ STACKTOP = STACKTOP + 128|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
+ $2 = sp + 108|0;
+ $5 = sp + 96|0;
+ $17 = sp;
+ $20 = sp + 12|0;
+ $__begin = sp + 44|0;
+ $__end = sp + 48|0;
+ $22 = $g;
+ $23 = $portals;
+ $24 = $x;
+ $25 = $y;
+ $26 = $24; //@line 581 "4374_Task1c_emscripten.cpp"
+ $27 = HEAP32[$26>>2]|0; //@line 581 "4374_Task1c_emscripten.cpp"
+ $28 = (($27) - 1)|0; //@line 581 "4374_Task1c_emscripten.cpp"
+ $29 = $25; //@line 581 "4374_Task1c_emscripten.cpp"
+ $30 = HEAP32[$29>>2]|0; //@line 581 "4374_Task1c_emscripten.cpp"
+ $31 = $22; //@line 581 "4374_Task1c_emscripten.cpp"
+ $32 = (($31) + (($30*22)|0)|0); //@line 581 "4374_Task1c_emscripten.cpp"
+ $33 = (($32) + ($28)|0); //@line 581 "4374_Task1c_emscripten.cpp"
+ $34 = HEAP8[$33>>0]|0; //@line 581 "4374_Task1c_emscripten.cpp"
+ $35 = $34 << 24 >> 24; //@line 581 "4374_Task1c_emscripten.cpp"
+ $36 = ($35|0)==(38); //@line 581 "4374_Task1c_emscripten.cpp"
+ if ($36) {
+  label = 5;
+ } else {
+  $37 = $24; //@line 581 "4374_Task1c_emscripten.cpp"
+  $38 = HEAP32[$37>>2]|0; //@line 581 "4374_Task1c_emscripten.cpp"
+  $39 = (($38) + 1)|0; //@line 581 "4374_Task1c_emscripten.cpp"
+  $40 = $25; //@line 581 "4374_Task1c_emscripten.cpp"
+  $41 = HEAP32[$40>>2]|0; //@line 581 "4374_Task1c_emscripten.cpp"
+  $42 = $22; //@line 581 "4374_Task1c_emscripten.cpp"
+  $43 = (($42) + (($41*22)|0)|0); //@line 581 "4374_Task1c_emscripten.cpp"
+  $44 = (($43) + ($39)|0); //@line 581 "4374_Task1c_emscripten.cpp"
+  $45 = HEAP8[$44>>0]|0; //@line 581 "4374_Task1c_emscripten.cpp"
+  $46 = $45 << 24 >> 24; //@line 581 "4374_Task1c_emscripten.cpp"
+  $47 = ($46|0)==(38); //@line 581 "4374_Task1c_emscripten.cpp"
+  if ($47) {
+   label = 5;
+  } else {
+   $48 = $24; //@line 581 "4374_Task1c_emscripten.cpp"
+   $49 = HEAP32[$48>>2]|0; //@line 581 "4374_Task1c_emscripten.cpp"
+   $50 = $25; //@line 581 "4374_Task1c_emscripten.cpp"
+   $51 = HEAP32[$50>>2]|0; //@line 581 "4374_Task1c_emscripten.cpp"
+   $52 = (($51) - 1)|0; //@line 581 "4374_Task1c_emscripten.cpp"
+   $53 = $22; //@line 581 "4374_Task1c_emscripten.cpp"
+   $54 = (($53) + (($52*22)|0)|0); //@line 581 "4374_Task1c_emscripten.cpp"
+   $55 = (($54) + ($49)|0); //@line 581 "4374_Task1c_emscripten.cpp"
+   $56 = HEAP8[$55>>0]|0; //@line 581 "4374_Task1c_emscripten.cpp"
+   $57 = $56 << 24 >> 24; //@line 581 "4374_Task1c_emscripten.cpp"
+   $58 = ($57|0)==(38); //@line 581 "4374_Task1c_emscripten.cpp"
+   if ($58) {
+    label = 5;
+   } else {
+    $59 = $24; //@line 581 "4374_Task1c_emscripten.cpp"
+    $60 = HEAP32[$59>>2]|0; //@line 581 "4374_Task1c_emscripten.cpp"
+    $61 = $25; //@line 581 "4374_Task1c_emscripten.cpp"
+    $62 = HEAP32[$61>>2]|0; //@line 581 "4374_Task1c_emscripten.cpp"
+    $63 = (($62) + 1)|0; //@line 581 "4374_Task1c_emscripten.cpp"
+    $64 = $22; //@line 581 "4374_Task1c_emscripten.cpp"
+    $65 = (($64) + (($63*22)|0)|0); //@line 581 "4374_Task1c_emscripten.cpp"
+    $66 = (($65) + ($60)|0); //@line 581 "4374_Task1c_emscripten.cpp"
+    $67 = HEAP8[$66>>0]|0; //@line 581 "4374_Task1c_emscripten.cpp"
+    $68 = $67 << 24 >> 24; //@line 581 "4374_Task1c_emscripten.cpp"
+    $69 = ($68|0)==(38); //@line 581 "4374_Task1c_emscripten.cpp"
+    if ($69) {
+     label = 5;
+    }
+   }
+  }
  }
- $20 = HEAP32[$18>>2]|0; //@line 548 "4374_Task1c_emscripten.cpp"
- $21 = $1; //@line 548 "4374_Task1c_emscripten.cpp"
- $22 = HEAP32[$21>>2]|0; //@line 548 "4374_Task1c_emscripten.cpp"
- $23 = (1008 + (($22*88)|0)|0); //@line 548 "4374_Task1c_emscripten.cpp"
- $24 = (($23) + ($20<<2)|0); //@line 548 "4374_Task1c_emscripten.cpp"
- $25 = HEAP32[$24>>2]|0; //@line 548 "4374_Task1c_emscripten.cpp"
- $26 = $0; //@line 548 "4374_Task1c_emscripten.cpp"
- $27 = HEAP32[$26>>2]|0; //@line 548 "4374_Task1c_emscripten.cpp"
- $28 = (($27) + 1)|0; //@line 548 "4374_Task1c_emscripten.cpp"
- $29 = $1; //@line 548 "4374_Task1c_emscripten.cpp"
- $30 = HEAP32[$29>>2]|0; //@line 548 "4374_Task1c_emscripten.cpp"
- $31 = (1008 + (($30*88)|0)|0); //@line 548 "4374_Task1c_emscripten.cpp"
- $32 = (($31) + ($28<<2)|0); //@line 548 "4374_Task1c_emscripten.cpp"
- $33 = HEAP32[$32>>2]|0; //@line 548 "4374_Task1c_emscripten.cpp"
- $34 = ($25|0)<($33|0); //@line 548 "4374_Task1c_emscripten.cpp"
- $35 = $0; //@line 550 "4374_Task1c_emscripten.cpp"
- if ($34) {
-  HEAP32[$35>>2] = 1; //@line 550 "4374_Task1c_emscripten.cpp"
-  $36 = $1; //@line 551 "4374_Task1c_emscripten.cpp"
-  HEAP32[$36>>2] = 0; //@line 551 "4374_Task1c_emscripten.cpp"
-  STACKTOP = sp;return; //@line 563 "4374_Task1c_emscripten.cpp"
+ L5: do {
+  if ((label|0) == 5) {
+   $70 = $23; //@line 583 "4374_Task1c_emscripten.cpp"
+   $__range = $70; //@line 583 "4374_Task1c_emscripten.cpp"
+   $71 = $__range; //@line 583 "4374_Task1c_emscripten.cpp"
+   $21 = $71; //@line 583 "4374_Task1c_emscripten.cpp"
+   $72 = $21; //@line 583 "4374_Task1c_emscripten.cpp"
+   $73 = HEAP32[$72>>2]|0; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $18 = $72; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $19 = $73; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $74 = $19; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $15 = $17; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $16 = $74; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $75 = $15; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $76 = $16; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+   HEAP32[$75>>2] = $76; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+   $77 = HEAP32[$17>>2]|0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   HEAP32[$20>>2] = $77; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $78 = HEAP32[$20>>2]|0; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   HEAP32[$__begin>>2] = $78; //@line 583 "4374_Task1c_emscripten.cpp"
+   $79 = $__range; //@line 583 "4374_Task1c_emscripten.cpp"
+   $6 = $79; //@line 583 "4374_Task1c_emscripten.cpp"
+   $80 = $6; //@line 583 "4374_Task1c_emscripten.cpp"
+   $81 = ((($80)) + 4|0); //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $82 = HEAP32[$81>>2]|0; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $3 = $80; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $4 = $82; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $83 = $4; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $0 = $2; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $1 = $83; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $84 = $0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $85 = $1; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+   HEAP32[$84>>2] = $85; //@line 1228 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+   $86 = HEAP32[$2>>2]|0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   HEAP32[$5>>2] = $86; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   $87 = HEAP32[$5>>2]|0; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
+   HEAP32[$__end>>2] = $87; //@line 583 "4374_Task1c_emscripten.cpp"
+   while(1) {
+    $11 = $__begin; //@line 583 "4374_Task1c_emscripten.cpp"
+    $12 = $__end; //@line 583 "4374_Task1c_emscripten.cpp"
+    $88 = $11; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $89 = $12; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $9 = $88; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $10 = $89; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $90 = $9; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $8 = $90; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $91 = $8; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $92 = HEAP32[$91>>2]|0; //@line 1219 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $93 = $10; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $7 = $93; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $94 = $7; //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $95 = HEAP32[$94>>2]|0; //@line 1219 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $96 = ($92|0)==($95|0); //@line 1295 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $97 = $96 ^ 1; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    if (!($97)) {
+     break L5;
+    }
+    $13 = $__begin; //@line 583 "4374_Task1c_emscripten.cpp"
+    $98 = $13; //@line 583 "4374_Task1c_emscripten.cpp"
+    $99 = HEAP32[$98>>2]|0; //@line 1163 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $item = $99; //@line 583 "4374_Task1c_emscripten.cpp"
+    $100 = $item; //@line 585 "4374_Task1c_emscripten.cpp"
+    $101 = ((($100)) + 4|0); //@line 585 "4374_Task1c_emscripten.cpp"
+    $102 = HEAP32[$101>>2]|0; //@line 585 "4374_Task1c_emscripten.cpp"
+    $103 = $24; //@line 585 "4374_Task1c_emscripten.cpp"
+    $104 = HEAP32[$103>>2]|0; //@line 585 "4374_Task1c_emscripten.cpp"
+    $105 = (($104) - 1)|0; //@line 585 "4374_Task1c_emscripten.cpp"
+    $106 = ($102|0)==($105|0); //@line 585 "4374_Task1c_emscripten.cpp"
+    if ($106) {
+     $107 = $item; //@line 585 "4374_Task1c_emscripten.cpp"
+     $108 = ((($107)) + 8|0); //@line 585 "4374_Task1c_emscripten.cpp"
+     $109 = HEAP32[$108>>2]|0; //@line 585 "4374_Task1c_emscripten.cpp"
+     $110 = $25; //@line 585 "4374_Task1c_emscripten.cpp"
+     $111 = HEAP32[$110>>2]|0; //@line 585 "4374_Task1c_emscripten.cpp"
+     $112 = ($109|0)==($111|0); //@line 585 "4374_Task1c_emscripten.cpp"
+     if ($112) {
+      $113 = $24; //@line 587 "4374_Task1c_emscripten.cpp"
+      $114 = HEAP32[$113>>2]|0; //@line 587 "4374_Task1c_emscripten.cpp"
+      $115 = $25; //@line 587 "4374_Task1c_emscripten.cpp"
+      $116 = HEAP32[$115>>2]|0; //@line 587 "4374_Task1c_emscripten.cpp"
+      $117 = (1008 + (($116*88)|0)|0); //@line 587 "4374_Task1c_emscripten.cpp"
+      $118 = (($117) + ($114<<2)|0); //@line 587 "4374_Task1c_emscripten.cpp"
+      $119 = HEAP32[$118>>2]|0; //@line 587 "4374_Task1c_emscripten.cpp"
+      $120 = $item; //@line 587 "4374_Task1c_emscripten.cpp"
+      $121 = ((($120)) + 12|0); //@line 587 "4374_Task1c_emscripten.cpp"
+      $122 = HEAP32[$121>>2]|0; //@line 587 "4374_Task1c_emscripten.cpp"
+      $123 = ((($122)) + 4|0); //@line 587 "4374_Task1c_emscripten.cpp"
+      $124 = HEAP32[$123>>2]|0; //@line 587 "4374_Task1c_emscripten.cpp"
+      $125 = (($124) - 1)|0; //@line 587 "4374_Task1c_emscripten.cpp"
+      $126 = $item; //@line 587 "4374_Task1c_emscripten.cpp"
+      $127 = ((($126)) + 12|0); //@line 587 "4374_Task1c_emscripten.cpp"
+      $128 = HEAP32[$127>>2]|0; //@line 587 "4374_Task1c_emscripten.cpp"
+      $129 = ((($128)) + 8|0); //@line 587 "4374_Task1c_emscripten.cpp"
+      $130 = HEAP32[$129>>2]|0; //@line 587 "4374_Task1c_emscripten.cpp"
+      $131 = (1008 + (($130*88)|0)|0); //@line 587 "4374_Task1c_emscripten.cpp"
+      $132 = (($131) + ($125<<2)|0); //@line 587 "4374_Task1c_emscripten.cpp"
+      $133 = HEAP32[$132>>2]|0; //@line 587 "4374_Task1c_emscripten.cpp"
+      $134 = ($119|0)<($133|0); //@line 587 "4374_Task1c_emscripten.cpp"
+      if ($134) {
+       $135 = $25; //@line 589 "4374_Task1c_emscripten.cpp"
+       HEAP32[$135>>2] = 0; //@line 589 "4374_Task1c_emscripten.cpp"
+       $136 = $24; //@line 590 "4374_Task1c_emscripten.cpp"
+       HEAP32[$136>>2] = -1; //@line 590 "4374_Task1c_emscripten.cpp"
+      }
+     } else {
+      label = 11;
+     }
+    } else {
+     label = 11;
+    }
+    do {
+     if ((label|0) == 11) {
+      label = 0;
+      $137 = $item; //@line 593 "4374_Task1c_emscripten.cpp"
+      $138 = ((($137)) + 4|0); //@line 593 "4374_Task1c_emscripten.cpp"
+      $139 = HEAP32[$138>>2]|0; //@line 593 "4374_Task1c_emscripten.cpp"
+      $140 = $24; //@line 593 "4374_Task1c_emscripten.cpp"
+      $141 = HEAP32[$140>>2]|0; //@line 593 "4374_Task1c_emscripten.cpp"
+      $142 = (($141) + 1)|0; //@line 593 "4374_Task1c_emscripten.cpp"
+      $143 = ($139|0)==($142|0); //@line 593 "4374_Task1c_emscripten.cpp"
+      if ($143) {
+       $144 = $item; //@line 593 "4374_Task1c_emscripten.cpp"
+       $145 = ((($144)) + 8|0); //@line 593 "4374_Task1c_emscripten.cpp"
+       $146 = HEAP32[$145>>2]|0; //@line 593 "4374_Task1c_emscripten.cpp"
+       $147 = $25; //@line 593 "4374_Task1c_emscripten.cpp"
+       $148 = HEAP32[$147>>2]|0; //@line 593 "4374_Task1c_emscripten.cpp"
+       $149 = ($146|0)==($148|0); //@line 593 "4374_Task1c_emscripten.cpp"
+       if ($149) {
+        $150 = $24; //@line 595 "4374_Task1c_emscripten.cpp"
+        $151 = HEAP32[$150>>2]|0; //@line 595 "4374_Task1c_emscripten.cpp"
+        $152 = $25; //@line 595 "4374_Task1c_emscripten.cpp"
+        $153 = HEAP32[$152>>2]|0; //@line 595 "4374_Task1c_emscripten.cpp"
+        $154 = (1008 + (($153*88)|0)|0); //@line 595 "4374_Task1c_emscripten.cpp"
+        $155 = (($154) + ($151<<2)|0); //@line 595 "4374_Task1c_emscripten.cpp"
+        $156 = HEAP32[$155>>2]|0; //@line 595 "4374_Task1c_emscripten.cpp"
+        $157 = $item; //@line 595 "4374_Task1c_emscripten.cpp"
+        $158 = ((($157)) + 12|0); //@line 595 "4374_Task1c_emscripten.cpp"
+        $159 = HEAP32[$158>>2]|0; //@line 595 "4374_Task1c_emscripten.cpp"
+        $160 = ((($159)) + 4|0); //@line 595 "4374_Task1c_emscripten.cpp"
+        $161 = HEAP32[$160>>2]|0; //@line 595 "4374_Task1c_emscripten.cpp"
+        $162 = (($161) + 1)|0; //@line 595 "4374_Task1c_emscripten.cpp"
+        $163 = $item; //@line 595 "4374_Task1c_emscripten.cpp"
+        $164 = ((($163)) + 12|0); //@line 595 "4374_Task1c_emscripten.cpp"
+        $165 = HEAP32[$164>>2]|0; //@line 595 "4374_Task1c_emscripten.cpp"
+        $166 = ((($165)) + 8|0); //@line 595 "4374_Task1c_emscripten.cpp"
+        $167 = HEAP32[$166>>2]|0; //@line 595 "4374_Task1c_emscripten.cpp"
+        $168 = (1008 + (($167*88)|0)|0); //@line 595 "4374_Task1c_emscripten.cpp"
+        $169 = (($168) + ($162<<2)|0); //@line 595 "4374_Task1c_emscripten.cpp"
+        $170 = HEAP32[$169>>2]|0; //@line 595 "4374_Task1c_emscripten.cpp"
+        $171 = ($156|0)<($170|0); //@line 595 "4374_Task1c_emscripten.cpp"
+        if (!($171)) {
+         break;
+        }
+        $172 = $25; //@line 597 "4374_Task1c_emscripten.cpp"
+        HEAP32[$172>>2] = 0; //@line 597 "4374_Task1c_emscripten.cpp"
+        $173 = $24; //@line 598 "4374_Task1c_emscripten.cpp"
+        HEAP32[$173>>2] = 1; //@line 598 "4374_Task1c_emscripten.cpp"
+        break;
+       }
+      }
+      $174 = $item; //@line 601 "4374_Task1c_emscripten.cpp"
+      $175 = ((($174)) + 4|0); //@line 601 "4374_Task1c_emscripten.cpp"
+      $176 = HEAP32[$175>>2]|0; //@line 601 "4374_Task1c_emscripten.cpp"
+      $177 = $24; //@line 601 "4374_Task1c_emscripten.cpp"
+      $178 = HEAP32[$177>>2]|0; //@line 601 "4374_Task1c_emscripten.cpp"
+      $179 = ($176|0)==($178|0); //@line 601 "4374_Task1c_emscripten.cpp"
+      if ($179) {
+       $180 = $item; //@line 601 "4374_Task1c_emscripten.cpp"
+       $181 = ((($180)) + 8|0); //@line 601 "4374_Task1c_emscripten.cpp"
+       $182 = HEAP32[$181>>2]|0; //@line 601 "4374_Task1c_emscripten.cpp"
+       $183 = $25; //@line 601 "4374_Task1c_emscripten.cpp"
+       $184 = HEAP32[$183>>2]|0; //@line 601 "4374_Task1c_emscripten.cpp"
+       $185 = (($184) - 1)|0; //@line 601 "4374_Task1c_emscripten.cpp"
+       $186 = ($182|0)==($185|0); //@line 601 "4374_Task1c_emscripten.cpp"
+       if ($186) {
+        $187 = $24; //@line 603 "4374_Task1c_emscripten.cpp"
+        $188 = HEAP32[$187>>2]|0; //@line 603 "4374_Task1c_emscripten.cpp"
+        $189 = $25; //@line 603 "4374_Task1c_emscripten.cpp"
+        $190 = HEAP32[$189>>2]|0; //@line 603 "4374_Task1c_emscripten.cpp"
+        $191 = (1008 + (($190*88)|0)|0); //@line 603 "4374_Task1c_emscripten.cpp"
+        $192 = (($191) + ($188<<2)|0); //@line 603 "4374_Task1c_emscripten.cpp"
+        $193 = HEAP32[$192>>2]|0; //@line 603 "4374_Task1c_emscripten.cpp"
+        $194 = $item; //@line 603 "4374_Task1c_emscripten.cpp"
+        $195 = ((($194)) + 12|0); //@line 603 "4374_Task1c_emscripten.cpp"
+        $196 = HEAP32[$195>>2]|0; //@line 603 "4374_Task1c_emscripten.cpp"
+        $197 = ((($196)) + 4|0); //@line 603 "4374_Task1c_emscripten.cpp"
+        $198 = HEAP32[$197>>2]|0; //@line 603 "4374_Task1c_emscripten.cpp"
+        $199 = $item; //@line 603 "4374_Task1c_emscripten.cpp"
+        $200 = ((($199)) + 12|0); //@line 603 "4374_Task1c_emscripten.cpp"
+        $201 = HEAP32[$200>>2]|0; //@line 603 "4374_Task1c_emscripten.cpp"
+        $202 = ((($201)) + 8|0); //@line 603 "4374_Task1c_emscripten.cpp"
+        $203 = HEAP32[$202>>2]|0; //@line 603 "4374_Task1c_emscripten.cpp"
+        $204 = (($203) - 1)|0; //@line 603 "4374_Task1c_emscripten.cpp"
+        $205 = (1008 + (($204*88)|0)|0); //@line 603 "4374_Task1c_emscripten.cpp"
+        $206 = (($205) + ($198<<2)|0); //@line 603 "4374_Task1c_emscripten.cpp"
+        $207 = HEAP32[$206>>2]|0; //@line 603 "4374_Task1c_emscripten.cpp"
+        $208 = ($193|0)<($207|0); //@line 603 "4374_Task1c_emscripten.cpp"
+        if (!($208)) {
+         break;
+        }
+        $209 = $25; //@line 605 "4374_Task1c_emscripten.cpp"
+        HEAP32[$209>>2] = -1; //@line 605 "4374_Task1c_emscripten.cpp"
+        $210 = $24; //@line 606 "4374_Task1c_emscripten.cpp"
+        HEAP32[$210>>2] = 0; //@line 606 "4374_Task1c_emscripten.cpp"
+        break;
+       }
+      }
+      $211 = $item; //@line 609 "4374_Task1c_emscripten.cpp"
+      $212 = ((($211)) + 4|0); //@line 609 "4374_Task1c_emscripten.cpp"
+      $213 = HEAP32[$212>>2]|0; //@line 609 "4374_Task1c_emscripten.cpp"
+      $214 = $24; //@line 609 "4374_Task1c_emscripten.cpp"
+      $215 = HEAP32[$214>>2]|0; //@line 609 "4374_Task1c_emscripten.cpp"
+      $216 = ($213|0)==($215|0); //@line 609 "4374_Task1c_emscripten.cpp"
+      if ($216) {
+       $217 = $item; //@line 609 "4374_Task1c_emscripten.cpp"
+       $218 = ((($217)) + 8|0); //@line 609 "4374_Task1c_emscripten.cpp"
+       $219 = HEAP32[$218>>2]|0; //@line 609 "4374_Task1c_emscripten.cpp"
+       $220 = $25; //@line 609 "4374_Task1c_emscripten.cpp"
+       $221 = HEAP32[$220>>2]|0; //@line 609 "4374_Task1c_emscripten.cpp"
+       $222 = (($221) + 1)|0; //@line 609 "4374_Task1c_emscripten.cpp"
+       $223 = ($219|0)==($222|0); //@line 609 "4374_Task1c_emscripten.cpp"
+       if ($223) {
+        $224 = $24; //@line 611 "4374_Task1c_emscripten.cpp"
+        $225 = HEAP32[$224>>2]|0; //@line 611 "4374_Task1c_emscripten.cpp"
+        $226 = $25; //@line 611 "4374_Task1c_emscripten.cpp"
+        $227 = HEAP32[$226>>2]|0; //@line 611 "4374_Task1c_emscripten.cpp"
+        $228 = (1008 + (($227*88)|0)|0); //@line 611 "4374_Task1c_emscripten.cpp"
+        $229 = (($228) + ($225<<2)|0); //@line 611 "4374_Task1c_emscripten.cpp"
+        $230 = HEAP32[$229>>2]|0; //@line 611 "4374_Task1c_emscripten.cpp"
+        $231 = $item; //@line 611 "4374_Task1c_emscripten.cpp"
+        $232 = ((($231)) + 12|0); //@line 611 "4374_Task1c_emscripten.cpp"
+        $233 = HEAP32[$232>>2]|0; //@line 611 "4374_Task1c_emscripten.cpp"
+        $234 = ((($233)) + 4|0); //@line 611 "4374_Task1c_emscripten.cpp"
+        $235 = HEAP32[$234>>2]|0; //@line 611 "4374_Task1c_emscripten.cpp"
+        $236 = $item; //@line 611 "4374_Task1c_emscripten.cpp"
+        $237 = ((($236)) + 12|0); //@line 611 "4374_Task1c_emscripten.cpp"
+        $238 = HEAP32[$237>>2]|0; //@line 611 "4374_Task1c_emscripten.cpp"
+        $239 = ((($238)) + 8|0); //@line 611 "4374_Task1c_emscripten.cpp"
+        $240 = HEAP32[$239>>2]|0; //@line 611 "4374_Task1c_emscripten.cpp"
+        $241 = (($240) + 1)|0; //@line 611 "4374_Task1c_emscripten.cpp"
+        $242 = (1008 + (($241*88)|0)|0); //@line 611 "4374_Task1c_emscripten.cpp"
+        $243 = (($242) + ($235<<2)|0); //@line 611 "4374_Task1c_emscripten.cpp"
+        $244 = HEAP32[$243>>2]|0; //@line 611 "4374_Task1c_emscripten.cpp"
+        $245 = ($230|0)<($244|0); //@line 611 "4374_Task1c_emscripten.cpp"
+        if ($245) {
+         $246 = $25; //@line 613 "4374_Task1c_emscripten.cpp"
+         HEAP32[$246>>2] = 1; //@line 613 "4374_Task1c_emscripten.cpp"
+         $247 = $24; //@line 614 "4374_Task1c_emscripten.cpp"
+         HEAP32[$247>>2] = 0; //@line 614 "4374_Task1c_emscripten.cpp"
+        }
+       }
+      }
+     }
+    } while(0);
+    $14 = $__begin; //@line 583 "4374_Task1c_emscripten.cpp"
+    $248 = $14; //@line 583 "4374_Task1c_emscripten.cpp"
+    $249 = HEAP32[$248>>2]|0; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    $250 = ((($249)) + 16|0); //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+    HEAP32[$248>>2] = $250; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
+   }
+  }
+ } while(0);
+ $251 = $24; //@line 619 "4374_Task1c_emscripten.cpp"
+ $252 = HEAP32[$251>>2]|0; //@line 619 "4374_Task1c_emscripten.cpp"
+ $253 = $25; //@line 619 "4374_Task1c_emscripten.cpp"
+ $254 = HEAP32[$253>>2]|0; //@line 619 "4374_Task1c_emscripten.cpp"
+ $255 = (1008 + (($254*88)|0)|0); //@line 619 "4374_Task1c_emscripten.cpp"
+ $256 = (($255) + ($252<<2)|0); //@line 619 "4374_Task1c_emscripten.cpp"
+ $257 = HEAP32[$256>>2]|0; //@line 619 "4374_Task1c_emscripten.cpp"
+ $258 = $24; //@line 619 "4374_Task1c_emscripten.cpp"
+ $259 = HEAP32[$258>>2]|0; //@line 619 "4374_Task1c_emscripten.cpp"
+ $260 = (($259) - 1)|0; //@line 619 "4374_Task1c_emscripten.cpp"
+ $261 = $25; //@line 619 "4374_Task1c_emscripten.cpp"
+ $262 = HEAP32[$261>>2]|0; //@line 619 "4374_Task1c_emscripten.cpp"
+ $263 = (1008 + (($262*88)|0)|0); //@line 619 "4374_Task1c_emscripten.cpp"
+ $264 = (($263) + ($260<<2)|0); //@line 619 "4374_Task1c_emscripten.cpp"
+ $265 = HEAP32[$264>>2]|0; //@line 619 "4374_Task1c_emscripten.cpp"
+ $266 = ($257|0)<($265|0); //@line 619 "4374_Task1c_emscripten.cpp"
+ $267 = $24; //@line 621 "4374_Task1c_emscripten.cpp"
+ if ($266) {
+  HEAP32[$267>>2] = -1; //@line 621 "4374_Task1c_emscripten.cpp"
+  $268 = $25; //@line 622 "4374_Task1c_emscripten.cpp"
+  HEAP32[$268>>2] = 0; //@line 622 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return; //@line 639 "4374_Task1c_emscripten.cpp"
  }
- $37 = HEAP32[$35>>2]|0; //@line 553 "4374_Task1c_emscripten.cpp"
- $38 = $1; //@line 553 "4374_Task1c_emscripten.cpp"
- $39 = HEAP32[$38>>2]|0; //@line 553 "4374_Task1c_emscripten.cpp"
- $40 = (1008 + (($39*88)|0)|0); //@line 553 "4374_Task1c_emscripten.cpp"
- $41 = (($40) + ($37<<2)|0); //@line 553 "4374_Task1c_emscripten.cpp"
- $42 = HEAP32[$41>>2]|0; //@line 553 "4374_Task1c_emscripten.cpp"
- $43 = $0; //@line 553 "4374_Task1c_emscripten.cpp"
- $44 = HEAP32[$43>>2]|0; //@line 553 "4374_Task1c_emscripten.cpp"
- $45 = $1; //@line 553 "4374_Task1c_emscripten.cpp"
- $46 = HEAP32[$45>>2]|0; //@line 553 "4374_Task1c_emscripten.cpp"
- $47 = (($46) - 1)|0; //@line 553 "4374_Task1c_emscripten.cpp"
- $48 = (1008 + (($47*88)|0)|0); //@line 553 "4374_Task1c_emscripten.cpp"
- $49 = (($48) + ($44<<2)|0); //@line 553 "4374_Task1c_emscripten.cpp"
- $50 = HEAP32[$49>>2]|0; //@line 553 "4374_Task1c_emscripten.cpp"
- $51 = ($42|0)<($50|0); //@line 553 "4374_Task1c_emscripten.cpp"
- $52 = $0; //@line 555 "4374_Task1c_emscripten.cpp"
- if ($51) {
-  HEAP32[$52>>2] = 0; //@line 555 "4374_Task1c_emscripten.cpp"
-  $53 = $1; //@line 556 "4374_Task1c_emscripten.cpp"
-  HEAP32[$53>>2] = -1; //@line 556 "4374_Task1c_emscripten.cpp"
-  STACKTOP = sp;return; //@line 563 "4374_Task1c_emscripten.cpp"
+ $269 = HEAP32[$267>>2]|0; //@line 624 "4374_Task1c_emscripten.cpp"
+ $270 = $25; //@line 624 "4374_Task1c_emscripten.cpp"
+ $271 = HEAP32[$270>>2]|0; //@line 624 "4374_Task1c_emscripten.cpp"
+ $272 = (1008 + (($271*88)|0)|0); //@line 624 "4374_Task1c_emscripten.cpp"
+ $273 = (($272) + ($269<<2)|0); //@line 624 "4374_Task1c_emscripten.cpp"
+ $274 = HEAP32[$273>>2]|0; //@line 624 "4374_Task1c_emscripten.cpp"
+ $275 = $24; //@line 624 "4374_Task1c_emscripten.cpp"
+ $276 = HEAP32[$275>>2]|0; //@line 624 "4374_Task1c_emscripten.cpp"
+ $277 = (($276) + 1)|0; //@line 624 "4374_Task1c_emscripten.cpp"
+ $278 = $25; //@line 624 "4374_Task1c_emscripten.cpp"
+ $279 = HEAP32[$278>>2]|0; //@line 624 "4374_Task1c_emscripten.cpp"
+ $280 = (1008 + (($279*88)|0)|0); //@line 624 "4374_Task1c_emscripten.cpp"
+ $281 = (($280) + ($277<<2)|0); //@line 624 "4374_Task1c_emscripten.cpp"
+ $282 = HEAP32[$281>>2]|0; //@line 624 "4374_Task1c_emscripten.cpp"
+ $283 = ($274|0)<($282|0); //@line 624 "4374_Task1c_emscripten.cpp"
+ $284 = $24; //@line 626 "4374_Task1c_emscripten.cpp"
+ if ($283) {
+  HEAP32[$284>>2] = 1; //@line 626 "4374_Task1c_emscripten.cpp"
+  $285 = $25; //@line 627 "4374_Task1c_emscripten.cpp"
+  HEAP32[$285>>2] = 0; //@line 627 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return; //@line 639 "4374_Task1c_emscripten.cpp"
  }
- $54 = HEAP32[$52>>2]|0; //@line 558 "4374_Task1c_emscripten.cpp"
- $55 = $1; //@line 558 "4374_Task1c_emscripten.cpp"
- $56 = HEAP32[$55>>2]|0; //@line 558 "4374_Task1c_emscripten.cpp"
- $57 = (1008 + (($56*88)|0)|0); //@line 558 "4374_Task1c_emscripten.cpp"
- $58 = (($57) + ($54<<2)|0); //@line 558 "4374_Task1c_emscripten.cpp"
- $59 = HEAP32[$58>>2]|0; //@line 558 "4374_Task1c_emscripten.cpp"
- $60 = $0; //@line 558 "4374_Task1c_emscripten.cpp"
- $61 = HEAP32[$60>>2]|0; //@line 558 "4374_Task1c_emscripten.cpp"
- $62 = $1; //@line 558 "4374_Task1c_emscripten.cpp"
- $63 = HEAP32[$62>>2]|0; //@line 558 "4374_Task1c_emscripten.cpp"
- $64 = (($63) + 1)|0; //@line 558 "4374_Task1c_emscripten.cpp"
- $65 = (1008 + (($64*88)|0)|0); //@line 558 "4374_Task1c_emscripten.cpp"
- $66 = (($65) + ($61<<2)|0); //@line 558 "4374_Task1c_emscripten.cpp"
- $67 = HEAP32[$66>>2]|0; //@line 558 "4374_Task1c_emscripten.cpp"
- $68 = ($59|0)<($67|0); //@line 558 "4374_Task1c_emscripten.cpp"
- if (!($68)) {
-  STACKTOP = sp;return; //@line 563 "4374_Task1c_emscripten.cpp"
+ $286 = HEAP32[$284>>2]|0; //@line 629 "4374_Task1c_emscripten.cpp"
+ $287 = $25; //@line 629 "4374_Task1c_emscripten.cpp"
+ $288 = HEAP32[$287>>2]|0; //@line 629 "4374_Task1c_emscripten.cpp"
+ $289 = (1008 + (($288*88)|0)|0); //@line 629 "4374_Task1c_emscripten.cpp"
+ $290 = (($289) + ($286<<2)|0); //@line 629 "4374_Task1c_emscripten.cpp"
+ $291 = HEAP32[$290>>2]|0; //@line 629 "4374_Task1c_emscripten.cpp"
+ $292 = $24; //@line 629 "4374_Task1c_emscripten.cpp"
+ $293 = HEAP32[$292>>2]|0; //@line 629 "4374_Task1c_emscripten.cpp"
+ $294 = $25; //@line 629 "4374_Task1c_emscripten.cpp"
+ $295 = HEAP32[$294>>2]|0; //@line 629 "4374_Task1c_emscripten.cpp"
+ $296 = (($295) - 1)|0; //@line 629 "4374_Task1c_emscripten.cpp"
+ $297 = (1008 + (($296*88)|0)|0); //@line 629 "4374_Task1c_emscripten.cpp"
+ $298 = (($297) + ($293<<2)|0); //@line 629 "4374_Task1c_emscripten.cpp"
+ $299 = HEAP32[$298>>2]|0; //@line 629 "4374_Task1c_emscripten.cpp"
+ $300 = ($291|0)<($299|0); //@line 629 "4374_Task1c_emscripten.cpp"
+ $301 = $24; //@line 631 "4374_Task1c_emscripten.cpp"
+ if ($300) {
+  HEAP32[$301>>2] = 0; //@line 631 "4374_Task1c_emscripten.cpp"
+  $302 = $25; //@line 632 "4374_Task1c_emscripten.cpp"
+  HEAP32[$302>>2] = -1; //@line 632 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return; //@line 639 "4374_Task1c_emscripten.cpp"
  }
- $69 = $0; //@line 560 "4374_Task1c_emscripten.cpp"
- HEAP32[$69>>2] = 0; //@line 560 "4374_Task1c_emscripten.cpp"
- $70 = $1; //@line 561 "4374_Task1c_emscripten.cpp"
- HEAP32[$70>>2] = 1; //@line 561 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return; //@line 563 "4374_Task1c_emscripten.cpp"
+ $303 = HEAP32[$301>>2]|0; //@line 634 "4374_Task1c_emscripten.cpp"
+ $304 = $25; //@line 634 "4374_Task1c_emscripten.cpp"
+ $305 = HEAP32[$304>>2]|0; //@line 634 "4374_Task1c_emscripten.cpp"
+ $306 = (1008 + (($305*88)|0)|0); //@line 634 "4374_Task1c_emscripten.cpp"
+ $307 = (($306) + ($303<<2)|0); //@line 634 "4374_Task1c_emscripten.cpp"
+ $308 = HEAP32[$307>>2]|0; //@line 634 "4374_Task1c_emscripten.cpp"
+ $309 = $24; //@line 634 "4374_Task1c_emscripten.cpp"
+ $310 = HEAP32[$309>>2]|0; //@line 634 "4374_Task1c_emscripten.cpp"
+ $311 = $25; //@line 634 "4374_Task1c_emscripten.cpp"
+ $312 = HEAP32[$311>>2]|0; //@line 634 "4374_Task1c_emscripten.cpp"
+ $313 = (($312) + 1)|0; //@line 634 "4374_Task1c_emscripten.cpp"
+ $314 = (1008 + (($313*88)|0)|0); //@line 634 "4374_Task1c_emscripten.cpp"
+ $315 = (($314) + ($310<<2)|0); //@line 634 "4374_Task1c_emscripten.cpp"
+ $316 = HEAP32[$315>>2]|0; //@line 634 "4374_Task1c_emscripten.cpp"
+ $317 = ($308|0)<($316|0); //@line 634 "4374_Task1c_emscripten.cpp"
+ if (!($317)) {
+  STACKTOP = sp;return; //@line 639 "4374_Task1c_emscripten.cpp"
+ }
+ $318 = $24; //@line 636 "4374_Task1c_emscripten.cpp"
+ HEAP32[$318>>2] = 0; //@line 636 "4374_Task1c_emscripten.cpp"
+ $319 = $25; //@line 637 "4374_Task1c_emscripten.cpp"
+ HEAP32[$319>>2] = 1; //@line 637 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 639 "4374_Task1c_emscripten.cpp"
 }
 function __Z7setGridPA22_c($grid) {
  $grid = $grid|0;
@@ -16604,60 +17294,60 @@ function __Z7setGridPA22_c($grid) {
  sp = STACKTOP;
  STACKTOP = STACKTOP + 16|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
  $0 = $grid;
- $row = 0; //@line 791 "4374_Task1c_emscripten.cpp"
+ $row = 0; //@line 867 "4374_Task1c_emscripten.cpp"
  while(1) {
-  $1 = $row; //@line 791 "4374_Task1c_emscripten.cpp"
-  $2 = ($1|0)<(39); //@line 791 "4374_Task1c_emscripten.cpp"
+  $1 = $row; //@line 867 "4374_Task1c_emscripten.cpp"
+  $2 = ($1|0)<(39); //@line 867 "4374_Task1c_emscripten.cpp"
   if (!($2)) {
    break;
   }
-  $col = 0; //@line 793 "4374_Task1c_emscripten.cpp"
+  $col = 0; //@line 869 "4374_Task1c_emscripten.cpp"
   while(1) {
-   $3 = $col; //@line 793 "4374_Task1c_emscripten.cpp"
-   $4 = ($3|0)<(22); //@line 793 "4374_Task1c_emscripten.cpp"
-   $5 = $row; //@line 795 "4374_Task1c_emscripten.cpp"
+   $3 = $col; //@line 869 "4374_Task1c_emscripten.cpp"
+   $4 = ($3|0)<(22); //@line 869 "4374_Task1c_emscripten.cpp"
+   $5 = $row; //@line 871 "4374_Task1c_emscripten.cpp"
    if (!($4)) {
     break;
    }
-   $6 = ($5|0)==(0); //@line 795 "4374_Task1c_emscripten.cpp"
+   $6 = ($5|0)==(0); //@line 871 "4374_Task1c_emscripten.cpp"
    $7 = $row;
-   $8 = ($7|0)==(38); //@line 795 "4374_Task1c_emscripten.cpp"
-   $or$cond = $6 | $8; //@line 795 "4374_Task1c_emscripten.cpp"
-   $9 = $col; //@line 796 "4374_Task1c_emscripten.cpp"
+   $8 = ($7|0)==(38); //@line 871 "4374_Task1c_emscripten.cpp"
+   $or$cond = $6 | $8; //@line 871 "4374_Task1c_emscripten.cpp"
+   $9 = $col; //@line 872 "4374_Task1c_emscripten.cpp"
    do {
     if ($or$cond) {
-     $10 = $row; //@line 796 "4374_Task1c_emscripten.cpp"
-     $11 = $0; //@line 796 "4374_Task1c_emscripten.cpp"
-     $12 = (($11) + (($10*22)|0)|0); //@line 796 "4374_Task1c_emscripten.cpp"
-     $13 = (($12) + ($9)|0); //@line 796 "4374_Task1c_emscripten.cpp"
-     HEAP8[$13>>0] = 35; //@line 796 "4374_Task1c_emscripten.cpp"
+     $10 = $row; //@line 872 "4374_Task1c_emscripten.cpp"
+     $11 = $0; //@line 872 "4374_Task1c_emscripten.cpp"
+     $12 = (($11) + (($10*22)|0)|0); //@line 872 "4374_Task1c_emscripten.cpp"
+     $13 = (($12) + ($9)|0); //@line 872 "4374_Task1c_emscripten.cpp"
+     HEAP8[$13>>0] = 35; //@line 872 "4374_Task1c_emscripten.cpp"
     } else {
-     $14 = ($9|0)==(0); //@line 798 "4374_Task1c_emscripten.cpp"
+     $14 = ($9|0)==(0); //@line 874 "4374_Task1c_emscripten.cpp"
      $15 = $col;
-     $16 = ($15|0)==(21); //@line 798 "4374_Task1c_emscripten.cpp"
-     $or$cond3 = $14 | $16; //@line 798 "4374_Task1c_emscripten.cpp"
-     $17 = $col; //@line 799 "4374_Task1c_emscripten.cpp"
-     $18 = $row; //@line 799 "4374_Task1c_emscripten.cpp"
-     $19 = $0; //@line 799 "4374_Task1c_emscripten.cpp"
-     $20 = (($19) + (($18*22)|0)|0); //@line 799 "4374_Task1c_emscripten.cpp"
-     $21 = (($20) + ($17)|0); //@line 799 "4374_Task1c_emscripten.cpp"
+     $16 = ($15|0)==(21); //@line 874 "4374_Task1c_emscripten.cpp"
+     $or$cond3 = $14 | $16; //@line 874 "4374_Task1c_emscripten.cpp"
+     $17 = $col; //@line 875 "4374_Task1c_emscripten.cpp"
+     $18 = $row; //@line 875 "4374_Task1c_emscripten.cpp"
+     $19 = $0; //@line 875 "4374_Task1c_emscripten.cpp"
+     $20 = (($19) + (($18*22)|0)|0); //@line 875 "4374_Task1c_emscripten.cpp"
+     $21 = (($20) + ($17)|0); //@line 875 "4374_Task1c_emscripten.cpp"
      if ($or$cond3) {
-      HEAP8[$21>>0] = 35; //@line 799 "4374_Task1c_emscripten.cpp"
+      HEAP8[$21>>0] = 35; //@line 875 "4374_Task1c_emscripten.cpp"
       break;
      } else {
-      HEAP8[$21>>0] = 32; //@line 801 "4374_Task1c_emscripten.cpp"
+      HEAP8[$21>>0] = 32; //@line 877 "4374_Task1c_emscripten.cpp"
       break;
      }
     }
    } while(0);
-   $22 = $col; //@line 793 "4374_Task1c_emscripten.cpp"
-   $23 = (($22) + 1)|0; //@line 793 "4374_Task1c_emscripten.cpp"
-   $col = $23; //@line 793 "4374_Task1c_emscripten.cpp"
+   $22 = $col; //@line 869 "4374_Task1c_emscripten.cpp"
+   $23 = (($22) + 1)|0; //@line 869 "4374_Task1c_emscripten.cpp"
+   $col = $23; //@line 869 "4374_Task1c_emscripten.cpp"
   }
-  $24 = (($5) + 1)|0; //@line 791 "4374_Task1c_emscripten.cpp"
-  $row = $24; //@line 791 "4374_Task1c_emscripten.cpp"
+  $24 = (($5) + 1)|0; //@line 867 "4374_Task1c_emscripten.cpp"
+  $row = $24; //@line 867 "4374_Task1c_emscripten.cpp"
  }
- STACKTOP = sp;return; //@line 804 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 880 "4374_Task1c_emscripten.cpp"
 }
 function __Z20placerandomwallonmapPA22_cRNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEE($grid,$walls) {
  $grid = $grid|0;
@@ -16672,49 +17362,49 @@ function __Z20placerandomwallonmapPA22_cRNSt3__16vectorI4ItemNS1_9allocatorIS3_E
  $wall = sp + 28|0;
  $12 = $grid;
  $13 = $walls;
- $i = 0; //@line 722 "4374_Task1c_emscripten.cpp"
+ $i = 0; //@line 798 "4374_Task1c_emscripten.cpp"
  while(1) {
-  $14 = $i; //@line 722 "4374_Task1c_emscripten.cpp"
-  $15 = HEAP32[8>>2]|0; //@line 722 "4374_Task1c_emscripten.cpp"
-  $16 = ($14|0)<($15|0); //@line 722 "4374_Task1c_emscripten.cpp"
+  $14 = $i; //@line 798 "4374_Task1c_emscripten.cpp"
+  $15 = HEAP32[8>>2]|0; //@line 798 "4374_Task1c_emscripten.cpp"
+  $16 = ($14|0)<($15|0); //@line 798 "4374_Task1c_emscripten.cpp"
   if (!($16)) {
    break;
   }
-  $17 = (__Z6Randomi(20)|0); //@line 724 "4374_Task1c_emscripten.cpp"
-  $x = $17; //@line 724 "4374_Task1c_emscripten.cpp"
-  $18 = (__Z6Randomi(37)|0); //@line 725 "4374_Task1c_emscripten.cpp"
-  $y = $18; //@line 725 "4374_Task1c_emscripten.cpp"
+  $17 = (__Z6Randomi(20)|0); //@line 800 "4374_Task1c_emscripten.cpp"
+  $x = $17; //@line 800 "4374_Task1c_emscripten.cpp"
+  $18 = (__Z6Randomi(37)|0); //@line 801 "4374_Task1c_emscripten.cpp"
+  $y = $18; //@line 801 "4374_Task1c_emscripten.cpp"
   while(1) {
-   $19 = $12; //@line 726 "4374_Task1c_emscripten.cpp"
-   $20 = $x; //@line 726 "4374_Task1c_emscripten.cpp"
-   $21 = $y; //@line 726 "4374_Task1c_emscripten.cpp"
-   $22 = (__Z12ocupiedpeacePA22_Kcii($19,$20,$21)|0); //@line 726 "4374_Task1c_emscripten.cpp"
+   $19 = $12; //@line 802 "4374_Task1c_emscripten.cpp"
+   $20 = $x; //@line 802 "4374_Task1c_emscripten.cpp"
+   $21 = $y; //@line 802 "4374_Task1c_emscripten.cpp"
+   $22 = (__Z12ocupiedpeacePA22_Kcii($19,$20,$21)|0); //@line 802 "4374_Task1c_emscripten.cpp"
    if (!($22)) {
     break;
    }
-   __Z4Seedv(); //@line 728 "4374_Task1c_emscripten.cpp"
-   $23 = (__Z6Randomi(20)|0); //@line 729 "4374_Task1c_emscripten.cpp"
-   $x = $23; //@line 729 "4374_Task1c_emscripten.cpp"
-   $24 = (__Z6Randomi(37)|0); //@line 730 "4374_Task1c_emscripten.cpp"
-   $y = $24; //@line 730 "4374_Task1c_emscripten.cpp"
+   __Z4Seedv(); //@line 804 "4374_Task1c_emscripten.cpp"
+   $23 = (__Z6Randomi(20)|0); //@line 805 "4374_Task1c_emscripten.cpp"
+   $x = $23; //@line 805 "4374_Task1c_emscripten.cpp"
+   $24 = (__Z6Randomi(37)|0); //@line 806 "4374_Task1c_emscripten.cpp"
+   $y = $24; //@line 806 "4374_Task1c_emscripten.cpp"
   }
-  HEAP8[$wall>>0] = 35; //@line 732 "4374_Task1c_emscripten.cpp"
-  $25 = ((($wall)) + 4|0); //@line 732 "4374_Task1c_emscripten.cpp"
-  $26 = $x; //@line 732 "4374_Task1c_emscripten.cpp"
-  HEAP32[$25>>2] = $26; //@line 732 "4374_Task1c_emscripten.cpp"
-  $27 = ((($wall)) + 8|0); //@line 732 "4374_Task1c_emscripten.cpp"
-  $28 = $y; //@line 732 "4374_Task1c_emscripten.cpp"
-  HEAP32[$27>>2] = $28; //@line 732 "4374_Task1c_emscripten.cpp"
-  $29 = $x; //@line 733 "4374_Task1c_emscripten.cpp"
-  $30 = $y; //@line 733 "4374_Task1c_emscripten.cpp"
-  $31 = $12; //@line 733 "4374_Task1c_emscripten.cpp"
-  $32 = (($31) + (($30*22)|0)|0); //@line 733 "4374_Task1c_emscripten.cpp"
-  $33 = (($32) + ($29)|0); //@line 733 "4374_Task1c_emscripten.cpp"
-  HEAP8[$33>>0] = 35; //@line 733 "4374_Task1c_emscripten.cpp"
-  $34 = $13; //@line 734 "4374_Task1c_emscripten.cpp"
-  $10 = $34; //@line 734 "4374_Task1c_emscripten.cpp"
-  $11 = $wall; //@line 734 "4374_Task1c_emscripten.cpp"
-  $35 = $10; //@line 734 "4374_Task1c_emscripten.cpp"
+  HEAP8[$wall>>0] = 35; //@line 808 "4374_Task1c_emscripten.cpp"
+  $25 = ((($wall)) + 4|0); //@line 808 "4374_Task1c_emscripten.cpp"
+  $26 = $x; //@line 808 "4374_Task1c_emscripten.cpp"
+  HEAP32[$25>>2] = $26; //@line 808 "4374_Task1c_emscripten.cpp"
+  $27 = ((($wall)) + 8|0); //@line 808 "4374_Task1c_emscripten.cpp"
+  $28 = $y; //@line 808 "4374_Task1c_emscripten.cpp"
+  HEAP32[$27>>2] = $28; //@line 808 "4374_Task1c_emscripten.cpp"
+  $29 = $x; //@line 809 "4374_Task1c_emscripten.cpp"
+  $30 = $y; //@line 809 "4374_Task1c_emscripten.cpp"
+  $31 = $12; //@line 809 "4374_Task1c_emscripten.cpp"
+  $32 = (($31) + (($30*22)|0)|0); //@line 809 "4374_Task1c_emscripten.cpp"
+  $33 = (($32) + ($29)|0); //@line 809 "4374_Task1c_emscripten.cpp"
+  HEAP8[$33>>0] = 35; //@line 809 "4374_Task1c_emscripten.cpp"
+  $34 = $13; //@line 810 "4374_Task1c_emscripten.cpp"
+  $10 = $34; //@line 810 "4374_Task1c_emscripten.cpp"
+  $11 = $wall; //@line 810 "4374_Task1c_emscripten.cpp"
+  $35 = $10; //@line 810 "4374_Task1c_emscripten.cpp"
   $36 = ((($35)) + 4|0); //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   $37 = HEAP32[$36>>2]|0; //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   $9 = $35; //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -16755,11 +17445,11 @@ function __Z20placerandomwallonmapPA22_cRNSt3__16vectorI4ItemNS1_9allocatorIS3_E
    $57 = $11; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
    __ZNSt3__16vectorI4ItemNS_9allocatorIS1_EEE21__push_back_slow_pathIKS1_EEvRT_($35,$57); //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   }
-  $58 = $i; //@line 722 "4374_Task1c_emscripten.cpp"
-  $59 = (($58) + 1)|0; //@line 722 "4374_Task1c_emscripten.cpp"
-  $i = $59; //@line 722 "4374_Task1c_emscripten.cpp"
+  $58 = $i; //@line 798 "4374_Task1c_emscripten.cpp"
+  $59 = (($58) + 1)|0; //@line 798 "4374_Task1c_emscripten.cpp"
+  $i = $59; //@line 798 "4374_Task1c_emscripten.cpp"
  }
- STACKTOP = sp;return; //@line 736 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 812 "4374_Task1c_emscripten.cpp"
 }
 function __Z17placezombiesonmapPA22_cRNSt3__16vectorI6zombieNS1_9allocatorIS3_EEEE($grid,$zombies) {
  $grid = $grid|0;
@@ -16786,70 +17476,70 @@ function __Z17placezombiesonmapPA22_cRNSt3__16vectorI6zombieNS1_9allocatorIS3_EE
  $zom4 = sp + 176|0;
  $48 = $grid;
  $49 = $zombies;
- HEAP8[$zom1>>0] = 90; //@line 759 "4374_Task1c_emscripten.cpp"
- $50 = ((($zom1)) + 4|0); //@line 759 "4374_Task1c_emscripten.cpp"
- HEAP32[$50>>2] = 1; //@line 759 "4374_Task1c_emscripten.cpp"
- $51 = ((($zom1)) + 8|0); //@line 759 "4374_Task1c_emscripten.cpp"
- HEAP32[$51>>2] = 1; //@line 759 "4374_Task1c_emscripten.cpp"
- $52 = ((($zom1)) + 12|0); //@line 759 "4374_Task1c_emscripten.cpp"
- HEAP32[$52>>2] = 1; //@line 759 "4374_Task1c_emscripten.cpp"
- $53 = ((($zom1)) + 16|0); //@line 759 "4374_Task1c_emscripten.cpp"
- HEAP32[$53>>2] = 1; //@line 759 "4374_Task1c_emscripten.cpp"
- $54 = ((($zom1)) + 20|0); //@line 759 "4374_Task1c_emscripten.cpp"
- HEAP8[$54>>0] = 0; //@line 759 "4374_Task1c_emscripten.cpp"
- $55 = ((($zom1)) + 21|0); //@line 759 "4374_Task1c_emscripten.cpp"
- HEAP8[$55>>0] = 1; //@line 759 "4374_Task1c_emscripten.cpp"
- $56 = ((($zom1)) + 22|0); //@line 759 "4374_Task1c_emscripten.cpp"
- HEAP8[$56>>0] = 0; //@line 759 "4374_Task1c_emscripten.cpp"
- HEAP8[$zom2>>0] = 90; //@line 760 "4374_Task1c_emscripten.cpp"
- $57 = ((($zom2)) + 4|0); //@line 760 "4374_Task1c_emscripten.cpp"
- HEAP32[$57>>2] = 20; //@line 760 "4374_Task1c_emscripten.cpp"
- $58 = ((($zom2)) + 8|0); //@line 760 "4374_Task1c_emscripten.cpp"
- HEAP32[$58>>2] = 1; //@line 760 "4374_Task1c_emscripten.cpp"
- $59 = ((($zom2)) + 12|0); //@line 760 "4374_Task1c_emscripten.cpp"
- HEAP32[$59>>2] = 20; //@line 760 "4374_Task1c_emscripten.cpp"
- $60 = ((($zom2)) + 16|0); //@line 760 "4374_Task1c_emscripten.cpp"
- HEAP32[$60>>2] = 1; //@line 760 "4374_Task1c_emscripten.cpp"
- $61 = ((($zom2)) + 20|0); //@line 760 "4374_Task1c_emscripten.cpp"
- HEAP8[$61>>0] = 0; //@line 760 "4374_Task1c_emscripten.cpp"
- $62 = ((($zom2)) + 21|0); //@line 760 "4374_Task1c_emscripten.cpp"
- HEAP8[$62>>0] = 1; //@line 760 "4374_Task1c_emscripten.cpp"
- $63 = ((($zom2)) + 22|0); //@line 760 "4374_Task1c_emscripten.cpp"
- HEAP8[$63>>0] = 0; //@line 760 "4374_Task1c_emscripten.cpp"
- HEAP8[$zom3>>0] = 90; //@line 761 "4374_Task1c_emscripten.cpp"
- $64 = ((($zom3)) + 4|0); //@line 761 "4374_Task1c_emscripten.cpp"
- HEAP32[$64>>2] = 1; //@line 761 "4374_Task1c_emscripten.cpp"
- $65 = ((($zom3)) + 8|0); //@line 761 "4374_Task1c_emscripten.cpp"
- HEAP32[$65>>2] = 37; //@line 761 "4374_Task1c_emscripten.cpp"
- $66 = ((($zom3)) + 12|0); //@line 761 "4374_Task1c_emscripten.cpp"
- HEAP32[$66>>2] = 1; //@line 761 "4374_Task1c_emscripten.cpp"
- $67 = ((($zom3)) + 16|0); //@line 761 "4374_Task1c_emscripten.cpp"
- HEAP32[$67>>2] = 37; //@line 761 "4374_Task1c_emscripten.cpp"
- $68 = ((($zom3)) + 20|0); //@line 761 "4374_Task1c_emscripten.cpp"
- HEAP8[$68>>0] = 0; //@line 761 "4374_Task1c_emscripten.cpp"
- $69 = ((($zom3)) + 21|0); //@line 761 "4374_Task1c_emscripten.cpp"
- HEAP8[$69>>0] = 1; //@line 761 "4374_Task1c_emscripten.cpp"
- $70 = ((($zom3)) + 22|0); //@line 761 "4374_Task1c_emscripten.cpp"
- HEAP8[$70>>0] = 0; //@line 761 "4374_Task1c_emscripten.cpp"
- HEAP8[$zom4>>0] = 90; //@line 762 "4374_Task1c_emscripten.cpp"
- $71 = ((($zom4)) + 4|0); //@line 762 "4374_Task1c_emscripten.cpp"
- HEAP32[$71>>2] = 20; //@line 762 "4374_Task1c_emscripten.cpp"
- $72 = ((($zom4)) + 8|0); //@line 762 "4374_Task1c_emscripten.cpp"
- HEAP32[$72>>2] = 37; //@line 762 "4374_Task1c_emscripten.cpp"
- $73 = ((($zom4)) + 12|0); //@line 762 "4374_Task1c_emscripten.cpp"
- HEAP32[$73>>2] = 20; //@line 762 "4374_Task1c_emscripten.cpp"
- $74 = ((($zom4)) + 16|0); //@line 762 "4374_Task1c_emscripten.cpp"
- HEAP32[$74>>2] = 37; //@line 762 "4374_Task1c_emscripten.cpp"
- $75 = ((($zom4)) + 20|0); //@line 762 "4374_Task1c_emscripten.cpp"
- HEAP8[$75>>0] = 0; //@line 762 "4374_Task1c_emscripten.cpp"
- $76 = ((($zom4)) + 21|0); //@line 762 "4374_Task1c_emscripten.cpp"
- HEAP8[$76>>0] = 1; //@line 762 "4374_Task1c_emscripten.cpp"
- $77 = ((($zom4)) + 22|0); //@line 762 "4374_Task1c_emscripten.cpp"
- HEAP8[$77>>0] = 0; //@line 762 "4374_Task1c_emscripten.cpp"
- $78 = $49; //@line 764 "4374_Task1c_emscripten.cpp"
- $46 = $78; //@line 764 "4374_Task1c_emscripten.cpp"
- $47 = $zom1; //@line 764 "4374_Task1c_emscripten.cpp"
- $79 = $46; //@line 764 "4374_Task1c_emscripten.cpp"
+ HEAP8[$zom1>>0] = 90; //@line 835 "4374_Task1c_emscripten.cpp"
+ $50 = ((($zom1)) + 4|0); //@line 835 "4374_Task1c_emscripten.cpp"
+ HEAP32[$50>>2] = 1; //@line 835 "4374_Task1c_emscripten.cpp"
+ $51 = ((($zom1)) + 8|0); //@line 835 "4374_Task1c_emscripten.cpp"
+ HEAP32[$51>>2] = 1; //@line 835 "4374_Task1c_emscripten.cpp"
+ $52 = ((($zom1)) + 12|0); //@line 835 "4374_Task1c_emscripten.cpp"
+ HEAP32[$52>>2] = 1; //@line 835 "4374_Task1c_emscripten.cpp"
+ $53 = ((($zom1)) + 16|0); //@line 835 "4374_Task1c_emscripten.cpp"
+ HEAP32[$53>>2] = 1; //@line 835 "4374_Task1c_emscripten.cpp"
+ $54 = ((($zom1)) + 20|0); //@line 835 "4374_Task1c_emscripten.cpp"
+ HEAP8[$54>>0] = 0; //@line 835 "4374_Task1c_emscripten.cpp"
+ $55 = ((($zom1)) + 21|0); //@line 835 "4374_Task1c_emscripten.cpp"
+ HEAP8[$55>>0] = 1; //@line 835 "4374_Task1c_emscripten.cpp"
+ $56 = ((($zom1)) + 22|0); //@line 835 "4374_Task1c_emscripten.cpp"
+ HEAP8[$56>>0] = 0; //@line 835 "4374_Task1c_emscripten.cpp"
+ HEAP8[$zom2>>0] = 90; //@line 836 "4374_Task1c_emscripten.cpp"
+ $57 = ((($zom2)) + 4|0); //@line 836 "4374_Task1c_emscripten.cpp"
+ HEAP32[$57>>2] = 20; //@line 836 "4374_Task1c_emscripten.cpp"
+ $58 = ((($zom2)) + 8|0); //@line 836 "4374_Task1c_emscripten.cpp"
+ HEAP32[$58>>2] = 1; //@line 836 "4374_Task1c_emscripten.cpp"
+ $59 = ((($zom2)) + 12|0); //@line 836 "4374_Task1c_emscripten.cpp"
+ HEAP32[$59>>2] = 20; //@line 836 "4374_Task1c_emscripten.cpp"
+ $60 = ((($zom2)) + 16|0); //@line 836 "4374_Task1c_emscripten.cpp"
+ HEAP32[$60>>2] = 1; //@line 836 "4374_Task1c_emscripten.cpp"
+ $61 = ((($zom2)) + 20|0); //@line 836 "4374_Task1c_emscripten.cpp"
+ HEAP8[$61>>0] = 0; //@line 836 "4374_Task1c_emscripten.cpp"
+ $62 = ((($zom2)) + 21|0); //@line 836 "4374_Task1c_emscripten.cpp"
+ HEAP8[$62>>0] = 1; //@line 836 "4374_Task1c_emscripten.cpp"
+ $63 = ((($zom2)) + 22|0); //@line 836 "4374_Task1c_emscripten.cpp"
+ HEAP8[$63>>0] = 0; //@line 836 "4374_Task1c_emscripten.cpp"
+ HEAP8[$zom3>>0] = 90; //@line 837 "4374_Task1c_emscripten.cpp"
+ $64 = ((($zom3)) + 4|0); //@line 837 "4374_Task1c_emscripten.cpp"
+ HEAP32[$64>>2] = 1; //@line 837 "4374_Task1c_emscripten.cpp"
+ $65 = ((($zom3)) + 8|0); //@line 837 "4374_Task1c_emscripten.cpp"
+ HEAP32[$65>>2] = 37; //@line 837 "4374_Task1c_emscripten.cpp"
+ $66 = ((($zom3)) + 12|0); //@line 837 "4374_Task1c_emscripten.cpp"
+ HEAP32[$66>>2] = 1; //@line 837 "4374_Task1c_emscripten.cpp"
+ $67 = ((($zom3)) + 16|0); //@line 837 "4374_Task1c_emscripten.cpp"
+ HEAP32[$67>>2] = 37; //@line 837 "4374_Task1c_emscripten.cpp"
+ $68 = ((($zom3)) + 20|0); //@line 837 "4374_Task1c_emscripten.cpp"
+ HEAP8[$68>>0] = 0; //@line 837 "4374_Task1c_emscripten.cpp"
+ $69 = ((($zom3)) + 21|0); //@line 837 "4374_Task1c_emscripten.cpp"
+ HEAP8[$69>>0] = 1; //@line 837 "4374_Task1c_emscripten.cpp"
+ $70 = ((($zom3)) + 22|0); //@line 837 "4374_Task1c_emscripten.cpp"
+ HEAP8[$70>>0] = 0; //@line 837 "4374_Task1c_emscripten.cpp"
+ HEAP8[$zom4>>0] = 90; //@line 838 "4374_Task1c_emscripten.cpp"
+ $71 = ((($zom4)) + 4|0); //@line 838 "4374_Task1c_emscripten.cpp"
+ HEAP32[$71>>2] = 20; //@line 838 "4374_Task1c_emscripten.cpp"
+ $72 = ((($zom4)) + 8|0); //@line 838 "4374_Task1c_emscripten.cpp"
+ HEAP32[$72>>2] = 37; //@line 838 "4374_Task1c_emscripten.cpp"
+ $73 = ((($zom4)) + 12|0); //@line 838 "4374_Task1c_emscripten.cpp"
+ HEAP32[$73>>2] = 20; //@line 838 "4374_Task1c_emscripten.cpp"
+ $74 = ((($zom4)) + 16|0); //@line 838 "4374_Task1c_emscripten.cpp"
+ HEAP32[$74>>2] = 37; //@line 838 "4374_Task1c_emscripten.cpp"
+ $75 = ((($zom4)) + 20|0); //@line 838 "4374_Task1c_emscripten.cpp"
+ HEAP8[$75>>0] = 0; //@line 838 "4374_Task1c_emscripten.cpp"
+ $76 = ((($zom4)) + 21|0); //@line 838 "4374_Task1c_emscripten.cpp"
+ HEAP8[$76>>0] = 1; //@line 838 "4374_Task1c_emscripten.cpp"
+ $77 = ((($zom4)) + 22|0); //@line 838 "4374_Task1c_emscripten.cpp"
+ HEAP8[$77>>0] = 0; //@line 838 "4374_Task1c_emscripten.cpp"
+ $78 = $49; //@line 840 "4374_Task1c_emscripten.cpp"
+ $46 = $78; //@line 840 "4374_Task1c_emscripten.cpp"
+ $47 = $zom1; //@line 840 "4374_Task1c_emscripten.cpp"
+ $79 = $46; //@line 840 "4374_Task1c_emscripten.cpp"
  $80 = ((($79)) + 4|0); //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $81 = HEAP32[$80>>2]|0; //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $45 = $79; //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -16890,10 +17580,10 @@ function __Z17placezombiesonmapPA22_cRNSt3__16vectorI6zombieNS1_9allocatorIS3_EE
   $101 = $47; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   __ZNSt3__16vectorI6zombieNS_9allocatorIS1_EEE21__push_back_slow_pathIKS1_EEvRT_($79,$101); //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  }
- $102 = $49; //@line 765 "4374_Task1c_emscripten.cpp"
- $34 = $102; //@line 765 "4374_Task1c_emscripten.cpp"
- $35 = $zom2; //@line 765 "4374_Task1c_emscripten.cpp"
- $103 = $34; //@line 765 "4374_Task1c_emscripten.cpp"
+ $102 = $49; //@line 841 "4374_Task1c_emscripten.cpp"
+ $34 = $102; //@line 841 "4374_Task1c_emscripten.cpp"
+ $35 = $zom2; //@line 841 "4374_Task1c_emscripten.cpp"
+ $103 = $34; //@line 841 "4374_Task1c_emscripten.cpp"
  $104 = ((($103)) + 4|0); //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $105 = HEAP32[$104>>2]|0; //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $33 = $103; //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -16934,10 +17624,10 @@ function __Z17placezombiesonmapPA22_cRNSt3__16vectorI6zombieNS1_9allocatorIS3_EE
   $125 = $35; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   __ZNSt3__16vectorI6zombieNS_9allocatorIS1_EEE21__push_back_slow_pathIKS1_EEvRT_($103,$125); //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  }
- $126 = $49; //@line 766 "4374_Task1c_emscripten.cpp"
- $22 = $126; //@line 766 "4374_Task1c_emscripten.cpp"
- $23 = $zom3; //@line 766 "4374_Task1c_emscripten.cpp"
- $127 = $22; //@line 766 "4374_Task1c_emscripten.cpp"
+ $126 = $49; //@line 842 "4374_Task1c_emscripten.cpp"
+ $22 = $126; //@line 842 "4374_Task1c_emscripten.cpp"
+ $23 = $zom3; //@line 842 "4374_Task1c_emscripten.cpp"
+ $127 = $22; //@line 842 "4374_Task1c_emscripten.cpp"
  $128 = ((($127)) + 4|0); //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $129 = HEAP32[$128>>2]|0; //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $21 = $127; //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -16978,10 +17668,10 @@ function __Z17placezombiesonmapPA22_cRNSt3__16vectorI6zombieNS1_9allocatorIS3_EE
   $149 = $23; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   __ZNSt3__16vectorI6zombieNS_9allocatorIS1_EEE21__push_back_slow_pathIKS1_EEvRT_($127,$149); //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  }
- $150 = $49; //@line 767 "4374_Task1c_emscripten.cpp"
- $10 = $150; //@line 767 "4374_Task1c_emscripten.cpp"
- $11 = $zom4; //@line 767 "4374_Task1c_emscripten.cpp"
- $151 = $10; //@line 767 "4374_Task1c_emscripten.cpp"
+ $150 = $49; //@line 843 "4374_Task1c_emscripten.cpp"
+ $10 = $150; //@line 843 "4374_Task1c_emscripten.cpp"
+ $11 = $zom4; //@line 843 "4374_Task1c_emscripten.cpp"
+ $151 = $10; //@line 843 "4374_Task1c_emscripten.cpp"
  $152 = ((($151)) + 4|0); //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $153 = HEAP32[$152>>2]|0; //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $9 = $151; //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -17018,43 +17708,43 @@ function __Z17placezombiesonmapPA22_cRNSt3__16vectorI6zombieNS1_9allocatorIS3_EE
   $171 = HEAP32[$170>>2]|0; //@line 1597 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   $172 = ((($171)) + 24|0); //@line 1597 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   HEAP32[$170>>2] = $172; //@line 1597 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-  $174 = $48; //@line 769 "4374_Task1c_emscripten.cpp"
-  $175 = ((($174)) + 22|0); //@line 769 "4374_Task1c_emscripten.cpp"
-  $176 = ((($175)) + 1|0); //@line 769 "4374_Task1c_emscripten.cpp"
-  HEAP8[$176>>0] = 90; //@line 769 "4374_Task1c_emscripten.cpp"
-  $177 = $48; //@line 770 "4374_Task1c_emscripten.cpp"
-  $178 = ((($177)) + 814|0); //@line 770 "4374_Task1c_emscripten.cpp"
-  $179 = ((($178)) + 1|0); //@line 770 "4374_Task1c_emscripten.cpp"
-  HEAP8[$179>>0] = 90; //@line 770 "4374_Task1c_emscripten.cpp"
-  $180 = $48; //@line 771 "4374_Task1c_emscripten.cpp"
-  $181 = ((($180)) + 22|0); //@line 771 "4374_Task1c_emscripten.cpp"
-  $182 = ((($181)) + 20|0); //@line 771 "4374_Task1c_emscripten.cpp"
-  HEAP8[$182>>0] = 90; //@line 771 "4374_Task1c_emscripten.cpp"
-  $183 = $48; //@line 772 "4374_Task1c_emscripten.cpp"
-  $184 = ((($183)) + 814|0); //@line 772 "4374_Task1c_emscripten.cpp"
-  $185 = ((($184)) + 20|0); //@line 772 "4374_Task1c_emscripten.cpp"
-  HEAP8[$185>>0] = 90; //@line 772 "4374_Task1c_emscripten.cpp"
-  STACKTOP = sp;return; //@line 774 "4374_Task1c_emscripten.cpp"
+  $174 = $48; //@line 845 "4374_Task1c_emscripten.cpp"
+  $175 = ((($174)) + 22|0); //@line 845 "4374_Task1c_emscripten.cpp"
+  $176 = ((($175)) + 1|0); //@line 845 "4374_Task1c_emscripten.cpp"
+  HEAP8[$176>>0] = 90; //@line 845 "4374_Task1c_emscripten.cpp"
+  $177 = $48; //@line 846 "4374_Task1c_emscripten.cpp"
+  $178 = ((($177)) + 814|0); //@line 846 "4374_Task1c_emscripten.cpp"
+  $179 = ((($178)) + 1|0); //@line 846 "4374_Task1c_emscripten.cpp"
+  HEAP8[$179>>0] = 90; //@line 846 "4374_Task1c_emscripten.cpp"
+  $180 = $48; //@line 847 "4374_Task1c_emscripten.cpp"
+  $181 = ((($180)) + 22|0); //@line 847 "4374_Task1c_emscripten.cpp"
+  $182 = ((($181)) + 20|0); //@line 847 "4374_Task1c_emscripten.cpp"
+  HEAP8[$182>>0] = 90; //@line 847 "4374_Task1c_emscripten.cpp"
+  $183 = $48; //@line 848 "4374_Task1c_emscripten.cpp"
+  $184 = ((($183)) + 814|0); //@line 848 "4374_Task1c_emscripten.cpp"
+  $185 = ((($184)) + 20|0); //@line 848 "4374_Task1c_emscripten.cpp"
+  HEAP8[$185>>0] = 90; //@line 848 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return; //@line 850 "4374_Task1c_emscripten.cpp"
  } else {
   $173 = $11; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   __ZNSt3__16vectorI6zombieNS_9allocatorIS1_EEE21__push_back_slow_pathIKS1_EEvRT_($151,$173); //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-  $174 = $48; //@line 769 "4374_Task1c_emscripten.cpp"
-  $175 = ((($174)) + 22|0); //@line 769 "4374_Task1c_emscripten.cpp"
-  $176 = ((($175)) + 1|0); //@line 769 "4374_Task1c_emscripten.cpp"
-  HEAP8[$176>>0] = 90; //@line 769 "4374_Task1c_emscripten.cpp"
-  $177 = $48; //@line 770 "4374_Task1c_emscripten.cpp"
-  $178 = ((($177)) + 814|0); //@line 770 "4374_Task1c_emscripten.cpp"
-  $179 = ((($178)) + 1|0); //@line 770 "4374_Task1c_emscripten.cpp"
-  HEAP8[$179>>0] = 90; //@line 770 "4374_Task1c_emscripten.cpp"
-  $180 = $48; //@line 771 "4374_Task1c_emscripten.cpp"
-  $181 = ((($180)) + 22|0); //@line 771 "4374_Task1c_emscripten.cpp"
-  $182 = ((($181)) + 20|0); //@line 771 "4374_Task1c_emscripten.cpp"
-  HEAP8[$182>>0] = 90; //@line 771 "4374_Task1c_emscripten.cpp"
-  $183 = $48; //@line 772 "4374_Task1c_emscripten.cpp"
-  $184 = ((($183)) + 814|0); //@line 772 "4374_Task1c_emscripten.cpp"
-  $185 = ((($184)) + 20|0); //@line 772 "4374_Task1c_emscripten.cpp"
-  HEAP8[$185>>0] = 90; //@line 772 "4374_Task1c_emscripten.cpp"
-  STACKTOP = sp;return; //@line 774 "4374_Task1c_emscripten.cpp"
+  $174 = $48; //@line 845 "4374_Task1c_emscripten.cpp"
+  $175 = ((($174)) + 22|0); //@line 845 "4374_Task1c_emscripten.cpp"
+  $176 = ((($175)) + 1|0); //@line 845 "4374_Task1c_emscripten.cpp"
+  HEAP8[$176>>0] = 90; //@line 845 "4374_Task1c_emscripten.cpp"
+  $177 = $48; //@line 846 "4374_Task1c_emscripten.cpp"
+  $178 = ((($177)) + 814|0); //@line 846 "4374_Task1c_emscripten.cpp"
+  $179 = ((($178)) + 1|0); //@line 846 "4374_Task1c_emscripten.cpp"
+  HEAP8[$179>>0] = 90; //@line 846 "4374_Task1c_emscripten.cpp"
+  $180 = $48; //@line 847 "4374_Task1c_emscripten.cpp"
+  $181 = ((($180)) + 22|0); //@line 847 "4374_Task1c_emscripten.cpp"
+  $182 = ((($181)) + 20|0); //@line 847 "4374_Task1c_emscripten.cpp"
+  HEAP8[$182>>0] = 90; //@line 847 "4374_Task1c_emscripten.cpp"
+  $183 = $48; //@line 848 "4374_Task1c_emscripten.cpp"
+  $184 = ((($183)) + 814|0); //@line 848 "4374_Task1c_emscripten.cpp"
+  $185 = ((($184)) + 20|0); //@line 848 "4374_Task1c_emscripten.cpp"
+  HEAP8[$185>>0] = 90; //@line 848 "4374_Task1c_emscripten.cpp"
+  STACKTOP = sp;return; //@line 850 "4374_Task1c_emscripten.cpp"
  }
 }
 function __Z25setSpotInitialCoordinatesPA22_cR4Item($grid,$spot) {
@@ -17066,37 +17756,37 @@ function __Z25setSpotInitialCoordinatesPA22_cR4Item($grid,$spot) {
  STACKTOP = STACKTOP + 16|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
  $0 = $grid;
  $1 = $spot;
- $2 = (__Z6Randomi(37)|0); //@line 779 "4374_Task1c_emscripten.cpp"
- $3 = $1; //@line 779 "4374_Task1c_emscripten.cpp"
- $4 = ((($3)) + 8|0); //@line 779 "4374_Task1c_emscripten.cpp"
- HEAP32[$4>>2] = $2; //@line 779 "4374_Task1c_emscripten.cpp"
- $5 = (__Z6Randomi(20)|0); //@line 780 "4374_Task1c_emscripten.cpp"
- $6 = $1; //@line 780 "4374_Task1c_emscripten.cpp"
- $7 = ((($6)) + 4|0); //@line 780 "4374_Task1c_emscripten.cpp"
- HEAP32[$7>>2] = $5; //@line 780 "4374_Task1c_emscripten.cpp"
+ $2 = (__Z6Randomi(37)|0); //@line 855 "4374_Task1c_emscripten.cpp"
+ $3 = $1; //@line 855 "4374_Task1c_emscripten.cpp"
+ $4 = ((($3)) + 8|0); //@line 855 "4374_Task1c_emscripten.cpp"
+ HEAP32[$4>>2] = $2; //@line 855 "4374_Task1c_emscripten.cpp"
+ $5 = (__Z6Randomi(20)|0); //@line 856 "4374_Task1c_emscripten.cpp"
+ $6 = $1; //@line 856 "4374_Task1c_emscripten.cpp"
+ $7 = ((($6)) + 4|0); //@line 856 "4374_Task1c_emscripten.cpp"
+ HEAP32[$7>>2] = $5; //@line 856 "4374_Task1c_emscripten.cpp"
  while(1) {
-  $8 = $0; //@line 781 "4374_Task1c_emscripten.cpp"
-  $9 = $1; //@line 781 "4374_Task1c_emscripten.cpp"
-  $10 = ((($9)) + 4|0); //@line 781 "4374_Task1c_emscripten.cpp"
-  $11 = HEAP32[$10>>2]|0; //@line 781 "4374_Task1c_emscripten.cpp"
-  $12 = $1; //@line 781 "4374_Task1c_emscripten.cpp"
-  $13 = ((($12)) + 8|0); //@line 781 "4374_Task1c_emscripten.cpp"
-  $14 = HEAP32[$13>>2]|0; //@line 781 "4374_Task1c_emscripten.cpp"
-  $15 = (__Z12ocupiedpeacePA22_Kcii($8,$11,$14)|0); //@line 781 "4374_Task1c_emscripten.cpp"
+  $8 = $0; //@line 857 "4374_Task1c_emscripten.cpp"
+  $9 = $1; //@line 857 "4374_Task1c_emscripten.cpp"
+  $10 = ((($9)) + 4|0); //@line 857 "4374_Task1c_emscripten.cpp"
+  $11 = HEAP32[$10>>2]|0; //@line 857 "4374_Task1c_emscripten.cpp"
+  $12 = $1; //@line 857 "4374_Task1c_emscripten.cpp"
+  $13 = ((($12)) + 8|0); //@line 857 "4374_Task1c_emscripten.cpp"
+  $14 = HEAP32[$13>>2]|0; //@line 857 "4374_Task1c_emscripten.cpp"
+  $15 = (__Z12ocupiedpeacePA22_Kcii($8,$11,$14)|0); //@line 857 "4374_Task1c_emscripten.cpp"
   if (!($15)) {
    break;
   }
-  __Z4Seedv(); //@line 783 "4374_Task1c_emscripten.cpp"
-  $16 = (__Z6Randomi(20)|0); //@line 784 "4374_Task1c_emscripten.cpp"
-  $17 = $1; //@line 784 "4374_Task1c_emscripten.cpp"
-  $18 = ((($17)) + 4|0); //@line 784 "4374_Task1c_emscripten.cpp"
-  HEAP32[$18>>2] = $16; //@line 784 "4374_Task1c_emscripten.cpp"
-  $19 = (__Z6Randomi(37)|0); //@line 785 "4374_Task1c_emscripten.cpp"
-  $20 = $1; //@line 785 "4374_Task1c_emscripten.cpp"
-  $21 = ((($20)) + 8|0); //@line 785 "4374_Task1c_emscripten.cpp"
-  HEAP32[$21>>2] = $19; //@line 785 "4374_Task1c_emscripten.cpp"
+  __Z4Seedv(); //@line 859 "4374_Task1c_emscripten.cpp"
+  $16 = (__Z6Randomi(20)|0); //@line 860 "4374_Task1c_emscripten.cpp"
+  $17 = $1; //@line 860 "4374_Task1c_emscripten.cpp"
+  $18 = ((($17)) + 4|0); //@line 860 "4374_Task1c_emscripten.cpp"
+  HEAP32[$18>>2] = $16; //@line 860 "4374_Task1c_emscripten.cpp"
+  $19 = (__Z6Randomi(37)|0); //@line 861 "4374_Task1c_emscripten.cpp"
+  $20 = $1; //@line 861 "4374_Task1c_emscripten.cpp"
+  $21 = ((($20)) + 8|0); //@line 861 "4374_Task1c_emscripten.cpp"
+  HEAP32[$21>>2] = $19; //@line 861 "4374_Task1c_emscripten.cpp"
  }
- STACKTOP = sp;return; //@line 787 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 863 "4374_Task1c_emscripten.cpp"
 }
 function __Z9placeSpotPA22_cRK4Item($gr,$spot) {
  $gr = $gr|0;
@@ -17106,19 +17796,19 @@ function __Z9placeSpotPA22_cRK4Item($gr,$spot) {
  STACKTOP = STACKTOP + 16|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
  $0 = $gr;
  $1 = $spot;
- $2 = $1; //@line 808 "4374_Task1c_emscripten.cpp"
- $3 = HEAP8[$2>>0]|0; //@line 808 "4374_Task1c_emscripten.cpp"
- $4 = $1; //@line 808 "4374_Task1c_emscripten.cpp"
- $5 = ((($4)) + 4|0); //@line 808 "4374_Task1c_emscripten.cpp"
- $6 = HEAP32[$5>>2]|0; //@line 808 "4374_Task1c_emscripten.cpp"
- $7 = $1; //@line 808 "4374_Task1c_emscripten.cpp"
- $8 = ((($7)) + 8|0); //@line 808 "4374_Task1c_emscripten.cpp"
- $9 = HEAP32[$8>>2]|0; //@line 808 "4374_Task1c_emscripten.cpp"
- $10 = $0; //@line 808 "4374_Task1c_emscripten.cpp"
- $11 = (($10) + (($9*22)|0)|0); //@line 808 "4374_Task1c_emscripten.cpp"
- $12 = (($11) + ($6)|0); //@line 808 "4374_Task1c_emscripten.cpp"
- HEAP8[$12>>0] = $3; //@line 808 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return; //@line 809 "4374_Task1c_emscripten.cpp"
+ $2 = $1; //@line 884 "4374_Task1c_emscripten.cpp"
+ $3 = HEAP8[$2>>0]|0; //@line 884 "4374_Task1c_emscripten.cpp"
+ $4 = $1; //@line 884 "4374_Task1c_emscripten.cpp"
+ $5 = ((($4)) + 4|0); //@line 884 "4374_Task1c_emscripten.cpp"
+ $6 = HEAP32[$5>>2]|0; //@line 884 "4374_Task1c_emscripten.cpp"
+ $7 = $1; //@line 884 "4374_Task1c_emscripten.cpp"
+ $8 = ((($7)) + 8|0); //@line 884 "4374_Task1c_emscripten.cpp"
+ $9 = HEAP32[$8>>2]|0; //@line 884 "4374_Task1c_emscripten.cpp"
+ $10 = $0; //@line 884 "4374_Task1c_emscripten.cpp"
+ $11 = (($10) + (($9*22)|0)|0); //@line 884 "4374_Task1c_emscripten.cpp"
+ $12 = (($11) + ($6)|0); //@line 884 "4374_Task1c_emscripten.cpp"
+ HEAP8[$12>>0] = $3; //@line 884 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 885 "4374_Task1c_emscripten.cpp"
 }
 function __Z14placepillonmapPA22_cRNSt3__16vectorI4pillNS1_9allocatorIS3_EEEERK6player($grid,$pills,$spot) {
  $grid = $grid|0;
@@ -17130,23 +17820,23 @@ function __Z14placepillonmapPA22_cRNSt3__16vectorI4pillNS1_9allocatorIS3_EEEERK6
  $0 = $grid;
  $1 = $pills;
  $2 = $spot;
- $3 = $2; //@line 647 "4374_Task1c_emscripten.cpp"
- $4 = ((($3)) + 40|0); //@line 647 "4374_Task1c_emscripten.cpp"
- $5 = HEAP32[$4>>2]|0; //@line 647 "4374_Task1c_emscripten.cpp"
- if ((($5|0) == 1)) {
-  $6 = $0; //@line 650 "4374_Task1c_emscripten.cpp"
-  $7 = $1; //@line 650 "4374_Task1c_emscripten.cpp"
-  __Z11occupyPillsiPA22_cRNSt3__16vectorI4pillNS1_9allocatorIS3_EEEE(8,$6,$7); //@line 650 "4374_Task1c_emscripten.cpp"
+ $3 = $2; //@line 723 "4374_Task1c_emscripten.cpp"
+ $4 = ((($3)) + 40|0); //@line 723 "4374_Task1c_emscripten.cpp"
+ $5 = HEAP32[$4>>2]|0; //@line 723 "4374_Task1c_emscripten.cpp"
+ if ((($5|0) == 3)) {
+  $10 = $0; //@line 732 "4374_Task1c_emscripten.cpp"
+  $11 = $1; //@line 732 "4374_Task1c_emscripten.cpp"
+  __Z11occupyPillsiPA22_cRNSt3__16vectorI4pillNS1_9allocatorIS3_EEEE(3,$10,$11); //@line 732 "4374_Task1c_emscripten.cpp"
+ } else if ((($5|0) == 1)) {
+  $6 = $0; //@line 726 "4374_Task1c_emscripten.cpp"
+  $7 = $1; //@line 726 "4374_Task1c_emscripten.cpp"
+  __Z11occupyPillsiPA22_cRNSt3__16vectorI4pillNS1_9allocatorIS3_EEEE(8,$6,$7); //@line 726 "4374_Task1c_emscripten.cpp"
  } else if ((($5|0) == 2)) {
-  $8 = $0; //@line 653 "4374_Task1c_emscripten.cpp"
-  $9 = $1; //@line 653 "4374_Task1c_emscripten.cpp"
-  __Z11occupyPillsiPA22_cRNSt3__16vectorI4pillNS1_9allocatorIS3_EEEE(5,$8,$9); //@line 653 "4374_Task1c_emscripten.cpp"
- } else if ((($5|0) == 3)) {
-  $10 = $0; //@line 656 "4374_Task1c_emscripten.cpp"
-  $11 = $1; //@line 656 "4374_Task1c_emscripten.cpp"
-  __Z11occupyPillsiPA22_cRNSt3__16vectorI4pillNS1_9allocatorIS3_EEEE(3,$10,$11); //@line 656 "4374_Task1c_emscripten.cpp"
+  $8 = $0; //@line 729 "4374_Task1c_emscripten.cpp"
+  $9 = $1; //@line 729 "4374_Task1c_emscripten.cpp"
+  __Z11occupyPillsiPA22_cRNSt3__16vectorI4pillNS1_9allocatorIS3_EEEE(5,$8,$9); //@line 729 "4374_Task1c_emscripten.cpp"
  }
- STACKTOP = sp;return; //@line 660 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 736 "4374_Task1c_emscripten.cpp"
 }
 function __Z14placeholeonmapPA22_cRNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEERK6player($grid,$holes,$spot) {
  $grid = $grid|0;
@@ -17158,23 +17848,23 @@ function __Z14placeholeonmapPA22_cRNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEERK6
  $0 = $grid;
  $1 = $holes;
  $2 = $spot;
- $3 = $2; //@line 685 "4374_Task1c_emscripten.cpp"
- $4 = ((($3)) + 40|0); //@line 685 "4374_Task1c_emscripten.cpp"
- $5 = HEAP32[$4>>2]|0; //@line 685 "4374_Task1c_emscripten.cpp"
+ $3 = $2; //@line 761 "4374_Task1c_emscripten.cpp"
+ $4 = ((($3)) + 40|0); //@line 761 "4374_Task1c_emscripten.cpp"
+ $5 = HEAP32[$4>>2]|0; //@line 761 "4374_Task1c_emscripten.cpp"
  if ((($5|0) == 1)) {
-  $6 = $0; //@line 688 "4374_Task1c_emscripten.cpp"
-  $7 = $1; //@line 688 "4374_Task1c_emscripten.cpp"
-  __Z11occupyHolesPA22_cRNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEEi($6,$7,12); //@line 688 "4374_Task1c_emscripten.cpp"
- } else if ((($5|0) == 3)) {
-  $10 = $0; //@line 694 "4374_Task1c_emscripten.cpp"
-  $11 = $1; //@line 694 "4374_Task1c_emscripten.cpp"
-  __Z11occupyHolesPA22_cRNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEEi($10,$11,2); //@line 694 "4374_Task1c_emscripten.cpp"
+  $6 = $0; //@line 764 "4374_Task1c_emscripten.cpp"
+  $7 = $1; //@line 764 "4374_Task1c_emscripten.cpp"
+  __Z11occupyHolesPA22_cRNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEEi($6,$7,12); //@line 764 "4374_Task1c_emscripten.cpp"
  } else if ((($5|0) == 2)) {
-  $8 = $0; //@line 691 "4374_Task1c_emscripten.cpp"
-  $9 = $1; //@line 691 "4374_Task1c_emscripten.cpp"
-  __Z11occupyHolesPA22_cRNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEEi($8,$9,5); //@line 691 "4374_Task1c_emscripten.cpp"
+  $8 = $0; //@line 767 "4374_Task1c_emscripten.cpp"
+  $9 = $1; //@line 767 "4374_Task1c_emscripten.cpp"
+  __Z11occupyHolesPA22_cRNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEEi($8,$9,5); //@line 767 "4374_Task1c_emscripten.cpp"
+ } else if ((($5|0) == 3)) {
+  $10 = $0; //@line 770 "4374_Task1c_emscripten.cpp"
+  $11 = $1; //@line 770 "4374_Task1c_emscripten.cpp"
+  __Z11occupyHolesPA22_cRNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEEi($10,$11,2); //@line 770 "4374_Task1c_emscripten.cpp"
  }
- STACKTOP = sp;return; //@line 698 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 774 "4374_Task1c_emscripten.cpp"
 }
 function __Z16placeportalonmapPA22_cRNSt3__16vectorI6portalNS1_9allocatorIS3_EEEE($grid,$portals) {
  $grid = $grid|0;
@@ -17191,51 +17881,51 @@ function __Z16placeportalonmapPA22_cRNSt3__16vectorI6portalNS1_9allocatorIS3_EEE
  $port = sp + 48|0;
  $20 = $grid;
  $21 = $portals;
- $i = 0; //@line 624 "4374_Task1c_emscripten.cpp"
+ $i = 0; //@line 700 "4374_Task1c_emscripten.cpp"
  while(1) {
-  $22 = $i; //@line 624 "4374_Task1c_emscripten.cpp"
-  $23 = HEAP32[32>>2]|0; //@line 624 "4374_Task1c_emscripten.cpp"
-  $24 = ($22|0)<($23|0); //@line 624 "4374_Task1c_emscripten.cpp"
+  $22 = $i; //@line 700 "4374_Task1c_emscripten.cpp"
+  $23 = HEAP32[32>>2]|0; //@line 700 "4374_Task1c_emscripten.cpp"
+  $24 = ($22|0)<($23|0); //@line 700 "4374_Task1c_emscripten.cpp"
   if (!($24)) {
    break;
   }
-  $25 = (__Z6Randomi(20)|0); //@line 626 "4374_Task1c_emscripten.cpp"
-  $x = $25; //@line 626 "4374_Task1c_emscripten.cpp"
-  $26 = (__Z6Randomi(37)|0); //@line 627 "4374_Task1c_emscripten.cpp"
-  $y = $26; //@line 627 "4374_Task1c_emscripten.cpp"
+  $25 = (__Z6Randomi(20)|0); //@line 702 "4374_Task1c_emscripten.cpp"
+  $x = $25; //@line 702 "4374_Task1c_emscripten.cpp"
+  $26 = (__Z6Randomi(37)|0); //@line 703 "4374_Task1c_emscripten.cpp"
+  $y = $26; //@line 703 "4374_Task1c_emscripten.cpp"
   while(1) {
-   $27 = $20; //@line 628 "4374_Task1c_emscripten.cpp"
-   $28 = $x; //@line 628 "4374_Task1c_emscripten.cpp"
-   $29 = $y; //@line 628 "4374_Task1c_emscripten.cpp"
-   $30 = (__Z12ocupiedpeacePA22_Kcii($27,$28,$29)|0); //@line 628 "4374_Task1c_emscripten.cpp"
+   $27 = $20; //@line 704 "4374_Task1c_emscripten.cpp"
+   $28 = $x; //@line 704 "4374_Task1c_emscripten.cpp"
+   $29 = $y; //@line 704 "4374_Task1c_emscripten.cpp"
+   $30 = (__Z12ocupiedpeacePA22_Kcii($27,$28,$29)|0); //@line 704 "4374_Task1c_emscripten.cpp"
    if (!($30)) {
     break;
    }
-   __Z4Seedv(); //@line 630 "4374_Task1c_emscripten.cpp"
-   $31 = (__Z6Randomi(20)|0); //@line 631 "4374_Task1c_emscripten.cpp"
-   $x = $31; //@line 631 "4374_Task1c_emscripten.cpp"
-   $32 = (__Z6Randomi(37)|0); //@line 632 "4374_Task1c_emscripten.cpp"
-   $y = $32; //@line 632 "4374_Task1c_emscripten.cpp"
+   __Z4Seedv(); //@line 706 "4374_Task1c_emscripten.cpp"
+   $31 = (__Z6Randomi(20)|0); //@line 707 "4374_Task1c_emscripten.cpp"
+   $x = $31; //@line 707 "4374_Task1c_emscripten.cpp"
+   $32 = (__Z6Randomi(37)|0); //@line 708 "4374_Task1c_emscripten.cpp"
+   $y = $32; //@line 708 "4374_Task1c_emscripten.cpp"
   }
-  HEAP8[$port>>0] = 38; //@line 634 "4374_Task1c_emscripten.cpp"
-  $33 = ((($port)) + 4|0); //@line 634 "4374_Task1c_emscripten.cpp"
-  $34 = $x; //@line 634 "4374_Task1c_emscripten.cpp"
-  HEAP32[$33>>2] = $34; //@line 634 "4374_Task1c_emscripten.cpp"
-  $35 = ((($port)) + 8|0); //@line 634 "4374_Task1c_emscripten.cpp"
-  $36 = $y; //@line 634 "4374_Task1c_emscripten.cpp"
-  HEAP32[$35>>2] = $36; //@line 634 "4374_Task1c_emscripten.cpp"
-  $37 = ((($port)) + 12|0); //@line 634 "4374_Task1c_emscripten.cpp"
-  HEAP32[$37>>2] = 0; //@line 634 "4374_Task1c_emscripten.cpp"
-  $38 = $x; //@line 635 "4374_Task1c_emscripten.cpp"
-  $39 = $y; //@line 635 "4374_Task1c_emscripten.cpp"
-  $40 = $20; //@line 635 "4374_Task1c_emscripten.cpp"
-  $41 = (($40) + (($39*22)|0)|0); //@line 635 "4374_Task1c_emscripten.cpp"
-  $42 = (($41) + ($38)|0); //@line 635 "4374_Task1c_emscripten.cpp"
-  HEAP8[$42>>0] = 38; //@line 635 "4374_Task1c_emscripten.cpp"
-  $43 = $21; //@line 636 "4374_Task1c_emscripten.cpp"
-  $18 = $43; //@line 636 "4374_Task1c_emscripten.cpp"
-  $19 = $port; //@line 636 "4374_Task1c_emscripten.cpp"
-  $44 = $18; //@line 636 "4374_Task1c_emscripten.cpp"
+  HEAP8[$port>>0] = 38; //@line 710 "4374_Task1c_emscripten.cpp"
+  $33 = ((($port)) + 4|0); //@line 710 "4374_Task1c_emscripten.cpp"
+  $34 = $x; //@line 710 "4374_Task1c_emscripten.cpp"
+  HEAP32[$33>>2] = $34; //@line 710 "4374_Task1c_emscripten.cpp"
+  $35 = ((($port)) + 8|0); //@line 710 "4374_Task1c_emscripten.cpp"
+  $36 = $y; //@line 710 "4374_Task1c_emscripten.cpp"
+  HEAP32[$35>>2] = $36; //@line 710 "4374_Task1c_emscripten.cpp"
+  $37 = ((($port)) + 12|0); //@line 710 "4374_Task1c_emscripten.cpp"
+  HEAP32[$37>>2] = 0; //@line 710 "4374_Task1c_emscripten.cpp"
+  $38 = $x; //@line 711 "4374_Task1c_emscripten.cpp"
+  $39 = $y; //@line 711 "4374_Task1c_emscripten.cpp"
+  $40 = $20; //@line 711 "4374_Task1c_emscripten.cpp"
+  $41 = (($40) + (($39*22)|0)|0); //@line 711 "4374_Task1c_emscripten.cpp"
+  $42 = (($41) + ($38)|0); //@line 711 "4374_Task1c_emscripten.cpp"
+  HEAP8[$42>>0] = 38; //@line 711 "4374_Task1c_emscripten.cpp"
+  $43 = $21; //@line 712 "4374_Task1c_emscripten.cpp"
+  $18 = $43; //@line 712 "4374_Task1c_emscripten.cpp"
+  $19 = $port; //@line 712 "4374_Task1c_emscripten.cpp"
+  $44 = $18; //@line 712 "4374_Task1c_emscripten.cpp"
   $45 = ((($44)) + 4|0); //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   $46 = HEAP32[$45>>2]|0; //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   $17 = $44; //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -17276,59 +17966,59 @@ function __Z16placeportalonmapPA22_cRNSt3__16vectorI6portalNS1_9allocatorIS3_EEE
    $66 = $19; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
    __ZNSt3__16vectorI6portalNS_9allocatorIS1_EEE21__push_back_slow_pathIKS1_EEvRT_($44,$66); //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   }
-  $67 = $i; //@line 624 "4374_Task1c_emscripten.cpp"
-  $68 = (($67) + 1)|0; //@line 624 "4374_Task1c_emscripten.cpp"
-  $i = $68; //@line 624 "4374_Task1c_emscripten.cpp"
+  $67 = $i; //@line 700 "4374_Task1c_emscripten.cpp"
+  $68 = (($67) + 1)|0; //@line 700 "4374_Task1c_emscripten.cpp"
+  $i = $68; //@line 700 "4374_Task1c_emscripten.cpp"
  }
- $i1 = 0; //@line 638 "4374_Task1c_emscripten.cpp"
+ $i1 = 0; //@line 714 "4374_Task1c_emscripten.cpp"
  while(1) {
-  $69 = $i1; //@line 638 "4374_Task1c_emscripten.cpp"
-  $70 = HEAP32[32>>2]|0; //@line 638 "4374_Task1c_emscripten.cpp"
-  $71 = (($70) - 1)|0; //@line 638 "4374_Task1c_emscripten.cpp"
-  $72 = ($69|0)<($71|0); //@line 638 "4374_Task1c_emscripten.cpp"
-  $73 = $21; //@line 639 "4374_Task1c_emscripten.cpp"
+  $69 = $i1; //@line 714 "4374_Task1c_emscripten.cpp"
+  $70 = HEAP32[32>>2]|0; //@line 714 "4374_Task1c_emscripten.cpp"
+  $71 = (($70) - 1)|0; //@line 714 "4374_Task1c_emscripten.cpp"
+  $72 = ($69|0)<($71|0); //@line 714 "4374_Task1c_emscripten.cpp"
+  $73 = $21; //@line 715 "4374_Task1c_emscripten.cpp"
   if (!($72)) {
    break;
   }
-  $74 = $i1; //@line 639 "4374_Task1c_emscripten.cpp"
-  $75 = (($74) + 1)|0; //@line 639 "4374_Task1c_emscripten.cpp"
-  $6 = $73; //@line 639 "4374_Task1c_emscripten.cpp"
-  $7 = $75; //@line 639 "4374_Task1c_emscripten.cpp"
-  $76 = $6; //@line 639 "4374_Task1c_emscripten.cpp"
+  $74 = $i1; //@line 715 "4374_Task1c_emscripten.cpp"
+  $75 = (($74) + 1)|0; //@line 715 "4374_Task1c_emscripten.cpp"
+  $6 = $73; //@line 715 "4374_Task1c_emscripten.cpp"
+  $7 = $75; //@line 715 "4374_Task1c_emscripten.cpp"
+  $76 = $6; //@line 715 "4374_Task1c_emscripten.cpp"
   $77 = $7; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   $78 = HEAP32[$76>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   $79 = (($78) + ($77<<4)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-  $80 = $21; //@line 639 "4374_Task1c_emscripten.cpp"
-  $81 = $i1; //@line 639 "4374_Task1c_emscripten.cpp"
-  $4 = $80; //@line 639 "4374_Task1c_emscripten.cpp"
-  $5 = $81; //@line 639 "4374_Task1c_emscripten.cpp"
-  $82 = $4; //@line 639 "4374_Task1c_emscripten.cpp"
+  $80 = $21; //@line 715 "4374_Task1c_emscripten.cpp"
+  $81 = $i1; //@line 715 "4374_Task1c_emscripten.cpp"
+  $4 = $80; //@line 715 "4374_Task1c_emscripten.cpp"
+  $5 = $81; //@line 715 "4374_Task1c_emscripten.cpp"
+  $82 = $4; //@line 715 "4374_Task1c_emscripten.cpp"
   $83 = $5; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   $84 = HEAP32[$82>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   $85 = (($84) + ($83<<4)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
-  $86 = ((($85)) + 12|0); //@line 639 "4374_Task1c_emscripten.cpp"
-  HEAP32[$86>>2] = $79; //@line 639 "4374_Task1c_emscripten.cpp"
-  $87 = $i1; //@line 638 "4374_Task1c_emscripten.cpp"
-  $88 = (($87) + 1)|0; //@line 638 "4374_Task1c_emscripten.cpp"
-  $i1 = $88; //@line 638 "4374_Task1c_emscripten.cpp"
+  $86 = ((($85)) + 12|0); //@line 715 "4374_Task1c_emscripten.cpp"
+  HEAP32[$86>>2] = $79; //@line 715 "4374_Task1c_emscripten.cpp"
+  $87 = $i1; //@line 714 "4374_Task1c_emscripten.cpp"
+  $88 = (($87) + 1)|0; //@line 714 "4374_Task1c_emscripten.cpp"
+  $i1 = $88; //@line 714 "4374_Task1c_emscripten.cpp"
  }
- $2 = $73; //@line 640 "4374_Task1c_emscripten.cpp"
- $3 = 0; //@line 640 "4374_Task1c_emscripten.cpp"
- $89 = $2; //@line 640 "4374_Task1c_emscripten.cpp"
+ $2 = $73; //@line 716 "4374_Task1c_emscripten.cpp"
+ $3 = 0; //@line 716 "4374_Task1c_emscripten.cpp"
+ $89 = $2; //@line 716 "4374_Task1c_emscripten.cpp"
  $90 = $3; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $91 = HEAP32[$89>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $92 = (($91) + ($90<<4)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
- $93 = $21; //@line 640 "4374_Task1c_emscripten.cpp"
- $94 = HEAP32[32>>2]|0; //@line 640 "4374_Task1c_emscripten.cpp"
- $0 = $93; //@line 640 "4374_Task1c_emscripten.cpp"
- $1 = $94; //@line 640 "4374_Task1c_emscripten.cpp"
- $95 = $0; //@line 640 "4374_Task1c_emscripten.cpp"
+ $93 = $21; //@line 716 "4374_Task1c_emscripten.cpp"
+ $94 = HEAP32[32>>2]|0; //@line 716 "4374_Task1c_emscripten.cpp"
+ $0 = $93; //@line 716 "4374_Task1c_emscripten.cpp"
+ $1 = $94; //@line 716 "4374_Task1c_emscripten.cpp"
+ $95 = $0; //@line 716 "4374_Task1c_emscripten.cpp"
  $96 = $1; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $97 = HEAP32[$95>>2]|0; //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $98 = (($97) + ($96<<4)|0); //@line 1505 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
- $99 = ((($98)) + 12|0); //@line 640 "4374_Task1c_emscripten.cpp"
- HEAP32[$99>>2] = $92; //@line 640 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return; //@line 641 "4374_Task1c_emscripten.cpp"
+ $99 = ((($98)) + 12|0); //@line 716 "4374_Task1c_emscripten.cpp"
+ HEAP32[$99>>2] = $92; //@line 716 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 717 "4374_Task1c_emscripten.cpp"
 }
 function __Z12ocupiedpeacePA22_Kcii($gd,$x,$y) {
  $gd = $gd|0;
@@ -17343,76 +18033,76 @@ function __Z12ocupiedpeacePA22_Kcii($gd,$x,$y) {
  $1 = $gd;
  $2 = $x;
  $3 = $y;
- $4 = $2; //@line 1055 "4374_Task1c_emscripten.cpp"
- $5 = $3; //@line 1055 "4374_Task1c_emscripten.cpp"
- $6 = $1; //@line 1055 "4374_Task1c_emscripten.cpp"
- $7 = (($6) + (($5*22)|0)|0); //@line 1055 "4374_Task1c_emscripten.cpp"
- $8 = (($7) + ($4)|0); //@line 1055 "4374_Task1c_emscripten.cpp"
- $9 = HEAP8[$8>>0]|0; //@line 1055 "4374_Task1c_emscripten.cpp"
- $10 = $9 << 24 >> 24; //@line 1055 "4374_Task1c_emscripten.cpp"
- $11 = ($10|0)==(46); //@line 1055 "4374_Task1c_emscripten.cpp"
+ $4 = $2; //@line 1131 "4374_Task1c_emscripten.cpp"
+ $5 = $3; //@line 1131 "4374_Task1c_emscripten.cpp"
+ $6 = $1; //@line 1131 "4374_Task1c_emscripten.cpp"
+ $7 = (($6) + (($5*22)|0)|0); //@line 1131 "4374_Task1c_emscripten.cpp"
+ $8 = (($7) + ($4)|0); //@line 1131 "4374_Task1c_emscripten.cpp"
+ $9 = HEAP8[$8>>0]|0; //@line 1131 "4374_Task1c_emscripten.cpp"
+ $10 = $9 << 24 >> 24; //@line 1131 "4374_Task1c_emscripten.cpp"
+ $11 = ($10|0)==(46); //@line 1131 "4374_Task1c_emscripten.cpp"
  if (!($11)) {
-  $12 = $2; //@line 1055 "4374_Task1c_emscripten.cpp"
-  $13 = $3; //@line 1055 "4374_Task1c_emscripten.cpp"
-  $14 = $1; //@line 1055 "4374_Task1c_emscripten.cpp"
-  $15 = (($14) + (($13*22)|0)|0); //@line 1055 "4374_Task1c_emscripten.cpp"
-  $16 = (($15) + ($12)|0); //@line 1055 "4374_Task1c_emscripten.cpp"
-  $17 = HEAP8[$16>>0]|0; //@line 1055 "4374_Task1c_emscripten.cpp"
-  $18 = $17 << 24 >> 24; //@line 1055 "4374_Task1c_emscripten.cpp"
-  $19 = ($18|0)==(79); //@line 1055 "4374_Task1c_emscripten.cpp"
+  $12 = $2; //@line 1131 "4374_Task1c_emscripten.cpp"
+  $13 = $3; //@line 1131 "4374_Task1c_emscripten.cpp"
+  $14 = $1; //@line 1131 "4374_Task1c_emscripten.cpp"
+  $15 = (($14) + (($13*22)|0)|0); //@line 1131 "4374_Task1c_emscripten.cpp"
+  $16 = (($15) + ($12)|0); //@line 1131 "4374_Task1c_emscripten.cpp"
+  $17 = HEAP8[$16>>0]|0; //@line 1131 "4374_Task1c_emscripten.cpp"
+  $18 = $17 << 24 >> 24; //@line 1131 "4374_Task1c_emscripten.cpp"
+  $19 = ($18|0)==(79); //@line 1131 "4374_Task1c_emscripten.cpp"
   if (!($19)) {
-   $20 = $2; //@line 1055 "4374_Task1c_emscripten.cpp"
-   $21 = $3; //@line 1055 "4374_Task1c_emscripten.cpp"
-   $22 = $1; //@line 1055 "4374_Task1c_emscripten.cpp"
-   $23 = (($22) + (($21*22)|0)|0); //@line 1055 "4374_Task1c_emscripten.cpp"
-   $24 = (($23) + ($20)|0); //@line 1055 "4374_Task1c_emscripten.cpp"
-   $25 = HEAP8[$24>>0]|0; //@line 1055 "4374_Task1c_emscripten.cpp"
-   $26 = $25 << 24 >> 24; //@line 1055 "4374_Task1c_emscripten.cpp"
-   $27 = ($26|0)==(90); //@line 1055 "4374_Task1c_emscripten.cpp"
+   $20 = $2; //@line 1131 "4374_Task1c_emscripten.cpp"
+   $21 = $3; //@line 1131 "4374_Task1c_emscripten.cpp"
+   $22 = $1; //@line 1131 "4374_Task1c_emscripten.cpp"
+   $23 = (($22) + (($21*22)|0)|0); //@line 1131 "4374_Task1c_emscripten.cpp"
+   $24 = (($23) + ($20)|0); //@line 1131 "4374_Task1c_emscripten.cpp"
+   $25 = HEAP8[$24>>0]|0; //@line 1131 "4374_Task1c_emscripten.cpp"
+   $26 = $25 << 24 >> 24; //@line 1131 "4374_Task1c_emscripten.cpp"
+   $27 = ($26|0)==(90); //@line 1131 "4374_Task1c_emscripten.cpp"
    if (!($27)) {
-    $28 = $2; //@line 1055 "4374_Task1c_emscripten.cpp"
-    $29 = $3; //@line 1055 "4374_Task1c_emscripten.cpp"
-    $30 = $1; //@line 1055 "4374_Task1c_emscripten.cpp"
-    $31 = (($30) + (($29*22)|0)|0); //@line 1055 "4374_Task1c_emscripten.cpp"
-    $32 = (($31) + ($28)|0); //@line 1055 "4374_Task1c_emscripten.cpp"
-    $33 = HEAP8[$32>>0]|0; //@line 1055 "4374_Task1c_emscripten.cpp"
-    $34 = $33 << 24 >> 24; //@line 1055 "4374_Task1c_emscripten.cpp"
-    $35 = ($34|0)==(64); //@line 1055 "4374_Task1c_emscripten.cpp"
+    $28 = $2; //@line 1131 "4374_Task1c_emscripten.cpp"
+    $29 = $3; //@line 1131 "4374_Task1c_emscripten.cpp"
+    $30 = $1; //@line 1131 "4374_Task1c_emscripten.cpp"
+    $31 = (($30) + (($29*22)|0)|0); //@line 1131 "4374_Task1c_emscripten.cpp"
+    $32 = (($31) + ($28)|0); //@line 1131 "4374_Task1c_emscripten.cpp"
+    $33 = HEAP8[$32>>0]|0; //@line 1131 "4374_Task1c_emscripten.cpp"
+    $34 = $33 << 24 >> 24; //@line 1131 "4374_Task1c_emscripten.cpp"
+    $35 = ($34|0)==(64); //@line 1131 "4374_Task1c_emscripten.cpp"
     if (!($35)) {
-     $36 = $2; //@line 1055 "4374_Task1c_emscripten.cpp"
-     $37 = $3; //@line 1055 "4374_Task1c_emscripten.cpp"
-     $38 = $1; //@line 1055 "4374_Task1c_emscripten.cpp"
-     $39 = (($38) + (($37*22)|0)|0); //@line 1055 "4374_Task1c_emscripten.cpp"
-     $40 = (($39) + ($36)|0); //@line 1055 "4374_Task1c_emscripten.cpp"
-     $41 = HEAP8[$40>>0]|0; //@line 1055 "4374_Task1c_emscripten.cpp"
-     $42 = $41 << 24 >> 24; //@line 1055 "4374_Task1c_emscripten.cpp"
-     $43 = ($42|0)==(35); //@line 1055 "4374_Task1c_emscripten.cpp"
+     $36 = $2; //@line 1131 "4374_Task1c_emscripten.cpp"
+     $37 = $3; //@line 1131 "4374_Task1c_emscripten.cpp"
+     $38 = $1; //@line 1131 "4374_Task1c_emscripten.cpp"
+     $39 = (($38) + (($37*22)|0)|0); //@line 1131 "4374_Task1c_emscripten.cpp"
+     $40 = (($39) + ($36)|0); //@line 1131 "4374_Task1c_emscripten.cpp"
+     $41 = HEAP8[$40>>0]|0; //@line 1131 "4374_Task1c_emscripten.cpp"
+     $42 = $41 << 24 >> 24; //@line 1131 "4374_Task1c_emscripten.cpp"
+     $43 = ($42|0)==(35); //@line 1131 "4374_Task1c_emscripten.cpp"
      if (!($43)) {
-      $44 = $2; //@line 1055 "4374_Task1c_emscripten.cpp"
-      $45 = $3; //@line 1055 "4374_Task1c_emscripten.cpp"
-      $46 = $1; //@line 1055 "4374_Task1c_emscripten.cpp"
-      $47 = (($46) + (($45*22)|0)|0); //@line 1055 "4374_Task1c_emscripten.cpp"
-      $48 = (($47) + ($44)|0); //@line 1055 "4374_Task1c_emscripten.cpp"
-      $49 = HEAP8[$48>>0]|0; //@line 1055 "4374_Task1c_emscripten.cpp"
-      $50 = $49 << 24 >> 24; //@line 1055 "4374_Task1c_emscripten.cpp"
-      $51 = ($50|0)==(38); //@line 1055 "4374_Task1c_emscripten.cpp"
+      $44 = $2; //@line 1131 "4374_Task1c_emscripten.cpp"
+      $45 = $3; //@line 1131 "4374_Task1c_emscripten.cpp"
+      $46 = $1; //@line 1131 "4374_Task1c_emscripten.cpp"
+      $47 = (($46) + (($45*22)|0)|0); //@line 1131 "4374_Task1c_emscripten.cpp"
+      $48 = (($47) + ($44)|0); //@line 1131 "4374_Task1c_emscripten.cpp"
+      $49 = HEAP8[$48>>0]|0; //@line 1131 "4374_Task1c_emscripten.cpp"
+      $50 = $49 << 24 >> 24; //@line 1131 "4374_Task1c_emscripten.cpp"
+      $51 = ($50|0)==(38); //@line 1131 "4374_Task1c_emscripten.cpp"
       if (!($51)) {
-       $$expand_i1_val2 = 0; //@line 1058 "4374_Task1c_emscripten.cpp"
-       HEAP8[$0>>0] = $$expand_i1_val2; //@line 1058 "4374_Task1c_emscripten.cpp"
-       $$pre_trunc = HEAP8[$0>>0]|0; //@line 1060 "4374_Task1c_emscripten.cpp"
-       $52 = $$pre_trunc&1; //@line 1060 "4374_Task1c_emscripten.cpp"
-       STACKTOP = sp;return ($52|0); //@line 1060 "4374_Task1c_emscripten.cpp"
+       $$expand_i1_val2 = 0; //@line 1134 "4374_Task1c_emscripten.cpp"
+       HEAP8[$0>>0] = $$expand_i1_val2; //@line 1134 "4374_Task1c_emscripten.cpp"
+       $$pre_trunc = HEAP8[$0>>0]|0; //@line 1136 "4374_Task1c_emscripten.cpp"
+       $52 = $$pre_trunc&1; //@line 1136 "4374_Task1c_emscripten.cpp"
+       STACKTOP = sp;return ($52|0); //@line 1136 "4374_Task1c_emscripten.cpp"
       }
      }
     }
    }
   }
  }
- $$expand_i1_val = 1; //@line 1056 "4374_Task1c_emscripten.cpp"
- HEAP8[$0>>0] = $$expand_i1_val; //@line 1056 "4374_Task1c_emscripten.cpp"
- $$pre_trunc = HEAP8[$0>>0]|0; //@line 1060 "4374_Task1c_emscripten.cpp"
- $52 = $$pre_trunc&1; //@line 1060 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return ($52|0); //@line 1060 "4374_Task1c_emscripten.cpp"
+ $$expand_i1_val = 1; //@line 1132 "4374_Task1c_emscripten.cpp"
+ HEAP8[$0>>0] = $$expand_i1_val; //@line 1132 "4374_Task1c_emscripten.cpp"
+ $$pre_trunc = HEAP8[$0>>0]|0; //@line 1136 "4374_Task1c_emscripten.cpp"
+ $52 = $$pre_trunc&1; //@line 1136 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return ($52|0); //@line 1136 "4374_Task1c_emscripten.cpp"
 }
 function __Z11occupyPillsiPA22_cRNSt3__16vectorI4pillNS1_9allocatorIS3_EEEE($numberOfPills,$grid,$pills) {
  $numberOfPills = $numberOfPills|0;
@@ -17429,45 +18119,45 @@ function __Z11occupyPillsiPA22_cRNSt3__16vectorI4pillNS1_9allocatorIS3_EEEE($num
  $12 = $numberOfPills;
  $13 = $grid;
  $14 = $pills;
- $i = 0; //@line 665 "4374_Task1c_emscripten.cpp"
+ $i = 0; //@line 741 "4374_Task1c_emscripten.cpp"
  while(1) {
-  $15 = $i; //@line 665 "4374_Task1c_emscripten.cpp"
-  $16 = $12; //@line 665 "4374_Task1c_emscripten.cpp"
-  $17 = ($15|0)<($16|0); //@line 665 "4374_Task1c_emscripten.cpp"
+  $15 = $i; //@line 741 "4374_Task1c_emscripten.cpp"
+  $16 = $12; //@line 741 "4374_Task1c_emscripten.cpp"
+  $17 = ($15|0)<($16|0); //@line 741 "4374_Task1c_emscripten.cpp"
   if (!($17)) {
    break;
   }
-  $18 = (__Z6Randomi(20)|0); //@line 667 "4374_Task1c_emscripten.cpp"
-  $x = $18; //@line 667 "4374_Task1c_emscripten.cpp"
-  $19 = (__Z6Randomi(37)|0); //@line 668 "4374_Task1c_emscripten.cpp"
-  $y = $19; //@line 668 "4374_Task1c_emscripten.cpp"
+  $18 = (__Z6Randomi(20)|0); //@line 743 "4374_Task1c_emscripten.cpp"
+  $x = $18; //@line 743 "4374_Task1c_emscripten.cpp"
+  $19 = (__Z6Randomi(37)|0); //@line 744 "4374_Task1c_emscripten.cpp"
+  $y = $19; //@line 744 "4374_Task1c_emscripten.cpp"
   while(1) {
-   $20 = $13; //@line 669 "4374_Task1c_emscripten.cpp"
-   $21 = $x; //@line 669 "4374_Task1c_emscripten.cpp"
-   $22 = $y; //@line 669 "4374_Task1c_emscripten.cpp"
-   $23 = (__Z12ocupiedpeacePA22_Kcii($20,$21,$22)|0); //@line 669 "4374_Task1c_emscripten.cpp"
+   $20 = $13; //@line 745 "4374_Task1c_emscripten.cpp"
+   $21 = $x; //@line 745 "4374_Task1c_emscripten.cpp"
+   $22 = $y; //@line 745 "4374_Task1c_emscripten.cpp"
+   $23 = (__Z12ocupiedpeacePA22_Kcii($20,$21,$22)|0); //@line 745 "4374_Task1c_emscripten.cpp"
    if (!($23)) {
     break;
    }
-   __Z4Seedv(); //@line 671 "4374_Task1c_emscripten.cpp"
-   $24 = (__Z6Randomi(20)|0); //@line 672 "4374_Task1c_emscripten.cpp"
-   $x = $24; //@line 672 "4374_Task1c_emscripten.cpp"
-   $25 = (__Z6Randomi(37)|0); //@line 673 "4374_Task1c_emscripten.cpp"
-   $y = $25; //@line 673 "4374_Task1c_emscripten.cpp"
+   __Z4Seedv(); //@line 747 "4374_Task1c_emscripten.cpp"
+   $24 = (__Z6Randomi(20)|0); //@line 748 "4374_Task1c_emscripten.cpp"
+   $x = $24; //@line 748 "4374_Task1c_emscripten.cpp"
+   $25 = (__Z6Randomi(37)|0); //@line 749 "4374_Task1c_emscripten.cpp"
+   $y = $25; //@line 749 "4374_Task1c_emscripten.cpp"
   }
-  HEAP8[$pilla>>0] = 46; //@line 675 "4374_Task1c_emscripten.cpp"
-  $26 = ((($pilla)) + 4|0); //@line 675 "4374_Task1c_emscripten.cpp"
-  $27 = $x; //@line 675 "4374_Task1c_emscripten.cpp"
-  HEAP32[$26>>2] = $27; //@line 675 "4374_Task1c_emscripten.cpp"
-  $28 = ((($pilla)) + 8|0); //@line 675 "4374_Task1c_emscripten.cpp"
-  $29 = $y; //@line 675 "4374_Task1c_emscripten.cpp"
-  HEAP32[$28>>2] = $29; //@line 675 "4374_Task1c_emscripten.cpp"
-  $30 = ((($pilla)) + 12|0); //@line 675 "4374_Task1c_emscripten.cpp"
-  HEAP8[$30>>0] = 0; //@line 675 "4374_Task1c_emscripten.cpp"
-  $31 = $14; //@line 676 "4374_Task1c_emscripten.cpp"
-  $10 = $31; //@line 676 "4374_Task1c_emscripten.cpp"
-  $11 = $pilla; //@line 676 "4374_Task1c_emscripten.cpp"
-  $32 = $10; //@line 676 "4374_Task1c_emscripten.cpp"
+  HEAP8[$pilla>>0] = 46; //@line 751 "4374_Task1c_emscripten.cpp"
+  $26 = ((($pilla)) + 4|0); //@line 751 "4374_Task1c_emscripten.cpp"
+  $27 = $x; //@line 751 "4374_Task1c_emscripten.cpp"
+  HEAP32[$26>>2] = $27; //@line 751 "4374_Task1c_emscripten.cpp"
+  $28 = ((($pilla)) + 8|0); //@line 751 "4374_Task1c_emscripten.cpp"
+  $29 = $y; //@line 751 "4374_Task1c_emscripten.cpp"
+  HEAP32[$28>>2] = $29; //@line 751 "4374_Task1c_emscripten.cpp"
+  $30 = ((($pilla)) + 12|0); //@line 751 "4374_Task1c_emscripten.cpp"
+  HEAP8[$30>>0] = 0; //@line 751 "4374_Task1c_emscripten.cpp"
+  $31 = $14; //@line 752 "4374_Task1c_emscripten.cpp"
+  $10 = $31; //@line 752 "4374_Task1c_emscripten.cpp"
+  $11 = $pilla; //@line 752 "4374_Task1c_emscripten.cpp"
+  $32 = $10; //@line 752 "4374_Task1c_emscripten.cpp"
   $33 = ((($32)) + 4|0); //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   $34 = HEAP32[$33>>2]|0; //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   $9 = $32; //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -17508,17 +18198,17 @@ function __Z11occupyPillsiPA22_cRNSt3__16vectorI4pillNS1_9allocatorIS3_EEEE($num
    $54 = $11; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
    __ZNSt3__16vectorI4pillNS_9allocatorIS1_EEE21__push_back_slow_pathIKS1_EEvRT_($32,$54); //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   }
-  $55 = $x; //@line 677 "4374_Task1c_emscripten.cpp"
-  $56 = $y; //@line 677 "4374_Task1c_emscripten.cpp"
-  $57 = $13; //@line 677 "4374_Task1c_emscripten.cpp"
-  $58 = (($57) + (($56*22)|0)|0); //@line 677 "4374_Task1c_emscripten.cpp"
-  $59 = (($58) + ($55)|0); //@line 677 "4374_Task1c_emscripten.cpp"
-  HEAP8[$59>>0] = 46; //@line 677 "4374_Task1c_emscripten.cpp"
-  $60 = $i; //@line 665 "4374_Task1c_emscripten.cpp"
-  $61 = (($60) + 1)|0; //@line 665 "4374_Task1c_emscripten.cpp"
-  $i = $61; //@line 665 "4374_Task1c_emscripten.cpp"
+  $55 = $x; //@line 753 "4374_Task1c_emscripten.cpp"
+  $56 = $y; //@line 753 "4374_Task1c_emscripten.cpp"
+  $57 = $13; //@line 753 "4374_Task1c_emscripten.cpp"
+  $58 = (($57) + (($56*22)|0)|0); //@line 753 "4374_Task1c_emscripten.cpp"
+  $59 = (($58) + ($55)|0); //@line 753 "4374_Task1c_emscripten.cpp"
+  HEAP8[$59>>0] = 46; //@line 753 "4374_Task1c_emscripten.cpp"
+  $60 = $i; //@line 741 "4374_Task1c_emscripten.cpp"
+  $61 = (($60) + 1)|0; //@line 741 "4374_Task1c_emscripten.cpp"
+  $i = $61; //@line 741 "4374_Task1c_emscripten.cpp"
  }
- STACKTOP = sp;return; //@line 679 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 755 "4374_Task1c_emscripten.cpp"
 }
 function __Z11occupyHolesPA22_cRNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEEi($grid,$holes,$numberOfHoles) {
  $grid = $grid|0;
@@ -17535,49 +18225,49 @@ function __Z11occupyHolesPA22_cRNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEEi($gri
  $12 = $grid;
  $13 = $holes;
  $14 = $numberOfHoles;
- $i = 0; //@line 703 "4374_Task1c_emscripten.cpp"
+ $i = 0; //@line 779 "4374_Task1c_emscripten.cpp"
  while(1) {
-  $15 = $i; //@line 703 "4374_Task1c_emscripten.cpp"
-  $16 = $14; //@line 703 "4374_Task1c_emscripten.cpp"
-  $17 = ($15|0)<($16|0); //@line 703 "4374_Task1c_emscripten.cpp"
+  $15 = $i; //@line 779 "4374_Task1c_emscripten.cpp"
+  $16 = $14; //@line 779 "4374_Task1c_emscripten.cpp"
+  $17 = ($15|0)<($16|0); //@line 779 "4374_Task1c_emscripten.cpp"
   if (!($17)) {
    break;
   }
-  $18 = (__Z6Randomi(20)|0); //@line 705 "4374_Task1c_emscripten.cpp"
-  $x = $18; //@line 705 "4374_Task1c_emscripten.cpp"
-  $19 = (__Z6Randomi(37)|0); //@line 706 "4374_Task1c_emscripten.cpp"
-  $y = $19; //@line 706 "4374_Task1c_emscripten.cpp"
+  $18 = (__Z6Randomi(20)|0); //@line 781 "4374_Task1c_emscripten.cpp"
+  $x = $18; //@line 781 "4374_Task1c_emscripten.cpp"
+  $19 = (__Z6Randomi(37)|0); //@line 782 "4374_Task1c_emscripten.cpp"
+  $y = $19; //@line 782 "4374_Task1c_emscripten.cpp"
   while(1) {
-   $20 = $12; //@line 707 "4374_Task1c_emscripten.cpp"
-   $21 = $x; //@line 707 "4374_Task1c_emscripten.cpp"
-   $22 = $y; //@line 707 "4374_Task1c_emscripten.cpp"
-   $23 = (__Z12ocupiedpeacePA22_Kcii($20,$21,$22)|0); //@line 707 "4374_Task1c_emscripten.cpp"
+   $20 = $12; //@line 783 "4374_Task1c_emscripten.cpp"
+   $21 = $x; //@line 783 "4374_Task1c_emscripten.cpp"
+   $22 = $y; //@line 783 "4374_Task1c_emscripten.cpp"
+   $23 = (__Z12ocupiedpeacePA22_Kcii($20,$21,$22)|0); //@line 783 "4374_Task1c_emscripten.cpp"
    if (!($23)) {
     break;
    }
-   __Z4Seedv(); //@line 709 "4374_Task1c_emscripten.cpp"
-   $24 = (__Z6Randomi(20)|0); //@line 710 "4374_Task1c_emscripten.cpp"
-   $x = $24; //@line 710 "4374_Task1c_emscripten.cpp"
-   $25 = (__Z6Randomi(37)|0); //@line 711 "4374_Task1c_emscripten.cpp"
-   $y = $25; //@line 711 "4374_Task1c_emscripten.cpp"
+   __Z4Seedv(); //@line 785 "4374_Task1c_emscripten.cpp"
+   $24 = (__Z6Randomi(20)|0); //@line 786 "4374_Task1c_emscripten.cpp"
+   $x = $24; //@line 786 "4374_Task1c_emscripten.cpp"
+   $25 = (__Z6Randomi(37)|0); //@line 787 "4374_Task1c_emscripten.cpp"
+   $y = $25; //@line 787 "4374_Task1c_emscripten.cpp"
   }
-  HEAP8[$hole>>0] = 79; //@line 713 "4374_Task1c_emscripten.cpp"
-  $26 = ((($hole)) + 4|0); //@line 713 "4374_Task1c_emscripten.cpp"
-  $27 = $x; //@line 713 "4374_Task1c_emscripten.cpp"
-  HEAP32[$26>>2] = $27; //@line 713 "4374_Task1c_emscripten.cpp"
-  $28 = ((($hole)) + 8|0); //@line 713 "4374_Task1c_emscripten.cpp"
-  $29 = $y; //@line 713 "4374_Task1c_emscripten.cpp"
-  HEAP32[$28>>2] = $29; //@line 713 "4374_Task1c_emscripten.cpp"
-  $30 = $x; //@line 714 "4374_Task1c_emscripten.cpp"
-  $31 = $y; //@line 714 "4374_Task1c_emscripten.cpp"
-  $32 = $12; //@line 714 "4374_Task1c_emscripten.cpp"
-  $33 = (($32) + (($31*22)|0)|0); //@line 714 "4374_Task1c_emscripten.cpp"
-  $34 = (($33) + ($30)|0); //@line 714 "4374_Task1c_emscripten.cpp"
-  HEAP8[$34>>0] = 79; //@line 714 "4374_Task1c_emscripten.cpp"
-  $35 = $13; //@line 715 "4374_Task1c_emscripten.cpp"
-  $10 = $35; //@line 715 "4374_Task1c_emscripten.cpp"
-  $11 = $hole; //@line 715 "4374_Task1c_emscripten.cpp"
-  $36 = $10; //@line 715 "4374_Task1c_emscripten.cpp"
+  HEAP8[$hole>>0] = 79; //@line 789 "4374_Task1c_emscripten.cpp"
+  $26 = ((($hole)) + 4|0); //@line 789 "4374_Task1c_emscripten.cpp"
+  $27 = $x; //@line 789 "4374_Task1c_emscripten.cpp"
+  HEAP32[$26>>2] = $27; //@line 789 "4374_Task1c_emscripten.cpp"
+  $28 = ((($hole)) + 8|0); //@line 789 "4374_Task1c_emscripten.cpp"
+  $29 = $y; //@line 789 "4374_Task1c_emscripten.cpp"
+  HEAP32[$28>>2] = $29; //@line 789 "4374_Task1c_emscripten.cpp"
+  $30 = $x; //@line 790 "4374_Task1c_emscripten.cpp"
+  $31 = $y; //@line 790 "4374_Task1c_emscripten.cpp"
+  $32 = $12; //@line 790 "4374_Task1c_emscripten.cpp"
+  $33 = (($32) + (($31*22)|0)|0); //@line 790 "4374_Task1c_emscripten.cpp"
+  $34 = (($33) + ($30)|0); //@line 790 "4374_Task1c_emscripten.cpp"
+  HEAP8[$34>>0] = 79; //@line 790 "4374_Task1c_emscripten.cpp"
+  $35 = $13; //@line 791 "4374_Task1c_emscripten.cpp"
+  $10 = $35; //@line 791 "4374_Task1c_emscripten.cpp"
+  $11 = $hole; //@line 791 "4374_Task1c_emscripten.cpp"
+  $36 = $10; //@line 791 "4374_Task1c_emscripten.cpp"
   $37 = ((($36)) + 4|0); //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   $38 = HEAP32[$37>>2]|0; //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   $9 = $36; //@line 1591 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -17618,11 +18308,11 @@ function __Z11occupyHolesPA22_cRNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEEi($gri
    $58 = $11; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
    __ZNSt3__16vectorI4ItemNS_9allocatorIS1_EEE21__push_back_slow_pathIKS1_EEvRT_($36,$58); //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
   }
-  $59 = $i; //@line 703 "4374_Task1c_emscripten.cpp"
-  $60 = (($59) + 1)|0; //@line 703 "4374_Task1c_emscripten.cpp"
-  $i = $60; //@line 703 "4374_Task1c_emscripten.cpp"
+  $59 = $i; //@line 779 "4374_Task1c_emscripten.cpp"
+  $60 = (($59) + 1)|0; //@line 779 "4374_Task1c_emscripten.cpp"
+  $i = $60; //@line 779 "4374_Task1c_emscripten.cpp"
  }
- STACKTOP = sp;return; //@line 717 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 793 "4374_Task1c_emscripten.cpp"
 }
 function __Z9placeitemPA22_cRKNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEE($g,$holes) {
  $g = $g|0;
@@ -17641,11 +18331,11 @@ function __Z9placeitemPA22_cRKNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEE($g,$hol
  $__end = sp + 44|0;
  $22 = $g;
  $23 = $holes;
- $24 = $23; //@line 849 "4374_Task1c_emscripten.cpp"
- $__range = $24; //@line 849 "4374_Task1c_emscripten.cpp"
- $25 = $__range; //@line 849 "4374_Task1c_emscripten.cpp"
- $21 = $25; //@line 849 "4374_Task1c_emscripten.cpp"
- $26 = $21; //@line 849 "4374_Task1c_emscripten.cpp"
+ $24 = $23; //@line 925 "4374_Task1c_emscripten.cpp"
+ $__range = $24; //@line 925 "4374_Task1c_emscripten.cpp"
+ $25 = $__range; //@line 925 "4374_Task1c_emscripten.cpp"
+ $21 = $25; //@line 925 "4374_Task1c_emscripten.cpp"
+ $26 = $21; //@line 925 "4374_Task1c_emscripten.cpp"
  $27 = HEAP32[$26>>2]|0; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $18 = $26; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $19 = $27; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -17658,10 +18348,10 @@ function __Z9placeitemPA22_cRKNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEE($g,$hol
  $31 = HEAP32[$17>>2]|0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  HEAP32[$20>>2] = $31; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $32 = HEAP32[$20>>2]|0; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
- HEAP32[$__begin>>2] = $32; //@line 849 "4374_Task1c_emscripten.cpp"
- $33 = $__range; //@line 849 "4374_Task1c_emscripten.cpp"
- $6 = $33; //@line 849 "4374_Task1c_emscripten.cpp"
- $34 = $6; //@line 849 "4374_Task1c_emscripten.cpp"
+ HEAP32[$__begin>>2] = $32; //@line 925 "4374_Task1c_emscripten.cpp"
+ $33 = $__range; //@line 925 "4374_Task1c_emscripten.cpp"
+ $6 = $33; //@line 925 "4374_Task1c_emscripten.cpp"
+ $34 = $6; //@line 925 "4374_Task1c_emscripten.cpp"
  $35 = ((($34)) + 4|0); //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $36 = HEAP32[$35>>2]|0; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $3 = $34; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -17675,10 +18365,10 @@ function __Z9placeitemPA22_cRKNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEE($g,$hol
  $40 = HEAP32[$2>>2]|0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  HEAP32[$5>>2] = $40; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $41 = HEAP32[$5>>2]|0; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
- HEAP32[$__end>>2] = $41; //@line 849 "4374_Task1c_emscripten.cpp"
+ HEAP32[$__end>>2] = $41; //@line 925 "4374_Task1c_emscripten.cpp"
  while(1) {
-  $11 = $__begin; //@line 849 "4374_Task1c_emscripten.cpp"
-  $12 = $__end; //@line 849 "4374_Task1c_emscripten.cpp"
+  $11 = $__begin; //@line 925 "4374_Task1c_emscripten.cpp"
+  $12 = $__end; //@line 925 "4374_Task1c_emscripten.cpp"
   $42 = $11; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
   $43 = $12; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
   $9 = $42; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
@@ -17696,29 +18386,29 @@ function __Z9placeitemPA22_cRKNSt3__16vectorI4ItemNS1_9allocatorIS3_EEEE($g,$hol
   if (!($51)) {
    break;
   }
-  $13 = $__begin; //@line 849 "4374_Task1c_emscripten.cpp"
-  $52 = $13; //@line 849 "4374_Task1c_emscripten.cpp"
+  $13 = $__begin; //@line 925 "4374_Task1c_emscripten.cpp"
+  $52 = $13; //@line 925 "4374_Task1c_emscripten.cpp"
   $53 = HEAP32[$52>>2]|0; //@line 1163 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-  $it = $53; //@line 849 "4374_Task1c_emscripten.cpp"
-  $54 = $it; //@line 850 "4374_Task1c_emscripten.cpp"
-  $55 = HEAP8[$54>>0]|0; //@line 850 "4374_Task1c_emscripten.cpp"
-  $56 = $it; //@line 850 "4374_Task1c_emscripten.cpp"
-  $57 = ((($56)) + 4|0); //@line 850 "4374_Task1c_emscripten.cpp"
-  $58 = HEAP32[$57>>2]|0; //@line 850 "4374_Task1c_emscripten.cpp"
-  $59 = $it; //@line 850 "4374_Task1c_emscripten.cpp"
-  $60 = ((($59)) + 8|0); //@line 850 "4374_Task1c_emscripten.cpp"
-  $61 = HEAP32[$60>>2]|0; //@line 850 "4374_Task1c_emscripten.cpp"
-  $62 = $22; //@line 850 "4374_Task1c_emscripten.cpp"
-  $63 = (($62) + (($61*22)|0)|0); //@line 850 "4374_Task1c_emscripten.cpp"
-  $64 = (($63) + ($58)|0); //@line 850 "4374_Task1c_emscripten.cpp"
-  HEAP8[$64>>0] = $55; //@line 850 "4374_Task1c_emscripten.cpp"
-  $14 = $__begin; //@line 849 "4374_Task1c_emscripten.cpp"
-  $65 = $14; //@line 849 "4374_Task1c_emscripten.cpp"
+  $it = $53; //@line 925 "4374_Task1c_emscripten.cpp"
+  $54 = $it; //@line 926 "4374_Task1c_emscripten.cpp"
+  $55 = HEAP8[$54>>0]|0; //@line 926 "4374_Task1c_emscripten.cpp"
+  $56 = $it; //@line 926 "4374_Task1c_emscripten.cpp"
+  $57 = ((($56)) + 4|0); //@line 926 "4374_Task1c_emscripten.cpp"
+  $58 = HEAP32[$57>>2]|0; //@line 926 "4374_Task1c_emscripten.cpp"
+  $59 = $it; //@line 926 "4374_Task1c_emscripten.cpp"
+  $60 = ((($59)) + 8|0); //@line 926 "4374_Task1c_emscripten.cpp"
+  $61 = HEAP32[$60>>2]|0; //@line 926 "4374_Task1c_emscripten.cpp"
+  $62 = $22; //@line 926 "4374_Task1c_emscripten.cpp"
+  $63 = (($62) + (($61*22)|0)|0); //@line 926 "4374_Task1c_emscripten.cpp"
+  $64 = (($63) + ($58)|0); //@line 926 "4374_Task1c_emscripten.cpp"
+  HEAP8[$64>>0] = $55; //@line 926 "4374_Task1c_emscripten.cpp"
+  $14 = $__begin; //@line 925 "4374_Task1c_emscripten.cpp"
+  $65 = $14; //@line 925 "4374_Task1c_emscripten.cpp"
   $66 = HEAP32[$65>>2]|0; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
   $67 = ((($66)) + 12|0); //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
   HEAP32[$65>>2] = $67; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
  }
- STACKTOP = sp;return; //@line 851 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 927 "4374_Task1c_emscripten.cpp"
 }
 function __Z12placezombiesPA22_cRKNSt3__16vectorI6zombieNS1_9allocatorIS3_EEEE($g,$zombies) {
  $g = $g|0;
@@ -17738,11 +18428,11 @@ function __Z12placezombiesPA22_cRKNSt3__16vectorI6zombieNS1_9allocatorIS3_EEEE($
  $__end = sp + 44|0;
  $22 = $g;
  $23 = $zombies;
- $24 = $23; //@line 855 "4374_Task1c_emscripten.cpp"
- $__range = $24; //@line 855 "4374_Task1c_emscripten.cpp"
- $25 = $__range; //@line 855 "4374_Task1c_emscripten.cpp"
- $21 = $25; //@line 855 "4374_Task1c_emscripten.cpp"
- $26 = $21; //@line 855 "4374_Task1c_emscripten.cpp"
+ $24 = $23; //@line 931 "4374_Task1c_emscripten.cpp"
+ $__range = $24; //@line 931 "4374_Task1c_emscripten.cpp"
+ $25 = $__range; //@line 931 "4374_Task1c_emscripten.cpp"
+ $21 = $25; //@line 931 "4374_Task1c_emscripten.cpp"
+ $26 = $21; //@line 931 "4374_Task1c_emscripten.cpp"
  $27 = HEAP32[$26>>2]|0; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $18 = $26; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $19 = $27; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -17755,10 +18445,10 @@ function __Z12placezombiesPA22_cRKNSt3__16vectorI6zombieNS1_9allocatorIS3_EEEE($
  $31 = HEAP32[$17>>2]|0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  HEAP32[$20>>2] = $31; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $32 = HEAP32[$20>>2]|0; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
- HEAP32[$__begin>>2] = $32; //@line 855 "4374_Task1c_emscripten.cpp"
- $33 = $__range; //@line 855 "4374_Task1c_emscripten.cpp"
- $6 = $33; //@line 855 "4374_Task1c_emscripten.cpp"
- $34 = $6; //@line 855 "4374_Task1c_emscripten.cpp"
+ HEAP32[$__begin>>2] = $32; //@line 931 "4374_Task1c_emscripten.cpp"
+ $33 = $__range; //@line 931 "4374_Task1c_emscripten.cpp"
+ $6 = $33; //@line 931 "4374_Task1c_emscripten.cpp"
+ $34 = $6; //@line 931 "4374_Task1c_emscripten.cpp"
  $35 = ((($34)) + 4|0); //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $36 = HEAP32[$35>>2]|0; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $3 = $34; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -17772,10 +18462,10 @@ function __Z12placezombiesPA22_cRKNSt3__16vectorI6zombieNS1_9allocatorIS3_EEEE($
  $40 = HEAP32[$2>>2]|0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  HEAP32[$5>>2] = $40; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $41 = HEAP32[$5>>2]|0; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
- HEAP32[$__end>>2] = $41; //@line 855 "4374_Task1c_emscripten.cpp"
+ HEAP32[$__end>>2] = $41; //@line 931 "4374_Task1c_emscripten.cpp"
  while(1) {
-  $11 = $__begin; //@line 855 "4374_Task1c_emscripten.cpp"
-  $12 = $__end; //@line 855 "4374_Task1c_emscripten.cpp"
+  $11 = $__begin; //@line 931 "4374_Task1c_emscripten.cpp"
+  $12 = $__end; //@line 931 "4374_Task1c_emscripten.cpp"
   $42 = $11; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
   $43 = $12; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
   $9 = $42; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
@@ -17793,45 +18483,45 @@ function __Z12placezombiesPA22_cRKNSt3__16vectorI6zombieNS1_9allocatorIS3_EEEE($
   if (!($51)) {
    break;
   }
-  $13 = $__begin; //@line 855 "4374_Task1c_emscripten.cpp"
-  $52 = $13; //@line 855 "4374_Task1c_emscripten.cpp"
+  $13 = $__begin; //@line 931 "4374_Task1c_emscripten.cpp"
+  $52 = $13; //@line 931 "4374_Task1c_emscripten.cpp"
   $53 = HEAP32[$52>>2]|0; //@line 1163 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-  $item = $53; //@line 855 "4374_Task1c_emscripten.cpp"
-  $54 = $item; //@line 856 "4374_Task1c_emscripten.cpp"
-  $55 = ((($54)) + 21|0); //@line 856 "4374_Task1c_emscripten.cpp"
-  $56 = HEAP8[$55>>0]|0; //@line 856 "4374_Task1c_emscripten.cpp"
-  $57 = $56&1; //@line 856 "4374_Task1c_emscripten.cpp"
-  $58 = $57&1; //@line 856 "4374_Task1c_emscripten.cpp"
-  $59 = ($58|0)==(1); //@line 856 "4374_Task1c_emscripten.cpp"
+  $item = $53; //@line 931 "4374_Task1c_emscripten.cpp"
+  $54 = $item; //@line 932 "4374_Task1c_emscripten.cpp"
+  $55 = ((($54)) + 21|0); //@line 932 "4374_Task1c_emscripten.cpp"
+  $56 = HEAP8[$55>>0]|0; //@line 932 "4374_Task1c_emscripten.cpp"
+  $57 = $56&1; //@line 932 "4374_Task1c_emscripten.cpp"
+  $58 = $57&1; //@line 932 "4374_Task1c_emscripten.cpp"
+  $59 = ($58|0)==(1); //@line 932 "4374_Task1c_emscripten.cpp"
   if ($59) {
-   $60 = $item; //@line 856 "4374_Task1c_emscripten.cpp"
-   $61 = ((($60)) + 22|0); //@line 856 "4374_Task1c_emscripten.cpp"
-   $62 = HEAP8[$61>>0]|0; //@line 856 "4374_Task1c_emscripten.cpp"
-   $63 = $62&1; //@line 856 "4374_Task1c_emscripten.cpp"
-   $64 = $63&1; //@line 856 "4374_Task1c_emscripten.cpp"
-   $65 = ($64|0)==(0); //@line 856 "4374_Task1c_emscripten.cpp"
+   $60 = $item; //@line 932 "4374_Task1c_emscripten.cpp"
+   $61 = ((($60)) + 22|0); //@line 932 "4374_Task1c_emscripten.cpp"
+   $62 = HEAP8[$61>>0]|0; //@line 932 "4374_Task1c_emscripten.cpp"
+   $63 = $62&1; //@line 932 "4374_Task1c_emscripten.cpp"
+   $64 = $63&1; //@line 932 "4374_Task1c_emscripten.cpp"
+   $65 = ($64|0)==(0); //@line 932 "4374_Task1c_emscripten.cpp"
    if ($65) {
-    $66 = $item; //@line 857 "4374_Task1c_emscripten.cpp"
-    $67 = HEAP8[$66>>0]|0; //@line 857 "4374_Task1c_emscripten.cpp"
-    $68 = $item; //@line 857 "4374_Task1c_emscripten.cpp"
-    $69 = ((($68)) + 4|0); //@line 857 "4374_Task1c_emscripten.cpp"
-    $70 = HEAP32[$69>>2]|0; //@line 857 "4374_Task1c_emscripten.cpp"
-    $71 = $item; //@line 857 "4374_Task1c_emscripten.cpp"
-    $72 = ((($71)) + 8|0); //@line 857 "4374_Task1c_emscripten.cpp"
-    $73 = HEAP32[$72>>2]|0; //@line 857 "4374_Task1c_emscripten.cpp"
-    $74 = $22; //@line 857 "4374_Task1c_emscripten.cpp"
-    $75 = (($74) + (($73*22)|0)|0); //@line 857 "4374_Task1c_emscripten.cpp"
-    $76 = (($75) + ($70)|0); //@line 857 "4374_Task1c_emscripten.cpp"
-    HEAP8[$76>>0] = $67; //@line 857 "4374_Task1c_emscripten.cpp"
+    $66 = $item; //@line 933 "4374_Task1c_emscripten.cpp"
+    $67 = HEAP8[$66>>0]|0; //@line 933 "4374_Task1c_emscripten.cpp"
+    $68 = $item; //@line 933 "4374_Task1c_emscripten.cpp"
+    $69 = ((($68)) + 4|0); //@line 933 "4374_Task1c_emscripten.cpp"
+    $70 = HEAP32[$69>>2]|0; //@line 933 "4374_Task1c_emscripten.cpp"
+    $71 = $item; //@line 933 "4374_Task1c_emscripten.cpp"
+    $72 = ((($71)) + 8|0); //@line 933 "4374_Task1c_emscripten.cpp"
+    $73 = HEAP32[$72>>2]|0; //@line 933 "4374_Task1c_emscripten.cpp"
+    $74 = $22; //@line 933 "4374_Task1c_emscripten.cpp"
+    $75 = (($74) + (($73*22)|0)|0); //@line 933 "4374_Task1c_emscripten.cpp"
+    $76 = (($75) + ($70)|0); //@line 933 "4374_Task1c_emscripten.cpp"
+    HEAP8[$76>>0] = $67; //@line 933 "4374_Task1c_emscripten.cpp"
    }
   }
-  $14 = $__begin; //@line 855 "4374_Task1c_emscripten.cpp"
-  $77 = $14; //@line 855 "4374_Task1c_emscripten.cpp"
+  $14 = $__begin; //@line 931 "4374_Task1c_emscripten.cpp"
+  $77 = $14; //@line 931 "4374_Task1c_emscripten.cpp"
   $78 = HEAP32[$77>>2]|0; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
   $79 = ((($78)) + 24|0); //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
   HEAP32[$77>>2] = $79; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
  }
- STACKTOP = sp;return; //@line 858 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 934 "4374_Task1c_emscripten.cpp"
 }
 function __Z9placepillPA22_cRKNSt3__16vectorI4pillNS1_9allocatorIS3_EEEE($g,$pills) {
  $g = $g|0;
@@ -17850,11 +18540,11 @@ function __Z9placepillPA22_cRKNSt3__16vectorI4pillNS1_9allocatorIS3_EEEE($g,$pil
  $__end = sp + 44|0;
  $22 = $g;
  $23 = $pills;
- $24 = $23; //@line 842 "4374_Task1c_emscripten.cpp"
- $__range = $24; //@line 842 "4374_Task1c_emscripten.cpp"
- $25 = $__range; //@line 842 "4374_Task1c_emscripten.cpp"
- $21 = $25; //@line 842 "4374_Task1c_emscripten.cpp"
- $26 = $21; //@line 842 "4374_Task1c_emscripten.cpp"
+ $24 = $23; //@line 918 "4374_Task1c_emscripten.cpp"
+ $__range = $24; //@line 918 "4374_Task1c_emscripten.cpp"
+ $25 = $__range; //@line 918 "4374_Task1c_emscripten.cpp"
+ $21 = $25; //@line 918 "4374_Task1c_emscripten.cpp"
+ $26 = $21; //@line 918 "4374_Task1c_emscripten.cpp"
  $27 = HEAP32[$26>>2]|0; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $18 = $26; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $19 = $27; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -17867,10 +18557,10 @@ function __Z9placepillPA22_cRKNSt3__16vectorI4pillNS1_9allocatorIS3_EEEE($g,$pil
  $31 = HEAP32[$17>>2]|0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  HEAP32[$20>>2] = $31; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $32 = HEAP32[$20>>2]|0; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
- HEAP32[$__begin>>2] = $32; //@line 842 "4374_Task1c_emscripten.cpp"
- $33 = $__range; //@line 842 "4374_Task1c_emscripten.cpp"
- $6 = $33; //@line 842 "4374_Task1c_emscripten.cpp"
- $34 = $6; //@line 842 "4374_Task1c_emscripten.cpp"
+ HEAP32[$__begin>>2] = $32; //@line 918 "4374_Task1c_emscripten.cpp"
+ $33 = $__range; //@line 918 "4374_Task1c_emscripten.cpp"
+ $6 = $33; //@line 918 "4374_Task1c_emscripten.cpp"
+ $34 = $6; //@line 918 "4374_Task1c_emscripten.cpp"
  $35 = ((($34)) + 4|0); //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $36 = HEAP32[$35>>2]|0; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $3 = $34; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -17884,10 +18574,10 @@ function __Z9placepillPA22_cRKNSt3__16vectorI4pillNS1_9allocatorIS3_EEEE($g,$pil
  $40 = HEAP32[$2>>2]|0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  HEAP32[$5>>2] = $40; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $41 = HEAP32[$5>>2]|0; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
- HEAP32[$__end>>2] = $41; //@line 842 "4374_Task1c_emscripten.cpp"
+ HEAP32[$__end>>2] = $41; //@line 918 "4374_Task1c_emscripten.cpp"
  while(1) {
-  $11 = $__begin; //@line 842 "4374_Task1c_emscripten.cpp"
-  $12 = $__end; //@line 842 "4374_Task1c_emscripten.cpp"
+  $11 = $__begin; //@line 918 "4374_Task1c_emscripten.cpp"
+  $12 = $__end; //@line 918 "4374_Task1c_emscripten.cpp"
   $42 = $11; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
   $43 = $12; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
   $9 = $42; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
@@ -17905,35 +18595,35 @@ function __Z9placepillPA22_cRKNSt3__16vectorI4pillNS1_9allocatorIS3_EEEE($g,$pil
   if (!($51)) {
    break;
   }
-  $13 = $__begin; //@line 842 "4374_Task1c_emscripten.cpp"
-  $52 = $13; //@line 842 "4374_Task1c_emscripten.cpp"
+  $13 = $__begin; //@line 918 "4374_Task1c_emscripten.cpp"
+  $52 = $13; //@line 918 "4374_Task1c_emscripten.cpp"
   $53 = HEAP32[$52>>2]|0; //@line 1163 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-  $item = $53; //@line 842 "4374_Task1c_emscripten.cpp"
-  $54 = $item; //@line 843 "4374_Task1c_emscripten.cpp"
-  $55 = ((($54)) + 12|0); //@line 843 "4374_Task1c_emscripten.cpp"
-  $56 = HEAP8[$55>>0]|0; //@line 843 "4374_Task1c_emscripten.cpp"
-  $57 = $56&1; //@line 843 "4374_Task1c_emscripten.cpp"
+  $item = $53; //@line 918 "4374_Task1c_emscripten.cpp"
+  $54 = $item; //@line 919 "4374_Task1c_emscripten.cpp"
+  $55 = ((($54)) + 12|0); //@line 919 "4374_Task1c_emscripten.cpp"
+  $56 = HEAP8[$55>>0]|0; //@line 919 "4374_Task1c_emscripten.cpp"
+  $57 = $56&1; //@line 919 "4374_Task1c_emscripten.cpp"
   if (!($57)) {
-   $58 = $item; //@line 844 "4374_Task1c_emscripten.cpp"
-   $59 = HEAP8[$58>>0]|0; //@line 844 "4374_Task1c_emscripten.cpp"
-   $60 = $item; //@line 844 "4374_Task1c_emscripten.cpp"
-   $61 = ((($60)) + 4|0); //@line 844 "4374_Task1c_emscripten.cpp"
-   $62 = HEAP32[$61>>2]|0; //@line 844 "4374_Task1c_emscripten.cpp"
-   $63 = $item; //@line 844 "4374_Task1c_emscripten.cpp"
-   $64 = ((($63)) + 8|0); //@line 844 "4374_Task1c_emscripten.cpp"
-   $65 = HEAP32[$64>>2]|0; //@line 844 "4374_Task1c_emscripten.cpp"
-   $66 = $22; //@line 844 "4374_Task1c_emscripten.cpp"
-   $67 = (($66) + (($65*22)|0)|0); //@line 844 "4374_Task1c_emscripten.cpp"
-   $68 = (($67) + ($62)|0); //@line 844 "4374_Task1c_emscripten.cpp"
-   HEAP8[$68>>0] = $59; //@line 844 "4374_Task1c_emscripten.cpp"
+   $58 = $item; //@line 920 "4374_Task1c_emscripten.cpp"
+   $59 = HEAP8[$58>>0]|0; //@line 920 "4374_Task1c_emscripten.cpp"
+   $60 = $item; //@line 920 "4374_Task1c_emscripten.cpp"
+   $61 = ((($60)) + 4|0); //@line 920 "4374_Task1c_emscripten.cpp"
+   $62 = HEAP32[$61>>2]|0; //@line 920 "4374_Task1c_emscripten.cpp"
+   $63 = $item; //@line 920 "4374_Task1c_emscripten.cpp"
+   $64 = ((($63)) + 8|0); //@line 920 "4374_Task1c_emscripten.cpp"
+   $65 = HEAP32[$64>>2]|0; //@line 920 "4374_Task1c_emscripten.cpp"
+   $66 = $22; //@line 920 "4374_Task1c_emscripten.cpp"
+   $67 = (($66) + (($65*22)|0)|0); //@line 920 "4374_Task1c_emscripten.cpp"
+   $68 = (($67) + ($62)|0); //@line 920 "4374_Task1c_emscripten.cpp"
+   HEAP8[$68>>0] = $59; //@line 920 "4374_Task1c_emscripten.cpp"
   }
-  $14 = $__begin; //@line 842 "4374_Task1c_emscripten.cpp"
-  $69 = $14; //@line 842 "4374_Task1c_emscripten.cpp"
+  $14 = $__begin; //@line 918 "4374_Task1c_emscripten.cpp"
+  $69 = $14; //@line 918 "4374_Task1c_emscripten.cpp"
   $70 = HEAP32[$69>>2]|0; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
   $71 = ((($70)) + 16|0); //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
   HEAP32[$69>>2] = $71; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
  }
- STACKTOP = sp;return; //@line 845 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 921 "4374_Task1c_emscripten.cpp"
 }
 function __Z11placeportalPA22_cRKNSt3__16vectorI6portalNS1_9allocatorIS3_EEEE($g,$portals) {
  $g = $g|0;
@@ -17952,11 +18642,11 @@ function __Z11placeportalPA22_cRKNSt3__16vectorI6portalNS1_9allocatorIS3_EEEE($g
  $__end = sp + 44|0;
  $22 = $g;
  $23 = $portals;
- $24 = $23; //@line 836 "4374_Task1c_emscripten.cpp"
- $__range = $24; //@line 836 "4374_Task1c_emscripten.cpp"
- $25 = $__range; //@line 836 "4374_Task1c_emscripten.cpp"
- $21 = $25; //@line 836 "4374_Task1c_emscripten.cpp"
- $26 = $21; //@line 836 "4374_Task1c_emscripten.cpp"
+ $24 = $23; //@line 912 "4374_Task1c_emscripten.cpp"
+ $__range = $24; //@line 912 "4374_Task1c_emscripten.cpp"
+ $25 = $__range; //@line 912 "4374_Task1c_emscripten.cpp"
+ $21 = $25; //@line 912 "4374_Task1c_emscripten.cpp"
+ $26 = $21; //@line 912 "4374_Task1c_emscripten.cpp"
  $27 = HEAP32[$26>>2]|0; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $18 = $26; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $19 = $27; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -17969,10 +18659,10 @@ function __Z11placeportalPA22_cRKNSt3__16vectorI6portalNS1_9allocatorIS3_EEEE($g
  $31 = HEAP32[$17>>2]|0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  HEAP32[$20>>2] = $31; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $32 = HEAP32[$20>>2]|0; //@line 1480 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
- HEAP32[$__begin>>2] = $32; //@line 836 "4374_Task1c_emscripten.cpp"
- $33 = $__range; //@line 836 "4374_Task1c_emscripten.cpp"
- $6 = $33; //@line 836 "4374_Task1c_emscripten.cpp"
- $34 = $6; //@line 836 "4374_Task1c_emscripten.cpp"
+ HEAP32[$__begin>>2] = $32; //@line 912 "4374_Task1c_emscripten.cpp"
+ $33 = $__range; //@line 912 "4374_Task1c_emscripten.cpp"
+ $6 = $33; //@line 912 "4374_Task1c_emscripten.cpp"
+ $34 = $6; //@line 912 "4374_Task1c_emscripten.cpp"
  $35 = ((($34)) + 4|0); //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $36 = HEAP32[$35>>2]|0; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $3 = $34; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -17986,10 +18676,10 @@ function __Z11placeportalPA22_cRKNSt3__16vectorI6portalNS1_9allocatorIS3_EEEE($g
  $40 = HEAP32[$2>>2]|0; //@line 1463 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  HEAP32[$5>>2] = $40; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $41 = HEAP32[$5>>2]|0; //@line 1496 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
- HEAP32[$__end>>2] = $41; //@line 836 "4374_Task1c_emscripten.cpp"
+ HEAP32[$__end>>2] = $41; //@line 912 "4374_Task1c_emscripten.cpp"
  while(1) {
-  $11 = $__begin; //@line 836 "4374_Task1c_emscripten.cpp"
-  $12 = $__end; //@line 836 "4374_Task1c_emscripten.cpp"
+  $11 = $__begin; //@line 912 "4374_Task1c_emscripten.cpp"
+  $12 = $__end; //@line 912 "4374_Task1c_emscripten.cpp"
   $42 = $11; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
   $43 = $12; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
   $9 = $42; //@line 1347 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
@@ -18007,29 +18697,29 @@ function __Z11placeportalPA22_cRKNSt3__16vectorI6portalNS1_9allocatorIS3_EEEE($g
   if (!($51)) {
    break;
   }
-  $13 = $__begin; //@line 836 "4374_Task1c_emscripten.cpp"
-  $52 = $13; //@line 836 "4374_Task1c_emscripten.cpp"
+  $13 = $__begin; //@line 912 "4374_Task1c_emscripten.cpp"
+  $52 = $13; //@line 912 "4374_Task1c_emscripten.cpp"
   $53 = HEAP32[$52>>2]|0; //@line 1163 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
-  $it = $53; //@line 836 "4374_Task1c_emscripten.cpp"
-  $54 = $it; //@line 837 "4374_Task1c_emscripten.cpp"
-  $55 = HEAP8[$54>>0]|0; //@line 837 "4374_Task1c_emscripten.cpp"
-  $56 = $it; //@line 837 "4374_Task1c_emscripten.cpp"
-  $57 = ((($56)) + 4|0); //@line 837 "4374_Task1c_emscripten.cpp"
-  $58 = HEAP32[$57>>2]|0; //@line 837 "4374_Task1c_emscripten.cpp"
-  $59 = $it; //@line 837 "4374_Task1c_emscripten.cpp"
-  $60 = ((($59)) + 8|0); //@line 837 "4374_Task1c_emscripten.cpp"
-  $61 = HEAP32[$60>>2]|0; //@line 837 "4374_Task1c_emscripten.cpp"
-  $62 = $22; //@line 837 "4374_Task1c_emscripten.cpp"
-  $63 = (($62) + (($61*22)|0)|0); //@line 837 "4374_Task1c_emscripten.cpp"
-  $64 = (($63) + ($58)|0); //@line 837 "4374_Task1c_emscripten.cpp"
-  HEAP8[$64>>0] = $55; //@line 837 "4374_Task1c_emscripten.cpp"
-  $14 = $__begin; //@line 836 "4374_Task1c_emscripten.cpp"
-  $65 = $14; //@line 836 "4374_Task1c_emscripten.cpp"
+  $it = $53; //@line 912 "4374_Task1c_emscripten.cpp"
+  $54 = $it; //@line 913 "4374_Task1c_emscripten.cpp"
+  $55 = HEAP8[$54>>0]|0; //@line 913 "4374_Task1c_emscripten.cpp"
+  $56 = $it; //@line 913 "4374_Task1c_emscripten.cpp"
+  $57 = ((($56)) + 4|0); //@line 913 "4374_Task1c_emscripten.cpp"
+  $58 = HEAP32[$57>>2]|0; //@line 913 "4374_Task1c_emscripten.cpp"
+  $59 = $it; //@line 913 "4374_Task1c_emscripten.cpp"
+  $60 = ((($59)) + 8|0); //@line 913 "4374_Task1c_emscripten.cpp"
+  $61 = HEAP32[$60>>2]|0; //@line 913 "4374_Task1c_emscripten.cpp"
+  $62 = $22; //@line 913 "4374_Task1c_emscripten.cpp"
+  $63 = (($62) + (($61*22)|0)|0); //@line 913 "4374_Task1c_emscripten.cpp"
+  $64 = (($63) + ($58)|0); //@line 913 "4374_Task1c_emscripten.cpp"
+  HEAP8[$64>>0] = $55; //@line 913 "4374_Task1c_emscripten.cpp"
+  $14 = $__begin; //@line 912 "4374_Task1c_emscripten.cpp"
+  $65 = $14; //@line 912 "4374_Task1c_emscripten.cpp"
   $66 = HEAP32[$65>>2]|0; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
   $67 = ((($66)) + 16|0); //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
   HEAP32[$65>>2] = $67; //@line 1179 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\iterator"
  }
- STACKTOP = sp;return; //@line 838 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 914 "4374_Task1c_emscripten.cpp"
 }
 function __Z15setKeyDirectioniRiS_($key,$dx,$dy) {
  $key = $key|0;
@@ -18041,29 +18731,29 @@ function __Z15setKeyDirectioniRiS_($key,$dx,$dy) {
  $0 = $key;
  $1 = $dx;
  $2 = $dy;
- $3 = $0; //@line 963 "4374_Task1c_emscripten.cpp"
- if ((($3|0) == 119)) {
-  $8 = $1; //@line 974 "4374_Task1c_emscripten.cpp"
-  HEAP32[$8>>2] = -1; //@line 974 "4374_Task1c_emscripten.cpp"
-  $9 = $2; //@line 975 "4374_Task1c_emscripten.cpp"
-  HEAP32[$9>>2] = 0; //@line 975 "4374_Task1c_emscripten.cpp"
+ $3 = $0; //@line 1039 "4374_Task1c_emscripten.cpp"
+ if ((($3|0) == 97)) {
+  $4 = $1; //@line 1042 "4374_Task1c_emscripten.cpp"
+  HEAP32[$4>>2] = 0; //@line 1042 "4374_Task1c_emscripten.cpp"
+  $5 = $2; //@line 1043 "4374_Task1c_emscripten.cpp"
+  HEAP32[$5>>2] = -1; //@line 1043 "4374_Task1c_emscripten.cpp"
  } else if ((($3|0) == 115)) {
-  $10 = $1; //@line 978 "4374_Task1c_emscripten.cpp"
-  HEAP32[$10>>2] = 1; //@line 978 "4374_Task1c_emscripten.cpp"
-  $11 = $2; //@line 979 "4374_Task1c_emscripten.cpp"
-  HEAP32[$11>>2] = 0; //@line 979 "4374_Task1c_emscripten.cpp"
- } else if ((($3|0) == 97)) {
-  $4 = $1; //@line 966 "4374_Task1c_emscripten.cpp"
-  HEAP32[$4>>2] = 0; //@line 966 "4374_Task1c_emscripten.cpp"
-  $5 = $2; //@line 967 "4374_Task1c_emscripten.cpp"
-  HEAP32[$5>>2] = -1; //@line 967 "4374_Task1c_emscripten.cpp"
+  $10 = $1; //@line 1054 "4374_Task1c_emscripten.cpp"
+  HEAP32[$10>>2] = 1; //@line 1054 "4374_Task1c_emscripten.cpp"
+  $11 = $2; //@line 1055 "4374_Task1c_emscripten.cpp"
+  HEAP32[$11>>2] = 0; //@line 1055 "4374_Task1c_emscripten.cpp"
  } else if ((($3|0) == 100)) {
-  $6 = $1; //@line 970 "4374_Task1c_emscripten.cpp"
-  HEAP32[$6>>2] = 0; //@line 970 "4374_Task1c_emscripten.cpp"
-  $7 = $2; //@line 971 "4374_Task1c_emscripten.cpp"
-  HEAP32[$7>>2] = 1; //@line 971 "4374_Task1c_emscripten.cpp"
+  $6 = $1; //@line 1046 "4374_Task1c_emscripten.cpp"
+  HEAP32[$6>>2] = 0; //@line 1046 "4374_Task1c_emscripten.cpp"
+  $7 = $2; //@line 1047 "4374_Task1c_emscripten.cpp"
+  HEAP32[$7>>2] = 1; //@line 1047 "4374_Task1c_emscripten.cpp"
+ } else if ((($3|0) == 119)) {
+  $8 = $1; //@line 1050 "4374_Task1c_emscripten.cpp"
+  HEAP32[$8>>2] = -1; //@line 1050 "4374_Task1c_emscripten.cpp"
+  $9 = $2; //@line 1051 "4374_Task1c_emscripten.cpp"
+  HEAP32[$9>>2] = 0; //@line 1051 "4374_Task1c_emscripten.cpp"
  }
- STACKTOP = sp;return; //@line 981 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 1057 "4374_Task1c_emscripten.cpp"
 }
 function __Z13paintdistanceP11SDL_SurfaceP9_TTF_Font($image,$font) {
  $image = $image|0;
@@ -18076,12 +18766,12 @@ function __Z13paintdistanceP11SDL_SurfaceP9_TTF_Font($image,$font) {
  var $188 = 0, $189 = 0, $19 = 0, $190 = 0, $191 = 0, $192 = 0, $193 = 0, $194 = 0, $195 = 0, $196 = 0, $197 = 0, $198 = 0, $199 = 0, $2 = 0, $20 = 0, $200 = 0, $201 = 0, $202 = 0, $203 = 0, $204 = 0;
  var $205 = 0, $206 = 0, $207 = 0, $208 = 0, $209 = 0, $21 = 0, $210 = 0, $211 = 0, $212 = 0, $213 = 0, $214 = 0, $215 = 0, $216 = 0, $217 = 0, $218 = 0, $219 = 0, $22 = 0, $220 = 0, $221 = 0, $222 = 0;
  var $223 = 0, $224 = 0, $225 = 0, $226 = 0, $227 = 0, $228 = 0, $229 = 0, $23 = 0, $230 = 0, $231 = 0, $232 = 0, $233 = 0, $234 = 0, $235 = 0, $236 = 0, $237 = 0, $238 = 0, $239 = 0, $24 = 0, $240 = 0;
- var $241 = 0, $242 = 0, $243 = 0, $244 = 0, $245 = 0, $246 = 0, $247 = 0, $248 = 0, $249 = 0, $25 = 0, $250 = 0, $251 = 0, $252 = 0, $253 = 0, $254 = 0, $255 = 0, $256 = 0, $257 = 0, $258 = 0, $26 = 0;
- var $27 = 0, $28 = 0, $29 = 0, $3 = 0, $30 = 0, $31 = 0, $32 = 0, $33 = 0, $34 = 0, $35 = 0, $36 = 0, $37 = 0, $38 = 0, $39 = 0, $4 = 0, $40 = 0, $41 = 0, $42 = 0, $43 = 0, $44 = 0;
- var $45 = 0, $46 = 0, $47 = 0, $48 = 0, $49 = 0, $5 = 0, $50 = 0, $51 = 0, $52 = 0, $53 = 0, $54 = 0, $55 = 0, $56 = 0, $57 = 0, $58 = 0, $59 = 0, $6 = 0, $60 = 0, $61 = 0, $62 = 0;
- var $63 = 0, $64 = 0, $65 = 0, $66 = 0, $67 = 0, $68 = 0, $69 = 0, $7 = 0, $70 = 0, $71 = 0, $72 = 0, $73 = 0, $74 = 0, $75 = 0, $76 = 0, $77 = 0, $78 = 0, $79 = 0, $8 = 0, $80 = 0;
- var $81 = 0, $82 = 0, $83 = 0, $84 = 0, $85 = 0, $86 = 0, $87 = 0, $88 = 0, $89 = 0, $9 = 0, $90 = 0, $91 = 0, $92 = 0, $93 = 0, $94 = 0, $95 = 0, $96 = 0, $97 = 0, $98 = 0, $99 = 0;
- var $__a$i$i$i$i = 0, $__a$i$i1$i$i = 0, $__i$i$i$i$i = 0, $__i$i$i2$i$i = 0, $a = 0, $col = 0, $dstrect = 0, $eh$lpad$body$i$index2Z2D = 0, $eh$lpad$body$i$indexZ2D = 0, $row = 0, $text_color = 0, label = 0, sp = 0;
+ var $241 = 0, $242 = 0, $243 = 0, $244 = 0, $245 = 0, $246 = 0, $247 = 0, $248 = 0, $249 = 0, $25 = 0, $250 = 0, $251 = 0, $252 = 0, $253 = 0, $254 = 0, $255 = 0, $256 = 0, $257 = 0, $258 = 0, $259 = 0;
+ var $26 = 0, $260 = 0, $261 = 0, $262 = 0, $263 = 0, $264 = 0, $27 = 0, $28 = 0, $29 = 0, $3 = 0, $30 = 0, $31 = 0, $32 = 0, $33 = 0, $34 = 0, $35 = 0, $36 = 0, $37 = 0, $38 = 0, $39 = 0;
+ var $4 = 0, $40 = 0, $41 = 0, $42 = 0, $43 = 0, $44 = 0, $45 = 0, $46 = 0, $47 = 0, $48 = 0, $49 = 0, $5 = 0, $50 = 0, $51 = 0, $52 = 0, $53 = 0, $54 = 0, $55 = 0, $56 = 0, $57 = 0;
+ var $58 = 0, $59 = 0, $6 = 0, $60 = 0, $61 = 0, $62 = 0, $63 = 0, $64 = 0, $65 = 0, $66 = 0, $67 = 0, $68 = 0, $69 = 0, $7 = 0, $70 = 0, $71 = 0, $72 = 0, $73 = 0, $74 = 0, $75 = 0;
+ var $76 = 0, $77 = 0, $78 = 0, $79 = 0, $8 = 0, $80 = 0, $81 = 0, $82 = 0, $83 = 0, $84 = 0, $85 = 0, $86 = 0, $87 = 0, $88 = 0, $89 = 0, $9 = 0, $90 = 0, $91 = 0, $92 = 0, $93 = 0;
+ var $94 = 0, $95 = 0, $96 = 0, $97 = 0, $98 = 0, $99 = 0, $__a$i$i$i$i = 0, $__a$i$i1$i$i = 0, $__i$i$i$i$i = 0, $__i$i$i2$i$i = 0, $a = 0, $col = 0, $dstrect = 0, $eh$lpad$body$i$index2Z2D = 0, $eh$lpad$body$i$indexZ2D = 0, $row = 0, $text_color = 0, label = 0, sp = 0;
  sp = STACKTOP;
  STACKTOP = STACKTOP + 480|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
  $$byval_copy = sp + 432|0;
@@ -18093,468 +18783,476 @@ function __Z13paintdistanceP11SDL_SurfaceP9_TTF_Font($image,$font) {
  $56 = sp + 296|0;
  $51 = $image;
  $52 = $font;
- ;HEAP8[$text_color>>0]=HEAP8[6168>>0]|0;HEAP8[$text_color+1>>0]=HEAP8[6168+1>>0]|0;HEAP8[$text_color+2>>0]=HEAP8[6168+2>>0]|0;HEAP8[$text_color+3>>0]=HEAP8[6168+3>>0]|0; //@line 1527 "4374_Task1c_emscripten.cpp"
- $row = 0; //@line 1529 "4374_Task1c_emscripten.cpp"
+ ;HEAP8[$text_color>>0]=HEAP8[6168>>0]|0;HEAP8[$text_color+1>>0]=HEAP8[6168+1>>0]|0;HEAP8[$text_color+2>>0]=HEAP8[6168+2>>0]|0;HEAP8[$text_color+3>>0]=HEAP8[6168+3>>0]|0; //@line 1601 "4374_Task1c_emscripten.cpp"
+ $row = 0; //@line 1603 "4374_Task1c_emscripten.cpp"
  L1: while(1) {
-  $57 = $row; //@line 1529 "4374_Task1c_emscripten.cpp"
-  $58 = ($57|0)<(39); //@line 1529 "4374_Task1c_emscripten.cpp"
+  $57 = $row; //@line 1603 "4374_Task1c_emscripten.cpp"
+  $58 = ($57|0)<(39); //@line 1603 "4374_Task1c_emscripten.cpp"
   if (!($58)) {
-   label = 39;
+   label = 41;
    break;
   }
-  $col = 0; //@line 1531 "4374_Task1c_emscripten.cpp"
+  $col = 0; //@line 1605 "4374_Task1c_emscripten.cpp"
   while(1) {
-   $59 = $col; //@line 1531 "4374_Task1c_emscripten.cpp"
-   $60 = ($59|0)<(22); //@line 1531 "4374_Task1c_emscripten.cpp"
+   $59 = $col; //@line 1605 "4374_Task1c_emscripten.cpp"
+   $60 = ($59|0)<(22); //@line 1605 "4374_Task1c_emscripten.cpp"
    if (!($60)) {
     break;
    }
-   $47 = $a; //@line 1533 "4374_Task1c_emscripten.cpp"
-   $48 = 24; //@line 1533 "4374_Task1c_emscripten.cpp"
-   $61 = $47; //@line 1533 "4374_Task1c_emscripten.cpp"
-   $62 = ((($61)) + 64|0); //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $46 = $62; //@line 877 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $63 = $46; //@line 877 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $45 = $63; //@line 631 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
-   $64 = $45; //@line 631 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
-   $65 = 12288;
-   HEAP32[$64>>2] = $65; //@line 333 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
-   $66 = 11960;
-   HEAP32[$63>>2] = $66; //@line 631 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
-   $67 = 4932;
-   HEAP32[$61>>2] = $67; //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $68 = ((($61)) + 64|0); //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $69 = 4972;
-   HEAP32[$68>>2] = $69; //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $70 = ((($61)) + 8|0); //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $71 = 4952;
-   HEAP32[$70>>2] = $71; //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $72 = ((($61)) + 12|0); //@line 897 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $42 = $61; //@line 897 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $73 = 4988;
-   $43 = $73; //@line 897 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $44 = $72; //@line 897 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $74 = $42; //@line 897 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $75 = $43; //@line 897 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $76 = $44; //@line 1508 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $77 = ((($75)) + 4|0); //@line 1508 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $39 = $74; //@line 1508 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $40 = $77; //@line 1508 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $41 = $76; //@line 1508 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $78 = $39; //@line 1508 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $79 = $40; //@line 1508 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $80 = HEAP32[$79>>2]|0; //@line 310 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   HEAP32[$78>>2] = $80; //@line 310 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $81 = ((($79)) + 4|0); //@line 310 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $82 = HEAP32[$81>>2]|0; //@line 310 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $83 = HEAP32[$78>>2]|0; //@line 310 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $84 = ((($83)) + -12|0); //@line 310 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $85 = HEAP32[$84>>2]|0; //@line 310 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $86 = (($78) + ($85)|0); //@line 310 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   HEAP32[$86>>2] = $82; //@line 310 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $87 = ((($78)) + 4|0); //@line 309 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   HEAP32[$87>>2] = 0; //@line 309 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $88 = HEAP32[$78>>2]|0; //@line 311 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $89 = ((($88)) + -12|0); //@line 311 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $90 = HEAP32[$89>>2]|0; //@line 311 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $91 = (($78) + ($90)|0); //@line 311 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $92 = $41; //@line 311 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $37 = $91; //@line 311 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $38 = $92; //@line 311 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $93 = $37; //@line 311 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $94 = $38; //@line 668 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
-   __THREW__ = 0;
-   invoke_vii(371,($93|0),($94|0)); //@line 668 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
-   $95 = __THREW__; __THREW__ = 0;
-   $96 = $95&1;
-   if ($96) {
-    label = 21;
-    break L1;
-   }
-   $97 = ((($93)) + 72|0); //@line 669 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
-   HEAP32[$97>>2] = 0; //@line 669 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
-   $98 = (__ZNSt3__111char_traitsIcE3eofEv()|0); //@line 670 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
-   $99 = ((($93)) + 76|0); //@line 670 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
-   HEAP32[$99>>2] = $98; //@line 670 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
-   $100 = ((($74)) + 8|0); //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $101 = ((($75)) + 12|0); //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $35 = $100; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $36 = $101; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $102 = $35; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $103 = $36; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $104 = HEAP32[$103>>2]|0; //@line 222 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
-   HEAP32[$102>>2] = $104; //@line 222 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
-   $105 = ((($103)) + 4|0); //@line 222 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
-   $106 = HEAP32[$105>>2]|0; //@line 222 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
-   $107 = HEAP32[$102>>2]|0; //@line 222 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
-   $108 = ((($107)) + -12|0); //@line 222 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
-   $109 = HEAP32[$108>>2]|0; //@line 222 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
-   $110 = (($102) + ($109)|0); //@line 222 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
-   HEAP32[$110>>2] = $106; //@line 222 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
-   $111 = HEAP32[$75>>2]|0; //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   HEAP32[$74>>2] = $111; //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $112 = ((($75)) + 20|0); //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $113 = HEAP32[$112>>2]|0; //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $114 = HEAP32[$74>>2]|0; //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $115 = ((($114)) + -12|0); //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $116 = HEAP32[$115>>2]|0; //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $117 = (($74) + ($116)|0); //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   HEAP32[$117>>2] = $113; //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $118 = ((($75)) + 24|0); //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $119 = HEAP32[$118>>2]|0; //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $120 = ((($74)) + 8|0); //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   HEAP32[$120>>2] = $119; //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
-   $121 = 4932;
-   HEAP32[$61>>2] = $121; //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $122 = ((($61)) + 64|0); //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $123 = 4972;
-   HEAP32[$122>>2] = $123; //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $124 = ((($61)) + 8|0); //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $125 = 4952;
-   HEAP32[$124>>2] = $125; //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $126 = ((($61)) + 12|0); //@line 898 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $127 = $48; //@line 898 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $30 = $126; //@line 898 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $31 = $127; //@line 898 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $128 = $30; //@line 898 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   __THREW__ = 0;
-   invoke_vi(372,($128|0)); //@line 210 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $129 = __THREW__; __THREW__ = 0;
-   $130 = $129&1;
-   if ($130) {
-    label = 22;
-    break L1;
-   }
-   $131 = 4592;
-   HEAP32[$128>>2] = $131; //@line 243 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $132 = ((($128)) + 32|0); //@line 210 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $29 = $132; //@line 210 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $133 = $29; //@line 210 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $28 = $133; //@line 1323 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $134 = $28; //@line 1323 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $27 = $134; //@line 2315 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-   $135 = $27; //@line 2315 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-   $26 = $135; //@line 2136 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-   $25 = $133; //@line 1934 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $136 = $25; //@line 1934 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $24 = $136; //@line 1763 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $137 = $24; //@line 1763 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $23 = $137; //@line 2370 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-   $138 = $23; //@line 2370 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-   $__a$i$i$i$i = $138; //@line 1763 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $__i$i$i$i$i = 0; //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   while(1) {
-    $139 = $__i$i$i$i$i; //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $140 = ($139>>>0)<(3); //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    if (!($140)) {
-     break;
+   $61 = $col; //@line 1607 "4374_Task1c_emscripten.cpp"
+   $62 = $row; //@line 1607 "4374_Task1c_emscripten.cpp"
+   $63 = (1008 + (($62*88)|0)|0); //@line 1607 "4374_Task1c_emscripten.cpp"
+   $64 = (($63) + ($61<<2)|0); //@line 1607 "4374_Task1c_emscripten.cpp"
+   $65 = HEAP32[$64>>2]|0; //@line 1607 "4374_Task1c_emscripten.cpp"
+   $66 = ($65|0)!=(10000); //@line 1607 "4374_Task1c_emscripten.cpp"
+   if ($66) {
+    $47 = $a; //@line 1609 "4374_Task1c_emscripten.cpp"
+    $48 = 24; //@line 1609 "4374_Task1c_emscripten.cpp"
+    $67 = $47; //@line 1609 "4374_Task1c_emscripten.cpp"
+    $68 = ((($67)) + 64|0); //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $46 = $68; //@line 877 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $69 = $46; //@line 877 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $45 = $69; //@line 631 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
+    $70 = $45; //@line 631 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
+    $71 = 12288;
+    HEAP32[$70>>2] = $71; //@line 333 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
+    $72 = 11960;
+    HEAP32[$69>>2] = $72; //@line 631 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
+    $73 = 4932;
+    HEAP32[$67>>2] = $73; //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $74 = ((($67)) + 64|0); //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $75 = 4972;
+    HEAP32[$74>>2] = $75; //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $76 = ((($67)) + 8|0); //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $77 = 4952;
+    HEAP32[$76>>2] = $77; //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $78 = ((($67)) + 12|0); //@line 897 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $42 = $67; //@line 897 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $79 = 4988;
+    $43 = $79; //@line 897 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $44 = $78; //@line 897 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $80 = $42; //@line 897 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $81 = $43; //@line 897 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $82 = $44; //@line 1508 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $83 = ((($81)) + 4|0); //@line 1508 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $39 = $80; //@line 1508 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $40 = $83; //@line 1508 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $41 = $82; //@line 1508 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $84 = $39; //@line 1508 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $85 = $40; //@line 1508 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $86 = HEAP32[$85>>2]|0; //@line 310 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    HEAP32[$84>>2] = $86; //@line 310 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $87 = ((($85)) + 4|0); //@line 310 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $88 = HEAP32[$87>>2]|0; //@line 310 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $89 = HEAP32[$84>>2]|0; //@line 310 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $90 = ((($89)) + -12|0); //@line 310 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $91 = HEAP32[$90>>2]|0; //@line 310 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $92 = (($84) + ($91)|0); //@line 310 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    HEAP32[$92>>2] = $88; //@line 310 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $93 = ((($84)) + 4|0); //@line 309 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    HEAP32[$93>>2] = 0; //@line 309 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $94 = HEAP32[$84>>2]|0; //@line 311 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $95 = ((($94)) + -12|0); //@line 311 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $96 = HEAP32[$95>>2]|0; //@line 311 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $97 = (($84) + ($96)|0); //@line 311 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $98 = $41; //@line 311 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $37 = $97; //@line 311 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $38 = $98; //@line 311 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $99 = $37; //@line 311 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $100 = $38; //@line 668 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
+    __THREW__ = 0;
+    invoke_vii(371,($99|0),($100|0)); //@line 668 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
+    $101 = __THREW__; __THREW__ = 0;
+    $102 = $101&1;
+    if ($102) {
+     label = 22;
+     break L1;
     }
-    $141 = $__i$i$i$i$i; //@line 1765 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $142 = $__a$i$i$i$i; //@line 1765 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $143 = (($142) + ($141<<2)|0); //@line 1765 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    HEAP32[$143>>2] = 0; //@line 1765 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $144 = $__i$i$i$i$i; //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $145 = (($144) + 1)|0; //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $__i$i$i$i$i = $145; //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   }
-   $146 = ((($128)) + 44|0); //@line 241 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   HEAP32[$146>>2] = 0; //@line 241 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $147 = ((($128)) + 48|0); //@line 242 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $148 = $31; //@line 242 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   HEAP32[$147>>2] = $148; //@line 242 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $22 = $34; //@line 244 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $149 = $22; //@line 244 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $21 = $149; //@line 1323 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $150 = $21; //@line 1323 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $20 = $150; //@line 2315 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-   $151 = $20; //@line 2315 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-   $19 = $151; //@line 2136 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-   $18 = $149; //@line 1934 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $152 = $18; //@line 1934 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $17 = $152; //@line 1763 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $153 = $17; //@line 1763 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $16 = $153; //@line 2370 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-   $154 = $16; //@line 2370 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-   $__a$i$i1$i$i = $154; //@line 1763 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $__i$i$i2$i$i = 0; //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   while(1) {
-    $155 = $__i$i$i2$i$i; //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $156 = ($155>>>0)<(3); //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    if (!($156)) {
-     break;
+    $103 = ((($99)) + 72|0); //@line 669 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
+    HEAP32[$103>>2] = 0; //@line 669 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
+    $104 = (__ZNSt3__111char_traitsIcE3eofEv()|0); //@line 670 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
+    $105 = ((($99)) + 76|0); //@line 670 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
+    HEAP32[$105>>2] = $104; //@line 670 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ios"
+    $106 = ((($80)) + 8|0); //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $107 = ((($81)) + 12|0); //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $35 = $106; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $36 = $107; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $108 = $35; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $109 = $36; //@line 1488 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $110 = HEAP32[$109>>2]|0; //@line 222 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
+    HEAP32[$108>>2] = $110; //@line 222 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
+    $111 = ((($109)) + 4|0); //@line 222 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
+    $112 = HEAP32[$111>>2]|0; //@line 222 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
+    $113 = HEAP32[$108>>2]|0; //@line 222 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
+    $114 = ((($113)) + -12|0); //@line 222 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
+    $115 = HEAP32[$114>>2]|0; //@line 222 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
+    $116 = (($108) + ($115)|0); //@line 222 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
+    HEAP32[$116>>2] = $112; //@line 222 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
+    $117 = HEAP32[$81>>2]|0; //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    HEAP32[$80>>2] = $117; //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $118 = ((($81)) + 20|0); //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $119 = HEAP32[$118>>2]|0; //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $120 = HEAP32[$80>>2]|0; //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $121 = ((($120)) + -12|0); //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $122 = HEAP32[$121>>2]|0; //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $123 = (($80) + ($122)|0); //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    HEAP32[$123>>2] = $119; //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $124 = ((($81)) + 24|0); //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $125 = HEAP32[$124>>2]|0; //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $126 = ((($80)) + 8|0); //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    HEAP32[$126>>2] = $125; //@line 1509 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\istream"
+    $127 = 4932;
+    HEAP32[$67>>2] = $127; //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $128 = ((($67)) + 64|0); //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $129 = 4972;
+    HEAP32[$128>>2] = $129; //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $130 = ((($67)) + 8|0); //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $131 = 4952;
+    HEAP32[$130>>2] = $131; //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $132 = ((($67)) + 12|0); //@line 898 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $133 = $48; //@line 898 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $30 = $132; //@line 898 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $31 = $133; //@line 898 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $134 = $30; //@line 898 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    __THREW__ = 0;
+    invoke_vi(372,($134|0)); //@line 210 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $135 = __THREW__; __THREW__ = 0;
+    $136 = $135&1;
+    if ($136) {
+     label = 23;
+     break L1;
     }
-    $157 = $__i$i$i2$i$i; //@line 1765 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $158 = $__a$i$i1$i$i; //@line 1765 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $159 = (($158) + ($157<<2)|0); //@line 1765 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    HEAP32[$159>>2] = 0; //@line 1765 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $160 = $__i$i$i2$i$i; //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $161 = (($160) + 1)|0; //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $__i$i$i2$i$i = $161; //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $137 = 4592;
+    HEAP32[$134>>2] = $137; //@line 243 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $138 = ((($134)) + 32|0); //@line 210 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $29 = $138; //@line 210 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $139 = $29; //@line 210 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $28 = $139; //@line 1323 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $140 = $28; //@line 1323 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $27 = $140; //@line 2315 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
+    $141 = $27; //@line 2315 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
+    $26 = $141; //@line 2136 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
+    $25 = $139; //@line 1934 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $142 = $25; //@line 1934 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $24 = $142; //@line 1763 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $143 = $24; //@line 1763 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $23 = $143; //@line 2370 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
+    $144 = $23; //@line 2370 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
+    $__a$i$i$i$i = $144; //@line 1763 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $__i$i$i$i$i = 0; //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    while(1) {
+     $145 = $__i$i$i$i$i; //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $146 = ($145>>>0)<(3); //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     if (!($146)) {
+      break;
+     }
+     $147 = $__i$i$i$i$i; //@line 1765 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $148 = $__a$i$i$i$i; //@line 1765 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $149 = (($148) + ($147<<2)|0); //@line 1765 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     HEAP32[$149>>2] = 0; //@line 1765 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $150 = $__i$i$i$i$i; //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $151 = (($150) + 1)|0; //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $__i$i$i$i$i = $151; //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    }
+    $152 = ((($134)) + 44|0); //@line 241 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    HEAP32[$152>>2] = 0; //@line 241 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $153 = ((($134)) + 48|0); //@line 242 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $154 = $31; //@line 242 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    HEAP32[$153>>2] = $154; //@line 242 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $22 = $34; //@line 244 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $155 = $22; //@line 244 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $21 = $155; //@line 1323 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $156 = $21; //@line 1323 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $20 = $156; //@line 2315 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
+    $157 = $20; //@line 2315 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
+    $19 = $157; //@line 2136 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
+    $18 = $155; //@line 1934 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $158 = $18; //@line 1934 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $17 = $158; //@line 1763 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $159 = $17; //@line 1763 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $16 = $159; //@line 2370 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
+    $160 = $16; //@line 2370 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
+    $__a$i$i1$i$i = $160; //@line 1763 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $__i$i$i2$i$i = 0; //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    while(1) {
+     $161 = $__i$i$i2$i$i; //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $162 = ($161>>>0)<(3); //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     if (!($162)) {
+      break;
+     }
+     $163 = $__i$i$i2$i$i; //@line 1765 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $164 = $__a$i$i1$i$i; //@line 1765 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $165 = (($164) + ($163<<2)|0); //@line 1765 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     HEAP32[$165>>2] = 0; //@line 1765 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $166 = $__i$i$i2$i$i; //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $167 = (($166) + 1)|0; //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $__i$i$i2$i$i = $167; //@line 1764 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    }
+    __THREW__ = 0;
+    invoke_vii(373,($134|0),($34|0)); //@line 244 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $168 = __THREW__; __THREW__ = 0;
+    $169 = $168&1;
+    if ($169) {
+     label = 17;
+     break L1;
+    }
+    __THREW__ = 0;
+    invoke_vi(374,($34|0)); //@line 244 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $170 = __THREW__; __THREW__ = 0;
+    $171 = $170&1;
+    if ($171) {
+     label = 16;
+     break L1;
+    }
+    $199 = $row; //@line 1611 "4374_Task1c_emscripten.cpp"
+    $200 = ($199*10)|0; //@line 1611 "4374_Task1c_emscripten.cpp"
+    $201 = (($200) + 0)|0; //@line 1611 "4374_Task1c_emscripten.cpp"
+    HEAP32[$dstrect>>2] = $201; //@line 1611 "4374_Task1c_emscripten.cpp"
+    $202 = ((($dstrect)) + 4|0); //@line 1611 "4374_Task1c_emscripten.cpp"
+    $203 = $col; //@line 1611 "4374_Task1c_emscripten.cpp"
+    $204 = ($203*10)|0; //@line 1611 "4374_Task1c_emscripten.cpp"
+    $205 = (($204) + 250)|0; //@line 1611 "4374_Task1c_emscripten.cpp"
+    HEAP32[$202>>2] = $205; //@line 1611 "4374_Task1c_emscripten.cpp"
+    $206 = ((($dstrect)) + 8|0); //@line 1611 "4374_Task1c_emscripten.cpp"
+    HEAP32[$206>>2] = 0; //@line 1611 "4374_Task1c_emscripten.cpp"
+    $207 = ((($dstrect)) + 12|0); //@line 1611 "4374_Task1c_emscripten.cpp"
+    HEAP32[$207>>2] = 0; //@line 1611 "4374_Task1c_emscripten.cpp"
+    $208 = ((($a)) + 8|0); //@line 1612 "4374_Task1c_emscripten.cpp"
+    $209 = $col; //@line 1612 "4374_Task1c_emscripten.cpp"
+    $210 = $row; //@line 1612 "4374_Task1c_emscripten.cpp"
+    $211 = (1008 + (($210*88)|0)|0); //@line 1612 "4374_Task1c_emscripten.cpp"
+    $212 = (($211) + ($209<<2)|0); //@line 1612 "4374_Task1c_emscripten.cpp"
+    $213 = HEAP32[$212>>2]|0; //@line 1612 "4374_Task1c_emscripten.cpp"
+    __THREW__ = 0;
+    (invoke_iii(375,($208|0),($213|0))|0); //@line 1612 "4374_Task1c_emscripten.cpp"
+    $214 = __THREW__; __THREW__ = 0;
+    $215 = $214&1;
+    if ($215) {
+     label = 36;
+     break L1;
+    }
+    $15 = $a; //@line 1613 "4374_Task1c_emscripten.cpp"
+    $216 = $15; //@line 1613 "4374_Task1c_emscripten.cpp"
+    $217 = ((($216)) + 12|0); //@line 964 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    __THREW__ = 0;
+    invoke_vii(377,($55|0),($217|0)); //@line 964 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $218 = __THREW__; __THREW__ = 0;
+    $219 = $218&1;
+    if ($219) {
+     label = 36;
+     break L1;
+    }
+    $14 = $55; //@line 1613 "4374_Task1c_emscripten.cpp"
+    $220 = $14; //@line 1613 "4374_Task1c_emscripten.cpp"
+    $13 = $220; //@line 1598 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $221 = $13; //@line 1598 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $12 = $221; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $222 = $12; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $11 = $222; //@line 1758 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $223 = $11; //@line 1758 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $10 = $223; //@line 1664 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $224 = $10; //@line 1664 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $9 = $224; //@line 2371 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
+    $225 = $9; //@line 2371 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
+    $226 = HEAP8[$225>>0]|0; //@line 1664 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $227 = $226&255; //@line 1664 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $228 = $227 & 1; //@line 1664 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $229 = ($228|0)!=(0); //@line 1664 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    if ($229) {
+     $3 = $222; //@line 1758 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $230 = $3; //@line 1758 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $2 = $230; //@line 1746 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $231 = $2; //@line 1746 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $1 = $231; //@line 2371 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
+     $232 = $1; //@line 2371 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
+     $233 = ((($232)) + 8|0); //@line 1746 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $234 = HEAP32[$233>>2]|0; //@line 1746 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $241 = $234;
+    } else {
+     $8 = $222; //@line 1758 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $235 = $8; //@line 1758 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $7 = $235; //@line 1752 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $236 = $7; //@line 1752 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $6 = $236; //@line 2371 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
+     $237 = $6; //@line 2371 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
+     $238 = ((($237)) + 1|0); //@line 1752 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $5 = $238; //@line 1752 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+     $239 = $5; //@line 917 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
+     $4 = $239; //@line 917 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
+     $240 = $4; //@line 85 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\__functional_base"
+     $241 = $240;
+    }
+    $0 = $241; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
+    $242 = $0; //@line 1043 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
+    $243 = $51; //@line 1613 "4374_Task1c_emscripten.cpp"
+    $244 = $52; //@line 1613 "4374_Task1c_emscripten.cpp"
+    ;HEAP32[$56>>2]=HEAP32[$dstrect>>2]|0;HEAP32[$56+4>>2]=HEAP32[$dstrect+4>>2]|0;HEAP32[$56+8>>2]=HEAP32[$dstrect+8>>2]|0;HEAP32[$56+12>>2]=HEAP32[$dstrect+12>>2]|0; //@line 1613 "4374_Task1c_emscripten.cpp"
+    __THREW__ = 0;
+    ;HEAP32[$$byval_copy>>2]=HEAP32[$56>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$56+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$56+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$56+12>>2]|0; //@line 1613 "4374_Task1c_emscripten.cpp"
+    invoke_viiiiii(414,($242|0),($243|0),($244|0),($text_color|0),(6176|0),($$byval_copy|0)); //@line 1613 "4374_Task1c_emscripten.cpp"
+    $245 = __THREW__; __THREW__ = 0;
+    $246 = $245&1;
+    if ($246) {
+     label = 37;
+     break L1;
+    }
+    __THREW__ = 0;
+    invoke_vi(374,($55|0)); //@line 1613 "4374_Task1c_emscripten.cpp"
+    $247 = __THREW__; __THREW__ = 0;
+    $248 = $247&1;
+    if ($248) {
+     label = 36;
+     break L1;
+    }
+    __ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev($a); //@line 1614 "4374_Task1c_emscripten.cpp"
    }
-   __THREW__ = 0;
-   invoke_vii(373,($128|0),($34|0)); //@line 244 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $162 = __THREW__; __THREW__ = 0;
-   $163 = $162&1;
-   if ($163) {
-    label = 16;
-    break L1;
-   }
-   __THREW__ = 0;
-   invoke_vi(374,($34|0)); //@line 244 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $164 = __THREW__; __THREW__ = 0;
-   $165 = $164&1;
-   if ($165) {
-    label = 15;
-    break L1;
-   }
-   $193 = $row; //@line 1535 "4374_Task1c_emscripten.cpp"
-   $194 = ($193*10)|0; //@line 1535 "4374_Task1c_emscripten.cpp"
-   $195 = (($194) + 0)|0; //@line 1535 "4374_Task1c_emscripten.cpp"
-   HEAP32[$dstrect>>2] = $195; //@line 1535 "4374_Task1c_emscripten.cpp"
-   $196 = ((($dstrect)) + 4|0); //@line 1535 "4374_Task1c_emscripten.cpp"
-   $197 = $col; //@line 1535 "4374_Task1c_emscripten.cpp"
-   $198 = ($197*10)|0; //@line 1535 "4374_Task1c_emscripten.cpp"
-   $199 = (($198) + 250)|0; //@line 1535 "4374_Task1c_emscripten.cpp"
-   HEAP32[$196>>2] = $199; //@line 1535 "4374_Task1c_emscripten.cpp"
-   $200 = ((($dstrect)) + 8|0); //@line 1535 "4374_Task1c_emscripten.cpp"
-   HEAP32[$200>>2] = 0; //@line 1535 "4374_Task1c_emscripten.cpp"
-   $201 = ((($dstrect)) + 12|0); //@line 1535 "4374_Task1c_emscripten.cpp"
-   HEAP32[$201>>2] = 0; //@line 1535 "4374_Task1c_emscripten.cpp"
-   $202 = ((($a)) + 8|0); //@line 1536 "4374_Task1c_emscripten.cpp"
-   $203 = $col; //@line 1536 "4374_Task1c_emscripten.cpp"
-   $204 = $row; //@line 1536 "4374_Task1c_emscripten.cpp"
-   $205 = (1008 + (($204*88)|0)|0); //@line 1536 "4374_Task1c_emscripten.cpp"
-   $206 = (($205) + ($203<<2)|0); //@line 1536 "4374_Task1c_emscripten.cpp"
-   $207 = HEAP32[$206>>2]|0; //@line 1536 "4374_Task1c_emscripten.cpp"
-   __THREW__ = 0;
-   (invoke_iii(375,($202|0),($207|0))|0); //@line 1536 "4374_Task1c_emscripten.cpp"
-   $208 = __THREW__; __THREW__ = 0;
-   $209 = $208&1;
-   if ($209) {
-    label = 35;
-    break L1;
-   }
-   $15 = $a; //@line 1537 "4374_Task1c_emscripten.cpp"
-   $210 = $15; //@line 1537 "4374_Task1c_emscripten.cpp"
-   $211 = ((($210)) + 12|0); //@line 964 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   __THREW__ = 0;
-   invoke_vii(377,($55|0),($211|0)); //@line 964 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $212 = __THREW__; __THREW__ = 0;
-   $213 = $212&1;
-   if ($213) {
-    label = 35;
-    break L1;
-   }
-   $14 = $55; //@line 1537 "4374_Task1c_emscripten.cpp"
-   $214 = $14; //@line 1537 "4374_Task1c_emscripten.cpp"
-   $13 = $214; //@line 1598 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $215 = $13; //@line 1598 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $12 = $215; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $216 = $12; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $11 = $216; //@line 1758 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $217 = $11; //@line 1758 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $10 = $217; //@line 1664 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $218 = $10; //@line 1664 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $9 = $218; //@line 2371 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-   $219 = $9; //@line 2371 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-   $220 = HEAP8[$219>>0]|0; //@line 1664 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $221 = $220&255; //@line 1664 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $222 = $221 & 1; //@line 1664 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $223 = ($222|0)!=(0); //@line 1664 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   if ($223) {
-    $3 = $216; //@line 1758 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $224 = $3; //@line 1758 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $2 = $224; //@line 1746 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $225 = $2; //@line 1746 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $1 = $225; //@line 2371 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-    $226 = $1; //@line 2371 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-    $227 = ((($226)) + 8|0); //@line 1746 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $228 = HEAP32[$227>>2]|0; //@line 1746 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $235 = $228;
-   } else {
-    $8 = $216; //@line 1758 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $229 = $8; //@line 1758 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $7 = $229; //@line 1752 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $230 = $7; //@line 1752 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $6 = $230; //@line 2371 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-    $231 = $6; //@line 2371 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-    $232 = ((($231)) + 1|0); //@line 1752 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $5 = $232; //@line 1752 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-    $233 = $5; //@line 917 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-    $4 = $233; //@line 917 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-    $234 = $4; //@line 85 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\__functional_base"
-    $235 = $234;
-   }
-   $0 = $235; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
-   $236 = $0; //@line 1043 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-   $237 = $51; //@line 1537 "4374_Task1c_emscripten.cpp"
-   $238 = $52; //@line 1537 "4374_Task1c_emscripten.cpp"
-   ;HEAP32[$56>>2]=HEAP32[$dstrect>>2]|0;HEAP32[$56+4>>2]=HEAP32[$dstrect+4>>2]|0;HEAP32[$56+8>>2]=HEAP32[$dstrect+8>>2]|0;HEAP32[$56+12>>2]=HEAP32[$dstrect+12>>2]|0; //@line 1537 "4374_Task1c_emscripten.cpp"
-   __THREW__ = 0;
-   ;HEAP32[$$byval_copy>>2]=HEAP32[$56>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$56+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$56+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$56+12>>2]|0; //@line 1537 "4374_Task1c_emscripten.cpp"
-   invoke_viiiiii(414,($236|0),($237|0),($238|0),($text_color|0),(6176|0),($$byval_copy|0)); //@line 1537 "4374_Task1c_emscripten.cpp"
-   $239 = __THREW__; __THREW__ = 0;
-   $240 = $239&1;
-   if ($240) {
-    label = 36;
-    break L1;
-   }
-   __THREW__ = 0;
-   invoke_vi(374,($55|0)); //@line 1537 "4374_Task1c_emscripten.cpp"
-   $241 = __THREW__; __THREW__ = 0;
-   $242 = $241&1;
-   if ($242) {
-    label = 35;
-    break L1;
-   }
-   __ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev($a); //@line 1538 "4374_Task1c_emscripten.cpp"
-   $243 = $col; //@line 1531 "4374_Task1c_emscripten.cpp"
-   $244 = (($243) + 1)|0; //@line 1531 "4374_Task1c_emscripten.cpp"
-   $col = $244; //@line 1531 "4374_Task1c_emscripten.cpp"
+   $257 = $col; //@line 1605 "4374_Task1c_emscripten.cpp"
+   $258 = (($257) + 1)|0; //@line 1605 "4374_Task1c_emscripten.cpp"
+   $col = $258; //@line 1605 "4374_Task1c_emscripten.cpp"
   }
-  $253 = $row; //@line 1529 "4374_Task1c_emscripten.cpp"
-  $254 = (($253) + 1)|0; //@line 1529 "4374_Task1c_emscripten.cpp"
-  $row = $254; //@line 1529 "4374_Task1c_emscripten.cpp"
+  $259 = $row; //@line 1603 "4374_Task1c_emscripten.cpp"
+  $260 = (($259) + 1)|0; //@line 1603 "4374_Task1c_emscripten.cpp"
+  $row = $260; //@line 1603 "4374_Task1c_emscripten.cpp"
  }
- if ((label|0) == 15) {
-  $166 = ___cxa_find_matching_catch()|0;
-  $167 = tempRet0;
-  $32 = $166; //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-  $33 = $167; //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-  label = 17;
+ if ((label|0) == 16) {
+  $172 = ___cxa_find_matching_catch()|0;
+  $173 = tempRet0;
+  $32 = $172; //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+  $33 = $173; //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+  label = 18;
  }
- else if ((label|0) == 16) {
-  $168 = ___cxa_find_matching_catch()|0;
-  $169 = tempRet0;
-  $32 = $168; //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-  $33 = $169; //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+ else if ((label|0) == 17) {
+  $174 = ___cxa_find_matching_catch()|0;
+  $175 = tempRet0;
+  $32 = $174; //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+  $33 = $175; //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
   __THREW__ = 0;
   invoke_vi(374,($34|0)); //@line 244 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-  $170 = __THREW__; __THREW__ = 0;
-  $171 = $170&1;
-  if ($171) {
-   $178 = ___cxa_find_matching_catch(0|0)|0;
-   $179 = tempRet0;
-   ___clang_call_terminate($178); //@line 244 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+  $176 = __THREW__; __THREW__ = 0;
+  $177 = $176&1;
+  if ($177) {
+   $184 = ___cxa_find_matching_catch(0|0)|0;
+   $185 = tempRet0;
+   ___clang_call_terminate($184); //@line 244 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
    // unreachable; //@line 244 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
   } else {
-   label = 17;
+   label = 18;
   }
- }
- else if ((label|0) == 21) {
-  $180 = ___cxa_find_matching_catch()|0;
-  $181 = tempRet0;
-  $49 = $180; //@line 900 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-  $50 = $181; //@line 900 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
  }
  else if ((label|0) == 22) {
-  $182 = ___cxa_find_matching_catch()|0;
-  $183 = tempRet0;
-  $eh$lpad$body$i$index2Z2D = $183;$eh$lpad$body$i$indexZ2D = $182;
-  label = 23;
+  $186 = ___cxa_find_matching_catch()|0;
+  $187 = tempRet0;
+  $49 = $186; //@line 900 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+  $50 = $187; //@line 900 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
  }
- else if ((label|0) == 35) {
-  $245 = ___cxa_find_matching_catch()|0;
-  $246 = tempRet0;
-  $53 = $245; //@line 1540 "4374_Task1c_emscripten.cpp"
-  $54 = $246; //@line 1540 "4374_Task1c_emscripten.cpp"
-  label = 37;
+ else if ((label|0) == 23) {
+  $188 = ___cxa_find_matching_catch()|0;
+  $189 = tempRet0;
+  $eh$lpad$body$i$index2Z2D = $189;$eh$lpad$body$i$indexZ2D = $188;
+  label = 24;
  }
  else if ((label|0) == 36) {
-  $247 = ___cxa_find_matching_catch()|0;
-  $248 = tempRet0;
-  $53 = $247; //@line 1540 "4374_Task1c_emscripten.cpp"
-  $54 = $248; //@line 1540 "4374_Task1c_emscripten.cpp"
+  $249 = ___cxa_find_matching_catch()|0;
+  $250 = tempRet0;
+  $53 = $249; //@line 1617 "4374_Task1c_emscripten.cpp"
+  $54 = $250; //@line 1617 "4374_Task1c_emscripten.cpp"
+  label = 38;
+ }
+ else if ((label|0) == 37) {
+  $251 = ___cxa_find_matching_catch()|0;
+  $252 = tempRet0;
+  $53 = $251; //@line 1617 "4374_Task1c_emscripten.cpp"
+  $54 = $252; //@line 1617 "4374_Task1c_emscripten.cpp"
   __THREW__ = 0;
-  invoke_vi(374,($55|0)); //@line 1537 "4374_Task1c_emscripten.cpp"
-  $249 = __THREW__; __THREW__ = 0;
-  $250 = $249&1;
-  if ($250) {
-   $257 = ___cxa_find_matching_catch(0|0)|0;
-   $258 = tempRet0;
-   ___clang_call_terminate($257); //@line 1537 "4374_Task1c_emscripten.cpp"
-   // unreachable; //@line 1537 "4374_Task1c_emscripten.cpp"
+  invoke_vi(374,($55|0)); //@line 1613 "4374_Task1c_emscripten.cpp"
+  $253 = __THREW__; __THREW__ = 0;
+  $254 = $253&1;
+  if ($254) {
+   $263 = ___cxa_find_matching_catch(0|0)|0;
+   $264 = tempRet0;
+   ___clang_call_terminate($263); //@line 1613 "4374_Task1c_emscripten.cpp"
+   // unreachable; //@line 1613 "4374_Task1c_emscripten.cpp"
   } else {
-   label = 37;
+   label = 38;
   }
  }
- else if ((label|0) == 39) {
-  STACKTOP = sp;return; //@line 1540 "4374_Task1c_emscripten.cpp"
+ else if ((label|0) == 41) {
+  STACKTOP = sp;return; //@line 1617 "4374_Task1c_emscripten.cpp"
  }
- if ((label|0) == 37) {
+ if ((label|0) == 38) {
   __THREW__ = 0;
-  invoke_vi(19,($a|0)); //@line 1538 "4374_Task1c_emscripten.cpp"
-  $251 = __THREW__; __THREW__ = 0;
-  $252 = $251&1;
-  if ($252) {
-   $257 = ___cxa_find_matching_catch(0|0)|0;
-   $258 = tempRet0;
-   ___clang_call_terminate($257); //@line 1537 "4374_Task1c_emscripten.cpp"
-   // unreachable; //@line 1537 "4374_Task1c_emscripten.cpp"
+  invoke_vi(19,($a|0)); //@line 1614 "4374_Task1c_emscripten.cpp"
+  $255 = __THREW__; __THREW__ = 0;
+  $256 = $255&1;
+  if ($256) {
+   $263 = ___cxa_find_matching_catch(0|0)|0;
+   $264 = tempRet0;
+   ___clang_call_terminate($263); //@line 1613 "4374_Task1c_emscripten.cpp"
+   // unreachable; //@line 1613 "4374_Task1c_emscripten.cpp"
   } else {
-   $255 = $53; //@line 1538 "4374_Task1c_emscripten.cpp"
-   $256 = $54; //@line 1538 "4374_Task1c_emscripten.cpp"
-   ___resumeException($255|0);
+   $261 = $53; //@line 1614 "4374_Task1c_emscripten.cpp"
+   $262 = $54; //@line 1614 "4374_Task1c_emscripten.cpp"
+   ___resumeException($261|0);
    // unreachable;
   }
  }
  do {
-  if ((label|0) == 17) {
+  if ((label|0) == 18) {
    __THREW__ = 0;
-   invoke_vi(374,($132|0)); //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $172 = __THREW__; __THREW__ = 0;
-   $173 = $172&1;
-   if ($173) {
-    $178 = ___cxa_find_matching_catch(0|0)|0;
-    $179 = tempRet0;
-    ___clang_call_terminate($178); //@line 244 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+   invoke_vi(374,($138|0)); //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+   $178 = __THREW__; __THREW__ = 0;
+   $179 = $178&1;
+   if ($179) {
+    $184 = ___cxa_find_matching_catch(0|0)|0;
+    $185 = tempRet0;
+    ___clang_call_terminate($184); //@line 244 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
     // unreachable; //@line 244 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
    }
    __THREW__ = 0;
-   invoke_vi(88,($128|0)); //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $174 = __THREW__; __THREW__ = 0;
-   $175 = $174&1;
-   if ($175) {
-    $178 = ___cxa_find_matching_catch(0|0)|0;
-    $179 = tempRet0;
-    ___clang_call_terminate($178); //@line 244 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+   invoke_vi(88,($134|0)); //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+   $180 = __THREW__; __THREW__ = 0;
+   $181 = $180&1;
+   if ($181) {
+    $184 = ___cxa_find_matching_catch(0|0)|0;
+    $185 = tempRet0;
+    ___clang_call_terminate($184); //@line 244 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
     // unreachable; //@line 244 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
    } else {
-    $176 = $32; //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $177 = $33; //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $eh$lpad$body$i$index2Z2D = $177;$eh$lpad$body$i$indexZ2D = $176;
-    label = 23;
+    $182 = $32; //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $183 = $33; //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $eh$lpad$body$i$index2Z2D = $183;$eh$lpad$body$i$indexZ2D = $182;
+    label = 24;
     break;
    }
   }
  } while(0);
- if ((label|0) == 23) {
+ if ((label|0) == 24) {
   $49 = $eh$lpad$body$i$indexZ2D; //@line 900 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
   $50 = $eh$lpad$body$i$index2Z2D; //@line 900 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
   __THREW__ = 0;
-  $184 = __THREW__; __THREW__ = 0;
-  $185 = $184&1;
-  if ($185) {
-   $191 = ___cxa_find_matching_catch(0|0)|0;
-   $192 = tempRet0;
-   ___clang_call_terminate($191); //@line 900 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+  $190 = __THREW__; __THREW__ = 0;
+  $191 = $190&1;
+  if ($191) {
+   $197 = ___cxa_find_matching_catch(0|0)|0;
+   $198 = tempRet0;
+   ___clang_call_terminate($197); //@line 900 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
    // unreachable; //@line 900 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
   }
  }
- $186 = ((($61)) + 64|0); //@line 900 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+ $192 = ((($67)) + 64|0); //@line 900 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
  __THREW__ = 0;
- invoke_vi(104,($186|0)); //@line 900 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
- $187 = __THREW__; __THREW__ = 0;
- $188 = $187&1;
- if ($188) {
-  $191 = ___cxa_find_matching_catch(0|0)|0;
-  $192 = tempRet0;
-  ___clang_call_terminate($191); //@line 900 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+ invoke_vi(104,($192|0)); //@line 900 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+ $193 = __THREW__; __THREW__ = 0;
+ $194 = $193&1;
+ if ($194) {
+  $197 = ___cxa_find_matching_catch(0|0)|0;
+  $198 = tempRet0;
+  ___clang_call_terminate($197); //@line 900 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
   // unreachable; //@line 900 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
  } else {
-  $189 = $49; //@line 900 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-  $190 = $50; //@line 900 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-  ___resumeException($189|0);
+  $195 = $49; //@line 900 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+  $196 = $50; //@line 900 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+  ___resumeException($195|0);
   // unreachable;
  }
 }
@@ -18568,90 +19266,90 @@ function __Z15paintGridimagesPA22_KcP11SDL_Surface($g,$image) {
  STACKTOP = STACKTOP + 32|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
  $0 = $g;
  $1 = $image;
- $row = 0; //@line 1146 "4374_Task1c_emscripten.cpp"
+ $row = 0; //@line 1222 "4374_Task1c_emscripten.cpp"
  while(1) {
-  $2 = $row; //@line 1146 "4374_Task1c_emscripten.cpp"
-  $3 = ($2|0)<(39); //@line 1146 "4374_Task1c_emscripten.cpp"
+  $2 = $row; //@line 1222 "4374_Task1c_emscripten.cpp"
+  $3 = ($2|0)<(39); //@line 1222 "4374_Task1c_emscripten.cpp"
   if (!($3)) {
    break;
   }
-  $col = 0; //@line 1148 "4374_Task1c_emscripten.cpp"
+  $col = 0; //@line 1224 "4374_Task1c_emscripten.cpp"
   while(1) {
-   $4 = $col; //@line 1148 "4374_Task1c_emscripten.cpp"
-   $5 = ($4|0)<(22); //@line 1148 "4374_Task1c_emscripten.cpp"
+   $4 = $col; //@line 1224 "4374_Task1c_emscripten.cpp"
+   $5 = ($4|0)<(22); //@line 1224 "4374_Task1c_emscripten.cpp"
    if (!($5)) {
     break;
    }
-   $6 = $col; //@line 1150 "4374_Task1c_emscripten.cpp"
-   $7 = $row; //@line 1150 "4374_Task1c_emscripten.cpp"
-   $8 = $0; //@line 1150 "4374_Task1c_emscripten.cpp"
-   $9 = (($8) + (($7*22)|0)|0); //@line 1150 "4374_Task1c_emscripten.cpp"
-   $10 = (($9) + ($6)|0); //@line 1150 "4374_Task1c_emscripten.cpp"
-   $11 = HEAP8[$10>>0]|0; //@line 1150 "4374_Task1c_emscripten.cpp"
-   $12 = $11 << 24 >> 24; //@line 1150 "4374_Task1c_emscripten.cpp"
-   $13 = ($12|0)!=(32); //@line 1150 "4374_Task1c_emscripten.cpp"
+   $6 = $col; //@line 1226 "4374_Task1c_emscripten.cpp"
+   $7 = $row; //@line 1226 "4374_Task1c_emscripten.cpp"
+   $8 = $0; //@line 1226 "4374_Task1c_emscripten.cpp"
+   $9 = (($8) + (($7*22)|0)|0); //@line 1226 "4374_Task1c_emscripten.cpp"
+   $10 = (($9) + ($6)|0); //@line 1226 "4374_Task1c_emscripten.cpp"
+   $11 = HEAP8[$10>>0]|0; //@line 1226 "4374_Task1c_emscripten.cpp"
+   $12 = $11 << 24 >> 24; //@line 1226 "4374_Task1c_emscripten.cpp"
+   $13 = ($12|0)!=(32); //@line 1226 "4374_Task1c_emscripten.cpp"
    L7: do {
     if ($13) {
-     $14 = $row; //@line 1153 "4374_Task1c_emscripten.cpp"
-     $15 = ($14*10)|0; //@line 1153 "4374_Task1c_emscripten.cpp"
-     $xlocation = $15; //@line 1153 "4374_Task1c_emscripten.cpp"
-     $16 = $col; //@line 1154 "4374_Task1c_emscripten.cpp"
-     $17 = ($16*10)|0; //@line 1154 "4374_Task1c_emscripten.cpp"
-     $18 = (($17) + 20)|0; //@line 1154 "4374_Task1c_emscripten.cpp"
-     $ylocation = $18; //@line 1154 "4374_Task1c_emscripten.cpp"
-     $19 = $col; //@line 1155 "4374_Task1c_emscripten.cpp"
-     $20 = $row; //@line 1155 "4374_Task1c_emscripten.cpp"
-     $21 = $0; //@line 1155 "4374_Task1c_emscripten.cpp"
-     $22 = (($21) + (($20*22)|0)|0); //@line 1155 "4374_Task1c_emscripten.cpp"
-     $23 = (($22) + ($19)|0); //@line 1155 "4374_Task1c_emscripten.cpp"
-     $24 = HEAP8[$23>>0]|0; //@line 1155 "4374_Task1c_emscripten.cpp"
-     $25 = $24 << 24 >> 24; //@line 1155 "4374_Task1c_emscripten.cpp"
+     $14 = $row; //@line 1229 "4374_Task1c_emscripten.cpp"
+     $15 = ($14*10)|0; //@line 1229 "4374_Task1c_emscripten.cpp"
+     $xlocation = $15; //@line 1229 "4374_Task1c_emscripten.cpp"
+     $16 = $col; //@line 1230 "4374_Task1c_emscripten.cpp"
+     $17 = ($16*10)|0; //@line 1230 "4374_Task1c_emscripten.cpp"
+     $18 = (($17) + 20)|0; //@line 1230 "4374_Task1c_emscripten.cpp"
+     $ylocation = $18; //@line 1230 "4374_Task1c_emscripten.cpp"
+     $19 = $col; //@line 1231 "4374_Task1c_emscripten.cpp"
+     $20 = $row; //@line 1231 "4374_Task1c_emscripten.cpp"
+     $21 = $0; //@line 1231 "4374_Task1c_emscripten.cpp"
+     $22 = (($21) + (($20*22)|0)|0); //@line 1231 "4374_Task1c_emscripten.cpp"
+     $23 = (($22) + ($19)|0); //@line 1231 "4374_Task1c_emscripten.cpp"
+     $24 = HEAP8[$23>>0]|0; //@line 1231 "4374_Task1c_emscripten.cpp"
+     $25 = $24 << 24 >> 24; //@line 1231 "4374_Task1c_emscripten.cpp"
      switch ($25|0) {
      case 64:  {
-      $41 = $1; //@line 1173 "4374_Task1c_emscripten.cpp"
-      $42 = $xlocation; //@line 1173 "4374_Task1c_emscripten.cpp"
-      $43 = $ylocation; //@line 1173 "4374_Task1c_emscripten.cpp"
-      __Z9DrawImageP11SDL_SurfacePKcii($41,6216,$42,$43); //@line 1173 "4374_Task1c_emscripten.cpp"
-      break L7;
-      break;
-     }
-     case 35:  {
-      $26 = $1; //@line 1158 "4374_Task1c_emscripten.cpp"
-      $27 = $xlocation; //@line 1158 "4374_Task1c_emscripten.cpp"
-      $28 = $ylocation; //@line 1158 "4374_Task1c_emscripten.cpp"
-      __Z9DrawImageP11SDL_SurfacePKcii($26,6184,$27,$28); //@line 1158 "4374_Task1c_emscripten.cpp"
-      break L7;
-      break;
-     }
-     case 90:  {
-      $32 = $1; //@line 1164 "4374_Task1c_emscripten.cpp"
-      $33 = $xlocation; //@line 1164 "4374_Task1c_emscripten.cpp"
-      $34 = $ylocation; //@line 1164 "4374_Task1c_emscripten.cpp"
-      __Z9DrawImageP11SDL_SurfacePKcii($32,5592,$33,$34); //@line 1164 "4374_Task1c_emscripten.cpp"
-      break L7;
-      break;
-     }
-     case 38:  {
-      $38 = $1; //@line 1170 "4374_Task1c_emscripten.cpp"
-      $39 = $xlocation; //@line 1170 "4374_Task1c_emscripten.cpp"
-      $40 = $ylocation; //@line 1170 "4374_Task1c_emscripten.cpp"
-      __Z9DrawImageP11SDL_SurfacePKcii($38,5624,$39,$40); //@line 1170 "4374_Task1c_emscripten.cpp"
+      $41 = $1; //@line 1249 "4374_Task1c_emscripten.cpp"
+      $42 = $xlocation; //@line 1249 "4374_Task1c_emscripten.cpp"
+      $43 = $ylocation; //@line 1249 "4374_Task1c_emscripten.cpp"
+      __Z9DrawImageP11SDL_SurfacePKcii($41,6216,$42,$43); //@line 1249 "4374_Task1c_emscripten.cpp"
       break L7;
       break;
      }
      case 79:  {
-      $29 = $1; //@line 1161 "4374_Task1c_emscripten.cpp"
-      $30 = $xlocation; //@line 1161 "4374_Task1c_emscripten.cpp"
-      $31 = $ylocation; //@line 1161 "4374_Task1c_emscripten.cpp"
-      __Z9DrawImageP11SDL_SurfacePKcii($29,5608,$30,$31); //@line 1161 "4374_Task1c_emscripten.cpp"
+      $29 = $1; //@line 1237 "4374_Task1c_emscripten.cpp"
+      $30 = $xlocation; //@line 1237 "4374_Task1c_emscripten.cpp"
+      $31 = $ylocation; //@line 1237 "4374_Task1c_emscripten.cpp"
+      __Z9DrawImageP11SDL_SurfacePKcii($29,5608,$30,$31); //@line 1237 "4374_Task1c_emscripten.cpp"
+      break L7;
+      break;
+     }
+     case 90:  {
+      $32 = $1; //@line 1240 "4374_Task1c_emscripten.cpp"
+      $33 = $xlocation; //@line 1240 "4374_Task1c_emscripten.cpp"
+      $34 = $ylocation; //@line 1240 "4374_Task1c_emscripten.cpp"
+      __Z9DrawImageP11SDL_SurfacePKcii($32,5592,$33,$34); //@line 1240 "4374_Task1c_emscripten.cpp"
+      break L7;
+      break;
+     }
+     case 38:  {
+      $38 = $1; //@line 1246 "4374_Task1c_emscripten.cpp"
+      $39 = $xlocation; //@line 1246 "4374_Task1c_emscripten.cpp"
+      $40 = $ylocation; //@line 1246 "4374_Task1c_emscripten.cpp"
+      __Z9DrawImageP11SDL_SurfacePKcii($38,5624,$39,$40); //@line 1246 "4374_Task1c_emscripten.cpp"
       break L7;
       break;
      }
      case 46:  {
-      $35 = $1; //@line 1167 "4374_Task1c_emscripten.cpp"
-      $36 = $xlocation; //@line 1167 "4374_Task1c_emscripten.cpp"
-      $37 = $ylocation; //@line 1167 "4374_Task1c_emscripten.cpp"
-      __Z9DrawImageP11SDL_SurfacePKcii($35,6200,$36,$37); //@line 1167 "4374_Task1c_emscripten.cpp"
+      $35 = $1; //@line 1243 "4374_Task1c_emscripten.cpp"
+      $36 = $xlocation; //@line 1243 "4374_Task1c_emscripten.cpp"
+      $37 = $ylocation; //@line 1243 "4374_Task1c_emscripten.cpp"
+      __Z9DrawImageP11SDL_SurfacePKcii($35,6200,$36,$37); //@line 1243 "4374_Task1c_emscripten.cpp"
+      break L7;
+      break;
+     }
+     case 35:  {
+      $26 = $1; //@line 1234 "4374_Task1c_emscripten.cpp"
+      $27 = $xlocation; //@line 1234 "4374_Task1c_emscripten.cpp"
+      $28 = $ylocation; //@line 1234 "4374_Task1c_emscripten.cpp"
+      __Z9DrawImageP11SDL_SurfacePKcii($26,6184,$27,$28); //@line 1234 "4374_Task1c_emscripten.cpp"
       break L7;
       break;
      }
@@ -18661,15 +19359,15 @@ function __Z15paintGridimagesPA22_KcP11SDL_Surface($g,$image) {
      }
     }
    } while(0);
-   $44 = $col; //@line 1148 "4374_Task1c_emscripten.cpp"
-   $45 = (($44) + 1)|0; //@line 1148 "4374_Task1c_emscripten.cpp"
-   $col = $45; //@line 1148 "4374_Task1c_emscripten.cpp"
+   $44 = $col; //@line 1224 "4374_Task1c_emscripten.cpp"
+   $45 = (($44) + 1)|0; //@line 1224 "4374_Task1c_emscripten.cpp"
+   $col = $45; //@line 1224 "4374_Task1c_emscripten.cpp"
   }
-  $46 = $row; //@line 1146 "4374_Task1c_emscripten.cpp"
-  $47 = (($46) + 1)|0; //@line 1146 "4374_Task1c_emscripten.cpp"
-  $row = $47; //@line 1146 "4374_Task1c_emscripten.cpp"
+  $46 = $row; //@line 1222 "4374_Task1c_emscripten.cpp"
+  $47 = (($46) + 1)|0; //@line 1222 "4374_Task1c_emscripten.cpp"
+  $row = $47; //@line 1222 "4374_Task1c_emscripten.cpp"
  }
- STACKTOP = sp;return; //@line 1178 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 1254 "4374_Task1c_emscripten.cpp"
 }
 function __Z8showdiffiP11SDL_SurfaceP9_TTF_Font($diff,$image,$font) {
  $diff = $diff|0;
@@ -18698,9 +19396,9 @@ function __Z8showdiffiP11SDL_SurfaceP9_TTF_Font($diff,$image,$font) {
  $53 = $diff;
  $54 = $image;
  $55 = $font;
- $49 = $a; //@line 1333 "4374_Task1c_emscripten.cpp"
- $50 = 24; //@line 1333 "4374_Task1c_emscripten.cpp"
- $60 = $49; //@line 1333 "4374_Task1c_emscripten.cpp"
+ $49 = $a; //@line 1409 "4374_Task1c_emscripten.cpp"
+ $50 = 24; //@line 1409 "4374_Task1c_emscripten.cpp"
+ $60 = $49; //@line 1409 "4374_Task1c_emscripten.cpp"
  $61 = ((($60)) + 64|0); //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
  $48 = $61; //@line 877 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
  $62 = $48; //@line 877 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
@@ -18916,26 +19614,26 @@ function __Z8showdiffiP11SDL_SurfaceP9_TTF_Font($diff,$image,$font) {
        $35 = $166; //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
        break;
       }
-      $192 = ((($a)) + 8|0); //@line 1334 "4374_Task1c_emscripten.cpp"
+      $192 = ((($a)) + 8|0); //@line 1410 "4374_Task1c_emscripten.cpp"
       __THREW__ = 0;
-      $193 = (invoke_iii(376,($192|0),(6232|0))|0); //@line 1334 "4374_Task1c_emscripten.cpp"
+      $193 = (invoke_iii(376,($192|0),(6232|0))|0); //@line 1410 "4374_Task1c_emscripten.cpp"
       $194 = __THREW__; __THREW__ = 0;
       $195 = $194&1;
       do {
        if ($195) {
         label = 33;
        } else {
-        $196 = $53; //@line 1334 "4374_Task1c_emscripten.cpp"
+        $196 = $53; //@line 1410 "4374_Task1c_emscripten.cpp"
         __THREW__ = 0;
-        $197 = (invoke_iii(375,($193|0),($196|0))|0); //@line 1334 "4374_Task1c_emscripten.cpp"
+        $197 = (invoke_iii(375,($193|0),($196|0))|0); //@line 1410 "4374_Task1c_emscripten.cpp"
         $198 = __THREW__; __THREW__ = 0;
         $199 = $198&1;
         if ($199) {
          label = 33;
         } else {
-         $16 = $197; //@line 1334 "4374_Task1c_emscripten.cpp"
-         $17 = 384; //@line 1334 "4374_Task1c_emscripten.cpp"
-         $200 = $16; //@line 1334 "4374_Task1c_emscripten.cpp"
+         $16 = $197; //@line 1410 "4374_Task1c_emscripten.cpp"
+         $17 = 384; //@line 1410 "4374_Task1c_emscripten.cpp"
+         $200 = $16; //@line 1410 "4374_Task1c_emscripten.cpp"
          $201 = $17; //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
          __THREW__ = 0;
          (invoke_ii($201|0,($200|0))|0); //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
@@ -18944,8 +19642,8 @@ function __Z8showdiffiP11SDL_SurfaceP9_TTF_Font($diff,$image,$font) {
          if ($203) {
           label = 33;
          } else {
-          $15 = $a; //@line 1335 "4374_Task1c_emscripten.cpp"
-          $204 = $15; //@line 1335 "4374_Task1c_emscripten.cpp"
+          $15 = $a; //@line 1411 "4374_Task1c_emscripten.cpp"
+          $204 = $15; //@line 1411 "4374_Task1c_emscripten.cpp"
           $205 = ((($204)) + 12|0); //@line 964 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
           __THREW__ = 0;
           invoke_vii(377,($58|0),($205|0)); //@line 964 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
@@ -18954,8 +19652,8 @@ function __Z8showdiffiP11SDL_SurfaceP9_TTF_Font($diff,$image,$font) {
           if ($207) {
            label = 33;
           } else {
-           $14 = $58; //@line 1335 "4374_Task1c_emscripten.cpp"
-           $208 = $14; //@line 1335 "4374_Task1c_emscripten.cpp"
+           $14 = $58; //@line 1411 "4374_Task1c_emscripten.cpp"
+           $208 = $14; //@line 1411 "4374_Task1c_emscripten.cpp"
            $13 = $208; //@line 1598 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
            $209 = $13; //@line 1598 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
            $12 = $209; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
@@ -18996,21 +19694,21 @@ function __Z8showdiffiP11SDL_SurfaceP9_TTF_Font($diff,$image,$font) {
            }
            $0 = $229; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
            $230 = $0; //@line 1043 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-           $231 = $54; //@line 1335 "4374_Task1c_emscripten.cpp"
-           $232 = $55; //@line 1335 "4374_Task1c_emscripten.cpp"
-           ;HEAP32[$59>>2]=HEAP32[6256>>2]|0;HEAP32[$59+4>>2]=HEAP32[6256+4>>2]|0;HEAP32[$59+8>>2]=HEAP32[6256+8>>2]|0;HEAP32[$59+12>>2]=HEAP32[6256+12>>2]|0; //@line 1335 "4374_Task1c_emscripten.cpp"
+           $231 = $54; //@line 1411 "4374_Task1c_emscripten.cpp"
+           $232 = $55; //@line 1411 "4374_Task1c_emscripten.cpp"
+           ;HEAP32[$59>>2]=HEAP32[6256>>2]|0;HEAP32[$59+4>>2]=HEAP32[6256+4>>2]|0;HEAP32[$59+8>>2]=HEAP32[6256+8>>2]|0;HEAP32[$59+12>>2]=HEAP32[6256+12>>2]|0; //@line 1411 "4374_Task1c_emscripten.cpp"
            __THREW__ = 0;
-           ;HEAP32[$$byval_copy>>2]=HEAP32[$59>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$59+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$59+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$59+12>>2]|0; //@line 1335 "4374_Task1c_emscripten.cpp"
-           invoke_viiiiii(414,($230|0),($231|0),($232|0),(6272|0),(6280|0),($$byval_copy|0)); //@line 1335 "4374_Task1c_emscripten.cpp"
+           ;HEAP32[$$byval_copy>>2]=HEAP32[$59>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$59+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$59+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$59+12>>2]|0; //@line 1411 "4374_Task1c_emscripten.cpp"
+           invoke_viiiiii(414,($230|0),($231|0),($232|0),(6272|0),(6280|0),($$byval_copy|0)); //@line 1411 "4374_Task1c_emscripten.cpp"
            $233 = __THREW__; __THREW__ = 0;
            $234 = $233&1;
            if ($234) {
             $239 = ___cxa_find_matching_catch()|0;
             $240 = tempRet0;
-            $56 = $239; //@line 1337 "4374_Task1c_emscripten.cpp"
-            $57 = $240; //@line 1337 "4374_Task1c_emscripten.cpp"
+            $56 = $239; //@line 1413 "4374_Task1c_emscripten.cpp"
+            $57 = $240; //@line 1413 "4374_Task1c_emscripten.cpp"
             __THREW__ = 0;
-            invoke_vi(374,($58|0)); //@line 1335 "4374_Task1c_emscripten.cpp"
+            invoke_vi(374,($58|0)); //@line 1411 "4374_Task1c_emscripten.cpp"
             $241 = __THREW__; __THREW__ = 0;
             $242 = $241&1;
             if (!($242)) {
@@ -19018,19 +19716,19 @@ function __Z8showdiffiP11SDL_SurfaceP9_TTF_Font($diff,$image,$font) {
             }
             $247 = ___cxa_find_matching_catch(0|0)|0;
             $248 = tempRet0;
-            ___clang_call_terminate($247); //@line 1335 "4374_Task1c_emscripten.cpp"
-            // unreachable; //@line 1335 "4374_Task1c_emscripten.cpp"
+            ___clang_call_terminate($247); //@line 1411 "4374_Task1c_emscripten.cpp"
+            // unreachable; //@line 1411 "4374_Task1c_emscripten.cpp"
            } else {
             __THREW__ = 0;
-            invoke_vi(374,($58|0)); //@line 1335 "4374_Task1c_emscripten.cpp"
+            invoke_vi(374,($58|0)); //@line 1411 "4374_Task1c_emscripten.cpp"
             $235 = __THREW__; __THREW__ = 0;
             $236 = $235&1;
             if ($236) {
              label = 33;
              break;
             }
-            __ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev($a); //@line 1337 "4374_Task1c_emscripten.cpp"
-            STACKTOP = sp;return; //@line 1337 "4374_Task1c_emscripten.cpp"
+            __ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev($a); //@line 1413 "4374_Task1c_emscripten.cpp"
+            STACKTOP = sp;return; //@line 1413 "4374_Task1c_emscripten.cpp"
            }
           }
          }
@@ -19040,21 +19738,21 @@ function __Z8showdiffiP11SDL_SurfaceP9_TTF_Font($diff,$image,$font) {
       if ((label|0) == 33) {
        $237 = ___cxa_find_matching_catch()|0;
        $238 = tempRet0;
-       $56 = $237; //@line 1337 "4374_Task1c_emscripten.cpp"
-       $57 = $238; //@line 1337 "4374_Task1c_emscripten.cpp"
+       $56 = $237; //@line 1413 "4374_Task1c_emscripten.cpp"
+       $57 = $238; //@line 1413 "4374_Task1c_emscripten.cpp"
       }
       __THREW__ = 0;
-      invoke_vi(19,($a|0)); //@line 1337 "4374_Task1c_emscripten.cpp"
+      invoke_vi(19,($a|0)); //@line 1413 "4374_Task1c_emscripten.cpp"
       $243 = __THREW__; __THREW__ = 0;
       $244 = $243&1;
       if ($244) {
        $247 = ___cxa_find_matching_catch(0|0)|0;
        $248 = tempRet0;
-       ___clang_call_terminate($247); //@line 1335 "4374_Task1c_emscripten.cpp"
-       // unreachable; //@line 1335 "4374_Task1c_emscripten.cpp"
+       ___clang_call_terminate($247); //@line 1411 "4374_Task1c_emscripten.cpp"
+       // unreachable; //@line 1411 "4374_Task1c_emscripten.cpp"
       } else {
-       $245 = $56; //@line 1337 "4374_Task1c_emscripten.cpp"
-       $246 = $57; //@line 1337 "4374_Task1c_emscripten.cpp"
+       $245 = $56; //@line 1413 "4374_Task1c_emscripten.cpp"
+       $246 = $57; //@line 1413 "4374_Task1c_emscripten.cpp"
        ___resumeException($245|0);
        // unreachable;
       }
@@ -19128,17 +19826,17 @@ function __Z12showSaveLoadP11SDL_SurfaceP9_TTF_Font($image,$font) {
  $3 = sp + 40|0;
  $0 = $image;
  $1 = $font;
- $4 = $0; //@line 1235 "4374_Task1c_emscripten.cpp"
- $5 = $1; //@line 1235 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$2>>2]=HEAP32[6288>>2]|0;HEAP32[$2+4>>2]=HEAP32[6288+4>>2]|0;HEAP32[$2+8>>2]=HEAP32[6288+8>>2]|0;HEAP32[$2+12>>2]=HEAP32[6288+12>>2]|0; //@line 1235 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$$byval_copy>>2]=HEAP32[$2>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$2+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$2+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$2+12>>2]|0; //@line 1235 "4374_Task1c_emscripten.cpp"
- __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(6304,$4,$5,6336,6344,$$byval_copy); //@line 1235 "4374_Task1c_emscripten.cpp"
- $6 = $0; //@line 1236 "4374_Task1c_emscripten.cpp"
- $7 = $1; //@line 1236 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$3>>2]=HEAP32[6352>>2]|0;HEAP32[$3+4>>2]=HEAP32[6352+4>>2]|0;HEAP32[$3+8>>2]=HEAP32[6352+8>>2]|0;HEAP32[$3+12>>2]=HEAP32[6352+12>>2]|0; //@line 1236 "4374_Task1c_emscripten.cpp"
- ;HEAP32[$$byval_copy1>>2]=HEAP32[$3>>2]|0;HEAP32[$$byval_copy1+4>>2]=HEAP32[$3+4>>2]|0;HEAP32[$$byval_copy1+8>>2]=HEAP32[$3+8>>2]|0;HEAP32[$$byval_copy1+12>>2]=HEAP32[$3+12>>2]|0; //@line 1236 "4374_Task1c_emscripten.cpp"
- __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(6368,$6,$7,6336,6344,$$byval_copy1); //@line 1236 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return; //@line 1237 "4374_Task1c_emscripten.cpp"
+ $4 = $0; //@line 1311 "4374_Task1c_emscripten.cpp"
+ $5 = $1; //@line 1311 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$2>>2]=HEAP32[6288>>2]|0;HEAP32[$2+4>>2]=HEAP32[6288+4>>2]|0;HEAP32[$2+8>>2]=HEAP32[6288+8>>2]|0;HEAP32[$2+12>>2]=HEAP32[6288+12>>2]|0; //@line 1311 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$$byval_copy>>2]=HEAP32[$2>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$2+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$2+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$2+12>>2]|0; //@line 1311 "4374_Task1c_emscripten.cpp"
+ __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(6304,$4,$5,6336,6344,$$byval_copy); //@line 1311 "4374_Task1c_emscripten.cpp"
+ $6 = $0; //@line 1312 "4374_Task1c_emscripten.cpp"
+ $7 = $1; //@line 1312 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$3>>2]=HEAP32[6352>>2]|0;HEAP32[$3+4>>2]=HEAP32[6352+4>>2]|0;HEAP32[$3+8>>2]=HEAP32[6352+8>>2]|0;HEAP32[$3+12>>2]=HEAP32[6352+12>>2]|0; //@line 1312 "4374_Task1c_emscripten.cpp"
+ ;HEAP32[$$byval_copy1>>2]=HEAP32[$3>>2]|0;HEAP32[$$byval_copy1+4>>2]=HEAP32[$3+4>>2]|0;HEAP32[$$byval_copy1+8>>2]=HEAP32[$3+8>>2]|0;HEAP32[$$byval_copy1+12>>2]=HEAP32[$3+12>>2]|0; //@line 1312 "4374_Task1c_emscripten.cpp"
+ __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(6368,$6,$7,6336,6344,$$byval_copy1); //@line 1312 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 1313 "4374_Task1c_emscripten.cpp"
 }
 function __Z9showLivesRK6playerP11SDL_SurfaceP9_TTF_Font($spot,$image,$font) {
  $spot = $spot|0;
@@ -19167,9 +19865,9 @@ function __Z9showLivesRK6playerP11SDL_SurfaceP9_TTF_Font($spot,$image,$font) {
  $51 = $spot;
  $52 = $image;
  $53 = $font;
- $47 = $a; //@line 1267 "4374_Task1c_emscripten.cpp"
- $48 = 24; //@line 1267 "4374_Task1c_emscripten.cpp"
- $58 = $47; //@line 1267 "4374_Task1c_emscripten.cpp"
+ $47 = $a; //@line 1343 "4374_Task1c_emscripten.cpp"
+ $48 = 24; //@line 1343 "4374_Task1c_emscripten.cpp"
+ $58 = $47; //@line 1343 "4374_Task1c_emscripten.cpp"
  $59 = ((($58)) + 64|0); //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
  $46 = $59; //@line 877 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
  $60 = $46; //@line 877 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
@@ -19385,12 +20083,12 @@ function __Z9showLivesRK6playerP11SDL_SurfaceP9_TTF_Font($spot,$image,$font) {
        $33 = $164; //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
        break;
       }
-      $190 = ((($a)) + 8|0); //@line 1268 "4374_Task1c_emscripten.cpp"
-      $191 = $51; //@line 1268 "4374_Task1c_emscripten.cpp"
-      $192 = ((($191)) + 24|0); //@line 1268 "4374_Task1c_emscripten.cpp"
-      $193 = HEAP32[$192>>2]|0; //@line 1268 "4374_Task1c_emscripten.cpp"
+      $190 = ((($a)) + 8|0); //@line 1344 "4374_Task1c_emscripten.cpp"
+      $191 = $51; //@line 1344 "4374_Task1c_emscripten.cpp"
+      $192 = ((($191)) + 24|0); //@line 1344 "4374_Task1c_emscripten.cpp"
+      $193 = HEAP32[$192>>2]|0; //@line 1344 "4374_Task1c_emscripten.cpp"
       __THREW__ = 0;
-      $194 = (invoke_iii(375,($190|0),($193|0))|0); //@line 1268 "4374_Task1c_emscripten.cpp"
+      $194 = (invoke_iii(375,($190|0),($193|0))|0); //@line 1344 "4374_Task1c_emscripten.cpp"
       $195 = __THREW__; __THREW__ = 0;
       $196 = $195&1;
       do {
@@ -19398,14 +20096,14 @@ function __Z9showLivesRK6playerP11SDL_SurfaceP9_TTF_Font($spot,$image,$font) {
         label = 32;
        } else {
         __THREW__ = 0;
-        (invoke_iii(376,($194|0),(6400|0))|0); //@line 1268 "4374_Task1c_emscripten.cpp"
+        (invoke_iii(376,($194|0),(6400|0))|0); //@line 1344 "4374_Task1c_emscripten.cpp"
         $197 = __THREW__; __THREW__ = 0;
         $198 = $197&1;
         if ($198) {
          label = 32;
         } else {
-         $15 = $a; //@line 1269 "4374_Task1c_emscripten.cpp"
-         $199 = $15; //@line 1269 "4374_Task1c_emscripten.cpp"
+         $15 = $a; //@line 1345 "4374_Task1c_emscripten.cpp"
+         $199 = $15; //@line 1345 "4374_Task1c_emscripten.cpp"
          $200 = ((($199)) + 12|0); //@line 964 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
          __THREW__ = 0;
          invoke_vii(377,($56|0),($200|0)); //@line 964 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
@@ -19414,8 +20112,8 @@ function __Z9showLivesRK6playerP11SDL_SurfaceP9_TTF_Font($spot,$image,$font) {
          if ($202) {
           label = 32;
          } else {
-          $14 = $56; //@line 1269 "4374_Task1c_emscripten.cpp"
-          $203 = $14; //@line 1269 "4374_Task1c_emscripten.cpp"
+          $14 = $56; //@line 1345 "4374_Task1c_emscripten.cpp"
+          $203 = $14; //@line 1345 "4374_Task1c_emscripten.cpp"
           $13 = $203; //@line 1598 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
           $204 = $13; //@line 1598 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
           $12 = $204; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
@@ -19456,21 +20154,21 @@ function __Z9showLivesRK6playerP11SDL_SurfaceP9_TTF_Font($spot,$image,$font) {
           }
           $0 = $224; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
           $225 = $0; //@line 1043 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-          $226 = $52; //@line 1269 "4374_Task1c_emscripten.cpp"
-          $227 = $53; //@line 1269 "4374_Task1c_emscripten.cpp"
-          ;HEAP32[$57>>2]=HEAP32[6416>>2]|0;HEAP32[$57+4>>2]=HEAP32[6416+4>>2]|0;HEAP32[$57+8>>2]=HEAP32[6416+8>>2]|0;HEAP32[$57+12>>2]=HEAP32[6416+12>>2]|0; //@line 1269 "4374_Task1c_emscripten.cpp"
+          $226 = $52; //@line 1345 "4374_Task1c_emscripten.cpp"
+          $227 = $53; //@line 1345 "4374_Task1c_emscripten.cpp"
+          ;HEAP32[$57>>2]=HEAP32[6416>>2]|0;HEAP32[$57+4>>2]=HEAP32[6416+4>>2]|0;HEAP32[$57+8>>2]=HEAP32[6416+8>>2]|0;HEAP32[$57+12>>2]=HEAP32[6416+12>>2]|0; //@line 1345 "4374_Task1c_emscripten.cpp"
           __THREW__ = 0;
-          ;HEAP32[$$byval_copy>>2]=HEAP32[$57>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$57+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$57+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$57+12>>2]|0; //@line 1269 "4374_Task1c_emscripten.cpp"
-          invoke_viiiiii(414,($225|0),($226|0),($227|0),(6432|0),(6440|0),($$byval_copy|0)); //@line 1269 "4374_Task1c_emscripten.cpp"
+          ;HEAP32[$$byval_copy>>2]=HEAP32[$57>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$57+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$57+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$57+12>>2]|0; //@line 1345 "4374_Task1c_emscripten.cpp"
+          invoke_viiiiii(414,($225|0),($226|0),($227|0),(6432|0),(6440|0),($$byval_copy|0)); //@line 1345 "4374_Task1c_emscripten.cpp"
           $228 = __THREW__; __THREW__ = 0;
           $229 = $228&1;
           if ($229) {
            $234 = ___cxa_find_matching_catch()|0;
            $235 = tempRet0;
-           $54 = $234; //@line 1270 "4374_Task1c_emscripten.cpp"
-           $55 = $235; //@line 1270 "4374_Task1c_emscripten.cpp"
+           $54 = $234; //@line 1346 "4374_Task1c_emscripten.cpp"
+           $55 = $235; //@line 1346 "4374_Task1c_emscripten.cpp"
            __THREW__ = 0;
-           invoke_vi(374,($56|0)); //@line 1269 "4374_Task1c_emscripten.cpp"
+           invoke_vi(374,($56|0)); //@line 1345 "4374_Task1c_emscripten.cpp"
            $236 = __THREW__; __THREW__ = 0;
            $237 = $236&1;
            if (!($237)) {
@@ -19478,19 +20176,19 @@ function __Z9showLivesRK6playerP11SDL_SurfaceP9_TTF_Font($spot,$image,$font) {
            }
            $242 = ___cxa_find_matching_catch(0|0)|0;
            $243 = tempRet0;
-           ___clang_call_terminate($242); //@line 1269 "4374_Task1c_emscripten.cpp"
-           // unreachable; //@line 1269 "4374_Task1c_emscripten.cpp"
+           ___clang_call_terminate($242); //@line 1345 "4374_Task1c_emscripten.cpp"
+           // unreachable; //@line 1345 "4374_Task1c_emscripten.cpp"
           } else {
            __THREW__ = 0;
-           invoke_vi(374,($56|0)); //@line 1269 "4374_Task1c_emscripten.cpp"
+           invoke_vi(374,($56|0)); //@line 1345 "4374_Task1c_emscripten.cpp"
            $230 = __THREW__; __THREW__ = 0;
            $231 = $230&1;
            if ($231) {
             label = 32;
             break;
            }
-           __ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev($a); //@line 1270 "4374_Task1c_emscripten.cpp"
-           STACKTOP = sp;return; //@line 1270 "4374_Task1c_emscripten.cpp"
+           __ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev($a); //@line 1346 "4374_Task1c_emscripten.cpp"
+           STACKTOP = sp;return; //@line 1346 "4374_Task1c_emscripten.cpp"
           }
          }
         }
@@ -19499,21 +20197,21 @@ function __Z9showLivesRK6playerP11SDL_SurfaceP9_TTF_Font($spot,$image,$font) {
       if ((label|0) == 32) {
        $232 = ___cxa_find_matching_catch()|0;
        $233 = tempRet0;
-       $54 = $232; //@line 1270 "4374_Task1c_emscripten.cpp"
-       $55 = $233; //@line 1270 "4374_Task1c_emscripten.cpp"
+       $54 = $232; //@line 1346 "4374_Task1c_emscripten.cpp"
+       $55 = $233; //@line 1346 "4374_Task1c_emscripten.cpp"
       }
       __THREW__ = 0;
-      invoke_vi(19,($a|0)); //@line 1270 "4374_Task1c_emscripten.cpp"
+      invoke_vi(19,($a|0)); //@line 1346 "4374_Task1c_emscripten.cpp"
       $238 = __THREW__; __THREW__ = 0;
       $239 = $238&1;
       if ($239) {
        $242 = ___cxa_find_matching_catch(0|0)|0;
        $243 = tempRet0;
-       ___clang_call_terminate($242); //@line 1269 "4374_Task1c_emscripten.cpp"
-       // unreachable; //@line 1269 "4374_Task1c_emscripten.cpp"
+       ___clang_call_terminate($242); //@line 1345 "4374_Task1c_emscripten.cpp"
+       // unreachable; //@line 1345 "4374_Task1c_emscripten.cpp"
       } else {
-       $240 = $54; //@line 1270 "4374_Task1c_emscripten.cpp"
-       $241 = $55; //@line 1270 "4374_Task1c_emscripten.cpp"
+       $240 = $54; //@line 1346 "4374_Task1c_emscripten.cpp"
+       $241 = $55; //@line 1346 "4374_Task1c_emscripten.cpp"
        ___resumeException($240|0);
        // unreachable;
       }
@@ -19602,9 +20300,9 @@ function __Z8shownameRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorI
  $51 = $name;
  $52 = $image;
  $53 = $font;
- $47 = $a; //@line 1245 "4374_Task1c_emscripten.cpp"
- $48 = 24; //@line 1245 "4374_Task1c_emscripten.cpp"
- $58 = $47; //@line 1245 "4374_Task1c_emscripten.cpp"
+ $47 = $a; //@line 1321 "4374_Task1c_emscripten.cpp"
+ $48 = 24; //@line 1321 "4374_Task1c_emscripten.cpp"
+ $58 = $47; //@line 1321 "4374_Task1c_emscripten.cpp"
  $59 = ((($58)) + 64|0); //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
  $46 = $59; //@line 877 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
  $60 = $46; //@line 877 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
@@ -19820,25 +20518,25 @@ function __Z8shownameRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorI
        $33 = $164; //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
        break;
       }
-      $190 = ((($a)) + 8|0); //@line 1246 "4374_Task1c_emscripten.cpp"
+      $190 = ((($a)) + 8|0); //@line 1322 "4374_Task1c_emscripten.cpp"
       __THREW__ = 0;
-      $191 = (invoke_iii(376,($190|0),(6448|0))|0); //@line 1246 "4374_Task1c_emscripten.cpp"
+      $191 = (invoke_iii(376,($190|0),(6448|0))|0); //@line 1322 "4374_Task1c_emscripten.cpp"
       $192 = __THREW__; __THREW__ = 0;
       $193 = $192&1;
       do {
        if ($193) {
         label = 32;
        } else {
-        $194 = $51; //@line 1246 "4374_Task1c_emscripten.cpp"
+        $194 = $51; //@line 1322 "4374_Task1c_emscripten.cpp"
         __THREW__ = 0;
-        (invoke_iii(412,($191|0),($194|0))|0); //@line 1246 "4374_Task1c_emscripten.cpp"
+        (invoke_iii(412,($191|0),($194|0))|0); //@line 1322 "4374_Task1c_emscripten.cpp"
         $195 = __THREW__; __THREW__ = 0;
         $196 = $195&1;
         if ($196) {
          label = 32;
         } else {
-         $15 = $a; //@line 1247 "4374_Task1c_emscripten.cpp"
-         $197 = $15; //@line 1247 "4374_Task1c_emscripten.cpp"
+         $15 = $a; //@line 1323 "4374_Task1c_emscripten.cpp"
+         $197 = $15; //@line 1323 "4374_Task1c_emscripten.cpp"
          $198 = ((($197)) + 12|0); //@line 964 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
          __THREW__ = 0;
          invoke_vii(377,($56|0),($198|0)); //@line 964 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
@@ -19847,8 +20545,8 @@ function __Z8shownameRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorI
          if ($200) {
           label = 32;
          } else {
-          $14 = $56; //@line 1247 "4374_Task1c_emscripten.cpp"
-          $201 = $14; //@line 1247 "4374_Task1c_emscripten.cpp"
+          $14 = $56; //@line 1323 "4374_Task1c_emscripten.cpp"
+          $201 = $14; //@line 1323 "4374_Task1c_emscripten.cpp"
           $13 = $201; //@line 1598 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
           $202 = $13; //@line 1598 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
           $12 = $202; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
@@ -19889,21 +20587,21 @@ function __Z8shownameRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorI
           }
           $0 = $222; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
           $223 = $0; //@line 1043 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-          $224 = $52; //@line 1247 "4374_Task1c_emscripten.cpp"
-          $225 = $53; //@line 1247 "4374_Task1c_emscripten.cpp"
-          ;HEAP32[$57>>2]=HEAP32[6464>>2]|0;HEAP32[$57+4>>2]=HEAP32[6464+4>>2]|0;HEAP32[$57+8>>2]=HEAP32[6464+8>>2]|0;HEAP32[$57+12>>2]=HEAP32[6464+12>>2]|0; //@line 1247 "4374_Task1c_emscripten.cpp"
+          $224 = $52; //@line 1323 "4374_Task1c_emscripten.cpp"
+          $225 = $53; //@line 1323 "4374_Task1c_emscripten.cpp"
+          ;HEAP32[$57>>2]=HEAP32[6464>>2]|0;HEAP32[$57+4>>2]=HEAP32[6464+4>>2]|0;HEAP32[$57+8>>2]=HEAP32[6464+8>>2]|0;HEAP32[$57+12>>2]=HEAP32[6464+12>>2]|0; //@line 1323 "4374_Task1c_emscripten.cpp"
           __THREW__ = 0;
-          ;HEAP32[$$byval_copy>>2]=HEAP32[$57>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$57+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$57+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$57+12>>2]|0; //@line 1247 "4374_Task1c_emscripten.cpp"
-          invoke_viiiiii(414,($223|0),($224|0),($225|0),(6480|0),(6488|0),($$byval_copy|0)); //@line 1247 "4374_Task1c_emscripten.cpp"
+          ;HEAP32[$$byval_copy>>2]=HEAP32[$57>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$57+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$57+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$57+12>>2]|0; //@line 1323 "4374_Task1c_emscripten.cpp"
+          invoke_viiiiii(414,($223|0),($224|0),($225|0),(6480|0),(6488|0),($$byval_copy|0)); //@line 1323 "4374_Task1c_emscripten.cpp"
           $226 = __THREW__; __THREW__ = 0;
           $227 = $226&1;
           if ($227) {
            $232 = ___cxa_find_matching_catch()|0;
            $233 = tempRet0;
-           $54 = $232; //@line 1248 "4374_Task1c_emscripten.cpp"
-           $55 = $233; //@line 1248 "4374_Task1c_emscripten.cpp"
+           $54 = $232; //@line 1324 "4374_Task1c_emscripten.cpp"
+           $55 = $233; //@line 1324 "4374_Task1c_emscripten.cpp"
            __THREW__ = 0;
-           invoke_vi(374,($56|0)); //@line 1247 "4374_Task1c_emscripten.cpp"
+           invoke_vi(374,($56|0)); //@line 1323 "4374_Task1c_emscripten.cpp"
            $234 = __THREW__; __THREW__ = 0;
            $235 = $234&1;
            if (!($235)) {
@@ -19911,19 +20609,19 @@ function __Z8shownameRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorI
            }
            $240 = ___cxa_find_matching_catch(0|0)|0;
            $241 = tempRet0;
-           ___clang_call_terminate($240); //@line 1247 "4374_Task1c_emscripten.cpp"
-           // unreachable; //@line 1247 "4374_Task1c_emscripten.cpp"
+           ___clang_call_terminate($240); //@line 1323 "4374_Task1c_emscripten.cpp"
+           // unreachable; //@line 1323 "4374_Task1c_emscripten.cpp"
           } else {
            __THREW__ = 0;
-           invoke_vi(374,($56|0)); //@line 1247 "4374_Task1c_emscripten.cpp"
+           invoke_vi(374,($56|0)); //@line 1323 "4374_Task1c_emscripten.cpp"
            $228 = __THREW__; __THREW__ = 0;
            $229 = $228&1;
            if ($229) {
             label = 32;
             break;
            }
-           __ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev($a); //@line 1248 "4374_Task1c_emscripten.cpp"
-           STACKTOP = sp;return; //@line 1248 "4374_Task1c_emscripten.cpp"
+           __ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev($a); //@line 1324 "4374_Task1c_emscripten.cpp"
+           STACKTOP = sp;return; //@line 1324 "4374_Task1c_emscripten.cpp"
           }
          }
         }
@@ -19932,21 +20630,21 @@ function __Z8shownameRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorI
       if ((label|0) == 32) {
        $230 = ___cxa_find_matching_catch()|0;
        $231 = tempRet0;
-       $54 = $230; //@line 1248 "4374_Task1c_emscripten.cpp"
-       $55 = $231; //@line 1248 "4374_Task1c_emscripten.cpp"
+       $54 = $230; //@line 1324 "4374_Task1c_emscripten.cpp"
+       $55 = $231; //@line 1324 "4374_Task1c_emscripten.cpp"
       }
       __THREW__ = 0;
-      invoke_vi(19,($a|0)); //@line 1248 "4374_Task1c_emscripten.cpp"
+      invoke_vi(19,($a|0)); //@line 1324 "4374_Task1c_emscripten.cpp"
       $236 = __THREW__; __THREW__ = 0;
       $237 = $236&1;
       if ($237) {
        $240 = ___cxa_find_matching_catch(0|0)|0;
        $241 = tempRet0;
-       ___clang_call_terminate($240); //@line 1247 "4374_Task1c_emscripten.cpp"
-       // unreachable; //@line 1247 "4374_Task1c_emscripten.cpp"
+       ___clang_call_terminate($240); //@line 1323 "4374_Task1c_emscripten.cpp"
+       // unreachable; //@line 1323 "4374_Task1c_emscripten.cpp"
       } else {
-       $238 = $54; //@line 1248 "4374_Task1c_emscripten.cpp"
-       $239 = $55; //@line 1248 "4374_Task1c_emscripten.cpp"
+       $238 = $54; //@line 1324 "4374_Task1c_emscripten.cpp"
+       $239 = $55; //@line 1324 "4374_Task1c_emscripten.cpp"
        ___resumeException($238|0);
        // unreachable;
       }
@@ -20035,9 +20733,9 @@ function __Z11showrempilliP11SDL_SurfaceP9_TTF_Font($pils,$image,$font) {
  $51 = $pils;
  $52 = $image;
  $53 = $font;
- $47 = $a; //@line 1186 "4374_Task1c_emscripten.cpp"
- $48 = 24; //@line 1186 "4374_Task1c_emscripten.cpp"
- $58 = $47; //@line 1186 "4374_Task1c_emscripten.cpp"
+ $47 = $a; //@line 1262 "4374_Task1c_emscripten.cpp"
+ $48 = 24; //@line 1262 "4374_Task1c_emscripten.cpp"
+ $58 = $47; //@line 1262 "4374_Task1c_emscripten.cpp"
  $59 = ((($58)) + 64|0); //@line 899 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
  $46 = $59; //@line 877 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
  $60 = $46; //@line 877 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
@@ -20253,25 +20951,25 @@ function __Z11showrempilliP11SDL_SurfaceP9_TTF_Font($pils,$image,$font) {
        $33 = $164; //@line 245 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
        break;
       }
-      $190 = ((($a)) + 8|0); //@line 1187 "4374_Task1c_emscripten.cpp"
+      $190 = ((($a)) + 8|0); //@line 1263 "4374_Task1c_emscripten.cpp"
       __THREW__ = 0;
-      $191 = (invoke_iii(376,($190|0),(6496|0))|0); //@line 1187 "4374_Task1c_emscripten.cpp"
+      $191 = (invoke_iii(376,($190|0),(6496|0))|0); //@line 1263 "4374_Task1c_emscripten.cpp"
       $192 = __THREW__; __THREW__ = 0;
       $193 = $192&1;
       do {
        if ($193) {
         label = 32;
        } else {
-        $194 = $51; //@line 1187 "4374_Task1c_emscripten.cpp"
+        $194 = $51; //@line 1263 "4374_Task1c_emscripten.cpp"
         __THREW__ = 0;
-        (invoke_iii(375,($191|0),($194|0))|0); //@line 1187 "4374_Task1c_emscripten.cpp"
+        (invoke_iii(375,($191|0),($194|0))|0); //@line 1263 "4374_Task1c_emscripten.cpp"
         $195 = __THREW__; __THREW__ = 0;
         $196 = $195&1;
         if ($196) {
          label = 32;
         } else {
-         $15 = $a; //@line 1188 "4374_Task1c_emscripten.cpp"
-         $197 = $15; //@line 1188 "4374_Task1c_emscripten.cpp"
+         $15 = $a; //@line 1264 "4374_Task1c_emscripten.cpp"
+         $197 = $15; //@line 1264 "4374_Task1c_emscripten.cpp"
          $198 = ((($197)) + 12|0); //@line 964 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
          __THREW__ = 0;
          invoke_vii(377,($56|0),($198|0)); //@line 964 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
@@ -20280,8 +20978,8 @@ function __Z11showrempilliP11SDL_SurfaceP9_TTF_Font($pils,$image,$font) {
          if ($200) {
           label = 32;
          } else {
-          $14 = $56; //@line 1188 "4374_Task1c_emscripten.cpp"
-          $201 = $14; //@line 1188 "4374_Task1c_emscripten.cpp"
+          $14 = $56; //@line 1264 "4374_Task1c_emscripten.cpp"
+          $201 = $14; //@line 1264 "4374_Task1c_emscripten.cpp"
           $13 = $201; //@line 1598 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
           $202 = $13; //@line 1598 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
           $12 = $202; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
@@ -20322,21 +21020,21 @@ function __Z11showrempilliP11SDL_SurfaceP9_TTF_Font($pils,$image,$font) {
           }
           $0 = $222; //@line 1600 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
           $223 = $0; //@line 1043 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
-          $224 = $52; //@line 1188 "4374_Task1c_emscripten.cpp"
-          $225 = $53; //@line 1188 "4374_Task1c_emscripten.cpp"
-          ;HEAP32[$57>>2]=HEAP32[6512>>2]|0;HEAP32[$57+4>>2]=HEAP32[6512+4>>2]|0;HEAP32[$57+8>>2]=HEAP32[6512+8>>2]|0;HEAP32[$57+12>>2]=HEAP32[6512+12>>2]|0; //@line 1188 "4374_Task1c_emscripten.cpp"
+          $224 = $52; //@line 1264 "4374_Task1c_emscripten.cpp"
+          $225 = $53; //@line 1264 "4374_Task1c_emscripten.cpp"
+          ;HEAP32[$57>>2]=HEAP32[6512>>2]|0;HEAP32[$57+4>>2]=HEAP32[6512+4>>2]|0;HEAP32[$57+8>>2]=HEAP32[6512+8>>2]|0;HEAP32[$57+12>>2]=HEAP32[6512+12>>2]|0; //@line 1264 "4374_Task1c_emscripten.cpp"
           __THREW__ = 0;
-          ;HEAP32[$$byval_copy>>2]=HEAP32[$57>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$57+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$57+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$57+12>>2]|0; //@line 1188 "4374_Task1c_emscripten.cpp"
-          invoke_viiiiii(414,($223|0),($224|0),($225|0),(6528|0),(6536|0),($$byval_copy|0)); //@line 1188 "4374_Task1c_emscripten.cpp"
+          ;HEAP32[$$byval_copy>>2]=HEAP32[$57>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$57+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$57+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$57+12>>2]|0; //@line 1264 "4374_Task1c_emscripten.cpp"
+          invoke_viiiiii(414,($223|0),($224|0),($225|0),(6528|0),(6536|0),($$byval_copy|0)); //@line 1264 "4374_Task1c_emscripten.cpp"
           $226 = __THREW__; __THREW__ = 0;
           $227 = $226&1;
           if ($227) {
            $232 = ___cxa_find_matching_catch()|0;
            $233 = tempRet0;
-           $54 = $232; //@line 1189 "4374_Task1c_emscripten.cpp"
-           $55 = $233; //@line 1189 "4374_Task1c_emscripten.cpp"
+           $54 = $232; //@line 1265 "4374_Task1c_emscripten.cpp"
+           $55 = $233; //@line 1265 "4374_Task1c_emscripten.cpp"
            __THREW__ = 0;
-           invoke_vi(374,($56|0)); //@line 1188 "4374_Task1c_emscripten.cpp"
+           invoke_vi(374,($56|0)); //@line 1264 "4374_Task1c_emscripten.cpp"
            $234 = __THREW__; __THREW__ = 0;
            $235 = $234&1;
            if (!($235)) {
@@ -20344,19 +21042,19 @@ function __Z11showrempilliP11SDL_SurfaceP9_TTF_Font($pils,$image,$font) {
            }
            $240 = ___cxa_find_matching_catch(0|0)|0;
            $241 = tempRet0;
-           ___clang_call_terminate($240); //@line 1188 "4374_Task1c_emscripten.cpp"
-           // unreachable; //@line 1188 "4374_Task1c_emscripten.cpp"
+           ___clang_call_terminate($240); //@line 1264 "4374_Task1c_emscripten.cpp"
+           // unreachable; //@line 1264 "4374_Task1c_emscripten.cpp"
           } else {
            __THREW__ = 0;
-           invoke_vi(374,($56|0)); //@line 1188 "4374_Task1c_emscripten.cpp"
+           invoke_vi(374,($56|0)); //@line 1264 "4374_Task1c_emscripten.cpp"
            $228 = __THREW__; __THREW__ = 0;
            $229 = $228&1;
            if ($229) {
             label = 32;
             break;
            }
-           __ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev($a); //@line 1189 "4374_Task1c_emscripten.cpp"
-           STACKTOP = sp;return; //@line 1189 "4374_Task1c_emscripten.cpp"
+           __ZNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev($a); //@line 1265 "4374_Task1c_emscripten.cpp"
+           STACKTOP = sp;return; //@line 1265 "4374_Task1c_emscripten.cpp"
           }
          }
         }
@@ -20365,21 +21063,21 @@ function __Z11showrempilliP11SDL_SurfaceP9_TTF_Font($pils,$image,$font) {
       if ((label|0) == 32) {
        $230 = ___cxa_find_matching_catch()|0;
        $231 = tempRet0;
-       $54 = $230; //@line 1189 "4374_Task1c_emscripten.cpp"
-       $55 = $231; //@line 1189 "4374_Task1c_emscripten.cpp"
+       $54 = $230; //@line 1265 "4374_Task1c_emscripten.cpp"
+       $55 = $231; //@line 1265 "4374_Task1c_emscripten.cpp"
       }
       __THREW__ = 0;
-      invoke_vi(19,($a|0)); //@line 1189 "4374_Task1c_emscripten.cpp"
+      invoke_vi(19,($a|0)); //@line 1265 "4374_Task1c_emscripten.cpp"
       $236 = __THREW__; __THREW__ = 0;
       $237 = $236&1;
       if ($237) {
        $240 = ___cxa_find_matching_catch(0|0)|0;
        $241 = tempRet0;
-       ___clang_call_terminate($240); //@line 1188 "4374_Task1c_emscripten.cpp"
-       // unreachable; //@line 1188 "4374_Task1c_emscripten.cpp"
+       ___clang_call_terminate($240); //@line 1264 "4374_Task1c_emscripten.cpp"
+       // unreachable; //@line 1264 "4374_Task1c_emscripten.cpp"
       } else {
-       $238 = $54; //@line 1189 "4374_Task1c_emscripten.cpp"
-       $239 = $55; //@line 1189 "4374_Task1c_emscripten.cpp"
+       $238 = $54; //@line 1265 "4374_Task1c_emscripten.cpp"
+       $239 = $55; //@line 1265 "4374_Task1c_emscripten.cpp"
        ___resumeException($238|0);
        // unreachable;
       }
@@ -20461,24 +21159,24 @@ function __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect($strin
  $2 = $font;
  $3 = $text_color;
  $4 = $backgroundColor;
- $7 = $2; //@line 1374 "4374_Task1c_emscripten.cpp"
- $8 = $0; //@line 1374 "4374_Task1c_emscripten.cpp"
- $9 = $3; //@line 1374 "4374_Task1c_emscripten.cpp"
- ;HEAP8[$5>>0]=HEAP8[$9>>0]|0;HEAP8[$5+1>>0]=HEAP8[$9+1>>0]|0;HEAP8[$5+2>>0]=HEAP8[$9+2>>0]|0;HEAP8[$5+3>>0]=HEAP8[$9+3>>0]|0; //@line 1374 "4374_Task1c_emscripten.cpp"
- $10 = $4; //@line 1374 "4374_Task1c_emscripten.cpp"
- ;HEAP8[$6>>0]=HEAP8[$10>>0]|0;HEAP8[$6+1>>0]=HEAP8[$10+1>>0]|0;HEAP8[$6+2>>0]=HEAP8[$10+2>>0]|0;HEAP8[$6+3>>0]=HEAP8[$10+3>>0]|0; //@line 1374 "4374_Task1c_emscripten.cpp"
- ;HEAP8[$$byval_copy>>0]=HEAP8[$5>>0]|0;HEAP8[$$byval_copy+1>>0]=HEAP8[$5+1>>0]|0;HEAP8[$$byval_copy+2>>0]=HEAP8[$5+2>>0]|0;HEAP8[$$byval_copy+3>>0]=HEAP8[$5+3>>0]|0; //@line 1374 "4374_Task1c_emscripten.cpp"
- ;HEAP8[$$byval_copy1>>0]=HEAP8[$6>>0]|0;HEAP8[$$byval_copy1+1>>0]=HEAP8[$6+1>>0]|0;HEAP8[$$byval_copy1+2>>0]=HEAP8[$6+2>>0]|0;HEAP8[$$byval_copy1+3>>0]=HEAP8[$6+3>>0]|0; //@line 1374 "4374_Task1c_emscripten.cpp"
- $11 = (_TTF_RenderText_Shaded(($7|0),($8|0),($$byval_copy|0),($$byval_copy1|0))|0); //@line 1374 "4374_Task1c_emscripten.cpp"
- $text = $11; //@line 1374 "4374_Task1c_emscripten.cpp"
- $12 = $1; //@line 1375 "4374_Task1c_emscripten.cpp"
- _SDL_UnlockSurface(($12|0)); //@line 1375 "4374_Task1c_emscripten.cpp"
- $13 = $text; //@line 1376 "4374_Task1c_emscripten.cpp"
- $14 = $1; //@line 1376 "4374_Task1c_emscripten.cpp"
- (_SDL_UpperBlit(($13|0),(0|0),($14|0),($dstrect|0))|0); //@line 1376 "4374_Task1c_emscripten.cpp"
- $15 = $text; //@line 1377 "4374_Task1c_emscripten.cpp"
- _SDL_FreeSurface(($15|0)); //@line 1377 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return; //@line 1378 "4374_Task1c_emscripten.cpp"
+ $7 = $2; //@line 1450 "4374_Task1c_emscripten.cpp"
+ $8 = $0; //@line 1450 "4374_Task1c_emscripten.cpp"
+ $9 = $3; //@line 1450 "4374_Task1c_emscripten.cpp"
+ ;HEAP8[$5>>0]=HEAP8[$9>>0]|0;HEAP8[$5+1>>0]=HEAP8[$9+1>>0]|0;HEAP8[$5+2>>0]=HEAP8[$9+2>>0]|0;HEAP8[$5+3>>0]=HEAP8[$9+3>>0]|0; //@line 1450 "4374_Task1c_emscripten.cpp"
+ $10 = $4; //@line 1450 "4374_Task1c_emscripten.cpp"
+ ;HEAP8[$6>>0]=HEAP8[$10>>0]|0;HEAP8[$6+1>>0]=HEAP8[$10+1>>0]|0;HEAP8[$6+2>>0]=HEAP8[$10+2>>0]|0;HEAP8[$6+3>>0]=HEAP8[$10+3>>0]|0; //@line 1450 "4374_Task1c_emscripten.cpp"
+ ;HEAP8[$$byval_copy>>0]=HEAP8[$5>>0]|0;HEAP8[$$byval_copy+1>>0]=HEAP8[$5+1>>0]|0;HEAP8[$$byval_copy+2>>0]=HEAP8[$5+2>>0]|0;HEAP8[$$byval_copy+3>>0]=HEAP8[$5+3>>0]|0; //@line 1450 "4374_Task1c_emscripten.cpp"
+ ;HEAP8[$$byval_copy1>>0]=HEAP8[$6>>0]|0;HEAP8[$$byval_copy1+1>>0]=HEAP8[$6+1>>0]|0;HEAP8[$$byval_copy1+2>>0]=HEAP8[$6+2>>0]|0;HEAP8[$$byval_copy1+3>>0]=HEAP8[$6+3>>0]|0; //@line 1450 "4374_Task1c_emscripten.cpp"
+ $11 = (_TTF_RenderText_Shaded(($7|0),($8|0),($$byval_copy|0),($$byval_copy1|0))|0); //@line 1450 "4374_Task1c_emscripten.cpp"
+ $text = $11; //@line 1450 "4374_Task1c_emscripten.cpp"
+ $12 = $1; //@line 1451 "4374_Task1c_emscripten.cpp"
+ _SDL_UnlockSurface(($12|0)); //@line 1451 "4374_Task1c_emscripten.cpp"
+ $13 = $text; //@line 1452 "4374_Task1c_emscripten.cpp"
+ $14 = $1; //@line 1452 "4374_Task1c_emscripten.cpp"
+ (_SDL_UpperBlit(($13|0),(0|0),($14|0),($dstrect|0))|0); //@line 1452 "4374_Task1c_emscripten.cpp"
+ $15 = $text; //@line 1453 "4374_Task1c_emscripten.cpp"
+ _SDL_FreeSurface(($15|0)); //@line 1453 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 1454 "4374_Task1c_emscripten.cpp"
 }
 function __Z9DrawImageP11SDL_SurfacePKcii($surface,$image_path,$x_pos,$y_pos) {
  $surface = $surface|0;
@@ -20495,33 +21193,33 @@ function __Z9DrawImageP11SDL_SurfacePKcii($surface,$image_path,$x_pos,$y_pos) {
  $1 = $image_path;
  $2 = $x_pos;
  $3 = $y_pos;
- $4 = $1; //@line 1382 "4374_Task1c_emscripten.cpp"
- $5 = (_IMG_Load(($4|0))|0); //@line 1382 "4374_Task1c_emscripten.cpp"
- $image = $5; //@line 1382 "4374_Task1c_emscripten.cpp"
- $6 = $image; //@line 1383 "4374_Task1c_emscripten.cpp"
- $7 = ($6|0)!=(0|0); //@line 1383 "4374_Task1c_emscripten.cpp"
+ $4 = $1; //@line 1458 "4374_Task1c_emscripten.cpp"
+ $5 = (_IMG_Load(($4|0))|0); //@line 1458 "4374_Task1c_emscripten.cpp"
+ $image = $5; //@line 1458 "4374_Task1c_emscripten.cpp"
+ $6 = $image; //@line 1459 "4374_Task1c_emscripten.cpp"
+ $7 = ($6|0)!=(0|0); //@line 1459 "4374_Task1c_emscripten.cpp"
  if (!($7)) {
-  $8 = (_SDL_GetError()|0); //@line 1384 "4374_Task1c_emscripten.cpp"
-  HEAP32[$vararg_buffer>>2] = $8; //@line 1384 "4374_Task1c_emscripten.cpp"
-  (_printf((6544|0),($vararg_buffer|0))|0); //@line 1384 "4374_Task1c_emscripten.cpp"
+  $8 = (_SDL_GetError()|0); //@line 1460 "4374_Task1c_emscripten.cpp"
+  HEAP32[$vararg_buffer>>2] = $8; //@line 1460 "4374_Task1c_emscripten.cpp"
+  (_printf((6544|0),($vararg_buffer|0))|0); //@line 1460 "4374_Task1c_emscripten.cpp"
  }
- $9 = $2; //@line 1385 "4374_Task1c_emscripten.cpp"
- HEAP32[$rcDest>>2] = $9; //@line 1385 "4374_Task1c_emscripten.cpp"
- $10 = ((($rcDest)) + 4|0); //@line 1385 "4374_Task1c_emscripten.cpp"
- $11 = $3; //@line 1385 "4374_Task1c_emscripten.cpp"
- HEAP32[$10>>2] = $11; //@line 1385 "4374_Task1c_emscripten.cpp"
- $12 = ((($rcDest)) + 8|0); //@line 1385 "4374_Task1c_emscripten.cpp"
- HEAP32[$12>>2] = 0; //@line 1385 "4374_Task1c_emscripten.cpp"
- $13 = ((($rcDest)) + 12|0); //@line 1385 "4374_Task1c_emscripten.cpp"
- HEAP32[$13>>2] = 0; //@line 1385 "4374_Task1c_emscripten.cpp"
- $14 = $0; //@line 1386 "4374_Task1c_emscripten.cpp"
- _SDL_UnlockSurface(($14|0)); //@line 1386 "4374_Task1c_emscripten.cpp"
- $15 = $image; //@line 1387 "4374_Task1c_emscripten.cpp"
- $16 = $0; //@line 1387 "4374_Task1c_emscripten.cpp"
- (_SDL_UpperBlit(($15|0),(0|0),($16|0),($rcDest|0))|0); //@line 1387 "4374_Task1c_emscripten.cpp"
- $17 = $image; //@line 1388 "4374_Task1c_emscripten.cpp"
- _SDL_FreeSurface(($17|0)); //@line 1388 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return; //@line 1389 "4374_Task1c_emscripten.cpp"
+ $9 = $2; //@line 1461 "4374_Task1c_emscripten.cpp"
+ HEAP32[$rcDest>>2] = $9; //@line 1461 "4374_Task1c_emscripten.cpp"
+ $10 = ((($rcDest)) + 4|0); //@line 1461 "4374_Task1c_emscripten.cpp"
+ $11 = $3; //@line 1461 "4374_Task1c_emscripten.cpp"
+ HEAP32[$10>>2] = $11; //@line 1461 "4374_Task1c_emscripten.cpp"
+ $12 = ((($rcDest)) + 8|0); //@line 1461 "4374_Task1c_emscripten.cpp"
+ HEAP32[$12>>2] = 0; //@line 1461 "4374_Task1c_emscripten.cpp"
+ $13 = ((($rcDest)) + 12|0); //@line 1461 "4374_Task1c_emscripten.cpp"
+ HEAP32[$13>>2] = 0; //@line 1461 "4374_Task1c_emscripten.cpp"
+ $14 = $0; //@line 1462 "4374_Task1c_emscripten.cpp"
+ _SDL_UnlockSurface(($14|0)); //@line 1462 "4374_Task1c_emscripten.cpp"
+ $15 = $image; //@line 1463 "4374_Task1c_emscripten.cpp"
+ $16 = $0; //@line 1463 "4374_Task1c_emscripten.cpp"
+ (_SDL_UpperBlit(($15|0),(0|0),($16|0),($rcDest|0))|0); //@line 1463 "4374_Task1c_emscripten.cpp"
+ $17 = $image; //@line 1464 "4374_Task1c_emscripten.cpp"
+ _SDL_FreeSurface(($17|0)); //@line 1464 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 1465 "4374_Task1c_emscripten.cpp"
 }
 function __Z9getmovesxii($startx,$direction) {
  $startx = $startx|0;
@@ -20531,26 +21229,26 @@ function __Z9getmovesxii($startx,$direction) {
  STACKTOP = STACKTOP + 16|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
  $1 = $startx;
  $2 = $direction;
- $3 = $2; //@line 1443 "4374_Task1c_emscripten.cpp"
- if ((($3|0) == 1)) {
-  $4 = $1; //@line 1446 "4374_Task1c_emscripten.cpp"
-  $0 = $4; //@line 1446 "4374_Task1c_emscripten.cpp"
- } else if ((($3|0) == 2)) {
-  $5 = $1; //@line 1448 "4374_Task1c_emscripten.cpp"
-  $6 = (($5) - 1)|0; //@line 1448 "4374_Task1c_emscripten.cpp"
-  $0 = $6; //@line 1448 "4374_Task1c_emscripten.cpp"
+ $3 = $2; //@line 1519 "4374_Task1c_emscripten.cpp"
+ if ((($3|0) == 2)) {
+  $5 = $1; //@line 1524 "4374_Task1c_emscripten.cpp"
+  $6 = (($5) - 1)|0; //@line 1524 "4374_Task1c_emscripten.cpp"
+  $0 = $6; //@line 1524 "4374_Task1c_emscripten.cpp"
  } else if ((($3|0) == 4)) {
-  $8 = $1; //@line 1452 "4374_Task1c_emscripten.cpp"
-  $9 = (($8) + 1)|0; //@line 1452 "4374_Task1c_emscripten.cpp"
-  $0 = $9; //@line 1452 "4374_Task1c_emscripten.cpp"
+  $8 = $1; //@line 1528 "4374_Task1c_emscripten.cpp"
+  $9 = (($8) + 1)|0; //@line 1528 "4374_Task1c_emscripten.cpp"
+  $0 = $9; //@line 1528 "4374_Task1c_emscripten.cpp"
+ } else if ((($3|0) == 1)) {
+  $4 = $1; //@line 1522 "4374_Task1c_emscripten.cpp"
+  $0 = $4; //@line 1522 "4374_Task1c_emscripten.cpp"
  } else if ((($3|0) == 3)) {
-  $7 = $1; //@line 1450 "4374_Task1c_emscripten.cpp"
-  $0 = $7; //@line 1450 "4374_Task1c_emscripten.cpp"
+  $7 = $1; //@line 1526 "4374_Task1c_emscripten.cpp"
+  $0 = $7; //@line 1526 "4374_Task1c_emscripten.cpp"
  } else {
-  $0 = 0; //@line 1454 "4374_Task1c_emscripten.cpp"
+  $0 = 0; //@line 1530 "4374_Task1c_emscripten.cpp"
  }
- $10 = $0; //@line 1455 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return ($10|0); //@line 1455 "4374_Task1c_emscripten.cpp"
+ $10 = $0; //@line 1531 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return ($10|0); //@line 1531 "4374_Task1c_emscripten.cpp"
 }
 function __Z9getmovesyii($starty,$direction) {
  $starty = $starty|0;
@@ -20560,26 +21258,26 @@ function __Z9getmovesyii($starty,$direction) {
  STACKTOP = STACKTOP + 16|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
  $1 = $starty;
  $2 = $direction;
- $3 = $2; //@line 1459 "4374_Task1c_emscripten.cpp"
- if ((($3|0) == 2)) {
-  $6 = $1; //@line 1464 "4374_Task1c_emscripten.cpp"
-  $0 = $6; //@line 1464 "4374_Task1c_emscripten.cpp"
- } else if ((($3|0) == 1)) {
-  $4 = $1; //@line 1462 "4374_Task1c_emscripten.cpp"
-  $5 = (($4) - 1)|0; //@line 1462 "4374_Task1c_emscripten.cpp"
-  $0 = $5; //@line 1462 "4374_Task1c_emscripten.cpp"
- } else if ((($3|0) == 4)) {
-  $9 = $1; //@line 1468 "4374_Task1c_emscripten.cpp"
-  $0 = $9; //@line 1468 "4374_Task1c_emscripten.cpp"
+ $3 = $2; //@line 1535 "4374_Task1c_emscripten.cpp"
+ if ((($3|0) == 1)) {
+  $4 = $1; //@line 1538 "4374_Task1c_emscripten.cpp"
+  $5 = (($4) - 1)|0; //@line 1538 "4374_Task1c_emscripten.cpp"
+  $0 = $5; //@line 1538 "4374_Task1c_emscripten.cpp"
  } else if ((($3|0) == 3)) {
-  $7 = $1; //@line 1466 "4374_Task1c_emscripten.cpp"
-  $8 = (($7) + 1)|0; //@line 1466 "4374_Task1c_emscripten.cpp"
-  $0 = $8; //@line 1466 "4374_Task1c_emscripten.cpp"
+  $7 = $1; //@line 1542 "4374_Task1c_emscripten.cpp"
+  $8 = (($7) + 1)|0; //@line 1542 "4374_Task1c_emscripten.cpp"
+  $0 = $8; //@line 1542 "4374_Task1c_emscripten.cpp"
+ } else if ((($3|0) == 2)) {
+  $6 = $1; //@line 1540 "4374_Task1c_emscripten.cpp"
+  $0 = $6; //@line 1540 "4374_Task1c_emscripten.cpp"
+ } else if ((($3|0) == 4)) {
+  $9 = $1; //@line 1544 "4374_Task1c_emscripten.cpp"
+  $0 = $9; //@line 1544 "4374_Task1c_emscripten.cpp"
  } else {
-  $0 = 0; //@line 1470 "4374_Task1c_emscripten.cpp"
+  $0 = 0; //@line 1546 "4374_Task1c_emscripten.cpp"
  }
- $10 = $0; //@line 1471 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return ($10|0); //@line 1471 "4374_Task1c_emscripten.cpp"
+ $10 = $0; //@line 1547 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return ($10|0); //@line 1547 "4374_Task1c_emscripten.cpp"
 }
 function __Z6iswallPA22_Kcii($gd,$x,$y) {
  $gd = $gd|0;
@@ -20593,80 +21291,80 @@ function __Z6iswallPA22_Kcii($gd,$x,$y) {
  $1 = $gd;
  $2 = $x;
  $3 = $y;
- $4 = $2; //@line 1434 "4374_Task1c_emscripten.cpp"
- $5 = $3; //@line 1434 "4374_Task1c_emscripten.cpp"
- $6 = $1; //@line 1434 "4374_Task1c_emscripten.cpp"
- $7 = (($6) + (($5*22)|0)|0); //@line 1434 "4374_Task1c_emscripten.cpp"
- $8 = (($7) + ($4)|0); //@line 1434 "4374_Task1c_emscripten.cpp"
- $9 = HEAP8[$8>>0]|0; //@line 1434 "4374_Task1c_emscripten.cpp"
- $10 = $9 << 24 >> 24; //@line 1434 "4374_Task1c_emscripten.cpp"
- $11 = ($10|0)==(79); //@line 1434 "4374_Task1c_emscripten.cpp"
+ $4 = $2; //@line 1510 "4374_Task1c_emscripten.cpp"
+ $5 = $3; //@line 1510 "4374_Task1c_emscripten.cpp"
+ $6 = $1; //@line 1510 "4374_Task1c_emscripten.cpp"
+ $7 = (($6) + (($5*22)|0)|0); //@line 1510 "4374_Task1c_emscripten.cpp"
+ $8 = (($7) + ($4)|0); //@line 1510 "4374_Task1c_emscripten.cpp"
+ $9 = HEAP8[$8>>0]|0; //@line 1510 "4374_Task1c_emscripten.cpp"
+ $10 = $9 << 24 >> 24; //@line 1510 "4374_Task1c_emscripten.cpp"
+ $11 = ($10|0)==(79); //@line 1510 "4374_Task1c_emscripten.cpp"
  if (!($11)) {
-  $12 = $2; //@line 1434 "4374_Task1c_emscripten.cpp"
-  $13 = $3; //@line 1434 "4374_Task1c_emscripten.cpp"
-  $14 = $1; //@line 1434 "4374_Task1c_emscripten.cpp"
-  $15 = (($14) + (($13*22)|0)|0); //@line 1434 "4374_Task1c_emscripten.cpp"
-  $16 = (($15) + ($12)|0); //@line 1434 "4374_Task1c_emscripten.cpp"
-  $17 = HEAP8[$16>>0]|0; //@line 1434 "4374_Task1c_emscripten.cpp"
-  $18 = $17 << 24 >> 24; //@line 1434 "4374_Task1c_emscripten.cpp"
-  $19 = ($18|0)==(35); //@line 1434 "4374_Task1c_emscripten.cpp"
+  $12 = $2; //@line 1510 "4374_Task1c_emscripten.cpp"
+  $13 = $3; //@line 1510 "4374_Task1c_emscripten.cpp"
+  $14 = $1; //@line 1510 "4374_Task1c_emscripten.cpp"
+  $15 = (($14) + (($13*22)|0)|0); //@line 1510 "4374_Task1c_emscripten.cpp"
+  $16 = (($15) + ($12)|0); //@line 1510 "4374_Task1c_emscripten.cpp"
+  $17 = HEAP8[$16>>0]|0; //@line 1510 "4374_Task1c_emscripten.cpp"
+  $18 = $17 << 24 >> 24; //@line 1510 "4374_Task1c_emscripten.cpp"
+  $19 = ($18|0)==(35); //@line 1510 "4374_Task1c_emscripten.cpp"
   if (!($19)) {
-   $20 = $2; //@line 1434 "4374_Task1c_emscripten.cpp"
-   $21 = $3; //@line 1434 "4374_Task1c_emscripten.cpp"
-   $22 = $1; //@line 1434 "4374_Task1c_emscripten.cpp"
-   $23 = (($22) + (($21*22)|0)|0); //@line 1434 "4374_Task1c_emscripten.cpp"
-   $24 = (($23) + ($20)|0); //@line 1434 "4374_Task1c_emscripten.cpp"
-   $25 = HEAP8[$24>>0]|0; //@line 1434 "4374_Task1c_emscripten.cpp"
-   $26 = $25 << 24 >> 24; //@line 1434 "4374_Task1c_emscripten.cpp"
-   $27 = ($26|0)==(38); //@line 1434 "4374_Task1c_emscripten.cpp"
+   $20 = $2; //@line 1510 "4374_Task1c_emscripten.cpp"
+   $21 = $3; //@line 1510 "4374_Task1c_emscripten.cpp"
+   $22 = $1; //@line 1510 "4374_Task1c_emscripten.cpp"
+   $23 = (($22) + (($21*22)|0)|0); //@line 1510 "4374_Task1c_emscripten.cpp"
+   $24 = (($23) + ($20)|0); //@line 1510 "4374_Task1c_emscripten.cpp"
+   $25 = HEAP8[$24>>0]|0; //@line 1510 "4374_Task1c_emscripten.cpp"
+   $26 = $25 << 24 >> 24; //@line 1510 "4374_Task1c_emscripten.cpp"
+   $27 = ($26|0)==(38); //@line 1510 "4374_Task1c_emscripten.cpp"
    if (!($27)) {
-    $$expand_i1_val2 = 0; //@line 1437 "4374_Task1c_emscripten.cpp"
-    HEAP8[$0>>0] = $$expand_i1_val2; //@line 1437 "4374_Task1c_emscripten.cpp"
-    $$pre_trunc = HEAP8[$0>>0]|0; //@line 1439 "4374_Task1c_emscripten.cpp"
-    $28 = $$pre_trunc&1; //@line 1439 "4374_Task1c_emscripten.cpp"
-    STACKTOP = sp;return ($28|0); //@line 1439 "4374_Task1c_emscripten.cpp"
+    $$expand_i1_val2 = 0; //@line 1513 "4374_Task1c_emscripten.cpp"
+    HEAP8[$0>>0] = $$expand_i1_val2; //@line 1513 "4374_Task1c_emscripten.cpp"
+    $$pre_trunc = HEAP8[$0>>0]|0; //@line 1515 "4374_Task1c_emscripten.cpp"
+    $28 = $$pre_trunc&1; //@line 1515 "4374_Task1c_emscripten.cpp"
+    STACKTOP = sp;return ($28|0); //@line 1515 "4374_Task1c_emscripten.cpp"
    }
   }
  }
- $$expand_i1_val = 1; //@line 1435 "4374_Task1c_emscripten.cpp"
- HEAP8[$0>>0] = $$expand_i1_val; //@line 1435 "4374_Task1c_emscripten.cpp"
- $$pre_trunc = HEAP8[$0>>0]|0; //@line 1439 "4374_Task1c_emscripten.cpp"
- $28 = $$pre_trunc&1; //@line 1439 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return ($28|0); //@line 1439 "4374_Task1c_emscripten.cpp"
+ $$expand_i1_val = 1; //@line 1511 "4374_Task1c_emscripten.cpp"
+ HEAP8[$0>>0] = $$expand_i1_val; //@line 1511 "4374_Task1c_emscripten.cpp"
+ $$pre_trunc = HEAP8[$0>>0]|0; //@line 1515 "4374_Task1c_emscripten.cpp"
+ $28 = $$pre_trunc&1; //@line 1515 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return ($28|0); //@line 1515 "4374_Task1c_emscripten.cpp"
 }
 function _stop() {
  var label = 0, sp = 0;
  sp = STACKTOP;
- _emscripten_cancel_main_loop(); //@line 1477 "4374_Task1c_emscripten.cpp"
- return; //@line 1478 "4374_Task1c_emscripten.cpp"
+ _emscripten_cancel_main_loop(); //@line 1554 "4374_Task1c_emscripten.cpp"
+ return; //@line 1555 "4374_Task1c_emscripten.cpp"
 }
 function _restart() {
  var $0 = 0, $1 = 0, $10 = 0, $11 = 0, $12 = 0, $13 = 0, $14 = 0, $2 = 0, $3 = 0, $4 = 0, $5 = 0, $6 = 0, $7 = 0, $8 = 0, $9 = 0, label = 0, sp = 0;
  sp = STACKTOP;
  STACKTOP = STACKTOP + 16|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
- $2 = _emscripten_asm_const_0(0)|0; //@line 1482 "4374_Task1c_emscripten.cpp"
- HEAP32[8>>2] = $2; //@line 1482 "4374_Task1c_emscripten.cpp"
- $3 = _emscripten_asm_const_0(1)|0; //@line 1486 "4374_Task1c_emscripten.cpp"
- $4 = ($3|0)!=(0); //@line 1486 "4374_Task1c_emscripten.cpp"
- $5 = $4&1; //@line 1486 "4374_Task1c_emscripten.cpp"
- HEAP8[16>>0] = $5; //@line 1486 "4374_Task1c_emscripten.cpp"
- $6 = _emscripten_asm_const_0(2)|0; //@line 1490 "4374_Task1c_emscripten.cpp"
- HEAP32[32>>2] = $6; //@line 1490 "4374_Task1c_emscripten.cpp"
- $7 = _emscripten_asm_const_0(3)|0; //@line 1494 "4374_Task1c_emscripten.cpp"
- $8 = ($7|0)!=(0); //@line 1494 "4374_Task1c_emscripten.cpp"
- $9 = $8&1; //@line 1494 "4374_Task1c_emscripten.cpp"
- HEAP8[24>>0] = $9; //@line 1494 "4374_Task1c_emscripten.cpp"
- $10 = HEAP8[16>>0]|0; //@line 1498 "4374_Task1c_emscripten.cpp"
- $11 = $10&1; //@line 1498 "4374_Task1c_emscripten.cpp"
- $12 = (__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEb(10504,$11)|0); //@line 1498 "4374_Task1c_emscripten.cpp"
- $0 = $12; //@line 1498 "4374_Task1c_emscripten.cpp"
- $1 = 384; //@line 1498 "4374_Task1c_emscripten.cpp"
- $13 = $0; //@line 1498 "4374_Task1c_emscripten.cpp"
+ $2 = _emscripten_asm_const_0(0)|0; //@line 1559 "4374_Task1c_emscripten.cpp"
+ HEAP32[8>>2] = $2; //@line 1559 "4374_Task1c_emscripten.cpp"
+ $3 = _emscripten_asm_const_0(1)|0; //@line 1562 "4374_Task1c_emscripten.cpp"
+ $4 = ($3|0)!=(0); //@line 1562 "4374_Task1c_emscripten.cpp"
+ $5 = $4&1; //@line 1562 "4374_Task1c_emscripten.cpp"
+ HEAP8[16>>0] = $5; //@line 1562 "4374_Task1c_emscripten.cpp"
+ $6 = _emscripten_asm_const_0(2)|0; //@line 1565 "4374_Task1c_emscripten.cpp"
+ HEAP32[32>>2] = $6; //@line 1565 "4374_Task1c_emscripten.cpp"
+ $7 = _emscripten_asm_const_0(3)|0; //@line 1568 "4374_Task1c_emscripten.cpp"
+ $8 = ($7|0)!=(0); //@line 1568 "4374_Task1c_emscripten.cpp"
+ $9 = $8&1; //@line 1568 "4374_Task1c_emscripten.cpp"
+ HEAP8[24>>0] = $9; //@line 1568 "4374_Task1c_emscripten.cpp"
+ $10 = HEAP8[16>>0]|0; //@line 1571 "4374_Task1c_emscripten.cpp"
+ $11 = $10&1; //@line 1571 "4374_Task1c_emscripten.cpp"
+ $12 = (__ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEb(10504,$11)|0); //@line 1571 "4374_Task1c_emscripten.cpp"
+ $0 = $12; //@line 1571 "4374_Task1c_emscripten.cpp"
+ $1 = 384; //@line 1571 "4374_Task1c_emscripten.cpp"
+ $13 = $0; //@line 1571 "4374_Task1c_emscripten.cpp"
  $14 = $1; //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
  (FUNCTION_TABLE_ii[$14 & 1023]($13)|0); //@line 322 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\ostream"
- _emscripten_cancel_main_loop(); //@line 1499 "4374_Task1c_emscripten.cpp"
- (_main()|0); //@line 1500 "4374_Task1c_emscripten.cpp"
- STACKTOP = sp;return; //@line 1501 "4374_Task1c_emscripten.cpp"
+ _emscripten_cancel_main_loop(); //@line 1572 "4374_Task1c_emscripten.cpp"
+ (_main()|0); //@line 1573 "4374_Task1c_emscripten.cpp"
+ STACKTOP = sp;return; //@line 1574 "4374_Task1c_emscripten.cpp"
 }
 function _pauseloop() {
  var $$byval_copy = 0, $0 = 0, $1 = 0, $10 = 0, $11 = 0, $12 = 0, $13 = 0, $14 = 0, $15 = 0, $16 = 0, $17 = 0, $18 = 0, $19 = 0, $2 = 0, $20 = 0, $21 = 0, $22 = 0, $23 = 0, $24 = 0, $25 = 0;
@@ -20677,11 +21375,11 @@ function _pauseloop() {
  $$byval_copy = sp + 64|0;
  $6 = sp + 8|0;
  $9 = sp + 24|0;
- $10 = (__Z11getKeyPressv()|0); //@line 1505 "4374_Task1c_emscripten.cpp"
- $key = $10; //@line 1505 "4374_Task1c_emscripten.cpp"
- $4 = $6; //@line 1506 "4374_Task1c_emscripten.cpp"
- $5 = 6784; //@line 1506 "4374_Task1c_emscripten.cpp"
- $11 = $4; //@line 1506 "4374_Task1c_emscripten.cpp"
+ $10 = (__Z11getKeyPressv()|0); //@line 1578 "4374_Task1c_emscripten.cpp"
+ $key = $10; //@line 1578 "4374_Task1c_emscripten.cpp"
+ $4 = $6; //@line 1579 "4374_Task1c_emscripten.cpp"
+ $5 = 6784; //@line 1579 "4374_Task1c_emscripten.cpp"
+ $11 = $4; //@line 1579 "4374_Task1c_emscripten.cpp"
  $3 = $11; //@line 1335 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
  $12 = $3; //@line 1335 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
  $2 = $12; //@line 2315 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\memory"
@@ -20691,8 +21389,8 @@ function _pauseloop() {
  $15 = $5; //@line 2001 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
  $16 = (__ZNSt3__111char_traitsIcE6lengthEPKc($15)|0); //@line 2001 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
  __ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6__initEPKcj($11,$14,$16); //@line 2001 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\string"
- $0 = 56; //@line 1506 "4374_Task1c_emscripten.cpp"
- $17 = $0; //@line 1506 "4374_Task1c_emscripten.cpp"
+ $0 = 56; //@line 1579 "4374_Task1c_emscripten.cpp"
+ $17 = $0; //@line 1579 "4374_Task1c_emscripten.cpp"
  $18 = ((($17)) + 4|0); //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $19 = HEAP32[$18>>2]|0; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $20 = HEAP32[$17>>2]|0; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
@@ -20701,49 +21399,49 @@ function _pauseloop() {
  $23 = (($21) - ($22))|0; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  $24 = (($23|0) / 24)&-1; //@line 653 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\vector"
  __THREW__ = 0;
- $25 = (invoke_ii(397,(72|0))|0); //@line 1506 "4374_Task1c_emscripten.cpp"
+ $25 = (invoke_ii(397,(72|0))|0); //@line 1579 "4374_Task1c_emscripten.cpp"
  $26 = __THREW__; __THREW__ = 0;
  $27 = $26&1;
  if (!($27)) {
-  $28 = HEAP32[48>>2]|0; //@line 1506 "4374_Task1c_emscripten.cpp"
-  $29 = HEAP32[136>>2]|0; //@line 1506 "4374_Task1c_emscripten.cpp"
+  $28 = HEAP32[48>>2]|0; //@line 1579 "4374_Task1c_emscripten.cpp"
+  $29 = HEAP32[136>>2]|0; //@line 1579 "4374_Task1c_emscripten.cpp"
   __THREW__ = 0;
-  invoke_viiiiiiii(398,(144|0),($6|0),(4480|0),($24|0),($25|0),0,($28|0),($29|0)); //@line 1506 "4374_Task1c_emscripten.cpp"
+  invoke_viiiiiiii(398,(144|0),($6|0),(4480|0),($24|0),($25|0),0,($28|0),($29|0)); //@line 1579 "4374_Task1c_emscripten.cpp"
   $30 = __THREW__; __THREW__ = 0;
   $31 = $30&1;
   if (!($31)) {
-   __ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED2Ev($6); //@line 1506 "4374_Task1c_emscripten.cpp"
-   $32 = HEAP32[48>>2]|0; //@line 1510 "4374_Task1c_emscripten.cpp"
-   $33 = HEAP32[136>>2]|0; //@line 1510 "4374_Task1c_emscripten.cpp"
-   ;HEAP32[$9>>2]=HEAP32[6800>>2]|0;HEAP32[$9+4>>2]=HEAP32[6800+4>>2]|0;HEAP32[$9+8>>2]=HEAP32[6800+8>>2]|0;HEAP32[$9+12>>2]=HEAP32[6800+12>>2]|0; //@line 1510 "4374_Task1c_emscripten.cpp"
-   ;HEAP32[$$byval_copy>>2]=HEAP32[$9>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$9+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$9+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$9+12>>2]|0; //@line 1510 "4374_Task1c_emscripten.cpp"
-   __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(6816,$32,$33,6832,6840,$$byval_copy); //@line 1510 "4374_Task1c_emscripten.cpp"
-   $34 = $key; //@line 1511 "4374_Task1c_emscripten.cpp"
-   $35 = (__Z10ispauseKeyi($34)|0); //@line 1511 "4374_Task1c_emscripten.cpp"
+   __ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED2Ev($6); //@line 1579 "4374_Task1c_emscripten.cpp"
+   $32 = HEAP32[48>>2]|0; //@line 1583 "4374_Task1c_emscripten.cpp"
+   $33 = HEAP32[136>>2]|0; //@line 1583 "4374_Task1c_emscripten.cpp"
+   ;HEAP32[$9>>2]=HEAP32[6800>>2]|0;HEAP32[$9+4>>2]=HEAP32[6800+4>>2]|0;HEAP32[$9+8>>2]=HEAP32[6800+8>>2]|0;HEAP32[$9+12>>2]=HEAP32[6800+12>>2]|0; //@line 1583 "4374_Task1c_emscripten.cpp"
+   ;HEAP32[$$byval_copy>>2]=HEAP32[$9>>2]|0;HEAP32[$$byval_copy+4>>2]=HEAP32[$9+4>>2]|0;HEAP32[$$byval_copy+8>>2]=HEAP32[$9+8>>2]|0;HEAP32[$$byval_copy+12>>2]=HEAP32[$9+12>>2]|0; //@line 1583 "4374_Task1c_emscripten.cpp"
+   __Z8drawtextPKcP11SDL_SurfaceP9_TTF_FontRK9SDL_ColorS7_8SDL_Rect(6816,$32,$33,6832,6840,$$byval_copy); //@line 1583 "4374_Task1c_emscripten.cpp"
+   $34 = $key; //@line 1584 "4374_Task1c_emscripten.cpp"
+   $35 = (__Z10ispauseKeyi($34)|0); //@line 1584 "4374_Task1c_emscripten.cpp"
    if (!($35)) {
-    STACKTOP = sp;return; //@line 1516 "4374_Task1c_emscripten.cpp"
+    STACKTOP = sp;return; //@line 1589 "4374_Task1c_emscripten.cpp"
    }
-   _emscripten_cancel_main_loop(); //@line 1513 "4374_Task1c_emscripten.cpp"
-   _emscripten_set_main_loop((382|0),0,0); //@line 1514 "4374_Task1c_emscripten.cpp"
-   STACKTOP = sp;return; //@line 1516 "4374_Task1c_emscripten.cpp"
+   _emscripten_cancel_main_loop(); //@line 1586 "4374_Task1c_emscripten.cpp"
+   _emscripten_set_main_loop((382|0),0,0); //@line 1587 "4374_Task1c_emscripten.cpp"
+   STACKTOP = sp;return; //@line 1589 "4374_Task1c_emscripten.cpp"
   }
  }
  $36 = ___cxa_find_matching_catch()|0;
  $37 = tempRet0;
- $7 = $36; //@line 1516 "4374_Task1c_emscripten.cpp"
- $8 = $37; //@line 1516 "4374_Task1c_emscripten.cpp"
+ $7 = $36; //@line 1589 "4374_Task1c_emscripten.cpp"
+ $8 = $37; //@line 1589 "4374_Task1c_emscripten.cpp"
  __THREW__ = 0;
- invoke_vi(374,($6|0)); //@line 1506 "4374_Task1c_emscripten.cpp"
+ invoke_vi(374,($6|0)); //@line 1579 "4374_Task1c_emscripten.cpp"
  $38 = __THREW__; __THREW__ = 0;
  $39 = $38&1;
  if ($39) {
   $42 = ___cxa_find_matching_catch(0|0)|0;
   $43 = tempRet0;
-  ___clang_call_terminate($42); //@line 1506 "4374_Task1c_emscripten.cpp"
-  // unreachable; //@line 1506 "4374_Task1c_emscripten.cpp"
+  ___clang_call_terminate($42); //@line 1579 "4374_Task1c_emscripten.cpp"
+  // unreachable; //@line 1579 "4374_Task1c_emscripten.cpp"
  } else {
-  $40 = $7; //@line 1506 "4374_Task1c_emscripten.cpp"
-  $41 = $8; //@line 1506 "4374_Task1c_emscripten.cpp"
+  $40 = $7; //@line 1579 "4374_Task1c_emscripten.cpp"
+  $41 = $8; //@line 1579 "4374_Task1c_emscripten.cpp"
   ___resumeException($40|0);
   // unreachable;
  }
@@ -23296,7 +23994,61 @@ function __ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7see
  }
  $124 = $67; //@line 572 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
  do {
-  if ((($124|0) == 2)) {
+  if ((($124|0) == 1)) {
+   $129 = $68; //@line 578 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+   $130 = $129 & 8; //@line 578 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+   $131 = ($130|0)!=(0); //@line 578 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+   if ($131) {
+    $7 = $73; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $132 = $7; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $133 = ((($132)) + 12|0); //@line 170 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\streambuf"
+    $134 = HEAP32[$133>>2]|0; //@line 170 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\streambuf"
+    $8 = $73; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $135 = $8; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $136 = ((($135)) + 8|0); //@line 169 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\streambuf"
+    $137 = HEAP32[$136>>2]|0; //@line 169 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\streambuf"
+    $138 = $134; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $139 = $137; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $140 = (($138) - ($139))|0; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $141 = ($140|0)<(0); //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $142 = $141 << 31 >> 31; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $143 = $__noff; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $144 = $143; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    HEAP32[$144>>2] = $140; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $145 = (($143) + 4)|0; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $146 = $145; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    HEAP32[$146>>2] = $142; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    break;
+   } else {
+    $9 = $73; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $147 = $9; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $148 = ((($147)) + 24|0); //@line 177 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\streambuf"
+    $149 = HEAP32[$148>>2]|0; //@line 177 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\streambuf"
+    $10 = $73; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $150 = $10; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $151 = ((($150)) + 20|0); //@line 176 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\streambuf"
+    $152 = HEAP32[$151>>2]|0; //@line 176 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\streambuf"
+    $153 = $149; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $154 = $152; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $155 = (($153) - ($154))|0; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $156 = ($155|0)<(0); //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $157 = $156 << 31 >> 31; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $158 = $__noff; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $159 = $158; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    HEAP32[$159>>2] = $155; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $160 = (($158) + 4)|0; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    $161 = $160; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    HEAP32[$161>>2] = $157; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+    break;
+   }
+  } else if ((($124|0) == 0)) {
+   $125 = $__noff; //@line 575 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+   $126 = $125; //@line 575 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+   HEAP32[$126>>2] = 0; //@line 575 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+   $127 = (($125) + 4)|0; //@line 575 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+   $128 = $127; //@line 575 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+   HEAP32[$128>>2] = 0; //@line 575 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
+  } else if ((($124|0) == 2)) {
    $162 = ((($73)) + 44|0); //@line 584 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
    $163 = HEAP32[$162>>2]|0; //@line 584 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
    $164 = ((($73)) + 32|0); //@line 584 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
@@ -23351,60 +24103,6 @@ function __ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7see
    $194 = (($192) + 4)|0; //@line 584 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
    $195 = $194; //@line 584 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
    HEAP32[$195>>2] = $191; //@line 584 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-  } else if ((($124|0) == 0)) {
-   $125 = $__noff; //@line 575 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $126 = $125; //@line 575 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   HEAP32[$126>>2] = 0; //@line 575 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $127 = (($125) + 4)|0; //@line 575 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $128 = $127; //@line 575 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   HEAP32[$128>>2] = 0; //@line 575 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-  } else if ((($124|0) == 1)) {
-   $129 = $68; //@line 578 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $130 = $129 & 8; //@line 578 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   $131 = ($130|0)!=(0); //@line 578 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-   if ($131) {
-    $7 = $73; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $132 = $7; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $133 = ((($132)) + 12|0); //@line 170 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\streambuf"
-    $134 = HEAP32[$133>>2]|0; //@line 170 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\streambuf"
-    $8 = $73; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $135 = $8; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $136 = ((($135)) + 8|0); //@line 169 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\streambuf"
-    $137 = HEAP32[$136>>2]|0; //@line 169 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\streambuf"
-    $138 = $134; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $139 = $137; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $140 = (($138) - ($139))|0; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $141 = ($140|0)<(0); //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $142 = $141 << 31 >> 31; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $143 = $__noff; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $144 = $143; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    HEAP32[$144>>2] = $140; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $145 = (($143) + 4)|0; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $146 = $145; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    HEAP32[$146>>2] = $142; //@line 579 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    break;
-   } else {
-    $9 = $73; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $147 = $9; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $148 = ((($147)) + 24|0); //@line 177 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\streambuf"
-    $149 = HEAP32[$148>>2]|0; //@line 177 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\streambuf"
-    $10 = $73; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $150 = $10; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $151 = ((($150)) + 20|0); //@line 176 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\streambuf"
-    $152 = HEAP32[$151>>2]|0; //@line 176 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\streambuf"
-    $153 = $149; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $154 = $152; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $155 = (($153) - ($154))|0; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $156 = ($155|0)<(0); //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $157 = $156 << 31 >> 31; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $158 = $__noff; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $159 = $158; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    HEAP32[$159>>2] = $155; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $160 = (($158) + 4)|0; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    $161 = $160; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    HEAP32[$161>>2] = $157; //@line 581 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
-    break;
-   }
   } else {
    $25 = $agg$result; //@line 587 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
    $196 = $26; //@line 587 "C:\Program Files\Emscripten\emscripten\1.34.1\system\include\libcxx\sstream"
@@ -29016,7 +29714,7 @@ function _mbrtowc($wc,$src,$n,$st) {
      label = 11;
     }
    } while(0);
-   L18: do {
+   L16: do {
     if ((label|0) == 11) {
      $21 = HEAP8[$s$05>>0]|0;
      $22 = $21&255;
@@ -29046,7 +29744,7 @@ function _mbrtowc($wc,$src,$n,$st) {
       $38 = ($35|0)==(0);
       if ($38) {
        $c$2 = $34;
-       break L18;
+       break L16;
       }
       $39 = HEAP8[$30>>0]|0;
       $40 = $39 & -64;
@@ -30294,8 +30992,13 @@ function _MUSL_vfscanf($f,$fmt,$ap) {
       $101 = ((($p$4)) + 1|0);
       $102 = $103&255;
       switch ($102|0) {
-      case 106:  {
-       $p$5 = $101;$size$0 = 3;
+      case 104:  {
+       $104 = HEAP8[$101>>0]|0;
+       $105 = ($104<<24>>24)==(104);
+       $106 = ((($p$4)) + 2|0);
+       $$9 = $105 ? $106 : $101;
+       $$10 = $105 ? -2 : -1;
+       $p$5 = $$9;$size$0 = $$10;
        break;
       }
       case 108:  {
@@ -30307,25 +31010,20 @@ function _MUSL_vfscanf($f,$fmt,$ap) {
        $p$5 = $$11;$size$0 = $$12;
        break;
       }
-      case 110: case 112: case 67: case 83: case 91: case 99: case 115: case 88: case 71: case 70: case 69: case 65: case 103: case 102: case 101: case 97: case 120: case 117: case 111: case 105: case 100:  {
-       $p$5 = $p$4;$size$0 = 0;
+      case 116: case 122:  {
+       $p$5 = $101;$size$0 = 1;
        break;
       }
       case 76:  {
        $p$5 = $101;$size$0 = 2;
        break;
       }
-      case 104:  {
-       $104 = HEAP8[$101>>0]|0;
-       $105 = ($104<<24>>24)==(104);
-       $106 = ((($p$4)) + 2|0);
-       $$9 = $105 ? $106 : $101;
-       $$10 = $105 ? -2 : -1;
-       $p$5 = $$9;$size$0 = $$10;
+      case 110: case 112: case 67: case 83: case 91: case 99: case 115: case 88: case 71: case 70: case 69: case 65: case 103: case 102: case 101: case 97: case 120: case 117: case 111: case 105: case 100:  {
+       $p$5 = $p$4;$size$0 = 0;
        break;
       }
-      case 116: case 122:  {
-       $p$5 = $101;$size$0 = 1;
+      case 106:  {
+       $p$5 = $101;$size$0 = 3;
        break;
       }
       default: {
@@ -30352,7 +31050,27 @@ function _MUSL_vfscanf($f,$fmt,$ap) {
         break L6;
        }
        switch ($$size$0|0) {
+       case -2:  {
+        $119 = $pos$0115&255;
+        HEAP8[$dest$0>>0] = $119;
+        $matches$1 = $matches$0110;$p$11 = $p$5;$pos$2 = $pos$0115;$s$5 = $s$1;$wcs$6 = $wcs$1;
+        break L6;
+        break;
+       }
        case 1:  {
+        HEAP32[$dest$0>>2] = $pos$0115;
+        $matches$1 = $matches$0110;$p$11 = $p$5;$pos$2 = $pos$0115;$s$5 = $s$1;$wcs$6 = $wcs$1;
+        break L6;
+        break;
+       }
+       case -1:  {
+        $120 = $pos$0115&65535;
+        HEAP16[$dest$0>>1] = $120;
+        $matches$1 = $matches$0110;$p$11 = $p$5;$pos$2 = $pos$0115;$s$5 = $s$1;$wcs$6 = $wcs$1;
+        break L6;
+        break;
+       }
+       case 0:  {
         HEAP32[$dest$0>>2] = $pos$0115;
         $matches$1 = $matches$0110;$p$11 = $p$5;$pos$2 = $pos$0115;$s$5 = $s$1;$wcs$6 = $wcs$1;
         break L6;
@@ -30365,26 +31083,6 @@ function _MUSL_vfscanf($f,$fmt,$ap) {
         $123 = (($121) + 4)|0;
         $124 = $123;
         HEAP32[$124>>2] = $117;
-        $matches$1 = $matches$0110;$p$11 = $p$5;$pos$2 = $pos$0115;$s$5 = $s$1;$wcs$6 = $wcs$1;
-        break L6;
-        break;
-       }
-       case 0:  {
-        HEAP32[$dest$0>>2] = $pos$0115;
-        $matches$1 = $matches$0110;$p$11 = $p$5;$pos$2 = $pos$0115;$s$5 = $s$1;$wcs$6 = $wcs$1;
-        break L6;
-        break;
-       }
-       case -2:  {
-        $119 = $pos$0115&255;
-        HEAP8[$dest$0>>0] = $119;
-        $matches$1 = $matches$0110;$p$11 = $p$5;$pos$2 = $pos$0115;$s$5 = $s$1;$wcs$6 = $wcs$1;
-        break L6;
-        break;
-       }
-       case -1:  {
-        $120 = $pos$0115&65535;
-        HEAP16[$dest$0>>1] = $120;
         $matches$1 = $matches$0110;$p$11 = $p$5;$pos$2 = $pos$0115;$s$5 = $s$1;$wcs$6 = $wcs$1;
         break L6;
         break;
@@ -30494,18 +31192,18 @@ function _MUSL_vfscanf($f,$fmt,$ap) {
           _memset(($scanset|0),($165|0),257)|0;
           HEAP8[$scanset>>0] = 0;
           $166 = HEAP8[$p$6>>0]|0;
-          if ((($166<<24>>24) == 93)) {
-           $170 = ((($164)) + 2|0);
-           $171 = $invert$0 ^ 1;
-           $172 = $171&255;
-           HEAP8[$11>>0] = $172;
-           $$pre$phi224Z2D = $172;$p$7$ph = $170;
-          } else if ((($166<<24>>24) == 45)) {
+          if ((($166<<24>>24) == 45)) {
            $167 = ((($164)) + 2|0);
            $168 = $invert$0 ^ 1;
            $169 = $168&255;
            HEAP8[$10>>0] = $169;
            $$pre$phi224Z2D = $169;$p$7$ph = $167;
+          } else if ((($166<<24>>24) == 93)) {
+           $170 = ((($164)) + 2|0);
+           $171 = $invert$0 ^ 1;
+           $172 = $171&255;
+           HEAP8[$11>>0] = $172;
+           $$pre$phi224Z2D = $172;$p$7$ph = $170;
           } else {
            $$pre222 = $invert$0 ^ 1;
            $$pre223 = $$pre222&255;
@@ -30514,7 +31212,10 @@ function _MUSL_vfscanf($f,$fmt,$ap) {
           $p$7 = $p$7$ph;
           while(1) {
            $173 = HEAP8[$p$7>>0]|0;
-           if ((($173<<24>>24) == 45)) {
+           if ((($173<<24>>24) == 93)) {
+            $p$9 = $p$7;
+            break L67;
+           } else if ((($173<<24>>24) == 45)) {
             $174 = ((($p$7)) + 1|0);
             $175 = HEAP8[$174>>0]|0;
             if ((($175<<24>>24) == 93) | (($175<<24>>24) == 0)) {
@@ -30544,9 +31245,6 @@ function _MUSL_vfscanf($f,$fmt,$ap) {
               $186 = $175;$p$8 = $174;
              }
             }
-           } else if ((($173<<24>>24) == 93)) {
-            $p$9 = $p$7;
-            break L67;
            } else if ((($173<<24>>24) == 0)) {
             $alloc$0203 = $alloc$0;$matches$0110501 = $matches$0110;$s$6 = $s$1;$wcs$7 = $wcs$1;
             label = 164;
@@ -30927,11 +31625,6 @@ function _MUSL_vfscanf($f,$fmt,$ap) {
         }
         break;
        }
-       case 117: case 100:  {
-        $base$0 = 10;
-        label = 146;
-        break;
-       }
        case 111:  {
         $base$0 = 8;
         label = 146;
@@ -30939,6 +31632,16 @@ function _MUSL_vfscanf($f,$fmt,$ap) {
        }
        case 105:  {
         $base$0 = 0;
+        label = 146;
+        break;
+       }
+       case 117: case 100:  {
+        $base$0 = 10;
+        label = 146;
+        break;
+       }
+       case 120: case 88: case 112:  {
+        $base$0 = 16;
         label = 146;
         break;
        }
@@ -30959,13 +31662,13 @@ function _MUSL_vfscanf($f,$fmt,$ap) {
         if ($346) {
          $p$10 = $p$5;$s$4 = $s$1;$wcs$5 = $wcs$1;
         } else {
-         if ((($$size$0|0) == 2)) {
-          HEAPF64[$dest$0>>3] = $338;
-          $p$10 = $p$5;$s$4 = $s$1;$wcs$5 = $wcs$1;
-          break L65;
-         } else if ((($$size$0|0) == 0)) {
+         if ((($$size$0|0) == 0)) {
           $347 = $338;
           HEAPF32[$dest$0>>2] = $347;
+          $p$10 = $p$5;$s$4 = $s$1;$wcs$5 = $wcs$1;
+          break L65;
+         } else if ((($$size$0|0) == 2)) {
+          HEAPF64[$dest$0>>3] = $338;
           $p$10 = $p$5;$s$4 = $s$1;$wcs$5 = $wcs$1;
           break L65;
          } else if ((($$size$0|0) == 1)) {
@@ -30977,11 +31680,6 @@ function _MUSL_vfscanf($f,$fmt,$ap) {
           break L65;
          }
         }
-        break;
-       }
-       case 120: case 88: case 112:  {
-        $base$0 = 16;
-        label = 146;
         break;
        }
        default: {
@@ -31019,13 +31717,21 @@ function _MUSL_vfscanf($f,$fmt,$ap) {
          $p$10 = $p$5;$s$4 = $s$1;$wcs$5 = $wcs$1;
         } else {
          switch ($$size$0|0) {
-         case 3:  {
-          $334 = $dest$0;
-          $335 = $334;
-          HEAP32[$335>>2] = $319;
-          $336 = (($334) + 4)|0;
-          $337 = $336;
-          HEAP32[$337>>2] = $320;
+         case -2:  {
+          $332 = $319&255;
+          HEAP8[$dest$0>>0] = $332;
+          $p$10 = $p$5;$s$4 = $s$1;$wcs$5 = $wcs$1;
+          break L186;
+          break;
+         }
+         case 0:  {
+          HEAP32[$dest$0>>2] = $319;
+          $p$10 = $p$5;$s$4 = $s$1;$wcs$5 = $wcs$1;
+          break L186;
+          break;
+         }
+         case 1:  {
+          HEAP32[$dest$0>>2] = $319;
           $p$10 = $p$5;$s$4 = $s$1;$wcs$5 = $wcs$1;
           break L186;
           break;
@@ -31037,21 +31743,13 @@ function _MUSL_vfscanf($f,$fmt,$ap) {
           break L186;
           break;
          }
-         case -2:  {
-          $332 = $319&255;
-          HEAP8[$dest$0>>0] = $332;
-          $p$10 = $p$5;$s$4 = $s$1;$wcs$5 = $wcs$1;
-          break L186;
-          break;
-         }
-         case 1:  {
-          HEAP32[$dest$0>>2] = $319;
-          $p$10 = $p$5;$s$4 = $s$1;$wcs$5 = $wcs$1;
-          break L186;
-          break;
-         }
-         case 0:  {
-          HEAP32[$dest$0>>2] = $319;
+         case 3:  {
+          $334 = $dest$0;
+          $335 = $334;
+          HEAP32[$335>>2] = $319;
+          $336 = (($334) + 4)|0;
+          $337 = $336;
+          HEAP32[$337>>2] = $320;
           $p$10 = $p$5;$s$4 = $s$1;$wcs$5 = $wcs$1;
           break L186;
           break;
@@ -32200,7 +32898,7 @@ function __ZNK10__cxxabiv121__vmi_class_type_info16search_below_dstEPNS_19__dyna
      $29 = ((($this)) + 8|0);
      $30 = ((($info)) + 24|0);
      $31 = ($24|0)>(0);
-     L31: do {
+     L34: do {
       if ($31) {
        $32 = ((($this)) + 16|0);
        $does_dst_type_point_to_our_static_type$0$off023 = 0;$is_dst_type_derived_from_static_type$0$off025 = 0;$p$024 = $32;
@@ -32213,7 +32911,7 @@ function __ZNK10__cxxabiv121__vmi_class_type_info16search_below_dstEPNS_19__dyna
         if (!($34)) {
          $does_dst_type_point_to_our_static_type$0$off0$lcssa = $does_dst_type_point_to_our_static_type$0$off023;$is_dst_type_derived_from_static_type$2$off0 = $is_dst_type_derived_from_static_type$0$off025;
          label = 20;
-         break L31;
+         break L34;
         }
         $35 = HEAP8[$27>>0]|0;
         $36 = ($35<<24>>24)==(0);
@@ -32230,7 +32928,7 @@ function __ZNK10__cxxabiv121__vmi_class_type_info16search_below_dstEPNS_19__dyna
            if ($46) {
             $does_dst_type_point_to_our_static_type$0$off0$lcssa = $does_dst_type_point_to_our_static_type$0$off023;$is_dst_type_derived_from_static_type$2$off0 = 1;
             label = 20;
-            break L31;
+            break L34;
            } else {
             $does_dst_type_point_to_our_static_type$1$off0 = $does_dst_type_point_to_our_static_type$0$off023;$is_dst_type_derived_from_static_type$1$off0 = 1;
             break;
@@ -32239,13 +32937,13 @@ function __ZNK10__cxxabiv121__vmi_class_type_info16search_below_dstEPNS_19__dyna
           $39 = HEAP32[$30>>2]|0;
           $40 = ($39|0)==(1);
           if ($40) {
-           break L31;
+           break L34;
           }
           $41 = HEAP32[$29>>2]|0;
           $42 = $41 & 2;
           $43 = ($42|0)==(0);
           if ($43) {
-           break L31;
+           break L34;
           } else {
            $does_dst_type_point_to_our_static_type$1$off0 = 1;$is_dst_type_derived_from_static_type$1$off0 = 1;
           }
@@ -32605,7 +33303,7 @@ function __ZNK10__cxxabiv121__vmi_class_type_info16search_above_dstEPNS_19__dyna
   HEAP8[$5>>0] = 0;
   __ZNK10__cxxabiv122__base_class_type_info16search_above_dstEPNS_19__dynamic_cast_infoEPKvS4_ib($7,$info,$dst_ptr,$current_ptr,$path_below,$use_strcmp);
   $11 = ($9|0)>(1);
-  L4: do {
+  L3: do {
    if ($11) {
     $12 = ((($this)) + 24|0);
     $13 = ((($info)) + 24|0);
@@ -32616,7 +33314,7 @@ function __ZNK10__cxxabiv121__vmi_class_type_info16search_above_dstEPNS_19__dyna
      $16 = HEAP8[$15>>0]|0;
      $17 = ($16<<24>>24)==(0);
      if (!($17)) {
-      break L4;
+      break L3;
      }
      $18 = HEAP8[$3>>0]|0;
      $19 = ($18<<24>>24)==(0);
@@ -32628,20 +33326,20 @@ function __ZNK10__cxxabiv121__vmi_class_type_info16search_above_dstEPNS_19__dyna
        $28 = $27 & 1;
        $29 = ($28|0)==(0);
        if ($29) {
-        break L4;
+        break L3;
        }
       }
      } else {
       $20 = HEAP32[$13>>2]|0;
       $21 = ($20|0)==(1);
       if ($21) {
-       break L4;
+       break L3;
       }
       $22 = HEAP32[$14>>2]|0;
       $23 = $22 & 2;
       $24 = ($23|0)==(0);
       if ($24) {
-       break L4;
+       break L3;
       }
      }
      HEAP8[$3>>0] = 0;
@@ -36754,12 +37452,12 @@ function _printf_core($f,$fmt,$ap,$nl_arg,$nl_type) {
    $1166 = $22;$fmt88 = $fmt89;
   }
   while(1) {
-   if ((($1166<<24>>24) == 37)) {
+   if ((($1166<<24>>24) == 0)) {
+    $fmt87$lcssa = $fmt88;$z$0$lcssa = $fmt88;
+    break;
+   } else if ((($1166<<24>>24) == 37)) {
     $fmt87167 = $fmt88;$z$0168 = $fmt88;
     label = 9;
-    break;
-   } else if ((($1166<<24>>24) == 0)) {
-    $fmt87$lcssa = $fmt88;$z$0$lcssa = $fmt88;
     break;
    }
    $24 = ((($fmt88)) + 1|0);
@@ -37114,25 +37812,72 @@ function _printf_core($f,$fmt,$ap,$nl_arg,$nl_type) {
     } else {
      do {
       switch ($$lcssa450|0) {
-      case 10:  {
-       $arglist_current8 = HEAP32[$ap>>2]|0;
-       $166 = $arglist_current8;
-       $167 = ((0) + 4|0);
-       $expanded85 = $167;
-       $expanded84 = (($expanded85) - 1)|0;
-       $168 = (($166) + ($expanded84))|0;
-       $169 = ((0) + 4|0);
-       $expanded89 = $169;
-       $expanded88 = (($expanded89) - 1)|0;
-       $expanded87 = $expanded88 ^ -1;
-       $170 = $168 & $expanded87;
-       $171 = $170;
-       $172 = HEAP32[$171>>2]|0;
-       $arglist_next9 = ((($171)) + 4|0);
-       HEAP32[$ap>>2] = $arglist_next9;
-       $173 = ($172|0)<(0);
-       $174 = $173 << 31 >> 31;
-       $259 = $172;$286 = $174;
+      case 16:  {
+       $arglist_current26 = HEAP32[$ap>>2]|0;
+       $225 = $arglist_current26;
+       $226 = ((0) + 4|0);
+       $expanded127 = $226;
+       $expanded126 = (($expanded127) - 1)|0;
+       $227 = (($225) + ($expanded126))|0;
+       $228 = ((0) + 4|0);
+       $expanded131 = $228;
+       $expanded130 = (($expanded131) - 1)|0;
+       $expanded129 = $expanded130 ^ -1;
+       $229 = $227 & $expanded129;
+       $230 = $229;
+       $231 = HEAP32[$230>>2]|0;
+       $arglist_next27 = ((($230)) + 4|0);
+       HEAP32[$ap>>2] = $arglist_next27;
+       $$mask$i38 = $231 & 255;
+       $259 = $$mask$i38;$286 = 0;
+       break L64;
+       break;
+      }
+      case 17:  {
+       $arglist_current29 = HEAP32[$ap>>2]|0;
+       $232 = $arglist_current29;
+       $233 = ((0) + 8|0);
+       $expanded134 = $233;
+       $expanded133 = (($expanded134) - 1)|0;
+       $234 = (($232) + ($expanded133))|0;
+       $235 = ((0) + 8|0);
+       $expanded138 = $235;
+       $expanded137 = (($expanded138) - 1)|0;
+       $expanded136 = $expanded137 ^ -1;
+       $236 = $234 & $expanded136;
+       $237 = $236;
+       $238 = +HEAPF64[$237>>3];
+       $arglist_next30 = ((($237)) + 8|0);
+       HEAP32[$ap>>2] = $arglist_next30;
+       HEAPF64[tempDoublePtr>>3] = $238;$239 = HEAP32[tempDoublePtr>>2]|0;
+       $240 = HEAP32[tempDoublePtr+4>>2]|0;
+       $259 = $239;$286 = $240;
+       break L64;
+       break;
+      }
+      case 15:  {
+       $arglist_current23 = HEAP32[$ap>>2]|0;
+       $213 = $arglist_current23;
+       $214 = ((0) + 4|0);
+       $expanded120 = $214;
+       $expanded119 = (($expanded120) - 1)|0;
+       $215 = (($213) + ($expanded119))|0;
+       $216 = ((0) + 4|0);
+       $expanded124 = $216;
+       $expanded123 = (($expanded124) - 1)|0;
+       $expanded122 = $expanded123 ^ -1;
+       $217 = $215 & $expanded122;
+       $218 = $217;
+       $219 = HEAP32[$218>>2]|0;
+       $arglist_next24 = ((($218)) + 4|0);
+       HEAP32[$ap>>2] = $arglist_next24;
+       $220 = $219&255;
+       $221 = $220 << 24 >> 24;
+       $222 = ($221|0)<(0);
+       $223 = $222 << 31 >> 31;
+       $sext = $219 << 24;
+       $224 = $sext >> 24;
+       $259 = $224;$286 = $223;
        break L64;
        break;
       }
@@ -37153,6 +37898,28 @@ function _printf_core($f,$fmt,$ap,$nl_arg,$nl_type) {
        $arglist_next12 = ((($180)) + 4|0);
        HEAP32[$ap>>2] = $arglist_next12;
        $259 = $181;$286 = 0;
+       break L64;
+       break;
+      }
+      case 10:  {
+       $arglist_current8 = HEAP32[$ap>>2]|0;
+       $166 = $arglist_current8;
+       $167 = ((0) + 4|0);
+       $expanded85 = $167;
+       $expanded84 = (($expanded85) - 1)|0;
+       $168 = (($166) + ($expanded84))|0;
+       $169 = ((0) + 4|0);
+       $expanded89 = $169;
+       $expanded88 = (($expanded89) - 1)|0;
+       $expanded87 = $expanded88 ^ -1;
+       $170 = $168 & $expanded87;
+       $171 = $170;
+       $172 = HEAP32[$171>>2]|0;
+       $arglist_next9 = ((($171)) + 4|0);
+       HEAP32[$ap>>2] = $arglist_next9;
+       $173 = ($172|0)<(0);
+       $174 = $173 << 31 >> 31;
+       $259 = $172;$286 = $174;
        break L64;
        break;
       }
@@ -37228,32 +37995,6 @@ function _printf_core($f,$fmt,$ap,$nl_arg,$nl_type) {
        break L64;
        break;
       }
-      case 15:  {
-       $arglist_current23 = HEAP32[$ap>>2]|0;
-       $213 = $arglist_current23;
-       $214 = ((0) + 4|0);
-       $expanded120 = $214;
-       $expanded119 = (($expanded120) - 1)|0;
-       $215 = (($213) + ($expanded119))|0;
-       $216 = ((0) + 4|0);
-       $expanded124 = $216;
-       $expanded123 = (($expanded124) - 1)|0;
-       $expanded122 = $expanded123 ^ -1;
-       $217 = $215 & $expanded122;
-       $218 = $217;
-       $219 = HEAP32[$218>>2]|0;
-       $arglist_next24 = ((($218)) + 4|0);
-       HEAP32[$ap>>2] = $arglist_next24;
-       $220 = $219&255;
-       $221 = $220 << 24 >> 24;
-       $222 = ($221|0)<(0);
-       $223 = $222 << 31 >> 31;
-       $sext = $219 << 24;
-       $224 = $sext >> 24;
-       $259 = $224;$286 = $223;
-       break L64;
-       break;
-      }
       case 9:  {
        $arglist_current5 = HEAP32[$ap>>2]|0;
        $158 = $arglist_current5;
@@ -37272,49 +38013,6 @@ function _printf_core($f,$fmt,$ap,$nl_arg,$nl_type) {
        HEAP32[$ap>>2] = $arglist_next6;
        $165 = $164;
        $259 = $165;$286 = $1164;
-       break L64;
-       break;
-      }
-      case 17:  {
-       $arglist_current29 = HEAP32[$ap>>2]|0;
-       $232 = $arglist_current29;
-       $233 = ((0) + 8|0);
-       $expanded134 = $233;
-       $expanded133 = (($expanded134) - 1)|0;
-       $234 = (($232) + ($expanded133))|0;
-       $235 = ((0) + 8|0);
-       $expanded138 = $235;
-       $expanded137 = (($expanded138) - 1)|0;
-       $expanded136 = $expanded137 ^ -1;
-       $236 = $234 & $expanded136;
-       $237 = $236;
-       $238 = +HEAPF64[$237>>3];
-       $arglist_next30 = ((($237)) + 8|0);
-       HEAP32[$ap>>2] = $arglist_next30;
-       HEAPF64[tempDoublePtr>>3] = $238;$239 = HEAP32[tempDoublePtr>>2]|0;
-       $240 = HEAP32[tempDoublePtr+4>>2]|0;
-       $259 = $239;$286 = $240;
-       break L64;
-       break;
-      }
-      case 16:  {
-       $arglist_current26 = HEAP32[$ap>>2]|0;
-       $225 = $arglist_current26;
-       $226 = ((0) + 4|0);
-       $expanded127 = $226;
-       $expanded126 = (($expanded127) - 1)|0;
-       $227 = (($225) + ($expanded126))|0;
-       $228 = ((0) + 4|0);
-       $expanded131 = $228;
-       $expanded130 = (($expanded131) - 1)|0;
-       $expanded129 = $expanded130 ^ -1;
-       $229 = $227 & $expanded129;
-       $230 = $229;
-       $231 = HEAP32[$230>>2]|0;
-       $arglist_next27 = ((($230)) + 4|0);
-       HEAP32[$ap>>2] = $arglist_next27;
-       $$mask$i38 = $231 & 255;
-       $259 = $$mask$i38;$286 = 0;
        break L64;
        break;
       }
@@ -37372,30 +38070,9 @@ function _printf_core($f,$fmt,$ap,$nl_arg,$nl_type) {
   $fl$1$ = $257 ? $fl$1 : $258;
   L86: do {
    switch ($t$0|0) {
-   case 99:  {
-    $373 = $259&255;
-    HEAP8[$4>>0] = $373;
-    $1169 = $286;$1170 = $259;$a$2 = $4;$fl$6 = $258;$p$5 = 1;$pl$2 = 0;$prefix$2 = 9832;$z$2 = $2;
-    break;
-   }
    case 88: case 120:  {
     $fl$3 = $fl$1$;$p$1 = $p$0;$t$1 = $t$0;
     label = 73;
-    break;
-   }
-   case 109:  {
-    $374 = (___errno_location()|0);
-    $375 = HEAP32[$374>>2]|0;
-    $376 = (_strerror(($375|0))|0);
-    $a$1 = $376;
-    label = 94;
-    break;
-   }
-   case 67:  {
-    HEAP32[$wc>>2] = $259;
-    HEAP32[$5>>2] = 0;
-    $1173 = $wc;$1174 = $6;$p$4274 = -1;
-    label = 97;
     break;
    }
    case 111:  {
@@ -37435,14 +38112,6 @@ function _printf_core($f,$fmt,$ap,$nl_arg,$nl_type) {
     label = 89;
     break;
    }
-   case 112:  {
-    $281 = ($p$0>>>0)>(8);
-    $282 = $281 ? $p$0 : 8;
-    $283 = $fl$1$ | 8;
-    $fl$3 = $283;$p$1 = $282;$t$1 = 120;
-    label = 73;
-    break;
-   }
    case 105: case 100:  {
     $324 = ($286|0)<(0);
     if ($324) {
@@ -37466,32 +38135,18 @@ function _printf_core($f,$fmt,$ap,$nl_arg,$nl_type) {
     }
     break;
    }
-   case 115:  {
-    $377 = $259;
-    $378 = ($259|0)!=(0);
-    $379 = $378 ? $377 : 9848;
-    $a$1 = $379;
-    label = 94;
-    break;
-   }
-   case 83:  {
-    $386 = $259;
-    $387 = ($p$0|0)==(0);
-    if ($387) {
-     $1175 = $259;$1176 = $386;$i$0$lcssa275 = 0;
-     label = 102;
-    } else {
-     $1173 = $386;$1174 = $259;$p$4274 = $p$0;
-     label = 97;
-    }
-    break;
-   }
    case 110:  {
     switch ($st$0$lcssa447|0) {
-    case 4:  {
-     $271 = $cnt$1&255;
-     $272 = $259;
-     HEAP8[$272>>0] = $271;
+    case 2:  {
+     $262 = ($cnt$1|0)<(0);
+     $263 = $262 << 31 >> 31;
+     $264 = $259;
+     $265 = $264;
+     $266 = $265;
+     HEAP32[$266>>2] = $cnt$1;
+     $267 = (($265) + 4)|0;
+     $268 = $267;
+     HEAP32[$268>>2] = $263;
      $1164 = $286;$1165 = $259;$cnt$0 = $cnt$1;$fmt89 = $$lcssa448;$l$0 = $34;$l10n$0 = $l10n$3;
      continue L1;
      break;
@@ -37510,37 +38165,9 @@ function _printf_core($f,$fmt,$ap,$nl_arg,$nl_type) {
      continue L1;
      break;
     }
-    case 6:  {
-     $273 = $259;
-     HEAP32[$273>>2] = $cnt$1;
-     $1164 = $286;$1165 = $259;$cnt$0 = $cnt$1;$fmt89 = $$lcssa448;$l$0 = $34;$l10n$0 = $l10n$3;
-     continue L1;
-     break;
-    }
     case 0:  {
      $260 = $259;
      HEAP32[$260>>2] = $cnt$1;
-     $1164 = $286;$1165 = $259;$cnt$0 = $cnt$1;$fmt89 = $$lcssa448;$l$0 = $34;$l10n$0 = $l10n$3;
-     continue L1;
-     break;
-    }
-    case 1:  {
-     $261 = $259;
-     HEAP32[$261>>2] = $cnt$1;
-     $1164 = $286;$1165 = $259;$cnt$0 = $cnt$1;$fmt89 = $$lcssa448;$l$0 = $34;$l10n$0 = $l10n$3;
-     continue L1;
-     break;
-    }
-    case 2:  {
-     $262 = ($cnt$1|0)<(0);
-     $263 = $262 << 31 >> 31;
-     $264 = $259;
-     $265 = $264;
-     $266 = $265;
-     HEAP32[$266>>2] = $cnt$1;
-     $267 = (($265) + 4)|0;
-     $268 = $267;
-     HEAP32[$268>>2] = $263;
      $1164 = $286;$1165 = $259;$cnt$0 = $cnt$1;$fmt89 = $$lcssa448;$l$0 = $34;$l10n$0 = $l10n$3;
      continue L1;
      break;
@@ -37549,6 +38176,28 @@ function _printf_core($f,$fmt,$ap,$nl_arg,$nl_type) {
      $269 = $cnt$1&65535;
      $270 = $259;
      HEAP16[$270>>1] = $269;
+     $1164 = $286;$1165 = $259;$cnt$0 = $cnt$1;$fmt89 = $$lcssa448;$l$0 = $34;$l10n$0 = $l10n$3;
+     continue L1;
+     break;
+    }
+    case 6:  {
+     $273 = $259;
+     HEAP32[$273>>2] = $cnt$1;
+     $1164 = $286;$1165 = $259;$cnt$0 = $cnt$1;$fmt89 = $$lcssa448;$l$0 = $34;$l10n$0 = $l10n$3;
+     continue L1;
+     break;
+    }
+    case 4:  {
+     $271 = $cnt$1&255;
+     $272 = $259;
+     HEAP8[$272>>0] = $271;
+     $1164 = $286;$1165 = $259;$cnt$0 = $cnt$1;$fmt89 = $$lcssa448;$l$0 = $34;$l10n$0 = $l10n$3;
+     continue L1;
+     break;
+    }
+    case 1:  {
+     $261 = $259;
+     HEAP32[$261>>2] = $cnt$1;
      $1164 = $286;$1165 = $259;$cnt$0 = $cnt$1;$fmt89 = $$lcssa448;$l$0 = $34;$l10n$0 = $l10n$3;
      continue L1;
      break;
@@ -37563,6 +38212,55 @@ function _printf_core($f,$fmt,$ap,$nl_arg,$nl_type) {
    case 117:  {
     $331 = $286;$333 = $259;$pl$0 = 0;$prefix$0 = 9832;
     label = 84;
+    break;
+   }
+   case 112:  {
+    $281 = ($p$0>>>0)>(8);
+    $282 = $281 ? $p$0 : 8;
+    $283 = $fl$1$ | 8;
+    $fl$3 = $283;$p$1 = $282;$t$1 = 120;
+    label = 73;
+    break;
+   }
+   case 109:  {
+    $374 = (___errno_location()|0);
+    $375 = HEAP32[$374>>2]|0;
+    $376 = (_strerror(($375|0))|0);
+    $a$1 = $376;
+    label = 94;
+    break;
+   }
+   case 115:  {
+    $377 = $259;
+    $378 = ($259|0)!=(0);
+    $379 = $378 ? $377 : 9848;
+    $a$1 = $379;
+    label = 94;
+    break;
+   }
+   case 67:  {
+    HEAP32[$wc>>2] = $259;
+    HEAP32[$5>>2] = 0;
+    $1173 = $wc;$1174 = $6;$p$4274 = -1;
+    label = 97;
+    break;
+   }
+   case 83:  {
+    $386 = $259;
+    $387 = ($p$0|0)==(0);
+    if ($387) {
+     $1175 = $259;$1176 = $386;$i$0$lcssa275 = 0;
+     label = 102;
+    } else {
+     $1173 = $386;$1174 = $259;$p$4274 = $p$0;
+     label = 97;
+    }
+    break;
+   }
+   case 99:  {
+    $373 = $259&255;
+    HEAP8[$4>>0] = $373;
+    $1169 = $286;$1170 = $259;$a$2 = $4;$fl$6 = $258;$p$5 = 1;$pl$2 = 0;$prefix$2 = 9832;$z$2 = $2;
     break;
    }
    case 65: case 71: case 70: case 69: case 97: case 103: case 102: case 101:  {
@@ -38064,7 +38762,7 @@ function _printf_core($f,$fmt,$ap,$nl_arg,$nl_type) {
        $$pr146$i = $$pr$i;$a$1$lcssa$i = $$31$i;$z$1$lcssa$i = $$lcssa451;
       }
       $662 = ($$pr146$i|0)<(0);
-      L237: do {
+      L220: do {
        if ($662) {
         $663 = (($$p$i) + 25)|0;
         $664 = (($663|0) / 9)&-1;
@@ -38134,7 +38832,7 @@ function _printf_core($f,$fmt,$ap,$nl_arg,$nl_type) {
            $699 = $728;$a$3240$i = $$a$3306$i;$z$3239$i = $$z$4$i;
           } else {
            $a$3$lcssa$i = $$a$3306$i;$z$3$lcssa$i = $$z$4$i;
-           break L237;
+           break L220;
           }
          }
         }
@@ -39276,20 +39974,20 @@ function _printf_core($f,$fmt,$ap,$nl_arg,$nl_type) {
     (___fwritex($pad$i,$$0$lcssa$i68,$f)|0);
    }
    $408 = ($i$0$lcssa275|0)==(0);
-   L463: do {
+   L465: do {
     if (!($408)) {
      $i$1191 = 0;$ws$1192 = $1176;
      while(1) {
       $409 = HEAP32[$ws$1192>>2]|0;
       $410 = ($409|0)==(0);
       if ($410) {
-       break L463;
+       break L465;
       }
       $411 = (_wctomb($mb,$409)|0);
       $412 = (($411) + ($i$1191))|0;
       $413 = ($412|0)>($i$0$lcssa275|0);
       if ($413) {
-       break L463;
+       break L465;
       }
       $414 = ((($ws$1192)) + 4|0);
       (___fwritex($mb,$411,$f)|0);
@@ -39481,6 +40179,56 @@ function _printf_core($f,$fmt,$ap,$nl_arg,$nl_type) {
     if (!($1043)) {
      do {
       switch ($1039|0) {
+      case 12:  {
+       $arglist_current44 = HEAP32[$ap>>2]|0;
+       $1075 = $arglist_current44;
+       $1076 = ((0) + 8|0);
+       $expanded169 = $1076;
+       $expanded168 = (($expanded169) - 1)|0;
+       $1077 = (($1075) + ($expanded168))|0;
+       $1078 = ((0) + 8|0);
+       $expanded173 = $1078;
+       $expanded172 = (($expanded173) - 1)|0;
+       $expanded171 = $expanded172 ^ -1;
+       $1079 = $1077 & $expanded171;
+       $1080 = $1079;
+       $1081 = $1080;
+       $1082 = $1081;
+       $1083 = HEAP32[$1082>>2]|0;
+       $1084 = (($1081) + 4)|0;
+       $1085 = $1084;
+       $1086 = HEAP32[$1085>>2]|0;
+       $arglist_next45 = ((($1080)) + 8|0);
+       HEAP32[$ap>>2] = $arglist_next45;
+       $1087 = $1042;
+       $1088 = $1087;
+       HEAP32[$1088>>2] = $1083;
+       $1089 = (($1087) + 4)|0;
+       $1090 = $1089;
+       HEAP32[$1090>>2] = $1086;
+       break L522;
+       break;
+      }
+      case 18:  {
+       $arglist_current62 = HEAP32[$ap>>2]|0;
+       $1150 = $arglist_current62;
+       $1151 = ((0) + 8|0);
+       $expanded211 = $1151;
+       $expanded210 = (($expanded211) - 1)|0;
+       $1152 = (($1150) + ($expanded210))|0;
+       $1153 = ((0) + 8|0);
+       $expanded215 = $1153;
+       $expanded214 = (($expanded215) - 1)|0;
+       $expanded213 = $expanded214 ^ -1;
+       $1154 = $1152 & $expanded213;
+       $1155 = $1154;
+       $1156 = +HEAPF64[$1155>>3];
+       $arglist_next63 = ((($1155)) + 8|0);
+       HEAP32[$ap>>2] = $arglist_next63;
+       HEAPF64[$1042>>3] = $1156;
+       break L522;
+       break;
+      }
       case 11:  {
        $arglist_current41 = HEAP32[$ap>>2]|0;
        $1064 = $arglist_current41;
@@ -39503,32 +40251,6 @@ function _printf_core($f,$fmt,$ap,$nl_arg,$nl_type) {
        $1073 = (($1071) + 4)|0;
        $1074 = $1073;
        HEAP32[$1074>>2] = 0;
-       break L522;
-       break;
-      }
-      case 14:  {
-       $arglist_current50 = HEAP32[$ap>>2]|0;
-       $1106 = $arglist_current50;
-       $1107 = ((0) + 4|0);
-       $expanded183 = $1107;
-       $expanded182 = (($expanded183) - 1)|0;
-       $1108 = (($1106) + ($expanded182))|0;
-       $1109 = ((0) + 4|0);
-       $expanded187 = $1109;
-       $expanded186 = (($expanded187) - 1)|0;
-       $expanded185 = $expanded186 ^ -1;
-       $1110 = $1108 & $expanded185;
-       $1111 = $1110;
-       $1112 = HEAP32[$1111>>2]|0;
-       $arglist_next51 = ((($1111)) + 4|0);
-       HEAP32[$ap>>2] = $arglist_next51;
-       $$mask1$i = $1112 & 65535;
-       $1113 = $1042;
-       $1114 = $1113;
-       HEAP32[$1114>>2] = $$mask1$i;
-       $1115 = (($1113) + 4)|0;
-       $1116 = $1115;
-       HEAP32[$1116>>2] = 0;
        break L522;
        break;
       }
@@ -39561,106 +40283,23 @@ function _printf_core($f,$fmt,$ap,$nl_arg,$nl_type) {
        break L522;
        break;
       }
-      case 16:  {
-       $arglist_current56 = HEAP32[$ap>>2]|0;
-       $1132 = $arglist_current56;
-       $1133 = ((0) + 4|0);
-       $expanded197 = $1133;
-       $expanded196 = (($expanded197) - 1)|0;
-       $1134 = (($1132) + ($expanded196))|0;
-       $1135 = ((0) + 4|0);
-       $expanded201 = $1135;
-       $expanded200 = (($expanded201) - 1)|0;
-       $expanded199 = $expanded200 ^ -1;
-       $1136 = $1134 & $expanded199;
-       $1137 = $1136;
-       $1138 = HEAP32[$1137>>2]|0;
-       $arglist_next57 = ((($1137)) + 4|0);
-       HEAP32[$ap>>2] = $arglist_next57;
-       $$mask$i = $1138 & 255;
-       $1139 = $1042;
-       $1140 = $1139;
-       HEAP32[$1140>>2] = $$mask$i;
-       $1141 = (($1139) + 4)|0;
-       $1142 = $1141;
-       HEAP32[$1142>>2] = 0;
-       break L522;
-       break;
-      }
-      case 9:  {
-       $arglist_current35 = HEAP32[$ap>>2]|0;
-       $1044 = $arglist_current35;
-       $1045 = ((0) + 4|0);
-       $expanded148 = $1045;
-       $expanded147 = (($expanded148) - 1)|0;
-       $1046 = (($1044) + ($expanded147))|0;
-       $1047 = ((0) + 4|0);
-       $expanded152 = $1047;
-       $expanded151 = (($expanded152) - 1)|0;
-       $expanded150 = $expanded151 ^ -1;
-       $1048 = $1046 & $expanded150;
-       $1049 = $1048;
-       $1050 = HEAP32[$1049>>2]|0;
-       $arglist_next36 = ((($1049)) + 4|0);
-       HEAP32[$ap>>2] = $arglist_next36;
-       HEAP32[$1042>>2] = $1050;
-       break L522;
-       break;
-      }
-      case 10:  {
-       $arglist_current38 = HEAP32[$ap>>2]|0;
-       $1051 = $arglist_current38;
-       $1052 = ((0) + 4|0);
-       $expanded155 = $1052;
-       $expanded154 = (($expanded155) - 1)|0;
-       $1053 = (($1051) + ($expanded154))|0;
-       $1054 = ((0) + 4|0);
-       $expanded159 = $1054;
-       $expanded158 = (($expanded159) - 1)|0;
-       $expanded157 = $expanded158 ^ -1;
-       $1055 = $1053 & $expanded157;
-       $1056 = $1055;
-       $1057 = HEAP32[$1056>>2]|0;
-       $arglist_next39 = ((($1056)) + 4|0);
-       HEAP32[$ap>>2] = $arglist_next39;
-       $1058 = ($1057|0)<(0);
-       $1059 = $1058 << 31 >> 31;
-       $1060 = $1042;
-       $1061 = $1060;
-       HEAP32[$1061>>2] = $1057;
-       $1062 = (($1060) + 4)|0;
-       $1063 = $1062;
-       HEAP32[$1063>>2] = $1059;
-       break L522;
-       break;
-      }
-      case 12:  {
-       $arglist_current44 = HEAP32[$ap>>2]|0;
-       $1075 = $arglist_current44;
-       $1076 = ((0) + 8|0);
-       $expanded169 = $1076;
-       $expanded168 = (($expanded169) - 1)|0;
-       $1077 = (($1075) + ($expanded168))|0;
-       $1078 = ((0) + 8|0);
-       $expanded173 = $1078;
-       $expanded172 = (($expanded173) - 1)|0;
-       $expanded171 = $expanded172 ^ -1;
-       $1079 = $1077 & $expanded171;
-       $1080 = $1079;
-       $1081 = $1080;
-       $1082 = $1081;
-       $1083 = HEAP32[$1082>>2]|0;
-       $1084 = (($1081) + 4)|0;
-       $1085 = $1084;
-       $1086 = HEAP32[$1085>>2]|0;
-       $arglist_next45 = ((($1080)) + 8|0);
-       HEAP32[$ap>>2] = $arglist_next45;
-       $1087 = $1042;
-       $1088 = $1087;
-       HEAP32[$1088>>2] = $1083;
-       $1089 = (($1087) + 4)|0;
-       $1090 = $1089;
-       HEAP32[$1090>>2] = $1086;
+      case 17:  {
+       $arglist_current59 = HEAP32[$ap>>2]|0;
+       $1143 = $arglist_current59;
+       $1144 = ((0) + 8|0);
+       $expanded204 = $1144;
+       $expanded203 = (($expanded204) - 1)|0;
+       $1145 = (($1143) + ($expanded203))|0;
+       $1146 = ((0) + 8|0);
+       $expanded208 = $1146;
+       $expanded207 = (($expanded208) - 1)|0;
+       $expanded206 = $expanded207 ^ -1;
+       $1147 = $1145 & $expanded206;
+       $1148 = $1147;
+       $1149 = +HEAPF64[$1148>>3];
+       $arglist_next60 = ((($1148)) + 8|0);
+       HEAP32[$ap>>2] = $arglist_next60;
+       HEAPF64[$1042>>3] = $1149;
        break L522;
        break;
       }
@@ -39693,43 +40332,102 @@ function _printf_core($f,$fmt,$ap,$nl_arg,$nl_type) {
        break L522;
        break;
       }
-      case 17:  {
-       $arglist_current59 = HEAP32[$ap>>2]|0;
-       $1143 = $arglist_current59;
-       $1144 = ((0) + 8|0);
-       $expanded204 = $1144;
-       $expanded203 = (($expanded204) - 1)|0;
-       $1145 = (($1143) + ($expanded203))|0;
-       $1146 = ((0) + 8|0);
-       $expanded208 = $1146;
-       $expanded207 = (($expanded208) - 1)|0;
-       $expanded206 = $expanded207 ^ -1;
-       $1147 = $1145 & $expanded206;
-       $1148 = $1147;
-       $1149 = +HEAPF64[$1148>>3];
-       $arglist_next60 = ((($1148)) + 8|0);
-       HEAP32[$ap>>2] = $arglist_next60;
-       HEAPF64[$1042>>3] = $1149;
+      case 9:  {
+       $arglist_current35 = HEAP32[$ap>>2]|0;
+       $1044 = $arglist_current35;
+       $1045 = ((0) + 4|0);
+       $expanded148 = $1045;
+       $expanded147 = (($expanded148) - 1)|0;
+       $1046 = (($1044) + ($expanded147))|0;
+       $1047 = ((0) + 4|0);
+       $expanded152 = $1047;
+       $expanded151 = (($expanded152) - 1)|0;
+       $expanded150 = $expanded151 ^ -1;
+       $1048 = $1046 & $expanded150;
+       $1049 = $1048;
+       $1050 = HEAP32[$1049>>2]|0;
+       $arglist_next36 = ((($1049)) + 4|0);
+       HEAP32[$ap>>2] = $arglist_next36;
+       HEAP32[$1042>>2] = $1050;
        break L522;
        break;
       }
-      case 18:  {
-       $arglist_current62 = HEAP32[$ap>>2]|0;
-       $1150 = $arglist_current62;
-       $1151 = ((0) + 8|0);
-       $expanded211 = $1151;
-       $expanded210 = (($expanded211) - 1)|0;
-       $1152 = (($1150) + ($expanded210))|0;
-       $1153 = ((0) + 8|0);
-       $expanded215 = $1153;
-       $expanded214 = (($expanded215) - 1)|0;
-       $expanded213 = $expanded214 ^ -1;
-       $1154 = $1152 & $expanded213;
-       $1155 = $1154;
-       $1156 = +HEAPF64[$1155>>3];
-       $arglist_next63 = ((($1155)) + 8|0);
-       HEAP32[$ap>>2] = $arglist_next63;
-       HEAPF64[$1042>>3] = $1156;
+      case 14:  {
+       $arglist_current50 = HEAP32[$ap>>2]|0;
+       $1106 = $arglist_current50;
+       $1107 = ((0) + 4|0);
+       $expanded183 = $1107;
+       $expanded182 = (($expanded183) - 1)|0;
+       $1108 = (($1106) + ($expanded182))|0;
+       $1109 = ((0) + 4|0);
+       $expanded187 = $1109;
+       $expanded186 = (($expanded187) - 1)|0;
+       $expanded185 = $expanded186 ^ -1;
+       $1110 = $1108 & $expanded185;
+       $1111 = $1110;
+       $1112 = HEAP32[$1111>>2]|0;
+       $arglist_next51 = ((($1111)) + 4|0);
+       HEAP32[$ap>>2] = $arglist_next51;
+       $$mask1$i = $1112 & 65535;
+       $1113 = $1042;
+       $1114 = $1113;
+       HEAP32[$1114>>2] = $$mask1$i;
+       $1115 = (($1113) + 4)|0;
+       $1116 = $1115;
+       HEAP32[$1116>>2] = 0;
+       break L522;
+       break;
+      }
+      case 10:  {
+       $arglist_current38 = HEAP32[$ap>>2]|0;
+       $1051 = $arglist_current38;
+       $1052 = ((0) + 4|0);
+       $expanded155 = $1052;
+       $expanded154 = (($expanded155) - 1)|0;
+       $1053 = (($1051) + ($expanded154))|0;
+       $1054 = ((0) + 4|0);
+       $expanded159 = $1054;
+       $expanded158 = (($expanded159) - 1)|0;
+       $expanded157 = $expanded158 ^ -1;
+       $1055 = $1053 & $expanded157;
+       $1056 = $1055;
+       $1057 = HEAP32[$1056>>2]|0;
+       $arglist_next39 = ((($1056)) + 4|0);
+       HEAP32[$ap>>2] = $arglist_next39;
+       $1058 = ($1057|0)<(0);
+       $1059 = $1058 << 31 >> 31;
+       $1060 = $1042;
+       $1061 = $1060;
+       HEAP32[$1061>>2] = $1057;
+       $1062 = (($1060) + 4)|0;
+       $1063 = $1062;
+       HEAP32[$1063>>2] = $1059;
+       break L522;
+       break;
+      }
+      case 16:  {
+       $arglist_current56 = HEAP32[$ap>>2]|0;
+       $1132 = $arglist_current56;
+       $1133 = ((0) + 4|0);
+       $expanded197 = $1133;
+       $expanded196 = (($expanded197) - 1)|0;
+       $1134 = (($1132) + ($expanded196))|0;
+       $1135 = ((0) + 4|0);
+       $expanded201 = $1135;
+       $expanded200 = (($expanded201) - 1)|0;
+       $expanded199 = $expanded200 ^ -1;
+       $1136 = $1134 & $expanded199;
+       $1137 = $1136;
+       $1138 = HEAP32[$1137>>2]|0;
+       $arglist_next57 = ((($1137)) + 4|0);
+       HEAP32[$ap>>2] = $arglist_next57;
+       $$mask$i = $1138 & 255;
+       $1139 = $1042;
+       $1140 = $1139;
+       HEAP32[$1140>>2] = $$mask$i;
+       $1141 = (($1139) + 4)|0;
+       $1142 = $1141;
+       HEAP32[$1142>>2] = 0;
        break L522;
        break;
       }
@@ -40865,7 +41563,7 @@ function _malloc($bytes) {
          $477 = HEAP32[$476>>2]|0;
          $478 = $477 & -8;
          $479 = ($478|0)==($rsize$3$lcssa$i|0);
-         L216: do {
+         L217: do {
           if ($479) {
            $T$0$lcssa$i = $475;
           } else {
@@ -40891,7 +41589,7 @@ function _malloc($bytes) {
             $490 = ($489|0)==($rsize$3$lcssa$i|0);
             if ($490) {
              $T$0$lcssa$i = $487;
-             break L216;
+             break L217;
             } else {
              $K12$029$i = $485;$T$028$i = $487;
             }
@@ -41486,7 +42184,7 @@ function _malloc($bytes) {
          $744 = $741 & -8;
          $745 = $741 >>> 3;
          $746 = ($741>>>0)<(256);
-         L331: do {
+         L332: do {
           if ($746) {
            $$sum3738$i$i = $719 | 8;
            $$sum124$i = (($$sum3738$i$i) + ($tsize$254$i))|0;
@@ -41662,7 +42360,7 @@ function _malloc($bytes) {
              $805 = HEAP32[(9924)>>2]|0;
              $806 = $805 & $804;
              HEAP32[(9924)>>2] = $806;
-             break L331;
+             break L332;
             } else {
              $807 = HEAP32[(9936)>>2]|0;
              $808 = ($771>>>0)<($807>>>0);
@@ -41681,7 +42379,7 @@ function _malloc($bytes) {
              }
              $813 = ($R$1$i$i|0)==(0|0);
              if ($813) {
-              break L331;
+              break L332;
              }
             }
            } while(0);
@@ -41864,7 +42562,7 @@ function _malloc($bytes) {
         $893 = HEAP32[$892>>2]|0;
         $894 = $893 & -8;
         $895 = ($894|0)==($qsize$0$i$i|0);
-        L417: do {
+        L418: do {
          if ($895) {
           $T$0$lcssa$i25$i = $891;
          } else {
@@ -41890,7 +42588,7 @@ function _malloc($bytes) {
            $906 = ($905|0)==($qsize$0$i$i|0);
            if ($906) {
             $T$0$lcssa$i25$i = $903;
-            break L417;
+            break L418;
            } else {
             $K8$051$i$i = $901;$T$050$i$i = $903;
            }
@@ -45172,7 +45870,7 @@ function __ZNSt3__110__stdinbufIwE9__getcharEb($this,$__consume) {
    $18 = ((($this)) + 53|0);
    $19 = HEAP8[$18>>0]|0;
    $20 = ($19<<24>>24)==(0);
-   L10: do {
+   L8: do {
     if ($20) {
      $21 = ((($this)) + 40|0);
      $22 = ((($this)) + 36|0);
@@ -45200,7 +45898,7 @@ function __ZNSt3__110__stdinbufIwE9__getcharEb($this,$__consume) {
        break L1;
       } else if (!((($38|0) == 1))) {
        $__nread$2 = $__nread$0;
-       break L10;
+       break L8;
       }
       $39 = HEAP32[$21>>2]|0;
       $40 = $39;
@@ -45603,15 +46301,15 @@ function __ZNSt3__110__stdinbufIcE9pbackfailEi($this,$__c) {
      $18 = ((($17)) + 12|0);
      $19 = HEAP32[$18>>2]|0;
      $20 = (FUNCTION_TABLE_iiiiiiiii[$19 & 511]($12,$14,$__ci,$15,$__inxt,$__extbuf,$16,$__enxt)|0);
-     if ((($20|0) == 1) | (($20|0) == 2)) {
-      $$01 = -1;
-      break L1;
-     } else if ((($20|0) == 3)) {
+     if ((($20|0) == 3)) {
       $21 = HEAP32[$8>>2]|0;
       $22 = $21&255;
       HEAP8[$__extbuf>>0] = $22;
       $23 = ((($__extbuf)) + 1|0);
       HEAP32[$__enxt>>2] = $23;
+     } else if ((($20|0) == 1) | (($20|0) == 2)) {
+      $$01 = -1;
+      break L1;
      }
      $24 = ((($this)) + 32|0);
      while(1) {
@@ -45690,7 +46388,7 @@ function __ZNSt3__110__stdinbufIcE9__getcharEb($this,$__consume) {
    $18 = ((($this)) + 53|0);
    $19 = HEAP8[$18>>0]|0;
    $20 = ($19<<24>>24)==(0);
-   L10: do {
+   L8: do {
     if ($20) {
      $21 = ((($this)) + 40|0);
      $22 = ((($this)) + 36|0);
@@ -45710,15 +46408,15 @@ function __ZNSt3__110__stdinbufIcE9__getcharEb($this,$__consume) {
       $35 = ((($34)) + 16|0);
       $36 = HEAP32[$35>>2]|0;
       $37 = (FUNCTION_TABLE_iiiiiiiii[$36 & 511]($32,$25,$__extbuf,$33,$__enxt,$__1buf,$23,$__inxt)|0);
-      if ((($37|0) == 3)) {
-       $__nread$0$lcssa24 = $__nread$0;
-       break;
-      } else if ((($37|0) == 2)) {
+      if ((($37|0) == 2)) {
        $$0 = -1;
        break L1;
+      } else if ((($37|0) == 3)) {
+       $__nread$0$lcssa24 = $__nread$0;
+       break;
       } else if (!((($37|0) == 1))) {
        $__nread$2 = $__nread$0;
-       break L10;
+       break L8;
       }
       $38 = HEAP32[$21>>2]|0;
       $39 = $38;
@@ -49511,12 +50209,12 @@ function __ZNKSt3__17num_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE6
    $14 = (FUNCTION_TABLE_iiiiiii[$11 & 511]($this,$$byval_copy,$$byval_copy1,$__iob,$__err,$__lv)|0);
    HEAP32[$__b>>2] = $14;
    $15 = HEAP32[$__lv>>2]|0;
-   if ((($15|0) == 0)) {
-    HEAP8[$__v>>0] = 0;
+   if ((($15|0) == 1)) {
+    HEAP8[$__v>>0] = 1;
     $$sroa$01$0 = $14;
     break;
-   } else if ((($15|0) == 1)) {
-    HEAP8[$__v>>0] = 1;
+   } else if ((($15|0) == 0)) {
+    HEAP8[$__v>>0] = 0;
     $$sroa$01$0 = $14;
     break;
    } else {
@@ -51385,13 +52083,7 @@ function __ZNSt3__19__num_getIwE17__stage2_int_loopEwiPcRS2_RjwRKNS_12basic_stri
    if ($36) {
     $$0 = -1;
    } else {
-    if ((($__base|0) == 10) | (($__base|0) == 8)) {
-     $37 = ($35|0)<($__base|0);
-     if (!($37)) {
-      $$0 = -1;
-      break;
-     }
-    } else if ((($__base|0) == 16)) {
+    if ((($__base|0) == 16)) {
      $38 = ($34|0)<(88);
      if (!($38)) {
       if ($1) {
@@ -51420,6 +52112,12 @@ function __ZNSt3__19__num_getIwE17__stage2_int_loopEwiPcRS2_RjwRKNS_12basic_stri
       HEAP32[$__a_end>>2] = $48;
       HEAP8[$0>>0] = $47;
       $$0 = 0;
+      break;
+     }
+    } else if ((($__base|0) == 10) | (($__base|0) == 8)) {
+     $37 = ($35|0)<($__base|0);
+     if (!($37)) {
+      $$0 = -1;
       break;
      }
     }
@@ -52208,10 +52906,10 @@ function __ZNKSt3__17num_putIcNS_19ostreambuf_iteratorIcNS_11char_traitsIcEEEEE6
      $34 = $29 ? $32 : $30;
      $35 = (($33) + ($34)|0);
      $36 = ($$ph|0)==($35|0);
-     L9: do {
+     L10: do {
       if (!($36)) {
        $38 = $$ph;
-       L10: while(1) {
+       L11: while(1) {
         $37 = HEAP8[$38>>0]|0;
         $39 = HEAP32[$__s>>2]|0;
         $40 = ($39|0)==(0|0);
@@ -52237,7 +52935,7 @@ function __ZNKSt3__17num_putIcNS_19ostreambuf_iteratorIcNS_11char_traitsIcEEEEE6
           $52 = __THREW__; __THREW__ = 0;
           $53 = $52&1;
           if ($53) {
-           break L10;
+           break L11;
           }
           $54 = ($51|0)==(-1);
           if ($54) {
@@ -52258,7 +52956,7 @@ function __ZNKSt3__17num_putIcNS_19ostreambuf_iteratorIcNS_11char_traitsIcEEEEE6
         $63 = (($61) + ($62)|0);
         $64 = ($55|0)==($63|0);
         if ($64) {
-         break L9;
+         break L10;
         } else {
          $38 = $55;
         }
@@ -52417,7 +53115,9 @@ function __ZNSt3__114__num_put_base18__identify_paddingEPcS1_RKNS_8ios_baseE($__
  $1 = HEAP32[$0>>2]|0;
  $2 = $1 & 176;
  do {
-  if ((($2|0) == 16)) {
+  if ((($2|0) == 32)) {
+   $$0 = $__ne;
+  } else if ((($2|0) == 16)) {
    $3 = HEAP8[$__nb>>0]|0;
    if ((($3<<24>>24) == 43) | (($3<<24>>24) == 45)) {
     $4 = ((($__nb)) + 1|0);
@@ -52442,8 +53142,6 @@ function __ZNSt3__114__num_put_base18__identify_paddingEPcS1_RKNS_8ios_baseE($__
    } else {
     label = 7;
    }
-  } else if ((($2|0) == 32)) {
-   $$0 = $__ne;
   } else {
    label = 7;
   }
@@ -52619,7 +53317,7 @@ function __ZNSt3__19__num_putIcE21__widen_and_group_intEPcS2_S2_S2_RS2_S3_RKNS_6
     $78 = ((($__grouping)) + 8|0);
     $79 = ((($__grouping)) + 1|0);
     $80 = ($__nf$1>>>0)<($__ne>>>0);
-    L20: do {
+    L22: do {
      if ($80) {
       $__dc$011 = 0;$__dg$012 = 0;$__p$013 = $__nf$1;
       while(1) {
@@ -52675,7 +53373,7 @@ function __ZNSt3__19__num_putIcE21__widen_and_group_intEPcS2_S2_S2_RS2_S3_RKNS_6
        if ($114) {
         $__dc$011 = $112;$__dg$012 = $__dg$1;$__p$013 = $113;
        } else {
-        break L20;
+        break L22;
        }
       }
       $23 = ___cxa_find_matching_catch()|0;
@@ -53515,7 +54213,7 @@ function __ZNSt3__19__num_putIcE23__widen_and_group_floatEPcS2_S2_S2_RS2_S3_RKNS
     $110 = ((($__grouping)) + 8|0);
     $111 = ((($__grouping)) + 1|0);
     $112 = ($__nf$1>>>0)<($__ns$2>>>0);
-    L35: do {
+    L37: do {
      if ($112) {
       $__dc$043 = 0;$__dg$044 = 0;$__p$045 = $__nf$1;
       while(1) {
@@ -53571,7 +54269,7 @@ function __ZNSt3__19__num_putIcE23__widen_and_group_floatEPcS2_S2_S2_RS2_S3_RKNS
        if ($146) {
         $__dc$043 = $144;$__dg$044 = $__dg$1;$__p$045 = $145;
        } else {
-        break L35;
+        break L37;
        }
       }
       $17 = ___cxa_find_matching_catch()|0;
@@ -54377,7 +55075,7 @@ function __ZNSt3__19__num_putIwE21__widen_and_group_intEPcS2_S2_PwRS3_S4_RKNS_6l
     $78 = ((($__grouping)) + 8|0);
     $79 = ((($__grouping)) + 1|0);
     $80 = ($__nf$1>>>0)<($__ne>>>0);
-    L22: do {
+    L20: do {
      if ($80) {
       $__dc$010 = 0;$__dg$011 = 0;$__p$012 = $__nf$1;
       while(1) {
@@ -54433,7 +55131,7 @@ function __ZNSt3__19__num_putIwE21__widen_and_group_intEPcS2_S2_PwRS3_S4_RKNS_6l
        if ($114) {
         $__dc$010 = $112;$__dg$011 = $__dg$1;$__p$012 = $113;
        } else {
-        break L22;
+        break L20;
        }
       }
       $23 = ___cxa_find_matching_catch()|0;
@@ -55173,7 +55871,7 @@ function __ZNSt3__19__num_putIwE23__widen_and_group_floatEPcS2_S2_PwRS3_S4_RKNS_
     $110 = ((($__grouping)) + 8|0);
     $111 = ((($__grouping)) + 1|0);
     $112 = ($__nf$1>>>0)<($__ns$2>>>0);
-    L37: do {
+    L35: do {
      if ($112) {
       $__dc$047 = 0;$__dg$048 = 0;$__p$049 = $__nf$1;
       while(1) {
@@ -55229,7 +55927,7 @@ function __ZNSt3__19__num_putIwE23__widen_and_group_floatEPcS2_S2_PwRS3_S4_RKNS_
        if ($146) {
         $__dc$047 = $144;$__dg$048 = $__dg$1;$__p$049 = $145;
        } else {
-        break L37;
+        break L35;
        }
       }
       $17 = ___cxa_find_matching_catch()|0;
@@ -56537,59 +57235,19 @@ function __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE
  $37 = $__fmt << 24 >> 24;
  do {
   switch ($37|0) {
-  case 109:  {
-   $79 = ((($__tm)) + 16|0);
-   $80 = HEAP32[$__e>>2]|0;
-   HEAP32[$14>>2] = $80;
-   ;HEAP32[$$byval_copy12>>2]=HEAP32[$14>>2]|0;
-   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE11__get_monthERiRS4_S4_RjRKNS_5ctypeIcEE($this,$79,$__b,$$byval_copy12,$__err,$34);
+  case 37:  {
+   $129 = HEAP32[$__e>>2]|0;
+   HEAP32[$32>>2] = $129;
+   ;HEAP32[$$byval_copy30>>2]=HEAP32[$32>>2]|0;
+   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE13__get_percentERS4_S4_RjRKNS_5ctypeIcEE($this,$__b,$$byval_copy30,$__err,$34);
    label = 28;
    break;
   }
-  case 83:  {
-   $92 = HEAP32[$__e>>2]|0;
-   HEAP32[$22>>2] = $92;
-   ;HEAP32[$$byval_copy20>>2]=HEAP32[$22>>2]|0;
-   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE12__get_secondERiRS4_S4_RjRKNS_5ctypeIcEE($this,$__tm,$__b,$$byval_copy20,$__err,$34);
-   label = 28;
-   break;
-  }
-  case 121:  {
-   $125 = ((($__tm)) + 20|0);
-   $126 = HEAP32[$__e>>2]|0;
-   HEAP32[$30>>2] = $126;
-   ;HEAP32[$$byval_copy28>>2]=HEAP32[$30>>2]|0;
-   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE10__get_yearERiRS4_S4_RjRKNS_5ctypeIcEE($this,$125,$__b,$$byval_copy28,$__err,$34);
-   label = 28;
-   break;
-  }
-  case 72:  {
-   $73 = ((($__tm)) + 8|0);
-   $74 = HEAP32[$__e>>2]|0;
-   HEAP32[$11>>2] = $74;
-   ;HEAP32[$$byval_copy9>>2]=HEAP32[$11>>2]|0;
-   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE10__get_hourERiRS4_S4_RjRKNS_5ctypeIcEE($this,$73,$__b,$$byval_copy9,$__err,$34);
-   label = 28;
-   break;
-  }
-  case 89:  {
-   $127 = ((($__tm)) + 20|0);
-   $128 = HEAP32[$__e>>2]|0;
-   HEAP32[$31>>2] = $128;
-   ;HEAP32[$$byval_copy29>>2]=HEAP32[$31>>2]|0;
-   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE11__get_year4ERiRS4_S4_RjRKNS_5ctypeIcEE($this,$127,$__b,$$byval_copy29,$__err,$34);
-   label = 28;
-   break;
-  }
-  case 84:  {
-   $93 = HEAP32[$__b>>2]|0;
-   HEAP32[$23>>2] = $93;
-   $94 = HEAP32[$__e>>2]|0;
-   HEAP32[$24>>2] = $94;
-   ;HEAP32[$$byval_copy21>>2]=HEAP32[$23>>2]|0;
-   ;HEAP32[$$byval_copy22>>2]=HEAP32[$24>>2]|0;
-   $95 = (__ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE3getES4_S4_RNS_8ios_baseERjP2tmPKcSC_($this,$$byval_copy21,$$byval_copy22,$__iob,$__err,$__tm,17448,(17456))|0);
-   HEAP32[$__b>>2] = $95;
+  case 116: case 110:  {
+   $83 = HEAP32[$__e>>2]|0;
+   HEAP32[$16>>2] = $83;
+   ;HEAP32[$$byval_copy14>>2]=HEAP32[$16>>2]|0;
+   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE17__get_white_spaceERS4_S4_RjRKNS_5ctypeIcEE($this,$__b,$$byval_copy14,$__err,$34);
    label = 28;
    break;
   }
@@ -56623,108 +57281,29 @@ function __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE
    label = 28;
    break;
   }
-  case 73:  {
-   $75 = ((($__tm)) + 8|0);
-   $76 = HEAP32[$__e>>2]|0;
-   HEAP32[$12>>2] = $76;
-   ;HEAP32[$$byval_copy10>>2]=HEAP32[$12>>2]|0;
-   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE13__get_12_hourERiRS4_S4_RjRKNS_5ctypeIcEE($this,$75,$__b,$$byval_copy10,$__err,$34);
+  case 106:  {
+   $77 = ((($__tm)) + 28|0);
+   $78 = HEAP32[$__e>>2]|0;
+   HEAP32[$13>>2] = $78;
+   ;HEAP32[$$byval_copy11>>2]=HEAP32[$13>>2]|0;
+   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE18__get_day_year_numERiRS4_S4_RjRKNS_5ctypeIcEE($this,$77,$__b,$$byval_copy11,$__err,$34);
    label = 28;
    break;
   }
-  case 37:  {
-   $129 = HEAP32[$__e>>2]|0;
-   HEAP32[$32>>2] = $129;
-   ;HEAP32[$$byval_copy30>>2]=HEAP32[$32>>2]|0;
-   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE13__get_percentERS4_S4_RjRKNS_5ctypeIcEE($this,$__b,$$byval_copy30,$__err,$34);
+  case 77:  {
+   $81 = ((($__tm)) + 4|0);
+   $82 = HEAP32[$__e>>2]|0;
+   HEAP32[$15>>2] = $82;
+   ;HEAP32[$$byval_copy13>>2]=HEAP32[$15>>2]|0;
+   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE12__get_minuteERiRS4_S4_RjRKNS_5ctypeIcEE($this,$81,$__b,$$byval_copy13,$__err,$34);
    label = 28;
    break;
   }
-  case 68:  {
-   $67 = HEAP32[$__b>>2]|0;
-   HEAP32[$7>>2] = $67;
-   $68 = HEAP32[$__e>>2]|0;
-   HEAP32[$8>>2] = $68;
-   ;HEAP32[$$byval_copy5>>2]=HEAP32[$7>>2]|0;
-   ;HEAP32[$$byval_copy6>>2]=HEAP32[$8>>2]|0;
-   $69 = (__ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE3getES4_S4_RNS_8ios_baseERjP2tmPKcSC_($this,$$byval_copy5,$$byval_copy6,$__iob,$__err,$__tm,17408,(17416))|0);
-   HEAP32[$__b>>2] = $69;
-   label = 28;
-   break;
-  }
-  case 112:  {
-   $84 = ((($__tm)) + 8|0);
-   $85 = HEAP32[$__e>>2]|0;
-   HEAP32[$17>>2] = $85;
-   ;HEAP32[$$byval_copy15>>2]=HEAP32[$17>>2]|0;
-   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE11__get_am_pmERiRS4_S4_RjRKNS_5ctypeIcEE($this,$84,$__b,$$byval_copy15,$__err,$34);
-   label = 28;
-   break;
-  }
-  case 120:  {
-   $98 = HEAP32[$this>>2]|0;
-   $99 = ((($98)) + 20|0);
-   $100 = HEAP32[$99>>2]|0;
-   $101 = HEAP32[$__b>>2]|0;
-   HEAP32[$26>>2] = $101;
-   $102 = HEAP32[$__e>>2]|0;
-   HEAP32[$27>>2] = $102;
-   ;HEAP32[$$byval_copy24>>2]=HEAP32[$26>>2]|0;
-   ;HEAP32[$$byval_copy25>>2]=HEAP32[$27>>2]|0;
-   $103 = (FUNCTION_TABLE_iiiiiii[$100 & 511]($this,$$byval_copy24,$$byval_copy25,$__iob,$__err,$__tm)|0);
-   $$sroa$07$0 = $103;
-   break;
-  }
-  case 114:  {
-   $86 = HEAP32[$__b>>2]|0;
-   HEAP32[$18>>2] = $86;
-   $87 = HEAP32[$__e>>2]|0;
-   HEAP32[$19>>2] = $87;
-   ;HEAP32[$$byval_copy16>>2]=HEAP32[$18>>2]|0;
-   ;HEAP32[$$byval_copy17>>2]=HEAP32[$19>>2]|0;
-   $88 = (__ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE3getES4_S4_RNS_8ios_baseERjP2tmPKcSC_($this,$$byval_copy16,$$byval_copy17,$__iob,$__err,$__tm,17424,(17435))|0);
-   HEAP32[$__b>>2] = $88;
-   label = 28;
-   break;
-  }
-  case 104: case 66: case 98:  {
-   $42 = ((($__tm)) + 16|0);
-   $43 = HEAP32[$__e>>2]|0;
-   HEAP32[$3>>2] = $43;
-   ;HEAP32[$$byval_copy1>>2]=HEAP32[$3>>2]|0;
-   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE15__get_monthnameERiRS4_S4_RjRKNS_5ctypeIcEE($this,$42,$__b,$$byval_copy1,$__err,$34);
-   label = 28;
-   break;
-  }
-  case 70:  {
-   $70 = HEAP32[$__b>>2]|0;
-   HEAP32[$9>>2] = $70;
-   $71 = HEAP32[$__e>>2]|0;
-   HEAP32[$10>>2] = $71;
-   ;HEAP32[$$byval_copy7>>2]=HEAP32[$9>>2]|0;
-   ;HEAP32[$$byval_copy8>>2]=HEAP32[$10>>2]|0;
-   $72 = (__ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE3getES4_S4_RNS_8ios_baseERjP2tmPKcSC_($this,$$byval_copy7,$$byval_copy8,$__iob,$__err,$__tm,17416,(17424))|0);
-   HEAP32[$__b>>2] = $72;
-   label = 28;
-   break;
-  }
-  case 116: case 110:  {
-   $83 = HEAP32[$__e>>2]|0;
-   HEAP32[$16>>2] = $83;
-   ;HEAP32[$$byval_copy14>>2]=HEAP32[$16>>2]|0;
-   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE17__get_white_spaceERS4_S4_RjRKNS_5ctypeIcEE($this,$__b,$$byval_copy14,$__err,$34);
-   label = 28;
-   break;
-  }
-  case 82:  {
-   $89 = HEAP32[$__b>>2]|0;
-   HEAP32[$20>>2] = $89;
-   $90 = HEAP32[$__e>>2]|0;
-   HEAP32[$21>>2] = $90;
-   ;HEAP32[$$byval_copy18>>2]=HEAP32[$20>>2]|0;
-   ;HEAP32[$$byval_copy19>>2]=HEAP32[$21>>2]|0;
-   $91 = (__ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE3getES4_S4_RNS_8ios_baseERjP2tmPKcSC_($this,$$byval_copy18,$$byval_copy19,$__iob,$__err,$__tm,17440,(17445))|0);
-   HEAP32[$__b>>2] = $91;
+  case 83:  {
+   $92 = HEAP32[$__e>>2]|0;
+   HEAP32[$22>>2] = $92;
+   ;HEAP32[$$byval_copy20>>2]=HEAP32[$22>>2]|0;
+   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE12__get_secondERiRS4_S4_RjRKNS_5ctypeIcEE($this,$__tm,$__b,$$byval_copy20,$__err,$34);
    label = 28;
    break;
   }
@@ -56758,21 +57337,30 @@ function __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE
    label = 28;
    break;
   }
-  case 101: case 100:  {
-   $65 = ((($__tm)) + 12|0);
-   $66 = HEAP32[$__e>>2]|0;
-   HEAP32[$6>>2] = $66;
-   ;HEAP32[$$byval_copy4>>2]=HEAP32[$6>>2]|0;
-   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE9__get_dayERiRS4_S4_RjRKNS_5ctypeIcEE($this,$65,$__b,$$byval_copy4,$__err,$34);
+  case 89:  {
+   $127 = ((($__tm)) + 20|0);
+   $128 = HEAP32[$__e>>2]|0;
+   HEAP32[$31>>2] = $128;
+   ;HEAP32[$$byval_copy29>>2]=HEAP32[$31>>2]|0;
+   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE11__get_year4ERiRS4_S4_RjRKNS_5ctypeIcEE($this,$127,$__b,$$byval_copy29,$__err,$34);
    label = 28;
    break;
   }
-  case 77:  {
-   $81 = ((($__tm)) + 4|0);
-   $82 = HEAP32[$__e>>2]|0;
-   HEAP32[$15>>2] = $82;
-   ;HEAP32[$$byval_copy13>>2]=HEAP32[$15>>2]|0;
-   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE12__get_minuteERiRS4_S4_RjRKNS_5ctypeIcEE($this,$81,$__b,$$byval_copy13,$__err,$34);
+  case 72:  {
+   $73 = ((($__tm)) + 8|0);
+   $74 = HEAP32[$__e>>2]|0;
+   HEAP32[$11>>2] = $74;
+   ;HEAP32[$$byval_copy9>>2]=HEAP32[$11>>2]|0;
+   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE10__get_hourERiRS4_S4_RjRKNS_5ctypeIcEE($this,$73,$__b,$$byval_copy9,$__err,$34);
+   label = 28;
+   break;
+  }
+  case 73:  {
+   $75 = ((($__tm)) + 8|0);
+   $76 = HEAP32[$__e>>2]|0;
+   HEAP32[$12>>2] = $76;
+   ;HEAP32[$$byval_copy10>>2]=HEAP32[$12>>2]|0;
+   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE13__get_12_hourERiRS4_S4_RjRKNS_5ctypeIcEE($this,$75,$__b,$$byval_copy10,$__err,$34);
    label = 28;
    break;
   }
@@ -56785,12 +57373,71 @@ function __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE
    label = 28;
    break;
   }
-  case 106:  {
-   $77 = ((($__tm)) + 28|0);
-   $78 = HEAP32[$__e>>2]|0;
-   HEAP32[$13>>2] = $78;
-   ;HEAP32[$$byval_copy11>>2]=HEAP32[$13>>2]|0;
-   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE18__get_day_year_numERiRS4_S4_RjRKNS_5ctypeIcEE($this,$77,$__b,$$byval_copy11,$__err,$34);
+  case 114:  {
+   $86 = HEAP32[$__b>>2]|0;
+   HEAP32[$18>>2] = $86;
+   $87 = HEAP32[$__e>>2]|0;
+   HEAP32[$19>>2] = $87;
+   ;HEAP32[$$byval_copy16>>2]=HEAP32[$18>>2]|0;
+   ;HEAP32[$$byval_copy17>>2]=HEAP32[$19>>2]|0;
+   $88 = (__ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE3getES4_S4_RNS_8ios_baseERjP2tmPKcSC_($this,$$byval_copy16,$$byval_copy17,$__iob,$__err,$__tm,17424,(17435))|0);
+   HEAP32[$__b>>2] = $88;
+   label = 28;
+   break;
+  }
+  case 84:  {
+   $93 = HEAP32[$__b>>2]|0;
+   HEAP32[$23>>2] = $93;
+   $94 = HEAP32[$__e>>2]|0;
+   HEAP32[$24>>2] = $94;
+   ;HEAP32[$$byval_copy21>>2]=HEAP32[$23>>2]|0;
+   ;HEAP32[$$byval_copy22>>2]=HEAP32[$24>>2]|0;
+   $95 = (__ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE3getES4_S4_RNS_8ios_baseERjP2tmPKcSC_($this,$$byval_copy21,$$byval_copy22,$__iob,$__err,$__tm,17448,(17456))|0);
+   HEAP32[$__b>>2] = $95;
+   label = 28;
+   break;
+  }
+  case 120:  {
+   $98 = HEAP32[$this>>2]|0;
+   $99 = ((($98)) + 20|0);
+   $100 = HEAP32[$99>>2]|0;
+   $101 = HEAP32[$__b>>2]|0;
+   HEAP32[$26>>2] = $101;
+   $102 = HEAP32[$__e>>2]|0;
+   HEAP32[$27>>2] = $102;
+   ;HEAP32[$$byval_copy24>>2]=HEAP32[$26>>2]|0;
+   ;HEAP32[$$byval_copy25>>2]=HEAP32[$27>>2]|0;
+   $103 = (FUNCTION_TABLE_iiiiiii[$100 & 511]($this,$$byval_copy24,$$byval_copy25,$__iob,$__err,$__tm)|0);
+   $$sroa$07$0 = $103;
+   break;
+  }
+  case 82:  {
+   $89 = HEAP32[$__b>>2]|0;
+   HEAP32[$20>>2] = $89;
+   $90 = HEAP32[$__e>>2]|0;
+   HEAP32[$21>>2] = $90;
+   ;HEAP32[$$byval_copy18>>2]=HEAP32[$20>>2]|0;
+   ;HEAP32[$$byval_copy19>>2]=HEAP32[$21>>2]|0;
+   $91 = (__ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE3getES4_S4_RNS_8ios_baseERjP2tmPKcSC_($this,$$byval_copy18,$$byval_copy19,$__iob,$__err,$__tm,17440,(17445))|0);
+   HEAP32[$__b>>2] = $91;
+   label = 28;
+   break;
+  }
+  case 121:  {
+   $125 = ((($__tm)) + 20|0);
+   $126 = HEAP32[$__e>>2]|0;
+   HEAP32[$30>>2] = $126;
+   ;HEAP32[$$byval_copy28>>2]=HEAP32[$30>>2]|0;
+   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE10__get_yearERiRS4_S4_RjRKNS_5ctypeIcEE($this,$125,$__b,$$byval_copy28,$__err,$34);
+   label = 28;
+   break;
+  }
+  case 104: case 66: case 98:  {
+   $42 = ((($__tm)) + 16|0);
+   $43 = HEAP32[$__e>>2]|0;
+   HEAP32[$3>>2] = $43;
+   ;HEAP32[$$byval_copy1>>2]=HEAP32[$3>>2]|0;
+   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE15__get_monthnameERiRS4_S4_RjRKNS_5ctypeIcEE($this,$42,$__b,$$byval_copy1,$__err,$34);
    label = 28;
    break;
   }
@@ -56800,6 +57447,57 @@ function __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE
    HEAP32[$25>>2] = $97;
    ;HEAP32[$$byval_copy23>>2]=HEAP32[$25>>2]|0;
    __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE13__get_weekdayERiRS4_S4_RjRKNS_5ctypeIcEE($this,$96,$__b,$$byval_copy23,$__err,$34);
+   label = 28;
+   break;
+  }
+  case 112:  {
+   $84 = ((($__tm)) + 8|0);
+   $85 = HEAP32[$__e>>2]|0;
+   HEAP32[$17>>2] = $85;
+   ;HEAP32[$$byval_copy15>>2]=HEAP32[$17>>2]|0;
+   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE11__get_am_pmERiRS4_S4_RjRKNS_5ctypeIcEE($this,$84,$__b,$$byval_copy15,$__err,$34);
+   label = 28;
+   break;
+  }
+  case 109:  {
+   $79 = ((($__tm)) + 16|0);
+   $80 = HEAP32[$__e>>2]|0;
+   HEAP32[$14>>2] = $80;
+   ;HEAP32[$$byval_copy12>>2]=HEAP32[$14>>2]|0;
+   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE11__get_monthERiRS4_S4_RjRKNS_5ctypeIcEE($this,$79,$__b,$$byval_copy12,$__err,$34);
+   label = 28;
+   break;
+  }
+  case 70:  {
+   $70 = HEAP32[$__b>>2]|0;
+   HEAP32[$9>>2] = $70;
+   $71 = HEAP32[$__e>>2]|0;
+   HEAP32[$10>>2] = $71;
+   ;HEAP32[$$byval_copy7>>2]=HEAP32[$9>>2]|0;
+   ;HEAP32[$$byval_copy8>>2]=HEAP32[$10>>2]|0;
+   $72 = (__ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE3getES4_S4_RNS_8ios_baseERjP2tmPKcSC_($this,$$byval_copy7,$$byval_copy8,$__iob,$__err,$__tm,17416,(17424))|0);
+   HEAP32[$__b>>2] = $72;
+   label = 28;
+   break;
+  }
+  case 101: case 100:  {
+   $65 = ((($__tm)) + 12|0);
+   $66 = HEAP32[$__e>>2]|0;
+   HEAP32[$6>>2] = $66;
+   ;HEAP32[$$byval_copy4>>2]=HEAP32[$6>>2]|0;
+   __ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE9__get_dayERiRS4_S4_RjRKNS_5ctypeIcEE($this,$65,$__b,$$byval_copy4,$__err,$34);
+   label = 28;
+   break;
+  }
+  case 68:  {
+   $67 = HEAP32[$__b>>2]|0;
+   HEAP32[$7>>2] = $67;
+   $68 = HEAP32[$__e>>2]|0;
+   HEAP32[$8>>2] = $68;
+   ;HEAP32[$$byval_copy5>>2]=HEAP32[$7>>2]|0;
+   ;HEAP32[$$byval_copy6>>2]=HEAP32[$8>>2]|0;
+   $69 = (__ZNKSt3__18time_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE3getES4_S4_RNS_8ios_baseERjP2tmPKcSC_($this,$$byval_copy5,$$byval_copy6,$__iob,$__err,$__tm,17408,(17416))|0);
+   HEAP32[$__b>>2] = $69;
    label = 28;
    break;
   }
@@ -58474,197 +59172,12 @@ function __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
    label = 28;
    break;
   }
-  case 68:  {
-   $66 = HEAP32[$__b>>2]|0;
-   HEAP32[$7>>2] = $66;
-   $67 = HEAP32[$__e>>2]|0;
-   HEAP32[$8>>2] = $67;
-   ;HEAP32[$$byval_copy5>>2]=HEAP32[$7>>2]|0;
-   ;HEAP32[$$byval_copy6>>2]=HEAP32[$8>>2]|0;
-   $68 = (__ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE3getES4_S4_RNS_8ios_baseERjP2tmPKwSC_($this,$$byval_copy5,$$byval_copy6,$__iob,$__err,$__tm,17488,(17520))|0);
-   HEAP32[$__b>>2] = $68;
-   label = 28;
-   break;
-  }
-  case 119:  {
-   $95 = ((($__tm)) + 24|0);
-   $96 = HEAP32[$__e>>2]|0;
-   HEAP32[$25>>2] = $96;
-   ;HEAP32[$$byval_copy23>>2]=HEAP32[$25>>2]|0;
-   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE13__get_weekdayERiRS4_S4_RjRKNS_5ctypeIwEE($this,$95,$__b,$$byval_copy23,$__err,$34);
-   label = 28;
-   break;
-  }
-  case 65: case 97:  {
-   $40 = ((($__tm)) + 24|0);
-   $41 = HEAP32[$__e>>2]|0;
-   HEAP32[$2>>2] = $41;
-   ;HEAP32[$$byval_copy>>2]=HEAP32[$2>>2]|0;
-   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE17__get_weekdaynameERiRS4_S4_RjRKNS_5ctypeIwEE($this,$40,$__b,$$byval_copy,$__err,$34);
-   label = 28;
-   break;
-  }
-  case 101: case 100:  {
-   $64 = ((($__tm)) + 12|0);
-   $65 = HEAP32[$__e>>2]|0;
-   HEAP32[$6>>2] = $65;
-   ;HEAP32[$$byval_copy4>>2]=HEAP32[$6>>2]|0;
-   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE9__get_dayERiRS4_S4_RjRKNS_5ctypeIwEE($this,$64,$__b,$$byval_copy4,$__err,$34);
-   label = 28;
-   break;
-  }
   case 73:  {
    $74 = ((($__tm)) + 8|0);
    $75 = HEAP32[$__e>>2]|0;
    HEAP32[$12>>2] = $75;
    ;HEAP32[$$byval_copy10>>2]=HEAP32[$12>>2]|0;
    __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE13__get_12_hourERiRS4_S4_RjRKNS_5ctypeIwEE($this,$74,$__b,$$byval_copy10,$__err,$34);
-   label = 28;
-   break;
-  }
-  case 82:  {
-   $88 = HEAP32[$__b>>2]|0;
-   HEAP32[$20>>2] = $88;
-   $89 = HEAP32[$__e>>2]|0;
-   HEAP32[$21>>2] = $89;
-   ;HEAP32[$$byval_copy18>>2]=HEAP32[$20>>2]|0;
-   ;HEAP32[$$byval_copy19>>2]=HEAP32[$21>>2]|0;
-   $90 = (__ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE3getES4_S4_RNS_8ios_baseERjP2tmPKwSC_($this,$$byval_copy18,$$byval_copy19,$__iob,$__err,$__tm,17600,(17620))|0);
-   HEAP32[$__b>>2] = $90;
-   label = 28;
-   break;
-  }
-  case 104: case 66: case 98:  {
-   $42 = ((($__tm)) + 16|0);
-   $43 = HEAP32[$__e>>2]|0;
-   HEAP32[$3>>2] = $43;
-   ;HEAP32[$$byval_copy1>>2]=HEAP32[$3>>2]|0;
-   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE15__get_monthnameERiRS4_S4_RjRKNS_5ctypeIwEE($this,$42,$__b,$$byval_copy1,$__err,$34);
-   label = 28;
-   break;
-  }
-  case 77:  {
-   $80 = ((($__tm)) + 4|0);
-   $81 = HEAP32[$__e>>2]|0;
-   HEAP32[$15>>2] = $81;
-   ;HEAP32[$$byval_copy13>>2]=HEAP32[$15>>2]|0;
-   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE12__get_minuteERiRS4_S4_RjRKNS_5ctypeIwEE($this,$80,$__b,$$byval_copy13,$__err,$34);
-   label = 28;
-   break;
-  }
-  case 121:  {
-   $123 = ((($__tm)) + 20|0);
-   $124 = HEAP32[$__e>>2]|0;
-   HEAP32[$30>>2] = $124;
-   ;HEAP32[$$byval_copy28>>2]=HEAP32[$30>>2]|0;
-   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE10__get_yearERiRS4_S4_RjRKNS_5ctypeIwEE($this,$123,$__b,$$byval_copy28,$__err,$34);
-   label = 28;
-   break;
-  }
-  case 120:  {
-   $97 = HEAP32[$this>>2]|0;
-   $98 = ((($97)) + 20|0);
-   $99 = HEAP32[$98>>2]|0;
-   $100 = HEAP32[$__b>>2]|0;
-   HEAP32[$26>>2] = $100;
-   $101 = HEAP32[$__e>>2]|0;
-   HEAP32[$27>>2] = $101;
-   ;HEAP32[$$byval_copy24>>2]=HEAP32[$26>>2]|0;
-   ;HEAP32[$$byval_copy25>>2]=HEAP32[$27>>2]|0;
-   $102 = (FUNCTION_TABLE_iiiiiii[$99 & 511]($this,$$byval_copy24,$$byval_copy25,$__iob,$__err,$__tm)|0);
-   $$sroa$07$0 = $102;
-   break;
-  }
-  case 84:  {
-   $92 = HEAP32[$__b>>2]|0;
-   HEAP32[$23>>2] = $92;
-   $93 = HEAP32[$__e>>2]|0;
-   HEAP32[$24>>2] = $93;
-   ;HEAP32[$$byval_copy21>>2]=HEAP32[$23>>2]|0;
-   ;HEAP32[$$byval_copy22>>2]=HEAP32[$24>>2]|0;
-   $94 = (__ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE3getES4_S4_RNS_8ios_baseERjP2tmPKwSC_($this,$$byval_copy21,$$byval_copy22,$__iob,$__err,$__tm,17624,(17656))|0);
-   HEAP32[$__b>>2] = $94;
-   label = 28;
-   break;
-  }
-  case 99:  {
-   $44 = ((($this)) + 8|0);
-   $45 = HEAP32[$44>>2]|0;
-   $46 = ((($45)) + 12|0);
-   $47 = HEAP32[$46>>2]|0;
-   $48 = (FUNCTION_TABLE_ii[$47 & 1023]($44)|0);
-   $49 = HEAP32[$__b>>2]|0;
-   HEAP32[$4>>2] = $49;
-   $50 = HEAP32[$__e>>2]|0;
-   HEAP32[$5>>2] = $50;
-   $51 = HEAP8[$48>>0]|0;
-   $52 = $51 & 1;
-   $53 = ($52<<24>>24)==(0);
-   $54 = ((($48)) + 8|0);
-   $55 = HEAP32[$54>>2]|0;
-   $56 = ((($48)) + 4|0);
-   $57 = $53 ? $56 : $55;
-   $58 = HEAP32[$56>>2]|0;
-   $59 = $51&255;
-   $60 = $59 >>> 1;
-   $61 = $53 ? $60 : $58;
-   $62 = (($57) + ($61<<2)|0);
-   ;HEAP32[$$byval_copy2>>2]=HEAP32[$4>>2]|0;
-   ;HEAP32[$$byval_copy3>>2]=HEAP32[$5>>2]|0;
-   $63 = (__ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE3getES4_S4_RNS_8ios_baseERjP2tmPKwSC_($this,$$byval_copy2,$$byval_copy3,$__iob,$__err,$__tm,$57,$62)|0);
-   HEAP32[$__b>>2] = $63;
-   label = 28;
-   break;
-  }
-  case 106:  {
-   $76 = ((($__tm)) + 28|0);
-   $77 = HEAP32[$__e>>2]|0;
-   HEAP32[$13>>2] = $77;
-   ;HEAP32[$$byval_copy11>>2]=HEAP32[$13>>2]|0;
-   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE18__get_day_year_numERiRS4_S4_RjRKNS_5ctypeIwEE($this,$76,$__b,$$byval_copy11,$__err,$34);
-   label = 28;
-   break;
-  }
-  case 109:  {
-   $78 = ((($__tm)) + 16|0);
-   $79 = HEAP32[$__e>>2]|0;
-   HEAP32[$14>>2] = $79;
-   ;HEAP32[$$byval_copy12>>2]=HEAP32[$14>>2]|0;
-   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE11__get_monthERiRS4_S4_RjRKNS_5ctypeIwEE($this,$78,$__b,$$byval_copy12,$__err,$34);
-   label = 28;
-   break;
-  }
-  case 116: case 110:  {
-   $82 = HEAP32[$__e>>2]|0;
-   HEAP32[$16>>2] = $82;
-   ;HEAP32[$$byval_copy14>>2]=HEAP32[$16>>2]|0;
-   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE17__get_white_spaceERS4_S4_RjRKNS_5ctypeIwEE($this,$__b,$$byval_copy14,$__err,$34);
-   label = 28;
-   break;
-  }
-  case 112:  {
-   $83 = ((($__tm)) + 8|0);
-   $84 = HEAP32[$__e>>2]|0;
-   HEAP32[$17>>2] = $84;
-   ;HEAP32[$$byval_copy15>>2]=HEAP32[$17>>2]|0;
-   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE11__get_am_pmERiRS4_S4_RjRKNS_5ctypeIwEE($this,$83,$__b,$$byval_copy15,$__err,$34);
-   label = 28;
-   break;
-  }
-  case 72:  {
-   $72 = ((($__tm)) + 8|0);
-   $73 = HEAP32[$__e>>2]|0;
-   HEAP32[$11>>2] = $73;
-   ;HEAP32[$$byval_copy9>>2]=HEAP32[$11>>2]|0;
-   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE10__get_hourERiRS4_S4_RjRKNS_5ctypeIwEE($this,$72,$__b,$$byval_copy9,$__err,$34);
-   label = 28;
-   break;
-  }
-  case 83:  {
-   $91 = HEAP32[$__e>>2]|0;
-   HEAP32[$22>>2] = $91;
-   ;HEAP32[$$byval_copy20>>2]=HEAP32[$22>>2]|0;
-   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE12__get_secondERiRS4_S4_RjRKNS_5ctypeIwEE($this,$__tm,$__b,$$byval_copy20,$__err,$34);
    label = 28;
    break;
   }
@@ -58697,12 +59210,196 @@ function __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
    label = 28;
    break;
   }
+  case 65: case 97:  {
+   $40 = ((($__tm)) + 24|0);
+   $41 = HEAP32[$__e>>2]|0;
+   HEAP32[$2>>2] = $41;
+   ;HEAP32[$$byval_copy>>2]=HEAP32[$2>>2]|0;
+   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE17__get_weekdaynameERiRS4_S4_RjRKNS_5ctypeIwEE($this,$40,$__b,$$byval_copy,$__err,$34);
+   label = 28;
+   break;
+  }
+  case 101: case 100:  {
+   $64 = ((($__tm)) + 12|0);
+   $65 = HEAP32[$__e>>2]|0;
+   HEAP32[$6>>2] = $65;
+   ;HEAP32[$$byval_copy4>>2]=HEAP32[$6>>2]|0;
+   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE9__get_dayERiRS4_S4_RjRKNS_5ctypeIwEE($this,$64,$__b,$$byval_copy4,$__err,$34);
+   label = 28;
+   break;
+  }
+  case 106:  {
+   $76 = ((($__tm)) + 28|0);
+   $77 = HEAP32[$__e>>2]|0;
+   HEAP32[$13>>2] = $77;
+   ;HEAP32[$$byval_copy11>>2]=HEAP32[$13>>2]|0;
+   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE18__get_day_year_numERiRS4_S4_RjRKNS_5ctypeIwEE($this,$76,$__b,$$byval_copy11,$__err,$34);
+   label = 28;
+   break;
+  }
+  case 83:  {
+   $91 = HEAP32[$__e>>2]|0;
+   HEAP32[$22>>2] = $91;
+   ;HEAP32[$$byval_copy20>>2]=HEAP32[$22>>2]|0;
+   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE12__get_secondERiRS4_S4_RjRKNS_5ctypeIwEE($this,$__tm,$__b,$$byval_copy20,$__err,$34);
+   label = 28;
+   break;
+  }
+  case 84:  {
+   $92 = HEAP32[$__b>>2]|0;
+   HEAP32[$23>>2] = $92;
+   $93 = HEAP32[$__e>>2]|0;
+   HEAP32[$24>>2] = $93;
+   ;HEAP32[$$byval_copy21>>2]=HEAP32[$23>>2]|0;
+   ;HEAP32[$$byval_copy22>>2]=HEAP32[$24>>2]|0;
+   $94 = (__ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE3getES4_S4_RNS_8ios_baseERjP2tmPKwSC_($this,$$byval_copy21,$$byval_copy22,$__iob,$__err,$__tm,17624,(17656))|0);
+   HEAP32[$__b>>2] = $94;
+   label = 28;
+   break;
+  }
+  case 120:  {
+   $97 = HEAP32[$this>>2]|0;
+   $98 = ((($97)) + 20|0);
+   $99 = HEAP32[$98>>2]|0;
+   $100 = HEAP32[$__b>>2]|0;
+   HEAP32[$26>>2] = $100;
+   $101 = HEAP32[$__e>>2]|0;
+   HEAP32[$27>>2] = $101;
+   ;HEAP32[$$byval_copy24>>2]=HEAP32[$26>>2]|0;
+   ;HEAP32[$$byval_copy25>>2]=HEAP32[$27>>2]|0;
+   $102 = (FUNCTION_TABLE_iiiiiii[$99 & 511]($this,$$byval_copy24,$$byval_copy25,$__iob,$__err,$__tm)|0);
+   $$sroa$07$0 = $102;
+   break;
+  }
+  case 121:  {
+   $123 = ((($__tm)) + 20|0);
+   $124 = HEAP32[$__e>>2]|0;
+   HEAP32[$30>>2] = $124;
+   ;HEAP32[$$byval_copy28>>2]=HEAP32[$30>>2]|0;
+   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE10__get_yearERiRS4_S4_RjRKNS_5ctypeIwEE($this,$123,$__b,$$byval_copy28,$__err,$34);
+   label = 28;
+   break;
+  }
   case 89:  {
    $125 = ((($__tm)) + 20|0);
    $126 = HEAP32[$__e>>2]|0;
    HEAP32[$31>>2] = $126;
    ;HEAP32[$$byval_copy29>>2]=HEAP32[$31>>2]|0;
    __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE11__get_year4ERiRS4_S4_RjRKNS_5ctypeIwEE($this,$125,$__b,$$byval_copy29,$__err,$34);
+   label = 28;
+   break;
+  }
+  case 99:  {
+   $44 = ((($this)) + 8|0);
+   $45 = HEAP32[$44>>2]|0;
+   $46 = ((($45)) + 12|0);
+   $47 = HEAP32[$46>>2]|0;
+   $48 = (FUNCTION_TABLE_ii[$47 & 1023]($44)|0);
+   $49 = HEAP32[$__b>>2]|0;
+   HEAP32[$4>>2] = $49;
+   $50 = HEAP32[$__e>>2]|0;
+   HEAP32[$5>>2] = $50;
+   $51 = HEAP8[$48>>0]|0;
+   $52 = $51 & 1;
+   $53 = ($52<<24>>24)==(0);
+   $54 = ((($48)) + 8|0);
+   $55 = HEAP32[$54>>2]|0;
+   $56 = ((($48)) + 4|0);
+   $57 = $53 ? $56 : $55;
+   $58 = HEAP32[$56>>2]|0;
+   $59 = $51&255;
+   $60 = $59 >>> 1;
+   $61 = $53 ? $60 : $58;
+   $62 = (($57) + ($61<<2)|0);
+   ;HEAP32[$$byval_copy2>>2]=HEAP32[$4>>2]|0;
+   ;HEAP32[$$byval_copy3>>2]=HEAP32[$5>>2]|0;
+   $63 = (__ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE3getES4_S4_RNS_8ios_baseERjP2tmPKwSC_($this,$$byval_copy2,$$byval_copy3,$__iob,$__err,$__tm,$57,$62)|0);
+   HEAP32[$__b>>2] = $63;
+   label = 28;
+   break;
+  }
+  case 68:  {
+   $66 = HEAP32[$__b>>2]|0;
+   HEAP32[$7>>2] = $66;
+   $67 = HEAP32[$__e>>2]|0;
+   HEAP32[$8>>2] = $67;
+   ;HEAP32[$$byval_copy5>>2]=HEAP32[$7>>2]|0;
+   ;HEAP32[$$byval_copy6>>2]=HEAP32[$8>>2]|0;
+   $68 = (__ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE3getES4_S4_RNS_8ios_baseERjP2tmPKwSC_($this,$$byval_copy5,$$byval_copy6,$__iob,$__err,$__tm,17488,(17520))|0);
+   HEAP32[$__b>>2] = $68;
+   label = 28;
+   break;
+  }
+  case 104: case 66: case 98:  {
+   $42 = ((($__tm)) + 16|0);
+   $43 = HEAP32[$__e>>2]|0;
+   HEAP32[$3>>2] = $43;
+   ;HEAP32[$$byval_copy1>>2]=HEAP32[$3>>2]|0;
+   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE15__get_monthnameERiRS4_S4_RjRKNS_5ctypeIwEE($this,$42,$__b,$$byval_copy1,$__err,$34);
+   label = 28;
+   break;
+  }
+  case 72:  {
+   $72 = ((($__tm)) + 8|0);
+   $73 = HEAP32[$__e>>2]|0;
+   HEAP32[$11>>2] = $73;
+   ;HEAP32[$$byval_copy9>>2]=HEAP32[$11>>2]|0;
+   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE10__get_hourERiRS4_S4_RjRKNS_5ctypeIwEE($this,$72,$__b,$$byval_copy9,$__err,$34);
+   label = 28;
+   break;
+  }
+  case 112:  {
+   $83 = ((($__tm)) + 8|0);
+   $84 = HEAP32[$__e>>2]|0;
+   HEAP32[$17>>2] = $84;
+   ;HEAP32[$$byval_copy15>>2]=HEAP32[$17>>2]|0;
+   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE11__get_am_pmERiRS4_S4_RjRKNS_5ctypeIwEE($this,$83,$__b,$$byval_copy15,$__err,$34);
+   label = 28;
+   break;
+  }
+  case 82:  {
+   $88 = HEAP32[$__b>>2]|0;
+   HEAP32[$20>>2] = $88;
+   $89 = HEAP32[$__e>>2]|0;
+   HEAP32[$21>>2] = $89;
+   ;HEAP32[$$byval_copy18>>2]=HEAP32[$20>>2]|0;
+   ;HEAP32[$$byval_copy19>>2]=HEAP32[$21>>2]|0;
+   $90 = (__ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE3getES4_S4_RNS_8ios_baseERjP2tmPKwSC_($this,$$byval_copy18,$$byval_copy19,$__iob,$__err,$__tm,17600,(17620))|0);
+   HEAP32[$__b>>2] = $90;
+   label = 28;
+   break;
+  }
+  case 119:  {
+   $95 = ((($__tm)) + 24|0);
+   $96 = HEAP32[$__e>>2]|0;
+   HEAP32[$25>>2] = $96;
+   ;HEAP32[$$byval_copy23>>2]=HEAP32[$25>>2]|0;
+   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE13__get_weekdayERiRS4_S4_RjRKNS_5ctypeIwEE($this,$95,$__b,$$byval_copy23,$__err,$34);
+   label = 28;
+   break;
+  }
+  case 37:  {
+   $127 = HEAP32[$__e>>2]|0;
+   HEAP32[$32>>2] = $127;
+   ;HEAP32[$$byval_copy30>>2]=HEAP32[$32>>2]|0;
+   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE13__get_percentERS4_S4_RjRKNS_5ctypeIwEE($this,$__b,$$byval_copy30,$__err,$34);
+   label = 28;
+   break;
+  }
+  case 116: case 110:  {
+   $82 = HEAP32[$__e>>2]|0;
+   HEAP32[$16>>2] = $82;
+   ;HEAP32[$$byval_copy14>>2]=HEAP32[$16>>2]|0;
+   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE17__get_white_spaceERS4_S4_RjRKNS_5ctypeIwEE($this,$__b,$$byval_copy14,$__err,$34);
+   label = 28;
+   break;
+  }
+  case 109:  {
+   $78 = ((($__tm)) + 16|0);
+   $79 = HEAP32[$__e>>2]|0;
+   HEAP32[$14>>2] = $79;
+   ;HEAP32[$$byval_copy12>>2]=HEAP32[$14>>2]|0;
+   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE11__get_monthERiRS4_S4_RjRKNS_5ctypeIwEE($this,$78,$__b,$$byval_copy12,$__err,$34);
    label = 28;
    break;
   }
@@ -58718,11 +59415,12 @@ function __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
    label = 28;
    break;
   }
-  case 37:  {
-   $127 = HEAP32[$__e>>2]|0;
-   HEAP32[$32>>2] = $127;
-   ;HEAP32[$$byval_copy30>>2]=HEAP32[$32>>2]|0;
-   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE13__get_percentERS4_S4_RjRKNS_5ctypeIwEE($this,$__b,$$byval_copy30,$__err,$34);
+  case 77:  {
+   $80 = ((($__tm)) + 4|0);
+   $81 = HEAP32[$__e>>2]|0;
+   HEAP32[$15>>2] = $81;
+   ;HEAP32[$$byval_copy13>>2]=HEAP32[$15>>2]|0;
+   __ZNKSt3__18time_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE12__get_minuteERiRS4_S4_RjRKNS_5ctypeIwEE($this,$80,$__b,$$byval_copy13,$__err,$34);
    label = 28;
    break;
   }
@@ -60258,7 +60956,7 @@ function __ZNKSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEE
   $7 = (invoke_iii(417,($__loc|0),(14360|0))|0);
   $8 = __THREW__; __THREW__ = 0;
   $9 = $8&1;
-  L3: do {
+  L4: do {
    if ($9) {
     label = 10;
    } else {
@@ -60275,7 +60973,7 @@ function __ZNKSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEE
     if ($15) {
      label = 10;
     } else {
-     L6: do {
+     L7: do {
       if ($13) {
        $16 = HEAP32[$7>>2]|0;
        $17 = ((($16)) + 32|0);
@@ -60286,7 +60984,7 @@ function __ZNKSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEE
        $20 = $19&1;
        if ($20) {
         label = 10;
-        break L3;
+        break L4;
        }
        $21 = HEAP32[$__wn>>2]|0;
        $22 = HEAP32[$__wb>>2]|0;
@@ -60443,7 +61141,7 @@ function __ZNKSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEE
           $75 = $73;
           _free($75);
          }
-         break L6;
+         break L7;
         }
        } while(0);
        $37 = ___cxa_find_matching_catch()|0;
@@ -60451,12 +61149,12 @@ function __ZNKSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEE
        $40 = ($39|0)==(0);
        if ($40) {
         $$0 = $37;$$01 = $38;$$phi$trans$insert$pre$phiZZZZ2D = $__wb;
-        break L3;
+        break L4;
        }
        $41 = $39;
        _free($41);
        $$0 = $37;$$01 = $38;$$phi$trans$insert$pre$phiZZZZ2D = $__wb;
-       break L3;
+       break L4;
       }
      } while(0);
      $76 = HEAP32[$__b>>2]|0;
@@ -60480,7 +61178,7 @@ function __ZNKSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEE
         $88 = $87&1;
         if ($88) {
          label = 10;
-         break L3;
+         break L4;
         }
         $89 = ($86|0)==(-1);
         if ($89) {
@@ -60519,7 +61217,7 @@ function __ZNKSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEE
         $104 = $103&1;
         if ($104) {
          label = 10;
-         break L3;
+         break L4;
         }
         $105 = ($102|0)==(-1);
         if ($105) {
@@ -60854,99 +61552,10 @@ function __ZNSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE
     $66 = $65 << 24 >> 24;
     L26: do {
      switch ($66|0) {
-     case 1:  {
-      $cond = ($__p$0353|0)==(3);
-      if ($cond) {
-       $878 = $876;$__trailing_sign$1 = $__trailing_sign$0355;
-      } else {
-       $89 = HEAP32[$__b>>2]|0;
-       $90 = ((($89)) + 12|0);
-       $91 = HEAP32[$90>>2]|0;
-       $92 = ((($89)) + 16|0);
-       $93 = HEAP32[$92>>2]|0;
-       $94 = ($91|0)==($93|0);
-       if ($94) {
-        $95 = HEAP32[$89>>2]|0;
-        $96 = ((($95)) + 36|0);
-        $97 = HEAP32[$96>>2]|0;
-        __THREW__ = 0;
-        $98 = (invoke_ii($97|0,($89|0))|0);
-        $99 = __THREW__; __THREW__ = 0;
-        $100 = $99&1;
-        if ($100) {
-         label = 24;
-         break L4;
-        } else {
-         $$0$i$i42 = $98;
-        }
-       } else {
-        $101 = HEAP8[$91>>0]|0;
-        $102 = $101&255;
-        $$0$i$i42 = $102;
-       }
-       $103 = $$0$i$i42&255;
-       $isascii1$i = ($103<<24>>24)>(-1);
-       if (!($isascii1$i)) {
-        label = 40;
-        break L4;
-       }
-       $sext212 = $$0$i$i42 << 24;
-       $104 = $sext212 >> 24;
-       $105 = HEAP32[$17>>2]|0;
-       $106 = (($105) + ($104<<1)|0);
-       $107 = HEAP16[$106>>1]|0;
-       $108 = $107 & 8192;
-       $109 = ($108<<16>>16)==(0);
-       if ($109) {
-        label = 40;
-        break L4;
-       }
-       $110 = HEAP32[$__b>>2]|0;
-       $111 = ((($110)) + 12|0);
-       $112 = HEAP32[$111>>2]|0;
-       $113 = ((($110)) + 16|0);
-       $114 = HEAP32[$113>>2]|0;
-       $115 = ($112|0)==($114|0);
-       if ($115) {
-        $116 = HEAP32[$110>>2]|0;
-        $117 = ((($116)) + 40|0);
-        $118 = HEAP32[$117>>2]|0;
-        __THREW__ = 0;
-        $119 = (invoke_ii($118|0,($110|0))|0);
-        $120 = __THREW__; __THREW__ = 0;
-        $121 = $120&1;
-        if ($121) {
-         label = 24;
-         break L4;
-        } else {
-         $$0$i$i45 = $119;
-        }
-       } else {
-        $122 = ((($112)) + 1|0);
-        HEAP32[$111>>2] = $122;
-        $123 = HEAP8[$112>>0]|0;
-        $124 = $123&255;
-        $$0$i$i45 = $124;
-       }
-       $125 = $$0$i$i45&255;
-       __THREW__ = 0;
-       invoke_vii(435,($__spaces|0),($125|0));
-       $126 = __THREW__; __THREW__ = 0;
-       $127 = $126&1;
-       if ($127) {
-        label = 24;
-        break L4;
-       } else {
-        $$pre$i2$i$i52 = $877;$147 = $877;
-        label = 42;
-       }
-      }
-      break;
-     }
      case 4:  {
       $67 = HEAP8[$__ts>>0]|0;
       $$pre$i2$i$i148 = $877;$540 = $877;$595 = $876;$__ng$0 = 0;
-      L40: while(1) {
+      L28: while(1) {
        $524 = HEAP32[$__b>>2]|0;
        $525 = ($524|0)==(0|0);
        do {
@@ -61003,7 +61612,7 @@ function __ZNSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE
            break;
           } else {
            $$lcssa371 = $595;$$pre$i2$i$i108 = $$pre$i2$i$i148;$__ng$0$lcssa372 = $__ng$0;
-           break L40;
+           break L28;
           }
          }
          $547 = HEAP32[$540>>2]|0;
@@ -61031,7 +61640,7 @@ function __ZNSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE
            break;
           } else {
            $$lcssa371 = $595;$$pre$i2$i$i108 = $$pre$i2$i$i148;$__ng$0$lcssa372 = $__ng$0;
-           break L40;
+           break L28;
           }
          }
         }
@@ -61574,6 +62183,95 @@ function __ZNSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE
        break L4;
       } else {
        $878 = $884;$__trailing_sign$1 = $__trailing_sign$0355;
+      }
+      break;
+     }
+     case 1:  {
+      $cond = ($__p$0353|0)==(3);
+      if ($cond) {
+       $878 = $876;$__trailing_sign$1 = $__trailing_sign$0355;
+      } else {
+       $89 = HEAP32[$__b>>2]|0;
+       $90 = ((($89)) + 12|0);
+       $91 = HEAP32[$90>>2]|0;
+       $92 = ((($89)) + 16|0);
+       $93 = HEAP32[$92>>2]|0;
+       $94 = ($91|0)==($93|0);
+       if ($94) {
+        $95 = HEAP32[$89>>2]|0;
+        $96 = ((($95)) + 36|0);
+        $97 = HEAP32[$96>>2]|0;
+        __THREW__ = 0;
+        $98 = (invoke_ii($97|0,($89|0))|0);
+        $99 = __THREW__; __THREW__ = 0;
+        $100 = $99&1;
+        if ($100) {
+         label = 24;
+         break L4;
+        } else {
+         $$0$i$i42 = $98;
+        }
+       } else {
+        $101 = HEAP8[$91>>0]|0;
+        $102 = $101&255;
+        $$0$i$i42 = $102;
+       }
+       $103 = $$0$i$i42&255;
+       $isascii1$i = ($103<<24>>24)>(-1);
+       if (!($isascii1$i)) {
+        label = 40;
+        break L4;
+       }
+       $sext212 = $$0$i$i42 << 24;
+       $104 = $sext212 >> 24;
+       $105 = HEAP32[$17>>2]|0;
+       $106 = (($105) + ($104<<1)|0);
+       $107 = HEAP16[$106>>1]|0;
+       $108 = $107 & 8192;
+       $109 = ($108<<16>>16)==(0);
+       if ($109) {
+        label = 40;
+        break L4;
+       }
+       $110 = HEAP32[$__b>>2]|0;
+       $111 = ((($110)) + 12|0);
+       $112 = HEAP32[$111>>2]|0;
+       $113 = ((($110)) + 16|0);
+       $114 = HEAP32[$113>>2]|0;
+       $115 = ($112|0)==($114|0);
+       if ($115) {
+        $116 = HEAP32[$110>>2]|0;
+        $117 = ((($116)) + 40|0);
+        $118 = HEAP32[$117>>2]|0;
+        __THREW__ = 0;
+        $119 = (invoke_ii($118|0,($110|0))|0);
+        $120 = __THREW__; __THREW__ = 0;
+        $121 = $120&1;
+        if ($121) {
+         label = 24;
+         break L4;
+        } else {
+         $$0$i$i45 = $119;
+        }
+       } else {
+        $122 = ((($112)) + 1|0);
+        HEAP32[$111>>2] = $122;
+        $123 = HEAP8[$112>>0]|0;
+        $124 = $123&255;
+        $$0$i$i45 = $124;
+       }
+       $125 = $$0$i$i45&255;
+       __THREW__ = 0;
+       invoke_vii(435,($__spaces|0),($125|0));
+       $126 = __THREW__; __THREW__ = 0;
+       $127 = $126&1;
+       if ($127) {
+        label = 24;
+        break L4;
+       } else {
+        $$pre$i2$i$i52 = $877;$147 = $877;
+        label = 42;
+       }
       }
       break;
      }
@@ -62493,13 +63191,13 @@ function __ZNSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE
     }
     case 235: {
      $783 = ($__trailing_sign$0$lcssa|0)==(0|0);
-     L311: do {
+     L313: do {
       if (!($783)) {
        $784 = ((($__trailing_sign$0$lcssa)) + 1|0);
        $785 = ((($__trailing_sign$0$lcssa)) + 8|0);
        $786 = ((($__trailing_sign$0$lcssa)) + 4|0);
        $__i$0 = 1;
-       L313: while(1) {
+       L315: while(1) {
         $787 = HEAP8[$__trailing_sign$0$lcssa>>0]|0;
         $788 = $787 & 1;
         $789 = ($788<<24>>24)==(0);
@@ -62513,7 +63211,7 @@ function __ZNSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE
         }
         $793 = ($__i$0>>>0)<($794>>>0);
         if (!($793)) {
-         break L311;
+         break L313;
         }
         $795 = HEAP32[$__b>>2]|0;
         $796 = ($795|0)==(0|0);
@@ -62536,7 +63234,7 @@ function __ZNSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE
            $807 = $806&1;
            if ($807) {
             label = 19;
-            break L313;
+            break L315;
            }
            $808 = ($805|0)==(-1);
            if ($808) {
@@ -62575,7 +63273,7 @@ function __ZNSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE
            $823 = $822&1;
            if ($823) {
             label = 19;
-            break L313;
+            break L315;
            }
            $824 = ($821|0)==(-1);
            if ($824) {
@@ -62586,7 +63284,7 @@ function __ZNSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEEE
           }
           if (!($810)) {
            label = 260;
-           break L313;
+           break L315;
           }
          }
         } while(0);
@@ -62817,7 +63515,7 @@ function __ZNKSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEE
   $7 = (invoke_iii(417,($__loc|0),(14360|0))|0);
   $8 = __THREW__; __THREW__ = 0;
   $9 = $8&1;
-  L4: do {
+  L3: do {
    if (!($9)) {
     HEAP8[$__neg>>0] = 0;
     $10 = HEAP32[$__e>>2]|0;
@@ -62881,7 +63579,7 @@ function __ZNKSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEE
       $43 = HEAP32[$__wn>>2]|0;
       $44 = ((($43)) + -1|0);
       $45 = ($42>>>0)<($44>>>0);
-      L18: do {
+      L17: do {
        if ($45) {
         $__w$013 = $42;
         while(1) {
@@ -62889,7 +63587,7 @@ function __ZNKSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEE
          $47 = ($46<<24>>24)==($39<<24>>24);
          if (!($47)) {
           $__w$0$lcssa = $__w$013;
-          break L18;
+          break L17;
          }
          $48 = ((($__w$013)) + 1|0);
          $49 = ($48>>>0)<($44>>>0);
@@ -62932,7 +63630,7 @@ function __ZNKSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEE
         $63 = __THREW__; __THREW__ = 0;
         $64 = $63&1;
         if ($64) {
-         break L4;
+         break L3;
         }
         $65 = ($62|0)==(-1);
         if ($65) {
@@ -62970,7 +63668,7 @@ function __ZNKSt3__19money_getIcNS_19istreambuf_iteratorIcNS_11char_traitsIcEEEE
         $79 = __THREW__; __THREW__ = 0;
         $80 = $79&1;
         if ($80) {
-         break L4;
+         break L3;
         }
         $81 = ($78|0)==(-1);
         if ($81) {
@@ -63593,7 +64291,7 @@ function __ZNKSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEE
   $7 = (invoke_iii(417,($__loc|0),(14352|0))|0);
   $8 = __THREW__; __THREW__ = 0;
   $9 = $8&1;
-  L4: do {
+  L3: do {
    if ($9) {
     label = 10;
    } else {
@@ -63610,7 +64308,7 @@ function __ZNKSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEE
     if ($15) {
      label = 10;
     } else {
-     L7: do {
+     L6: do {
       if ($13) {
        $16 = HEAP32[$7>>2]|0;
        $17 = ((($16)) + 48|0);
@@ -63621,7 +64319,7 @@ function __ZNKSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEE
        $20 = $19&1;
        if ($20) {
         label = 10;
-        break L4;
+        break L3;
        }
        $21 = HEAP32[$__wn>>2]|0;
        $22 = HEAP32[$__wb>>2]|0;
@@ -63780,7 +64478,7 @@ function __ZNKSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEE
           $77 = $75;
           _free($77);
          }
-         break L7;
+         break L6;
         }
        } while(0);
        $38 = ___cxa_find_matching_catch()|0;
@@ -63788,12 +64486,12 @@ function __ZNKSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEE
        $41 = ($40|0)==(0);
        if ($41) {
         $$0 = $38;$$01 = $39;$$phi$trans$insert$pre$phiZZZZ2D = $__wb;
-        break L4;
+        break L3;
        }
        $42 = $40;
        _free($42);
        $$0 = $38;$$01 = $39;$$phi$trans$insert$pre$phiZZZZ2D = $__wb;
-       break L4;
+       break L3;
       }
      } while(0);
      $78 = HEAP32[$__b>>2]|0;
@@ -63817,7 +64515,7 @@ function __ZNKSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEE
         $90 = $89&1;
         if ($90) {
          label = 10;
-         break L4;
+         break L3;
         } else {
          $$0$i$i$i$i = $88;
         }
@@ -63859,7 +64557,7 @@ function __ZNKSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEE
         $105 = $104&1;
         if ($105) {
          label = 10;
-         break L4;
+         break L3;
         } else {
          $$0$i$i1$i$i = $103;
         }
@@ -64089,7 +64787,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
    $27 = ((($__pat)) + 3|0);
    $28 = ((($__grp)) + 4|0);
    $863 = $__gbuf;$__p$0397 = 0;$__trailing_sign$0399 = 0;
-   L3: while(1) {
+   L4: while(1) {
     $29 = HEAP32[$__b>>2]|0;
     $30 = ($29|0)==(0|0);
     do {
@@ -64111,7 +64809,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
        $41 = $40&1;
        if ($41) {
         label = 26;
-        break L3;
+        break L4;
        } else {
         $$0$i$i$i$i30 = $39;
        }
@@ -64153,7 +64851,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
        $56 = $55&1;
        if ($56) {
         label = 26;
-        break L3;
+        break L4;
        } else {
         $$0$i$i1$i$i36 = $54;
        }
@@ -64173,7 +64871,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
        } else {
         $$lcssa357 = $863;$__trailing_sign$0$lcssa = $__trailing_sign$0399;
         label = 244;
-        break L3;
+        break L4;
        }
       }
      }
@@ -64191,8 +64889,734 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
     $59 = (($__pat) + ($__p$0397)|0);
     $60 = HEAP8[$59>>0]|0;
     $61 = $60 << 24 >> 24;
-    L27: do {
+    L28: do {
      switch ($61|0) {
+     case 4:  {
+      $62 = HEAP32[$__ts>>2]|0;
+      $$pre$i3$i$i166 = $865;$537 = $865;$591 = $863;$__ng$0 = 0;
+      L30: while(1) {
+       $522 = HEAP32[$__b>>2]|0;
+       $523 = ($522|0)==(0|0);
+       do {
+        if ($523) {
+         $552 = 1;
+        } else {
+         $524 = ((($522)) + 12|0);
+         $525 = HEAP32[$524>>2]|0;
+         $526 = ((($522)) + 16|0);
+         $527 = HEAP32[$526>>2]|0;
+         $528 = ($525|0)==($527|0);
+         if ($528) {
+          $529 = HEAP32[$522>>2]|0;
+          $530 = ((($529)) + 36|0);
+          $531 = HEAP32[$530>>2]|0;
+          __THREW__ = 0;
+          $532 = (invoke_ii($531|0,($522|0))|0);
+          $533 = __THREW__; __THREW__ = 0;
+          $534 = $533&1;
+          if ($534) {
+           label = 25;
+           break L4;
+          } else {
+           $$0$i$i$i$i158 = $532;
+          }
+         } else {
+          $535 = HEAP32[$525>>2]|0;
+          $$0$i$i$i$i158 = $535;
+         }
+         $536 = ($$0$i$i$i$i158|0)==(-1);
+         if ($536) {
+          HEAP32[$__b>>2] = 0;
+          $552 = 1;
+          break;
+         } else {
+          $$pre$i$i$i160 = HEAP32[$__b>>2]|0;
+          $phitmp$i$i$i161 = ($$pre$i$i$i160|0)==(0|0);
+          $552 = $phitmp$i$i$i161;
+          break;
+         }
+        }
+       } while(0);
+       $538 = ($537|0)==(0|0);
+       do {
+        if ($538) {
+         $$pre$i3$i$i166275 = $$pre$i3$i$i166;
+         label = 162;
+        } else {
+         $539 = ((($537)) + 12|0);
+         $540 = HEAP32[$539>>2]|0;
+         $541 = ((($537)) + 16|0);
+         $542 = HEAP32[$541>>2]|0;
+         $543 = ($540|0)==($542|0);
+         if ($543) {
+          $544 = HEAP32[$537>>2]|0;
+          $545 = ((($544)) + 36|0);
+          $546 = HEAP32[$545>>2]|0;
+          __THREW__ = 0;
+          $547 = (invoke_ii($546|0,($537|0))|0);
+          $548 = __THREW__; __THREW__ = 0;
+          $549 = $548&1;
+          if ($549) {
+           label = 25;
+           break L4;
+          } else {
+           $$0$i$i1$i$i164 = $547;
+          }
+         } else {
+          $550 = HEAP32[$540>>2]|0;
+          $$0$i$i1$i$i164 = $550;
+         }
+         $551 = ($$0$i$i1$i$i164|0)==(-1);
+         if ($551) {
+          HEAP32[$__e>>2] = 0;
+          $$pre$i3$i$i166275 = 0;
+          label = 162;
+          break;
+         } else {
+          $phitmp$i4$i$i167 = ($$pre$i3$i$i166|0)==(0|0);
+          $tmp$i$i169 = $552 ^ $phitmp$i4$i$i167;
+          if ($tmp$i$i169) {
+           $$pre$i3$i$i166277 = $$pre$i3$i$i166;$870 = $$pre$i3$i$i166;
+           break;
+          } else {
+           $$lcssa416 = $591;$$pre$i3$i$i134 = $$pre$i3$i$i166;$__ng$0$lcssa417 = $__ng$0;
+           break L30;
+          }
+         }
+        }
+       } while(0);
+       if ((label|0) == 162) {
+        label = 0;
+        if ($552) {
+         $$lcssa416 = $591;$$pre$i3$i$i134 = $$pre$i3$i$i166275;$__ng$0$lcssa417 = $__ng$0;
+         break;
+        } else {
+         $$pre$i3$i$i166277 = $$pre$i3$i$i166275;$870 = 0;
+        }
+       }
+       $553 = HEAP32[$__b>>2]|0;
+       $554 = ((($553)) + 12|0);
+       $555 = HEAP32[$554>>2]|0;
+       $556 = ((($553)) + 16|0);
+       $557 = HEAP32[$556>>2]|0;
+       $558 = ($555|0)==($557|0);
+       if ($558) {
+        $559 = HEAP32[$553>>2]|0;
+        $560 = ((($559)) + 36|0);
+        $561 = HEAP32[$560>>2]|0;
+        __THREW__ = 0;
+        $562 = (invoke_ii($561|0,($553|0))|0);
+        $563 = __THREW__; __THREW__ = 0;
+        $564 = $563&1;
+        if ($564) {
+         label = 25;
+         break L4;
+        } else {
+         $$0$i$i155 = $562;
+        }
+       } else {
+        $565 = HEAP32[$555>>2]|0;
+        $$0$i$i155 = $565;
+       }
+       $566 = HEAP32[$__ct>>2]|0;
+       $567 = ((($566)) + 12|0);
+       $568 = HEAP32[$567>>2]|0;
+       __THREW__ = 0;
+       $569 = (invoke_iiii($568|0,($__ct|0),2048,($$0$i$i155|0))|0);
+       $570 = __THREW__; __THREW__ = 0;
+       $571 = $570&1;
+       if ($571) {
+        label = 25;
+        break L4;
+       }
+       if ($569) {
+        $572 = HEAP32[$__wn>>2]|0;
+        $573 = HEAP32[$0>>2]|0;
+        $574 = ($572|0)==($573|0);
+        if ($574) {
+         __THREW__ = 0;
+         invoke_viii(485,($__wb|0),($__wn|0),($0|0));
+         $575 = __THREW__; __THREW__ = 0;
+         $576 = $575&1;
+         if ($576) {
+          label = 25;
+          break L4;
+         }
+         $$pre279 = HEAP32[$__wn>>2]|0;
+         $578 = $$pre279;
+        } else {
+         $578 = $572;
+        }
+        $577 = ((($578)) + 4|0);
+        HEAP32[$__wn>>2] = $577;
+        HEAP32[$578>>2] = $$0$i$i155;
+        $579 = (($__ng$0) + 1)|0;
+        $871 = $591;$__ng$1 = $579;
+       } else {
+        $580 = HEAP8[$__grp>>0]|0;
+        $581 = $580 & 1;
+        $582 = ($581<<24>>24)==(0);
+        $583 = HEAP32[$28>>2]|0;
+        $584 = $580&255;
+        $585 = $584 >>> 1;
+        $586 = $582 ? $585 : $583;
+        $587 = ($586|0)!=(0);
+        $588 = ($__ng$0|0)!=(0);
+        $or$cond7 = $588 & $587;
+        $589 = ($$0$i$i155|0)==($62|0);
+        $or$cond13 = $589 & $or$cond7;
+        if (!($or$cond13)) {
+         $$lcssa416 = $591;$$pre$i3$i$i134 = $$pre$i3$i$i166277;$__ng$0$lcssa417 = $__ng$0;
+         break;
+        }
+        $590 = HEAP32[$__ge>>2]|0;
+        $592 = ($591|0)==($590|0);
+        if ($592) {
+         __THREW__ = 0;
+         invoke_viii(478,($__gb|0),($__gn|0),($__ge|0));
+         $593 = __THREW__; __THREW__ = 0;
+         $594 = $593&1;
+         if ($594) {
+          label = 25;
+          break L4;
+         }
+         $$pre = HEAP32[$__gn>>2]|0;
+         $596 = $$pre;
+        } else {
+         $596 = $591;
+        }
+        $595 = ((($596)) + 4|0);
+        HEAP32[$__gn>>2] = $595;
+        HEAP32[$596>>2] = $__ng$0;
+        $871 = $595;$__ng$1 = 0;
+       }
+       $597 = HEAP32[$__b>>2]|0;
+       $598 = ((($597)) + 12|0);
+       $599 = HEAP32[$598>>2]|0;
+       $600 = ((($597)) + 16|0);
+       $601 = HEAP32[$600>>2]|0;
+       $602 = ($599|0)==($601|0);
+       if ($602) {
+        $603 = HEAP32[$597>>2]|0;
+        $604 = ((($603)) + 40|0);
+        $605 = HEAP32[$604>>2]|0;
+        __THREW__ = 0;
+        (invoke_ii($605|0,($597|0))|0);
+        $606 = __THREW__; __THREW__ = 0;
+        $607 = $606&1;
+        if ($607) {
+         label = 25;
+         break L4;
+        } else {
+         $$pre$i3$i$i166 = $$pre$i3$i$i166277;$537 = $870;$591 = $871;$__ng$0 = $__ng$1;
+         continue;
+        }
+       } else {
+        $608 = ((($599)) + 4|0);
+        HEAP32[$598>>2] = $608;
+        $$pre$i3$i$i166 = $$pre$i3$i$i166277;$537 = $870;$591 = $871;$__ng$0 = $__ng$1;
+        continue;
+       }
+      }
+      $609 = HEAP32[$__gb>>2]|0;
+      $610 = ($609|0)!=($$lcssa416|0);
+      $611 = ($__ng$0$lcssa417|0)!=(0);
+      $or$cond9 = $611 & $610;
+      if ($or$cond9) {
+       $612 = HEAP32[$__ge>>2]|0;
+       $613 = ($$lcssa416|0)==($612|0);
+       if ($613) {
+        __THREW__ = 0;
+        invoke_viii(478,($__gb|0),($__gn|0),($__ge|0));
+        $614 = __THREW__; __THREW__ = 0;
+        $615 = $614&1;
+        if ($615) {
+         label = 26;
+         break L4;
+        }
+        $$pre281 = HEAP32[$__gn>>2]|0;
+        $617 = $$pre281;
+       } else {
+        $617 = $$lcssa416;
+       }
+       $616 = ((($617)) + 4|0);
+       HEAP32[$__gn>>2] = $616;
+       HEAP32[$617>>2] = $__ng$0$lcssa417;
+       $872 = $616;
+      } else {
+       $872 = $$lcssa416;
+      }
+      $618 = HEAP32[$__fd>>2]|0;
+      $619 = ($618|0)>(0);
+      if ($619) {
+       $620 = HEAP32[$__b>>2]|0;
+       $621 = ($620|0)==(0|0);
+       do {
+        if ($621) {
+         $873 = 1;
+        } else {
+         $622 = ((($620)) + 12|0);
+         $623 = HEAP32[$622>>2]|0;
+         $624 = ((($620)) + 16|0);
+         $625 = HEAP32[$624>>2]|0;
+         $626 = ($623|0)==($625|0);
+         if ($626) {
+          $627 = HEAP32[$620>>2]|0;
+          $628 = ((($627)) + 36|0);
+          $629 = HEAP32[$628>>2]|0;
+          __THREW__ = 0;
+          $630 = (invoke_ii($629|0,($620|0))|0);
+          $631 = __THREW__; __THREW__ = 0;
+          $632 = $631&1;
+          if ($632) {
+           label = 26;
+           break L4;
+          } else {
+           $$0$i$i$i$i126 = $630;
+          }
+         } else {
+          $633 = HEAP32[$623>>2]|0;
+          $$0$i$i$i$i126 = $633;
+         }
+         $634 = ($$0$i$i$i$i126|0)==(-1);
+         if ($634) {
+          HEAP32[$__b>>2] = 0;
+          $873 = 1;
+          break;
+         } else {
+          $$pre$i$i$i128 = HEAP32[$__b>>2]|0;
+          $phitmp$i$i$i129 = ($$pre$i$i$i128|0)==(0|0);
+          $873 = $phitmp$i$i$i129;
+          break;
+         }
+        }
+       } while(0);
+       $635 = ($$pre$i3$i$i134|0)==(0|0);
+       do {
+        if ($635) {
+         label = 200;
+        } else {
+         $636 = ((($$pre$i3$i$i134)) + 12|0);
+         $637 = HEAP32[$636>>2]|0;
+         $638 = ((($$pre$i3$i$i134)) + 16|0);
+         $639 = HEAP32[$638>>2]|0;
+         $640 = ($637|0)==($639|0);
+         if ($640) {
+          $641 = HEAP32[$$pre$i3$i$i134>>2]|0;
+          $642 = ((($641)) + 36|0);
+          $643 = HEAP32[$642>>2]|0;
+          __THREW__ = 0;
+          $644 = (invoke_ii($643|0,($$pre$i3$i$i134|0))|0);
+          $645 = __THREW__; __THREW__ = 0;
+          $646 = $645&1;
+          if ($646) {
+           label = 26;
+           break L4;
+          } else {
+           $$0$i$i1$i$i132 = $644;
+          }
+         } else {
+          $647 = HEAP32[$637>>2]|0;
+          $$0$i$i1$i$i132 = $647;
+         }
+         $648 = ($$0$i$i1$i$i132|0)==(-1);
+         if ($648) {
+          HEAP32[$__e>>2] = 0;
+          label = 200;
+          break;
+         } else {
+          if ($873) {
+           $874 = $$pre$i3$i$i134;
+           break;
+          } else {
+           label = 206;
+           break L4;
+          }
+         }
+        }
+       } while(0);
+       if ((label|0) == 200) {
+        label = 0;
+        if ($873) {
+         label = 206;
+         break L4;
+        } else {
+         $874 = 0;
+        }
+       }
+       $649 = HEAP32[$__b>>2]|0;
+       $650 = ((($649)) + 12|0);
+       $651 = HEAP32[$650>>2]|0;
+       $652 = ((($649)) + 16|0);
+       $653 = HEAP32[$652>>2]|0;
+       $654 = ($651|0)==($653|0);
+       if ($654) {
+        $655 = HEAP32[$649>>2]|0;
+        $656 = ((($655)) + 36|0);
+        $657 = HEAP32[$656>>2]|0;
+        __THREW__ = 0;
+        $658 = (invoke_ii($657|0,($649|0))|0);
+        $659 = __THREW__; __THREW__ = 0;
+        $660 = $659&1;
+        if ($660) {
+         label = 26;
+         break L4;
+        } else {
+         $$0$i$i119 = $658;
+        }
+       } else {
+        $661 = HEAP32[$651>>2]|0;
+        $$0$i$i119 = $661;
+       }
+       $662 = HEAP32[$__dp>>2]|0;
+       $663 = ($$0$i$i119|0)==($662|0);
+       if (!($663)) {
+        label = 206;
+        break L4;
+       }
+       $666 = HEAP32[$__b>>2]|0;
+       $667 = ((($666)) + 12|0);
+       $668 = HEAP32[$667>>2]|0;
+       $669 = ((($666)) + 16|0);
+       $670 = HEAP32[$669>>2]|0;
+       $671 = ($668|0)==($670|0);
+       if ($671) {
+        $672 = HEAP32[$666>>2]|0;
+        $673 = ((($672)) + 40|0);
+        $674 = HEAP32[$673>>2]|0;
+        __THREW__ = 0;
+        (invoke_ii($674|0,($666|0))|0);
+        $675 = __THREW__; __THREW__ = 0;
+        $676 = $675&1;
+        if ($676) {
+         label = 26;
+         break L4;
+        }
+       } else {
+        $677 = ((($668)) + 4|0);
+        HEAP32[$667>>2] = $677;
+       }
+       $678 = ($618|0)>(0);
+       if ($678) {
+        $$pre$i3$i$i100382 = $874;$694 = $874;$752 = $618;
+        while(1) {
+         $679 = HEAP32[$__b>>2]|0;
+         $680 = ($679|0)==(0|0);
+         do {
+          if ($680) {
+           $709 = 1;
+          } else {
+           $681 = ((($679)) + 12|0);
+           $682 = HEAP32[$681>>2]|0;
+           $683 = ((($679)) + 16|0);
+           $684 = HEAP32[$683>>2]|0;
+           $685 = ($682|0)==($684|0);
+           if ($685) {
+            $686 = HEAP32[$679>>2]|0;
+            $687 = ((($686)) + 36|0);
+            $688 = HEAP32[$687>>2]|0;
+            __THREW__ = 0;
+            $689 = (invoke_ii($688|0,($679|0))|0);
+            $690 = __THREW__; __THREW__ = 0;
+            $691 = $690&1;
+            if ($691) {
+             label = 24;
+             break L4;
+            } else {
+             $$0$i$i$i$i92 = $689;
+            }
+           } else {
+            $692 = HEAP32[$682>>2]|0;
+            $$0$i$i$i$i92 = $692;
+           }
+           $693 = ($$0$i$i$i$i92|0)==(-1);
+           if ($693) {
+            HEAP32[$__b>>2] = 0;
+            $709 = 1;
+            break;
+           } else {
+            $$pre$i$i$i94 = HEAP32[$__b>>2]|0;
+            $phitmp$i$i$i95 = ($$pre$i$i$i94|0)==(0|0);
+            $709 = $phitmp$i$i$i95;
+            break;
+           }
+          }
+         } while(0);
+         $695 = ($694|0)==(0|0);
+         do {
+          if ($695) {
+           $$pre$i3$i$i100282$ph = $$pre$i3$i$i100382;
+           label = 224;
+          } else {
+           $696 = ((($694)) + 12|0);
+           $697 = HEAP32[$696>>2]|0;
+           $698 = ((($694)) + 16|0);
+           $699 = HEAP32[$698>>2]|0;
+           $700 = ($697|0)==($699|0);
+           if ($700) {
+            $701 = HEAP32[$694>>2]|0;
+            $702 = ((($701)) + 36|0);
+            $703 = HEAP32[$702>>2]|0;
+            __THREW__ = 0;
+            $704 = (invoke_ii($703|0,($694|0))|0);
+            $705 = __THREW__; __THREW__ = 0;
+            $706 = $705&1;
+            if ($706) {
+             label = 24;
+             break L4;
+            } else {
+             $$0$i$i1$i$i98 = $704;
+            }
+           } else {
+            $707 = HEAP32[$697>>2]|0;
+            $$0$i$i1$i$i98 = $707;
+           }
+           $708 = ($$0$i$i1$i$i98|0)==(-1);
+           if ($708) {
+            HEAP32[$__e>>2] = 0;
+            $$pre$i3$i$i100282$ph = 0;
+            label = 224;
+            break;
+           } else {
+            $phitmp$i4$i$i101 = ($$pre$i3$i$i100382|0)==(0|0);
+            $tmp$i$i103 = $709 ^ $phitmp$i4$i$i101;
+            if ($tmp$i$i103) {
+             $$pre$i3$i$i100282306 = $$pre$i3$i$i100382;$875 = $$pre$i3$i$i100382;
+             break;
+            } else {
+             label = 231;
+             break L4;
+            }
+           }
+          }
+         } while(0);
+         if ((label|0) == 224) {
+          label = 0;
+          if ($709) {
+           label = 231;
+           break L4;
+          } else {
+           $$pre$i3$i$i100282306 = $$pre$i3$i$i100282$ph;$875 = 0;
+          }
+         }
+         $710 = HEAP32[$__b>>2]|0;
+         $711 = ((($710)) + 12|0);
+         $712 = HEAP32[$711>>2]|0;
+         $713 = ((($710)) + 16|0);
+         $714 = HEAP32[$713>>2]|0;
+         $715 = ($712|0)==($714|0);
+         if ($715) {
+          $716 = HEAP32[$710>>2]|0;
+          $717 = ((($716)) + 36|0);
+          $718 = HEAP32[$717>>2]|0;
+          __THREW__ = 0;
+          $719 = (invoke_ii($718|0,($710|0))|0);
+          $720 = __THREW__; __THREW__ = 0;
+          $721 = $720&1;
+          if ($721) {
+           label = 24;
+           break L4;
+          } else {
+           $$0$i$i86 = $719;
+          }
+         } else {
+          $722 = HEAP32[$712>>2]|0;
+          $$0$i$i86 = $722;
+         }
+         $723 = HEAP32[$__ct>>2]|0;
+         $724 = ((($723)) + 12|0);
+         $725 = HEAP32[$724>>2]|0;
+         __THREW__ = 0;
+         $726 = (invoke_iiii($725|0,($__ct|0),2048,($$0$i$i86|0))|0);
+         $727 = __THREW__; __THREW__ = 0;
+         $728 = $727&1;
+         if ($728) {
+          label = 24;
+          break L4;
+         }
+         if (!($726)) {
+          label = 231;
+          break L4;
+         }
+         $731 = HEAP32[$__wn>>2]|0;
+         $732 = HEAP32[$0>>2]|0;
+         $733 = ($731|0)==($732|0);
+         if ($733) {
+          __THREW__ = 0;
+          invoke_viii(485,($__wb|0),($__wn|0),($0|0));
+          $734 = __THREW__; __THREW__ = 0;
+          $735 = $734&1;
+          if ($735) {
+           label = 24;
+           break L4;
+          }
+         }
+         $736 = HEAP32[$__b>>2]|0;
+         $737 = ((($736)) + 12|0);
+         $738 = HEAP32[$737>>2]|0;
+         $739 = ((($736)) + 16|0);
+         $740 = HEAP32[$739>>2]|0;
+         $741 = ($738|0)==($740|0);
+         if ($741) {
+          $742 = HEAP32[$736>>2]|0;
+          $743 = ((($742)) + 36|0);
+          $744 = HEAP32[$743>>2]|0;
+          __THREW__ = 0;
+          $745 = (invoke_ii($744|0,($736|0))|0);
+          $746 = __THREW__; __THREW__ = 0;
+          $747 = $746&1;
+          if ($747) {
+           label = 24;
+           break L4;
+          } else {
+           $$0$i$i78 = $745;
+          }
+         } else {
+          $748 = HEAP32[$738>>2]|0;
+          $$0$i$i78 = $748;
+         }
+         $749 = HEAP32[$__wn>>2]|0;
+         $750 = ((($749)) + 4|0);
+         HEAP32[$__wn>>2] = $750;
+         HEAP32[$749>>2] = $$0$i$i78;
+         $751 = (($752) + -1)|0;
+         HEAP32[$__fd>>2] = $751;
+         $753 = HEAP32[$__b>>2]|0;
+         $754 = ((($753)) + 12|0);
+         $755 = HEAP32[$754>>2]|0;
+         $756 = ((($753)) + 16|0);
+         $757 = HEAP32[$756>>2]|0;
+         $758 = ($755|0)==($757|0);
+         if ($758) {
+          $759 = HEAP32[$753>>2]|0;
+          $760 = ((($759)) + 40|0);
+          $761 = HEAP32[$760>>2]|0;
+          __THREW__ = 0;
+          (invoke_ii($761|0,($753|0))|0);
+          $762 = __THREW__; __THREW__ = 0;
+          $763 = $762&1;
+          if ($763) {
+           label = 24;
+           break L4;
+          }
+         } else {
+          $765 = ((($755)) + 4|0);
+          HEAP32[$754>>2] = $765;
+         }
+         $764 = ($752|0)>(1);
+         if ($764) {
+          $$pre$i3$i$i100382 = $$pre$i3$i$i100282306;$694 = $875;$752 = $751;
+         } else {
+          break;
+         }
+        }
+       }
+      }
+      $766 = HEAP32[$__wn>>2]|0;
+      $767 = HEAP32[$__wb>>2]|0;
+      $768 = ($766|0)==($767|0);
+      if ($768) {
+       label = 242;
+       break L4;
+      } else {
+       $866 = $872;$__trailing_sign$1 = $__trailing_sign$0399;
+      }
+      break;
+     }
+     case 1:  {
+      $cond = ($__p$0397|0)==(3);
+      if ($cond) {
+       $866 = $863;$__trailing_sign$1 = $__trailing_sign$0399;
+      } else {
+       $86 = HEAP32[$__b>>2]|0;
+       $87 = ((($86)) + 12|0);
+       $88 = HEAP32[$87>>2]|0;
+       $89 = ((($86)) + 16|0);
+       $90 = HEAP32[$89>>2]|0;
+       $91 = ($88|0)==($90|0);
+       if ($91) {
+        $92 = HEAP32[$86>>2]|0;
+        $93 = ((($92)) + 36|0);
+        $94 = HEAP32[$93>>2]|0;
+        __THREW__ = 0;
+        $95 = (invoke_ii($94|0,($86|0))|0);
+        $96 = __THREW__; __THREW__ = 0;
+        $97 = $96&1;
+        if ($97) {
+         label = 26;
+         break L4;
+        } else {
+         $$0$i$i45 = $95;
+        }
+       } else {
+        $98 = HEAP32[$88>>2]|0;
+        $$0$i$i45 = $98;
+       }
+       $99 = HEAP32[$__ct>>2]|0;
+       $100 = ((($99)) + 12|0);
+       $101 = HEAP32[$100>>2]|0;
+       __THREW__ = 0;
+       $102 = (invoke_iiii($101|0,($__ct|0),8192,($$0$i$i45|0))|0);
+       $103 = __THREW__; __THREW__ = 0;
+       $104 = $103&1;
+       if ($104) {
+        label = 26;
+        break L4;
+       }
+       if (!($102)) {
+        label = 42;
+        break L4;
+       }
+       $105 = HEAP32[$__b>>2]|0;
+       $106 = ((($105)) + 12|0);
+       $107 = HEAP32[$106>>2]|0;
+       $108 = ((($105)) + 16|0);
+       $109 = HEAP32[$108>>2]|0;
+       $110 = ($107|0)==($109|0);
+       if ($110) {
+        $111 = HEAP32[$105>>2]|0;
+        $112 = ((($111)) + 40|0);
+        $113 = HEAP32[$112>>2]|0;
+        __THREW__ = 0;
+        $114 = (invoke_ii($113|0,($105|0))|0);
+        $115 = __THREW__; __THREW__ = 0;
+        $116 = $115&1;
+        if ($116) {
+         label = 26;
+         break L4;
+        } else {
+         $$0$i$i49 = $114;
+        }
+       } else {
+        $117 = ((($107)) + 4|0);
+        HEAP32[$106>>2] = $117;
+        $118 = HEAP32[$107>>2]|0;
+        $$0$i$i49 = $118;
+       }
+       __THREW__ = 0;
+       invoke_vii(484,($__spaces|0),($$0$i$i49|0));
+       $119 = __THREW__; __THREW__ = 0;
+       $120 = $119&1;
+       if ($120) {
+        label = 26;
+        break L4;
+       } else {
+        $$pre$i3$i$i59 = $865;$139 = $865;
+        label = 44;
+       }
+      }
+      break;
+     }
+     case 0:  {
+      $123 = ($__p$0397|0)==(3);
+      if ($123) {
+       $866 = $863;$__trailing_sign$1 = $__trailing_sign$0399;
+      } else {
+       $$pre$i3$i$i59 = $865;$139 = $865;
+       label = 44;
+      }
+      break;
+     }
      case 3:  {
       $190 = HEAP8[$__psn>>0]|0;
       $191 = $190 & 1;
@@ -64231,7 +65655,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
          $259 = $258&1;
          if ($259) {
           label = 26;
-          break L3;
+          break L4;
          }
          $$pre299 = HEAP8[$__nsn>>0]|0;
          $$0$i$i110 = $257;$262 = $$pre299;
@@ -64247,7 +65671,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
         $267 = ($$0$i$i110|0)==($266|0);
         if (!($267)) {
          $866 = $863;$__trailing_sign$1 = $__trailing_sign$0399;
-         break L27;
+         break L28;
         }
         $268 = HEAP32[$__b>>2]|0;
         $269 = ((($268)) + 12|0);
@@ -64265,7 +65689,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
          $278 = $277&1;
          if ($278) {
           label = 26;
-          break L3;
+          break L4;
          }
         } else {
          $279 = ((($270)) + 4|0);
@@ -64282,7 +65706,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
         $287 = ($286>>>0)>(1);
         $__nsn$__trailing_sign$0 = $287 ? $__nsn : $__trailing_sign$0399;
         $866 = $863;$__trailing_sign$1 = $__nsn$__trailing_sign$0;
-        break L27;
+        break L28;
        }
        $207 = ($203|0)==(0);
        $208 = HEAP32[$__b>>2]|0;
@@ -64302,7 +65726,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
          $219 = $218&1;
          if ($219) {
           label = 26;
-          break L3;
+          break L4;
          }
          $$pre298 = HEAP8[$__psn>>0]|0;
          $$0$i$i89 = $217;$222 = $$pre298;
@@ -64319,7 +65743,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
         if (!($227)) {
          HEAP8[$__neg>>0] = 1;
          $866 = $863;$__trailing_sign$1 = $__trailing_sign$0399;
-         break L27;
+         break L28;
         }
         $228 = HEAP32[$__b>>2]|0;
         $229 = ((($228)) + 12|0);
@@ -64337,7 +65761,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
          $238 = $237&1;
          if ($238) {
           label = 26;
-          break L3;
+          break L4;
          }
         } else {
          $239 = ((($230)) + 4|0);
@@ -64353,7 +65777,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
         $247 = ($246>>>0)>(1);
         $__psn$__trailing_sign$0 = $247 ? $__psn : $__trailing_sign$0399;
         $866 = $863;$__trailing_sign$1 = $__psn$__trailing_sign$0;
-        break L27;
+        break L28;
        }
        if ($213) {
         $288 = HEAP32[$208>>2]|0;
@@ -64365,7 +65789,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
         $293 = $292&1;
         if ($293) {
          label = 26;
-         break L3;
+         break L4;
         }
         $$pre293 = HEAP8[$__psn>>0]|0;
         $$pre294 = HEAP32[$__b>>2]|0;
@@ -64397,7 +65821,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
          $311 = $310&1;
          if ($311) {
           label = 26;
-          break L3;
+          break L4;
          }
         } else {
          $312 = ((($304)) + 4|0);
@@ -64413,7 +65837,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
         $320 = ($319>>>0)>(1);
         $__psn$__trailing_sign$010 = $320 ? $__psn : $__trailing_sign$0399;
         $866 = $863;$__trailing_sign$1 = $__psn$__trailing_sign$010;
-        break L27;
+        break L28;
        }
        if ($305) {
         $321 = HEAP32[$303>>2]|0;
@@ -64425,7 +65849,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
         $326 = $325&1;
         if ($326) {
          label = 26;
-         break L3;
+         break L4;
         } else {
          $$0$i$i144 = $324;
         }
@@ -64442,7 +65866,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
        $334 = ($$0$i$i144|0)==($333|0);
        if (!($334)) {
         label = 107;
-        break L3;
+        break L4;
        }
        $335 = HEAP32[$__b>>2]|0;
        $336 = ((($335)) + 12|0);
@@ -64460,7 +65884,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
         $345 = $344&1;
         if ($345) {
          label = 26;
-         break L3;
+         break L4;
         }
        } else {
         $346 = ((($337)) + 4|0);
@@ -64480,16 +65904,6 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
       }
       break;
      }
-     case 0:  {
-      $123 = ($__p$0397|0)==(3);
-      if ($123) {
-       $866 = $863;$__trailing_sign$1 = $__trailing_sign$0399;
-      } else {
-       $$pre$i3$i$i59 = $865;$139 = $865;
-       label = 44;
-      }
-      break;
-     }
      case 2:  {
       $357 = ($__trailing_sign$0399|0)!=(0|0);
       $358 = ($__p$0397>>>0)<(2);
@@ -64502,7 +65916,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
        $brmerge = $22 | $362;
        if (!($brmerge)) {
         $866 = $863;$__trailing_sign$1 = 0;
-        break L27;
+        break L28;
        }
       }
       $363 = HEAP8[$__sym>>0]|0;
@@ -64512,7 +65926,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
       $367 = $365 ? $24 : $366;
       $368 = $367;
       $369 = ($__p$0397|0)==(0);
-      L84: do {
+      L226: do {
        if ($369) {
         $$ph = $366;$$ph345 = $363;$$ph346 = $368;
        } else {
@@ -64530,7 +65944,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
          $389 = $384 ? $387 : $385;
          $390 = (($388) + ($389<<2)|0);
          $391 = ($367|0)==($390|0);
-         L87: do {
+         L229: do {
           if ($391) {
            $412 = $363;$414 = $366;$418 = $368;
           } else {
@@ -64546,7 +65960,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
             $399 = $398&1;
             if ($399) {
              label = 23;
-             break L3;
+             break L4;
             }
             if (!($397)) {
              $$lcssa418 = $868;
@@ -64567,7 +65981,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
             $410 = ($400|0)==($409|0);
             if ($410) {
              $412 = $$pre284;$414 = $$pre285;$418 = $401;
-             break L87;
+             break L229;
             } else {
              $393 = $400;$868 = $401;
             }
@@ -64610,7 +66024,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
             $436 = ($433|0)==($435|0);
             if (!($436)) {
              $$ph = $414;$$ph345 = $412;$$ph346 = $416;
-             break L84;
+             break L226;
             }
             $437 = ((($434)) + 4|0);
             $438 = ((($$in386)) + 4|0);
@@ -64639,7 +66053,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
       $377 = (($375) + ($376<<2)|0);
       $378 = $$ph346;
       $379 = ($378|0)==($377|0);
-      L100: do {
+      L242: do {
        if ($379) {
         $$lcssa261 = $377;
        } else {
@@ -64666,7 +66080,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
             $452 = $451&1;
             if ($452) {
              label = 22;
-             break L3;
+             break L4;
             } else {
              $$0$i$i$i$i183 = $450;
             }
@@ -64708,7 +66122,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
             $467 = $466&1;
             if ($467) {
              label = 22;
-             break L3;
+             break L4;
             } else {
              $$0$i$i1$i$i189 = $465;
             }
@@ -64730,7 +66144,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
              break;
             } else {
              $$lcssa261 = $485;
-             break L100;
+             break L242;
             }
            }
           }
@@ -64739,7 +66153,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
           label = 0;
           if ($470) {
            $$lcssa261 = $485;
-           break L100;
+           break L242;
           } else {
            $$pre$i3$i$i191290 = $$pre$i3$i$i191291;$869 = 0;
           }
@@ -64760,7 +66174,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
           $482 = $481&1;
           if ($482) {
            label = 22;
-           break L3;
+           break L4;
           } else {
            $$0$i$i179 = $480;
           }
@@ -64772,7 +66186,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
          $486 = ($$0$i$i179|0)==($484|0);
          if (!($486)) {
           $$lcssa261 = $485;
-          break L100;
+          break L242;
          }
          $487 = HEAP32[$__b>>2]|0;
          $488 = ((($487)) + 12|0);
@@ -64790,7 +66204,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
           $497 = $496&1;
           if ($497) {
            label = 22;
-           break L3;
+           break L4;
           }
          } else {
           $498 = ((($489)) + 4|0);
@@ -64833,726 +66247,10 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
         $866 = $863;$__trailing_sign$1 = $__trailing_sign$0399;
        } else {
         label = 148;
-        break L3;
+        break L4;
        }
       } else {
        $866 = $863;$__trailing_sign$1 = $__trailing_sign$0399;
-      }
-      break;
-     }
-     case 1:  {
-      $cond = ($__p$0397|0)==(3);
-      if ($cond) {
-       $866 = $863;$__trailing_sign$1 = $__trailing_sign$0399;
-      } else {
-       $86 = HEAP32[$__b>>2]|0;
-       $87 = ((($86)) + 12|0);
-       $88 = HEAP32[$87>>2]|0;
-       $89 = ((($86)) + 16|0);
-       $90 = HEAP32[$89>>2]|0;
-       $91 = ($88|0)==($90|0);
-       if ($91) {
-        $92 = HEAP32[$86>>2]|0;
-        $93 = ((($92)) + 36|0);
-        $94 = HEAP32[$93>>2]|0;
-        __THREW__ = 0;
-        $95 = (invoke_ii($94|0,($86|0))|0);
-        $96 = __THREW__; __THREW__ = 0;
-        $97 = $96&1;
-        if ($97) {
-         label = 26;
-         break L3;
-        } else {
-         $$0$i$i45 = $95;
-        }
-       } else {
-        $98 = HEAP32[$88>>2]|0;
-        $$0$i$i45 = $98;
-       }
-       $99 = HEAP32[$__ct>>2]|0;
-       $100 = ((($99)) + 12|0);
-       $101 = HEAP32[$100>>2]|0;
-       __THREW__ = 0;
-       $102 = (invoke_iiii($101|0,($__ct|0),8192,($$0$i$i45|0))|0);
-       $103 = __THREW__; __THREW__ = 0;
-       $104 = $103&1;
-       if ($104) {
-        label = 26;
-        break L3;
-       }
-       if (!($102)) {
-        label = 42;
-        break L3;
-       }
-       $105 = HEAP32[$__b>>2]|0;
-       $106 = ((($105)) + 12|0);
-       $107 = HEAP32[$106>>2]|0;
-       $108 = ((($105)) + 16|0);
-       $109 = HEAP32[$108>>2]|0;
-       $110 = ($107|0)==($109|0);
-       if ($110) {
-        $111 = HEAP32[$105>>2]|0;
-        $112 = ((($111)) + 40|0);
-        $113 = HEAP32[$112>>2]|0;
-        __THREW__ = 0;
-        $114 = (invoke_ii($113|0,($105|0))|0);
-        $115 = __THREW__; __THREW__ = 0;
-        $116 = $115&1;
-        if ($116) {
-         label = 26;
-         break L3;
-        } else {
-         $$0$i$i49 = $114;
-        }
-       } else {
-        $117 = ((($107)) + 4|0);
-        HEAP32[$106>>2] = $117;
-        $118 = HEAP32[$107>>2]|0;
-        $$0$i$i49 = $118;
-       }
-       __THREW__ = 0;
-       invoke_vii(484,($__spaces|0),($$0$i$i49|0));
-       $119 = __THREW__; __THREW__ = 0;
-       $120 = $119&1;
-       if ($120) {
-        label = 26;
-        break L3;
-       } else {
-        $$pre$i3$i$i59 = $865;$139 = $865;
-        label = 44;
-       }
-      }
-      break;
-     }
-     case 4:  {
-      $62 = HEAP32[$__ts>>2]|0;
-      $$pre$i3$i$i166 = $865;$537 = $865;$591 = $863;$__ng$0 = 0;
-      L149: while(1) {
-       $522 = HEAP32[$__b>>2]|0;
-       $523 = ($522|0)==(0|0);
-       do {
-        if ($523) {
-         $552 = 1;
-        } else {
-         $524 = ((($522)) + 12|0);
-         $525 = HEAP32[$524>>2]|0;
-         $526 = ((($522)) + 16|0);
-         $527 = HEAP32[$526>>2]|0;
-         $528 = ($525|0)==($527|0);
-         if ($528) {
-          $529 = HEAP32[$522>>2]|0;
-          $530 = ((($529)) + 36|0);
-          $531 = HEAP32[$530>>2]|0;
-          __THREW__ = 0;
-          $532 = (invoke_ii($531|0,($522|0))|0);
-          $533 = __THREW__; __THREW__ = 0;
-          $534 = $533&1;
-          if ($534) {
-           label = 25;
-           break L3;
-          } else {
-           $$0$i$i$i$i158 = $532;
-          }
-         } else {
-          $535 = HEAP32[$525>>2]|0;
-          $$0$i$i$i$i158 = $535;
-         }
-         $536 = ($$0$i$i$i$i158|0)==(-1);
-         if ($536) {
-          HEAP32[$__b>>2] = 0;
-          $552 = 1;
-          break;
-         } else {
-          $$pre$i$i$i160 = HEAP32[$__b>>2]|0;
-          $phitmp$i$i$i161 = ($$pre$i$i$i160|0)==(0|0);
-          $552 = $phitmp$i$i$i161;
-          break;
-         }
-        }
-       } while(0);
-       $538 = ($537|0)==(0|0);
-       do {
-        if ($538) {
-         $$pre$i3$i$i166275 = $$pre$i3$i$i166;
-         label = 162;
-        } else {
-         $539 = ((($537)) + 12|0);
-         $540 = HEAP32[$539>>2]|0;
-         $541 = ((($537)) + 16|0);
-         $542 = HEAP32[$541>>2]|0;
-         $543 = ($540|0)==($542|0);
-         if ($543) {
-          $544 = HEAP32[$537>>2]|0;
-          $545 = ((($544)) + 36|0);
-          $546 = HEAP32[$545>>2]|0;
-          __THREW__ = 0;
-          $547 = (invoke_ii($546|0,($537|0))|0);
-          $548 = __THREW__; __THREW__ = 0;
-          $549 = $548&1;
-          if ($549) {
-           label = 25;
-           break L3;
-          } else {
-           $$0$i$i1$i$i164 = $547;
-          }
-         } else {
-          $550 = HEAP32[$540>>2]|0;
-          $$0$i$i1$i$i164 = $550;
-         }
-         $551 = ($$0$i$i1$i$i164|0)==(-1);
-         if ($551) {
-          HEAP32[$__e>>2] = 0;
-          $$pre$i3$i$i166275 = 0;
-          label = 162;
-          break;
-         } else {
-          $phitmp$i4$i$i167 = ($$pre$i3$i$i166|0)==(0|0);
-          $tmp$i$i169 = $552 ^ $phitmp$i4$i$i167;
-          if ($tmp$i$i169) {
-           $$pre$i3$i$i166277 = $$pre$i3$i$i166;$870 = $$pre$i3$i$i166;
-           break;
-          } else {
-           $$lcssa416 = $591;$$pre$i3$i$i134 = $$pre$i3$i$i166;$__ng$0$lcssa417 = $__ng$0;
-           break L149;
-          }
-         }
-        }
-       } while(0);
-       if ((label|0) == 162) {
-        label = 0;
-        if ($552) {
-         $$lcssa416 = $591;$$pre$i3$i$i134 = $$pre$i3$i$i166275;$__ng$0$lcssa417 = $__ng$0;
-         break;
-        } else {
-         $$pre$i3$i$i166277 = $$pre$i3$i$i166275;$870 = 0;
-        }
-       }
-       $553 = HEAP32[$__b>>2]|0;
-       $554 = ((($553)) + 12|0);
-       $555 = HEAP32[$554>>2]|0;
-       $556 = ((($553)) + 16|0);
-       $557 = HEAP32[$556>>2]|0;
-       $558 = ($555|0)==($557|0);
-       if ($558) {
-        $559 = HEAP32[$553>>2]|0;
-        $560 = ((($559)) + 36|0);
-        $561 = HEAP32[$560>>2]|0;
-        __THREW__ = 0;
-        $562 = (invoke_ii($561|0,($553|0))|0);
-        $563 = __THREW__; __THREW__ = 0;
-        $564 = $563&1;
-        if ($564) {
-         label = 25;
-         break L3;
-        } else {
-         $$0$i$i155 = $562;
-        }
-       } else {
-        $565 = HEAP32[$555>>2]|0;
-        $$0$i$i155 = $565;
-       }
-       $566 = HEAP32[$__ct>>2]|0;
-       $567 = ((($566)) + 12|0);
-       $568 = HEAP32[$567>>2]|0;
-       __THREW__ = 0;
-       $569 = (invoke_iiii($568|0,($__ct|0),2048,($$0$i$i155|0))|0);
-       $570 = __THREW__; __THREW__ = 0;
-       $571 = $570&1;
-       if ($571) {
-        label = 25;
-        break L3;
-       }
-       if ($569) {
-        $572 = HEAP32[$__wn>>2]|0;
-        $573 = HEAP32[$0>>2]|0;
-        $574 = ($572|0)==($573|0);
-        if ($574) {
-         __THREW__ = 0;
-         invoke_viii(485,($__wb|0),($__wn|0),($0|0));
-         $575 = __THREW__; __THREW__ = 0;
-         $576 = $575&1;
-         if ($576) {
-          label = 25;
-          break L3;
-         }
-         $$pre279 = HEAP32[$__wn>>2]|0;
-         $578 = $$pre279;
-        } else {
-         $578 = $572;
-        }
-        $577 = ((($578)) + 4|0);
-        HEAP32[$__wn>>2] = $577;
-        HEAP32[$578>>2] = $$0$i$i155;
-        $579 = (($__ng$0) + 1)|0;
-        $871 = $591;$__ng$1 = $579;
-       } else {
-        $580 = HEAP8[$__grp>>0]|0;
-        $581 = $580 & 1;
-        $582 = ($581<<24>>24)==(0);
-        $583 = HEAP32[$28>>2]|0;
-        $584 = $580&255;
-        $585 = $584 >>> 1;
-        $586 = $582 ? $585 : $583;
-        $587 = ($586|0)!=(0);
-        $588 = ($__ng$0|0)!=(0);
-        $or$cond7 = $588 & $587;
-        $589 = ($$0$i$i155|0)==($62|0);
-        $or$cond13 = $589 & $or$cond7;
-        if (!($or$cond13)) {
-         $$lcssa416 = $591;$$pre$i3$i$i134 = $$pre$i3$i$i166277;$__ng$0$lcssa417 = $__ng$0;
-         break;
-        }
-        $590 = HEAP32[$__ge>>2]|0;
-        $592 = ($591|0)==($590|0);
-        if ($592) {
-         __THREW__ = 0;
-         invoke_viii(478,($__gb|0),($__gn|0),($__ge|0));
-         $593 = __THREW__; __THREW__ = 0;
-         $594 = $593&1;
-         if ($594) {
-          label = 25;
-          break L3;
-         }
-         $$pre = HEAP32[$__gn>>2]|0;
-         $596 = $$pre;
-        } else {
-         $596 = $591;
-        }
-        $595 = ((($596)) + 4|0);
-        HEAP32[$__gn>>2] = $595;
-        HEAP32[$596>>2] = $__ng$0;
-        $871 = $595;$__ng$1 = 0;
-       }
-       $597 = HEAP32[$__b>>2]|0;
-       $598 = ((($597)) + 12|0);
-       $599 = HEAP32[$598>>2]|0;
-       $600 = ((($597)) + 16|0);
-       $601 = HEAP32[$600>>2]|0;
-       $602 = ($599|0)==($601|0);
-       if ($602) {
-        $603 = HEAP32[$597>>2]|0;
-        $604 = ((($603)) + 40|0);
-        $605 = HEAP32[$604>>2]|0;
-        __THREW__ = 0;
-        (invoke_ii($605|0,($597|0))|0);
-        $606 = __THREW__; __THREW__ = 0;
-        $607 = $606&1;
-        if ($607) {
-         label = 25;
-         break L3;
-        } else {
-         $$pre$i3$i$i166 = $$pre$i3$i$i166277;$537 = $870;$591 = $871;$__ng$0 = $__ng$1;
-         continue;
-        }
-       } else {
-        $608 = ((($599)) + 4|0);
-        HEAP32[$598>>2] = $608;
-        $$pre$i3$i$i166 = $$pre$i3$i$i166277;$537 = $870;$591 = $871;$__ng$0 = $__ng$1;
-        continue;
-       }
-      }
-      $609 = HEAP32[$__gb>>2]|0;
-      $610 = ($609|0)!=($$lcssa416|0);
-      $611 = ($__ng$0$lcssa417|0)!=(0);
-      $or$cond9 = $611 & $610;
-      if ($or$cond9) {
-       $612 = HEAP32[$__ge>>2]|0;
-       $613 = ($$lcssa416|0)==($612|0);
-       if ($613) {
-        __THREW__ = 0;
-        invoke_viii(478,($__gb|0),($__gn|0),($__ge|0));
-        $614 = __THREW__; __THREW__ = 0;
-        $615 = $614&1;
-        if ($615) {
-         label = 26;
-         break L3;
-        }
-        $$pre281 = HEAP32[$__gn>>2]|0;
-        $617 = $$pre281;
-       } else {
-        $617 = $$lcssa416;
-       }
-       $616 = ((($617)) + 4|0);
-       HEAP32[$__gn>>2] = $616;
-       HEAP32[$617>>2] = $__ng$0$lcssa417;
-       $872 = $616;
-      } else {
-       $872 = $$lcssa416;
-      }
-      $618 = HEAP32[$__fd>>2]|0;
-      $619 = ($618|0)>(0);
-      if ($619) {
-       $620 = HEAP32[$__b>>2]|0;
-       $621 = ($620|0)==(0|0);
-       do {
-        if ($621) {
-         $873 = 1;
-        } else {
-         $622 = ((($620)) + 12|0);
-         $623 = HEAP32[$622>>2]|0;
-         $624 = ((($620)) + 16|0);
-         $625 = HEAP32[$624>>2]|0;
-         $626 = ($623|0)==($625|0);
-         if ($626) {
-          $627 = HEAP32[$620>>2]|0;
-          $628 = ((($627)) + 36|0);
-          $629 = HEAP32[$628>>2]|0;
-          __THREW__ = 0;
-          $630 = (invoke_ii($629|0,($620|0))|0);
-          $631 = __THREW__; __THREW__ = 0;
-          $632 = $631&1;
-          if ($632) {
-           label = 26;
-           break L3;
-          } else {
-           $$0$i$i$i$i126 = $630;
-          }
-         } else {
-          $633 = HEAP32[$623>>2]|0;
-          $$0$i$i$i$i126 = $633;
-         }
-         $634 = ($$0$i$i$i$i126|0)==(-1);
-         if ($634) {
-          HEAP32[$__b>>2] = 0;
-          $873 = 1;
-          break;
-         } else {
-          $$pre$i$i$i128 = HEAP32[$__b>>2]|0;
-          $phitmp$i$i$i129 = ($$pre$i$i$i128|0)==(0|0);
-          $873 = $phitmp$i$i$i129;
-          break;
-         }
-        }
-       } while(0);
-       $635 = ($$pre$i3$i$i134|0)==(0|0);
-       do {
-        if ($635) {
-         label = 200;
-        } else {
-         $636 = ((($$pre$i3$i$i134)) + 12|0);
-         $637 = HEAP32[$636>>2]|0;
-         $638 = ((($$pre$i3$i$i134)) + 16|0);
-         $639 = HEAP32[$638>>2]|0;
-         $640 = ($637|0)==($639|0);
-         if ($640) {
-          $641 = HEAP32[$$pre$i3$i$i134>>2]|0;
-          $642 = ((($641)) + 36|0);
-          $643 = HEAP32[$642>>2]|0;
-          __THREW__ = 0;
-          $644 = (invoke_ii($643|0,($$pre$i3$i$i134|0))|0);
-          $645 = __THREW__; __THREW__ = 0;
-          $646 = $645&1;
-          if ($646) {
-           label = 26;
-           break L3;
-          } else {
-           $$0$i$i1$i$i132 = $644;
-          }
-         } else {
-          $647 = HEAP32[$637>>2]|0;
-          $$0$i$i1$i$i132 = $647;
-         }
-         $648 = ($$0$i$i1$i$i132|0)==(-1);
-         if ($648) {
-          HEAP32[$__e>>2] = 0;
-          label = 200;
-          break;
-         } else {
-          if ($873) {
-           $874 = $$pre$i3$i$i134;
-           break;
-          } else {
-           label = 206;
-           break L3;
-          }
-         }
-        }
-       } while(0);
-       if ((label|0) == 200) {
-        label = 0;
-        if ($873) {
-         label = 206;
-         break L3;
-        } else {
-         $874 = 0;
-        }
-       }
-       $649 = HEAP32[$__b>>2]|0;
-       $650 = ((($649)) + 12|0);
-       $651 = HEAP32[$650>>2]|0;
-       $652 = ((($649)) + 16|0);
-       $653 = HEAP32[$652>>2]|0;
-       $654 = ($651|0)==($653|0);
-       if ($654) {
-        $655 = HEAP32[$649>>2]|0;
-        $656 = ((($655)) + 36|0);
-        $657 = HEAP32[$656>>2]|0;
-        __THREW__ = 0;
-        $658 = (invoke_ii($657|0,($649|0))|0);
-        $659 = __THREW__; __THREW__ = 0;
-        $660 = $659&1;
-        if ($660) {
-         label = 26;
-         break L3;
-        } else {
-         $$0$i$i119 = $658;
-        }
-       } else {
-        $661 = HEAP32[$651>>2]|0;
-        $$0$i$i119 = $661;
-       }
-       $662 = HEAP32[$__dp>>2]|0;
-       $663 = ($$0$i$i119|0)==($662|0);
-       if (!($663)) {
-        label = 206;
-        break L3;
-       }
-       $666 = HEAP32[$__b>>2]|0;
-       $667 = ((($666)) + 12|0);
-       $668 = HEAP32[$667>>2]|0;
-       $669 = ((($666)) + 16|0);
-       $670 = HEAP32[$669>>2]|0;
-       $671 = ($668|0)==($670|0);
-       if ($671) {
-        $672 = HEAP32[$666>>2]|0;
-        $673 = ((($672)) + 40|0);
-        $674 = HEAP32[$673>>2]|0;
-        __THREW__ = 0;
-        (invoke_ii($674|0,($666|0))|0);
-        $675 = __THREW__; __THREW__ = 0;
-        $676 = $675&1;
-        if ($676) {
-         label = 26;
-         break L3;
-        }
-       } else {
-        $677 = ((($668)) + 4|0);
-        HEAP32[$667>>2] = $677;
-       }
-       $678 = ($618|0)>(0);
-       if ($678) {
-        $$pre$i3$i$i100382 = $874;$694 = $874;$752 = $618;
-        while(1) {
-         $679 = HEAP32[$__b>>2]|0;
-         $680 = ($679|0)==(0|0);
-         do {
-          if ($680) {
-           $709 = 1;
-          } else {
-           $681 = ((($679)) + 12|0);
-           $682 = HEAP32[$681>>2]|0;
-           $683 = ((($679)) + 16|0);
-           $684 = HEAP32[$683>>2]|0;
-           $685 = ($682|0)==($684|0);
-           if ($685) {
-            $686 = HEAP32[$679>>2]|0;
-            $687 = ((($686)) + 36|0);
-            $688 = HEAP32[$687>>2]|0;
-            __THREW__ = 0;
-            $689 = (invoke_ii($688|0,($679|0))|0);
-            $690 = __THREW__; __THREW__ = 0;
-            $691 = $690&1;
-            if ($691) {
-             label = 24;
-             break L3;
-            } else {
-             $$0$i$i$i$i92 = $689;
-            }
-           } else {
-            $692 = HEAP32[$682>>2]|0;
-            $$0$i$i$i$i92 = $692;
-           }
-           $693 = ($$0$i$i$i$i92|0)==(-1);
-           if ($693) {
-            HEAP32[$__b>>2] = 0;
-            $709 = 1;
-            break;
-           } else {
-            $$pre$i$i$i94 = HEAP32[$__b>>2]|0;
-            $phitmp$i$i$i95 = ($$pre$i$i$i94|0)==(0|0);
-            $709 = $phitmp$i$i$i95;
-            break;
-           }
-          }
-         } while(0);
-         $695 = ($694|0)==(0|0);
-         do {
-          if ($695) {
-           $$pre$i3$i$i100282$ph = $$pre$i3$i$i100382;
-           label = 224;
-          } else {
-           $696 = ((($694)) + 12|0);
-           $697 = HEAP32[$696>>2]|0;
-           $698 = ((($694)) + 16|0);
-           $699 = HEAP32[$698>>2]|0;
-           $700 = ($697|0)==($699|0);
-           if ($700) {
-            $701 = HEAP32[$694>>2]|0;
-            $702 = ((($701)) + 36|0);
-            $703 = HEAP32[$702>>2]|0;
-            __THREW__ = 0;
-            $704 = (invoke_ii($703|0,($694|0))|0);
-            $705 = __THREW__; __THREW__ = 0;
-            $706 = $705&1;
-            if ($706) {
-             label = 24;
-             break L3;
-            } else {
-             $$0$i$i1$i$i98 = $704;
-            }
-           } else {
-            $707 = HEAP32[$697>>2]|0;
-            $$0$i$i1$i$i98 = $707;
-           }
-           $708 = ($$0$i$i1$i$i98|0)==(-1);
-           if ($708) {
-            HEAP32[$__e>>2] = 0;
-            $$pre$i3$i$i100282$ph = 0;
-            label = 224;
-            break;
-           } else {
-            $phitmp$i4$i$i101 = ($$pre$i3$i$i100382|0)==(0|0);
-            $tmp$i$i103 = $709 ^ $phitmp$i4$i$i101;
-            if ($tmp$i$i103) {
-             $$pre$i3$i$i100282306 = $$pre$i3$i$i100382;$875 = $$pre$i3$i$i100382;
-             break;
-            } else {
-             label = 231;
-             break L3;
-            }
-           }
-          }
-         } while(0);
-         if ((label|0) == 224) {
-          label = 0;
-          if ($709) {
-           label = 231;
-           break L3;
-          } else {
-           $$pre$i3$i$i100282306 = $$pre$i3$i$i100282$ph;$875 = 0;
-          }
-         }
-         $710 = HEAP32[$__b>>2]|0;
-         $711 = ((($710)) + 12|0);
-         $712 = HEAP32[$711>>2]|0;
-         $713 = ((($710)) + 16|0);
-         $714 = HEAP32[$713>>2]|0;
-         $715 = ($712|0)==($714|0);
-         if ($715) {
-          $716 = HEAP32[$710>>2]|0;
-          $717 = ((($716)) + 36|0);
-          $718 = HEAP32[$717>>2]|0;
-          __THREW__ = 0;
-          $719 = (invoke_ii($718|0,($710|0))|0);
-          $720 = __THREW__; __THREW__ = 0;
-          $721 = $720&1;
-          if ($721) {
-           label = 24;
-           break L3;
-          } else {
-           $$0$i$i86 = $719;
-          }
-         } else {
-          $722 = HEAP32[$712>>2]|0;
-          $$0$i$i86 = $722;
-         }
-         $723 = HEAP32[$__ct>>2]|0;
-         $724 = ((($723)) + 12|0);
-         $725 = HEAP32[$724>>2]|0;
-         __THREW__ = 0;
-         $726 = (invoke_iiii($725|0,($__ct|0),2048,($$0$i$i86|0))|0);
-         $727 = __THREW__; __THREW__ = 0;
-         $728 = $727&1;
-         if ($728) {
-          label = 24;
-          break L3;
-         }
-         if (!($726)) {
-          label = 231;
-          break L3;
-         }
-         $731 = HEAP32[$__wn>>2]|0;
-         $732 = HEAP32[$0>>2]|0;
-         $733 = ($731|0)==($732|0);
-         if ($733) {
-          __THREW__ = 0;
-          invoke_viii(485,($__wb|0),($__wn|0),($0|0));
-          $734 = __THREW__; __THREW__ = 0;
-          $735 = $734&1;
-          if ($735) {
-           label = 24;
-           break L3;
-          }
-         }
-         $736 = HEAP32[$__b>>2]|0;
-         $737 = ((($736)) + 12|0);
-         $738 = HEAP32[$737>>2]|0;
-         $739 = ((($736)) + 16|0);
-         $740 = HEAP32[$739>>2]|0;
-         $741 = ($738|0)==($740|0);
-         if ($741) {
-          $742 = HEAP32[$736>>2]|0;
-          $743 = ((($742)) + 36|0);
-          $744 = HEAP32[$743>>2]|0;
-          __THREW__ = 0;
-          $745 = (invoke_ii($744|0,($736|0))|0);
-          $746 = __THREW__; __THREW__ = 0;
-          $747 = $746&1;
-          if ($747) {
-           label = 24;
-           break L3;
-          } else {
-           $$0$i$i78 = $745;
-          }
-         } else {
-          $748 = HEAP32[$738>>2]|0;
-          $$0$i$i78 = $748;
-         }
-         $749 = HEAP32[$__wn>>2]|0;
-         $750 = ((($749)) + 4|0);
-         HEAP32[$__wn>>2] = $750;
-         HEAP32[$749>>2] = $$0$i$i78;
-         $751 = (($752) + -1)|0;
-         HEAP32[$__fd>>2] = $751;
-         $753 = HEAP32[$__b>>2]|0;
-         $754 = ((($753)) + 12|0);
-         $755 = HEAP32[$754>>2]|0;
-         $756 = ((($753)) + 16|0);
-         $757 = HEAP32[$756>>2]|0;
-         $758 = ($755|0)==($757|0);
-         if ($758) {
-          $759 = HEAP32[$753>>2]|0;
-          $760 = ((($759)) + 40|0);
-          $761 = HEAP32[$760>>2]|0;
-          __THREW__ = 0;
-          (invoke_ii($761|0,($753|0))|0);
-          $762 = __THREW__; __THREW__ = 0;
-          $763 = $762&1;
-          if ($763) {
-           label = 24;
-           break L3;
-          }
-         } else {
-          $765 = ((($755)) + 4|0);
-          HEAP32[$754>>2] = $765;
-         }
-         $764 = ($752|0)>(1);
-         if ($764) {
-          $$pre$i3$i$i100382 = $$pre$i3$i$i100282306;$694 = $875;$752 = $751;
-         } else {
-          break;
-         }
-        }
-       }
-      }
-      $766 = HEAP32[$__wn>>2]|0;
-      $767 = HEAP32[$__wb>>2]|0;
-      $768 = ($766|0)==($767|0);
-      if ($768) {
-       label = 242;
-       break L3;
-      } else {
-       $866 = $872;$__trailing_sign$1 = $__trailing_sign$0399;
       }
       break;
      }
@@ -65561,7 +66259,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
      }
      }
     } while(0);
-    L277: do {
+    L278: do {
      if ((label|0) == 44) {
       while(1) {
        label = 0;
@@ -65586,7 +66284,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
           $136 = $135&1;
           if ($136) {
            label = 21;
-           break L3;
+           break L4;
           } else {
            $$0$i$i$i$i51 = $134;
           }
@@ -65628,7 +66326,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
           $151 = $150&1;
           if ($151) {
            label = 21;
-           break L3;
+           break L4;
           } else {
            $$0$i$i1$i$i57 = $149;
           }
@@ -65650,7 +66348,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
            break;
           } else {
            $866 = $863;$__trailing_sign$1 = $__trailing_sign$0399;
-           break L277;
+           break L278;
           }
          }
         }
@@ -65659,7 +66357,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
         label = 0;
         if ($154) {
          $866 = $863;$__trailing_sign$1 = $__trailing_sign$0399;
-         break L277;
+         break L278;
         } else {
          $$pre$i3$i$i59302 = $$pre$i3$i$i59300;$867 = 0;
         }
@@ -65680,7 +66378,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
         $166 = $165&1;
         if ($166) {
          label = 21;
-         break L3;
+         break L4;
         } else {
          $$0$i$i66 = $164;
         }
@@ -65697,11 +66395,11 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
        $173 = $172&1;
        if ($173) {
         label = 21;
-        break L3;
+        break L4;
        }
        if (!($171)) {
         $866 = $863;$__trailing_sign$1 = $__trailing_sign$0399;
-        break L277;
+        break L278;
        }
        $174 = HEAP32[$__b>>2]|0;
        $175 = ((($174)) + 12|0);
@@ -65719,7 +66417,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
         $185 = $184&1;
         if ($185) {
          label = 21;
-         break L3;
+         break L4;
         } else {
          $$0$i$i73 = $183;
         }
@@ -65735,7 +66433,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
        $189 = $188&1;
        if ($189) {
         label = 21;
-        break L3;
+        break L4;
        } else {
         $$pre$i3$i$i59 = $$pre$i3$i$i59302;$139 = $867;
         label = 44;
@@ -65753,7 +66451,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
      break;
     }
    }
-   L313:    switch (label|0) {
+   L314:    switch (label|0) {
     case 21: {
      $65 = ___cxa_find_matching_catch()|0;
      $66 = tempRet0;
@@ -65840,12 +66538,12 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
     }
     case 244: {
      $773 = ($__trailing_sign$0$lcssa|0)==(0|0);
-     L319: do {
+     L325: do {
       if (!($773)) {
        $774 = ((($__trailing_sign$0$lcssa)) + 4|0);
        $775 = ((($__trailing_sign$0$lcssa)) + 8|0);
        $__i$0 = 1;
-       L321: while(1) {
+       L327: while(1) {
         $776 = HEAP8[$__trailing_sign$0$lcssa>>0]|0;
         $777 = $776 & 1;
         $778 = ($777<<24>>24)==(0);
@@ -65859,7 +66557,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
         }
         $782 = ($__i$0>>>0)<($783>>>0);
         if (!($782)) {
-         break L319;
+         break L325;
         }
         $784 = HEAP32[$__b>>2]|0;
         $785 = ($784|0)==(0|0);
@@ -65882,7 +66580,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
            $796 = $795&1;
            if ($796) {
             label = 20;
-            break L321;
+            break L327;
            } else {
             $$0$i$i$i$i = $794;
            }
@@ -65924,7 +66622,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
            $811 = $810&1;
            if ($811) {
             label = 20;
-            break L321;
+            break L327;
            } else {
             $$0$i$i1$i$i = $809;
            }
@@ -65942,7 +66640,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
             break;
            } else {
             label = 271;
-            break L321;
+            break L327;
            }
           }
          }
@@ -66034,7 +66732,7 @@ function __ZNSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEEE
         $836 = $835 | 4;
         HEAP32[$__err>>2] = $836;
         $$0 = 0;
-        break L313;
+        break L314;
        }
       }
      } while(0);
@@ -66152,7 +66850,7 @@ function __ZNKSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEE
   $7 = (invoke_iii(417,($__loc|0),(14352|0))|0);
   $8 = __THREW__; __THREW__ = 0;
   $9 = $8&1;
-  L3: do {
+  L4: do {
    if (!($9)) {
     HEAP8[$__neg>>0] = 0;
     $10 = HEAP32[$__e>>2]|0;
@@ -66214,7 +66912,7 @@ function __ZNKSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEE
       $42 = HEAP32[$__wn>>2]|0;
       $43 = ((($42)) + -4|0);
       $44 = ($41>>>0)<($43>>>0);
-      L17: do {
+      L18: do {
        if ($44) {
         $__w$013 = $41;
         while(1) {
@@ -66222,7 +66920,7 @@ function __ZNKSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEE
          $46 = ($45|0)==($38|0);
          if (!($46)) {
           $__w$0$lcssa = $__w$013;
-          break L17;
+          break L18;
          }
          $47 = ((($__w$013)) + 4|0);
          $48 = ($47>>>0)<($43>>>0);
@@ -66265,7 +66963,7 @@ function __ZNKSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEE
         $62 = __THREW__; __THREW__ = 0;
         $63 = $62&1;
         if ($63) {
-         break L3;
+         break L4;
         } else {
          $$0$i$i$i$i = $61;
         }
@@ -66306,7 +67004,7 @@ function __ZNKSt3__19money_getIwNS_19istreambuf_iteratorIwNS_11char_traitsIwEEEE
         $77 = __THREW__; __THREW__ = 0;
         $78 = $77&1;
         if ($78) {
-         break L3;
+         break L4;
         } else {
          $$0$i$i1$i$i = $76;
         }
@@ -67555,6 +68253,76 @@ function __ZNSt3__111__money_putIcE8__formatEPcRS2_S3_jPKcS5_RKNS_5ctypeIcEEbRKN
   $20 = HEAP8[$19>>0]|0;
   $21 = $20 << 24 >> 24;
   switch ($21|0) {
+  case 0:  {
+   $22 = HEAP32[$__me>>2]|0;
+   HEAP32[$__mi>>2] = $22;
+   $$2 = $$062;
+   break;
+  }
+  case 2:  {
+   $43 = HEAP8[$__sym>>0]|0;
+   $44 = $43 & 1;
+   $45 = ($44<<24>>24)==(0);
+   $46 = HEAP32[$3>>2]|0;
+   $47 = $43&255;
+   $48 = $47 >>> 1;
+   $49 = $45 ? $48 : $46;
+   $50 = ($49|0)==(0);
+   $or$cond = $5 | $50;
+   if ($or$cond) {
+    $$2 = $$062;
+   } else {
+    $51 = HEAP32[$6>>2]|0;
+    $52 = $45 ? $7 : $51;
+    $53 = (($52) + ($49)|0);
+    $54 = HEAP32[$__me>>2]|0;
+    $55 = ($49|0)==(0);
+    if ($55) {
+     $$0$i$i9$lcssa = $54;
+    } else {
+     $$0$i$i958 = $54;$57 = $52;
+     while(1) {
+      $56 = HEAP8[$57>>0]|0;
+      HEAP8[$$0$i$i958>>0] = $56;
+      $58 = ((($57)) + 1|0);
+      $59 = ((($$0$i$i958)) + 1|0);
+      $60 = ($58|0)==($53|0);
+      if ($60) {
+       $$0$i$i9$lcssa = $59;
+       break;
+      } else {
+       $$0$i$i958 = $59;$57 = $58;
+      }
+     }
+    }
+    HEAP32[$__me>>2] = $$0$i$i9$lcssa;
+    $$2 = $$062;
+   }
+   break;
+  }
+  case 3:  {
+   $30 = HEAP8[$__sn>>0]|0;
+   $31 = $30 & 1;
+   $32 = ($31<<24>>24)==(0);
+   $33 = HEAP32[$0>>2]|0;
+   $34 = $30&255;
+   $35 = $34 >>> 1;
+   $36 = $32 ? $35 : $33;
+   $37 = ($36|0)==(0);
+   if ($37) {
+    $$2 = $$062;
+   } else {
+    $38 = HEAP32[$1>>2]|0;
+    $39 = $32 ? $2 : $38;
+    $40 = HEAP8[$39>>0]|0;
+    $41 = HEAP32[$__me>>2]|0;
+    $42 = ((($41)) + 1|0);
+    HEAP32[$__me>>2] = $42;
+    HEAP8[$41>>0] = $40;
+    $$2 = $$062;
+   }
+   break;
+  }
   case 4:  {
    $61 = HEAP32[$__me>>2]|0;
    $62 = ((($$062)) + 1|0);
@@ -67562,7 +68330,7 @@ function __ZNSt3__111__money_putIcE8__formatEPcRS2_S3_jPKcS5_RKNS_5ctypeIcEEbRKN
    $$$027 = $$$0;
    $63 = HEAP32[$8>>2]|0;
    $64 = ($$$0>>>0)<($__de>>>0);
-   L5: do {
+   L14: do {
     if ($64) {
      $__d$036 = $$$0;
      while(1) {
@@ -67570,7 +68338,7 @@ function __ZNSt3__111__money_putIcE8__formatEPcRS2_S3_jPKcS5_RKNS_5ctypeIcEEbRKN
       $isascii1$i = ($65<<24>>24)>(-1);
       if (!($isascii1$i)) {
        $__d$0$lcssa = $__d$036;
-       break L5;
+       break L14;
       }
       $66 = $65 << 24 >> 24;
       $67 = (($63) + ($66<<1)|0);
@@ -67579,7 +68347,7 @@ function __ZNSt3__111__money_putIcE8__formatEPcRS2_S3_jPKcS5_RKNS_5ctypeIcEEbRKN
       $70 = ($69<<16>>16)==(0);
       if ($70) {
        $__d$0$lcssa = $__d$036;
-       break L5;
+       break L14;
       }
       $71 = ((($__d$036)) + 1|0);
       $72 = ($71>>>0)<($__de>>>0);
@@ -67788,76 +68556,6 @@ function __ZNSt3__111__money_putIcE8__formatEPcRS2_S3_jPKcS5_RKNS_5ctypeIcEEbRKN
    HEAP32[$__me>>2] = $29;
    HEAP8[$28>>0] = $27;
    $$2 = $$062;
-   break;
-  }
-  case 0:  {
-   $22 = HEAP32[$__me>>2]|0;
-   HEAP32[$__mi>>2] = $22;
-   $$2 = $$062;
-   break;
-  }
-  case 2:  {
-   $43 = HEAP8[$__sym>>0]|0;
-   $44 = $43 & 1;
-   $45 = ($44<<24>>24)==(0);
-   $46 = HEAP32[$3>>2]|0;
-   $47 = $43&255;
-   $48 = $47 >>> 1;
-   $49 = $45 ? $48 : $46;
-   $50 = ($49|0)==(0);
-   $or$cond = $5 | $50;
-   if ($or$cond) {
-    $$2 = $$062;
-   } else {
-    $51 = HEAP32[$6>>2]|0;
-    $52 = $45 ? $7 : $51;
-    $53 = (($52) + ($49)|0);
-    $54 = HEAP32[$__me>>2]|0;
-    $55 = ($49|0)==(0);
-    if ($55) {
-     $$0$i$i9$lcssa = $54;
-    } else {
-     $$0$i$i958 = $54;$57 = $52;
-     while(1) {
-      $56 = HEAP8[$57>>0]|0;
-      HEAP8[$$0$i$i958>>0] = $56;
-      $58 = ((($57)) + 1|0);
-      $59 = ((($$0$i$i958)) + 1|0);
-      $60 = ($58|0)==($53|0);
-      if ($60) {
-       $$0$i$i9$lcssa = $59;
-       break;
-      } else {
-       $$0$i$i958 = $59;$57 = $58;
-      }
-     }
-    }
-    HEAP32[$__me>>2] = $$0$i$i9$lcssa;
-    $$2 = $$062;
-   }
-   break;
-  }
-  case 3:  {
-   $30 = HEAP8[$__sn>>0]|0;
-   $31 = $30 & 1;
-   $32 = ($31<<24>>24)==(0);
-   $33 = HEAP32[$0>>2]|0;
-   $34 = $30&255;
-   $35 = $34 >>> 1;
-   $36 = $32 ? $35 : $33;
-   $37 = ($36|0)==(0);
-   if ($37) {
-    $$2 = $$062;
-   } else {
-    $38 = HEAP32[$1>>2]|0;
-    $39 = $32 ? $2 : $38;
-    $40 = HEAP8[$39>>0]|0;
-    $41 = HEAP32[$__me>>2]|0;
-    $42 = ((($41)) + 1|0);
-    HEAP32[$__me>>2] = $42;
-    HEAP8[$41>>0] = $40;
-    $$2 = $$062;
-   }
    break;
   }
   default: {
@@ -71995,7 +72693,7 @@ function __ZNKSt3__17codecvtIwc11__mbstate_tE5do_inERS1_PKcS5_RS5_PwS7_RS7_($thi
     HEAP32[$to_nxt>>2] = $$02164$lcssa230;
     $42 = HEAP32[$frm_nxt>>2]|0;
     $43 = ($$01165$lcssa223|0)==($42|0);
-    L31: do {
+    L36: do {
      if ($43) {
       $$1$lcssa = $$01165$lcssa223;
      } else {
@@ -72047,7 +72745,7 @@ function __ZNKSt3__17codecvtIwc11__mbstate_tE5do_inERS1_PKcS5_RS5_PwS7_RS7_($thi
        $68 = ($$2|0)==($67|0);
        if ($68) {
         $$1$lcssa = $$2;
-        break L31;
+        break L36;
        } else {
         $$1157 = $$2;$storemerge156 = $66;
        }
@@ -72832,10 +73530,10 @@ function __ZNSt3__114__num_get_base10__get_baseERNS_8ios_baseE($iob) {
  $2 = $1 & 74;
  if ((($2|0) == 0)) {
   $$0 = 0;
- } else if ((($2|0) == 8)) {
-  $$0 = 16;
  } else if ((($2|0) == 64)) {
   $$0 = 8;
+ } else if ((($2|0) == 8)) {
+  $$0 = 16;
  } else {
   $$0 = 10;
  }
@@ -78603,7 +79301,7 @@ function __ZNSt3__114__scan_keywordINS_19istreambuf_iteratorIwNS_11char_traitsIw
      HEAP32[$__err>>2] = $181;
     }
     $182 = ($__kb|0)==($__ke|0);
-    L111: do {
+    L113: do {
      if ($182) {
       label = 85;
      } else {
@@ -78613,7 +79311,7 @@ function __ZNSt3__114__scan_keywordINS_19istreambuf_iteratorIwNS_11char_traitsIw
        $184 = ($183<<24>>24)==(2);
        if ($184) {
         $$044 = $$081;
-        break L111;
+        break L113;
        }
        $185 = ((($$081)) + 12|0);
        $186 = ((($__st$380)) + 1|0);
@@ -84445,17 +85143,17 @@ function __ZNSt3__1L13utf8_to_utf16EPKhS1_RS1_PtS3_RS3_mNS_12codecvt_modeE($frm,
        $51 = HEAP8[$50>>0]|0;
        $52 = ((($22)) + 2|0);
        $53 = HEAP8[$52>>0]|0;
-       if ((($23|0) == 237)) {
-        $56 = $51 & -32;
-        $57 = ($56<<24>>24)==(-128);
-        if (!($57)) {
-         $$0 = 2;
-         break L9;
-        }
-       } else if ((($23|0) == 224)) {
+       if ((($23|0) == 224)) {
         $54 = $51 & -32;
         $55 = ($54<<24>>24)==(-96);
         if (!($55)) {
+         $$0 = 2;
+         break L9;
+        }
+       } else if ((($23|0) == 237)) {
+        $56 = $51 & -32;
+        $57 = ($56<<24>>24)==(-128);
+        if (!($57)) {
          $$0 = 2;
          break L9;
         }
@@ -84819,20 +85517,20 @@ function __ZNSt3__1L20utf8_to_utf16_lengthEPKhS1_jmNS_12codecvt_modeE($frm,$frm_
       $79 = HEAP8[$78>>0]|0;
       $80 = ((($frm_nxt$150)) + 3|0);
       $81 = HEAP8[$80>>0]|0;
-      if ((($17|0) == 240)) {
-       $$off = (($77) + 112)<<24>>24;
-       $82 = ($$off&255)<(48);
-       if (!($82)) {
-        $$lcssa82 = $71;
-        label = 32;
-        break L8;
-       }
-      } else if ((($17|0) == 244)) {
+      if ((($17|0) == 244)) {
        $85 = $77 & -16;
        $86 = ($85<<24>>24)==(-128);
        if (!($86)) {
         $$lcssa = $71;
         label = 34;
+        break L8;
+       }
+      } else if ((($17|0) == 240)) {
+       $$off = (($77) + 112)<<24>>24;
+       $82 = ($$off&255)<(48);
+       if (!($82)) {
+        $$lcssa82 = $71;
+        label = 32;
         break L8;
        }
       } else {
@@ -85262,17 +85960,17 @@ function __ZNSt3__1L12utf8_to_ucs4EPKhS1_RS1_PjS3_RS3_mNS_12codecvt_modeE($frm,$
        $48 = HEAP8[$47>>0]|0;
        $49 = ((($21)) + 2|0);
        $50 = HEAP8[$49>>0]|0;
-       if ((($22|0) == 237)) {
-        $53 = $48 & -32;
-        $54 = ($53<<24>>24)==(-128);
-        if (!($54)) {
-         $$0 = 2;
-         break L9;
-        }
-       } else if ((($22|0) == 224)) {
+       if ((($22|0) == 224)) {
         $51 = $48 & -32;
         $52 = ($51<<24>>24)==(-96);
         if (!($52)) {
+         $$0 = 2;
+         break L9;
+        }
+       } else if ((($22|0) == 237)) {
+        $53 = $48 & -32;
+        $54 = ($53<<24>>24)==(-128);
+        if (!($54)) {
          $$0 = 2;
          break L9;
         }
@@ -85327,17 +86025,17 @@ function __ZNSt3__1L12utf8_to_ucs4EPKhS1_RS1_PjS3_RS3_mNS_12codecvt_modeE($frm,$
       $77 = HEAP8[$76>>0]|0;
       $78 = ((($21)) + 3|0);
       $79 = HEAP8[$78>>0]|0;
-      if ((($22|0) == 244)) {
-       $81 = $75 & -16;
-       $82 = ($81<<24>>24)==(-128);
-       if (!($82)) {
-        $$0 = 2;
-        break L9;
-       }
-      } else if ((($22|0) == 240)) {
+      if ((($22|0) == 240)) {
        $$off = (($75) + 112)<<24>>24;
        $80 = ($$off&255)<(48);
        if (!($80)) {
+        $$0 = 2;
+        break L9;
+       }
+      } else if ((($22|0) == 244)) {
+       $81 = $75 & -16;
+       $82 = ($81<<24>>24)==(-128);
+       if (!($82)) {
         $$0 = 2;
         break L9;
        }
@@ -85603,20 +86301,20 @@ function __ZNSt3__1L19utf8_to_ucs4_lengthEPKhS1_jmNS_12codecvt_modeE($frm,$frm_e
       $77 = HEAP8[$76>>0]|0;
       $78 = ((($frm_nxt$148)) + 3|0);
       $79 = HEAP8[$78>>0]|0;
-      if ((($17|0) == 240)) {
-       $$off = (($75) + 112)<<24>>24;
-       $80 = ($$off&255)<(48);
-       if (!($80)) {
-        $$lcssa80 = $71;
-        label = 32;
-        break L8;
-       }
-      } else if ((($17|0) == 244)) {
+      if ((($17|0) == 244)) {
        $83 = $75 & -16;
        $84 = ($83<<24>>24)==(-128);
        if (!($84)) {
         $$lcssa = $71;
         label = 34;
+        break L8;
+       }
+      } else if ((($17|0) == 240)) {
+       $$off = (($75) + 112)<<24>>24;
+       $80 = ($$off&255)<(48);
+       if (!($80)) {
+        $$lcssa80 = $71;
+        label = 32;
         break L8;
        }
       } else {
