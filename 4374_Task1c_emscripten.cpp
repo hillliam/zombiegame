@@ -23,6 +23,7 @@ const int imagesize(10); // size of image block
 int randomwalls(23); // number of random wall blocks to place
 const bool pathfinding(true); // is pathfinding enabled
 bool replaying(false);
+bool debugpathfinding(true);
 int portalsonmap(5);
 
 const char SPOT('@'); //spot
@@ -241,7 +242,7 @@ void gameloop()
     int key(' '); //declares the input key
     message = "                    "; //reset message
     key = getKeyPress(); //read in next keyboard event
-    //cout << key << endl;
+    cout << key << endl;
     if ((isArrowKey(key) || isCheatKey(key)) && replaying)
          saveboard(replayer, grid); //this adds the current state of the grid to the replay structure
     if (isArrowKey(key)) //if this is an arrow key enter this
@@ -515,22 +516,22 @@ void retreat(const player &spot, int& x, int& y)
 
 void findbestmove(int& x, int& y)
 {
-    if (distancemap[y][x] <= distancemap[y][x - 1])
+    if (distancemap[y][x] > distancemap[y][x - 1])
     {
         y = 0;
         x = -1;
     }
-    else if (distancemap[y][x] <= distancemap[y][x + 1])
+    else if (distancemap[y][x] > distancemap[y][x + 1])
     {
         y = 0;
         x = 1;
     }
-    else if (distancemap[y][x] <= distancemap[y - 1][x])
+    else if (distancemap[y][x] > distancemap[y - 1][x])
     {
         y = -1;
         x = 0;
     }
-    else if (distancemap[y][x] <= distancemap[y + 1][x])
+    else if (distancemap[y][x] > distancemap[y + 1][x])
     {
         y = 1;
         x = 0;
@@ -539,22 +540,22 @@ void findbestmove(int& x, int& y)
 
 void findexitmove(int& x, int& y)
 {
-    if (distancemap[y][x] >= distancemap[y][x - 1])
+    if (distancemap[y][x] < distancemap[y][x - 1])
     {
         x = -1;
         y = 0;
     }
-    else if (distancemap[y][x] >= distancemap[y][x + 1])
+    else if (distancemap[y][x] < distancemap[y][x + 1])
     {
         x = 1;
         y = 0;
     }
-    else if (distancemap[y][x] >= distancemap[y - 1][x])
+    else if (distancemap[y][x] < distancemap[y - 1][x])
     {
         x = 0;
         y = -1;
     }
-    else if (distancemap[y][x] >= distancemap[y + 1][x])
+    else if (distancemap[y][x] < distancemap[y + 1][x])
     {
         x = 0;
         y = 1;
@@ -1080,7 +1081,8 @@ void renderGame(const char gd[][SIZEX], const string &mess, const player &spot, 
     SDL_FillRect(image, NULL, SDL_MapRGB(image->format, 0, 0, 0));
     //display grid contents
     //paintGrid(gd, image, font);
-    paintdistance(image, font);
+    if (debugpathfinding)
+        paintdistance(image, font);
     paintGridimages(gd, image);
     //display game title
     showTitle(image, font);
@@ -1388,7 +1390,7 @@ void DrawImage(SDL_Surface *surface, const char *image_path, const int x_pos, co
 
 void Pathfind(const char grid[][SIZEX], const Item &spot)
 {
-    bool ocupiedpeace(const char gd[][SIZEX], const int x, const int y);
+    bool iswall(const char gd[][SIZEX], const int x, const int y);
     int getmovesx(const int startx, const int direction);
     int getmovesy(const int starty, const int direction);
     int startx = spot.x;
@@ -1408,7 +1410,7 @@ void Pathfind(const char grid[][SIZEX], const Item &spot)
                 {
                     int newx = getmovesx(x, a);
                     int newy = getmovesy(y, a);
-                    if (!ocupiedpeace(grid, newx, newy))
+                    if (!iswall(grid, newx, newy))
                     {
                         int newPass = passHere + 1;
                         if (distancemap[newy][newx] > newPass)
@@ -1425,6 +1427,15 @@ void Pathfind(const char grid[][SIZEX], const Item &spot)
             break;
         }
     }
+}
+
+bool iswall(const char gd[][SIZEX], const int x, const int y)
+{
+    if (gd[y][x] == HOLE || gd[y][x] == WALL || gd[y][x] == PORTAL)
+        return true;
+    else
+        return false;
+    //this functions checks if the zombie can me to that location
 }
 
 int getmovesx(const int startx, const int direction)
