@@ -1491,6 +1491,10 @@ extern "C"
         {
             return document.getElementById('portals').value;
         });
+        debugpathfinding = EM_ASM_INT_V(
+        {
+            return document.getElementById('grid').checked; //1 checked 0 unchecked
+        });
         cout << replaying<< endl;
         emscripten_cancel_main_loop();
         main();
