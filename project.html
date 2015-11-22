@@ -95,10 +95,85 @@
         font-family: 'Lucida Console', Monaco, monospace;
         outline: none;
       }
+	  @media screen and (min-width: 768px) {
+  .dropdown:hover .dropdown-menu, .btn-group:hover .dropdown-menu{
+		display: block;
+	}
+	.dropdown-menu{
+		margin-top: 0;
+	}
+	.dropdown-toggle{
+		margin-bottom: 2px;
+	}
+	.navbar .dropdown-toggle, .nav-tabs .dropdown-toggle{
+		margin-bottom: 0;
+	}
+}
     </style>
+    <!-- Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/css/bootstrap3/bootstrap-switch.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/js/bootstrap-switch.min.js"></script>
   </head>
   <body>
-    <a href="http://emscripten.org">
+<nav style="margin-left:auto;margin-right:auto;">
+  <div class="jumbotron text-center clearfix">
+     <div class="container">
+    	<a href="http://hillliam.github.io/" class="btn btn-lg btn-primary">home</a>
+    	<a href="http://hillliam.github.io/projects.html" class="btn btn-lg btn-info dropdown-toggle">projects</a>
+                <ul class="dropdown-menu" >
+        <li> 
+        <a href="http://hillliam.github.io/mazeweb" class="btn btn-lg btn-success">Mazeweb</a> 
+        </li>
+        <li>
+        <a href="http://hillliam.github.io/zombiegame" class="btn btn-lg btn-warning">Zombiegame</a>
+        </li>
+        </ul>
+    </div>
+  </div>
+  </nav>
+    <div class="spinner text-center" id="spinner"></div>
+    <div class="emscripten text-center " id="status">Downloading...</div>
+
+<span class="bg-info" id="controls">
+  <span>number of walls:<input type="textbox" id="walls" value="23"></span>
+  <span>name:<input type="textbox" id="name" value="bob"></span>
+  <span>number of portals:<input type="textbox" id="portals" value="5"></span>
+  <span><input type="checkbox" id="grid" checked>display distance grid</span>
+  <span><input type="checkbox" id="moves">display moves</span>
+  <span><input type="checkbox" id="resize">Resize canvas</span>
+  <span><input type="checkbox" id="pointerLock" checked>Lock/hide mouse pointer &nbsp;&nbsp;&nbsp;</span>
+  <span><input type="button" value="Fullscreen" onclick="Module.requestFullScreen(document.getElementById('pointerLock').checked, 
+                                                                            document.getElementById('resize').checked)">
+  </span>
+  <span><input type="button" value="restart" onclick="_restart();"></span>
+  <span><input type="button" value="stop" onclick="_stop();"></span>
+</span>
+
+    <div class="emscripten">
+      <progress value="0" max="100" id="progress" hidden=1></progress>
+    </div>
+
+    
+    <div class="emscripten_border center-block">
+      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+    </div>
+    <textarea class="jumbotron" id="output" rows="8"></textarea>
+<footer class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>Copyright © Liam Hill. All rights reserved.</p>
+      </div>
+    </div>
+    <div class="row text-center">
+    <a href="http://emscripten.org" class="pull-left">
       <?xml version="1.0" encoding="UTF-8" standalone="no"?><svg
    version="1.1"
    id="Layer_1"
@@ -1190,36 +1265,18 @@
    style="stop-color:#000000;stop-opacity:0"
    offset="1" /></linearGradient></g></g></svg>
     </a>
-
-    <div class="spinner" id='spinner'></div>
-    <div class="emscripten" id="status">Downloading...</div>
-
-<span id='controls'>
-  <span>number of walls:<input type="textbox" id="walls" value="23"></span>
-  <span>name:<input type="textbox" id="name" value="bob"></span>
-  <span>number of portals:<input type="textbox" id="portals" value="5"></span>
-  <span><input type="checkbox" id="grid" checked>display distance grid</span>
-  <span><input type="checkbox" id="moves">display moves</span>
-  <span><input type="checkbox" id="resize">Resize canvas</span>
-  <span><input type="checkbox" id="pointerLock" checked>Lock/hide mouse pointer &nbsp;&nbsp;&nbsp;</span>
-  <span><input type="button" value="Fullscreen" onclick="Module.requestFullScreen(document.getElementById('pointerLock').checked, 
-                                                                            document.getElementById('resize').checked)">
-  </span>
-  <span><input type="button" value="restart" onclick="_restart();"></span>
-  <span><input type="button" value="stop" onclick="_stop();"></span>
-</span>
-
-    <div class="emscripten">
-      <progress value="0" max="100" id="progress" hidden=1></progress>
     </div>
-
-    
-    <div class="emscripten_border">
-      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
-    </div>
-    <textarea id="output" rows="8"></textarea>
-
+  </div>
+</footer>
     <script type='text/javascript'>
+	$(document).ready(function(){
+	$(".dropdown, .btn-group").hover(function(){
+		var dropdownMenu = $(this).children(".dropdown-menu");
+		if(dropdownMenu.is(":visible")){
+			dropdownMenu.toggleClass("open");
+		}
+	});
+});	
       var statusElement = document.getElementById('status');
       var progressElement = document.getElementById('progress');
       var spinnerElement = document.getElementById('spinner');
