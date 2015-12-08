@@ -1,5 +1,5 @@
-﻿﻿[![Build Status](https://magnum.travis-ci.com/hillliam/zombiegame.svg?token=Y1339iZFApz4EjDASsTe&branch=master)](https://magnum.travis-ci.com/hillliam/zombiegame)
-
+[![Build Status](https://travis-ci.org/hillliam/zombiegame.svg?branch=Extended)](https://travis-ci.org/hillliam/zombiegame)
+[![Code Climate](https://codeclimate.com/github/hillliam/zombiegame/badges/gpa.svg)](https://codeclimate.com/github/hillliam/zombiegame)
 
 # ZombieGame
  FoP Group Project
