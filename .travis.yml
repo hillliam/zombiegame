@@ -14,6 +14,10 @@ script:
 
 after_success:
   - if [ $TRAVIS_BRANCH == $TRAVIS_TAG ]; then rake deploy; fi
-
+  - codecov
+  
 notifications:
   email: false
+
+before_install:
+  - pip install codecov
