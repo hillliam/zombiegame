@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/hillliam/zombiegame.svg?branch=Extended)](https://travis-ci.org/hillliam/zombiegame)
+﻿[![Build Status](https://travis-ci.org/hillliam/zombiegame.svg?branch=Extended)](https://travis-ci.org/hillliam/zombiegame)
 [![Code Climate](https://codeclimate.com/github/hillliam/zombiegame/badges/gpa.svg)](https://codeclimate.com/github/hillliam/zombiegame)
 
 # ZombieGame
@@ -168,9 +168,9 @@ current progress
 # building with emscriptem
 ## debug
 ```
-emcc 4374_Task1c_emscripten.cpp -o project.js -g4 -s ALLOW_MEMORY_GROWTH=1 -s DEMANGLE_SUPPORT=1 --preload-file hole.png --preload-file pill.png --preload-file player.png --preload-file wall.png --preload-file zombie.png --preload-file portal.png --use-preload-plugins
+emcc 4374_Task1c_emscripten.cpp -o project.js -g4 -s ALLOW_MEMORY_GROWTH=1 -s DEMANGLE_SUPPORT=1 --preload-file hole.png --preload-file pill.png --preload-file player.png --preload-file wall.png --preload-file zombie.png --preload-file portal.png --use-preload-plugins -std=gnu++14 
 ```
 ## release
 ```
-emcc 4374_Task1c_emscripten.cpp -o project.js -O2 -s ALLOW_MEMORY_GROWTH=1 -s DEMANGLE_SUPPORT=1 --preload-file hole.png --preload-file pill.png --preload-file player.png --preload-file wall.png --preload-file zombie.png --preload-file portal.png --use-preload-plugins
+emcc 4374_Task1c_emscripten.cpp -o project.js -O2 -s ALLOW_MEMORY_GROWTH=1 -s DEMANGLE_SUPPORT=1 --preload-file hole.png --preload-file pill.png --preload-file player.png --preload-file wall.png --preload-file zombie.png --preload-file portal.png --use-preload-plugins -std=gnu++14 
 ```
