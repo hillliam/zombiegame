@@ -31,9 +31,9 @@ jobs:
         uses: actions/upload-artifact@v2.1.4
         with:
           # Artifact name
-          name: mazeweb_debug.js # optional, default is artifact
+          name: project_debug.js # optional, default is artifact
           # A file, directory or wildcard pattern that describes what to upload
-          path: mazeweb.js
+          path: project.js
           
   release_build:
     name: 'Release Build'
@@ -52,6 +52,6 @@ jobs:
         uses: actions/upload-artifact@v2.1.4
         with:
           # Artifact name
-          name: mazeweb.js # optional, default is artifact
+          name: project.js # optional, default is artifact
           # A file, directory or wildcard pattern that describes what to upload
-          path: mazeweb.js          
+          path: project.js          
